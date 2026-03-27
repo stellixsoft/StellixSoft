@@ -1,0 +1,77 @@
+import Image from "next/image";
+const items = [
+  {
+    title: "Bug Fixes & Issue Resolution",
+    description:
+      "Fast response to production issues. Root cause analysis, permanent fixes, not just band-aids.",
+  },
+  {
+    title: "Security Updates",
+    description:
+      "Framework updates, dependency patches, vulnerability scanning. Keep your application secure.",
+  },
+  {
+    title: "Performance Optimization",
+    description:
+      "Query optimization, caching strategies, code refactoring. Keep your application fast.",
+  },
+  {
+    title: "Feature Enhancements",
+    description:
+      "Small improvements and new features. Continuous evolution of your application.",
+  },
+  {
+    title: "Monitoring & Alerting",
+    description:
+      "Proactive monitoring. We know about issues before your users report them.",
+  },
+  {
+    title: "Database Maintenance",
+    description:
+      "Backups, optimization, cleanup. Keep your data healthy and your queries fast.",
+  },
+];
+
+export default function WhatsIncludedInMaintenance() {
+  return (
+    <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
+      <div className="max-w-[1300px] mx-auto">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
+          What&apos;s Included in Maintenance
+        </h2>
+        <div
+          className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
+          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          aria-hidden
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {items.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-[28px] bg-white border border-gray-100 shadow-[0_18px_60px_rgba(15,23,42,0.08)] px-6 py-8 md:px-8 md:py-10"
+            >
+              <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--color-electricBlue)]/8 text-[var(--color-electricBlue)]">
+                <Image
+                  src="/assets/images/IOT-icon.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                  aria-hidden
+                />
+              </div>
+              <h3 className="text-sm md:text-[15px] font-medium uppercase text-[var(--color-deepSpace)] mb-3">
+                {item.title}
+              </h3>
+              <p className="text-sm md:text-[15px] text-[var(--color-neutralGray)] leading-relaxed">
+                {item.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+

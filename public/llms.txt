@@ -1,0 +1,134 @@
+# StellixSoft - Enterprise Software Development Company
+
+> StellixSoft is a trusted enterprise software development company founded in 2020, specializing in IoT, legacy modernization, AI integration, cloud infrastructure, and complex business platforms. We serve Fortune 500 companies and growing enterprises across North America and Europe with US-timezone aligned dedicated development teams.
+
+## Company Overview
+
+- **Founded:** 2020
+- **Team Size:** ~15 developers
+- **Headquarters:** Remote-first, US/EU timezone aligned
+- **Markets:** North America, Europe
+- **Email:** info@stellixsoft.com
+- **Website:** https://stellixsoft.com
+
+## Services
+
+### Practical AI for Business
+We help enterprises integrate AI into existing workflows — from predictive analytics and NLP to computer vision and intelligent automation — without the hype, focused on measurable ROI.
+URL: https://stellixsoft.com/services/practical-for-ai
+
+### Automation and Custom Apps
+Custom software built to automate repetitive processes, reduce errors, and free your team to focus on high-value work.
+URL: https://stellixsoft.com/services/automation-and-custom-apps
+
+### Blockchain and Cryptography
+Secure, auditable systems using blockchain and advanced cryptography for compliance-heavy and trust-critical applications.
+URL: https://stellixsoft.com/services/blockchain-and-cryptography
+
+### Dedicated Development Teams
+Full-time dedicated engineering teams that integrate with your workflow, culture, and tools — not just outsourced bodies.
+URL: https://stellixsoft.com/services/dedicated-development-teams
+
+### DevOps and Cloud Services
+CI/CD pipelines, infrastructure as code, AWS/Azure/GCP management, monitoring, and zero-downtime deployments.
+URL: https://stellixsoft.com/services/devops-and-cloud-services
+
+### E-Commerce Development
+Headless commerce, Shopify Plus, custom storefronts, payment integrations, and high-performance e-commerce platforms.
+URL: https://stellixsoft.com/services/e-commerce-development
+
+### Enterprise Development
+Large-scale enterprise software — ERPs, CRMs, multi-tenant SaaS, real-time dashboards, and complex business logic.
+URL: https://stellixsoft.com/services/enterprise-development
+
+### Enterprise Mobile App Development
+iOS, Android, and cross-platform enterprise mobile applications with offline-first, secure, and scalable architectures.
+URL: https://stellixsoft.com/services/enterprise-mobile-app-development
+
+### IoT Software
+End-to-end IoT platform development — device management, real-time data pipelines, edge computing, and fleet management dashboards.
+URL: https://stellixsoft.com/services/iot-software
+
+### Legacy Modernization
+Migrate from VB.NET, legacy .NET Framework, outdated architectures to modern .NET, cloud-native, microservices — with zero downtime.
+URL: https://stellixsoft.com/services/legacy-modernization
+
+### Maintenance & Support
+Ongoing application maintenance, performance optimization, security patching, and 24/7 monitoring for production systems.
+URL: https://stellixsoft.com/services/maintenance-support
+
+### Salesforce Development
+Custom Salesforce development, integrations, Lightning components, Apex triggers, and platform optimization.
+URL: https://stellixsoft.com/services/salesforce-development
+
+### Staff Augmentation
+Scale your team with pre-vetted senior engineers who integrate seamlessly into your existing development processes.
+URL: https://stellixsoft.com/services/staff-augmentation
+
+## Industries We Serve
+
+### IoT & Hardware Companies
+Building the software layer for hardware companies — device management platforms, firmware OTA updates, real-time telemetry, and fleet management.
+URL: https://stellixsoft.com/industries/iot-and-hardware
+
+### Logistics & Supply Chain
+Route optimization, warehouse management, real-time tracking, and end-to-end supply chain visibility platforms.
+URL: https://stellixsoft.com/industries/logistics-and-supply-chain
+
+### Healthcare & MedTech
+HIPAA-compliant healthcare platforms, EHR integrations, telemedicine, medical device software, and clinical workflow automation.
+URL: https://stellixsoft.com/industries/healthcare-and-medtech
+
+### Enterprise Software Development
+Custom enterprise platforms for complex business processes — multi-tenant SaaS, compliance systems, and workflow automation.
+URL: https://stellixsoft.com/industries/enterprise-software-development
+
+## Case Studies
+
+### Enterprise Portal Modernization
+Migrated a Fortune 500 company's legacy VB.NET portal to modern .NET with zero downtime, improving performance by 60%.
+URL: https://stellixsoft.com/case-studies/enterprise-portal-modernization
+
+### Logistics Management Platform
+Built a real-time logistics management platform handling 10,000+ daily shipments with route optimization.
+URL: https://stellixsoft.com/case-studies/logistics-management-platform
+
+### Compliance & Audit Management System
+Developed a SOX-compliant audit management system for a financial services company.
+URL: https://stellixsoft.com/case-studies/compliance-and-audit-management-system
+
+### Multi-Location Service Business Platform
+Created a multi-location operations platform managing 50+ locations with real-time scheduling.
+URL: https://stellixsoft.com/case-studies/multi-location-service-business-platform
+
+### Stock Options & Equity Management Platform
+Built an equity management platform for startups managing cap tables, vesting schedules, and 409A valuations.
+URL: https://stellixsoft.com/case-studies/stock-options-and-equity-management-platform
+
+## Key Pages
+
+- Home: https://stellixsoft.com
+- About: https://stellixsoft.com/about
+- Services: https://stellixsoft.com/services
+- Industries: https://stellixsoft.com/industries
+- Case Studies: https://stellixsoft.com/case-studies
+- Pricing: https://stellixsoft.com/pricing
+- Contact: https://stellixsoft.com/contact
+- Blog: https://stellixsoft.com/blog
+
+## Technology Stack
+
+- **Frontend:** React, Next.js, TypeScript, Tailwind CSS
+- **Backend:** .NET, Node.js, Python
+- **Cloud:** AWS, Azure, GCP
+- **Databases:** SQL Server, PostgreSQL, Redis, MongoDB
+- **DevOps:** Docker, Kubernetes, Terraform, GitHub Actions
+- **Real-time:** SignalR, WebSockets
+- **IoT:** MQTT, Azure IoT Hub, AWS IoT Core
+- **AI/ML:** OpenAI, TensorFlow, PyTorch, LangChain
+
+## Contact
+
+For business inquiries, partnerships, or project discussions:
+- Email: info@stellixsoft.com
+- Website: https://stellixsoft.com/contact

@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  /* Brand Colors */
+  --color-deepSpace: #030213;
+  --color-electricBlue: #10ACDB;
+  --color-surfaceBlue: #3383F1;
+  --color-neutralGray: #717181;
+  --color-lightGray: #F9FAFB;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
+  /* Font */
+  --font-sans: "Poppins", sans-serif;
+
+  /* ========== Typography ========== */
+
+  /* Body */
+  --text-body: 16px;
+  --leading-body: 26px;
+
+  /* Headings */
+  --text-h1: 36px;
+  --text-h2: 30px;
+  --text-h3: 24px;
+  --text-h4: 20px;
+  --text-h5: 18px;
+  --text-h6: 16px;
+
+  --leading-heading: 1.2em;
+}
+
+/* Client logos slider */
+@keyframes client-logos-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-client-logos-slide {
+  animation: client-logos-slide 30s linear infinite;
+}
+.animate-client-logos-slide:hover {
+  animation-play-state: paused;
+}
+
+/* Testimonials fade-in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  @theme inline {
+    --text-h1: 48px;
+    --text-h2: 40px;
+    --text-h3: 30px;
+    --text-h4: 22px;
+    --text-h5: 20px;
+    --text-h6: 18px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  @theme inline {
+    --text-h1: 64px;
+    --text-h2: 48px;
+    --text-h3: 36px;
+    --text-h4: 24px;
+    --text-h5: 20px;
+    --text-h6: 24px;
+  }
+
+  /* =========================
+   Button Styles
+========================= */
+
+  .btn-primary {
+    @apply text-[16px] font-normal text-white px-6 py-3 rounded-lg;
+    background: linear-gradient(90deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue) 100%);
+  }
+
+  .btn-primary:hover {
+    background: var(--color-electricBlue);
+    /* Electric Blue */
+  }
+
+  /* =========================
+   Anchor Styles
+========================= */
+
+  .link-primary {
+    @apply text-[16px] font-normal;
+    color: var(--color-deepSpace);
+    /* Deep Space */
+  }
+
+  .link-primary:hover {
+    color: var(--color-electricBlue);
+    /* Electric Blue */
+  }
+}
+
+/* Calendly popup above site chrome (header uses z-[100] / z-[200]) */
+.calendly-overlay,
+.calendly-popup {
+  z-index: 2147483000 !important;
+}

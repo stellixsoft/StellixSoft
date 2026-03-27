@@ -1,0 +1,67 @@
+import Image from "next/image";
+const benefits = [
+  {
+    title: "Senior-Level Talent",
+    description:
+      "Our average developer has 5+ years experience. No juniors learning on your project. Productive from day one.",
+  },
+  {
+    title: "English Proficiency",
+    description:
+      "Clear communication is non-negotiable. All our developers communicate effectively in English. No barriers.",
+  },
+  {
+    title: "Self-Directed Workers",
+    description:
+      "Give them a task, they’ll figure it out. No hand-holding required. They ask smart questions and deliver.",
+  },
+  {
+    title: "US Timezone Alignment",
+    description:
+      "They work when you work. Morning standup, end-of-day check-in, real-time Slack. Same schedule.",
+  },
+];
+
+export default function WhatYouGetWithOurDevelopers() {
+  return (
+    <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
+      <div className="max-w-[1300px] mx-auto">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
+          What You Get With Our Developers
+        </h2>
+        <div
+          className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
+          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          aria-hidden
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {benefits.map((benefit) => (
+            <article
+              key={benefit.title}
+              className="rounded-[28px] bg-white border border-gray-100 shadow-[0_18px_60px_rgba(15,23,42,0.08)] px-6 py-8 md:px-8 md:py-10"
+            >
+              <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--color-electricBlue)]/8 text-[var(--color-electricBlue)]">
+                <Image
+                  src="/assets/images/IOT-icon.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                  aria-hidden
+                />
+              </div>
+              <h3 className="text-sm md:text-[15px] font-medium uppercase text-[var(--color-deepSpace)] mb-3">
+                {benefit.title}
+              </h3>
+              <p className="text-sm md:text-[15px] text-[var(--color-neutralGray)] leading-relaxed">
+                {benefit.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
