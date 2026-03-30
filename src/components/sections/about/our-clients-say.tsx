@@ -5,7 +5,7 @@ import { TestimonialAvatar } from "@/src/components/ui/testimonial-initials-avat
 const clientsSay = [
   {
     quote:
-      "Portal and monitoring work for our hardware deployments. They've stayed with us as we scaled out—practical stuff that didn't fall over when we added more sites.",
+      "Hello. The StellixSoft team has been excellent. They are highly committed to the tasks assigned and consistently provide effective solutions.",
     name: "Kashif Saeed",
     company: "Venture Research Inc. · Plano, TX",
     photo: "/assets/images/testimonials/venture-research.png",
