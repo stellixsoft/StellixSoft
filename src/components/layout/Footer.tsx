@@ -70,7 +70,7 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-5">
               <Image
                 src="/assets/images/stellixsoft-logo.png"
-                alt="StellixSoft"
+                alt="Stellix Soft"
                 width={160}
                 height={32}
                 className="object-contain"
@@ -171,9 +171,21 @@ export default function Footer() {
                     <circle cx="12" cy="10" r="3" />
                   </svg>
                 </span>
-                <div className="text-white/75 text-sm leading-relaxed">
-                  <p>StellixSoft Enterprise HQ</p>
-                  <p>United States Timezone Aligned</p>
+                <div className="text-white/75 text-sm leading-relaxed space-y-4">
+                  <div>
+                    <p className="text-white/90 font-medium text-xs uppercase tracking-wider mb-1">
+                      United States
+                    </p>
+                    <p>Stellix Soft LLC</p>
+                    <p>Houston, Texas</p>
+                  </div>
+                  <div>
+                    <p className="text-white/90 font-medium text-xs uppercase tracking-wider mb-1">
+                      Pakistan
+                    </p>
+                    <p>Stellix Soft (Pvt.) Ltd.</p>
+                    <p>Islamabad</p>
+                  </div>
                 </div>
               </div>
               <div className="flex gap-3">
@@ -208,8 +220,9 @@ export default function Footer() {
       {/* Bottom: Copyright + Legal */}
       <div className="max-w-[1300px] mx-auto px-6 py-5">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-center sm:text-left">
-          <p className="text-white/50 text-xs">
-            © {new Date().getFullYear()} Stellix Soft LLC. All rights reserved.
+          <p className="text-white/50 text-xs max-w-xl">
+            © {new Date().getFullYear()} Stellix Soft LLC (Houston, Texas, USA) and
+            Stellix Soft (Pvt.) Ltd. (Islamabad, Pakistan). All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-6">
             <Link
