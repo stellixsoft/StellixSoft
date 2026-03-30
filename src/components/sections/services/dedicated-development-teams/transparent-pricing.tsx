@@ -57,7 +57,7 @@ export default function TransparentPricing() {
         </h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
@@ -72,7 +72,7 @@ export default function TransparentPricing() {
               }`}
             >
               {plan.badge && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 inline-flex items-center rounded-full bg-[var(--color-electricBlue)] px-5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white shadow-[0_12px_30px_rgba(56,189,248,0.6)]">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 inline-flex items-center rounded-full bg-[var(--color-electricBlue-solid)] px-5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white shadow-[0_12px_30px_rgba(56,189,248,0.6)]">
                   {plan.badge}
                 </div>
               )}
@@ -124,7 +124,7 @@ export default function TransparentPricing() {
                     >
                       <span
                         className={`h-1.5 w-1.5 rounded-full ${
-                          plan.highlighted ? "bg-sky-300" : "bg-[var(--color-electricBlue)]"
+                          plan.highlighted ? "bg-sky-300" : "bg-[var(--color-electricBlue-solid)]"
                         }`}
                       />
                     </span>
@@ -137,7 +137,7 @@ export default function TransparentPricing() {
                 href={`/contact?plan=${plan.id}`}
                 className={`mt-auto inline-flex items-center justify-center rounded-full px-6 py-3 text-sm md:text-[15px] font-medium border transition-colors text-center ${
                   plan.highlighted
-                    ? "bg-[var(--color-electricBlue)] border-[var(--color-electricBlue)] text-white hover:bg-sky-400"
+                    ? "bg-[var(--color-electricBlue-solid)] border-[var(--color-electricBlue)] text-white hover:bg-sky-400"
                     : "bg-white border-slate-200 text-[var(--color-deepSpace)] hover:bg-slate-50"
                 }`}
               >

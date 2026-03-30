@@ -27,7 +27,7 @@ export default function HowWeModernized() {
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center mb-8">
           How We Modernized a 15-Year Enterprise System
         </h2>
-        <div className="w-16 h-0.5 mx-auto mt-4 mb-8" style={{ backgroundColor: "var(--color-electricBlue)" }} />
+        <div className="w-16 h-0.5 mx-auto mt-4 mb-8" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
 
         <div className="mt-12 md:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left column */}
@@ -48,7 +48,7 @@ export default function HowWeModernized() {
             <div className="flex items-start gap-3 mb-6">
               <span
                 className="w-6 h-6 rounded-full flex items-center justify-center shrink-0 mt-0.5"
-                style={{ backgroundColor: "var(--color-electricBlue)" }}
+                style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                 aria-hidden
               >
                 <svg
@@ -78,7 +78,7 @@ export default function HowWeModernized() {
                     >
                       <span
                         className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full"
-                        style={{ backgroundColor: "var(--color-electricBlue)" }}
+                        style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                       />
                       {item}
                     </li>
@@ -91,7 +91,7 @@ export default function HowWeModernized() {
               href="/case-studies/enterprise-portal-modernization"
               className="inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
               style={{
-                background: "linear-gradient(90deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue) 100%)",
+                background: "linear-gradient(90deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
               }}
             >
               Read the Full Case Study

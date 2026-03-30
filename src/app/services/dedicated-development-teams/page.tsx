@@ -92,7 +92,7 @@ export default function DedicatedDevelopmentTeamsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div>
       <DedicatedDevelopmentTeamsHero />
-      <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue)" }} />
+      <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
       <WhyHiringIsBroken />
       <ReadyInTwoWeeks />
       <WhatsIncludedWithDedicatedTeam />

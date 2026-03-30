@@ -82,7 +82,7 @@ export default function IoTCaseStudy() {
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center mb-8">
           IoT Platform Case Study: Enterprise Device Management
         </h2>
-        <div className="w-16 h-0.5 mx-auto mt-4 mb-12" style={{ backgroundColor: "var(--color-electricBlue)" }} />
+        <div className="w-16 h-0.5 mx-auto mt-4 mb-12" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
 
         <div className="mt-10 md:mt-14 rounded-2xl overflow-hidden shadow-xl flex flex-col lg:flex-row min-h-0">
           {/* Left panel - dark */}
@@ -110,7 +110,7 @@ export default function IoTCaseStudy() {
                 <li key={item} className="flex items-start gap-3 text-sm text-white">
                   <span
                     className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5"
-                    style={{ backgroundColor: "var(--color-electricBlue)" }}
+                    style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                     aria-hidden
                   >
                     <CheckIcon className="w-3 h-3 text-white" />

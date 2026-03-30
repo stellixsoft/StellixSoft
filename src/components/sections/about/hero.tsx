@@ -48,7 +48,7 @@ export default function Hero() {
                   className="flex items-start gap-3 text-sm md:text-base font-light text-white/90 leading-relaxed"
                 >
                   <span
-                    className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-electricBlue)]"
+                    className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-electricBlue-solid)]"
                     aria-hidden
                   />
                   {item}
@@ -62,7 +62,7 @@ export default function Hero() {
                   className="flex items-start gap-3 text-sm md:text-base font-light text-white/90 leading-relaxed"
                 >
                   <span
-                    className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-electricBlue)]"
+                    className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-electricBlue-solid)]"
                     aria-hidden
                   />
                   {item}

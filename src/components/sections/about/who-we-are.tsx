@@ -16,7 +16,7 @@ function CheckIcon() {
   return (
     <span
       className="shrink-0 w-4 h-4 rounded-full flex items-center justify-center"
-      style={{ backgroundColor: "var(--color-electricBlue)" }}
+      style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
       aria-hidden
     >
       <svg

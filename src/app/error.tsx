@@ -25,7 +25,7 @@ export default function Error({
         <button
           onClick={reset}
           className="rounded-full px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         >
           Try Again
         </button>

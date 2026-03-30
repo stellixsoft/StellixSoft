@@ -42,7 +42,7 @@ function CheckCircleIcon() {
   return (
     <span
       className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center"
-      style={{ backgroundColor: "var(--color-electricBlue)" }}
+      style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
       aria-hidden
     >
       <svg

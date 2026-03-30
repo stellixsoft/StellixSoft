@@ -7,7 +7,7 @@ export default function ProactiveVsReactiveCost() {
         </h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
@@ -64,7 +64,7 @@ export default function ProactiveVsReactiveCost() {
               <li>Steady improvements</li>
               <li>Peace of mind</li>
             </ul>
-            <div className="mt-auto rounded-2xl bg-[var(--color-electricBlue)] px-5 py-4 text-center shadow-[0_18px_50px_rgba(56,189,248,0.6)]">
+            <div className="mt-auto rounded-2xl bg-[var(--color-electricBlue-solid)] px-5 py-4 text-center shadow-[0_18px_50px_rgba(56,189,248,0.6)]">
               <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.22em] text-white/80 mb-1">
                 Monthly Maintenance Cost:
               </p>

@@ -5,6 +5,8 @@
   /* Brand Colors */
   --color-deepSpace: #030213;
   --color-electricBlue: #10ACDB;
+  /* Solid fills with white text (WCAG AA ~4.5:1); brighter --color-electricBlue stays for links and accents */
+  --color-electricBlue-solid: #0980a8;
   /* Darker brand tone for small text on white (WCAG AA contrast) */
   --color-accentOnLight: #0a5f78;
   --color-surfaceBlue: #3383F1;
@@ -93,12 +95,11 @@
 
   .btn-primary {
     @apply text-[16px] font-normal text-white px-6 py-3 rounded-lg;
-    background: linear-gradient(90deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue) 100%);
+    background: linear-gradient(90deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%);
   }
 
   .btn-primary:hover {
-    background: var(--color-electricBlue);
-    /* Electric Blue */
+    background: var(--color-electricBlue-solid);
   }
 
   /* =========================

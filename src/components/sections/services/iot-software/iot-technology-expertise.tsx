@@ -97,7 +97,7 @@ export default function IoTTechnologyExpertise() {
         </h2>
         <div
           className="w-24 h-0.5 mx-auto mt-4 mb-12 md:mb-14"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 

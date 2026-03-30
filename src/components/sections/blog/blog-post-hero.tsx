@@ -56,7 +56,7 @@ export default function BlogPostHero({
         <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
           <span
             className="rounded-full px-3 py-1 text-xs font-medium uppercase tracking-wider"
-            style={{ backgroundColor: "var(--color-electricBlue)" }}
+            style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           >
             {category}
           </span>

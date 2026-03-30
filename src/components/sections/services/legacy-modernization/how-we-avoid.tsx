@@ -86,7 +86,7 @@ export default function HowWeAvoid() {
         </h2>
         <div
           className="w-24 h-0.5 mx-auto mt-4 mb-12 md:mb-16"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
@@ -138,7 +138,7 @@ export default function HowWeAvoid() {
                   <li key={item} className="flex items-start gap-2 text-sm">
                     <span
                       className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full"
-                      style={{ backgroundColor: "var(--color-electricBlue)" }}
+                      style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                     />
                     <span
                       className={card.isRecommended ? "text-white" : "text-[var(--color-deepSpace)]"}

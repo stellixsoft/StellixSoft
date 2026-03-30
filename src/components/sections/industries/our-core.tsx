@@ -107,7 +107,7 @@ export default function OurCore() {
           </h2>
           <div
             className="w-16 h-0.5 mx-auto mt-4 mb-6"
-            style={{ backgroundColor: "var(--color-electricBlue)" }}
+            style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           />
           <p className="text-xs md:text-sm uppercase tracking-widest text-[var(--color-neutralGray)] max-w-2xl mx-auto leading-relaxed">
             Tailored software architecture for specialized industrial needs.

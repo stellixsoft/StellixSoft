@@ -51,7 +51,7 @@ export default function StandBehind() {
         <div className="text-center mb-10 md:mb-12">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-medium uppercase tracking-wider text-white"
-            style={{ backgroundColor: "var(--color-electricBlue)" }}
+            style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           >
             Our Commitment
           </span>
@@ -66,7 +66,7 @@ export default function StandBehind() {
               <span
                 className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white border"
                 style={{
-                  backgroundColor: "var(--color-electricBlue)",
+                  backgroundColor: "var(--color-electricBlue-solid)",
                   borderColor: "rgba(16, 172, 219, 0.5)",
                 }}
                 aria-hidden

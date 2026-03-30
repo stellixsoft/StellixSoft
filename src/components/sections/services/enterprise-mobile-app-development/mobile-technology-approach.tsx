@@ -65,7 +65,7 @@ export default function MobileTechnologyApproach() {
         </h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
@@ -94,7 +94,7 @@ export default function MobileTechnologyApproach() {
                   <ul className="space-y-1.5 text-sm md:text-[15px] text-[var(--color-neutralGray)]">
                     {column.items.map((item) => (
                       <li key={item} className="flex items-start gap-2">
-                        <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue)]" />
+                        <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -113,7 +113,7 @@ export default function MobileTechnologyApproach() {
                     key={item}
                     className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-electricBlue)]/40 px-3 py-1 text-[11px] font-medium text-[var(--color-deepSpace)] bg-[var(--color-electricBlue)]/5"
                   >
-                    <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue)]" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" />
                     {item}
                   </span>
                 ))}

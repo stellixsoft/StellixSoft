@@ -89,7 +89,7 @@ export default function HowWeWorkWithEnterpriseClients() {
                     <span
                       className={`shrink-0 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center ${
                         model.highlight
-                          ? "bg-[var(--color-electricBlue)] text-white"
+                          ? "bg-[var(--color-electricBlue-solid)] text-white"
                           : "bg-[var(--color-electricBlue)]/10 text-[var(--color-electricBlue)]"
                       }`}
                       aria-hidden

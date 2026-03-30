@@ -60,7 +60,7 @@ export default function HowWeBuildMobileApps() {
         </h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
@@ -82,7 +82,7 @@ export default function HowWeBuildMobileApps() {
               <ul className="space-y-1.5 text-sm md:text-[13px] text-[var(--color-neutralGray)]">
                 {phase.items.map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue)]" />
+                    <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" />
                     <span>{item}</span>
                   </li>
                 ))}

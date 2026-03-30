@@ -111,7 +111,7 @@ export default function Header() {
       {/* Top electric blue accent line */}
       <div
         className="h-0.5 w-full shrink-0"
-        style={{ backgroundColor: "var(--color-electricBlue)" }}
+        style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
       />
 
       <nav className="flex items-center justify-between gap-6 px-4 sm:px-6 lg:px-8 py-4 max-w-[1500px] mx-auto">
@@ -210,7 +210,7 @@ export default function Header() {
           })}
           <CalendlyScheduleButton
             className="shrink-0 rounded-full px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90 cursor-pointer"
-            style={{ backgroundColor: "var(--color-electricBlue)" }}
+            style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           >
             Schedule a Call
           </CalendlyScheduleButton>
@@ -340,7 +340,7 @@ export default function Header() {
             <CalendlyScheduleButton
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-center rounded-full px-6 py-3 text-sm font-medium text-white cursor-pointer"
-              style={{ backgroundColor: "var(--color-electricBlue)" }}
+              style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
             >
               Schedule a Call
             </CalendlyScheduleButton>

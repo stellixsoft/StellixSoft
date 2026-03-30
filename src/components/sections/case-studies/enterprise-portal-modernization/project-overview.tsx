@@ -66,7 +66,7 @@ export default function EnterprisePortalProjectOverview() {
               <li className="flex items-start gap-2">
                 <span
                   className="mt-1 inline-flex h-2.5 w-2.5 rounded-full"
-                  style={{ backgroundColor: "var(--color-electricBlue)" }}
+                  style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                   aria-hidden
                 />
                 <span>3+ years (ongoing partnership)</span>
@@ -74,7 +74,7 @@ export default function EnterprisePortalProjectOverview() {
               <li className="flex items-start gap-2">
                 <span
                   className="mt-1 inline-flex h-2.5 w-2.5 rounded-full"
-                  style={{ backgroundColor: "var(--color-electricBlue)" }}
+                  style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                   aria-hidden
                 />
                 <span>6 dedicated developers</span>

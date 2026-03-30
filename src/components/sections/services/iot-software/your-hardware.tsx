@@ -44,7 +44,7 @@ export default function YourHardware() {
             className="inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
             style={{
               background:
-                "linear-gradient(90deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue) 100%)",
+                "linear-gradient(90deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
             }}
           >
             Learn About Our Partnerships

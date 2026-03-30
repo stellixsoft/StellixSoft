@@ -90,7 +90,7 @@ export default function IndustriesWeServe() {
 
               <div className="relative z-10 flex items-start justify-between gap-4 mb-5">
                 <div className="flex items-center gap-3">
-                  <div className="h-11 w-11 rounded-xl bg-[var(--color-electricBlue)] border border-[var(--color-electricBlue)]/40 flex items-center justify-center">
+                  <div className="h-11 w-11 rounded-xl bg-[var(--color-electricBlue-solid)] border border-[var(--color-electricBlue)]/40 flex items-center justify-center">
                     <Image
                       src={service.icon}
                       alt={service.title}

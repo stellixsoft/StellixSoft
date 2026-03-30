@@ -80,7 +80,7 @@ export default function LogisticsManagementPlatformArchitecture() {
             {topNodes.map((node) => (
               <div
                 key={node.label}
-                className="rounded-3xl bg-[var(--color-electricBlue)] text-white shadow-[0_14px_50px_rgba(15,23,42,0.2)] border border-sky-300/60 px-5 py-5 flex flex-col items-center text-center gap-2"
+                className="rounded-3xl bg-[var(--color-electricBlue-solid)] text-white shadow-[0_14px_50px_rgba(15,23,42,0.2)] border border-sky-300/60 px-5 py-5 flex flex-col items-center text-center gap-2"
               >
                 <span className="opacity-90">{node.icon}</span>
                 <p className="text-[11px] font-medium uppercase tracking-[0.22em]">
@@ -116,7 +116,7 @@ export default function LogisticsManagementPlatformArchitecture() {
             {bottomNodes.map((node) => (
               <div
                 key={node.label}
-                className="rounded-[26px] bg-[var(--color-electricBlue)] text-white px-5 py-5 md:px-6 md:py-5 flex flex-col items-center text-center gap-2 shadow-[0_20px_70px_rgba(15,23,42,0.45)]"
+                className="rounded-[26px] bg-[var(--color-electricBlue-solid)] text-white px-5 py-5 md:px-6 md:py-5 flex flex-col items-center text-center gap-2 shadow-[0_20px_70px_rgba(15,23,42,0.45)]"
               >
                 <span className="opacity-90">{node.icon}</span>
                 <p className="text-[11px] font-medium uppercase tracking-[0.22em]">

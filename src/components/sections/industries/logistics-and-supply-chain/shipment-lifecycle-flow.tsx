@@ -51,7 +51,7 @@ export default function ShipmentLifecycleFlow() {
               >
                 <div
                   className="w-9 h-9 rounded-full flex items-center justify-center mb-4 text-white text-sm font-semibold"
-                  style={{ backgroundColor: "var(--color-electricBlue)" }}
+                  style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                 >
                   {step.number}
                 </div>

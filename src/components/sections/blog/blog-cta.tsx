@@ -15,7 +15,7 @@ export default function BlogCTA() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <CalendlyScheduleButton
             className="inline-flex items-center gap-2 rounded-full px-8 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 cursor-pointer"
-            style={{ backgroundColor: "var(--color-electricBlue)" }}
+            style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           >
             Schedule a Discovery Call
           </CalendlyScheduleButton>

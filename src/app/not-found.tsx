@@ -30,7 +30,7 @@ export default function NotFound() {
             <Link
               href="/"
               className="rounded-full px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "var(--color-electricBlue)" }}
+              style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
             >
               Go to Homepage
             </Link>
@@ -45,7 +45,7 @@ export default function NotFound() {
       </section>
       <div
         className="h-1 w-full shrink-0"
-        style={{ backgroundColor: "var(--color-electricBlue)" }}
+        style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
       />
     </>
   );

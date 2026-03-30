@@ -153,7 +153,7 @@ export default function RequestAQuote() {
               type="submit"
               disabled={isPending}
               className="w-full rounded-xl py-4 text-base font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-electricBlue)]"
-              style={{ backgroundColor: "var(--color-electricBlue)" }}
+              style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
             >
               {isPending ? "Sending…" : "Get My Custom Quote"}
             </button>

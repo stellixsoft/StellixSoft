@@ -170,7 +170,7 @@ export default function LogisticsArchitecture() {
         <div className="flex justify-center mb-6 md:mb-8">
           <div
             className="w-px h-10"
-            style={{ backgroundColor: "var(--color-electricBlue)" }}
+            style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
             aria-hidden
           />
         </div>
@@ -194,7 +194,7 @@ export default function LogisticsArchitecture() {
         <div className="flex justify-center mb-8 md:mb-10">
           <div
             className="w-px h-10"
-            style={{ backgroundColor: "var(--color-electricBlue)" }}
+            style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
             aria-hidden
           />
         </div>

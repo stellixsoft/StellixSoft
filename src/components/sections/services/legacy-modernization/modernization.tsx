@@ -65,12 +65,12 @@ function Icon() {
   return (
     <span
       className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-      style={{ backgroundColor: "var(--color-electricBlue)", opacity: 0.15 }}
+      style={{ backgroundColor: "var(--color-electricBlue-solid)", opacity: 0.15 }}
       aria-hidden
     >
       <span
         className="w-5 h-5 rounded"
-        style={{ backgroundColor: "var(--color-electricBlue)" }}
+        style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
       />
     </span>
   );
@@ -89,7 +89,7 @@ export default function Modernization() {
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center mb-8">
           Modernization Without the Risk
         </h2>
-        <div className="w-16 h-0.5 mx-auto mt-4 mb-8" style={{ backgroundColor: "var(--color-electricBlue)" }} />
+        <div className="w-16 h-0.5 mx-auto mt-4 mb-8" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
         <p className="max-w-2xl mx-auto text-center text-[var(--color-neutralGray)] text-base md:text-lg leading-relaxed mb-12">
           We don&apos;t do risky "big bang" rewrites that fail 70% of the time. Our
           incremental approach migrates your system piece by piece while keeping it fully operational.
@@ -119,7 +119,7 @@ export default function Modernization() {
                       >
                         <span
                           className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full"
-                          style={{ backgroundColor: "var(--color-electricBlue)" }}
+                          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                         />
                         {item}
                       </li>

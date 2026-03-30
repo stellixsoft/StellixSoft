@@ -72,7 +72,7 @@ export default function EnterprisePortalWhySucceededAndRelated() {
               >
                 <span>{page.label}</span>
                 <span
-                  className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-100 text-[11px] text-[var(--color-neutralGray)] group-hover:bg-[var(--color-electricBlue)] group-hover:text-white transition-colors"
+                  className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-slate-100 text-[11px] text-[var(--color-neutralGray)] group-hover:bg-[var(--color-electricBlue-solid)] group-hover:text-white transition-colors"
                   aria-hidden
                 >
                   →

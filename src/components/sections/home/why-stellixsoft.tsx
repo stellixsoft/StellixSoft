@@ -101,7 +101,7 @@ export default function WhyStellixsoft() {
                 {/* Checkmark Icon */}
                 <div
                   className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white"
-                  style={{ backgroundColor: "var(--color-electricBlue)" }}
+                  style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                 >
                   <CheckIcon />
                 </div>

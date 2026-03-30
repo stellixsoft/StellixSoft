@@ -57,7 +57,7 @@ export default function MultiLocationServiceBusinessPlatformChallenge() {
               <ul className="space-y-2.5 text-sm md:text-[14px] text-[var(--color-deepSpace)]">
                 {card.items.map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-electricBlue)]" aria-hidden />
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-electricBlue-solid)]" aria-hidden />
                     <span>{item}</span>
                   </li>
                 ))}

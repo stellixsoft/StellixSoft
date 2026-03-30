@@ -86,7 +86,7 @@ function QuoteIcon() {
   return (
     <div
       className="w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg"
-      style={{ backgroundColor: "var(--color-electricBlue)" }}
+      style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
       aria-hidden
     >
       <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor" aria-hidden>

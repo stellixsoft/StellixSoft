@@ -115,7 +115,7 @@ function PricingCard({ plan }: { plan: Plan }) {
         <div className="flex justify-center absolute left-1/2 -translate-x-1/2 -top-3">
           <span
             className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider"
-            style={{ backgroundColor: "var(--color-electricBlue)", color: "white" }}
+            style={{ backgroundColor: "var(--color-electricBlue-solid)", color: "white" }}
           >
             Most Popular
           </span>
@@ -173,7 +173,7 @@ function PricingCard({ plan }: { plan: Plan }) {
             ? "text-white"
             : "bg-gray-100 text-[var(--color-deepSpace)] border border-gray-300 hover:bg-gray-200"
         }`}
-        style={plan.ctaPrimary ? { backgroundColor: "var(--color-electricBlue)" } : undefined}
+        style={plan.ctaPrimary ? { backgroundColor: "var(--color-electricBlue-solid)" } : undefined}
       >
         {plan.ctaLabel}
       </Link>

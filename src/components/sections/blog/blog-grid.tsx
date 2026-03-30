@@ -140,7 +140,7 @@ function BlogGridInner() {
                   onClick={() => applyCategory(cat)}
                   className={`rounded-full px-4 py-2.5 text-xs font-medium tracking-wide transition-all ${
                     category === cat
-                      ? "bg-[var(--color-electricBlue)] text-white shadow-md shadow-[var(--color-electricBlue)]/25"
+                      ? "bg-[var(--color-electricBlue-solid)] text-white shadow-md shadow-[var(--color-electricBlue)]/25"
                       : "border border-slate-200/80 bg-white text-slate-600 shadow-sm hover:border-slate-300 hover:bg-slate-50"
                   }`}
                 >
@@ -209,7 +209,7 @@ function BlogGridInner() {
                 className="group flex flex-col overflow-hidden rounded-[10px] border border-slate-200/90 bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300/90 hover:shadow-[0_12px_40px_rgba(15,23,42,0.08)]"
               >
                 <div
-                  className="h-1 w-full shrink-0 bg-[var(--color-electricBlue)]"
+                  className="h-1 w-full shrink-0 bg-[var(--color-electricBlue-solid)]"
                   aria-hidden
                 />
                 <div className="flex flex-1 flex-col p-6 md:p-7">

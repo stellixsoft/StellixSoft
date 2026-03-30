@@ -54,7 +54,7 @@ export default function BlogNewsletter() {
                 type="submit"
                 disabled={isPending}
                 className="rounded-xl px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-70 shrink-0"
-                style={{ backgroundColor: "var(--color-electricBlue)" }}
+                style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
               >
                 {isPending ? "Subscribing..." : "Subscribe"}
               </button>

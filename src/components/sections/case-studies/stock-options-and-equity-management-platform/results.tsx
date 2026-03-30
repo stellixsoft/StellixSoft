@@ -53,7 +53,7 @@ export default function StockOptionsAndEquityManagementPlatformResults() {
             <ul className="space-y-2.5 text-white/90">
               {administrativeEfficiency.map((item) => (
                 <li key={item} className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-electricBlue)]" aria-hidden />
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-electricBlue-solid)]" aria-hidden />
                   <span>{item}</span>
                 </li>
               ))}
@@ -67,7 +67,7 @@ export default function StockOptionsAndEquityManagementPlatformResults() {
             <ul className="space-y-2.5 text-white/90">
               {employeeExperience.map((item) => (
                 <li key={item} className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-electricBlue)]" aria-hidden />
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-electricBlue-solid)]" aria-hidden />
                   <span>{item}</span>
                 </li>
               ))}

@@ -27,7 +27,7 @@ export default function WhyHiringIsBroken() {
         </h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">

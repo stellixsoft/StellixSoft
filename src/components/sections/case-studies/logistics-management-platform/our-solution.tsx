@@ -94,7 +94,7 @@ export default function LogisticsManagementPlatformOurSolution() {
                       <li key={item} className="flex items-start gap-2">
                         <span
                           className="mt-[7px] h-1.5 w-1.5 rounded-full"
-                          style={{ backgroundColor: "var(--color-electricBlue)" }}
+                          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                           aria-hidden
                         />
                         <span>{item}</span>

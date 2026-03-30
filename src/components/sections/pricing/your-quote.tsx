@@ -117,7 +117,7 @@ export default function YourQuote() {
               {quoteFactors.map((item) => (
                 <li key={item.title} className="flex gap-4">
                   <span
-                    className="shrink-0 w-1 rounded-full bg-[var(--color-electricBlue)] opacity-60"
+                    className="shrink-0 w-1 rounded-full bg-[var(--color-electricBlue-solid)] opacity-60"
                     aria-hidden
                   />
                   <div>

@@ -206,7 +206,7 @@ export default function FeaturedCaseStudy() {
         </h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
 
         {/* Slider controls - arrows */}
@@ -250,7 +250,7 @@ export default function FeaturedCaseStudy() {
               <div className="flex items-center gap-2 mb-3">
                 <div
                   className="w-12 h-0.5"
-                  style={{ backgroundColor: "var(--color-electricBlue)" }}
+                  style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                 />
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-electricBlue)]">
                   The Challenge
@@ -266,7 +266,7 @@ export default function FeaturedCaseStudy() {
               <div className="flex items-center gap-2 mb-3">
               <div
                   className="w-12 h-0.5"
-                  style={{ backgroundColor: "var(--color-electricBlue)" }}
+                  style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                 />
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-electricBlue)]">
                   The Solution
@@ -290,7 +290,7 @@ export default function FeaturedCaseStudy() {
               <div className="flex items-center gap-2 mb-3">
               <div
                 className="w-12 h-0.5"
-                style={{ backgroundColor: "var(--color-electricBlue)" }}
+                style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
               />
               <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-electricBlue)]">
                 Technology Stack
@@ -310,7 +310,7 @@ export default function FeaturedCaseStudy() {
               href={study.ctaLink}
               className="inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
               style={{
-                background: "linear-gradient(180deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue) 100%)",
+                background: "linear-gradient(180deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
               }}
             >
               {study.ctaLabel}
@@ -371,7 +371,7 @@ export default function FeaturedCaseStudy() {
               <span
                 className="block h-2.5 w-2.5 rounded-full transition-all"
                 style={{
-                  backgroundColor: i === current ? "var(--color-electricBlue)" : "var(--color-neutralGray)",
+                  backgroundColor: i === current ? "var(--color-electricBlue-solid)" : "var(--color-neutralGray)",
                   opacity: i === current ? 1 : 0.4,
                 }}
               />

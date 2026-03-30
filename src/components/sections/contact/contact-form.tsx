@@ -257,7 +257,7 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                   type="submit"
                   disabled={isPending}
                   className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-medium text-white cursor-pointer transition-opacity hover:opacity-90 disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--color-electricBlue)]"
-                  style={{ backgroundColor: "var(--color-electricBlue)" }}
+                  style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                 >
                   {isPending ? "Sending…" : "Send Message"}
                   <PaperPlaneIcon />
@@ -285,7 +285,7 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                   <li key={i} className="flex items-center gap-4">
                     <span
                       className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-sm font-medium text-white"
-                      style={{ backgroundColor: "var(--color-electricBlue)" }}
+                      style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                     >
                       {i + 1}
                     </span>

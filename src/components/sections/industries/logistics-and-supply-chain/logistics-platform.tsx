@@ -54,7 +54,7 @@ export default function LogisticsPlatform() {
               <li key={item} className="flex items-start gap-2 text-sm text-gray-200">
                 <span
                   className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full"
-                  style={{ backgroundColor: "var(--color-electricBlue)" }}
+                  style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                 />
                 {item}
               </li>

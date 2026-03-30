@@ -16,7 +16,7 @@ export default function ServicesPage() {
   return (
     <div>
       <Hero />
-      <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue)" }} />
+      <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
       <ServicesGrid />
       <CompareOptions />
       <Testimonials />

@@ -41,7 +41,7 @@ export default function SkillsAvailableForAugmentation() {
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light">Skills Available for Augmentation</h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 

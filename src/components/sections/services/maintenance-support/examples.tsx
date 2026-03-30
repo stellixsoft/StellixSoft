@@ -20,7 +20,7 @@ export default function ExamplesOfMaintenance() {
         </h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
@@ -34,7 +34,7 @@ export default function ExamplesOfMaintenance() {
                 className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-[var(--color-electricBlue)] text-[var(--color-electricBlue)]"
                 aria-hidden
               >
-                <span className="h-3 w-3 rounded-full bg-[var(--color-electricBlue)]" />
+                <span className="h-3 w-3 rounded-full bg-[var(--color-electricBlue-solid)]" />
               </span>
               <p className="text-sm md:text-[15px] text-[var(--color-deepSpace)]">{example}</p>
             </div>

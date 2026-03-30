@@ -15,7 +15,7 @@ export default function ClientLogos() {
 
   return (
     <section className="bg-white">
-    <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue)" }}></div>
+    <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }}></div>
       <div className="relative py-10 md:py-10 overflow-hidden">
         <div className="flex animate-client-logos-slide w-max">
           {duplicatedLogos.map((logo, index) => (

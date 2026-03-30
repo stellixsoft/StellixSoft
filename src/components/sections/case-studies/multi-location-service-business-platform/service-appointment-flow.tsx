@@ -97,7 +97,7 @@ export default function MultiLocationServiceBusinessPlatformServiceAppointmentFl
                 </div>
 
                 <div className="relative flex flex-col items-center">
-                  <div className="h-3 w-3 rounded-full bg-[var(--color-electricBlue)] shrink-0 z-10" />
+                  <div className="h-3 w-3 rounded-full bg-[var(--color-electricBlue-solid)] shrink-0 z-10" />
                   {i < steps.length - 1 && (
                     <div className="w-px flex-1 bg-[var(--color-electricBlue)]/20 absolute top-3 bottom-[-1.75rem]" />
                   )}
@@ -124,7 +124,7 @@ export default function MultiLocationServiceBusinessPlatformServiceAppointmentFl
                 className="relative"
                 style={{ paddingBottom: i < steps.length - 1 ? "1.25rem" : 0 }}
               >
-                <div className="absolute left-[-24px] top-0.5 h-2.5 w-2.5 rounded-full bg-[var(--color-electricBlue)] z-10" />
+                <div className="absolute left-[-24px] top-0.5 h-2.5 w-2.5 rounded-full bg-[var(--color-electricBlue-solid)] z-10" />
                 <span
                   className="text-[9px] font-medium uppercase tracking-[0.2em] block mb-0.5"
                   style={{ color: step.roleColor }}

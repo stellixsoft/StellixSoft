@@ -26,7 +26,7 @@ export default function EnterprisePortalFacingSimilarChallenges() {
             className="inline-flex items-center justify-center rounded-full px-10 md:px-14 py-3.5 md:py-4 text-sm md:text-base font-medium text-white shadow-[0_18px_60px_rgba(0,180,255,0.5)] cursor-pointer"
             style={{
               background:
-                "linear-gradient(180deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue) 100%)",
+                "linear-gradient(180deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
             }}
           >
             Schedule Your Free Assessment — No Obligation

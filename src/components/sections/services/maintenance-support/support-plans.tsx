@@ -66,7 +66,7 @@ export default function SupportPlans() {
         </p>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
@@ -81,7 +81,7 @@ export default function SupportPlans() {
               }`}
             >
               {plan.badge && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 inline-flex items-center rounded-full bg-[var(--color-electricBlue)] px-5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white shadow-[0_12px_30px_rgba(56,189,248,0.6)]">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 inline-flex items-center rounded-full bg-[var(--color-electricBlue-solid)] px-5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white shadow-[0_12px_30px_rgba(56,189,248,0.6)]">
                   {plan.badge}
                 </div>
               )}
@@ -114,7 +114,7 @@ export default function SupportPlans() {
                     className="flex items-start gap-2 text-left text-[var(--color-neutralGray)]"
                   >
                     <span className="mt-[4px] h-3 w-3 rounded-full border border-[var(--color-electricBlue)] flex items-center justify-center text-[var(--color-electricBlue)]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue)]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" />
                     </span>
                     <span>{feature}</span>
                   </li>
@@ -132,7 +132,7 @@ export default function SupportPlans() {
                   href={`/contact?plan=${plan.id}`}
                   className={`inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm md:text-[15px] font-medium border transition-colors ${
                     plan.highlighted
-                      ? "bg-[var(--color-electricBlue)] border-[var(--color-electricBlue)] text-white hover:bg-sky-500"
+                      ? "bg-[var(--color-electricBlue-solid)] border-[var(--color-electricBlue)] text-white hover:bg-sky-500"
                       : "bg-white border-slate-200 text-[var(--color-deepSpace)] hover:bg-slate-50"
                   }`}
                 >

@@ -7,7 +7,7 @@ const counters = [
 export default function Counter() {
     return (
         <section className="counter-section">
-            <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue)" }}></div>
+            <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }}></div>
             <div className="py-8 md:py-8 px-6 bg-white">
                 <div className="max-w-[1300px] mx-auto">
                     <div className="flex flex-col sm:flex-row items-center justify-center sm:gap-0">

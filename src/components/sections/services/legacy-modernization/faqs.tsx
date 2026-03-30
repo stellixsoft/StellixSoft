@@ -46,7 +46,7 @@ export default function FAQs() {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[var(--color-deepSpace)] text-center mb-10 md:mb-12">
           Common Questions About Legacy Modernization
         </h2>
-        <div className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12" style={{ backgroundColor: "var(--color-electricBlue)" }}></div>
+        <div className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12" style={{ backgroundColor: "var(--color-electricBlue-solid)" }}></div>
 
         <ul className="space-y-4">
           {faqItems.map((item) => {

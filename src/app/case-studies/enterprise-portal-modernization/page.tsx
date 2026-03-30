@@ -25,7 +25,7 @@ export default function EnterprisePortalModernizationPage() {
   return (
     <div>
       <EnterprisePortalModernizationHero />
-      <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue)" }} />
+      <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
       <EnterprisePortalProjectOverview />
       <EnterprisePortalClientAndChallenge />
       <EnterprisePortalOurSolution />

@@ -103,7 +103,7 @@ export default function StartWithConfidence() {
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
           Start With Confidence
         </h2>
-        <div className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12" style={{ backgroundColor: "var(--color-electricBlue)" }}></div>
+        <div className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12" style={{ backgroundColor: "var(--color-electricBlue-solid)" }}></div>
 
         <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {cards.map((card) => {
@@ -129,7 +129,7 @@ export default function StartWithConfidence() {
                     className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-1 rounded-lg px-6 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90 cursor-pointer"
                     style={{
                       background:
-                        "linear-gradient(90deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue) 100%)",
+                        "linear-gradient(90deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
                     }}
                   >
                     {card.buttonLabel} &gt;
@@ -140,7 +140,7 @@ export default function StartWithConfidence() {
                     className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-1 rounded-lg px-6 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
                     style={{
                       background:
-                        "linear-gradient(90deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue) 100%)",
+                        "linear-gradient(90deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
                     }}
                   >
                     {card.buttonLabel} &gt;

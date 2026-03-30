@@ -53,12 +53,12 @@ const specializations = [
     return (
       <span
         className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-        style={{ backgroundColor: "var(--color-electricBlue)", opacity: 0.15 }}
+        style={{ backgroundColor: "var(--color-electricBlue-solid)", opacity: 0.15 }}
         aria-hidden
       >
         <span
           className="w-5 h-5 rounded"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
       </span>
     );
@@ -77,7 +77,7 @@ const specializations = [
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center mb-8">
             Logistics Software Solutions
           </h2>
-          <div className="w-16 h-0.5 mx-auto mt-4 mb-12" style={{ backgroundColor: "var(--color-electricBlue)" }} />
+          <div className="w-16 h-0.5 mx-auto mt-4 mb-12" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8">
             {specializations.map((spec) => (
               <article
@@ -102,7 +102,7 @@ const specializations = [
                         >
                           <span
                             className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full"
-                            style={{ backgroundColor: "var(--color-electricBlue)" }}
+                            style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                           />
                           {item}
                         </li>

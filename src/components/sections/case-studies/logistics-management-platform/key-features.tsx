@@ -85,7 +85,7 @@ export default function LogisticsManagementPlatformKeyFeatures() {
                 {feature.description.map((item) => (
                   <li key={item} className="flex items-start gap-2">
                     <span
-                      className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-electricBlue)]"
+                      className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-electricBlue-solid)]"
                       aria-hidden
                     />
                     <span>{item}</span>

@@ -33,7 +33,7 @@ export default function TechnologiesWeMigrate() {
         </h2>
         <div
           className="w-24 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
 
         <div className="rounded-2xl bg-black/40 border border-white/10 shadow-xl overflow-hidden">
@@ -48,7 +48,7 @@ export default function TechnologiesWeMigrate() {
             <div className="flex items-center gap-2 px-6 py-4 md:py-5 md:border-l border-white/20">
               <span
                 className="w-2 h-2 rounded-full shrink-0"
-                style={{ backgroundColor: "var(--color-electricBlue)" }}
+                style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                 aria-hidden
               />
               <span className="text-sm font-medium uppercase tracking-wider text-white">

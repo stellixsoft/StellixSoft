@@ -30,14 +30,14 @@ export default function ResponseTimeCommitments() {
         </h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
         <div className="overflow-hidden rounded-[32px] bg-[#0b0f26] border border-slate-800 shadow-[0_24px_80px_rgba(0,0,0,0.6)]">
           <table className="min-w-full border-collapse text-xs md:text-sm">
             <thead>
-              <tr className="bg-[var(--color-electricBlue)] font-semibold uppercase tracking-[0.18em] text-white">
+              <tr className="bg-[var(--color-electricBlue-solid)] font-semibold uppercase tracking-[0.18em] text-white">
                 <th className="py-4 md:py-5 px-4 md:px-8 text-left rounded-tl-[32px] text-[11px] md:text-[12px]">
                   Priority
                 </th>

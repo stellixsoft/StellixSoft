@@ -53,7 +53,7 @@ export default function LogisticsManagementPlatformShipmentLifecycle() {
             >
               <div
                 className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold text-white flex-shrink-0"
-                style={{ backgroundColor: "var(--color-electricBlue)" }}
+                style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
               >
                 {step.number}
               </div>

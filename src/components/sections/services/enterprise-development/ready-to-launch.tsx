@@ -10,7 +10,7 @@ export default function ReadyToLaunch() {
         </h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
         <div className="rounded-2xl p-12 bg-white border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)] overflow-hidden grid grid-cols-1 md:grid-cols-[4fr_6fr] gap-8">
           <div className="relative aspect-[4/3] md:aspect-auto">
@@ -35,7 +35,7 @@ export default function ReadyToLaunch() {
             <Link
               href="/case-studies/enterprise-portal-modernization"
               className="mt-8 inline-flex items-center justify-center rounded-lg px-8 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-90 w-fit"
-              style={{ backgroundColor: "var(--color-electricBlue)" }}
+              style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
             >
               Read Full Case Study
             </Link>

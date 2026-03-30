@@ -76,7 +76,7 @@ export default function BlogPostSidebar({ currentSlug }: BlogPostSidebarProps) {
                         className="absolute inset-0 bg-gradient-to-t from-[var(--color-deepSpace)]/50 via-[var(--color-deepSpace)]/10 to-transparent"
                         aria-hidden
                       />
-                      <span className="absolute left-2.5 top-2.5 max-w-[calc(100%-1.25rem)] truncate rounded bg-[var(--color-electricBlue)] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-white">
+                      <span className="absolute left-2.5 top-2.5 max-w-[calc(100%-1.25rem)] truncate rounded bg-[var(--color-electricBlue-solid)] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-white">
                         {p.category}
                       </span>
                     </div>

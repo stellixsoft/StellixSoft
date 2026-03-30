@@ -21,7 +21,7 @@ export default function DedicatedTeamInAction() {
         </h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue)" }}
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
@@ -45,7 +45,7 @@ export default function DedicatedTeamInAction() {
                 <ul className="space-y-1.5 text-sm md:text-[15px] text-[var(--color-deepSpace)]">
                   {teamComposition.slice(0, 2).map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue)]" />
+                      <span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -58,7 +58,7 @@ export default function DedicatedTeamInAction() {
                 <ul className="space-y-1.5 text-sm md:text-[15px] text-[var(--color-deepSpace)]">
                   {teamComposition.slice(2).map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue)]" />
+                      <span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -109,7 +109,7 @@ export default function DedicatedTeamInAction() {
                 <div className="absolute inset-6 rounded-full border border-white/10" />
                 <div className="absolute inset-12 rounded-full border border-white/10" />
 
-                <div className="h-20 w-20 md:h-24 md:w-24 rounded-full flex items-center justify-center bg-[var(--color-electricBlue)] text-white shadow-[0_18px_60px_rgba(56,189,248,0.5)]">
+                <div className="h-20 w-20 md:h-24 md:w-24 rounded-full flex items-center justify-center bg-[var(--color-electricBlue-solid)] text-white shadow-[0_18px_60px_rgba(56,189,248,0.5)]">
                   <span className="text-2xl md:text-3xl" aria-hidden>
                     👥
                   </span>
