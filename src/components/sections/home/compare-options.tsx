@@ -59,7 +59,7 @@ export default function CompareOptions() {
       <div className="max-w-[1300px] mx-auto">
         {/* Header */}
         <header className="text-center mb-8 md:mb-12 lg:mb-16 px-2">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[var(--color-deepSpace)] mb-3 md:mb-4 leading-tight">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] mb-3 md:mb-4 leading-tight">
             Compare Your Options
           </h2>
           <p className="text-sm md:text-base text-[var(--color-neutralGray)] max-w-2xl mx-auto leading-relaxed">

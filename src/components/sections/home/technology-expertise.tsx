@@ -60,7 +60,7 @@ export default function TechnologyExpertise() {
           >
             Technology Expertise
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4">
             Built for Enterprise
           </h2>
           <p className="text-sm md:text-md uppercase tracking-wider text-white/70 max-w-3xl mx-auto leading-relaxed">

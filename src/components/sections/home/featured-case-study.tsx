@@ -242,7 +242,7 @@ export default function FeaturedCaseStudy() {
             >
               Featured Case Study
             </p>
-            <h2 className="text-2xl md:text-3xl font-light text-[var(--color-deepSpace)] leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] leading-tight">
               {study.title}
             </h2>
 
