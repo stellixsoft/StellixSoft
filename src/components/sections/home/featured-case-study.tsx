@@ -48,7 +48,7 @@ const caseStudies: CaseStudyItem[] = [
       { value: "6", label: "DEVS DEDICATED" },
       { value: "10,000+", label: "DEVICES MONITORED" },
     ],
-    architectureImage: "/assets/images/architecture-image.png",
+    architectureImage: "/assets/images/case-study-img.png",
     ctaLink: "/case-studies/enterprise-portal-modernization",
     ctaLabel: "Read Full Case Study",
   },
