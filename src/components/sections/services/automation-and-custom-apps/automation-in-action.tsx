@@ -1,49 +1,54 @@
-export default function AutomationInAction() {
-  const cases = [
-    {
-      badge: "Case Study: 2B Lines",
-      title: "Logistics Dispatch Automation",
-      problem:
-        "Scheduling managed via Excel. No real-time tracking. Drivers called office for every update.",
-      solution:
-        "Custom dispatch system with driver app. Automated scheduling, real-time tracking, digital proof of delivery.",
-      results: [
-        "70% reduction in status calls",
-        "40% faster dispatch time",
-        "Doubled shipment capacity",
-        "Replaced 5+ separate tools",
-      ],
-    },
-    {
-      badge: "Case Study: Enterprise Client",
-      title: "Compliance Workflow System",
-      problem:
-        "Audits tracked in spreadsheets. No single centralized system. Documentation took hours to find.",
-      solution:
-        "Jira-like workflow system for compliance. Automated tracking, document management, audit trails.",
-      results: [
-        "75% reduction in audit prep time",
-        "Zero missed deadlines (was 1–2/yr)",
-        "100% audit trail coverage",
-        "40% fewer status meetings",
-      ],
-    },
-    {
-      badge: "Case Study: Doctor Appliance",
-      title: "Service Business Platform",
-      problem:
-        "Multi‑location operations with different tools at each location. No unified scheduling or customer management.",
-      solution:
-        "Unified platform: admin dashboard, technician app, customer portal. Online booking, real-time tracking.",
-      results: [
-        "35% more jobs per technician",
-        "60% of bookings now online",
-        "4 states on one platform",
-        "50% faster billing cycle",
-      ],
-    },
-  ];
+import Link from "next/link";
 
+const cases = [
+  {
+    badge: "Case Study: 2B Lines",
+    title: "Logistics Dispatch Automation",
+    caseStudyHref: "/case-studies/logistics-management-platform",
+    problem:
+      "Scheduling managed via Excel. No real-time tracking. Drivers called office for every update.",
+    solution:
+      "Custom dispatch system with driver app. Automated scheduling, real-time tracking, digital proof of delivery.",
+    results: [
+      "70% reduction in status calls",
+      "40% faster dispatch time",
+      "Doubled shipment capacity",
+      "Replaced 5+ separate tools",
+    ],
+  },
+  {
+    badge: "Case Study: Enterprise Client",
+    title: "Compliance Workflow System",
+    caseStudyHref: "/case-studies/compliance-and-audit-management-system",
+    problem:
+      "Audits tracked in spreadsheets. No single centralized system. Documentation took hours to find.",
+    solution:
+      "Jira-like workflow system for compliance. Automated tracking, document management, audit trails.",
+    results: [
+      "75% reduction in audit prep time",
+      "Zero missed deadlines (was 1–2/yr)",
+      "100% audit trail coverage",
+      "40% fewer status meetings",
+    ],
+  },
+  {
+    badge: "Case Study: Doctor Appliance",
+    title: "Service Business Platform",
+    caseStudyHref: "/case-studies/multi-location-service-business-platform",
+    problem:
+      "Multi‑location operations with different tools at each location. No unified scheduling or customer management.",
+    solution:
+      "Unified platform: admin dashboard, technician app, customer portal. Online booking, real-time tracking.",
+    results: [
+      "35% more jobs per technician",
+      "60% of bookings now online",
+      "4 states on one platform",
+      "50% faster billing cycle",
+    ],
+  },
+];
+
+export default function AutomationInAction() {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
@@ -91,6 +96,14 @@ export default function AutomationInAction() {
                     </li>
                   ))}
                 </ul>
+                <Link
+                  href={item.caseStudyHref}
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[var(--color-electricBlue)] hover:underline underline-offset-4"
+                  aria-label={`Read case study: ${item.title}`}
+                >
+                  Read case study
+                  <span aria-hidden>→</span>
+                </Link>
               </div>
             </div>
           ))}

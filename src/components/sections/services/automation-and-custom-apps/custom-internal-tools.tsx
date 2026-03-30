@@ -73,7 +73,7 @@ export default function CustomInternalTools() {
 
           <div className="relative min-h-[300px] md:min-h-[420px] lg:min-h-[520px] rounded-[32px] overflow-hidden shadow-[0_24px_70px_rgba(15,23,42,0.18)]">
             <Image
-              src="/assets/images/custom-internal.jpg"
+              src="/assets/images/custom-internal.webp"
               alt="Team collaborating on custom internal tools in a control room"
               fill
               className="object-cover"

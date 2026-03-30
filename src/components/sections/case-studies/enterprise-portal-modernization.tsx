@@ -66,7 +66,7 @@ export default function EnterprisePortalModernizationOverview() {
         <div className="lg:w-1/2 flex flex-col min-h-[250px] sm:min-h-[300px] lg:min-h-0">
           <div className="flex-1 lg:rounded-r-3xl bg-black/60 border-t lg:border-t-0 lg:border-l border-white/10 overflow-hidden flex items-center justify-center">
             <Image
-              src="/assets/images/architecture.png"
+              src="/assets/images/architecture.webp"
               alt="Architecture overview of enterprise portal modernization"
               width={600}
               height={400}

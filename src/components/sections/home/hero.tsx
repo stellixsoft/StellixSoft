@@ -1,23 +1,13 @@
+import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
 import Link from "next/link";
 import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
+import { ScheduleArrowIcon } from "@/src/components/ui/schedule-arrow-icon";
 
 export default function Hero() {
   return (
     <section className="relative py-40 flex items-center justify-center overflow-hidden -mt-[100px] h-[calc(100vh+120px)]">
       {/* Video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        aria-hidden
-      >
-        <source
-          src="/assets/videos/hero-banner-background-video.mp4"
-          type="video/mp4"
-        />
-      </video>
+      <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
 
       {/* Optional dark overlay for text readability */}
       <div
@@ -52,7 +42,7 @@ export default function Hero() {
             }}
           >
             Schedule a Call
-            <img src="/assets/images/new-schedule.png" alt="arrow right" className="w-4 h-4 fill-white font-bold" />
+            <ScheduleArrowIcon className="w-4 h-4 shrink-0 text-white" />
           </CalendlyScheduleButton>
           <Link
             href="/case-studies"

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const expertiseCards = [
   {
     title: "Enterprise Backend",
@@ -47,7 +49,7 @@ export default function TechnologyExpertise() {
   return (
     <section
       className="py-16 md:py-24 px-6 relative bg-cover bg-center"
-      style={{ backgroundImage: "url('/assets/images/background-img.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
+      style={{ backgroundImage: "url('/assets/images/background-img.webp')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
     >
       {/* Black Overlay */}
       <div className="absolute inset-0 bg-black/60 z-0" />
@@ -84,7 +86,13 @@ export default function TechnologyExpertise() {
               <div
                 className="w-20 h-20 rounded-lg flex items-center justify-left mb-2"
               >
-                <img src={card.img} alt={card.title} width={56} height={56} />
+                <Image
+                  src={card.img}
+                  alt={card.title}
+                  width={56}
+                  height={56}
+                  className="object-contain"
+                />
               </div>
 
               {/* Title */}

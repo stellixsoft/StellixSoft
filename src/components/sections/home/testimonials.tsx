@@ -17,7 +17,7 @@ const testimonials = [
     name: "Jason Bennison",
     company: "Consultant · London, England",
     companyUrl: "https://jasonbennison.com/",
-    photo: "/assets/images/testimonials/jason-bennison.png",
+    photo: "/assets/images/testimonials/jason-bennison.webp",
   },
   {
     quote:
@@ -30,7 +30,7 @@ const testimonials = [
       "3PL business here. StellixSoft built the system we use for scheduling, tracking, and keeping clients updated. Less spreadsheet juggling. When we need changes, they pick up the thread.",
     name: "Dominic Jones",
     company: "ZB Lines · Texas, USA",
-    photo: "/assets/images/testimonials/zb-lines.png",
+    photo: "/assets/images/testimonials/zb-lines.webp",
     photoFit: "contain" as const,
   },
   {
@@ -85,10 +85,13 @@ function StarIcon() {
 function QuoteIcon() {
   return (
     <div
-      className="w-12 h-12 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-lg"
+      className="w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg"
       style={{ backgroundColor: "var(--color-electricBlue)" }}
+      aria-hidden
     >
-      <img src="/assets/images/quote-icon.png" alt="" className="w-4 h-4" />
+      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor" aria-hidden>
+        <path d="M7.17 6C4.91 6 3 7.85 3 10.12v5.38c0 .55.45 1 1 1h4v-6H5.5c0-1.38 1.12-2.5 2.5-2.5V6zm9.83 0C14.74 6 12.83 7.85 12.83 10.12v5.38c0 .55.45 1 1 1H18v-6h-2.5c0-1.38 1.12-2.5 2.5-2.5V6z" />
+      </svg>
     </div>
   );
 }
@@ -101,7 +104,7 @@ function CompanyLine({
   companyUrl?: string;
 }) {
   const className =
-    "text-xs md:text-sm uppercase tracking-wider text-[var(--color-electricBlue)] line-clamp-2 break-words [&_a]:text-inherit";
+    "text-xs md:text-sm uppercase tracking-wider text-[var(--color-accentOnLight)] line-clamp-2 break-words [&_a]:text-inherit";
   if (companyUrl) {
     return (
       <p className={className}>
@@ -109,7 +112,7 @@ function CompanyLine({
           href={companyUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline-offset-2 hover:underline outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-electricBlue)] rounded-sm"
+          className="underline-offset-2 hover:underline outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accentOnLight)] rounded-sm"
         >
           {company}
         </a>

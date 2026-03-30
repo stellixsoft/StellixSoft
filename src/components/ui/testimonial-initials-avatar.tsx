@@ -44,7 +44,7 @@ export function TestimonialInitialsAvatar({ name, size = "md", className = "" }:
 }
 
 type AvatarProps = InitialsProps & {
-  /** Public path under `/public`, e.g. `/assets/images/testimonials/jason-bennison.png` */
+  /** Public path under `/public`, e.g. `/assets/images/testimonials/jason-bennison.webp` */
   photoSrc?: string;
   /** Use `contain` for wide logos so they are not cropped; `cover` for headshots */
   photoFit?: "cover" | "contain";

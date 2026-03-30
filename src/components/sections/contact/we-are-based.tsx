@@ -1,4 +1,8 @@
 import Image from "next/image";
+import {
+  STELLIX_SOFT_LLC_PHONE_DISPLAY,
+  STELLIX_SOFT_LLC_PHONE_TEL,
+} from "@/src/lib/constants";
 
 function BuildingIcon() {
   return (
@@ -38,6 +42,25 @@ function ClockIcon() {
   );
 }
 
+function MailIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="w-8 h-8 shrink-0"
+      style={{ color: "var(--color-electricBlue)" }}
+      aria-hidden
+    >
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 6-10 7L2 6" />
+    </svg>
+  );
+}
+
 export default function WeAreBased() {
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
@@ -49,9 +72,9 @@ export default function WeAreBased() {
               Where We&apos;re Based
             </h2>
             <p className="mt-6 text-base text-[var(--color-neutralGray)] leading-relaxed">
-              Stellixsoft operates with distributed teams aligned to US business
-              hours. We&apos;ve built our culture around remote excellence and
-              real-time collaboration.
+              Stellix Soft LLC (Houston, Texas, USA) and Stellix Soft (Pvt.) Ltd.
+              (Islamabad, Pakistan) work as one team, with schedules aligned to US
+              business hours for collaboration with North American clients.
             </p>
 
             <div className="mt-10 space-y-8">
@@ -59,11 +82,46 @@ export default function WeAreBased() {
                 <BuildingIcon />
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)]">
-                    Primary office
+                    United States
                   </p>
                   <p className="mt-1 text-base font-medium text-[var(--color-deepSpace)]">
-                    St. Petersburg, Florida, US
+                    Stellix Soft LLC
                   </p>
+                  <p className="text-base text-[var(--color-deepSpace)]">Houston, Texas</p>
+                  <a
+                    href={`tel:${STELLIX_SOFT_LLC_PHONE_TEL}`}
+                    className="mt-2 inline-block text-base font-medium text-[var(--color-electricBlue)] hover:opacity-90"
+                  >
+                    {STELLIX_SOFT_LLC_PHONE_DISPLAY}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <BuildingIcon />
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)]">
+                    Pakistan
+                  </p>
+                  <p className="mt-1 text-base font-medium text-[var(--color-deepSpace)]">
+                    Stellix Soft (Pvt.) Ltd.
+                  </p>
+                  <p className="text-base text-[var(--color-deepSpace)]">Islamabad</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <MailIcon />
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)]">
+                    Email
+                  </p>
+                  <a
+                    href="mailto:info@stellixsoft.com"
+                    className="mt-1 inline-block text-base font-medium text-[var(--color-electricBlue)] hover:opacity-90"
+                  >
+                    info@stellixsoft.com
+                  </a>
                 </div>
               </div>
 
@@ -84,7 +142,7 @@ export default function WeAreBased() {
           {/* Right: Image */}
           <div className="relative rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(3,2,19,0.08)] aspect-[4/3] md:aspect-[16/10]">
             <Image
-              src="/assets/images/core-image-one.jpg"
+              src="/assets/images/core-image-one.webp"
               alt="Where we work - Stellixsoft office"
               fill
               className="object-cover"

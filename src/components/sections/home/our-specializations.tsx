@@ -32,7 +32,7 @@ export default function OurSpecializations() {
     <section
       className="py-20 md:py-28 px-6"
       style={{
-        backgroundImage: "url('/assets/images/background-url.png')",
+        backgroundImage: "url('/assets/images/background-url.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

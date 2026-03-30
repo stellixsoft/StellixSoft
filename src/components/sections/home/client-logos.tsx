@@ -1,5 +1,7 @@
+import Image from "next/image";
+
 const clientLogos = [
-  { src: "/assets/images/docappliance.png", alt: "Doctor Appliance" },
+  { src: "/assets/images/docappliance.webp", alt: "Doctor Appliance" },
   { src: "/assets/images/epicmasjid.png", alt: "Epic Masjid" },
   { src: "/assets/images/rentanycar.png", alt: "RENT ANY CAR" },
   { src: "/assets/images/primecode.png", alt: "Code Prime" },
@@ -21,10 +23,13 @@ export default function ClientLogos() {
               key={`${logo.alt}-${index}`}
               className="flex shrink-0 items-center justify-center grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-300 px-8 md:px-12"
             >
-              <img
+              <Image
                 src={logo.src}
                 alt={logo.alt}
-                className="object-contain max-h-12 w-[120px]"
+                width={240}
+                height={96}
+                sizes="120px"
+                className="object-contain max-h-12 h-12 w-[120px]"
               />
             </div>
           ))}

@@ -48,7 +48,7 @@ const caseStudies: CaseStudyItem[] = [
       { value: "6", label: "DEVS DEDICATED" },
       { value: "10,000+", label: "DEVICES MONITORED" },
     ],
-    architectureImage: "/assets/images/case-study-img.png",
+    architectureImage: "/assets/images/case-study-img.webp",
     ctaLink: "/case-studies/enterprise-portal-modernization",
     ctaLabel: "Read Full Case Study",
   },
@@ -79,7 +79,7 @@ const caseStudies: CaseStudyItem[] = [
       { value: "2x", label: "SHIPMENT CAPACITY" },
       { value: "5+", label: "TOOLS REPLACED" },
     ],
-    architectureImage: "/assets/images/logistic-management-case-study.png",
+    architectureImage: "/assets/images/logistic-management-case-study.webp",
     ctaLink: "/case-studies/logistics-management-platform",
     ctaLabel: "Read Full Case Study",
   },
@@ -108,7 +108,7 @@ const caseStudies: CaseStudyItem[] = [
       { value: "ZERO", label: "MISSED DEADLINES" },
       { value: "100%", label: "AUDIT TRAIL" },
     ],
-    architectureImage: "/assets/images/compliance-and-audit-case-study-image.png",
+    architectureImage: "/assets/images/compliance-and-audit-case-study-image.webp",
     ctaLink: "/case-studies/compliance-and-audit-management-system",
     ctaLabel: "Read Full Case Study",
   },
@@ -137,7 +137,7 @@ const caseStudies: CaseStudyItem[] = [
       { value: "ZERO", label: "CALC ERRORS" },
       { value: "100%", label: "SELF-SERVICE USE" },
     ],
-    architectureImage: "/assets/images/stock-option-casestudy.png",
+    architectureImage: "/assets/images/stock-option-casestudy.webp",
     ctaLink: "/case-studies/stock-options-and-equity-management-platform",
     ctaLabel: "Read Full Case Study",
   },
@@ -167,7 +167,7 @@ const caseStudies: CaseStudyItem[] = [
       { value: "4", label: "STATES UNIFIED" },
       { value: "50%", label: "FASTER BILLING" },
     ],
-    architectureImage: "/assets/images/multi-location-case-study.png",
+    architectureImage: "/assets/images/multi-location-case-study.webp",
     ctaLink: "/case-studies/multi-location-service-business-platform",
     ctaLabel: "Read Full Case Study",
   },
@@ -327,7 +327,8 @@ export default function FeaturedCaseStudy() {
                   src={study.architectureImage}
                   alt={study.title}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 520px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 520px"
+                  quality={88}
                   className="object-contain object-center"
                   priority={current === 0}
                 />
@@ -357,19 +358,24 @@ export default function FeaturedCaseStudy() {
         </div>
 
         {/* Dots */}
-        <div className="flex justify-center gap-2 mt-10">
+        <div className="flex justify-center gap-1 mt-10">
           {caseStudies.map((_, i) => (
             <button
               key={i}
               type="button"
               onClick={() => setCurrent(i)}
-              className="w-2.5 h-2.5 rounded-full transition-all"
-              style={{
-                backgroundColor: i === current ? "var(--color-electricBlue)" : "var(--color-neutralGray)",
-                opacity: i === current ? 1 : 0.4,
-              }}
+              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full p-0 touch-manipulation"
               aria-label={`Go to case study ${i + 1}`}
-            />
+              aria-current={i === current || undefined}
+            >
+              <span
+                className="block h-2.5 w-2.5 rounded-full transition-all"
+                style={{
+                  backgroundColor: i === current ? "var(--color-electricBlue)" : "var(--color-neutralGray)",
+                  opacity: i === current ? 1 : 0.4,
+                }}
+              />
+            </button>
           ))}
         </div>
       </div>

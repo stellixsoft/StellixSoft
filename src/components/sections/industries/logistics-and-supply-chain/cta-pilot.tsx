@@ -6,7 +6,7 @@ export default function CTAPilot() {
     <section
       className="py-16 md:py-24 px-6"
       style={{
-        backgroundImage: "url('/assets/images/background-url.png')",
+        backgroundImage: "url('/assets/images/background-url.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -16,7 +16,7 @@ export default function CTAPilot() {
         <div
           className="rounded-2xl md:rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden"
           style={{
-            backgroundImage: "url('/assets/images/cta-background.png')",
+            backgroundImage: "url('/assets/images/cta-background.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -38,7 +38,7 @@ export default function CTAPilot() {
               <CalendlyScheduleButton
                 className="inline-flex items-center gap-2 rounded-[50px] px-6 md:px-8 py-3 md:py-4 text-base md:text-md font-normal text-white transition-opacity hover:opacity-90 cursor-pointer"
                 style={{
-                  background: "#10ACDB",
+                  background: "linear-gradient(180deg, #0b7ea3 0%, #0a5f78 100%)",
                 }}
               >
                 <svg

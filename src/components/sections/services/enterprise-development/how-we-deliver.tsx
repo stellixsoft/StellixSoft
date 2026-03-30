@@ -47,7 +47,7 @@ export default function HowWeDeliver() {
   return (
     <section
       className="py-16 md:py-24 px-6 relative bg-cover bg-center"
-      style={{ backgroundImage: "url('/assets/images/background-img.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
+      style={{ backgroundImage: "url('/assets/images/background-img.webp')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
     >
       {/* Black Overlay */}
       <div className="absolute inset-0 bg-black/60 z-0" />

@@ -71,7 +71,7 @@ export default function EnterpriseIoT() {
           </div>
 
           <Link
-            href="/#work"
+            href="/case-studies/enterprise-portal-modernization"
             className="inline-flex items-center gap-2 text-sm font-medium mt-auto"
             style={{ color: "var(--color-electricBlue)" }}
           >
@@ -83,7 +83,7 @@ export default function EnterpriseIoT() {
         {/* Right column - image + overlay + technologies */}
         <div className="flex-1 relative min-h-[280px] lg:min-h-[400px]">
           <Image
-            src="/assets/images/fallback.jpg"
+            src="/assets/images/fallback.webp"
             alt=""
             fill
             className="object-cover"

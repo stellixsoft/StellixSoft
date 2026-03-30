@@ -15,7 +15,7 @@ export default function ReadyToLaunch() {
         <div className="rounded-2xl p-12 bg-white border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)] overflow-hidden grid grid-cols-1 md:grid-cols-[4fr_6fr] gap-8">
           <div className="relative aspect-[4/3] md:aspect-auto">
             <Image
-              src="/assets/images/core-image-one.jpg"
+              src="/assets/images/core-image-one.webp"
               alt="Team collaboration"
               fill
               className="object-cover rounded-2xl"

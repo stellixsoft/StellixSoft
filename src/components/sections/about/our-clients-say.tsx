@@ -17,7 +17,7 @@ const clientsSay = [
     name: "Jason Bennison",
     company: "Consultant · London, England",
     companyUrl: "https://jasonbennison.com/",
-    photo: "/assets/images/testimonials/jason-bennison.png",
+    photo: "/assets/images/testimonials/jason-bennison.webp",
   },
   {
     quote:
@@ -30,7 +30,7 @@ const clientsSay = [
       "3PL business here. StellixSoft built the system we use for scheduling, tracking, and keeping clients updated. Less spreadsheet juggling. When we need changes, they pick up the thread.",
     name: "Dominic Jones",
     company: "ZB Lines · Texas, USA",
-    photo: "/assets/images/testimonials/zb-lines.png",
+    photo: "/assets/images/testimonials/zb-lines.webp",
     photoFit: "contain" as const,
   },
   {
@@ -133,7 +133,7 @@ export default function OurClientsSay() {
                   <p className="font-bold text-[var(--color-deepSpace)] group-hover:text-white text-sm md:text-base leading-snug transition-colors duration-300">
                     {clientSay.name}
                   </p>
-                  <p className="text-xs md:text-sm uppercase tracking-wider text-[var(--color-electricBlue)] group-hover:text-white transition-colors duration-300 line-clamp-2 break-words">
+                  <p className="text-xs md:text-sm uppercase tracking-wider text-[var(--color-accentOnLight)] group-hover:text-white transition-colors duration-300 line-clamp-2 break-words">
                     {clientSay.companyUrl ? (
                       <a
                         href={clientSay.companyUrl}

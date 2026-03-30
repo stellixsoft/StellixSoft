@@ -50,7 +50,7 @@ export default function CompareOptions() {
     <section
       className="py-16 md:py-24 px-6"
       style={{
-        backgroundImage: "url('/assets/images/background-url.png')",
+        backgroundImage: "url('/assets/images/background-url.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

@@ -9,7 +9,7 @@ export default function FieldServiceAppCaseStudy() {
           {/* Image side */}
           <div className="relative min-h-[260px] md:min-h-[340px] lg:min-h-[380px]">
             <Image
-              src="/assets/images/case-service-img.png"
+              src="/assets/images/case-service-img.webp"
               alt="Team collaborating on a field service logistics app"
               fill
               className="object-cover"

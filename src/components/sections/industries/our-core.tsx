@@ -15,7 +15,7 @@ const sectors = [
       "Real-Time Telemetry",
     ],
     href: "/industries/iot-and-hardware",
-    image: "/assets/images/core-image-one.jpg",
+    image: "/assets/images/core-image-one.webp",
     imageAlt: "Engineers monitoring IoT systems in a control room",
   },
   {
@@ -30,7 +30,7 @@ const sectors = [
       "Warehouse Automation",
     ],
     href: "/industries/logistics-and-supply-chain",
-    image: "/assets/images/logistic-image.jpg",
+    image: "/assets/images/logistic-image.webp",
     imageAlt: "Warehouse operations with digital logistics overlays",
   },
   {
@@ -45,7 +45,7 @@ const sectors = [
       "MedTech Integration",
     ],
     href: "/industries/healthcare-and-medtech",
-    image: "/assets/images/health-image.jpg",
+    image: "/assets/images/health-image.webp",
     imageAlt: "Healthcare professionals reviewing digital medical dashboards",
   },
   {
@@ -60,7 +60,7 @@ const sectors = [
       "System Integration",
     ],
     href: "/industries/enterprise-software-development",
-    image: "/assets/images/enterprise-service.jpg",
+    image: "/assets/images/enterprise-service.webp",
     imageAlt: "Enterprise team collaborating in modern office workspace",
   },
 ];
@@ -94,7 +94,7 @@ export default function OurCore() {
     <section
       className="py-16 md:py-24 px-6 bg-white"
       style={{
-        backgroundImage: "url('/assets/images/background-url.png')",
+        backgroundImage: "url('/assets/images/background-url.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

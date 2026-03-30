@@ -7,7 +7,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const services = [
   {
-    img: "/assets/images/industry-one-img.jpg",
+    img: "/assets/images/industry-one-img.webp",
     title: "Enterprise Development",
     description:
       "Mission-critical systems, multi-tenant platforms, and custom enterprise applications.",
@@ -15,7 +15,7 @@ const services = [
     icon: "/assets/images/industry-one.png",
   },
   {
-    img: "/assets/images/industry-two-img.jpg",
+    img: "/assets/images/industry-two-img.webp",
     title: "Legacy Modernization",
     description:
       "Upgrade VB.NET, .NET Framework, and legacy systems to modern architectures.",
@@ -23,7 +23,7 @@ const services = [
     icon: "/assets/images/industry-two.png",
   },
   {
-    img: "/assets/images/industry-three-img.jpg",
+    img: "/assets/images/industry-three-img.webp",
     title: "IoT Software",
     description:
       "Your team builds the hardware. We build the software that makes it valuable.",
@@ -31,7 +31,7 @@ const services = [
     icon: "/assets/images/industry-three.png",
   },
   {
-    img: "/assets/images/industry-one-img.jpg",
+    img: "/assets/images/industry-one-img.webp",
     title: "Dedicated Development Teams",
     description:
       "Scale your team fast with senior developers aligned to your workflow and timezone.",
@@ -39,7 +39,7 @@ const services = [
     icon: "/assets/images/industry-one.png",
   },
   {
-    img: "/assets/images/industry-two-img.jpg",
+    img: "/assets/images/industry-two-img.webp",
     title: "Staff Augmentation",
     description:
       "Add experienced engineers to your team for short- or long-term delivery needs.",
@@ -47,7 +47,7 @@ const services = [
     icon: "/assets/images/industry-two.png",
   },
   {
-    img: "/assets/images/industry-three-img.jpg",
+    img: "/assets/images/industry-three-img.webp",
     title: "Maintenance & Support",
     description:
       "Ongoing support, bug fixing, performance tuning, and security updates.",
@@ -55,7 +55,7 @@ const services = [
     icon: "/assets/images/industry-three.png",
   },
   {
-    img: "/assets/images/industry-one-img.jpg",
+    img: "/assets/images/industry-one-img.webp",
     title: "Enterprise Mobile App Development",
     description:
       "Build secure and scalable iOS/Android applications for enterprise workflows.",
@@ -63,7 +63,7 @@ const services = [
     icon: "/assets/images/industry-one.png",
   },
   {
-    img: "/assets/images/industry-two-img.jpg",
+    img: "/assets/images/industry-two-img.webp",
     title: "DevOps & Cloud Services",
     description:
       "Cloud migration, CI/CD, infrastructure automation, and ongoing reliability work.",
@@ -71,7 +71,7 @@ const services = [
     icon: "/assets/images/industry-two.png",
   },
   {
-    img: "/assets/images/industry-three-img.jpg",
+    img: "/assets/images/industry-three-img.webp",
     title: "Automation & Custom Apps",
     description:
       "Custom internal tools, workflow automation, and deep business integrations.",
@@ -79,7 +79,7 @@ const services = [
     icon: "/assets/images/industry-three.png",
   },
   {
-    img: "/assets/images/industry-one-img.jpg",
+    img: "/assets/images/industry-one-img.webp",
     title: "E-commerce Development",
     description:
       "B2B portals, marketplaces, headless storefronts, and complex commerce integrations.",
@@ -87,7 +87,7 @@ const services = [
     icon: "/assets/images/industry-one.png",
   },
   {
-    img: "/assets/images/industry-two-img.jpg",
+    img: "/assets/images/industry-two-img.webp",
     title: "Salesforce Development",
     description:
       "Salesforce customization, integrations, automation, and org optimization.",
@@ -95,7 +95,7 @@ const services = [
     icon: "/assets/images/industry-two.png",
   },
   {
-    img: "/assets/images/industry-three-img.jpg",
+    img: "/assets/images/industry-three-img.webp",
     title: "Blockchain & Cryptography",
     description:
       "Practical blockchain implementation for traceability, identity, and smart contracts.",
@@ -103,7 +103,7 @@ const services = [
     icon: "/assets/images/industry-three.png",
   },
   {
-    img: "/assets/images/industry-one-img.jpg",
+    img: "/assets/images/industry-one-img.webp",
     title: "Practical AI for Business",
     description:
       "AI features integrated into real systems: automation, search, document intelligence, and insights.",
@@ -142,7 +142,7 @@ export default function ServicesGrid() {
 
   return (
     <section className="py-16 md:py-24 px-6 bg-white" style={{
-      backgroundImage: "url('/assets/images/background-url.png')",
+      backgroundImage: "url('/assets/images/background-url.webp')",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const services = [
   {
-    img: "/assets/images/industry-one-img.jpg",
+    img: "/assets/images/industry-one-img.webp",
     title: "Enterprise Development",
     description:
       "Mission-critical systems, multi-tenant platforms, and custom enterprise applications.",
@@ -11,7 +11,7 @@ const services = [
     icon: "/assets/images/industry-one.png",
   },
   {
-    img: "/assets/images/industry-two-img.jpg",
+    img: "/assets/images/industry-two-img.webp",
     title: "Legacy Modernization",
     description:
       "Upgrade VB.NET, .NET Framework, and legacy systems to modern architectures.",
@@ -19,7 +19,7 @@ const services = [
     icon: "/assets/images/industry-two.png",
   },
   {
-    img: "/assets/images/industry-three-img.jpg",
+    img: "/assets/images/industry-three-img.webp",
     title: "IoT Software",
     description:
       "Your team builds the hardware. We build the software that makes it valuable.",
@@ -31,7 +31,7 @@ const services = [
 export default function IndustriesWeServe() {
   return (
     <section className="py-16 md:py-24 px-6 bg-white" style={{
-      backgroundImage: "url('/assets/images/background-url.png')",
+      backgroundImage: "url('/assets/images/background-url.webp')",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",

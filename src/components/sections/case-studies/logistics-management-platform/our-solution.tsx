@@ -16,7 +16,7 @@ const solutions = [
     keyFeature:
       "Visual scheduling board where dispatchers can see all jobs, driver availability, and drag to assign in seconds.",
     imageAlt: "Admin dashboard interface",
-    imgSrc: "/assets/images/research-analysis.jpg",
+    imgSrc: "/assets/images/research-analysis.webp",
     iconSrc: "/assets/images/iot.png",
   },
   {
@@ -33,7 +33,7 @@ const solutions = [
     keyFeature:
       "Offline-first design ensures drivers can work even in areas with spotty cellular coverage.",
     imageAlt: "Driver mobile app on phone in car",
-    imgSrc: "/assets/images/high-angle.jpg",
+    imgSrc: "/assets/images/high-angle.webp",
     iconSrc: "/assets/images/iot.png",
   },
   {
@@ -50,7 +50,7 @@ const solutions = [
     keyFeature:
       "Clients can see exactly where their shipment is on a map, with accurate ETAs—no status phone calls needed.",
     imageAlt: "Client portal web application on laptop",
-    imgSrc: "/assets/images/clientportal.jpg",
+    imgSrc: "/assets/images/clientportal.webp",
     iconSrc: "/assets/images/iot.png",
   },
 ];

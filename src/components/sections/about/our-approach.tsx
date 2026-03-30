@@ -75,7 +75,7 @@ export default function OurApproach() {
               {/* Background Image */}
               <div className="relative w-full">
                 <img
-                  src="/assets/images/about-us-image.jpg"
+                  src="/assets/images/about-us-image.webp"
                   alt="Developer coding"
                   className="w-full h-auto object-cover rounded-xl lg:rounded-2xl"
                 />

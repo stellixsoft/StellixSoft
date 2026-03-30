@@ -1,3 +1,4 @@
+import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
 import Link from "next/link";
 
 interface BlogPostHeroProps {
@@ -23,19 +24,7 @@ export default function BlogPostHero({
 
   return (
     <section className="relative flex min-h-[calc(70vh+120px)] items-center justify-center overflow-hidden -mt-[100px] py-32 md:py-40">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 h-full w-full object-cover"
-        aria-hidden
-      >
-        <source
-          src="/assets/videos/hero-banner-background-video.mp4"
-          type="video/mp4"
-        />
-      </video>
+      <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
 
       <div
         className="absolute inset-0 bg-[var(--color-deepSpace)]/75"

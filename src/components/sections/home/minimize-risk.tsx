@@ -74,9 +74,12 @@ export default function MinimizeRisk() {
             <div className="relative rounded-xl shadow-lg">
               {/* Background Image */}
               <div className="relative w-full">
-                <img
-                  src="/assets/images/minimum-risk.png"
+                <Image
+                  src="/assets/images/minimum-risk.webp"
                   alt="Developer coding"
+                  width={1200}
+                  height={750}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="w-full h-auto object-cover rounded-xl lg:rounded-2xl"
                 />
               </div>

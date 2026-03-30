@@ -262,7 +262,7 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
               <div className="mt-4 flex items-center gap-3">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 ring-1 ring-black/5 bg-[var(--color-lightGray)]">
                   <Image
-                    src="/assets/images/testimonials/contact-testimonial-avatar.png"
+                    src="/assets/images/testimonials/contact-testimonial-avatar.webp"
                     alt="VP Engineering testimonial avatar"
                     fill
                     className="object-cover object-top"

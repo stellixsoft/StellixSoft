@@ -35,7 +35,7 @@ export default function EnterprisePortalTechnicalArchitecture() {
               "linear-gradient(180deg, rgba(16,172,219,0.12) 0%, rgba(255,255,255,1) 65%)",
           }}
         >
-          <Image src="/assets/images/case-study-image-one.png" alt="Enterprise Portal Architecture" width={800} height={600} className="w-full h-full object-cover" />
+          <Image src="/assets/images/case-study-image-one.webp" alt="Enterprise Portal Architecture" width={800} height={600} className="w-full h-full object-cover" />
         </div>
 
         {/* Architecture pills */}

@@ -40,7 +40,7 @@ export default function YourHardware() {
             dedicated developers, supporting Fortune 500 deployments.
           </p>
           <Link
-            href="/#work"
+            href="/case-studies/enterprise-portal-modernization"
             className="inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
             style={{
               background:

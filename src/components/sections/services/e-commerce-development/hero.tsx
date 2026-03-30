@@ -1,22 +1,11 @@
+import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
 import Link from "next/link";
 import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
 
 export default function ECommerceDevelopmentHero() {
   return (
     <section className="relative py-40 flex items-center justify-center overflow-hidden -mt-[100px] min-h-[calc(80vh+120px)]">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        aria-hidden
-      >
-        <source
-          src="/assets/videos/hero-banner-background-video.mp4"
-          type="video/mp4"
-        />
-      </video>
+      <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
       <div
         className="absolute inset-0 bg-[var(--color-deepSpace)]/75"
         aria-hidden
@@ -52,10 +41,10 @@ export default function ECommerceDevelopmentHero() {
             Schedule a Call
           </CalendlyScheduleButton>
           <Link
-            href="/case-studies/custom-ecommerce-platform"
+            href="/case-studies"
             className="inline-flex rounded-lg border border-white/70 px-8 py-3.5 text-base font-medium text-white bg-transparent transition-colors hover:bg-white/10 hover:border-white"
           >
-            View Case Study
+            View Case Studies
           </Link>
         </div>
       </div>

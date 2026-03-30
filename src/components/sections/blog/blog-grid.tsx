@@ -2,11 +2,25 @@
 
 import { useState, useMemo, useEffect, Suspense } from "react";
 import Link from "next/link";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams, usePathname } from "next/navigation";
 import { blogPosts, blogCategories } from "@/src/data/blog-posts";
 import type { BlogCategory } from "@/src/data/blog-posts";
 
 const POSTS_PER_PAGE = 12;
+
+function parseBlogFilters(params: {
+  get: (key: string) => string | null;
+}): { category: BlogCategory; archiveMonth: string | null } {
+  const catRaw = params.get("category");
+  const category: BlogCategory =
+    catRaw && blogCategories.includes(catRaw as BlogCategory)
+      ? (catRaw as BlogCategory)
+      : "All";
+  const arch = params.get("archive");
+  const archiveMonth =
+    arch && /^\d{4}-\d{2}$/.test(arch) ? arch : null;
+  return { category, archiveMonth };
+}
 
 function SearchIcon({ className }: { className?: string }) {
   return (
@@ -29,7 +43,7 @@ function SearchIcon({ className }: { className?: string }) {
 
 function BlogGridInner() {
   const searchParams = useSearchParams();
-  const router = useRouter();
+  const pathname = usePathname();
   const categoryParam = searchParams.get("category");
   const archiveParam = searchParams.get("archive");
 
@@ -38,24 +52,36 @@ function BlogGridInner() {
   const [archiveMonth, setArchiveMonth] = useState<string | null>(null);
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    if (
-      categoryParam &&
-      blogCategories.includes(categoryParam as BlogCategory)
-    ) {
-      setCategory(categoryParam as BlogCategory);
-      setPage(1);
-    }
-  }, [categoryParam]);
+  /** Same-route query updates without App Router navigation (avoids scroll-to-top / layout refocus). */
+  const replaceBlogUrl = (qs: URLSearchParams) => {
+    const query = qs.toString();
+    const href = query ? `${pathname}?${query}` : pathname;
+    window.history.replaceState(window.history.state, "", href);
+  };
 
   useEffect(() => {
-    if (archiveParam && /^\d{4}-\d{2}$/.test(archiveParam)) {
-      setArchiveMonth(archiveParam);
+    const sp = new URLSearchParams();
+    if (categoryParam) sp.set("category", categoryParam);
+    if (archiveParam) sp.set("archive", archiveParam);
+    const { category: c, archiveMonth: a } = parseBlogFilters(sp);
+    setCategory(c);
+    setArchiveMonth(a);
+    setPage(1);
+  }, [categoryParam, archiveParam]);
+
+  useEffect(() => {
+    const onPopState = () => {
+      if (window.location.pathname !== pathname) return;
+      const { category: c, archiveMonth: a } = parseBlogFilters(
+        new URLSearchParams(window.location.search)
+      );
+      setCategory(c);
+      setArchiveMonth(a);
       setPage(1);
-    } else {
-      setArchiveMonth(null);
-    }
-  }, [archiveParam]);
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [pathname]);
 
   const filtered = useMemo(() => {
     return blogPosts.filter((post) => {
@@ -82,7 +108,7 @@ function BlogGridInner() {
     setCategory("All");
     setArchiveMonth(null);
     setPage(1);
-    router.replace("/blog");
+    replaceBlogUrl(new URLSearchParams());
   };
 
   const applyCategory = (cat: BlogCategory) => {
@@ -91,7 +117,7 @@ function BlogGridInner() {
     const qs = new URLSearchParams();
     if (cat !== "All") qs.set("category", cat);
     if (archiveMonth) qs.set("archive", archiveMonth);
-    router.replace(qs.toString() ? `/blog?${qs.toString()}` : "/blog");
+    replaceBlogUrl(qs);
   };
 
   return (

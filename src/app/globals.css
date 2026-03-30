@@ -5,6 +5,8 @@
   /* Brand Colors */
   --color-deepSpace: #030213;
   --color-electricBlue: #10ACDB;
+  /* Darker brand tone for small text on white (WCAG AA contrast) */
+  --color-accentOnLight: #0a5f78;
   --color-surfaceBlue: #3383F1;
   --color-neutralGray: #717181;
   --color-lightGray: #F9FAFB;

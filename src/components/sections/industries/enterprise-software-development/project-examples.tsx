@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const projects = [
   {
     iconColor: "#22c55e",
@@ -5,6 +7,7 @@ const projects = [
     subtitle: "Global Hardware Company | Fortune 500 Supply Chain",
     description: "15-year VB.NET system → .NET Core 6 with real-time capabilities.",
     results: "Zero downtime · 60% faster features · 10,000+ devices",
+    caseStudyHref: "/case-studies/enterprise-portal-modernization",
   },
   {
     iconColor: "#8b5cf6",
@@ -12,6 +15,7 @@ const projects = [
     subtitle: "Enterprise Client | Multi-location Operations",
     description: "Jira-like workflow system replacing Excel-based audit tracking.",
     results: "75% less prep time · Zero missed deadlines · 100% audit accuracy",
+    caseStudyHref: "/case-studies/compliance-and-audit-management-system",
   },
   {
     iconColor: "#22d3ee",
@@ -19,6 +23,7 @@ const projects = [
     subtitle: "Technology Company | 200+ Employees",
     description: "Custom stock options management replacing spreadsheet chaos.",
     results: "95% HR time saved · Zero errors · Audit-ready always",
+    caseStudyHref: "/case-studies/stock-options-and-equity-management-platform",
   },
 ];
 
@@ -65,13 +70,14 @@ export default function EnterpriseProjectExamples() {
                   </p>
                   <p className="text-xs text-gray-100 leading-relaxed">{project.results}</p>
                 </div>
-                <button
-                  type="button"
-                  className="text-sm font-medium text-[var(--color-electricBlue)] inline-flex items-center gap-1"
+                <Link
+                  href={project.caseStudyHref}
+                  className="text-sm font-medium text-[var(--color-electricBlue)] inline-flex items-center gap-1 hover:underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-electricBlue)]"
+                  aria-label={`Read case study: ${project.title}`}
                 >
                   Read Case Study
                   <span aria-hidden>→</span>
-                </button>
+                </Link>
               </div>
             </article>
           ))}

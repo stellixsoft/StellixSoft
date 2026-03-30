@@ -9,7 +9,7 @@ const rows = [
 
 export default function CompareRates() {
   return (
-    <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]" style={{ backgroundImage: "url('/assets/images/background-url.png')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
+    <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]" style={{ backgroundImage: "url('/assets/images/background-url.webp')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}>
       <div className="max-w-[1300px] mx-auto">
         <div className="hidden md:block rounded-2xl overflow-hidden border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)]">
           <table className="w-full border-collapse">

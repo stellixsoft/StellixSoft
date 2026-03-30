@@ -22,7 +22,7 @@ export default function TransferableEnterpriseExperience() {
         {/* Left: image */}
         <div className="relative rounded-3xl overflow-hidden shadow-xl bg-gray-900/5 min-h-[560px]">
           <Image
-            src="/assets/images/transferable.jpg"
+            src="/assets/images/transferable.webp"
             alt=""
             fill
             className="object-cover"

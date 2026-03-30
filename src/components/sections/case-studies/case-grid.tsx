@@ -10,7 +10,7 @@ const caseStudies = [
       "Complete platform for a 3PL company with dispatch system, driver app, and client portal.",
     bullets: ["70% fewer status calls", "2x shipment capacity"],
     tech: ["React", "Node.js", "Flutter"],
-    image: "/assets/images/logistic.jpg",
+    image: "/assets/images/logistic.webp",
   },
   {
     slug: "compliance-and-audit-management-system",
@@ -20,7 +20,7 @@ const caseStudies = [
       "Jira-like workflow platform for enterprise compliance management and audit tracking.",
     bullets: ["75% less audit prep time", "Zero missed deadlines"],
     tech: ["Next.js", "Node.js", "AWS"],
-    image: "/assets/images/compliance.jpg",
+    image: "/assets/images/compliance.webp",
   },
   {
     slug: "enterprise-portal-modernization",
@@ -30,7 +30,7 @@ const caseStudies = [
       "Modernized a 15-year-old VB.NET portal to .NET Core 6 with real-time monitoring and strict data isolation.",
     bullets: ["Zero downtime migration", "10,000+ devices monitored"],
     tech: [".NET Core 6", "SignalR", "React", "SQL Server", "AWS"],
-    image: "/assets/images/enterprise.jpg",
+    image: "/assets/images/enterprise.webp",
   },
   {
     slug: "stock-options-and-equity-management-platform",
@@ -40,7 +40,7 @@ const caseStudies = [
       "Custom stock options management platform replacing spreadsheet-based processes for finance and HR teams.",
     bullets: ["95% HR time saved", "Zero reconciliation errors"],
     tech: ["Next.js", "Node.js", "PostgreSQL"],
-    image: "/assets/images/equity-management.jpg",
+    image: "/assets/images/equity-management.webp",
   },
   {
     slug: "multi-location-service-business-platform",
@@ -50,7 +50,7 @@ const caseStudies = [
       "Scheduling, dispatch, and client portal for a multi-location service organization operating across regions.",
     bullets: ["Unified scheduling", "Improved on-time arrivals"],
     tech: ["React", "Node.js", "MongoDB"],
-    image: "/assets/images/multilocation.jpg",
+    image: "/assets/images/multilocation.webp",
   },
 ];
 

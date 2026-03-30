@@ -1,20 +1,10 @@
+import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
+
 export default function StockOptionsAndEquityManagementPlatformHero() {
   return (
     <section className="relative py-32 md:py-40 flex items-center justify-center overflow-hidden -mt-[100px] min-h-[calc(80vh+120px)]">
       {/* Video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        aria-hidden
-      >
-        <source
-          src="/assets/videos/hero-banner-background-video.mp4"
-          type="video/mp4"
-        />
-      </video>
+      <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
 
       {/* Dark overlay for text readability */}
       <div

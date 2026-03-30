@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function EnterprisePlatformOnAwsCaseStudy() {
   return (
@@ -53,7 +54,7 @@ export default function EnterprisePlatformOnAwsCaseStudy() {
             {/* Right image */}
             <div className="relative min-h-[260px] md:min-h-[360px] lg:min-h-[420px]">
               <Image
-                src="/assets/images/cloud-infra.jpg"
+                src="/assets/images/cloud-infra.webp"
                 alt="Engineer managing global infrastructure on AWS"
                 fill
                 className="object-cover"
@@ -83,6 +84,16 @@ export default function EnterprisePlatformOnAwsCaseStudy() {
                 </div>
               ))}
             </div>
+          </div>
+
+          <div className="border-t border-white/10 px-6 md:px-12 py-5 md:py-6 flex justify-center md:justify-start">
+            <Link
+              href="/case-studies/enterprise-portal-modernization"
+              className="text-sm font-medium text-sky-300 hover:text-sky-200 inline-flex items-center gap-1 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400"
+            >
+              Read full case study
+              <span aria-hidden>→</span>
+            </Link>
           </div>
         </div>
       </div>

@@ -10,19 +10,19 @@ export interface BlogPost {
   metaTitle: string;
   metaDescription: string;
   featured?: boolean;
-  /** Optional hero/cover path under `/public` (e.g. `/assets/images/foo.jpg`) */
+  /** Optional hero/cover path under `/public` (e.g. `/assets/images/foo.webp`) */
   coverImage?: string;
 }
 
 /** Pool used when `coverImage` is not set (stable per slug). */
 export const BLOG_COVER_IMAGE_POOL = [
-  "/assets/images/core-image-one.jpg",
-  "/assets/images/enterprise.jpg",
-  "/assets/images/cloud-infra.jpg",
-  "/assets/images/logistic.jpg",
-  "/assets/images/health-image.jpg",
-  "/assets/images/enterprise-service.jpg",
-  "/assets/images/research-analysis.jpg",
+  "/assets/images/core-image-one.webp",
+  "/assets/images/enterprise.webp",
+  "/assets/images/cloud-infra.webp",
+  "/assets/images/logistic.webp",
+  "/assets/images/health-image.webp",
+  "/assets/images/enterprise-service.webp",
+  "/assets/images/research-analysis.webp",
 ] as const;
 
 export function getBlogCoverImageSrc(post: BlogPost): string {

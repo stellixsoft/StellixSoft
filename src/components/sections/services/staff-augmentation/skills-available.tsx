@@ -30,7 +30,7 @@ export default function SkillsAvailableForAugmentation() {
     <section
       className="relative py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-deepSpace)]"
       style={{
-        backgroundImage: "url('/assets/images/background-img.jpg')",
+        backgroundImage: "url('/assets/images/background-img.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

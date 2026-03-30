@@ -1,6 +1,21 @@
 import { CALENDLY_URL } from "@/src/lib/constants";
 
 const WIDGET_JS = "https://assets.calendly.com/assets/external/widget.js";
+const WIDGET_CSS = "https://assets.calendly.com/assets/external/widget.css";
+
+function ensureWidgetStyles(): void {
+  if (
+    document.querySelector(
+      'link[href*="calendly.com/assets/external/widget.css"]',
+    )
+  ) {
+    return;
+  }
+  const l = document.createElement("link");
+  l.rel = "stylesheet";
+  l.href = WIDGET_CSS;
+  document.head.appendChild(l);
+}
 
 function ensureWidgetScript(): void {
   if (
@@ -33,6 +48,7 @@ export function openCalendlyPopup(): void {
 
   if (tryOpen()) return;
 
+  ensureWidgetStyles();
   ensureWidgetScript();
 
   let attempts = 0;

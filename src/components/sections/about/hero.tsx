@@ -1,3 +1,5 @@
+import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
+
 const atAGlanceLeft = [
   "15-person specialized team, not a generalist agency",
   "Average client relationship: 3+ years",
@@ -12,19 +14,7 @@ const atAGlanceRight = [
 export default function Hero() {
   return (
     <section className="relative py-10 flex items-center justify-center overflow-hidden -mt-[100px] min-h-[calc(80vh+120px)]">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        aria-hidden
-      >
-        <source
-          src="/assets/videos/hero-banner-background-video.mp4"
-          type="video/mp4"
-        />
-      </video>
+      <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
 
       <div
         className="absolute inset-0 bg-[var(--color-deepSpace)]/50"
