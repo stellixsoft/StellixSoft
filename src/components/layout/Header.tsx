@@ -56,6 +56,12 @@ const navLinks = [
 
 const SCROLL_THRESHOLD = 50;
 
+/**
+ * Header always uses a solid background so nav + logo stay visible on every
+ * route. A transparent “over the hero” bar only worked on pages that pull a
+ * dark hero under the bar (-mt-[100px]); new pages with a light body looked
+ * like an empty white strip (white text on white).
+ */
 export default function Header() {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -98,8 +104,8 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-[100] w-full text-white transition-colors duration-300 ${
-        scrolled ? "bg-[var(--color-deepSpace)]" : "bg-transparent"
+      className={`sticky top-0 z-[100] w-full bg-[var(--color-deepSpace)] text-white transition-shadow duration-300 ${
+        scrolled ? "shadow-md shadow-black/30" : ""
       }`}
     >
       {/* Top electric blue accent line */}
