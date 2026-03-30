@@ -1,14 +1,17 @@
-import Link from "next/link";
 import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
+import { CalendlyNextAvailableSlot } from "@/src/components/calendly-next-available-slot";
 
 export default function CTAPilot() {
   return (
-    <section className="py-16 md:py-24 px-6" style={{
-      backgroundImage: "url('/assets/images/background-url.png')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-    }}>
+    <section
+      className="py-16 md:py-24 px-6"
+      style={{
+        backgroundImage: "url('/assets/images/background-url.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="max-w-[1300px] mx-auto">
         <div
           className="rounded-2xl md:rounded-3xl p-8 md:p-12 lg:p-16 relative overflow-hidden"
@@ -19,23 +22,18 @@ export default function CTAPilot() {
             backgroundRepeat: "no-repeat",
           }}
         >
-
-          {/* Content */}
           <div className="relative z-10 text-center">
-            {/* Main Heading */}
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4 md:mb-6 leading-tight">
               Start With a Low Risk{" "}
               <span className="font-extrabold">Pilot Project</span>
             </h2>
 
-            {/* Descriptive Text */}
             <p className="text-sm md:text-md text-white/95 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
               Not ready for a full engagement? Test us on a small project first.
               See our quality, communication, and delivery before committing to
               more.
             </p>
 
-            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mb-8 md:mb-10">
               <CalendlyScheduleButton
                 className="inline-flex items-center gap-2 rounded-[50px] px-6 md:px-8 py-3 md:py-4 text-base text-sm md:text-md font-normal text-white transition-opacity hover:opacity-90 cursor-pointer"
@@ -80,12 +78,12 @@ export default function CTAPilot() {
               </div>
             </div>
 
-            {/* Bottom Info */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm md:text-base text-white/90">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-400 shrink-0" />
                 <span className="text-sm md:text-md font-normal uppercase tracking-wider">
-                  Next Available Slot: Feb 5th
+                  Next Available Slot:{" "}
+                  <CalendlyNextAvailableSlot className="uppercase tracking-wider" />
                 </span>
               </div>
               <span className="hidden sm:inline text-white/50">•</span>
