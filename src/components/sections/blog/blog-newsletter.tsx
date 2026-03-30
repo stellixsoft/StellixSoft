@@ -7,6 +7,7 @@ import type { FormState } from "@/src/app/actions";
 export default function BlogNewsletter() {
   const initialState: FormState = { success: false, message: "" };
   const [state, formAction, isPending] = useActionState(submitNewsletterForm, initialState);
+  const emailError = state.fieldErrors?.email;
 
   return (
     <section
@@ -29,29 +30,45 @@ export default function BlogNewsletter() {
         ) : (
           <form
             action={formAction}
-            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            className="flex flex-col gap-2 max-w-md mx-auto w-full"
           >
-            <label htmlFor="newsletter-email" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="newsletter-email"
-              name="email"
-              type="email"
-              required
-              placeholder="you@company.com"
-              className="flex-1 rounded-xl bg-white/10 border border-white/20 px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent"
-            />
-            <button
-              type="submit"
-              disabled={isPending}
-              className="rounded-xl px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-70 shrink-0"
-              style={{ backgroundColor: "var(--color-electricBlue)" }}
-            >
-              {isPending ? "Subscribing..." : "Subscribe"}
-            </button>
-            {!state.success && state.message && (
-              <p className="text-sm text-red-400">{state.message}</p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <label htmlFor="newsletter-email" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="newsletter-email"
+                name="email"
+                type="email"
+                required
+                maxLength={320}
+                placeholder="you@company.com"
+                autoComplete="email"
+                aria-invalid={emailError ? true : undefined}
+                aria-describedby={emailError ? "newsletter-email-error" : undefined}
+                className={`flex-1 rounded-xl bg-white/10 border px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent ${
+                  emailError ? "border-red-400/80 ring-1 ring-red-400/50" : "border-white/20"
+                }`}
+              />
+              <button
+                type="submit"
+                disabled={isPending}
+                className="rounded-xl px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-70 shrink-0"
+                style={{ backgroundColor: "var(--color-electricBlue)" }}
+              >
+                {isPending ? "Subscribing..." : "Subscribe"}
+              </button>
+            </div>
+            {emailError ? (
+              <p id="newsletter-email-error" className="text-sm text-red-400 text-center" role="alert">
+                {emailError}
+              </p>
+            ) : (
+              state.message && (
+                <p className="text-sm text-red-400 text-center" role="alert">
+                  {state.message}
+                </p>
+              )
             )}
           </form>
         )}

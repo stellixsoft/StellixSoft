@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import { submitContactForm } from "@/src/app/actions";
 import type { FormState } from "@/src/app/actions";
 
@@ -9,6 +9,15 @@ const inputClass =
   "w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent";
 const labelClass =
   "block text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)] mb-2";
+
+function FieldError({ id, message }: { id: string; message?: string }) {
+  if (!message) return null;
+  return (
+    <p id={id} className="mt-1.5 text-xs text-red-600" role="alert">
+      {message}
+    </p>
+  );
+}
 
 const steps = [
   "We review your message (same day)",
@@ -86,8 +95,17 @@ type ContactFormProps = {
 export default function ContactForm({ planSlug }: ContactFormProps) {
   const initialState: FormState = { success: false, message: "" };
   const [state, formAction, isPending] = useActionState(submitContactForm, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
+  const errs = state.fieldErrors ?? {};
+
   const helpDefault =
     planSlug && CONTACT_PLAN_PREFILL[planSlug] ? CONTACT_PLAN_PREFILL[planSlug] : "";
+
+  useEffect(() => {
+    if (state.success) {
+      formRef.current?.reset();
+    }
+  }, [state.success]);
 
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]">
@@ -95,7 +113,7 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
         <div className="grid grid-cols-1 md:grid-cols-[7fr_3fr] gap-8 lg:gap-12 items-start">
           {/* Left: Contact form card */}
           <div className="rounded-2xl bg-white border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)] p-6 sm:p-8 md:p-10">
-            <form action={formAction} className="space-y-6">
+            <form ref={formRef} action={formAction} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className={labelClass}>
@@ -106,9 +124,15 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                     name="name"
                     type="text"
                     placeholder="First and Last Name"
+                    minLength={2}
+                    maxLength={200}
                     required
-                    className={inputClass}
+                    autoComplete="name"
+                    aria-invalid={errs.name ? true : undefined}
+                    aria-describedby={errs.name ? "contact-name-error" : undefined}
+                    className={`${inputClass} ${errs.name ? "border-red-300 ring-1 ring-red-200" : ""}`}
                   />
+                  <FieldError id="contact-name-error" message={errs.name} />
                 </div>
                 <div>
                   <label htmlFor="email" className={labelClass}>
@@ -119,9 +143,14 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                     name="email"
                     type="email"
                     placeholder="you@company.com"
+                    maxLength={320}
                     required
-                    className={inputClass}
+                    autoComplete="email"
+                    aria-invalid={errs.email ? true : undefined}
+                    aria-describedby={errs.email ? "contact-email-error" : undefined}
+                    className={`${inputClass} ${errs.email ? "border-red-300 ring-1 ring-red-200" : ""}`}
                   />
+                  <FieldError id="contact-email-error" message={errs.email} />
                 </div>
               </div>
 
@@ -135,6 +164,8 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                     name="company"
                     type="text"
                     placeholder="Your Company Name"
+                    maxLength={200}
+                    autoComplete="organization"
                     className={inputClass}
                   />
                 </div>
@@ -147,6 +178,8 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                     name="phone"
                     type="tel"
                     placeholder="+1 (555) 000-0000"
+                    maxLength={40}
+                    autoComplete="tel"
                     className={inputClass}
                   />
                 </div>
@@ -160,10 +193,15 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                   id="help"
                   name="help"
                   type="text"
+                  minLength={3}
+                  maxLength={500}
                   required
                   defaultValue={helpDefault}
-                  className={inputClass}
+                  aria-invalid={errs.help ? true : undefined}
+                  aria-describedby={errs.help ? "contact-help-error" : undefined}
+                  className={`${inputClass} ${errs.help ? "border-red-300 ring-1 ring-red-200" : ""}`}
                 />
+                <FieldError id="contact-help-error" message={errs.help} />
               </div>
 
               <div>
@@ -174,28 +212,42 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                   id="project"
                   name="project"
                   rows={4}
+                  minLength={20}
+                  maxLength={8000}
                   required
                   placeholder="What are you trying to build or solve? Any specific technologies or requirements?"
-                  className={`${inputClass} resize-y min-h-[120px]`}
+                  aria-invalid={errs.project ? true : undefined}
+                  aria-describedby={errs.project ? "contact-project-error" : undefined}
+                  className={`${inputClass} resize-y min-h-[120px] ${errs.project ? "border-red-300 ring-1 ring-red-200" : ""}`}
                 />
+                <FieldError id="contact-project-error" message={errs.project} />
               </div>
 
               <div>
                 <label htmlFor="hear" className={labelClass}>
                   How did you hear about us?
                 </label>
-                <input id="hear" name="hear" type="text" className={inputClass} />
+                <input
+                  id="hear"
+                  name="hear"
+                  type="text"
+                  maxLength={200}
+                  className={inputClass}
+                />
               </div>
 
               <div>
                 <label htmlFor="budget" className={labelClass}>
                   Budget range (optional)
                 </label>
-                <input id="budget" name="budget" type="text" className={inputClass} />
+                <input id="budget" name="budget" type="text" maxLength={200} className={inputClass} />
               </div>
 
               {state.message && (
-                <p className={`text-sm font-medium ${state.success ? "text-green-600" : "text-red-600"}`}>
+                <p
+                  role={state.success ? "status" : "alert"}
+                  className={`text-sm font-medium ${state.success ? "text-green-600" : "text-red-600"}`}
+                >
                   {state.message}
                 </p>
               )}

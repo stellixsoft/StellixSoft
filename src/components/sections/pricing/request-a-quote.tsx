@@ -7,6 +7,7 @@ import type { FormState } from "@/src/app/actions";
 export default function RequestAQuote() {
   const initialState: FormState = { success: false, message: "" };
   const [state, formAction, isPending] = useActionState(submitQuoteForm, initialState);
+  const errs = state.fieldErrors ?? {};
 
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6">
@@ -21,6 +22,34 @@ export default function RequestAQuote() {
 
           <form action={formAction} className="mt-8 space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="sm:col-span-2">
+                <label
+                  htmlFor="quote-name"
+                  className="block text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)] mb-2"
+                >
+                  Name *
+                </label>
+                <input
+                  id="quote-name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  minLength={2}
+                  maxLength={200}
+                  required
+                  autoComplete="name"
+                  aria-invalid={errs.name ? true : undefined}
+                  aria-describedby={errs.name ? "quote-name-error" : undefined}
+                  className={`w-full rounded-xl bg-gray-50 border px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent ${
+                    errs.name ? "border-red-300 ring-1 ring-red-200" : "border-gray-200"
+                  }`}
+                />
+                {errs.name && (
+                  <p id="quote-name-error" className="mt-1.5 text-xs text-red-600" role="alert">
+                    {errs.name}
+                  </p>
+                )}
+              </div>
               <div>
                 <label
                   htmlFor="project-type"
@@ -81,9 +110,20 @@ export default function RequestAQuote() {
                   name="email"
                   type="email"
                   placeholder="you@company.com"
+                  maxLength={320}
                   required
-                  className="w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent"
+                  autoComplete="email"
+                  aria-invalid={errs.email ? true : undefined}
+                  aria-describedby={errs.email ? "quote-email-error" : undefined}
+                  className={`w-full rounded-xl bg-gray-50 border px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent ${
+                    errs.email ? "border-red-300 ring-1 ring-red-200" : "border-gray-200"
+                  }`}
                 />
+                {errs.email && (
+                  <p id="quote-email-error" className="mt-1.5 text-xs text-red-600" role="alert">
+                    {errs.email}
+                  </p>
+                )}
               </div>
             </div>
 

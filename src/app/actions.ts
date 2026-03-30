@@ -5,39 +5,73 @@ import { sendEmail } from "@/src/lib/email";
 export interface FormState {
   success: boolean;
   message: string;
+  fieldErrors?: Partial<Record<"name" | "email" | "help" | "project", string>>;
+}
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function readText(formData: FormData, key: string): string {
+  const v = formData.get(key);
+  if (typeof v !== "string") return "";
+  return v.trim();
 }
 
 export async function submitContactForm(
   _prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
-  const name = formData.get("name") as string;
-  const email = formData.get("email") as string;
-  const company = formData.get("company") as string;
-  const phone = formData.get("phone") as string;
-  const help = formData.get("help") as string;
-  const project = formData.get("project") as string;
-  const hear = formData.get("hear") as string;
-  const budget = formData.get("budget") as string;
+  const name = readText(formData, "name");
+  const emailRaw = readText(formData, "email");
+  const company = readText(formData, "company");
+  const phone = readText(formData, "phone");
+  const help = readText(formData, "help");
+  const project = readText(formData, "project");
+  const hear = readText(formData, "hear");
+  const budget = readText(formData, "budget");
 
-  if (!name || !email || !help || !project) {
-    return { success: false, message: "Please fill in all required fields." };
+  const fieldErrors: FormState["fieldErrors"] = {};
+
+  if (!name) {
+    fieldErrors.name = "Please enter your name.";
+  } else if (name.length < 2) {
+    fieldErrors.name = "Name looks too short.";
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    return { success: false, message: "Please enter a valid email address." };
+  if (!emailRaw) {
+    fieldErrors.email = "Please enter your email address.";
+  } else if (!EMAIL_REGEX.test(emailRaw)) {
+    fieldErrors.email = "Please enter a valid email address.";
+  }
+
+  if (!help) {
+    fieldErrors.help = "Please tell us what we can help with.";
+  } else if (help.length < 3) {
+    fieldErrors.help = "Please add a bit more detail (at least a few characters).";
+  }
+
+  if (!project) {
+    fieldErrors.project = "Please describe your project or goals.";
+  } else if (project.length < 20) {
+    fieldErrors.project = "Please share a little more about your project (at least 20 characters).";
+  }
+
+  if (Object.keys(fieldErrors).length > 0) {
+    return {
+      success: false,
+      message: "Please fix the highlighted fields below.",
+      fieldErrors,
+    };
   }
 
   try {
     await sendEmail({
       subject: `New Contact Form — ${name}`,
-      replyTo: email,
+      replyTo: emailRaw,
       html: `
         <h2>New Contact Form Submission</h2>
         <table style="border-collapse:collapse;width:100%;max-width:600px;font-family:sans-serif;font-size:14px;color:#333">
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee;width:140px">Name</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(name)}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Email</td><td style="padding:8px 12px;border-bottom:1px solid #eee"><a href="mailto:${esc(email)}">${esc(email)}</a></td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Email</td><td style="padding:8px 12px;border-bottom:1px solid #eee"><a href="mailto:${esc(emailRaw)}">${esc(emailRaw)}</a></td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Company</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(company) || "—"}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Phone</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(phone) || "—"}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Help With</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(help)}</td></tr>
@@ -52,12 +86,21 @@ export async function submitContactForm(
     return {
       success: true,
       message: "Thanks! We'll be in touch within 1 business day.",
+      fieldErrors: {},
     };
   } catch (err) {
     console.error("Contact form error:", err);
+    if (err instanceof Error && err.message === "EMAIL_NOT_CONFIGURED") {
+      return {
+        success: false,
+        message:
+          "Message sending is not configured on the server. Please email info@stellixsoft.com directly.",
+      };
+    }
     return {
       success: false,
-      message: "Something went wrong. Please try again or email us directly.",
+      message:
+        "We could not deliver your message. Please email info@stellixsoft.com or try again in a few minutes.",
     };
   }
 }
@@ -66,31 +109,48 @@ export async function submitQuoteForm(
   _prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
-  const name = formData.get("name") as string;
-  const email = formData.get("email") as string;
-  const company = formData.get("company") as string;
-  const details = formData.get("details") as string;
+  const name = readText(formData, "name");
+  const emailRaw = readText(formData, "email");
+  const company = readText(formData, "company");
+  const projectType = readText(formData, "projectType");
+  const budgetRange = readText(formData, "budgetRange");
+  const description = readText(formData, "description");
 
-  if (!name || !email) {
-    return { success: false, message: "Please fill in all required fields." };
+  const fieldErrors: FormState["fieldErrors"] = {};
+
+  if (!name) {
+    fieldErrors.name = "Please enter your name.";
+  } else if (name.length < 2) {
+    fieldErrors.name = "Name looks too short.";
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    return { success: false, message: "Please enter a valid email address." };
+  if (!emailRaw) {
+    fieldErrors.email = "Please enter your email address.";
+  } else if (!EMAIL_REGEX.test(emailRaw)) {
+    fieldErrors.email = "Please enter a valid email address.";
+  }
+
+  if (Object.keys(fieldErrors).length > 0) {
+    return {
+      success: false,
+      message: "Please fix the highlighted fields below.",
+      fieldErrors,
+    };
   }
 
   try {
     await sendEmail({
       subject: `Quote Request — ${name}`,
-      replyTo: email,
+      replyTo: emailRaw,
       html: `
         <h2>New Quote Request</h2>
         <table style="border-collapse:collapse;width:100%;max-width:600px;font-family:sans-serif;font-size:14px;color:#333">
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee;width:140px">Name</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(name)}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Email</td><td style="padding:8px 12px;border-bottom:1px solid #eee"><a href="mailto:${esc(email)}">${esc(email)}</a></td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Email</td><td style="padding:8px 12px;border-bottom:1px solid #eee"><a href="mailto:${esc(emailRaw)}">${esc(emailRaw)}</a></td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Company</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(company) || "—"}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600">Details</td><td style="padding:8px 12px">${esc(details) || "—"}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Project Type</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(projectType) || "—"}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Budget Range</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(budgetRange) || "—"}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600">Description</td><td style="padding:8px 12px">${esc(description) || "—"}</td></tr>
         </table>
         <p style="margin-top:16px;font-size:12px;color:#999">Submitted at ${new Date().toISOString()}</p>
       `,
@@ -99,12 +159,21 @@ export async function submitQuoteForm(
     return {
       success: true,
       message: "Quote request received! We'll send a detailed proposal within 5 business days.",
+      fieldErrors: {},
     };
   } catch (err) {
     console.error("Quote form error:", err);
+    if (err instanceof Error && err.message === "EMAIL_NOT_CONFIGURED") {
+      return {
+        success: false,
+        message:
+          "Message sending is not configured on the server. Please email info@stellixsoft.com directly.",
+      };
+    }
     return {
       success: false,
-      message: "Something went wrong. Please try again or email us directly.",
+      message:
+        "We could not deliver your message. Please email info@stellixsoft.com or try again in a few minutes.",
     };
   }
 }
@@ -113,15 +182,21 @@ export async function submitNewsletterForm(
   _prevState: FormState,
   formData: FormData
 ): Promise<FormState> {
-  const email = formData.get("email") as string;
+  const emailRaw = readText(formData, "email");
 
-  if (!email) {
-    return { success: false, message: "Please enter your email address." };
+  const fieldErrors: FormState["fieldErrors"] = {};
+  if (!emailRaw) {
+    fieldErrors.email = "Please enter your email address.";
+  } else if (!EMAIL_REGEX.test(emailRaw)) {
+    fieldErrors.email = "Please enter a valid email address.";
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    return { success: false, message: "Please enter a valid email address." };
+  if (Object.keys(fieldErrors).length > 0) {
+    return {
+      success: false,
+      message: "Please check your email address.",
+      fieldErrors,
+    };
   }
 
   try {
@@ -130,7 +205,7 @@ export async function submitNewsletterForm(
       html: `
         <h2>New Newsletter Subscription</h2>
         <p style="font-family:sans-serif;font-size:14px;color:#333">
-          <strong>${esc(email)}</strong> subscribed to the newsletter.
+          <strong>${esc(emailRaw)}</strong> subscribed to the newsletter.
         </p>
         <p style="margin-top:16px;font-size:12px;color:#999">Subscribed at ${new Date().toISOString()}</p>
       `,
@@ -139,12 +214,19 @@ export async function submitNewsletterForm(
     return {
       success: true,
       message: "Thanks for subscribing! Check your inbox to confirm.",
+      fieldErrors: {},
     };
   } catch (err) {
     console.error("Newsletter form error:", err);
+    if (err instanceof Error && err.message === "EMAIL_NOT_CONFIGURED") {
+      return {
+        success: false,
+        message: "Subscription is not configured. Please try again later.",
+      };
+    }
     return {
       success: false,
-      message: "Something went wrong. Please try again.",
+      message: "We could not subscribe you right now. Please try again later.",
     };
   }
 }
