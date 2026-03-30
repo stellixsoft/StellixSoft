@@ -23,7 +23,7 @@ const plans = [
       "Flexible scaling up/down",
     ],
     ctaLabel: "Build Your Team",
-    ctaHref: "/contact",
+    ctaHref: "/contact?plan=dedicated-team",
     ctaPrimary: true,
   },
   {
@@ -48,7 +48,7 @@ const plans = [
       "Documentation and handoff",
     ],
     ctaLabel: "Discuss Your Project",
-    ctaHref: "/contact",
+    ctaHref: "/contact?plan=project-based",
     ctaPrimary: false,
   },
   {
@@ -73,7 +73,7 @@ const plans = [
       "Priority support",
     ],
     ctaLabel: "Get a Quote",
-    ctaHref: "/contact",
+    ctaHref: "/contact?plan=maintenance-quote",
     ctaPrimary: false,
   },
 ];

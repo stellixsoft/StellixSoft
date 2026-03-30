@@ -33,7 +33,7 @@ export default function ReadyToLaunch() {
               plan, and build solutions that scale with your organization.
             </p>
             <Link
-              href="/contact"
+              href="/case-studies/enterprise-portal-modernization"
               className="mt-8 inline-flex items-center justify-center rounded-lg px-8 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-90 w-fit"
               style={{ backgroundColor: "var(--color-electricBlue)" }}
             >

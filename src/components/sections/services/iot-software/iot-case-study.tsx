@@ -120,7 +120,7 @@ export default function IoTCaseStudy() {
               ))}
             </ul>
             <Link
-              href="/#work"
+              href="/case-studies/enterprise-portal-modernization"
               className="inline-flex items-center gap-2 self-start rounded-lg border-2 border-[var(--color-deepSpace)] bg-white px-5 py-2.5 text-sm font-medium text-[var(--color-deepSpace)] transition-opacity hover:opacity-90"
             >
               Read Full Case Study

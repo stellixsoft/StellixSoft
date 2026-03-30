@@ -15,7 +15,7 @@ const cards = [
     description:
       "Start with a small, defined project before committing to larger engagement. Typical pilot: $10-15K over 4-6 weeks. See our quality before scaling up.",
     buttonLabel: "Discuss a Pilot",
-    href: "/contact",
+    href: "/contact?plan=pilot-project",
     icon: "clock",
   },
   {
@@ -23,7 +23,7 @@ const cards = [
     description:
       "Get a comprehensive proposal with architecture, timeline, and fixed pricing within 5 business days. No cost. No obligation to proceed.",
     buttonLabel: "Request Proposal",
-    href: "/contact",
+    href: "/contact?plan=request-proposal",
     icon: "document",
   },
 ];

@@ -1,5 +1,8 @@
+import Link from "next/link";
+
 const plans = [
   {
+    id: "essential",
     name: "Essential",
     subtitle: "For stable applications",
     price: "$1,500",
@@ -15,6 +18,7 @@ const plans = [
     highlighted: false,
   },
   {
+    id: "professional",
     name: "Professional",
     subtitle: "Most popular option",
     price: "$3,500",
@@ -32,6 +36,7 @@ const plans = [
     badge: "Most Popular",
   },
   {
+    id: "enterprise",
     name: "Enterprise",
     subtitle: "For mission-critical systems",
     price: "$7,000+",
@@ -123,8 +128,8 @@ export default function SupportPlans() {
                 <p className="mb-6 text-sm md:text-[15px] text-[var(--color-neutralGray)]">
                   {plan.bestFor}
                 </p>
-                <button
-                  type="button"
+                <Link
+                  href={`/contact?plan=${plan.id}`}
                   className={`inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm md:text-[15px] font-medium border transition-colors ${
                     plan.highlighted
                       ? "bg-[var(--color-electricBlue)] border-[var(--color-electricBlue)] text-white hover:bg-sky-500"
@@ -132,7 +137,7 @@ export default function SupportPlans() {
                   }`}
                 >
                   Choose Plan
-                </button>
+                </Link>
               </div>
             </article>
           ))}

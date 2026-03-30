@@ -41,13 +41,28 @@ const contactSchema = {
   },
 };
 
-export default function Contact() {
+function normalizePlanParam(
+  value: string | string[] | undefined,
+): string | undefined {
+  if (typeof value === "string") return value.toLowerCase();
+  if (Array.isArray(value) && value[0]) return value[0].toLowerCase();
+  return undefined;
+}
+
+export default async function Contact({
+  searchParams,
+}: {
+  searchParams: Promise<{ plan?: string | string[] }>;
+}) {
+  const sp = await searchParams;
+  const planSlug = normalizePlanParam(sp.plan);
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
       <div>
         <Hero />
-        <ContactForm />
+        <ContactForm planSlug={planSlug} />
         <WaysToReach />
         <AfterYourReach />
         <QuickInfo />

@@ -1,7 +1,10 @@
+import Link from "next/link";
+
 const plans = [
   {
+    id: "single-developer",
     name: "Single Developer",
-    price: "$4,000 – $5,600/mo",
+    price: "$4,000 – $5,600",
     subtext: "($25–35/hour effective)",
     features: [
       "Full-time dedication",
@@ -13,8 +16,9 @@ const plans = [
     highlighted: false,
   },
   {
+    id: "small-team",
     name: "Small Team",
-    price: "$11,000 – $15,000/mo",
+    price: "$11,000 – $15,000",
     subtext: "(3 developers)",
     features: [
       "Senior + mid‑level mix",
@@ -28,8 +32,9 @@ const plans = [
     highlighted: true,
   },
   {
+    id: "full-squad",
     name: "Full Squad",
-    price: "$17,000 – $24,000/mo",
+    price: "$17,000 – $24,000",
     subtext: "(5 developers)",
     features: [
       "Full development team",
@@ -128,16 +133,16 @@ export default function TransparentPricing() {
                 ))}
               </ul>
 
-              <button
-                type="button"
-                className={`mt-auto inline-flex items-center justify-center rounded-full px-6 py-3 text-sm md:text-[15px] font-medium border transition-colors ${
+              <Link
+                href={`/contact?plan=${plan.id}`}
+                className={`mt-auto inline-flex items-center justify-center rounded-full px-6 py-3 text-sm md:text-[15px] font-medium border transition-colors text-center ${
                   plan.highlighted
                     ? "bg-[var(--color-electricBlue)] border-[var(--color-electricBlue)] text-white hover:bg-sky-400"
                     : "bg-white border-slate-200 text-[var(--color-deepSpace)] hover:bg-slate-50"
                 }`}
               >
                 {plan.cta}
-              </button>
+              </Link>
             </article>
           ))}
         </div>

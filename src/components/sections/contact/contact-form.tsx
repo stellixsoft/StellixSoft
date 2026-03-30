@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useActionState } from "react";
 import { submitContactForm } from "@/src/app/actions";
 import type { FormState } from "@/src/app/actions";
@@ -52,9 +53,41 @@ function ChatBubbleIcon() {
   );
 }
 
-export default function ContactForm() {
+/** Prefill for "What can we help with?" when arriving from ?plan=... */
+const CONTACT_PLAN_PREFILL: Record<string, string> = {
+  essential:
+    "I'm interested in the Essential maintenance & support plan ($1,500/mo, 10 hrs included).",
+  professional:
+    "I'm interested in the Professional maintenance & support plan ($3,500/mo, 25 hrs included).",
+  enterprise:
+    "I'm interested in the Enterprise maintenance & support plan ($7,000+/mo, 60+ hrs included).",
+  "single-developer":
+    "I'm interested in a single dedicated developer ($4,000–$5,600/mo, $25–35/hr effective, full-time).",
+  "small-team":
+    "I'm interested in a small dedicated team ($11,000–$15,000/mo, 3 developers, includes technical lead).",
+  "full-squad":
+    "I'm interested in a full dedicated squad ($17,000–$24,000/mo, 5 developers, QA & DevOps support).",
+  "dedicated-team":
+    "I'm interested in building a dedicated development team (flexible team size; typical rates from the pricing page).",
+  "project-based":
+    "I'm interested in a project-based engagement with defined scope and deliverables after discovery.",
+  "maintenance-quote":
+    "I'm interested in ongoing maintenance & support for an existing application (monthly plans).",
+  "pilot-project":
+    "I'm interested in a low-risk pilot project (roughly $10–15K over 4–6 weeks).",
+  "request-proposal":
+    "I'd like a detailed proposal with architecture, timeline, and pricing (within about 5 business days).",
+};
+
+type ContactFormProps = {
+  planSlug?: string;
+};
+
+export default function ContactForm({ planSlug }: ContactFormProps) {
   const initialState: FormState = { success: false, message: "" };
   const [state, formAction, isPending] = useActionState(submitContactForm, initialState);
+  const helpDefault =
+    planSlug && CONTACT_PLAN_PREFILL[planSlug] ? CONTACT_PLAN_PREFILL[planSlug] : "";
 
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]">
@@ -128,6 +161,7 @@ export default function ContactForm() {
                   name="help"
                   type="text"
                   required
+                  defaultValue={helpDefault}
                   className={inputClass}
                 />
               </div>
@@ -226,7 +260,15 @@ export default function ContactForm() {
                 by Thursday. Best agency experience I&apos;ve had.&quot;
               </blockquote>
               <div className="mt-4 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[var(--color-lightGray)] shrink-0" />
+                <div className="relative w-10 h-10 rounded-full overflow-hidden shrink-0 ring-1 ring-black/5 bg-[var(--color-lightGray)]">
+                  <Image
+                    src="/assets/images/testimonials/contact-testimonial-avatar.png"
+                    alt="VP Engineering testimonial avatar"
+                    fill
+                    className="object-cover object-top"
+                    sizes="40px"
+                  />
+                </div>
                 <div>
                   <p className="text-sm font-medium text-[var(--color-deepSpace)]">
                     VP Engineering
