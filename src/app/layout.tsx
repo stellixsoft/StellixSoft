@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
+import GoogleAnalytics from "../components/analytics/GoogleAnalytics";
 
 const poppins = Poppins({
   variable: "--font-sans",
@@ -159,6 +160,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${poppins.variable} font-sans antialiased`}>
+        <GoogleAnalytics />
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"
           strategy="afterInteractive"

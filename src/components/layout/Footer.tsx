@@ -209,8 +209,7 @@ export default function Footer() {
       <div className="max-w-[1300px] mx-auto px-6 py-5">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-center sm:text-left">
           <p className="text-white/50 text-xs">
-            © 2026 StellixSoft – Enterprise Software Development. All rights
-            reserved.
+            © {new Date().getFullYear()} Stellix Soft LLC. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-6">
             <Link
