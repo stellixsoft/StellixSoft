@@ -1,5 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
+import {
+  STELLIX_SOFT_LLC_PHONE_DISPLAY,
+  STELLIX_SOFT_LLC_PHONE_TEL,
+} from "@/src/lib/constants";
 
 const servicesLinks = [
   { href: "/services/enterprise-development", label: "Enterprise Development" },
@@ -178,6 +182,12 @@ export default function Footer() {
                     </p>
                     <p>Stellix Soft LLC</p>
                     <p>Houston, Texas</p>
+                    <a
+                      href={`tel:${STELLIX_SOFT_LLC_PHONE_TEL}`}
+                      className="text-white/75 hover:text-[var(--color-electricBlue)] transition-colors inline-block mt-1"
+                    >
+                      {STELLIX_SOFT_LLC_PHONE_DISPLAY}
+                    </a>
                   </div>
                   <div>
                     <p className="text-white/90 font-medium text-xs uppercase tracking-wider mb-1">

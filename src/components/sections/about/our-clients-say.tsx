@@ -29,7 +29,7 @@ const clientsSay = [
     quote:
       "3PL business here. StellixSoft built the system we use for scheduling, tracking, and keeping clients updated. Less spreadsheet juggling. When we need changes, they pick up the thread.",
     name: "Dominic Jones",
-    company: "ZB Lines · Toronto, Canada",
+    company: "ZB Lines · Texas, USA",
     photo: "/assets/images/testimonials/zb-lines.png",
     photoFit: "contain" as const,
   },
