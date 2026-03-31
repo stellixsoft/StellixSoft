@@ -5,7 +5,9 @@ import { sendEmail } from "@/src/lib/email";
 export interface FormState {
   success: boolean;
   message: string;
-  fieldErrors?: Partial<Record<"name" | "email" | "help" | "project", string>>;
+  fieldErrors?: Partial<
+    Record<"name" | "email" | "help" | "project" | "description", string>
+  >;
 }
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -128,6 +130,13 @@ export async function submitQuoteForm(
     fieldErrors.email = "Please enter your email address.";
   } else if (!EMAIL_REGEX.test(emailRaw)) {
     fieldErrors.email = "Please enter a valid email address.";
+  }
+
+  if (!description) {
+    fieldErrors.description = "Please describe what you need a quote for.";
+  } else if (description.length < 20) {
+    fieldErrors.description =
+      "Please add a bit more detail (at least 20 characters) so we can scope your quote.";
   }
 
   if (Object.keys(fieldErrors).length > 0) {

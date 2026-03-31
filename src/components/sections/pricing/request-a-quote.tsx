@@ -1,13 +1,20 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import { submitQuoteForm } from "@/src/app/actions";
 import type { FormState } from "@/src/app/actions";
 
 export default function RequestAQuote() {
   const initialState: FormState = { success: false, message: "" };
   const [state, formAction, isPending] = useActionState(submitQuoteForm, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
   const errs = state.fieldErrors ?? {};
+
+  useEffect(() => {
+    if (state.success) {
+      formRef.current?.reset();
+    }
+  }, [state.success]);
 
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6">
@@ -20,7 +27,7 @@ export default function RequestAQuote() {
             Tell us about your needs and we&apos;ll provide a custom quote within 2 business days.
           </p>
 
-          <form action={formAction} className="mt-8 space-y-6">
+          <form ref={formRef} action={formAction} className="mt-8 space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="sm:col-span-2">
                 <label
@@ -61,6 +68,7 @@ export default function RequestAQuote() {
                   id="project-type"
                   name="projectType"
                   type="text"
+                  maxLength={200}
                   placeholder="e.g. Dedicated Team, Project-Based"
                   className="w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent"
                 />
@@ -76,6 +84,7 @@ export default function RequestAQuote() {
                   id="budget-range"
                   name="budgetRange"
                   type="text"
+                  maxLength={200}
                   placeholder="e.g. $15k - $40k"
                   className="w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent"
                 />
@@ -94,6 +103,8 @@ export default function RequestAQuote() {
                   id="company"
                   name="company"
                   type="text"
+                  maxLength={200}
+                  autoComplete="organization"
                   placeholder="Your Company Name"
                   className="w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent"
                 />
@@ -103,7 +114,7 @@ export default function RequestAQuote() {
                   htmlFor="email"
                   className="block text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)] mb-2"
                 >
-                  Email Address
+                  Email Address *
                 </label>
                 <input
                   id="email"
@@ -132,19 +143,34 @@ export default function RequestAQuote() {
                 htmlFor="description"
                 className="block text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)] mb-2"
               >
-                Brief Description
+                Brief Description *
               </label>
               <textarea
                 id="description"
                 name="description"
                 rows={4}
-                placeholder="What are you building? Tell us about your goals..."
-                className="w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent resize-y min-h-[120px]"
+                minLength={20}
+                maxLength={8000}
+                required
+                placeholder="What are you building? Tell us about your goals, timeline, and tech stack if you know it..."
+                aria-invalid={errs.description ? true : undefined}
+                aria-describedby={errs.description ? "quote-description-error" : undefined}
+                className={`w-full rounded-xl bg-gray-50 border px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent resize-y min-h-[120px] ${
+                  errs.description ? "border-red-300 ring-1 ring-red-200" : "border-gray-200"
+                }`}
               />
+              {errs.description && (
+                <p id="quote-description-error" className="mt-1.5 text-xs text-red-600" role="alert">
+                  {errs.description}
+                </p>
+              )}
             </div>
 
             {state.message && (
-              <p className={`text-sm font-medium ${state.success ? "text-green-600" : "text-red-600"}`}>
+              <p
+                role={state.success ? "status" : "alert"}
+                className={`text-sm font-medium ${state.success ? "text-green-600" : "text-red-600"}`}
+              >
                 {state.message}
               </p>
             )}
