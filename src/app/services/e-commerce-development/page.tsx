@@ -5,41 +5,45 @@ import WhenYouNeedCustomEcommerce from "@/src/components/sections/services/e-com
 import ECommerceTechnology from "@/src/components/sections/services/e-commerce-development/ecommerce-technology";
 import ECommerceFeaturesWeImplement from "@/src/components/sections/services/e-commerce-development/ecommerce-features";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-export const metadata: Metadata = {
+const PATH = "/services/e-commerce-development" as const;
+
+export const metadata: Metadata = buildPageMetadata({
   title: "E-Commerce Development Services - Custom & Headless Commerce",
-  description: "Enterprise e-commerce development. Headless commerce, Shopify Plus, custom storefronts, payment integrations, and high-performance platforms.",
-  alternates: { canonical: "https://stellixsoft.com/services/e-commerce-development" },
-};
+  description:
+    "Enterprise e-commerce development. Headless commerce, Shopify Plus, custom storefronts, payment integrations, and high-performance platforms.",
+  path: PATH,
+});
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
+const serviceLd = serviceJsonLd({
   name: "E-Commerce Development",
-  description: "Headless commerce, Shopify Plus, custom storefronts, payment integrations, and high-performance e-commerce platforms.",
-  provider: { "@type": "Organization", "@id": "https://stellixsoft.com/#organization" },
-  areaServed: ["North America", "Europe"],
-  url: "https://stellixsoft.com/services/e-commerce-development",
-};
+  description:
+    "Headless commerce, Shopify Plus, custom storefronts, payment integrations, and high-performance e-commerce platforms.",
+  path: PATH,
+  serviceType: "Enterprise e-commerce and headless commerce development",
+  category: "Custom Software Development",
+});
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://stellixsoft.com" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://stellixsoft.com/services" },
-    { "@type": "ListItem", position: 3, name: "E-Commerce Development", item: "https://stellixsoft.com/services/e-commerce-development" },
-  ],
-};
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "E-Commerce Development", path: PATH },
+]);
 
 export default function ECommerceDevelopmentPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <JsonLd data={serviceLd} />
+      <JsonLd data={breadcrumbLd} />
       <div>
         <ECommerceDevelopmentHero />
-        <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
+        <div
+          className="h-1 w-full shrink-0"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+        />
         <ECommerceSolutionsWeBuild />
         <WhenYouNeedCustomEcommerce />
         <ECommerceTechnology />

@@ -6,41 +6,45 @@ import BlockchainTechnologyExpertise from "@/src/components/sections/services/bl
 import WhenBlockchainMakesSense from "@/src/components/sections/services/blockchain-and-cryptography/when-blockchain-makes-sense";
 import BlockchainDevelopmentProcess from "@/src/components/sections/services/blockchain-and-cryptography/development-process";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-export const metadata: Metadata = {
+const PATH = "/services/blockchain-and-cryptography" as const;
+
+export const metadata: Metadata = buildPageMetadata({
   title: "Blockchain & Cryptography Development Services",
-  description: "Secure blockchain solutions and cryptographic systems for compliance-heavy and trust-critical enterprise applications.",
-  alternates: { canonical: "https://stellixsoft.com/services/blockchain-and-cryptography" },
-};
+  description:
+    "Secure blockchain solutions and cryptographic systems for compliance-heavy and trust-critical enterprise applications.",
+  path: PATH,
+});
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
+const serviceLd = serviceJsonLd({
   name: "Blockchain and Cryptography",
-  description: "Secure blockchain solutions and cryptographic systems for compliance-heavy and trust-critical enterprise applications.",
-  provider: { "@type": "Organization", "@id": "https://stellixsoft.com/#organization" },
-  areaServed: ["North America", "Europe"],
-  url: "https://stellixsoft.com/services/blockchain-and-cryptography",
-};
+  description:
+    "Secure blockchain solutions and cryptographic systems for compliance-heavy and trust-critical enterprise applications.",
+  path: PATH,
+  serviceType: "Blockchain and enterprise cryptography development",
+  category: "Custom Software Development",
+});
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://stellixsoft.com" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://stellixsoft.com/services" },
-    { "@type": "ListItem", position: 3, name: "Blockchain and Cryptography", item: "https://stellixsoft.com/services/blockchain-and-cryptography" },
-  ],
-};
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Blockchain and Cryptography", path: PATH },
+]);
 
 export default function BlockchainAndCryptographyPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <JsonLd data={serviceLd} />
+      <JsonLd data={breadcrumbLd} />
       <div>
         <BlockchainAndCryptographyHero />
-        <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
+        <div
+          className="h-1 w-full shrink-0"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+        />
         <BlockchainForBusiness />
         <OurBlockchainPhilosophy />
         <BlockchainTechnologyExpertise />

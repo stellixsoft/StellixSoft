@@ -23,11 +23,10 @@ export default function TypicalCiCdPipeline() {
                 <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-white/5 text-white/80 border border-white/10">
                   <Image
                     src="/assets/images/IOT-icon.png"
-                    alt=""
+                    alt={`${stage.label} — CI/CD pipeline stage icon`}
                     width={20}
                     height={20}
                     className="object-contain"
-                    aria-hidden
                   />
                 </div>
                 <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.22em] text-white/70 mb-1">

@@ -1,37 +1,36 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/src/data/blog-posts";
-import { LEGAL_SITE_URL } from "@/src/lib/legal";
-
-/**
- * Canonical site origin for sitemap URLs.
- * Override on preview/staging with NEXT_PUBLIC_SITE_URL or SITE_URL (no trailing slash).
- */
-const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  process.env.SITE_URL ||
-  LEGAL_SITE_URL
-).replace(/\/$/, "");
+import {
+  STATIC_CASE_STUDY_LAST_MOD,
+  STATIC_HUB_LAST_MOD,
+  STATIC_INDUSTRY_PAGE_LAST_MOD,
+  STATIC_LEGAL_LAST_MOD,
+  STATIC_SERVICE_PAGE_LAST_MOD,
+  STATIC_SERVICES_HUB_LAST_MOD,
+} from "@/src/lib/site-content-dates";
+import { getSiteUrl } from "@/src/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Top-level and primary hub pages — add new marketing routes here.
+  const SITE_URL = getSiteUrl();
+
   const staticPages: MetadataRoute.Sitemap = [
-    { url: SITE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
-    { url: `${SITE_URL}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/blog`, lastModified: new Date(), changeFrequency: "daily", priority: 0.9 },
-    { url: `${SITE_URL}/case-studies`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/contact`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/industries`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: SITE_URL, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${SITE_URL}/about`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/blog`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "daily", priority: 0.9 },
+    { url: `${SITE_URL}/case-studies`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/contact`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/industries`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/pricing`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
     {
       url: `${SITE_URL}/privacy-policy`,
-      lastModified: new Date(),
+      lastModified: STATIC_LEGAL_LAST_MOD,
       changeFrequency: "yearly",
       priority: 0.3,
     },
-    { url: `${SITE_URL}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/services`, lastModified: STATIC_SERVICES_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.9 },
     {
       url: `${SITE_URL}/terms-of-service`,
-      lastModified: new Date(),
+      lastModified: STATIC_LEGAL_LAST_MOD,
       changeFrequency: "yearly",
       priority: 0.3,
     },
@@ -55,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const servicePages: MetadataRoute.Sitemap = serviceSlugs.map((slug) => ({
     url: `${SITE_URL}/services/${slug}`,
-    lastModified: new Date(),
+    lastModified: STATIC_SERVICE_PAGE_LAST_MOD,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -69,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const industryPages: MetadataRoute.Sitemap = industrySlugs.map((slug) => ({
     url: `${SITE_URL}/industries/${slug}`,
-    lastModified: new Date(),
+    lastModified: STATIC_INDUSTRY_PAGE_LAST_MOD,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
@@ -84,14 +83,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const caseStudyPages: MetadataRoute.Sitemap = caseStudySlugs.map((slug) => ({
     url: `${SITE_URL}/case-studies/${slug}`,
-    lastModified: new Date(),
+    lastModified: STATIC_CASE_STUDY_LAST_MOD,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(post.updatedAt ?? post.date),
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));

@@ -68,7 +68,7 @@ export function TestimonialAvatar({
       >
         <Image
           src={photoSrc}
-          alt=""
+          alt={`Portrait of ${name}`}
           fill
           className={
             isContain ? "object-contain object-center" : "object-cover object-top"

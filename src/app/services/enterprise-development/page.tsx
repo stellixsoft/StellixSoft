@@ -9,41 +9,45 @@ import WhyTrustUs from "../../../components/sections/services/enterprise-develop
 import Testimonial from "../../../components/sections/services/enterprise-development/testimonial";
 import StartWithConfidence from "../../../components/sections/services/enterprise-development/start-with-confidence";
 import CTAPilot from "../../../components/sections/home/cta-pilot";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-export const metadata: Metadata = {
+const PATH = "/services/enterprise-development" as const;
+
+export const metadata: Metadata = buildPageMetadata({
   title: "Enterprise Software Development Services - ERP, CRM, SaaS",
-  description: "Large-scale enterprise software development. ERPs, CRMs, multi-tenant SaaS, real-time dashboards, and complex business platforms.",
-  alternates: { canonical: "https://stellixsoft.com/services/enterprise-development" },
-};
+  description:
+    "Large-scale enterprise software development. ERPs, CRMs, multi-tenant SaaS, real-time dashboards, and complex business platforms.",
+  path: PATH,
+});
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
+const serviceLd = serviceJsonLd({
   name: "Enterprise Software Development",
-  description: "Large-scale enterprise software — ERPs, CRMs, multi-tenant SaaS, real-time dashboards, and complex business platforms.",
-  provider: { "@type": "Organization", "@id": "https://stellixsoft.com/#organization" },
-  areaServed: ["North America", "Europe"],
-  url: "https://stellixsoft.com/services/enterprise-development",
-};
+  description:
+    "Large-scale enterprise software — ERPs, CRMs, multi-tenant SaaS, real-time dashboards, and complex business platforms.",
+  path: PATH,
+  serviceType: "Enterprise software platform and business application development",
+  category: "Custom Software Development",
+});
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://stellixsoft.com" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://stellixsoft.com/services" },
-    { "@type": "ListItem", position: 3, name: "Enterprise Software Development", item: "https://stellixsoft.com/services/enterprise-development" },
-  ],
-};
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Enterprise Software Development", path: PATH },
+]);
 
 export default function EnterpriseDevelopmentPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <JsonLd data={serviceLd} />
+      <JsonLd data={breadcrumbLd} />
       <div>
         <EnterpriseHero />
-        <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
+        <div
+          className="h-1 w-full shrink-0"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+        />
         <ServiceStack />
         <KeySpecializations />
         <ReadyToLaunch />

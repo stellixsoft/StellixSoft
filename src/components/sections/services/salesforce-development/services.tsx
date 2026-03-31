@@ -14,11 +14,10 @@ export default function SalesforceDevelopmentServices() {
       highlighted: true,
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Salesforce custom development service icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden={true}
       />,
     },
     {
@@ -33,11 +32,10 @@ export default function SalesforceDevelopmentServices() {
       ],
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Salesforce integrations service icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden={true}
       />,
     },
     {
@@ -52,11 +50,10 @@ export default function SalesforceDevelopmentServices() {
       ],
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Salesforce process automation service icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden={true}
       />,
     },
     {
@@ -71,11 +68,10 @@ export default function SalesforceDevelopmentServices() {
       ],
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Salesforce migration and cleanup service icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden={true}
       />,
     },
   ];

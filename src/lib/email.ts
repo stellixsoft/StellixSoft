@@ -37,6 +37,7 @@ async function sendViaSmtp(
   }
 
   const port = Number(process.env.SMTP_PORT) || 587;
+  // Port 465: implicit TLS (SMTPS). Port 587: STARTTLS (secure=false; nodemailer upgrades the connection).
   const secure = port === 465;
 
   const transporter = nodemailer.createTransport({

@@ -5,11 +5,10 @@ export default function ECommerceFeaturesWeImplement() {
       title: "Storefront",
       icon: <Image
       src="/assets/images/IOT-icon.png"
-      alt=""
+      alt="Storefront e-commerce feature icon"
       width={20}
       height={20}
       className="object-contain"
-      aria-hidden={true}
     />,
       items: [
         "Product catalog",
@@ -23,11 +22,10 @@ export default function ECommerceFeaturesWeImplement() {
       title: "Management",
       icon: <Image
       src="/assets/images/IOT-icon.png"
-      alt=""
+      alt="Management e-commerce feature icon"
       width={20}
       height={20}
       className="object-contain"
-      aria-hidden={true}
     />,
       items: [
         "Inventory management",
@@ -41,11 +39,10 @@ export default function ECommerceFeaturesWeImplement() {
       title: "Checkout",
       icon: <Image
       src="/assets/images/IOT-icon.png"
-      alt=""
+      alt="Checkout e-commerce feature icon"
       width={20}
       height={20}
       className="object-contain"
-      aria-hidden={true}
     />,
       items: [
         "Cart management",
@@ -59,11 +56,10 @@ export default function ECommerceFeaturesWeImplement() {
       title: "Analytics",
       icon: <Image
       src="/assets/images/IOT-icon.png"
-      alt=""
+      alt="Analytics e-commerce feature icon"
       width={20}
       height={20}
       className="object-contain"
-      aria-hidden={true}
     />,
       items: [
         "Sales dashboards",
@@ -77,11 +73,10 @@ export default function ECommerceFeaturesWeImplement() {
       title: "B2B Specific",
       icon: <Image
       src="/assets/images/IOT-icon.png"
-      alt=""
+      alt="B2B specific e-commerce feature icon"
       width={20}
       height={20}
       className="object-contain"
-      aria-hidden={true}
     />,
       items: [
         "Customer-specific pricing",
@@ -95,11 +90,10 @@ export default function ECommerceFeaturesWeImplement() {
       title: "International",
       icon: <Image
       src="/assets/images/IOT-icon.png"
-      alt=""
+      alt="International e-commerce feature icon"
       width={20}
       height={20}
       className="object-contain"
-      aria-hidden={true}
     />,
       items: [
         "Multi-currency",

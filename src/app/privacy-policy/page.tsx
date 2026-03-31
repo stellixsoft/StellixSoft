@@ -1,23 +1,43 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalDocument } from "@/src/components/legal/legal-document";
+import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   LEGAL_CONTACT_EMAIL,
   LEGAL_LAST_UPDATED,
   LEGAL_SITE_URL,
 } from "@/src/lib/legal";
+import { breadcrumbJsonLd, webPageJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "How StellixSoft collects, uses, and protects personal information when you use our website and services.",
-  alternates: { canonical: `${LEGAL_SITE_URL}/privacy-policy` },
+  ...buildPageMetadata({
+    title: "Privacy Policy",
+    description:
+      "How StellixSoft collects, uses, and protects personal information when you use our website and services.",
+    path: "/privacy-policy",
+  }),
   robots: { index: true, follow: true },
 };
 
+const webPageLd = webPageJsonLd({
+  name: "Privacy Policy",
+  description:
+    "How StellixSoft collects, uses, and protects personal information when you use our website and services.",
+  path: "/privacy-policy",
+});
+
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Privacy Policy", path: "/privacy-policy" },
+]);
+
 export default function PrivacyPolicyPage() {
   return (
-    <LegalDocument title="Privacy Policy" lastUpdated={LEGAL_LAST_UPDATED}>
+    <>
+      <JsonLd data={webPageLd} />
+      <JsonLd data={breadcrumbLd} />
+      <LegalDocument title="Privacy Policy" lastUpdated={LEGAL_LAST_UPDATED}>
       <div className="not-prose rounded-xl border border-amber-200/90 bg-amber-50/90 p-4 text-xs text-amber-950 mb-8 leading-relaxed">
         <p className="font-semibold text-amber-950 mb-2">Notice</p>
         <p>
@@ -252,5 +272,6 @@ export default function PrivacyPolicyPage() {
         <Link href="/terms-of-service">Terms of Service</Link>.
       </p>
     </LegalDocument>
+    </>
   );
 }

@@ -6,40 +6,16 @@ import AfterYourReach from "../../components/sections/contact/after-your-reach";
 import QuickInfo from "../../components/sections/contact/quick-info";
 import WeAreBased from "../../components/sections/contact/we-are-based";
 import TrustedBy from "../../components/sections/contact/trusted-by";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { contactPageJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Contact Us - Schedule a Free Discovery Call",
   description:
     "Get in touch with StellixSoft. Schedule a free 30-minute discovery call to discuss your enterprise software project. We respond within 1 business day.",
-  alternates: { canonical: "https://stellixsoft.com/contact" },
-};
-
-const contactSchema = {
-  "@context": "https://schema.org",
-  "@type": "ContactPage",
-  name: "Contact StellixSoft",
-  description: "Get in touch with StellixSoft. Schedule a free 30-minute discovery call to discuss your enterprise software project.",
-  url: "https://stellixsoft.com/contact",
-  mainEntity: {
-    "@type": "Organization",
-    "@id": "https://stellixsoft.com/#organization",
-    name: "StellixSoft",
-    email: "info@stellixsoft.com",
-    contactPoint: {
-      "@type": "ContactPoint",
-      email: "info@stellixsoft.com",
-      contactType: "sales",
-      availableLanguage: "English",
-    },
-  },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://stellixsoft.com" },
-      { "@type": "ListItem", position: 2, name: "Contact", item: "https://stellixsoft.com/contact" },
-    ],
-  },
-};
+  path: "/contact",
+});
 
 function normalizePlanParam(
   value: string | string[] | undefined,
@@ -59,7 +35,7 @@ export default async function Contact({
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
+      <JsonLd data={contactPageJsonLd()} />
       <div>
         <Hero />
         <ContactForm planSlug={planSlug} />

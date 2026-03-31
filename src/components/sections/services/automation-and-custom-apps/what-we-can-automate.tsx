@@ -67,11 +67,10 @@ export default function WhatWeCanAutomate() {
                   {/* simple icon placeholder */}
                   <Image
                     src="/assets/images/IOT-icon.png"
-                    alt=""
+                    alt={`${item.title} — automation use case icon`}
                     width={20}
                     height={20}
                     className="object-contain"
-                    aria-hidden
                   />
                 </div>
               </div>

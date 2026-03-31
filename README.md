@@ -41,6 +41,8 @@ Copy from [`.env.example`](./.env.example). Never commit `.env.local`.
 
 If both SMTP credentials and `RESEND_API_KEY` are set, **SMTP is used first**.
 
+**SMTP and encryption:** `SMTP_PORT=465` uses implicit TLS (SSL), which matches many cPanel / shared hosting instructions. `SMTP_PORT=587` typically uses STARTTLS (common for Gmail and others). The app configures Nodemailer accordingly; you only need the correct host, port, username, and password from your provider.
+
 For production or preview deployments, set the same variables in your host’s environment (for example Vercel → Project → Settings → Environment Variables).
 
 ## Scripts

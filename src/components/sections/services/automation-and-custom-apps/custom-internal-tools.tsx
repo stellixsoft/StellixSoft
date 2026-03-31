@@ -52,11 +52,10 @@ export default function CustomInternalTools() {
                 <div key={item.title} className="flex items-start gap-3">
                   <Image
                     src="/assets/images/IOT-icon.png"
-                    alt=""
+                    alt={`${item.title} — custom internal tool icon`}
                     width={30}
                     height={30}
                     className="object-contain mt-1 bg-electricBlue-50 rounded-full p-1 border border-sky-100"
-                    aria-hidden
                   />
                   <div>
                     <h3 className="text-[13px] md:text-[14px] font-medium uppercase text-[var(--color-deepSpace)] mb-1">

@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { getSiteUrl } from "@/src/lib/site-url";
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = "https://stellixsoft.com";
+  const siteUrl = getSiteUrl();
 
   return {
     rules: [

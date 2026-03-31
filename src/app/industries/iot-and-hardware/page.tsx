@@ -8,28 +8,50 @@ import SoftwareDivision from "../../../components/sections/industries/iot-and-ha
 import DeviceType from "../../../components/sections/industries/iot-and-hardware/device-type";
 import IoTTechnologyStack from "../../../components/sections/industries/iot-and-hardware/iot-technology-stack";
 import HardwareComparison from "../../../components/sections/industries/iot-and-hardware/hardware-comparison";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-export const metadata: Metadata = {
+const PATH = "/industries/iot-and-hardware" as const;
+
+export const metadata: Metadata = buildPageMetadata({
   title: "IoT & Hardware Software Development - Device Management Platforms",
   description:
     "Software development for IoT and hardware companies. Device management platforms, firmware OTA updates, real-time telemetry, and fleet management.",
-  alternates: {
-    canonical: "https://stellixsoft.com/industries/iot-and-hardware",
-  },
-};
+  path: PATH,
+});
+
+const serviceLd = serviceJsonLd({
+  name: "IoT & Hardware Software Development",
+  description:
+    "Software development for IoT and hardware companies. Device management platforms, firmware OTA updates, real-time telemetry, and fleet management.",
+  path: PATH,
+  serviceType: "IoT and hardware product software development",
+  category: "Industry Solutions",
+});
+
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Industries", path: "/industries" },
+  { name: "IoT & Hardware", path: PATH },
+]);
 
 export default function IoTAndHardwarePage() {
   return (
-    <div>
-      <IoTAndHardwareHero />
-      <IndustryStack />
-      <SoftwareChallenge />
-      <SoftwareSolutions />
-      <EnterpriseIoT />
-      <SoftwareDivision />
-      <DeviceType />
-      <IoTTechnologyStack />
-      <HardwareComparison />
-    </div>
+    <>
+      <JsonLd data={serviceLd} />
+      <JsonLd data={breadcrumbLd} />
+      <div>
+        <IoTAndHardwareHero />
+        <IndustryStack />
+        <SoftwareChallenge />
+        <SoftwareSolutions />
+        <EnterpriseIoT />
+        <SoftwareDivision />
+        <DeviceType />
+        <IoTTechnologyStack />
+        <HardwareComparison />
+      </div>
+    </>
   );
 }

@@ -48,11 +48,10 @@ export default function FromRequestToProductiveDeveloper() {
               <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-[var(--color-electricBlue)]/10 text-[var(--color-electricBlue)]">
                 <Image
                   src="/assets/images/IOT-icon.png"
-                  alt=""
+                  alt={`${step.title} — developer onboarding timeline icon`}
                   width={20}
                   height={20}
                   className="object-contain"
-                  aria-hidden
                 />
               </div>
               <p className="text-[11px] md:text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-electricBlue)] mb-1">

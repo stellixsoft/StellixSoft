@@ -147,7 +147,7 @@ export default function OurCore() {
                   className="inline-flex items-center gap-2 rounded-lg border-2 border-gray-300 bg-gray-100 px-6 py-3 text-sm font-medium text-[var(--color-deepSpace)] transition-colors hover:bg-gray-200 hover:border-gray-400"
                 >
                   Explore Our Expertise
-                  <img src="/assets/images/arrow-right.svg" alt="" className="w-3.5 h-3.5" />
+                  <img src="/assets/images/arrow-right.svg" alt="View sector details" className="w-3.5 h-3.5" />
                 </Link>
               </div>
 

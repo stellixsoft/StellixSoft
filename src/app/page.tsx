@@ -9,21 +9,33 @@ import CompareOptions from "../components/sections/home/compare-options";
 import WhyStellixsoft from "../components/sections/home/why-stellixsoft";
 import Testimonials from "../components/sections/home/testimonials";
 import CTAPilot from "../components/sections/home/cta-pilot";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { webPageJsonLd } from "@/src/lib/schema";
+
+const homeWebPageLd = webPageJsonLd({
+  name: "StellixSoft | Custom Software Development & IT Solutions",
+  description:
+    "StellixSoft is a trusted enterprise software development company specializing in IoT, legacy modernization, AI, cloud, and complex business platforms. US-timezone aligned teams.",
+  path: "/",
+});
 
 export default function Home() {
   return (
-    <div>
-      <Hero />
-      <ClientLogos />
-      <OurSpecializations />
-      <FeaturedCaseStudy />
-      <IndustriesWeServe />
-      <MinimizeRisk />
-      <TechnologyExpertise />
-      <CompareOptions />
-      <WhyStellixsoft />
-      <Testimonials />
-      <CTAPilot />
-    </div>
+    <>
+      <JsonLd data={homeWebPageLd} />
+      <div>
+        <Hero />
+        <ClientLogos />
+        <OurSpecializations />
+        <FeaturedCaseStudy />
+        <IndustriesWeServe />
+        <MinimizeRisk />
+        <TechnologyExpertise />
+        <CompareOptions />
+        <WhyStellixsoft />
+        <Testimonials />
+        <CTAPilot />
+      </div>
+    </>
   );
 }

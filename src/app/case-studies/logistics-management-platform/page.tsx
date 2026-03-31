@@ -11,33 +11,50 @@ import LogisticsManagementPlatformKeyFeatures from "../../../components/sections
 import LogisticsManagementPlatformResults from "../../../components/sections/case-studies/logistics-management-platform/results";
 import LogisticsManagementPlatformTestimonial from "../../../components/sections/case-studies/logistics-management-platform/testimonial";
 import CTAPilot from "../../../components/sections/home/cta-pilot";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { articleCaseStudyJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-export const metadata: Metadata = {
+const PATH = "/case-studies/logistics-management-platform" as const;
+
+export const metadata: Metadata = buildPageMetadata({
   title: "Logistics Management Platform Case Study - Real-Time Tracking",
   description:
     "How we built a real-time logistics management platform handling 10,000+ daily shipments with route optimization and automated dispatch.",
-  alternates: {
-    canonical:
-      "https://stellixsoft.com/case-studies/logistics-management-platform",
-  },
-};
+  path: PATH,
+});
+
+const articleLd = articleCaseStudyJsonLd({
+  headline: "Logistics Management Platform Case Study - Real-Time Tracking",
+  description:
+    "How we built a real-time logistics management platform handling 10,000+ daily shipments with route optimization and automated dispatch.",
+  path: PATH,
+  breadcrumbName: "Logistics Management Platform",
+  datePublished: "2024-04-01",
+});
 
 export default function LogisticsManagementPlatformPage() {
   return (
-    <div>
-      <LogisticsManagementPlatformHero />
-      <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
-      <LogisticsManagementPlatformProjectOverview />
-      <LogisticsManagementPlatformClient />
-      <LogisticsManagementPlatformChallenge />
-      <LogisticsManagementPlatformOurSolution />
-      <LogisticsManagementPlatformArchitecture />
-      <LogisticsManagementPlatformRealTimeTracking />
-      <LogisticsManagementPlatformShipmentLifecycle />
-      <LogisticsManagementPlatformKeyFeatures />
-      <LogisticsManagementPlatformResults />
-      <LogisticsManagementPlatformTestimonial />
-      <CTAPilot />
-    </div>
+    <>
+      <JsonLd data={articleLd} />
+      <div>
+        <LogisticsManagementPlatformHero />
+        <div
+          className="h-1 w-full shrink-0"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+        />
+        <LogisticsManagementPlatformProjectOverview />
+        <LogisticsManagementPlatformClient />
+        <LogisticsManagementPlatformChallenge />
+        <LogisticsManagementPlatformOurSolution />
+        <LogisticsManagementPlatformArchitecture />
+        <LogisticsManagementPlatformRealTimeTracking />
+        <LogisticsManagementPlatformShipmentLifecycle />
+        <LogisticsManagementPlatformKeyFeatures />
+        <LogisticsManagementPlatformResults />
+        <LogisticsManagementPlatformTestimonial />
+        <CTAPilot />
+      </div>
+    </>
   );
 }

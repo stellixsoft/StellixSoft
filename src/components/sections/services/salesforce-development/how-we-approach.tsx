@@ -7,11 +7,10 @@ export default function HowWeApproachSalesforceProjects() {
         "We start by understanding your current Salesforce setup, business processes, and what’s not working.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Understand your Salesforce org — approach step icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden={true}
       />,
     },
     {
@@ -20,11 +19,10 @@ export default function HowWeApproachSalesforceProjects() {
         "We follow Salesforce best practices to build maintainable solutions that won’t break with updates.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Design sustainable Salesforce solutions — approach step icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden={true}
       />,
     },
     {
@@ -33,11 +31,10 @@ export default function HowWeApproachSalesforceProjects() {
         "We don’t just build—we document and train your team so you can maintain and extend what we build.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Knowledge transfer — Salesforce approach step icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden={true}
       />,
     },
   ];

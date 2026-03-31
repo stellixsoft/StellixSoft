@@ -10,32 +10,49 @@ import EnterprisePortalTestimonial from "../../../components/sections/case-studi
 import EnterprisePortalWhySucceededAndRelated from "../../../components/sections/case-studies/enterprise-portal-modernization/why-succeeded-and-related";
 import EnterprisePortalFacingSimilarChallenges from "../../../components/sections/case-studies/enterprise-portal-modernization/facing-similar-challenges";
 import CTAPilot from "../../../components/sections/home/cta-pilot";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { articleCaseStudyJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-export const metadata: Metadata = {
+const PATH = "/case-studies/enterprise-portal-modernization" as const;
+
+export const metadata: Metadata = buildPageMetadata({
   title: "Enterprise Portal Modernization Case Study - .NET Migration",
   description:
     "How we migrated a Fortune 500 company's legacy VB.NET portal to modern .NET with zero downtime, improving performance by 60%.",
-  alternates: {
-    canonical:
-      "https://stellixsoft.com/case-studies/enterprise-portal-modernization",
-  },
-};
+  path: PATH,
+});
+
+const articleLd = articleCaseStudyJsonLd({
+  headline: "Enterprise Portal Modernization Case Study - .NET Migration",
+  description:
+    "How we migrated a Fortune 500 company's legacy VB.NET portal to modern .NET with zero downtime, improving performance by 60%.",
+  path: PATH,
+  breadcrumbName: "Enterprise Portal Modernization",
+  datePublished: "2023-08-01",
+});
 
 export default function EnterprisePortalModernizationPage() {
   return (
-    <div>
-      <EnterprisePortalModernizationHero />
-      <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
-      <EnterprisePortalProjectOverview />
-      <EnterprisePortalClientAndChallenge />
-      <EnterprisePortalOurSolution />
-      <EnterprisePortalTechnicalArchitecture />
-      <EnterprisePortalKeyFeatures />
-      <EnterprisePortalResults />
-      <EnterprisePortalTestimonial />
-      <EnterprisePortalWhySucceededAndRelated />
-      <EnterprisePortalFacingSimilarChallenges />
-      <CTAPilot />
-    </div>
+    <>
+      <JsonLd data={articleLd} />
+      <div>
+        <EnterprisePortalModernizationHero />
+        <div
+          className="h-1 w-full shrink-0"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+        />
+        <EnterprisePortalProjectOverview />
+        <EnterprisePortalClientAndChallenge />
+        <EnterprisePortalOurSolution />
+        <EnterprisePortalTechnicalArchitecture />
+        <EnterprisePortalKeyFeatures />
+        <EnterprisePortalResults />
+        <EnterprisePortalTestimonial />
+        <EnterprisePortalWhySucceededAndRelated />
+        <EnterprisePortalFacingSimilarChallenges />
+        <CTAPilot />
+      </div>
+    </>
   );
 }

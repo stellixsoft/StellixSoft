@@ -10,32 +10,49 @@ import ComplianceAndAuditManagementSystemKeyFeatures from "../../../components/s
 import ComplianceAndAuditManagementSystemResults from "../../../components/sections/case-studies/compliance-and-audit-management-system/results";
 import ComplianceAndAuditManagementSystemTestimonial from "../../../components/sections/case-studies/compliance-and-audit-management-system/testimonial";
 import CTAPilot from "../../../components/sections/home/cta-pilot";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { articleCaseStudyJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-export const metadata: Metadata = {
+const PATH = "/case-studies/compliance-and-audit-management-system" as const;
+
+export const metadata: Metadata = buildPageMetadata({
   title: "Compliance & Audit Management System Case Study",
   description:
     "How we developed a SOX-compliant audit management system for a financial services company with automated evidence collection.",
-  alternates: {
-    canonical:
-      "https://stellixsoft.com/case-studies/compliance-and-audit-management-system",
-  },
-};
+  path: PATH,
+});
+
+const articleLd = articleCaseStudyJsonLd({
+  headline: "Compliance & Audit Management System Case Study",
+  description:
+    "How we developed a SOX-compliant audit management system for a financial services company with automated evidence collection.",
+  path: PATH,
+  breadcrumbName: "Compliance & Audit System",
+  datePublished: "2024-01-15",
+});
 
 export default function ComplianceAndAuditManagementSystemPage() {
   return (
-    <div>
-      <ComplianceAndAuditManagementSystemHero />
-      <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
-      <ComplianceAndAuditManagementSystemProjectOverview />
-      <ComplianceAndAuditManagementSystemClient />
-      <ComplianceAndAuditManagementSystemChallenge />
-      <ComplianceAndAuditManagementSystemOurSolution />
-      <ComplianceAndAuditManagementSystemPlatformArchitecture />
-      <ComplianceAndAuditManagementSystemAuditWorkflowDesign />
-      <ComplianceAndAuditManagementSystemKeyFeatures />
-      <ComplianceAndAuditManagementSystemResults />
-      <ComplianceAndAuditManagementSystemTestimonial />
-      <CTAPilot />
-    </div>
+    <>
+      <JsonLd data={articleLd} />
+      <div>
+        <ComplianceAndAuditManagementSystemHero />
+        <div
+          className="h-1 w-full shrink-0"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+        />
+        <ComplianceAndAuditManagementSystemProjectOverview />
+        <ComplianceAndAuditManagementSystemClient />
+        <ComplianceAndAuditManagementSystemChallenge />
+        <ComplianceAndAuditManagementSystemOurSolution />
+        <ComplianceAndAuditManagementSystemPlatformArchitecture />
+        <ComplianceAndAuditManagementSystemAuditWorkflowDesign />
+        <ComplianceAndAuditManagementSystemKeyFeatures />
+        <ComplianceAndAuditManagementSystemResults />
+        <ComplianceAndAuditManagementSystemTestimonial />
+        <CTAPilot />
+      </div>
+    </>
   );
 }

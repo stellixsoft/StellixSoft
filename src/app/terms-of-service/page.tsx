@@ -1,23 +1,43 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalDocument } from "@/src/components/legal/legal-document";
+import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   LEGAL_CONTACT_EMAIL,
   LEGAL_LAST_UPDATED,
   LEGAL_SITE_URL,
 } from "@/src/lib/legal";
+import { breadcrumbJsonLd, webPageJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description:
-    "Terms governing use of the StellixSoft website and general terms relating to our professional software services.",
-  alternates: { canonical: `${LEGAL_SITE_URL}/terms-of-service` },
+  ...buildPageMetadata({
+    title: "Terms of Service",
+    description:
+      "Terms governing use of the StellixSoft website and general terms relating to our professional software services.",
+    path: "/terms-of-service",
+  }),
   robots: { index: true, follow: true },
 };
 
+const webPageLd = webPageJsonLd({
+  name: "Terms of Service",
+  description:
+    "Terms governing use of the StellixSoft website and general terms relating to our professional software services.",
+  path: "/terms-of-service",
+});
+
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Terms of Service", path: "/terms-of-service" },
+]);
+
 export default function TermsOfServicePage() {
   return (
-    <LegalDocument title="Terms of Service" lastUpdated={LEGAL_LAST_UPDATED}>
+    <>
+      <JsonLd data={webPageLd} />
+      <JsonLd data={breadcrumbLd} />
+      <LegalDocument title="Terms of Service" lastUpdated={LEGAL_LAST_UPDATED}>
       <div className="not-prose rounded-xl border border-amber-200/90 bg-amber-50/90 p-4 text-xs text-amber-950 mb-8 leading-relaxed">
         <p className="font-semibold text-amber-950 mb-2">Notice</p>
         <p>
@@ -283,5 +303,6 @@ export default function TermsOfServicePage() {
         personal information.
       </p>
     </LegalDocument>
+    </>
   );
 }

@@ -5,41 +5,45 @@ import WhenYouNeedCustomSalesforce from "@/src/components/sections/services/sale
 import SalesforceTechnologyExpertise from "@/src/components/sections/services/salesforce-development/technology-expertise";
 import HowWeApproachSalesforceProjects from "@/src/components/sections/services/salesforce-development/how-we-approach";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-export const metadata: Metadata = {
+const PATH = "/services/salesforce-development" as const;
+
+export const metadata: Metadata = buildPageMetadata({
   title: "Salesforce Development Services - Custom Apex & Lightning",
-  description: "Custom Salesforce development, integrations, Lightning Web Components, Apex triggers, and platform optimization for enterprise CRM.",
-  alternates: { canonical: "https://stellixsoft.com/services/salesforce-development" },
-};
+  description:
+    "Custom Salesforce development, integrations, Lightning Web Components, Apex triggers, and platform optimization for enterprise CRM.",
+  path: PATH,
+});
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
+const serviceLd = serviceJsonLd({
   name: "Salesforce Development",
-  description: "Custom Salesforce development, integrations, Lightning Web Components, Apex triggers, and platform optimization.",
-  provider: { "@type": "Organization", "@id": "https://stellixsoft.com/#organization" },
-  areaServed: ["North America", "Europe"],
-  url: "https://stellixsoft.com/services/salesforce-development",
-};
+  description:
+    "Custom Salesforce development, integrations, Lightning Web Components, Apex triggers, and platform optimization.",
+  path: PATH,
+  serviceType: "Salesforce platform development and CRM customization",
+  category: "Custom Software Development",
+});
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://stellixsoft.com" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://stellixsoft.com/services" },
-    { "@type": "ListItem", position: 3, name: "Salesforce Development", item: "https://stellixsoft.com/services/salesforce-development" },
-  ],
-};
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Salesforce Development", path: PATH },
+]);
 
 export default function SalesforceDevelopmentPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <JsonLd data={serviceLd} />
+      <JsonLd data={breadcrumbLd} />
       <div>
         <SalesforceDevelopmentHero />
-        <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
+        <div
+          className="h-1 w-full shrink-0"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+        />
         <SalesforceDevelopmentServices />
         <WhenYouNeedCustomSalesforce />
         <SalesforceTechnologyExpertise />

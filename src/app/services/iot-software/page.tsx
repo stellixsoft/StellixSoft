@@ -5,45 +5,49 @@ import YourHardware from "../../../components/sections/services/iot-software/you
 import IoTCaseStudy from "../../../components/sections/services/iot-software/iot-case-study";
 import IoTTechnologyExpertise from "../../../components/sections/services/iot-software/iot-technology-expertise";
 import SolutionByDeviceType from "../../../components/sections/services/iot-software/solution-by-device-type";
-import IoTSoftwarePartner  from "../../../components/sections/services/iot-software/companies-partner";
+import IoTSoftwarePartner from "../../../components/sections/services/iot-software/companies-partner";
 import FlexibleEngagement from "../../../components/sections/services/iot-software/flexible-engagement";
 import Testimonial from "../../../components/sections/services/iot-software/testimonial";
 import CTAPilot from "../../../components/sections/home/cta-pilot";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-export const metadata: Metadata = {
+const PATH = "/services/iot-software" as const;
+
+export const metadata: Metadata = buildPageMetadata({
   title: "IoT Software Development - Device Management & Telemetry Platforms",
-  description: "End-to-end IoT platform development. Device management, real-time telemetry, edge computing, OTA updates, and fleet management dashboards.",
-  alternates: { canonical: "https://stellixsoft.com/services/iot-software" },
-};
+  description:
+    "End-to-end IoT platform development. Device management, real-time telemetry, edge computing, OTA updates, and fleet management dashboards.",
+  path: PATH,
+});
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
+const serviceLd = serviceJsonLd({
   name: "IoT Software Development",
-  description: "End-to-end IoT platform development — device management, real-time telemetry, edge computing, and fleet management dashboards.",
-  provider: { "@type": "Organization", "@id": "https://stellixsoft.com/#organization" },
-  areaServed: ["North America", "Europe"],
-  url: "https://stellixsoft.com/services/iot-software",
-};
+  description:
+    "End-to-end IoT platform development — device management, real-time telemetry, edge computing, and fleet management dashboards.",
+  path: PATH,
+  serviceType: "IoT platform and connected device software development",
+  category: "Custom Software Development",
+});
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://stellixsoft.com" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://stellixsoft.com/services" },
-    { "@type": "ListItem", position: 3, name: "IoT Software Development", item: "https://stellixsoft.com/services/iot-software" },
-  ],
-};
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "IoT Software Development", path: PATH },
+]);
 
 export default function IoTSoftwarePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <JsonLd data={serviceLd} />
+      <JsonLd data={breadcrumbLd} />
       <div>
         <IoTSoftwareHero />
-        <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
+        <div
+          className="h-1 w-full shrink-0"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+        />
         <SoftwareSolution />
         <YourHardware />
         <IoTCaseStudy />

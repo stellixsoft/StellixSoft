@@ -14,11 +14,10 @@ export default function ECommerceSolutionsWeBuild() {
       ],
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Custom B2B portals solution icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden={true}
       />,
     },
     {
@@ -33,11 +32,10 @@ export default function ECommerceSolutionsWeBuild() {
       ],
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Multi-vendor marketplaces solution icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden={true}
       />,
     },
     {
@@ -52,11 +50,10 @@ export default function ECommerceSolutionsWeBuild() {
       ],
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Headless commerce solution icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden={true}
       />,
     },
     {
@@ -72,11 +69,10 @@ export default function ECommerceSolutionsWeBuild() {
       ],
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="E-commerce integrations solution icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden={true}
       />,
     },
   ];

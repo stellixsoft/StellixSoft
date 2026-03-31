@@ -8,11 +8,10 @@ export default function RiskFreeTrial() {
             <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-400/10 text-emerald-300">
               <Image
                 src="/assets/images/IOT-icon.png"
-                alt=""
+                alt="Risk-free staff augmentation trial — section icon"
                 width={20}
                 height={20}
                 className="object-contain"
-                aria-hidden
               />
             </div>
             <h2 className="text-lg md:text-xl lg:text-2xl font-semibold tracking-[0.18em] uppercase">

@@ -9,41 +9,45 @@ import AiImplementationConsiderations from "@/src/components/sections/services/p
 import WhyChooseStellixsoftForAi from "@/src/components/sections/services/practical-for-ai/why-choose";
 import StartSmallProveValue from "@/src/components/sections/services/practical-for-ai/start-small";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-export const metadata: Metadata = {
+const PATH = "/services/practical-for-ai" as const;
+
+export const metadata: Metadata = buildPageMetadata({
   title: "Practical AI for Business - AI Integration & Automation Services",
-  description: "Enterprise AI integration services. Predictive analytics, NLP, computer vision, and intelligent automation focused on measurable ROI, not hype.",
-  alternates: { canonical: "https://stellixsoft.com/services/practical-for-ai" },
-};
+  description:
+    "Enterprise AI integration services. Predictive analytics, NLP, computer vision, and intelligent automation focused on measurable ROI, not hype.",
+  path: PATH,
+});
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
+const serviceLd = serviceJsonLd({
   name: "Practical AI for Business",
-  description: "Enterprise AI integration services. Predictive analytics, NLP, computer vision, and intelligent automation focused on measurable ROI.",
-  provider: { "@type": "Organization", "@id": "https://stellixsoft.com/#organization" },
-  areaServed: ["North America", "Europe"],
-  url: "https://stellixsoft.com/services/practical-for-ai",
-};
+  description:
+    "Enterprise AI integration services. Predictive analytics, NLP, computer vision, and intelligent automation focused on measurable ROI.",
+  path: PATH,
+  serviceType: "Enterprise AI integration and intelligent automation",
+  category: "Custom Software Development",
+});
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://stellixsoft.com" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://stellixsoft.com/services" },
-    { "@type": "ListItem", position: 3, name: "Practical AI for Business", item: "https://stellixsoft.com/services/practical-for-ai" },
-  ],
-};
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Practical AI for Business", path: PATH },
+]);
 
 export default function PracticalAiForBusinessPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <JsonLd data={serviceLd} />
+      <JsonLd data={breadcrumbLd} />
       <div>
         <PracticalAiForBusinessHero />
-        <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
+        <div
+          className="h-1 w-full shrink-0"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+        />
         <OurApproachToAiIntegration />
         <AiPoweredFeaturesWeImplement />
         <AiTechnologyWeWorkWith />

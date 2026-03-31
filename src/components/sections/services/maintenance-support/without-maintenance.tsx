@@ -44,11 +44,10 @@ export default function WhatHappensWithoutProperMaintenance() {
               <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-rose-50 text-rose-500">
                 <Image
                   src="/assets/images/IOT-icon.png"
-                  alt=""
+                  alt={`${risk.title} — maintenance risk icon`}
                   width={20}
                   height={20}
                   className="object-contain"
-                  aria-hidden
                 />
               </div>
               <h3 className="text-sm md:text-[15px] font-medium uppercase text-[var(--color-deepSpace)] mb-3">

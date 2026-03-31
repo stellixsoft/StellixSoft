@@ -31,7 +31,7 @@ export default function Testimonial() {
           <div className="flex justify-center mb-5">
             <Image
               src="/assets/images/iot.png"
-              alt=""
+              alt="IoT and hardware client testimonial"
               width={48}
               height={48}
               className="object-contain"

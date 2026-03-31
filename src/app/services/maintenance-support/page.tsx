@@ -10,41 +10,45 @@ import ProactiveVsReactiveCost from "@/src/components/sections/services/maintena
 import GettingStartedWithMaintenance from "@/src/components/sections/services/maintenance-support/getting-started";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
 import HowWeMaintainApplication from "@/src/components/sections/services/maintenance-support/how-we-maintain-application";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-export const metadata: Metadata = {
+const PATH = "/services/maintenance-support" as const;
+
+export const metadata: Metadata = buildPageMetadata({
   title: "Software Maintenance & Support Services - 24/7 Monitoring",
-  description: "Ongoing application maintenance, performance optimization, security patching, and 24/7 monitoring for enterprise production systems.",
-  alternates: { canonical: "https://stellixsoft.com/services/maintenance-support" },
-};
+  description:
+    "Ongoing application maintenance, performance optimization, security patching, and 24/7 monitoring for enterprise production systems.",
+  path: PATH,
+});
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
+const serviceLd = serviceJsonLd({
   name: "Maintenance & Support",
-  description: "Ongoing application maintenance, performance optimization, security patching, and 24/7 monitoring for production systems.",
-  provider: { "@type": "Organization", "@id": "https://stellixsoft.com/#organization" },
-  areaServed: ["North America", "Europe"],
-  url: "https://stellixsoft.com/services/maintenance-support",
-};
+  description:
+    "Ongoing application maintenance, performance optimization, security patching, and 24/7 monitoring for production systems.",
+  path: PATH,
+  serviceType: "Software maintenance, support, and production operations",
+  category: "Custom Software Development",
+});
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://stellixsoft.com" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://stellixsoft.com/services" },
-    { "@type": "ListItem", position: 3, name: "Maintenance & Support", item: "https://stellixsoft.com/services/maintenance-support" },
-  ],
-};
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+  { name: "Maintenance & Support", path: PATH },
+]);
 
 export default function MaintenanceSupportPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <JsonLd data={serviceLd} />
+      <JsonLd data={breadcrumbLd} />
       <div>
         <MaintenanceSupportHero />
-        <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
+        <div
+          className="h-1 w-full shrink-0"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+        />
         <WhatHappensWithoutProperMaintenance />
         <ApplicationsWeSupport />
         <WhatsIncludedInMaintenance />

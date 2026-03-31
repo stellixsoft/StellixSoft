@@ -63,11 +63,10 @@ export default function BuildYourPerfectTeam() {
               <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--color-electricBlue)]/8 text-[var(--color-electricBlue)] text-xs font-semibold">
                 <Image
                   src="/assets/images/IOT-icon.png"
-                  alt=""
+                  alt={`${category.title} — dedicated team role icon`}
                   width={20}
                   height={20}
                   className="object-contain"
-                  aria-hidden
                 />
               </div>
               <h3 className="text-sm md:text-[15px] font-medium uppercase  text-[var(--color-deepSpace)] mb-4">
@@ -94,11 +93,10 @@ export default function BuildYourPerfectTeam() {
               <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--color-electricBlue)]/6 text-[var(--color-electricBlue)]">
                 <Image
                   src="/assets/images/IOT-icon.png"
-                  alt=""
+                  alt={`${guarantee.title} — dedicated team guarantee icon`}
                   width={20}
                   height={20}
                   className="object-contain"
-                  aria-hidden
                 />
               </div>
               <h3 className="text-xs md:text-sm font-semibold uppercase text-[var(--color-deepSpace)] mb-2">

@@ -9,29 +9,51 @@ import HealthcareTechnologyStack from "../../../components/sections/industries/h
 import HealthcareOrganizationsWeWorkWith from "../../../components/sections/industries/healthcare-and-medtech/organizations-we-work-with";
 import WhyHealthcareOrganizationsChooseUs from "../../../components/sections/industries/healthcare-and-medtech/why-choose-us";
 import CTAPilot from "../../../components/sections/home/cta-pilot";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import { breadcrumbJsonLd, serviceJsonLd } from "@/src/lib/schema";
+import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-export const metadata: Metadata = {
+const PATH = "/industries/healthcare-and-medtech" as const;
+
+export const metadata: Metadata = buildPageMetadata({
   title: "Healthcare & MedTech Software Development - HIPAA Compliant",
   description:
     "HIPAA-compliant healthcare software development. EHR integrations, telemedicine platforms, medical device software, and clinical workflow automation.",
-  alternates: {
-    canonical: "https://stellixsoft.com/industries/healthcare-and-medtech",
-  },
-};
+  path: PATH,
+});
+
+const serviceLd = serviceJsonLd({
+  name: "Healthcare & MedTech Software Development",
+  description:
+    "HIPAA-compliant healthcare software development. EHR integrations, telemedicine platforms, medical device software, and clinical workflow automation.",
+  path: PATH,
+  serviceType: "Healthcare and medical technology software development",
+  category: "Industry Solutions",
+});
+
+const breadcrumbLd = breadcrumbJsonLd([
+  { name: "Home", path: "/" },
+  { name: "Industries", path: "/industries" },
+  { name: "Healthcare & MedTech", path: PATH },
+]);
 
 export default function HealthcareAndMedtechPage() {
   return (
-    <div>
-      <HealthcareHero />
-      <HIPPA />
-      <HealthcareSoftwareChallenges />
-      <HealthcareSoftwareSolutions />
-      <HealthcareComplianceApproach />
-      <TransferableEnterpriseExperience />
-      <HealthcareTechnologyStack />
-      <HealthcareOrganizationsWeWorkWith />
-      <WhyHealthcareOrganizationsChooseUs />
-      <CTAPilot />
-    </div>
+    <>
+      <JsonLd data={serviceLd} />
+      <JsonLd data={breadcrumbLd} />
+      <div>
+        <HealthcareHero />
+        <HIPPA />
+        <HealthcareSoftwareChallenges />
+        <HealthcareSoftwareSolutions />
+        <HealthcareComplianceApproach />
+        <TransferableEnterpriseExperience />
+        <HealthcareTechnologyStack />
+        <HealthcareOrganizationsWeWorkWith />
+        <WhyHealthcareOrganizationsChooseUs />
+        <CTAPilot />
+      </div>
+    </>
   );
 }

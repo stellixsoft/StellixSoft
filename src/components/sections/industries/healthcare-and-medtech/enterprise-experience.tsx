@@ -23,7 +23,7 @@ export default function TransferableEnterpriseExperience() {
         <div className="relative rounded-3xl overflow-hidden shadow-xl bg-gray-900/5 min-h-[560px]">
           <Image
             src="/assets/images/transferable.webp"
-            alt=""
+            alt="Healthcare and enterprise software team collaboration"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"

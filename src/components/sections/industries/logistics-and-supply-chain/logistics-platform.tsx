@@ -114,7 +114,7 @@ export default function LogisticsPlatform() {
         <div className="flex-1 relative min-h-[280px] lg:min-h-[400px]">
           <Image
             src="/assets/images/fallback.webp"
-            alt=""
+            alt="ZB Lines 3PL logistics platform — case study visual"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"

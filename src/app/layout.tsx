@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import GoogleAnalytics from "../components/analytics/GoogleAnalytics";
+import { buildRootJsonLdGraph } from "@/src/lib/schema";
+import { getSiteUrl } from "@/src/lib/site-url";
 
 const poppins = Poppins({
   variable: "--font-sans",
@@ -12,10 +14,10 @@ const poppins = Poppins({
   display: "swap",
 });
 
-const SITE_URL = "https://stellixsoft.com";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "StellixSoft | Custom Software Development & IT Solutions",
     template: "%s | StellixSoft",
@@ -34,14 +36,14 @@ export const metadata: Metadata = {
     "healthcare software",
     "logistics software",
   ],
-  authors: [{ name: "StellixSoft", url: SITE_URL }],
+  authors: [{ name: "StellixSoft", url: siteUrl }],
   creator: "StellixSoft",
   publisher: "StellixSoft",
   formatDetection: { telephone: false, email: false },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: SITE_URL,
+    url: siteUrl,
     siteName: "StellixSoft",
     title: "StellixSoft | Custom Software Development & IT Solutions",
     description:
@@ -73,73 +75,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: { canonical: SITE_URL },
+  alternates: { canonical: siteUrl },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": `${SITE_URL}/#organization`,
-      name: "StellixSoft",
-      url: SITE_URL,
-      logo: {
-        "@type": "ImageObject",
-        "@id": `${SITE_URL}/#logo`,
-        url: `${SITE_URL}/assets/images/stellixsoft-logo.png`,
-        width: 160,
-        height: 32,
-        caption: "StellixSoft",
-      },
-      image: { "@id": `${SITE_URL}/#logo` },
-      description:
-        "Enterprise software development company specializing in IoT, legacy modernization, AI, cloud, and complex business platforms.",
-      foundingDate: "2020",
-      numberOfEmployees: { "@type": "QuantitativeValue", value: 15 },
-      areaServed: [
-        { "@type": "Place", name: "North America" },
-        { "@type": "Place", name: "Europe" },
-      ],
-      knowsAbout: [
-        "Enterprise Software Development",
-        "IoT Platform Development",
-        "Legacy Software Modernization",
-        "DevOps and Cloud Infrastructure",
-        "AI Integration",
-        "Healthcare Software (HIPAA)",
-        "Logistics Software",
-        "Staff Augmentation",
-      ],
-      contactPoint: {
-        "@type": "ContactPoint",
-        email: "info@stellixsoft.com",
-        contactType: "sales",
-        availableLanguage: "English",
-      },
-      sameAs: [
-        "https://www.linkedin.com/company/stellixsoft",
-        "https://twitter.com/stellixsoft",
-      ],
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      url: SITE_URL,
-      name: "StellixSoft",
-      publisher: { "@id": `${SITE_URL}/#organization` },
-      inLanguage: "en-US",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: `${SITE_URL}/blog?search={search_term_string}`,
-        },
-        "query-input": "required name=search_term_string",
-      },
-    },
-  ],
-};
+const jsonLd = buildRootJsonLdGraph();
 
 export default function RootLayout({
   children,

@@ -8,11 +8,10 @@ export default function BlockchainDevelopmentProcess() {
         "Is blockchain right for this? We analyze your use case and recommend the best approach—blockchain or not.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Feasibility assessment — blockchain development phase icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden
       />,
     },
     {
@@ -22,11 +21,10 @@ export default function BlockchainDevelopmentProcess() {
         "Chain selection, smart contract design, integration architecture. Plan for scale, security, and maintenance.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Architecture design — blockchain development phase icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden
       />,
     },
     {
@@ -36,11 +34,10 @@ export default function BlockchainDevelopmentProcess() {
         "Smart contract development, extensive testing, security review, integration with existing systems.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Development and testing — blockchain development phase icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden
       />,
     },
     {
@@ -50,11 +47,10 @@ export default function BlockchainDevelopmentProcess() {
         "Mainnet deployment, monitoring, ongoing maintenance and updates as requirements evolve.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt=""
+        alt="Deployment and support — blockchain development phase icon"
         width={20}
         height={20}
         className="object-contain"
-        aria-hidden
       />,
     },
   ];

@@ -4,6 +4,8 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   date: string;
+  /** ISO date when the post was last materially updated (sitemap, BlogPosting dateModified). */
+  updatedAt?: string;
   readTime: string;
   category: string;
   tags: string[];
@@ -121,6 +123,7 @@ Establish baseline performance metrics on the legacy system, then validate that 
 Legacy .NET migration is complex but achievable with proper planning. The performance gains, security improvements, and developer experience benefits make it one of the highest-ROI technical investments an enterprise can make.
     `,
     date: "2026-03-25",
+    updatedAt: "2026-03-28",
     readTime: "12 min read",
     category: "Legacy Modernization",
     tags: [".NET migration", "legacy modernization", ".NET 8", "enterprise software", "zero downtime migration"],

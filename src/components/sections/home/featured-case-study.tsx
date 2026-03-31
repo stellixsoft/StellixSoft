@@ -177,11 +177,10 @@ function BulletIcon() {
   return (
     <Image
       src="/assets/images/bullet.svg"
-      alt=""
+      alt="Case study metric highlight marker"
       width={20}
       height={20}
       className="shrink-0 mt-0.5"
-      aria-hidden
     />
   );
 }
