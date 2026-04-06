@@ -22,10 +22,18 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/staff-augmentation" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Staff Augmentation Services - Hire Senior Software Engineers",
+  title: "IT Staff Augmentation Services - Hire Senior Software Engineers",
   description:
-    "Scale your team with pre-vetted senior engineers who integrate seamlessly into your existing development processes. US-timezone aligned.",
+    "IT staff augmentation services to scale your team with pre-vetted senior software engineers. Dedicated development team members who integrate seamlessly into your processes. US-timezone aligned.",
   path: PATH,
+  keywords: [
+    "staff augmentation services",
+    "IT staff augmentation services",
+    "dedicated development team",
+    "hire software engineers",
+    "software developer augmentation",
+    "remote developer hiring",
+  ],
 });
 
 const faqMainEntity: FaqQuestionBlock[] = [

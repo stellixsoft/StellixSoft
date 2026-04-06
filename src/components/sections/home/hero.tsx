@@ -18,9 +18,9 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-white leading-tight">
-          Enterprise Software For
+          Custom Software Development Company
           <br />
-          <span className="font-bold">Complex Challenges</span>
+          <span className="font-bold">For Scalable Business Solutions</span>
         </h1>
 
         <p className="mt-8 text-lg md:text-xl text-white/90 italic max-w-2xl mx-auto">

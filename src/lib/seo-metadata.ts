@@ -8,6 +8,8 @@ export type PageMetadataInput = {
   description: string;
   /** Path starting with `/`, e.g. `/about` or `/services/iot-software` */
   path: string;
+  /** Route-specific keywords that override the root-layout defaults. */
+  keywords?: string[];
 };
 
 /**
@@ -17,11 +19,13 @@ export function buildPageMetadata({
   title,
   description,
   path,
+  keywords,
 }: PageMetadataInput): Metadata {
   const url = absoluteUrl(path);
   return {
     title,
     description,
+    ...(keywords?.length ? { keywords } : {}),
     alternates: { canonical: url },
     openGraph: {
       title,

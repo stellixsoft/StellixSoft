@@ -22,10 +22,20 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/legacy-modernization" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Legacy Software Modernization - .NET Migration & Cloud Migration",
+  title:
+    "Application Modernization Services - Legacy Software & Cloud Migration",
   description:
-    "Migrate from VB.NET, legacy .NET Framework, and outdated architectures to modern .NET, cloud-native microservices with zero downtime.",
+    "Legacy modernization services and application modernization. Migrate from VB.NET, legacy .NET Framework, and outdated architectures to modern cloud-native microservices with zero downtime.",
   path: PATH,
+  keywords: [
+    "legacy modernization services",
+    "legacy software modernization",
+    "application modernization services",
+    "cloud migration",
+    ".NET migration",
+    "legacy system modernization",
+    "software modernization",
+  ],
 });
 
 const faqMainEntity: FaqQuestionBlock[] = [

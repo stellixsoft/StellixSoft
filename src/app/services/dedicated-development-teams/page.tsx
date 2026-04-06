@@ -24,8 +24,16 @@ const PATH = "/services/dedicated-development-teams" as const;
 export const metadata: Metadata = buildPageMetadata({
   title: "Dedicated Development Teams - Hire Full-Time Remote Engineers",
   description:
-    "Full-time dedicated engineering teams that integrate with your workflow and culture. US-timezone aligned, long-term partnerships.",
+    "Hire a dedicated development team of full-time remote engineers that integrate with your workflow and culture. US-timezone aligned dedicated development teams for long-term partnerships.",
   path: PATH,
+  keywords: [
+    "dedicated development team",
+    "hire dedicated development team",
+    "dedicated software development team",
+    "remote development team",
+    "full-time remote engineers",
+    "offshore development team",
+  ],
 });
 
 const faqMainEntity: FaqQuestionBlock[] = [
