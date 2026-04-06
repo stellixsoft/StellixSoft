@@ -88,7 +88,7 @@ export default function TechnologyExpertise() {
               >
                 <Image
                   src={card.img}
-                  alt={card.title}
+                  alt={`${card.title} — technology stack icon`}
                   width={56}
                   height={56}
                   className="object-contain"

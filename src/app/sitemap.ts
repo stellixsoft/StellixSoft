@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/blog`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "daily", priority: 0.9 },
     { url: `${SITE_URL}/case-studies`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/contact`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/faqs`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.75 },
     { url: `${SITE_URL}/industries`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/pricing`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
     {

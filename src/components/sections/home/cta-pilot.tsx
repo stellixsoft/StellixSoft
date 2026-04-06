@@ -38,7 +38,8 @@ export default function CTAPilot() {
               <CalendlyScheduleButton
                 className="inline-flex items-center gap-2 rounded-[50px] px-6 md:px-8 py-3 md:py-4 text-base text-sm md:text-md font-normal text-white transition-opacity hover:opacity-90 cursor-pointer"
                 style={{
-                  background: "linear-gradient(180deg, #0b7ea3 0%, #0a5f78 100%)",
+                  backgroundColor: "#10ACDB",
+                  boxShadow: "0 10px 25px -5px rgba(255, 255, 255, 0.13)",
                 }}
               >
                 <svg

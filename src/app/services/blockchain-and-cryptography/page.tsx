@@ -7,6 +7,7 @@ import WhenBlockchainMakesSense from "@/src/components/sections/services/blockch
 import BlockchainDevelopmentProcess from "@/src/components/sections/services/blockchain-and-cryptography/development-process";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
@@ -119,6 +120,7 @@ export default function BlockchainAndCryptographyPage() {
           title="Blockchain & Cryptography FAQs"
           items={faqItems}
         />
+        <ServiceInternalLinks slug="blockchain-and-cryptography" />
         <CTAPilot />
       </div>
     </>

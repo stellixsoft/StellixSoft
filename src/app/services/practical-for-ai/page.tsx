@@ -10,6 +10,7 @@ import WhyChooseStellixsoftForAi from "@/src/components/sections/services/practi
 import StartSmallProveValue from "@/src/components/sections/services/practical-for-ai/start-small";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
@@ -125,6 +126,7 @@ export default function PracticalAiForBusinessPage() {
           title="AI Integration FAQs"
           items={faqItems}
         />
+        <ServiceInternalLinks slug="practical-for-ai" />
         <CTAPilot />
       </div>
     </>

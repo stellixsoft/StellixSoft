@@ -6,6 +6,7 @@ import ECommerceTechnology from "@/src/components/sections/services/e-commerce-d
 import ECommerceFeaturesWeImplement from "@/src/components/sections/services/e-commerce-development/ecommerce-features";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
@@ -117,6 +118,7 @@ export default function ECommerceDevelopmentPage() {
           title="E-Commerce Development FAQs"
           items={faqItems}
         />
+        <ServiceInternalLinks slug="e-commerce-development" />
         <CTAPilot />
       </div>
     </>

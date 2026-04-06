@@ -16,7 +16,7 @@ export default function ReadyToLaunch() {
           <div className="relative aspect-[4/3] md:aspect-auto">
             <Image
               src="/assets/images/core-image-one.webp"
-              alt="Team collaboration"
+              alt="Enterprise software engineers collaborating on a portal modernization workshop"
               fill
               className="object-cover rounded-2xl"
               sizes="(max-width: 768px) 100vw, 50vw"

@@ -9,6 +9,7 @@ import IoTSoftwarePartner from "../../../components/sections/services/iot-softwa
 import FlexibleEngagement from "../../../components/sections/services/iot-software/flexible-engagement";
 import Testimonial from "../../../components/sections/services/iot-software/testimonial";
 import CTAPilot from "../../../components/sections/home/cta-pilot";
+import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
@@ -156,6 +157,7 @@ export default function IoTSoftwarePage() {
           title="IoT Software Development FAQs"
           items={faqItems}
         />
+        <ServiceInternalLinks slug="iot-software" />
         <CTAPilot />
       </div>
     </>

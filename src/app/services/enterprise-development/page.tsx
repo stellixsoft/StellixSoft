@@ -9,6 +9,7 @@ import WhyTrustUs from "../../../components/sections/services/enterprise-develop
 import Testimonial from "../../../components/sections/services/enterprise-development/testimonial";
 import StartWithConfidence from "../../../components/sections/services/enterprise-development/start-with-confidence";
 import CTAPilot from "../../../components/sections/home/cta-pilot";
+import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
@@ -154,6 +155,7 @@ export default function EnterpriseDevelopmentPage() {
           title="Enterprise Development FAQs"
           items={faqItems}
         />
+        <ServiceInternalLinks slug="enterprise-development" />
         <CTAPilot />
       </div>
     </>

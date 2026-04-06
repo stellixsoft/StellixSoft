@@ -5,6 +5,7 @@ import WhenYouNeedCustomSalesforce from "@/src/components/sections/services/sale
 import SalesforceTechnologyExpertise from "@/src/components/sections/services/salesforce-development/technology-expertise";
 import HowWeApproachSalesforceProjects from "@/src/components/sections/services/salesforce-development/how-we-approach";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
@@ -147,6 +148,7 @@ export default function SalesforceDevelopmentPage() {
           title="Salesforce Development FAQs"
           items={faqItems}
         />
+        <ServiceInternalLinks slug="salesforce-development" />
         <CTAPilot />
       </div>
     </>

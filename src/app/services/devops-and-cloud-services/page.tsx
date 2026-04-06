@@ -10,6 +10,7 @@ import EnterprisePlatformOnAwsCaseStudy from "@/src/components/sections/services
 import HowWePriceDevOpsAndCloudWork from "@/src/components/sections/services/devops-and-cloud-services/pricing";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
@@ -126,6 +127,7 @@ export default function DevOpsAndCloudServicesPage() {
           title="DevOps & Cloud Services FAQs"
           items={faqItems}
         />
+        <ServiceInternalLinks slug="devops-and-cloud-services" />
         <CTAPilot />
       </div>
     </>

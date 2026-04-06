@@ -49,6 +49,7 @@ const navLinks = [
     ],
   },
   { href: "/blog", label: "Blog" },
+  { href: "/faqs", label: "FAQs" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

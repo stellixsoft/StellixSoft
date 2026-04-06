@@ -9,6 +9,7 @@ import TechnologyWeUse from "@/src/components/sections/services/automation-and-c
 import WhenToBuildVsBuy from "@/src/components/sections/services/automation-and-custom-apps/when-to-build-vs-buy";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
@@ -122,6 +123,7 @@ export default function AutomationAndCustomAppsPage() {
           title="Automation & Custom Apps FAQs"
           items={faqItems}
         />
+        <ServiceInternalLinks slug="automation-and-custom-apps" />
         <CTAPilot />
       </div>
     </>

@@ -8,6 +8,7 @@ import MobileDevelopmentCapabilities from "@/src/components/sections/services/en
 import WhyChooseStellixsoftForMobile from "@/src/components/sections/services/enterprise-mobile-app-development/why-choose";
 import WeStandBehindOurMobileApps from "@/src/components/sections/services/enterprise-mobile-app-development/stand-behind";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
@@ -153,6 +154,7 @@ export default function EnterpriseMobileAppDevelopmentPage() {
           title="Enterprise Mobile App Development FAQs"
           items={faqItems}
         />
+        <ServiceInternalLinks slug="enterprise-mobile-app-development" />
         <CTAPilot />
       </div>
     </>

@@ -10,6 +10,7 @@ import CalculateYourSavings from "@/src/components/sections/services/dedicated-d
 import BuildYourPerfectTeam from "@/src/components/sections/services/dedicated-development-teams/build-perfect-team";
 import DedicatedDevelopmentTeamsFAQs from "@/src/components/sections/services/dedicated-development-teams/faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
@@ -115,6 +116,7 @@ export default function DedicatedDevelopmentTeamsPage() {
         <CalculateYourSavings />
         <BuildYourPerfectTeam />
         <DedicatedDevelopmentTeamsFAQs />
+        <ServiceInternalLinks slug="dedicated-development-teams" />
         <CTAPilot />
       </div>
     </>

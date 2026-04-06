@@ -10,6 +10,7 @@ import FromRequestToProductiveDeveloper from "@/src/components/sections/services
 import StaffAugmentationFAQs from "@/src/components/sections/services/staff-augmentation/faqs";
 import RiskFreeTrial from "@/src/components/sections/services/staff-augmentation/risk-free-trial";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
@@ -115,6 +116,7 @@ export default function StaffAugmentationPage() {
         <FromRequestToProductiveDeveloper />
         <StaffAugmentationFAQs />
         <RiskFreeTrial />
+        <ServiceInternalLinks slug="staff-augmentation" />
         <CTAPilot />
       </div>
     </>

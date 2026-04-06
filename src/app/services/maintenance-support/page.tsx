@@ -9,6 +9,7 @@ import ExamplesOfMaintenance from "@/src/components/sections/services/maintenanc
 import ProactiveVsReactiveCost from "@/src/components/sections/services/maintenance-support/proactive-vs-reactive";
 import GettingStartedWithMaintenance from "@/src/components/sections/services/maintenance-support/getting-started";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import HowWeMaintainApplication from "@/src/components/sections/services/maintenance-support/how-we-maintain-application";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import { JsonLd } from "@/src/components/seo/json-ld";
@@ -157,6 +158,7 @@ export default function MaintenanceSupportPage() {
           title="Maintenance & Support FAQs"
           items={faqItems}
         />
+        <ServiceInternalLinks slug="maintenance-support" />
         <CTAPilot />
       </div>
     </>

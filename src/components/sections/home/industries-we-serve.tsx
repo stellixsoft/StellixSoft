@@ -79,7 +79,7 @@ export default function IndustriesWeServe() {
                 <div className="relative h-36 md:h-40 rounded-2xl overflow-hidden border border-slate-200/70">
                   <Image
                     src={service.img}
-                    alt={service.title}
+                    alt={`${service.title} — industry services preview`}
                     fill
                     className="object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -90,10 +90,13 @@ export default function IndustriesWeServe() {
 
               <div className="relative z-10 flex items-start justify-between gap-4 mb-5">
                 <div className="flex items-center gap-3">
-                  <div className="h-11 w-11 rounded-xl bg-[var(--color-electricBlue-solid)] border border-[var(--color-electricBlue)]/40 flex items-center justify-center">
+                  <div
+                    className="h-11 w-11 rounded-xl bg-[var(--color-electricBlue-solid)] border border-[var(--color-electricBlue)]/40 flex items-center justify-center"
+                    aria-hidden
+                  >
                     <Image
                       src={service.icon}
-                      alt={service.title}
+                      alt=""
                       width={20}
                       height={20}
                       className="object-contain brightness-0 invert contrast-200"

@@ -10,6 +10,7 @@ import AfterModernization from "@/src/components/sections/services/legacy-modern
 import Testimonial from "@/src/components/sections/industries/logistics-and-supply-chain/testimonial";
 import FAQs from "@/src/components/sections/services/legacy-modernization/faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
+import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
@@ -117,6 +118,7 @@ export default function LegacyModernizationPage() {
         <Testimonial />
         <FAQs />
         <StandBehind />
+        <ServiceInternalLinks slug="legacy-modernization" />
         <CTAPilot />
       </div>
     </>
