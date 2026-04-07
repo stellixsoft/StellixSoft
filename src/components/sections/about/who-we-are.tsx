@@ -5,7 +5,7 @@ const focusItems = [
 ];
 
 const quickFacts = [
-  { label: "Team Size", value: "15 developers and growing" },
+  { label: "Team Size", value: "50+ developers and growing" },
   { label: "Founded", value: "2020" },
   { label: "Headquarters", value: "Remote-First (US/EU Based)" },
   { label: "Primary Markets", value: "North America, Europe" },
@@ -46,7 +46,7 @@ export default function WhoWeAre() {
             </h2>
 
             <p className="mt-6 text-base md:text-lg font-normal text-[var(--color-neutralGray)] leading-relaxed">
-              Stellixsoft is a 15-person enterprise software development company
+              Stellixsoft is a 50+ person enterprise software development company
               specializing in IoT platforms, legacy application modernization,
               and complex system development.
             </p>

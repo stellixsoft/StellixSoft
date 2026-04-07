@@ -29,7 +29,7 @@ export default function OurTeam() {
             Our Team
           </h2>
           <p className="mt-4 text-sm md:text-base text-[var(--color-neutralGray)] max-w-xl mx-auto">
-            15 developers across multiple specializations, working together to solve enterprise complexity.
+            50+ developers across multiple specializations, working together to solve enterprise complexity.
           </p>
         </header>
 
