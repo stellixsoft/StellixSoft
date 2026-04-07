@@ -79,7 +79,7 @@ export default function IndustriesWeServe() {
                 <div className="relative h-36 md:h-40 rounded-2xl overflow-hidden border border-slate-200/70">
                   <Image
                     src={service.img}
-                    alt={`${service.title} — industry services preview`}
+                    alt={`${service.title} - industry services preview`}
                     fill
                     className="object-cover scale-100 group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

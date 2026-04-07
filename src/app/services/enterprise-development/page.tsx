@@ -119,7 +119,7 @@ const faqItems = [
 const serviceLd = serviceJsonLd({
   name: "Enterprise Software Development",
   description:
-    "Large-scale enterprise software — ERPs, CRMs, multi-tenant SaaS, real-time dashboards, and complex business platforms.",
+    "Large-scale enterprise software - ERPs, CRMs, multi-tenant SaaS, real-time dashboards, and complex business platforms.",
   path: PATH,
   serviceType: "Enterprise software platform and business application development",
   category: "Custom Software Development",

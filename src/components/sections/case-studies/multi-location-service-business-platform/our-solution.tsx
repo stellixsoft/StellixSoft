@@ -76,7 +76,7 @@ export default function MultiLocationServiceBusinessPlatformOurSolution() {
           </h2>
           <p className="mt-4 text-sm md:text-base text-[var(--color-neutralGray)] leading-relaxed">
             We built a unified platform connecting headquarters, regional offices, field
-            technicians, and customers—all on a single system with role-appropriate views.
+            technicians, and customers - all on a single system with role-appropriate views.
           </p>
         </div>
 

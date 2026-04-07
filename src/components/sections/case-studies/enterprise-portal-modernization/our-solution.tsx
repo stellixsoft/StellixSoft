@@ -70,7 +70,7 @@ export default function EnterprisePortalOurSolution() {
             Our Solution
           </h2>
           <p className="mt-4 text-sm md:text-base text-[var(--color-neutralGray)] leading-relaxed">
-            We proposed an incremental modernization strategy—upgrading the system module by module
+            We proposed an incremental modernization strategy - upgrading the system module by module
             while keeping it fully operational for existing clients.
           </p>
         </div>

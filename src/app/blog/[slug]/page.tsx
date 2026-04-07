@@ -103,12 +103,12 @@ export default async function BlogPostPage({ params }: PageProps) {
                       .replace(/<h2 ([^>]*)>([^<]*)/g, "<h2 $1>$2</h2>")
                       .replace(/<h3 ([^>]*)>([^<]*)/g, "<h3 $1>$2</h3>")
                       .replace(
-                        /^\*\*(\d+)\.\s+(.+?)\*\*\s*—\s*(.+)$/gm,
-                        '<p class="mt-3 mb-0 text-sm leading-relaxed"><span class="font-medium">$1. $2</span> — $3</p>',
+                        /^\*\*(\d+)\.\s+(.+?)\*\*\s*-\s*(.+)$/gm,
+                        '<p class="mt-3 mb-0 text-sm leading-relaxed"><span class="font-medium">$1. $2</span> - $3</p>',
                       )
                       .replace(
-                        /^- \*\*(.+?)\*\* — (.+)$/gm,
-                        '<li><span class="font-medium">$1</span> — $2</li>',
+                        /^- \*\*(.+?)\*\*\s*-\s*(.+)$/gm,
+                        '<li><span class="font-medium">$1</span> - $2</li>',
                       )
                       .replace(/^- (.+)$/gm, "<li>$1</li>")
                       .replace(

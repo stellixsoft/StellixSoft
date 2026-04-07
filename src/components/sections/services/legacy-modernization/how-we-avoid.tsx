@@ -82,7 +82,7 @@ export default function HowWeAvoid() {
     <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
       <div className="max-w-[1100px] mx-auto">
         <h2 className="text-2xl md:text-3xl font-light text-[var(--color-deepSpace)] text-center">
-          Why 70% of Modernization Projects Fail—And How We Avoid It
+          Why 70% of Modernization Projects Fail - And How We Avoid It
         </h2>
         <div
           className="w-24 h-0.5 mx-auto mt-4 mb-12 md:mb-16"

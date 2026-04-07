@@ -7,7 +7,7 @@ export default function OurBlockchainPhilosophy() {
         "We don’t push blockchain solutions. We start with your business problem and evaluate if blockchain adds value over traditional approaches.",
         icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Start with the problem — blockchain philosophy icon"
+        alt="Start with the problem - blockchain philosophy icon"
         width={20}
         height={20}
         className="object-contain"
@@ -19,7 +19,7 @@ export default function OurBlockchainPhilosophy() {
         "Blockchain tech evolves fast. We build with standard patterns and clear documentation so your solution isn’t dependent on niche expertise.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Build for maintainability — blockchain philosophy icon"
+        alt="Build for maintainability - blockchain philosophy icon"
         width={20}
         height={20}
         className="object-contain"
@@ -31,7 +31,7 @@ export default function OurBlockchainPhilosophy() {
         "Blockchain rarely stands alone. We build solutions that integrate with your existing enterprise systems and workflows.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Integrate with existing systems — blockchain philosophy icon"
+        alt="Integrate with existing systems - blockchain philosophy icon"
         width={20}
         height={20}
         className="object-contain"
@@ -47,7 +47,7 @@ export default function OurBlockchainPhilosophy() {
         </h2>
         <p className="max-w-2xl mx-auto text-sm md:text-[15px] text-slate-600 leading-relaxed mb-12">
           Blockchain isn’t the answer to everything. We help you determine if blockchain is right
-          for your use case—and if so, build it right.
+          for your use case - and if so, build it right.
         </p>
 
         <div className="grid gap-8 md:grid-cols-3">

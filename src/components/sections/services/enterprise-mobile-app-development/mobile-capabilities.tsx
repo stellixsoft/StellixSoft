@@ -52,7 +52,7 @@ export default function MobileDevelopmentCapabilities() {
               <div className="mt-1 inline-flex h-10 w-24 items-center justify-center rounded-2xl bg-[var(--color-electricBlue)]/8 text-[var(--color-electricBlue)]">
                 <Image
                   src="/assets/images/IOT-icon.png"
-                  alt={`${capability.title} — mobile development capability icon`}
+                  alt={`${capability.title} - mobile development capability icon`}
                   width={20}
                   height={20}
                   className="object-contain"

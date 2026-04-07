@@ -54,21 +54,12 @@ export const metadata: Metadata = {
     title: "StellixSoft | Custom Software Development & IT Solutions",
     description:
       "Enterprise software development company specializing in IoT, legacy modernization, AI, cloud, and complex business platforms.",
-    images: [
-      {
-        url: "/assets/images/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "StellixSoft - Enterprise Software Development",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "StellixSoft | Custom Software Development & IT Solutions",
     description:
       "Enterprise software development company specializing in IoT, legacy modernization, AI, cloud, and complex business platforms.",
-    images: ["/assets/images/og-image.png"],
   },
   robots: {
     index: true,

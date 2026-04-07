@@ -93,7 +93,7 @@ export default function StockOptionsAndEquityManagementPlatformOurSolution() {
           </h2>
           <p className="mt-4 text-sm md:text-base text-[var(--color-neutralGray)] leading-relaxed">
             We built a comprehensive equity management platform with separate portals for
-            HR/admin and employees—automating calculations, providing self-service, and
+            HR/admin and employees - automating calculations, providing self-service, and
             maintaining audit-ready records.
           </p>
         </div>

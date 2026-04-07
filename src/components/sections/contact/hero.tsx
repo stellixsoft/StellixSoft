@@ -92,7 +92,7 @@ export default function Hero() {
 
         <p className="mt-8 text-base md:text-lg text-white/90 leading-relaxed">
           Tell us about your project and we&apos;ll get back to you within one
-          business day. No sales pitch—just a straightforward conversation about
+          business day. No sales pitch - just a straightforward conversation about
           how we can help.
         </p>
 

@@ -121,7 +121,7 @@ const faqItems = [
 const serviceLd = serviceJsonLd({
   name: "IoT Software Development",
   description:
-    "End-to-end IoT platform development — device management, real-time telemetry, edge computing, and fleet management dashboards.",
+    "End-to-end IoT platform development - device management, real-time telemetry, edge computing, and fleet management dashboards.",
   path: PATH,
   serviceType: "IoT platform and connected device software development",
   category: "Custom Software Development",

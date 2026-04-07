@@ -17,7 +17,7 @@ export default function HealthcareHero() {
           Software for <span className="font-bold">Healthcare & MedTech</span>
         </h1>
         <p className="mt-4 text-base text-white/80 mx-auto leading-relaxed">
-          Upgrade your VB.NET, .NET Framework, or legacy enterprise applications to modern architectures—while your team keeps working and your business keeps running. Zero downtime. Proven approach.
+          Upgrade your VB.NET, .NET Framework, or legacy enterprise applications to modern architectures - while your team keeps working and your business keeps running. Zero downtime. Proven approach.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <CalendlyScheduleButton

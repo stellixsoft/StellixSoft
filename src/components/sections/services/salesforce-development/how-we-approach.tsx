@@ -7,7 +7,7 @@ export default function HowWeApproachSalesforceProjects() {
         "We start by understanding your current Salesforce setup, business processes, and what’s not working.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Understand your Salesforce org — approach step icon"
+        alt="Understand your Salesforce org - approach step icon"
         width={20}
         height={20}
         className="object-contain"
@@ -19,7 +19,7 @@ export default function HowWeApproachSalesforceProjects() {
         "We follow Salesforce best practices to build maintainable solutions that won’t break with updates.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Design sustainable Salesforce solutions — approach step icon"
+        alt="Design sustainable Salesforce solutions - approach step icon"
         width={20}
         height={20}
         className="object-contain"
@@ -28,10 +28,10 @@ export default function HowWeApproachSalesforceProjects() {
     {
       title: "Knowledge Transfer",
       description:
-        "We don’t just build—we document and train your team so you can maintain and extend what we build.",
+        "We don’t just build - we document and train your team so you can maintain and extend what we build.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Knowledge transfer — Salesforce approach step icon"
+        alt="Knowledge transfer - Salesforce approach step icon"
         width={20}
         height={20}
         className="object-contain"

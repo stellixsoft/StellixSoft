@@ -67,7 +67,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "How does communication work?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Your team joins your channels directly—Slack, Teams, Jira, GitHub. You talk to developers and leads every day via standups, async updates, and shared tooling. No account-manager bottlenecks.",
+      text: "Your team joins your channels directly - Slack, Teams, Jira, GitHub. You talk to developers and leads every day via standups, async updates, and shared tooling. No account-manager bottlenecks.",
     },
   },
   {

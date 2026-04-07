@@ -84,7 +84,7 @@ export default function EnterpriseIoT() {
         <div className="flex-1 relative min-h-[280px] lg:min-h-[400px]">
           <Image
             src="/assets/images/fallback.webp"
-            alt="Enterprise IoT platform for global manufacturer — case study visual"
+            alt="Enterprise IoT platform for global manufacturer - case study visual"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"

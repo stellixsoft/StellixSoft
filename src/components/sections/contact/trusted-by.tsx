@@ -23,7 +23,7 @@ export default function TrustedBy() {
                 {title}
               </h3>
               <a
-                href="https://clutch.co"
+                href="https://clutch.co/profile/stellix-soft"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-block rounded-lg border border-gray-200 bg-gray-50 px-4 py-2.5 text-xs font-normal uppercase tracking-widest text-[var(--color-neutralGray)] transition-colors hover:bg-gray-100 hover:border-gray-300"

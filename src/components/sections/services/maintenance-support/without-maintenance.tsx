@@ -44,7 +44,7 @@ export default function WhatHappensWithoutProperMaintenance() {
               <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-rose-50 text-rose-500">
                 <Image
                   src="/assets/images/IOT-icon.png"
-                  alt={`${risk.title} — maintenance risk icon`}
+                  alt={`${risk.title} - maintenance risk icon`}
                   width={20}
                   height={20}
                   className="object-contain"

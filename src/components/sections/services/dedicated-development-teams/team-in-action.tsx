@@ -92,7 +92,7 @@ export default function DedicatedTeamInAction() {
 
             <figure className="border-l-2 border-[var(--color-electricBlue)] pl-4 md:pl-5 text-sm md:text-[15px] text-[var(--color-neutralGray)] italic">
               <blockquote className="mb-3">
-                “What started as a migration project has evolved into a strategic partnership—they now
+                “What started as a migration project has evolved into a strategic partnership - they now
                 drive most of our product innovation.”
               </blockquote>
               <figcaption className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">

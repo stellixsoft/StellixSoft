@@ -48,7 +48,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "What is headless commerce and do we need it?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Headless commerce separates your storefront (frontend) from the commerce engine (backend). This gives you complete design freedom, faster page loads, and the ability to sell through multiple channels—web, mobile app, kiosks—from one backend. It's ideal for brands that need a unique customer experience.",
+      text: "Headless commerce separates your storefront (frontend) from the commerce engine (backend). This gives you complete design freedom, faster page loads, and the ability to sell through multiple channels - web, mobile app, kiosks - from one backend. It's ideal for brands that need a unique customer experience.",
     },
   },
   {
@@ -56,7 +56,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "How do you handle payment and checkout security?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "We implement PCI DSS-compliant payment flows using Stripe, PayPal, or your preferred gateway. Sensitive card data never touches your servers—it's handled by certified payment processors with tokenization and fraud detection.",
+      text: "We implement PCI DSS-compliant payment flows using Stripe, PayPal, or your preferred gateway. Sensitive card data never touches your servers - it's handled by certified payment processors with tokenization and fraud detection.",
     },
   },
   {
@@ -72,7 +72,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "How do you optimize e-commerce sites for performance?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "We implement CDN delivery, image optimization, code splitting, server-side rendering, and database query optimization. Fast load times directly increase conversion rates—every 100ms improvement in page speed can increase revenue by 1%.",
+      text: "We implement CDN delivery, image optimization, code splitting, server-side rendering, and database query optimization. Fast load times directly increase conversion rates - every 100ms improvement in page speed can increase revenue by 1%.",
     },
   },
 ];

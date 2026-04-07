@@ -96,7 +96,7 @@ export default function TermsOfServicePage() {
           Mobile application development for enterprise and field operations;
         </li>
         <li>
-          Practical AI and automation — integration of machine learning,
+          Practical AI and automation - integration of machine learning,
           intelligent workflows, and internal tooling where appropriate;
         </li>
         <li>E-commerce platforms, storefronts, and related backends;</li>

@@ -15,7 +15,7 @@ export default function AiPoweredFeaturesWeImplement() {
       useCases: "Finance, Legal, Operations, Customer Service",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Intelligent document processing — AI feature icon"
+        alt="Intelligent document processing - AI feature icon"
         width={20}
         height={20}
         className="object-contain"
@@ -35,7 +35,7 @@ export default function AiPoweredFeaturesWeImplement() {
       useCases: "Support, Sales, HR, Internal Operations",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Conversational AI and chatbots — AI feature icon"
+        alt="Conversational AI and chatbots - AI feature icon"
         width={20}
         height={20}
         className="object-contain"
@@ -55,7 +55,7 @@ export default function AiPoweredFeaturesWeImplement() {
       useCases: "Marketing, Sales, Operations, Communications",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Content generation and assistance — AI feature icon"
+        alt="Content generation and assistance - AI feature icon"
         width={20}
         height={20}
         className="object-contain"
@@ -75,7 +75,7 @@ export default function AiPoweredFeaturesWeImplement() {
       useCases: "Support, Knowledge Management, Research",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Intelligent search and retrieval — AI feature icon"
+        alt="Intelligent search and retrieval - AI feature icon"
         width={20}
         height={20}
         className="object-contain"
@@ -95,7 +95,7 @@ export default function AiPoweredFeaturesWeImplement() {
       useCases: "Operations, Finance, Executive Dashboards",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Data analysis and insights — AI feature icon"
+        alt="Data analysis and insights - AI feature icon"
         width={20}
         height={20}
         className="object-contain"
@@ -115,7 +115,7 @@ export default function AiPoweredFeaturesWeImplement() {
       useCases: "Operations, Support, Process Automation",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Workflow automation — AI feature icon"
+        alt="Workflow automation - AI feature icon"
         width={20}
         height={20}
         className="object-contain"

@@ -19,7 +19,7 @@ const faqItems = [
     id: "fees",
     question: "Are there any hidden fees?",
     answer:
-      "No. Our quotes include the scope we agree on. Any change in scope is discussed and agreed in advance. There are no setup fees, management fees, or surprise charges—just transparent pricing.",
+      "No. Our quotes include the scope we agree on. Any change in scope is discussed and agreed in advance. There are no setup fees, management fees, or surprise charges - just transparent pricing.",
   },
   {
     id: "scale",
@@ -31,7 +31,7 @@ const faqItems = [
     id: "budget",
     question: "What if our budget is lower than your minimums?",
     answer:
-      "We can still help. Our pilot option or project-based engagements can be scoped to fit smaller budgets. Reach out and we'll discuss what's possible—we'd rather find a way to work together than turn you away.",
+      "We can still help. Our pilot option or project-based engagements can be scoped to fit smaller budgets. Reach out and we'll discuss what's possible - we'd rather find a way to work together than turn you away.",
   },
 ];
 

@@ -29,7 +29,7 @@ export default function EnterprisePortalFacingSimilarChallenges() {
                 "linear-gradient(180deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
             }}
           >
-            Schedule Your Free Assessment — No Obligation
+            Schedule Your Free Assessment - No Obligation
           </CalendlyScheduleButton>
         </div>
 

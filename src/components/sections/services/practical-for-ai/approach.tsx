@@ -3,7 +3,7 @@ export default function OurApproachToAiIntegration() {
     {
       title: "Practical Applications",
       description:
-        "We build AI features that deliver measurable business value—not AI for AI’s sake. Every feature must solve a real problem.",
+        "We build AI features that deliver measurable business value - not AI for AI’s sake. Every feature must solve a real problem.",
     },
     {
       title: "Proven Services",

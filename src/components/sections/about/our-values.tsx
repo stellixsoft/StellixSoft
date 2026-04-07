@@ -9,7 +9,7 @@ const complianceItems = [
   },
   {
     title: " PARTNERSHIP OVER TRANSACTIONS",
-    description: "We invest in understanding your business. We're not optimizing for this project—we're building a multi-year relationship.",
+    description: "We invest in understanding your business. We're not optimizing for this project - we're building a multi-year relationship.",
   },
   {
     title: " RESULTS OVER ACTIVITY",

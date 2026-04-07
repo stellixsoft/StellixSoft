@@ -9,7 +9,7 @@ const items = [
   {
     title: "Your Process",
     description:
-      "We adapt to your tools, workflows, and communication style—Jira, GitHub, Slack, Teams—whatever you use, we use.",
+      "We adapt to your tools, workflows, and communication style - Jira, GitHub, Slack, Teams - whatever you use, we use.",
   },
   {
     title: "Timezone Alignment",
@@ -55,7 +55,7 @@ export default function WhatsIncludedWithDedicatedTeam() {
               <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--color-electricBlue)]/8 text-[var(--color-electricBlue)]">
                 <Image
                   src="/assets/images/IOT-icon.png"
-                  alt={`${item.title} — dedicated team benefit icon`}
+                  alt={`${item.title} - dedicated team benefit icon`}
                   width={20}
                   height={20}
                   className="object-contain"

@@ -25,7 +25,7 @@ const faqItems = [
     id: "communication",
     question: "How does communication work?",
     answer:
-      "Your team joins your channels directly—Slack, Teams, Jira, GitHub. You talk to developers and leads every day via standups, async updates, and shared tooling. No account‑manager bottlenecks.",
+      "Your team joins your channels directly - Slack, Teams, Jira, GitHub. You talk to developers and leads every day via standups, async updates, and shared tooling. No account‑manager bottlenecks.",
   },
   {
     id: "scaling",

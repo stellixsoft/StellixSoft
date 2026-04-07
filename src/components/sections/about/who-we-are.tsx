@@ -67,7 +67,7 @@ export default function WhoWeAre() {
             </ul>
 
             <p className="mt-8 text-base md:text-lg font-normal text-[var(--color-neutralGray)] leading-relaxed">
-              Our team operates as an extension of yours—same timezone, daily
+              Our team operates as an extension of yours - same timezone, daily
               communication, and long-term commitment.
             </p>
           </div>

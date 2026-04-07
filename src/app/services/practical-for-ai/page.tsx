@@ -60,7 +60,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "What's the difference between practical AI and experimental AI?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Practical AI focuses on solving specific business problems with measurable ROI—automating document processing, improving demand forecasting, or routing customer inquiries. We avoid speculative projects and prioritize implementations that deliver value within weeks, not years.",
+      text: "Practical AI focuses on solving specific business problems with measurable ROI - automating document processing, improving demand forecasting, or routing customer inquiries. We avoid speculative projects and prioritize implementations that deliver value within weeks, not years.",
     },
   },
   {
@@ -68,7 +68,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "Can AI integrate with our legacy systems?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Yes. We specialize in connecting AI capabilities to existing enterprise systems through APIs, middleware, and data pipelines. Your team doesn't need to replace current infrastructure—AI layers on top of what you already have.",
+      text: "Yes. We specialize in connecting AI capabilities to existing enterprise systems through APIs, middleware, and data pipelines. Your team doesn't need to replace current infrastructure - AI layers on top of what you already have.",
     },
   },
   {
@@ -76,7 +76,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "How do you measure ROI on AI projects?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "We define success metrics upfront—time saved, error reduction, revenue impact, or cost avoidance. Every engagement includes baseline measurement before implementation and ongoing tracking after deployment so you can see concrete results.",
+      text: "We define success metrics upfront - time saved, error reduction, revenue impact, or cost avoidance. Every engagement includes baseline measurement before implementation and ongoing tracking after deployment so you can see concrete results.",
     },
   },
 ];

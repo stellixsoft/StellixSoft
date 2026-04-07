@@ -26,7 +26,7 @@ export default function PracticalAiForBusinessHero() {
         </div>
 
         <p className="mt-8 text-sm md:text-base text-white/85 max-w-3xl mx-auto leading-relaxed">
-          We integrate AI capabilities into your business applications—intelligent automation,
+          We integrate AI capabilities into your business applications - intelligent automation,
           natural language processing, document analysis, and smart features powered by OpenAI,
           Claude, and other AI services.
         </p>

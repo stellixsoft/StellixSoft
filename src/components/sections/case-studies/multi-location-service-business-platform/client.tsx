@@ -7,7 +7,7 @@ export default function MultiLocationServiceBusinessPlatformClient() {
         </h2>
         <p className="mt-4 text-sm md:text-base text-[var(--color-neutralGray)] leading-relaxed max-w-3xl mx-auto">
           Doctor Appliance is a home appliance repair company operating across multiple US
-          states—Tennessee, Arizona, Georgia, and Kansas. With field technicians and office staff
+          states - Tennessee, Arizona, Georgia, and Kansas. With field technicians and office staff
           across these locations, they needed to unify their operations, scheduling, and customer management.
         </p>
         <p className="mt-3 text-sm md:text-base text-[var(--color-neutralGray)] leading-relaxed max-w-3xl mx-auto">

@@ -15,7 +15,7 @@ const complianceItems = [
     id: "pci",
     icon: "card",
     title: "CAN'T SCALE EFFICIENTLY",
-    description: "Adding more shipments means adding more admin staff. Manual processes don't scale—they just get messier.",
+    description: "Adding more shipments means adding more admin staff. Manual processes don't scale - they just get messier.",
   },
   {
     id: "pci",

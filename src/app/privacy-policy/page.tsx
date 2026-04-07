@@ -78,30 +78,30 @@ export default function PrivacyPolicyPage() {
       <p>We may collect the following categories of information:</p>
       <ul>
         <li>
-          <strong>Identifiers and contact data</strong> — such as name, email
+          <strong>Identifiers and contact data</strong> - such as name, email
           address, phone number, company name, job title, and similar details
           you provide when you contact us, request a quote, subscribe to
           updates, schedule a meeting, or communicate with our team.
         </li>
         <li>
-          <strong>Project and inquiry details</strong> — descriptions of your
+          <strong>Project and inquiry details</strong> - descriptions of your
           needs, budget ranges, timelines, technical context, and other
           information you choose to share in forms or messages.
         </li>
         <li>
-          <strong>Newsletter and marketing preferences</strong> — email address
+          <strong>Newsletter and marketing preferences</strong> - email address
           and related subscription data if you sign up for our newsletter or
           similar communications.
         </li>
         <li>
-          <strong>Technical and usage data</strong> — such as IP address,
+          <strong>Technical and usage data</strong> - such as IP address,
           approximate location derived from IP, browser type, device type,
           operating system, referring URLs, pages viewed, and time spent on
           pages. This may be collected through server logs, cookies, and
           analytics tools.
         </li>
         <li>
-          <strong>Client and engagement data</strong> — if we provide services
+          <strong>Client and engagement data</strong> - if we provide services
           to you, we may process personal information you or your organization
           provides or that we access as part of the engagement (for example,
           contact persons, credentials you supply, or data in systems we are
@@ -163,7 +163,7 @@ export default function PrivacyPolicyPage() {
       </p>
       <ul>
         <li>
-          <strong>Service providers</strong> — such as email delivery (for
+          <strong>Service providers</strong> - such as email delivery (for
           example, transactional email providers), hosting and infrastructure
           providers, analytics providers, scheduling platforms (for example,
           Calendly), and other vendors who assist us in operating the Site and
@@ -171,16 +171,16 @@ export default function PrivacyPolicyPage() {
           appropriate.
         </li>
         <li>
-          <strong>Professional advisors</strong> — such as lawyers or
+          <strong>Professional advisors</strong> - such as lawyers or
           accountants, when needed.
         </li>
         <li>
-          <strong>Corporate transactions</strong> — in connection with a
+          <strong>Corporate transactions</strong> - in connection with a
           merger, acquisition, or sale of assets, subject to appropriate
           safeguards.
         </li>
         <li>
-          <strong>Legal and safety</strong> — when we believe disclosure is
+          <strong>Legal and safety</strong> - when we believe disclosure is
           required by law, regulation, legal process, or governmental request,
           or to protect the rights, property, or safety of StellixSoft, our
           clients, or others.
@@ -223,7 +223,7 @@ export default function PrivacyPolicyPage() {
         complaint with a supervisory authority.
       </p>
       <p>
-        <strong>United States — California.</strong> If the California
+        <strong>United States - California.</strong> If the California
         Consumer Privacy Act (CCPA) or California Privacy Rights Act (CPRA)
         applies, you may have additional rights regarding personal information
         we collect (including rights to know, delete, and correct, and to opt

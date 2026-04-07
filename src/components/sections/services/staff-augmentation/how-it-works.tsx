@@ -43,7 +43,7 @@ export default function HowStaffAugmentationWorks() {
               <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-[var(--color-electricBlue)]/8 text-[var(--color-electricBlue)]">
                 <Image
                   src="/assets/images/IOT-icon.png"
-                  alt={`${step.title} — staff augmentation step icon`}
+                  alt={`${step.title} - staff augmentation step icon`}
                   width={20}
                   height={20}
                   className="object-contain"

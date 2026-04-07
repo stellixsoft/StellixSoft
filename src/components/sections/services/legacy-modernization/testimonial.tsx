@@ -10,7 +10,7 @@ export default function Testimonial() {
           </p>
           <p className="text-sm font-medium tracking-widest mb-1 mt-6 " style={{ color: "var(--color-electricBlue)" }}>Director of Technology</p>
           <footer className="text-sm text-[var(--color-neutralGray)]">
-            — Global Hardware Manufacturer
+            Global Hardware Manufacturer
           </footer>
         </blockquote>
       </div>

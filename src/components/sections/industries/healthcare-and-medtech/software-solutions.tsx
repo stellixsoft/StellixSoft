@@ -29,7 +29,7 @@ const specializations = [
     icon: "/assets/images/iot.png",
     title: "MEDICAL DEVICE SOFTWARE",
     description:
-      "Software for medical device companies—companion apps, management portals, and data platforms.",
+      "Software for medical device companies - companion apps, management portals, and data platforms.",
     items: [
       "Device dashboards",
       "Data visualization",

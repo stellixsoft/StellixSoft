@@ -26,7 +26,7 @@ export default function YourHardware() {
           </h2>
           <p className="text-base text-[var(--color-deepSpace)] leading-relaxed mb-4">
             Hardware companies face a unique challenge: your core expertise is
-            in electronics, firmware, and manufacturing—not web applications and
+            in electronics, firmware, and manufacturing - not web applications and
             cloud platforms. But your customers expect modern software
             experiences. <strong>That&apos;s where we come in.</strong>
           </p>

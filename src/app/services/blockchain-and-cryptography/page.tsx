@@ -49,7 +49,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "How is enterprise blockchain different from cryptocurrency?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Enterprise blockchain focuses on permissioned networks for business processes—not speculation. We build solutions using Hyperledger, private Ethereum networks, or custom chains that solve real operational problems like compliance, provenance, and inter-organization data sharing.",
+      text: "Enterprise blockchain focuses on permissioned networks for business processes - not speculation. We build solutions using Hyperledger, private Ethereum networks, or custom chains that solve real operational problems like compliance, provenance, and inter-organization data sharing.",
     },
   },
   {
@@ -73,7 +73,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "How do you handle regulatory compliance with blockchain?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "We build compliance into the architecture from day one—data residency controls, GDPR-compatible privacy layers, audit logging, and permissioned access. Our solutions meet regulatory requirements across healthcare, finance, and government sectors.",
+      text: "We build compliance into the architecture from day one - data residency controls, GDPR-compatible privacy layers, audit logging, and permissioned access. Our solutions meet regulatory requirements across healthcare, finance, and government sectors.",
     },
   },
 ];

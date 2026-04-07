@@ -25,7 +25,7 @@ const faqItems = [
     id: "communication",
     question: "How does communication work?",
     answer:
-      "Developers join your Slack, Teams, Jira, GitHub—your tools, your workflows. You talk to them daily via standups, async updates, and direct messages.",
+      "Developers join your Slack, Teams, Jira, GitHub - your tools, your workflows. You talk to them daily via standups, async updates, and direct messages.",
   },
   {
     id: "scaling",

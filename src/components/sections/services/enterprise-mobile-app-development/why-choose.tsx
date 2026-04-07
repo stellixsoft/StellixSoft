@@ -7,7 +7,7 @@ const reasons = [
   {
     title: "Full-Stack Capability",
     description:
-      "We don’t just build the app—we build the backend too. One team for your entire mobile platform, from API to app store.",
+      "We don’t just build the app - we build the backend too. One team for your entire mobile platform, from API to app store.",
   },
   {
     title: "Ongoing Partnership",

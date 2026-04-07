@@ -1,4 +1,4 @@
-/** Inline arrow for schedule CTAs — sharp at any DPR without an extra raster fetch. */
+/** Inline arrow for schedule CTAs - sharp at any DPR without an extra raster fetch. */
 export function ScheduleArrowIcon({ className = "w-4 h-4" }: { className?: string }) {
   return (
     <svg

@@ -18,7 +18,7 @@ export default function EnterpriseSoftwareDevelopmentHero() {
             Software Development</span>
         </h1>
         <p className="mt-4 text-base text-white/80 mx-auto leading-relaxed">
-          Legacy modernization, custom platforms, and enterprise integrations. We build the software that other agencies can't—for organizations with mission-critical requirements.
+          Legacy modernization, custom platforms, and enterprise integrations. We build the software that other agencies can't - for organizations with mission-critical requirements.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <CalendlyScheduleButton

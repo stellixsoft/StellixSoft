@@ -60,7 +60,7 @@ export default function SoftwareChallenge() {
           <p className="text-base text-[var(--color-deepSpace)] leading-relaxed mb-4">
             Hardware companies face a unique challenge: your core expertise is
             electronics, firmware, and manufacturing. But your customers expect
-            modern software experiences—device portals, mobile apps, real-time
+            modern software experiences - device portals, mobile apps, real-time
             dashboards, and enterprise integrations.
           </p>
           <p className="text-base text-[var(--color-deepSpace)] leading-relaxed">

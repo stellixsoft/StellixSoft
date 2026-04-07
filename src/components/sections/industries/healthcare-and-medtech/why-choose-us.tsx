@@ -7,7 +7,7 @@ const reasons = [
   {
     title: "Security & Compliance First",
     description:
-      "Architectures and workflows designed for HIPAA, SOC 2, and PHI protection from day one—not bolted on later.",
+      "Architectures and workflows designed for HIPAA, SOC 2, and PHI protection from day one - not bolted on later.",
   },
   {
     title: "Integrated Product Teams",

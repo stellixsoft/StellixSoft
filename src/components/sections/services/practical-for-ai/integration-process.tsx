@@ -4,7 +4,7 @@ export default function AiIntegrationProcess() {
       phase: "01",
       title: "Identify the Opportunity",
       description:
-        "We work with you to identify where AI can deliver real value. Not every problem needs AI—we help you find the right applications.",
+        "We work with you to identify where AI can deliver real value. Not every problem needs AI - we help you find the right applications.",
       deliverable: "AI opportunity assessment",
     },
     {

@@ -27,7 +27,7 @@ export default function BlockchainAndCryptographyHero() {
 
         <p className="mt-8 text-sm md:text-base text-white/85 max-w-3xl mx-auto leading-relaxed">
           We build blockchain solutions for real business problems: supply chain traceability,
-          identity verification, secure transactions, and smart contracts. Not speculation—practical
+          identity verification, secure transactions, and smart contracts. Not speculation - practical
           applications.
         </p>
 

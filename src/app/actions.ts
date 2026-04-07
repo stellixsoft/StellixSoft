@@ -67,19 +67,19 @@ export async function submitContactForm(
 
   try {
     await sendEmail({
-      subject: `New Contact Form — ${name}`,
+      subject: `New Contact Form - ${name}`,
       replyTo: emailRaw,
       html: `
         <h2>New Contact Form Submission</h2>
         <table style="border-collapse:collapse;width:100%;max-width:600px;font-family:sans-serif;font-size:14px;color:#333">
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee;width:140px">Name</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(name)}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Email</td><td style="padding:8px 12px;border-bottom:1px solid #eee"><a href="mailto:${esc(emailRaw)}">${esc(emailRaw)}</a></td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Company</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(company) || "—"}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Phone</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(phone) || "—"}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Company</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(company) || " - "}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Phone</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(phone) || " - "}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Help With</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(help)}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Project Details</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(project)}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">How They Heard</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(hear) || "—"}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600">Budget</td><td style="padding:8px 12px">${esc(budget) || "—"}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">How They Heard</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(hear) || " - "}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600">Budget</td><td style="padding:8px 12px">${esc(budget) || " - "}</td></tr>
         </table>
         <p style="margin-top:16px;font-size:12px;color:#999">Submitted at ${new Date().toISOString()}</p>
       `,
@@ -149,17 +149,17 @@ export async function submitQuoteForm(
 
   try {
     await sendEmail({
-      subject: `Quote Request — ${name}`,
+      subject: `Quote Request - ${name}`,
       replyTo: emailRaw,
       html: `
         <h2>New Quote Request</h2>
         <table style="border-collapse:collapse;width:100%;max-width:600px;font-family:sans-serif;font-size:14px;color:#333">
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee;width:140px">Name</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(name)}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Email</td><td style="padding:8px 12px;border-bottom:1px solid #eee"><a href="mailto:${esc(emailRaw)}">${esc(emailRaw)}</a></td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Company</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(company) || "—"}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Project Type</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(projectType) || "—"}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Budget Range</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(budgetRange) || "—"}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600">Description</td><td style="padding:8px 12px">${esc(description) || "—"}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Company</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(company) || " - "}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Project Type</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(projectType) || " - "}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Budget Range</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(budgetRange) || " - "}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600">Description</td><td style="padding:8px 12px">${esc(description) || " - "}</td></tr>
         </table>
         <p style="margin-top:16px;font-size:12px;color:#999">Submitted at ${new Date().toISOString()}</p>
       `,

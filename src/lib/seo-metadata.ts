@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { absoluteUrl, getSiteUrl } from "@/src/lib/site-url";
-
-const OG_IMAGE = "/assets/images/og-image.png";
+import { absoluteUrl } from "@/src/lib/site-url";
 
 export type PageMetadataInput = {
   title: string;
@@ -34,20 +32,11 @@ export function buildPageMetadata({
       type: "website",
       siteName: "StellixSoft",
       locale: "en_US",
-      images: [
-        {
-          url: new URL(OG_IMAGE, getSiteUrl()).toString(),
-          width: 1200,
-          height: 630,
-          alt: "StellixSoft - Enterprise Software Development",
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [OG_IMAGE],
     },
   };
 }

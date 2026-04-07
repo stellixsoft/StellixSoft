@@ -84,7 +84,7 @@ export default function ComplianceAndAuditManagementSystemOurSolution() {
           </h2>
           <p className="mt-4 text-sm md:text-base text-[var(--color-neutralGray)] leading-relaxed">
             We built a Jira-like workflow management system specifically designed for compliance and
-            audit processes—familiar patterns for users, but tailored for regulatory requirements.
+            audit processes - familiar patterns for users, but tailored for regulatory requirements.
           </p>
         </div>
 

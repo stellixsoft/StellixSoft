@@ -14,7 +14,7 @@ const reasons = [
   {
     title: "Turnover Kills Momentum",
     description:
-      "Average developer tenure: ~2 years. Just when they understand your system, they leave—and hard‑won knowledge walks out the door.",
+      "Average developer tenure: ~2 years. Just when they understand your system, they leave - and hard‑won knowledge walks out the door.",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function WhyHiringIsBroken() {
               <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--color-electricBlue)]/10 text-[var(--color-electricBlue)]">
                 <Image
                   src="/assets/images/IOT-icon.png"
-                  alt={`${reason.title} — hiring challenge icon`}
+                  alt={`${reason.title} - hiring challenge icon`}
                   width={20}
                   height={20}
                   className="object-contain"

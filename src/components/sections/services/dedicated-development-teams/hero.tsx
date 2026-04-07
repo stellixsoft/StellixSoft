@@ -29,7 +29,7 @@ export default function DedicatedDevelopmentTeamsHero() {
 
         <p className="mt-8 text-sm md:text-base text-white/85 max-w-2xl mx-auto leading-relaxed">
           Scale your development capacity without the hiring headache. Get a complete, dedicated
-          team working exclusively on your projects—fully integrated, your time zone, operational in
+          team working exclusively on your projects - fully integrated, your time zone, operational in
           2 weeks.
         </p>
 

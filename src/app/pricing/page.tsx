@@ -43,7 +43,7 @@ const pricingFaqMainEntity: FaqQuestionBlock[] = [
     name: "Are there any hidden fees?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "No. Our quotes include the scope we agree on. Any change in scope is discussed and agreed in advance. There are no setup fees, management fees, or surprise charges—just transparent pricing.",
+      text: "No. Our quotes include the scope we agree on. Any change in scope is discussed and agreed in advance. There are no setup fees, management fees, or surprise charges - just transparent pricing.",
     },
   },
   {

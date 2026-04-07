@@ -57,7 +57,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "Can you migrate our data to Salesforce?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Yes. We handle complete data migrations—deduplication, field mapping, validation rules, and relationship preservation. We migrate in stages with thorough testing at each step to ensure data integrity.",
+      text: "Yes. We handle complete data migrations - deduplication, field mapping, validation rules, and relationship preservation. We migrate in stages with thorough testing at each step to ensure data integrity.",
     },
   },
   {
@@ -97,7 +97,7 @@ const faqItems = [
     id: "salesforce-data-migration",
     question: "Can you migrate our data to Salesforce?",
     answer:
-      "Yes. We handle complete data migrations—deduplication, field mapping, validation rules, and relationship preservation. We migrate in stages with thorough testing at each step to ensure data integrity.",
+      "Yes. We handle complete data migrations - deduplication, field mapping, validation rules, and relationship preservation. We migrate in stages with thorough testing at each step to ensure data integrity.",
   },
   {
     id: "salesforce-training",

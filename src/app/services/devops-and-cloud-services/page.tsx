@@ -50,7 +50,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
   },
   {
     "@type": "Question",
-    name: "Which cloud provider should we choose—AWS, Azure, or GCP?",
+    name: "Which cloud provider should we choose - AWS, Azure, or GCP?",
     acceptedAnswer: {
       "@type": "Answer",
       text: "It depends on your existing ecosystem, compliance requirements, and workload patterns. AWS offers the broadest service catalog, Azure integrates best with Microsoft environments, and GCP excels at data and ML workloads. We're certified across all three and help you choose based on your specific needs.",
@@ -61,7 +61,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "Can you set up CI/CD for our existing codebase?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Yes. We implement CI/CD pipelines for any tech stack—GitHub Actions, GitLab CI, Azure DevOps, or Jenkins. We configure automated testing, security scanning, and deployment gates so every release is safe and repeatable.",
+      text: "Yes. We implement CI/CD pipelines for any tech stack - GitHub Actions, GitLab CI, Azure DevOps, or Jenkins. We configure automated testing, security scanning, and deployment gates so every release is safe and repeatable.",
     },
   },
   {
@@ -69,7 +69,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "What's included in your DevOps consulting?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "We assess your current infrastructure, identify bottlenecks, and implement improvements—automated deployments, infrastructure as code (Terraform/Pulumi), monitoring and alerting, container orchestration, and security hardening. The goal is faster, safer releases with less manual work.",
+      text: "We assess your current infrastructure, identify bottlenecks, and implement improvements - automated deployments, infrastructure as code (Terraform/Pulumi), monitoring and alerting, container orchestration, and security hardening. The goal is faster, safer releases with less manual work.",
     },
   },
   {

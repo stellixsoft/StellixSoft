@@ -48,7 +48,7 @@ const solutions = [
       "Historical shipment data and analytics",
     ],
     keyFeature:
-      "Clients can see exactly where their shipment is on a map, with accurate ETAs—no status phone calls needed.",
+      "Clients can see exactly where their shipment is on a map, with accurate ETAs - no status phone calls needed.",
     imageAlt: "Client portal web application on laptop",
     imgSrc: "/assets/images/clientportal.webp",
     iconSrc: "/assets/images/iot.png",

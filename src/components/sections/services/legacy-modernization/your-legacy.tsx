@@ -2,7 +2,7 @@ const trustPoints = [
   {
     title: "HARD TO MAINTAIN",
     description:
-      "Finding developers who know VB.NET, classic ASP, or old .NET Framework is nearly impossible—and expensive.",
+      "Finding developers who know VB.NET, classic ASP, or old .NET Framework is nearly impossible - and expensive.",
     icon: "medal",
   },
   {

@@ -43,7 +43,7 @@ export default function CustomInternalTools() {
               Custom Internal Tools
             </h2>
             <p className="text-base md:text-[15px] text-slate-600 leading-relaxed mb-8 max-w-2xl">
-              Sometimes you need a tool that doesn’t exist—or the existing options don’t fit your
+              Sometimes you need a tool that doesn’t exist - or the existing options don’t fit your
               workflow. We build internal applications tailored to how your team actually works.
             </p>
 
@@ -52,7 +52,7 @@ export default function CustomInternalTools() {
                 <div key={item.title} className="flex items-start gap-3">
                   <Image
                     src="/assets/images/IOT-icon.png"
-                    alt={`${item.title} — custom internal tool icon`}
+                    alt={`${item.title} - custom internal tool icon`}
                     width={30}
                     height={30}
                     className="object-contain mt-1 bg-electricBlue-50 rounded-full p-1 border border-sky-100"

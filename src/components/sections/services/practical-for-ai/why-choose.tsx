@@ -7,7 +7,7 @@ export default function WhyChooseStellixsoftForAi() {
         "We build AI features for business applications, not experiments. Production-ready, integrated with your existing systems.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Enterprise experience — why choose StellixSoft for AI icon"
+        alt="Enterprise experience - why choose StellixSoft for AI icon"
         width={20}
         height={20}
         className="object-contain"
@@ -16,10 +16,10 @@ export default function WhyChooseStellixsoftForAi() {
     {
       title: "Full-Stack Capability",
       description:
-        "We don’t just do AI—we build the complete application. Frontend, backend, infrastructure, and AI features together.",
+        "We don’t just do AI - we build the complete application. Frontend, backend, infrastructure, and AI features together.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Full-stack capability — why choose StellixSoft for AI icon"
+        alt="Full-stack capability - why choose StellixSoft for AI icon"
         width={20}
         height={20}
         className="object-contain"
@@ -31,7 +31,7 @@ export default function WhyChooseStellixsoftForAi() {
         "We help you identify where AI actually adds value, not just where it sounds cool. ROI-focused implementation.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Practical focus — why choose StellixSoft for AI icon"
+        alt="Practical focus - why choose StellixSoft for AI icon"
         width={20}
         height={20}
         className="object-contain"
@@ -43,7 +43,7 @@ export default function WhyChooseStellixsoftForAi() {
         "AI features need ongoing care. We provide maintenance, optimization, and enhancement as AI technology evolves.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Long-term support — why choose StellixSoft for AI icon"
+        alt="Long-term support - why choose StellixSoft for AI icon"
         width={20}
         height={20}
         className="object-contain"

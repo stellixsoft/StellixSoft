@@ -30,7 +30,7 @@ export default function WeStandBehindOurMobileApps() {
             <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--color-electricBlue)]/15 text-[var(--color-electricBlue)]">
               <Image
                 src="/assets/images/IOT-icon.png"
-                alt="We stand behind our mobile apps — guarantee section icon"
+                alt="We stand behind our mobile apps - guarantee section icon"
                 width={20}
                 height={20}
                 className="object-contain"

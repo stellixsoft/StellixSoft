@@ -4,7 +4,7 @@ const industries = [
   {
     title: "IoT & Hardware",
     description:
-      "Device management platforms, customer portals, and enterprise software for hardware manufacturers—you build the hardware; we build the software that makes it valuable.",
+      "Device management platforms, customer portals, and enterprise software for hardware manufacturers - you build the hardware; we build the software that makes it valuable.",
     href: "/industries/iot-and-hardware",
     iconSrc: "/assets/images/iot.png",
     iconAlt: "IoT and hardware",
@@ -20,7 +20,7 @@ const industries = [
   {
     title: "Logistics & Supply Chain",
     description:
-      "Custom logistics platforms, dispatch, real-time tracking, and driver apps—replace spreadsheets with software built for how logistics actually works.",
+      "Custom logistics platforms, dispatch, real-time tracking, and driver apps - replace spreadsheets with software built for how logistics actually works.",
     href: "/industries/logistics-and-supply-chain",
     iconSrc: "/assets/images/dedicated-teams.png",
     iconAlt: "Logistics and supply chain",
@@ -54,7 +54,7 @@ export default function OurSpecializations() {
             style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           />
           <p className="text-xs md:text-sm uppercase tracking-widest text-[var(--color-neutralGray)] max-w-2xl mx-auto leading-relaxed">
-            Deep experience in regulated and operationally complex sectors—tailored
+            Deep experience in regulated and operationally complex sectors - tailored
             solutions for teams that cannot afford downtime or guesswork.
           </p>
         </div>

@@ -84,7 +84,7 @@ export default function StaffAugmentationVsDedicatedTeams() {
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 px-4 md:px-8 py-4 md:py-5 bg-slate-50">
             <p className="text-xs md:text-sm text-[var(--color-neutralGray)]">
-              Not sure which is right? Talk to us—we&apos;ll help you decide.
+              Not sure which is right? Talk to us - we&apos;ll help you decide.
             </p>
             <a
               href="/services/dedicated-development-teams"

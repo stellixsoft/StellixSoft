@@ -14,7 +14,7 @@
 ## Services
 
 ### Practical AI for Business
-We help enterprises integrate AI into existing workflows — from predictive analytics and NLP to computer vision and intelligent automation — without the hype, focused on measurable ROI.
+We help enterprises integrate AI into existing workflows: from predictive analytics and NLP to computer vision and intelligent automation, without the hype, focused on measurable ROI.
 URL: https://stellixsoft.com/services/practical-for-ai
 
 ### Automation and Custom Apps
@@ -26,7 +26,7 @@ Secure, auditable systems using blockchain and advanced cryptography for complia
 URL: https://stellixsoft.com/services/blockchain-and-cryptography
 
 ### Dedicated Development Teams
-Full-time dedicated engineering teams that integrate with your workflow, culture, and tools — not just outsourced bodies.
+Full-time dedicated engineering teams that integrate with your workflow, culture, and tools, not just outsourced bodies.
 URL: https://stellixsoft.com/services/dedicated-development-teams
 
 ### DevOps and Cloud Services
@@ -38,7 +38,7 @@ Headless commerce, Shopify Plus, custom storefronts, payment integrations, and h
 URL: https://stellixsoft.com/services/e-commerce-development
 
 ### Enterprise Development
-Large-scale enterprise software — ERPs, CRMs, multi-tenant SaaS, real-time dashboards, and complex business logic.
+Large-scale enterprise software: ERPs, CRMs, multi-tenant SaaS, real-time dashboards, and complex business logic.
 URL: https://stellixsoft.com/services/enterprise-development
 
 ### Enterprise Mobile App Development
@@ -46,11 +46,11 @@ iOS, Android, and cross-platform enterprise mobile applications with offline-fir
 URL: https://stellixsoft.com/services/enterprise-mobile-app-development
 
 ### IoT Software
-End-to-end IoT platform development — device management, real-time data pipelines, edge computing, and fleet management dashboards.
+End-to-end IoT platform development: device management, real-time data pipelines, edge computing, and fleet management dashboards.
 URL: https://stellixsoft.com/services/iot-software
 
 ### Legacy Modernization
-Migrate from VB.NET, legacy .NET Framework, outdated architectures to modern .NET, cloud-native, microservices — with zero downtime.
+Migrate from VB.NET, legacy .NET Framework, outdated architectures to modern .NET, cloud-native, microservices, with zero downtime.
 URL: https://stellixsoft.com/services/legacy-modernization
 
 ### Maintenance & Support
@@ -68,7 +68,7 @@ URL: https://stellixsoft.com/services/staff-augmentation
 ## Industries We Serve
 
 ### IoT & Hardware Companies
-Building the software layer for hardware companies — device management platforms, firmware OTA updates, real-time telemetry, and fleet management.
+Building the software layer for hardware companies: device management platforms, firmware OTA updates, real-time telemetry, and fleet management.
 URL: https://stellixsoft.com/industries/iot-and-hardware
 
 ### Logistics & Supply Chain
@@ -80,7 +80,7 @@ HIPAA-compliant healthcare platforms, EHR integrations, telemedicine, medical de
 URL: https://stellixsoft.com/industries/healthcare-and-medtech
 
 ### Enterprise Software Development
-Custom enterprise platforms for complex business processes — multi-tenant SaaS, compliance systems, and workflow automation.
+Custom enterprise platforms for complex business processes: multi-tenant SaaS, compliance systems, and workflow automation.
 URL: https://stellixsoft.com/industries/enterprise-software-development
 
 ## Case Studies

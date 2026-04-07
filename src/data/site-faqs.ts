@@ -38,7 +38,7 @@ export const siteFaqSections: SiteFaqSection[] = [
         id: "pricing-hidden",
         question: "Are there any hidden fees?",
         answer:
-          "No. Our quotes include the scope we agree on. Any change in scope is discussed and agreed in advance. There are no setup fees, management fees, or surprise charges—just transparent pricing.",
+          "No. Our quotes include the scope we agree on. Any change in scope is discussed and agreed in advance. There are no setup fees, management fees, or surprise charges - just transparent pricing.",
       },
       {
         id: "pricing-scale",
@@ -76,7 +76,7 @@ export const siteFaqSections: SiteFaqSection[] = [
         id: "ai-legacy",
         question: "Can AI integrate with our legacy systems?",
         answer:
-          "Yes. We connect AI capabilities to existing enterprise systems through APIs, middleware, and data pipelines—without replacing your current infrastructure.",
+          "Yes. We connect AI capabilities to existing enterprise systems through APIs, middleware, and data pipelines - without replacing your current infrastructure.",
       },
     ],
   },
@@ -116,19 +116,19 @@ export const siteFaqSections: SiteFaqSection[] = [
         id: "bc-when",
         question: "When does blockchain make sense for a business?",
         answer:
-          "When you need tamper-proof audit trails, multi-party trust without a central authority, or verifiable provenance—e.g. supply chain, compliance, or settlement.",
+          "When you need tamper-proof audit trails, multi-party trust without a central authority, or verifiable provenance - e.g. supply chain, compliance, or settlement.",
       },
       {
         id: "bc-enterprise",
         question: "How is enterprise blockchain different from cryptocurrency?",
         answer:
-          "Enterprise work uses permissioned networks and solves operational problems—not speculation. We use Hyperledger, private Ethereum, or custom chains as appropriate.",
+          "Enterprise work uses permissioned networks and solves operational problems - not speculation. We use Hyperledger, private Ethereum, or custom chains as appropriate.",
       },
       {
         id: "bc-integrate",
         question: "Can blockchain integrate with our existing systems?",
         answer:
-          "Yes. We connect ledger layers to your databases, ERPs, and APIs through middleware so blockchain augments—not replaces—your stack.",
+          "Yes. We connect ledger layers to your databases, ERPs, and APIs through middleware so blockchain augments - not replaces - your stack.",
       },
     ],
   },
@@ -172,7 +172,7 @@ export const siteFaqSections: SiteFaqSection[] = [
       },
       {
         id: "devops-cloud",
-        question: "Which cloud should we choose—AWS, Azure, or GCP?",
+        question: "Which cloud should we choose - AWS, Azure, or GCP?",
         answer:
           "It depends on your ecosystem, compliance, and workloads. We're certified across all three and help you choose pragmatically.",
       },
@@ -180,7 +180,7 @@ export const siteFaqSections: SiteFaqSection[] = [
         id: "devops-cicd",
         question: "Can you set up CI/CD for our existing codebase?",
         answer:
-          "Yes. We implement pipelines for your stack—GitHub Actions, GitLab, Azure DevOps, Jenkins—with tests and safe deployments.",
+          "Yes. We implement pipelines for your stack - GitHub Actions, GitLab, Azure DevOps, Jenkins - with tests and safe deployments.",
       },
     ],
   },
@@ -232,7 +232,7 @@ export const siteFaqSections: SiteFaqSection[] = [
         id: "ent-saas",
         question: "Do you build SaaS applications?",
         answer:
-          "Yes—including multi-tenancy, billing, SSO, and scalable infrastructure.",
+          "Yes - including multi-tenancy, billing, SSO, and scalable infrastructure.",
       },
     ],
   },
@@ -244,7 +244,7 @@ export const siteFaqSections: SiteFaqSection[] = [
     items: [
       {
         id: "mob-native",
-        question: "Native vs cross-platform—which should we use?",
+        question: "Native vs cross-platform - which should we use?",
         answer:
           "Cross-platform (e.g. React Native, Flutter) fits many enterprise cases at lower cost; native helps for deep hardware-specific needs.",
       },
@@ -284,7 +284,7 @@ export const siteFaqSections: SiteFaqSection[] = [
         id: "iot-security",
         question: "How do you secure IoT platforms?",
         answer:
-          "Device identity, TLS/DTLS, segmentation, and anomaly detection—by design, not as an afterthought.",
+          "Device identity, TLS/DTLS, segmentation, and anomaly detection - by design, not as an afterthought.",
       },
     ],
   },
@@ -324,13 +324,13 @@ export const siteFaqSections: SiteFaqSection[] = [
         id: "maint-include",
         question: "What's included in maintenance plans?",
         answer:
-          "Monitoring, patching, performance work, bug fixes, dependency updates, and backups—tiers scale to 24/7 options.",
+          "Monitoring, patching, performance work, bug fixes, dependency updates, and backups - tiers scale to 24/7 options.",
       },
       {
         id: "maint-handover",
         question: "Can you maintain apps built by another vendor?",
         answer:
-          "Yes. We audit the codebase, document what we find, and transition safely—usually within a few weeks.",
+          "Yes. We audit the codebase, document what we find, and transition safely - usually within a few weeks.",
       },
       {
         id: "maint-sla",
@@ -350,7 +350,7 @@ export const siteFaqSections: SiteFaqSection[] = [
         id: "sf-custom",
         question: "Can you customize beyond AppExchange?",
         answer:
-          "Yes—custom Apex, LWC, triggers, and integrations when packaged apps don't fit your process.",
+          "Yes - custom Apex, LWC, triggers, and integrations when packaged apps don't fit your process.",
       },
       {
         id: "sf-integrate",
@@ -388,7 +388,7 @@ export const siteFaqSections: SiteFaqSection[] = [
         id: "sa-vs-dedicated",
         question: "Staff augmentation vs dedicated teams?",
         answer:
-          "Augmentation adds individuals to your process; dedicated teams are a fuller embedded unit—compare on /pricing and service pages.",
+          "Augmentation adds individuals to your process; dedicated teams are a fuller embedded unit - compare on /pricing and service pages.",
       },
     ],
   },

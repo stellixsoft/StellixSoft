@@ -42,7 +42,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "How do you decide what to automate first?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "We start by mapping your current workflows and identifying bottlenecks—repetitive tasks, manual data entry, approval chains, or error-prone processes. We prioritize automations that deliver the highest ROI with the lowest implementation risk.",
+      text: "We start by mapping your current workflows and identifying bottlenecks - repetitive tasks, manual data entry, approval chains, or error-prone processes. We prioritize automations that deliver the highest ROI with the lowest implementation risk.",
     },
   },
   {
@@ -50,7 +50,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "Can you automate processes that span multiple systems?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Yes. Most business automation involves connecting multiple tools—CRMs, ERPs, email systems, databases, and third-party APIs. We build integrations that move data seamlessly between systems without manual intervention.",
+      text: "Yes. Most business automation involves connecting multiple tools - CRMs, ERPs, email systems, databases, and third-party APIs. We build integrations that move data seamlessly between systems without manual intervention.",
     },
   },
   {

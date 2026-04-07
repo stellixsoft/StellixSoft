@@ -17,7 +17,7 @@ export type CaseStudyItem = {
   ctaLabel: string;
 };
 
-/** Five case studies — swap `architectureImage` when your assets are ready. */
+/** Five case studies - swap `architectureImage` when your assets are ready. */
 const caseStudies: CaseStudyItem[] = [
   {
     id: "enterprise-portal-modernization",
@@ -56,7 +56,7 @@ const caseStudies: CaseStudyItem[] = [
     id: "logistics-management-platform",
     title: "Logistics Management Platform",
     challenge:
-      "A third-party logistics provider needed one platform for dispatch, driver workflows, and client visibility—replacing spreadsheets and fragmented tools that slowed operations.",
+      "A third-party logistics provider needed one platform for dispatch, driver workflows, and client visibility - replacing spreadsheets and fragmented tools that slowed operations.",
     solutionIntro:
       "Delivered a unified logistics platform with dispatch, mobile driver app, client portal, and integrations to ERP and mapping services.",
     solutionBullets: [
@@ -87,7 +87,7 @@ const caseStudies: CaseStudyItem[] = [
     id: "compliance-and-audit-management-system",
     title: "Compliance & Audit Management System",
     challenge:
-      "An enterprise team needed a Jira-like workflow for compliance tasks, audit readiness, and evidence—without losing traceability or missing deadlines.",
+      "An enterprise team needed a Jira-like workflow for compliance tasks, audit readiness, and evidence - without losing traceability or missing deadlines.",
     solutionIntro:
       "Built a compliance and audit platform with configurable workflows, automated reminders, reporting, and a full audit trail.",
     solutionBullets: [
@@ -116,7 +116,7 @@ const caseStudies: CaseStudyItem[] = [
     id: "stock-options-and-equity-management-platform",
     title: "Stock Options & Equity Management Platform",
     challenge:
-      "Finance and HR relied on spreadsheets for grants, vesting, and exercises—creating reconciliation risk and heavy manual work at every audit cycle.",
+      "Finance and HR relied on spreadsheets for grants, vesting, and exercises - creating reconciliation risk and heavy manual work at every audit cycle.",
     solutionIntro:
       "Custom equity platform for grants, vesting schedules, employee self-service, and audit-ready reporting integrated with HR and payroll data.",
     solutionBullets: [
@@ -145,7 +145,7 @@ const caseStudies: CaseStudyItem[] = [
     id: "multi-location-service-business-platform",
     title: "Multi-Location Service Business Platform",
     challenge:
-      "A regional home-services brand needed unified scheduling, dispatch, and billing across locations—customers expected online booking and real-time technician visibility.",
+      "A regional home-services brand needed unified scheduling, dispatch, and billing across locations - customers expected online booking and real-time technician visibility.",
     solutionIntro:
       "Platform for scheduling, dispatch, technician apps, customer portal, and billing with one operational view across regions.",
     solutionBullets: [

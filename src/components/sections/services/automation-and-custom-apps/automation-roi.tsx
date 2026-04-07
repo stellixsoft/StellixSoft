@@ -70,7 +70,7 @@ export default function AutomationRoi() {
                 ROI Payback Period
               </p>
               <p className="text-sm md:text-[15px] text-white/80 max-w-xl">
-                Most automation projects pay for themselves within the first year—often in 4–12
+                Most automation projects pay for themselves within the first year - often in 4–12
                 months depending on scope.
               </p>
             </div>

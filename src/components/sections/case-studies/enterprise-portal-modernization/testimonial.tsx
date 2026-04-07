@@ -11,7 +11,7 @@ export default function EnterprisePortalTestimonial() {
         <p className="text-base md:text-lg lg:text-xl leading-relaxed text-[var(--color-deepSpace)] max-w-3xl mx-auto">
           &quot;Stellixsoft&apos;s team works on our timezone, delivers fast, and handles complex
           enterprise requirements without hand-holding. They&apos;ve become an extension of our
-          team. What started as a migration project has evolved into a strategic partnership—they
+          team. What started as a migration project has evolved into a strategic partnership - they
           now drive most of our product innovation.&quot;
         </p>
 

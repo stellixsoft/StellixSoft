@@ -9,7 +9,7 @@ const complianceItems = [
     id: "soc2",
     icon: "shield",
     title: "INTEGRATION REQUIREMENTS",
-    description: "EHR systems, lab systems, billing platforms, medical devices—healthcare software rarely stands alone.",
+    description: "EHR systems, lab systems, billing platforms, medical devices - healthcare software rarely stands alone.",
   },
   {
     id: "pci",
@@ -21,7 +21,7 @@ const complianceItems = [
     id: "pci",
     icon: "card",
     title: "MULTIPLE USER TYPES",
-    description: "Patients, providers, administrators, billing staff—each needs different access and workflows.",
+    description: "Patients, providers, administrators, billing staff - each needs different access and workflows.",
   },
 ];
 

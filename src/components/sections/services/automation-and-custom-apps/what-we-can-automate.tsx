@@ -4,7 +4,7 @@ export default function WhatWeCanAutomate() {
     {
       title: "Manual Data Entry",
       description:
-        "Stop copying data between systems. Automate data flow between your tools—CRM, ERP, spreadsheets, and databases.",
+        "Stop copying data between systems. Automate data flow between your tools - CRM, ERP, spreadsheets, and databases.",
       examplesTitle: "Examples:",
       examples: [
         "Order data to accounting system",
@@ -67,7 +67,7 @@ export default function WhatWeCanAutomate() {
                   {/* simple icon placeholder */}
                   <Image
                     src="/assets/images/IOT-icon.png"
-                    alt={`${item.title} — automation use case icon`}
+                    alt={`${item.title} - automation use case icon`}
                     width={20}
                     height={20}
                     className="object-contain"

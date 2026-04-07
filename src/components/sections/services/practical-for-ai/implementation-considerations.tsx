@@ -18,7 +18,7 @@ export default function AiImplementationConsiderations() {
     {
       title: "Cost Management",
       description:
-        "AI API calls have costs. We design for efficiency—caching, batching, and choosing the right models for each task.",
+        "AI API calls have costs. We design for efficiency - caching, batching, and choosing the right models for each task.",
     },
     {
       title: "Realistic Expectations",

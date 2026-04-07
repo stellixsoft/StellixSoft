@@ -28,7 +28,7 @@ export default function Hero() {
                 </p>
 
                 <p className="mt-6 text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
-                    We don&apos;t just write code—we understand the unique operational, security, and compliance challenges of the sectors we serve.
+                    We don&apos;t just write code - we understand the unique operational, security, and compliance challenges of the sectors we serve.
                 </p>
 
                 <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

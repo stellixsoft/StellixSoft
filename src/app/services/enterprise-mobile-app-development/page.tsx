@@ -76,7 +76,7 @@ const faqMainEntity: FaqQuestionBlock[] = [
     name: "What about app store deployment and ongoing updates?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "We handle the complete deployment lifecycle—App Store and Google Play submission, beta testing through TestFlight/Firebase, over-the-air updates for non-native code, and automated CI/CD pipelines for consistent, rapid releases.",
+      text: "We handle the complete deployment lifecycle - App Store and Google Play submission, beta testing through TestFlight/Firebase, over-the-air updates for non-native code, and automated CI/CD pipelines for consistent, rapid releases.",
     },
   },
 ];
@@ -112,7 +112,7 @@ const faqItems = [
     id: "mobile-deployment",
     question: "What about app store deployment and ongoing updates?",
     answer:
-      "We handle the complete deployment lifecycle—App Store and Google Play submission, beta testing through TestFlight/Firebase, over-the-air updates for non-native code, and automated CI/CD pipelines for consistent, rapid releases.",
+      "We handle the complete deployment lifecycle - App Store and Google Play submission, beta testing through TestFlight/Firebase, over-the-air updates for non-native code, and automated CI/CD pipelines for consistent, rapid releases.",
   },
 ];
 

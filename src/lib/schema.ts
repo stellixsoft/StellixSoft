@@ -185,7 +185,7 @@ export function articleCaseStudyJsonLd(opts: {
   const imageUrl =
     opts.imagePath?.startsWith("http") === true
       ? opts.imagePath
-      : absoluteUrl(opts.imagePath ?? "/assets/images/og-image.png");
+      : absoluteUrl(opts.imagePath ?? "/opengraph-image");
 
   return {
     "@context": "https://schema.org",

@@ -27,7 +27,7 @@ export default function ServiceInternalLinks({ slug }: Props) {
           Related pages
         </h2>
         <p className="text-center text-sm text-[var(--color-neutralGray)] max-w-2xl mx-auto mb-8 md:mb-10">
-          Explore more of what we offer—helpful context for your next step.
+          Explore more of what we offer - helpful context for your next step.
         </p>
         <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {links.map((item) => (

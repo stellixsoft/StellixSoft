@@ -5,10 +5,10 @@ export default function BlockchainDevelopmentProcess() {
       phase: "Phase 01",
       title: "Feasibility Assessment",
       description:
-        "Is blockchain right for this? We analyze your use case and recommend the best approach—blockchain or not.",
+        "Is blockchain right for this? We analyze your use case and recommend the best approach - blockchain or not.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Feasibility assessment — blockchain development phase icon"
+        alt="Feasibility assessment - blockchain development phase icon"
         width={20}
         height={20}
         className="object-contain"
@@ -21,7 +21,7 @@ export default function BlockchainDevelopmentProcess() {
         "Chain selection, smart contract design, integration architecture. Plan for scale, security, and maintenance.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Architecture design — blockchain development phase icon"
+        alt="Architecture design - blockchain development phase icon"
         width={20}
         height={20}
         className="object-contain"
@@ -34,7 +34,7 @@ export default function BlockchainDevelopmentProcess() {
         "Smart contract development, extensive testing, security review, integration with existing systems.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Development and testing — blockchain development phase icon"
+        alt="Development and testing - blockchain development phase icon"
         width={20}
         height={20}
         className="object-contain"
@@ -47,7 +47,7 @@ export default function BlockchainDevelopmentProcess() {
         "Mainnet deployment, monitoring, ongoing maintenance and updates as requirements evolve.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Deployment and support — blockchain development phase icon"
+        alt="Deployment and support - blockchain development phase icon"
         width={20}
         height={20}
         className="object-contain"
