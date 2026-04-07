@@ -1,5 +1,6 @@
 "use client";
 
+import { ExpandableTestimonialQuote } from "@/src/components/ui/expandable-testimonial-quote";
 import { TestimonialAvatar } from "@/src/components/ui/testimonial-initials-avatar";
 
 const clientsSay = [
@@ -10,6 +11,13 @@ const clientsSay = [
     company: "Venture Research Inc. · Plano, TX",
     photo: "/assets/images/testimonials/venture-research.png",
     photoFit: "contain" as const,
+  },
+  {
+    quote:
+      "The best engineering partners to get the job done. We've been working closely with Paz Mental RD for about two years. As a company, bringing in StellixSoft to build our ongoing medical registry platform has been one of the smartest decisions we've made. They proved to be the perfect partner for our sensitive project: a QR code medical alert website. Their technical skill in engineering a seamless user experience was matched only by their responsible and trustworthy approach. We needed a team we could rely on implicitly, and they delivered 100%. Don't hesitate to work with them!",
+    name: "Joseph",
+    company: "Paz Mental RD · Medical alert & registry · Dominican Republic",
+    companyUrl: "https://pazmentalrd.com/",
   },
   {
     quote:
@@ -66,12 +74,6 @@ const clientsSay = [
     photo: "/assets/images/testimonials/floresta.png",
     photoFit: "contain" as const,
   },
-  {
-    quote:
-      "Happy with how it went. Hoping to send another project their way when timing lines up.",
-    name: "Alan S.",
-    company: "McNeal, United States",
-  },
 ];
 
 function StarIcon() {
@@ -117,10 +119,8 @@ export default function OurClientsSay() {
                 <StarIcon />
               </div>
 
-              <blockquote className="flex-1 flex flex-col min-h-0 mb-6">
-                <p className="text-[var(--color-neutralGray)] group-hover:text-white italic text-sm md:text-base leading-relaxed flex-1 transition-colors duration-300">
-                  &quot;{clientSay.quote}&quot;
-                </p>
+              <blockquote className="mb-6 flex min-h-0 flex-1 flex-col">
+                <ExpandableTestimonialQuote quote={clientSay.quote} variant="about" />
               </blockquote>
 
               <footer className="flex items-start gap-3 pt-4 mt-auto border-t border-[var(--color-deepSpace)]/10 group-hover:border-white/20 transition-colors duration-300 shrink-0">

@@ -30,6 +30,19 @@ const companyLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+/** Third-party review / listing profiles (same URLs as Contact “Trusted by”). */
+const reviewDirectoryLinks = [
+  { href: "https://clutch.co/profile/stellix-soft", label: "Clutch" },
+  {
+    href: "https://www.goodfirms.co/company/stellix-soft-llc",
+    label: "GoodFirms",
+  },
+  {
+    href: "https://www.trustpilot.com/review/stellixsoft.com",
+    label: "Trustpilot",
+  },
+] as const;
+
 const socialLinks = [
   {
     href: "https://www.linkedin.com/company/stellixsoft",
@@ -98,6 +111,28 @@ export default function Footer() {
                 >
                   {social.icon}
                 </a>
+              ))}
+            </div>
+            <p className="mt-5 text-xs font-medium uppercase tracking-wider text-white/50">
+              Reviews & listings
+            </p>
+            <div className="mt-2 flex flex-wrap items-center gap-2 text-sm">
+              {reviewDirectoryLinks.map((link, i) => (
+                <span key={link.href} className="inline-flex items-center gap-2">
+                  {i > 0 ? (
+                    <span aria-hidden className="text-white/30">
+                      ·
+                    </span>
+                  ) : null}
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/70 hover:text-[var(--color-electricBlue)] transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </span>
               ))}
             </div>
           </div>
