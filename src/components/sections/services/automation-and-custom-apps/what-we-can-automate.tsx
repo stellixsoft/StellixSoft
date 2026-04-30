@@ -52,10 +52,12 @@ export default function WhatWeCanAutomate() {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
-        <h2 className="text-center text-2xl md:text-3xl lg:text-[32px] font-semibold text-slate-900 mb-12">
-          What We Can Automate
+        <h2 className="text-center text-2xl md:text-3xl lg:text-[32px] font-semibold text-slate-900 mb-10">
+          Business Process Automation Services for Smarter Workflows
         </h2>
-
+        <p className="text-base md:text-[15px] text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto text-center">
+          Our business process automation services are designed to optimize repetitive tasks, reduce human error, and improve operational efficiency across departments.
+        </p>
         <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
             <div

@@ -18,9 +18,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-white leading-tight">
-          Custom Software Development Company
-          <br />
-          <span className="font-bold">For Scalable Business Solutions</span>
+          Custom Software Development Company For Scalable Business Solutions
         </h1>
 
         <p className="mt-8 text-lg md:text-xl text-white/90 italic max-w-2xl mx-auto">
@@ -28,9 +26,7 @@ export default function Hero() {
         </p>
 
         <p className="mt-6 text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
-          We build IoT platforms, modernize legacy applications, and develop
-          real-time systems for hardware companies and enterprises with
-          mission-critical needs.
+          We are a custom software development company that builds IoT platforms, modernizes legacy applications, and develops real-time systems for hardware companies and enterprises with mission-critical needs.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

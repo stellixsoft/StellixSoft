@@ -13,9 +13,9 @@ export default function AutomationAndCustomAppsHero() {
 
       <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center text-white">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight">
-          Automation &amp; Custom
+          Business Automation Services and Custom
           <br />
-          <span className="font-semibold">Applications</span>
+          <span className="font-semibold">App Development</span>
         </h1>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.24em] text-white/80">
@@ -27,9 +27,7 @@ export default function AutomationAndCustomAppsHero() {
         </div>
 
         <p className="mt-8 text-sm md:text-base text-white/85 max-w-3xl mx-auto leading-relaxed">
-          Custom applications that automate your repetitive tasks, connect your systems, and give
-          your team superpowers. Internal tools, workflow automation, and integrations built for
-          your specific needs.
+          We provide business automation services and custom app development solutions that help companies streamline operations, eliminate manual work, and improve efficiency. Our approach focuses on building scalable applications tailored to your business processes.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

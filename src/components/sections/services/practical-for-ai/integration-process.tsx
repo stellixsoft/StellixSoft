@@ -33,9 +33,12 @@ export default function AiIntegrationProcess() {
   return (
     <section className="py-16 md:py-24 bg-sky-50/70">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
-        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-10 md:mb-12">
-          Our AI Integration Process
+        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-8 md:mb-10">
+          Our AI integration services Process
         </h2>
+        <p className="text-sm md:text-[15px] text-slate-600 leading-relaxed mb-8 md:mb-10 text-center max-w-2xl mx-auto">
+          Our structured approach ensures efficient AI integration services from initial concept to fully deployed, production-ready solutions.
+        </p>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (

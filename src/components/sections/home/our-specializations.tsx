@@ -54,8 +54,7 @@ export default function OurSpecializations() {
             style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           />
           <p className="text-xs md:text-sm uppercase tracking-widest text-[var(--color-neutralGray)] max-w-2xl mx-auto leading-relaxed">
-            Deep experience in regulated and operationally complex sectors - tailored
-            solutions for teams that cannot afford downtime or guesswork.
+            As a custom software development company, we deliver custom software development services across regulated and operationally complex industries.
           </p>
         </div>
 

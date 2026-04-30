@@ -16,6 +16,7 @@ import {
   serviceJsonLd,
 } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
+import BlockchainSolution from "@/src/components/sections/services/blockchain-and-cryptography/blockchain-solution";
 
 const PATH = "/services/blockchain-and-cryptography" as const;
 
@@ -111,6 +112,7 @@ export default function BlockchainAndCryptographyPage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
+        <BlockchainSolution />
         <BlockchainForBusiness />
         <OurBlockchainPhilosophy />
         <BlockchainTechnologyExpertise />

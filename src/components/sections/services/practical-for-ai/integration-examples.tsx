@@ -41,10 +41,12 @@ export default function AiIntegrationExamples() {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
-        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-10 md:mb-12">
-          AI Integration Examples
+        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-8 md:mb-10">
+          Real-World AI Development Services in Action
         </h2>
-
+        <p className="text-sm md:text-[15px] text-slate-600 leading-relaxed mb-8 md:mb-10 text-center max-w-2xl mx-auto">
+          These examples demonstrate how our AI development services deliver real business impact across different industries and use cases.
+        </p>
         <div className="grid gap-6 md:gap-8 md:grid-cols-3">
           {examples.map((ex) => (
             <div

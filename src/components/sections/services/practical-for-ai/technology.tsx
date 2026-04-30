@@ -42,9 +42,10 @@ export default function AiTechnologyWeWorkWith() {
   return (
     <section className="py-16 md:py-24 bg-[#050819]">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 text-white">
-        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light mb-10 md:mb-12">
-          AI Technology We Work With
+        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light mb-8 md:mb-10">
+          AI Development Services Powered by Modern Technologies
         </h2>
+        <p className="mb-8 text-sm md:text-base text-white/85 max-w-3xl mx-auto leading-relaxed text-center">Our AI development services utilize cutting-edge tools and platforms such as OpenAI, Claude, and vector databases to build scalable, reliable, and high-performance AI-powered applications for enterprises.</p>
 
         <div className="grid gap-6 md:gap-7 lg:gap-8 md:grid-cols-2 lg:grid-cols-4">
           {columns.map((col) => (

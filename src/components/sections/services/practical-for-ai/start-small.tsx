@@ -15,7 +15,7 @@ export default function StartSmallProveValue() {
               Start Small, Prove Value
             </h2>
             <p className="text-sm md:text-[15px] text-slate-600 leading-relaxed mb-6 max-w-xl">
-              Not sure if AI is right for your use case? Start with a targeted prototype.
+              Start your journey with our practical AI services and validate the impact of AI on your business before scaling to full implementation
             </p>
             <ul className="space-y-2.5 text-sm md:text-[15px] text-slate-700">
               {bullets.map((b) => (

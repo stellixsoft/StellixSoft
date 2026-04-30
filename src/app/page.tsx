@@ -13,6 +13,8 @@ import CTAPilot from "../components/sections/home/cta-pilot";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import { webPageJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
+import CustomSoftwareServices from "../components/sections/home/custom-sofware-services";
+import InterpriseSoftware from "../components/sections/home/interprise-software";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Custom Software Development Company | Enterprise IT Solutions",
@@ -50,9 +52,11 @@ export default function Home() {
         <ClientLogos />
         <OurSpecializations />
         <FeaturedCaseStudy />
+        <CustomSoftwareServices />
         <IndustriesWeServe />
         <MinimizeRisk />
         <TechnologyExpertise />
+        <InterpriseSoftware />
         <CompareOptions />
         <WhyStellixsoft />
         <Testimonials />

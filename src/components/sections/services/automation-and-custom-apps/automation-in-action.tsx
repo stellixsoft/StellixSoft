@@ -52,9 +52,13 @@ export default function AutomationInAction() {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
-        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-10 md:mb-12">
-          Automation in Action
+        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-8 md:mb-10">
+          Real Results from Business Automation Services
         </h2>
+
+       <p className="text-base md:text-[15px] text-slate-600 leading-relaxed mb-8 max-w-3xl mx-auto text-center">
+          These case studies highlight how our business automation services and custom app development solutions deliver measurable improvements in efficiency, scalability, and cost savings.
+        </p>
 
         <div className="grid gap-6 md:gap-8 md:grid-cols-3">
           {cases.map((item) => (

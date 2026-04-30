@@ -54,9 +54,12 @@ export default function WhyChooseStellixsoftForAi() {
   return (
     <section className="py-16 md:py-24 bg-sky-50/70">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 text-center">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-10 md:mb-12">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-8 md:mb-10">
           Why Choose Stellixsoft for AI Integration
         </h2>
+        <p className="text-sm md:text-[15px] text-slate-600 leading-relaxed mb-8 md:mb-10 text-center max-w-2xl mx-auto">
+          As a trusted provider of AI integration services, we focus on delivering practical, scalable, and business-focused solutions that create measurable value and long-term success.
+        </p>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {items.map((item) => (

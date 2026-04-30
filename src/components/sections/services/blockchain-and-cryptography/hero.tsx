@@ -13,9 +13,9 @@ export default function BlockchainAndCryptographyHero() {
 
       <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center text-white">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight">
-          Blockchain &amp; Cryptography
+          Blockchain Development Services for
           <br />
-          <span className="font-semibold">Practical Enterprise Solutions</span>
+          <span className="font-semibold">Modern Enterprises</span>
         </h1>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.24em] text-white/80">
@@ -26,9 +26,7 @@ export default function BlockchainAndCryptographyHero() {
         </div>
 
         <p className="mt-8 text-sm md:text-base text-white/85 max-w-3xl mx-auto leading-relaxed">
-          We build blockchain solutions for real business problems: supply chain traceability,
-          identity verification, secure transactions, and smart contracts. Not speculation - practical
-          applications.
+          Our Blockchain development services build secure, scalable systems for real business use. From Blockchain and Cryptography to Blockchain integration services, we deliver practical, long-term solutions.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

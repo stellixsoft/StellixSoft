@@ -40,11 +40,10 @@ export default function CustomInternalTools() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start">
           <div className="pt-1">
             <h2 className="text-2xl md:text-3xl lg:text-4xl leading-[1.05] font-light text-[var(--color-deepSpace)] mb-4">
-              Custom Internal Tools
+              Custom App Development for Internal Business Tools
             </h2>
             <p className="text-base md:text-[15px] text-slate-600 leading-relaxed mb-8 max-w-2xl">
-              Sometimes you need a tool that doesn’t exist - or the existing options don’t fit your
-              workflow. We build internal applications tailored to how your team actually works.
+              Our custom app development services focus on building internal tools that match your exact workflow. Unlike off-the-shelf solutions, these applications are designed specifically for your operations, giving your team greater flexibility and control.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 text-sm md:text-[15px] text-slate-700">

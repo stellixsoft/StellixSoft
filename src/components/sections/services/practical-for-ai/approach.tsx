@@ -23,11 +23,10 @@ export default function OurApproachToAiIntegration() {
         <div className="grid gap-10 md:gap-12 md:grid-cols-[1.1fr,1.4fr] items-start">
           <div>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-4">
-              Our Approach to AI Integration
+              AI Integration Services for Modern Enterprises
             </h2>
-            <p className="text-sm md:text-[15px] text-slate-600 leading-relaxed max-w-xl">
-              We’re not an AI research lab. We’re enterprise software developers who integrate AI
-              services to solve real business problems. We focus on:
+            <p className="text-sm md:text-[15px] text-slate-600 leading-relaxed">
+             Our AI integration services are designed to seamlessly embed AI capabilities into your existing applications and workflows. We focus on practical implementation, ensuring minimal disruption while maximizing efficiency, automation, and performance across your systems.
             </p>
           </div>
 

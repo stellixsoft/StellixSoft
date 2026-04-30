@@ -24,7 +24,7 @@ export default function AiPoweredFeaturesWeImplement() {
     {
       title: "Conversational AI & Chatbots",
       description:
-        "Intelligent chat interfaces for customer service and internal tools.",
+        "AI chatbot development services to automate user interactions and experience.",
       bullets: [
         "Customer support bots",
         "Internal knowledge assistants",
@@ -104,7 +104,7 @@ export default function AiPoweredFeaturesWeImplement() {
     {
       title: "Workflow Automation",
       description:
-        "Intelligent automation that handles complex decisions.",
+        "AI for business automation to streamline operations and improve decisions.",
       bullets: [
         "Smart routing",
         "Approval suggestions",

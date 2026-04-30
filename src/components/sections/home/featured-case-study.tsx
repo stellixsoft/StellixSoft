@@ -25,7 +25,7 @@ const caseStudies: CaseStudyItem[] = [
     challenge:
       "A 15 year old VB.NET portal serving Fortune 500 clients couldn't scale or add new features efficiently. Finding developers for legacy tech was becoming impossible while market demands grew.",
     solutionIntro:
-      "Complete migration to .NET Core 6 with SignalR real-time capabilities, multi-tenant architecture, and automated device monitoring systems.",
+      "Delivered a unified logistics platform through our custom enterprise software development services, including dispatch, mobile driver app, client portal, and integrations.",
     solutionBullets: [
       'Incremental "No Downtime" Migration',
       "SignalR Real-time Integration",
