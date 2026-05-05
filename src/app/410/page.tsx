@@ -1,7 +1,7 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
 import Link from "next/link";
 
-export default function NotFound() {
+export default function GonePage() {
   return (
     <>
       <section className="relative py-40 flex items-center justify-center overflow-hidden -mt-[100px] min-h-[calc(70vh+120px)]">
