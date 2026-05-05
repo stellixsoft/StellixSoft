@@ -5,6 +5,7 @@ import {
   blogCategories,
   getBlogCoverImageSrc,
 } from "@/src/data/blog-posts";
+import { getBlogCategoryPath } from "@/src/lib/blog-category-url";
 
 function buildArchives() {
   const byMonth = new Map<
@@ -106,7 +107,7 @@ export default function BlogPostSidebar({ currentSlug }: BlogPostSidebarProps) {
             {categories.map((cat) => (
               <li key={cat}>
                 <Link
-                  href={`/blog?category=${encodeURIComponent(cat)}`}
+                  href={getBlogCategoryPath(cat)}
                   className="text-sm font-medium text-slate-600 transition-colors hover:text-[var(--color-electricBlue)]"
                 >
                   {cat}

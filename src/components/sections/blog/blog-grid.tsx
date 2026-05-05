@@ -5,6 +5,10 @@ import Link from "next/link";
 import { useSearchParams, usePathname } from "next/navigation";
 import { blogPosts, blogCategories } from "@/src/data/blog-posts";
 import type { BlogCategory } from "@/src/data/blog-posts";
+import {
+  getBlogCategoryFromSlug,
+  getBlogCategoryPath,
+} from "@/src/lib/blog-category-url";
 
 const POSTS_PER_PAGE = 12;
 
@@ -46,6 +50,11 @@ function BlogGridInner() {
   const pathname = usePathname();
   const categoryParam = searchParams.get("category");
   const archiveParam = searchParams.get("archive");
+  const categoryFromPath = useMemo<BlogCategory | null>(() => {
+    const match = pathname.match(/^\/blog\/category\/([^/]+)$/);
+    if (!match) return null;
+    return getBlogCategoryFromSlug(match[1]);
+  }, [pathname]);
 
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState<BlogCategory>("All");
@@ -61,13 +70,14 @@ function BlogGridInner() {
 
   useEffect(() => {
     const sp = new URLSearchParams();
-    if (categoryParam) sp.set("category", categoryParam);
+    if (categoryFromPath) sp.set("category", categoryFromPath);
+    else if (categoryParam) sp.set("category", categoryParam);
     if (archiveParam) sp.set("archive", archiveParam);
     const { category: c, archiveMonth: a } = parseBlogFilters(sp);
     setCategory(c);
     setArchiveMonth(a);
     setPage(1);
-  }, [categoryParam, archiveParam]);
+  }, [categoryFromPath, categoryParam, archiveParam]);
 
   useEffect(() => {
     const onPopState = () => {
@@ -115,9 +125,11 @@ function BlogGridInner() {
     setCategory(cat);
     setPage(1);
     const qs = new URLSearchParams();
-    if (cat !== "All") qs.set("category", cat);
     if (archiveMonth) qs.set("archive", archiveMonth);
-    replaceBlogUrl(qs);
+    const path = getBlogCategoryPath(cat);
+    const query = qs.toString();
+    const href = query ? `${path}?${query}` : path;
+    window.history.replaceState(window.history.state, "", href);
   };
 
   return (
