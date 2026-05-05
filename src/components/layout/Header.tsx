@@ -55,14 +55,22 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-const SCROLL_THRESHOLD = 50;
+const SCROLL_THRESHOLD = 48;
 
-/**
- * Header always uses a solid background so nav + logo stay visible on every
- * route. A transparent “over the hero” bar only worked on pages that pull a
- * dark hero under the bar (-mt-[100px]); new pages with a light body looked
- * like an empty white strip (white text on white).
- */
+/** Header chrome — bright cyan bar; active nav tab highlight */
+const styles = {
+  topAccent:
+    "linear-gradient(90deg, #00c9ff 0%, #00b4f0 40%, #00d8ff 100%)",
+  activeNavTab:
+    "linear-gradient(0deg, rgba(0, 184, 219, 0) 0%, rgba(0, 184, 219, 0.22) 100%)",
+  ctaGradient:
+    "linear-gradient(180deg, #47dcff 0%, #00b4ea 42%, #0096ca 100%)",
+  ctaShadow:
+    "0 0 22px rgba(0, 200, 255, 0.55), 0 8px 20px rgba(0, 100, 140, 0.35)",
+} as const;
+
+const dropdownActiveBg = styles.activeNavTab;
+
 export default function Header() {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -70,23 +78,20 @@ export default function Header() {
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
-  // Background on scroll (desktop)
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(typeof window !== "undefined" && window.scrollY > SCROLL_THRESHOLD);
+      setScrolled(window.scrollY > SCROLL_THRESHOLD);
     };
-    handleScroll(); // run once for initial position
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
     setMobileDropdown(null);
   }, [pathname]);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -105,151 +110,172 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-[100] w-full bg-[var(--color-deepSpace)] text-white transition-shadow duration-300 ${
-        scrolled ? "shadow-md shadow-black/30" : ""
+      className={`sticky top-0 z-[100] w-full text-white transition-[background-color,box-shadow,backdrop-filter] duration-300 ease-out ${
+        scrolled
+          ? "bg-[#070b14]/96 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
+          : "bg-transparent"
       }`}
     >
-      {/* Top electric blue accent line */}
       <div
-        className="h-0.5 w-full shrink-0"
-        style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+        className="h-[3px] w-full shrink-0"
+        style={{ background: styles.topAccent }}
+        aria-hidden
       />
 
-      <nav className="flex items-center justify-between gap-6 px-4 sm:px-6 lg:px-8 py-4 max-w-[1500px] mx-auto">
-        {/* Logo */}
+      <nav className="mx-auto flex max-w-[1500px] items-stretch justify-between gap-4 px-4 sm:px-6 lg:gap-6 lg:px-10 min-h-[68px]">
         <Link
           href="/"
-          className="flex items-center gap-2 shrink-0 text-white hover:opacity-90 transition-opacity"
+          className="flex shrink-0 items-center gap-2 text-white transition-opacity hover:opacity-90 py-3 lg:py-0"
         >
           <Image
             src="/assets/images/stellixsoft-logo.png"
             alt="StellixSoft"
             width={160}
             height={32}
-            className="object-contain w-[140px] sm:w-[160px]"
+            className="h-[26px] w-auto object-contain sm:h-[30px] lg:h-[32px]"
           />
         </Link>
 
-        {/* Desktop Nav links */}
-        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-          {navLinks.map((item) => {
-            if ("dropdown" in item && item.dropdown) {
-              const isOpen = openDropdown === item.label;
-              const isActiveItem =
-                pathname === item.href ||
-                item.dropdown.some((d) => pathname.startsWith(d.href));
-              return (
-                <div
-                  key={item.label}
-                  className="relative"
-                  onMouseEnter={() => setOpenDropdown(item.label)}
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <Link
-                    href={item.href}
-                    className={`flex items-center gap-1 text-sm font-medium transition-colors ${
-                      isActiveItem
-                        ? "text-[var(--color-electricBlue)]"
-                        : "text-white/90 hover:text-[var(--color-electricBlue)]"
-                    }`}
+        <div className="hidden lg:flex min-h-[68px] flex-1 items-stretch justify-end gap-0">
+          <div className="flex items-stretch">
+            {navLinks.map((item) => {
+              if ("dropdown" in item && item.dropdown) {
+                const isOpen = openDropdown === item.label;
+                const isActiveItem =
+                  pathname === item.href ||
+                  item.dropdown.some((d) => pathname.startsWith(d.href));
+                return (
+                  <div
+                    key={item.label}
+                    className="relative flex items-stretch"
+                    onMouseEnter={() => setOpenDropdown(item.label)}
+                    onMouseLeave={() => setOpenDropdown(null)}
                   >
-                    {item.label}
-                    <svg
-                      className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    <Link
+                      href={item.href}
+                      className={`relative flex items-center gap-1.5 self-stretch whitespace-nowrap px-4 text-[13px] font-medium tracking-[0.02em] transition-colors xl:px-5 ${
+                        isActiveItem
+                          ? "text-[#6cebff]"
+                          : "text-white/92 hover:text-[#baf6ff]"
+                      }`}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </Link>
-                  {isOpen && (
-                    <div className="absolute top-full left-0 pt-2 z-50 min-w-[320px]">
-                      <div
-                        className="border border-gray-200 rounded-none py-0 shadow-xl"
-                        style={{
-                          background: "#ffffff",
-                        }}
-                      >
-                        {item.dropdown.map((d) => (
-                          <Link
-                            key={d.href}
-                            href={d.href}
-                            className={`block px-4 py-2.5 text-sm transition-colors whitespace-nowrap border-b border-gray-200 last:border-b-0 ${
-                              pathname === d.href
-                                ? "text-[var(--color-electricBlue)] bg-gray-100"
-                                : "text-black hover:text-[var(--color-electricBlue)] hover:bg-gray-50"
-                            }`}
-                          >
-                            {d.label}
-                          </Link>
-                        ))}
+                      {isActiveItem && (
+                        <span
+                          aria-hidden
+                          className="pointer-events-none absolute inset-0"
+                          style={{ background: styles.activeNavTab }}
+                        />
+                      )}
+                      <span className="relative z-10 flex items-center gap-1.5">
+                        {item.label}
+                        <svg
+                          className={`relative z-10 h-3.5 w-3.5 shrink-0 opacity-95 transition-transform duration-200 ${
+                            isOpen ? "rotate-180" : ""
+                          }`}
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
+                      </span>
+                    </Link>
+                    {isOpen && (
+                      <div className="absolute left-0 top-full z-50 min-w-[300px] pt-2 xl:min-w-[320px]">
+                        <div className="border border-gray-200 bg-white py-0 shadow-xl shadow-black/15">
+                          {item.dropdown.map((d) => (
+                            <Link
+                              key={d.href}
+                              href={d.href}
+                              className={`block whitespace-nowrap border-b border-gray-100 px-4 py-2.5 text-[13px] transition-colors last:border-b-0 ${
+                                pathname === d.href
+                                  ? "font-medium text-[var(--color-accentOnLight)]"
+                                  : "text-neutral-800 hover:bg-slate-50 hover:text-[var(--color-electricBlue-solid)]"
+                              }`}
+                              style={
+                                pathname === d.href
+                                  ? { background: dropdownActiveBg }
+                                  : undefined
+                              }
+                            >
+                              {d.label}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
+                  </div>
+                );
+              }
+              const active = isActive(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`relative flex items-center self-stretch whitespace-nowrap px-4 text-[13px] font-medium tracking-[0.02em] transition-colors xl:px-5 ${
+                    active ? "text-[#6cebff]" : "text-white/92 hover:text-[#baf6ff]"
+                  }`}
+                >
+                  {active && (
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0"
+                      style={{ background: styles.activeNavTab }}
+                    />
                   )}
-                </div>
+                  <span className="relative z-10">{item.label}</span>
+                </Link>
               );
-            }
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(item.href)
-                    ? "text-[var(--color-electricBlue)]"
-                    : "text-white/90 hover:text-[var(--color-electricBlue)]"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-          <CalendlyScheduleButton
-            className="shrink-0 rounded-full px-5 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90 cursor-pointer"
-            style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-          >
-            Schedule a Call
-          </CalendlyScheduleButton>
+            })}
+          </div>
+
+          <div className="ml-6 flex items-center xl:ml-8">
+            <CalendlyScheduleButton
+              className="shrink-0 cursor-pointer rounded-full px-6 py-2.5 text-[13px] font-semibold tracking-wide text-white transition-[opacity,transform] hover:opacity-95 active:scale-[0.98]"
+              style={{
+                background: styles.ctaGradient,
+                boxShadow: styles.ctaShadow,
+              }}
+            >
+              Schedule a Call
+            </CalendlyScheduleButton>
+          </div>
         </div>
 
-        {/* Mobile menu button */}
         <button
           type="button"
           onClick={() => setMobileMenuOpen(true)}
-          className="lg:hidden p-2 text-white/90 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
+          className="flex items-center p-2 text-white/90 transition-colors hover:text-white lg:hidden"
           aria-label="Open menu"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </nav>
 
-      {/* Mobile menu - slide in from left */}
       <div
-        className={`fixed inset-0 z-[200] lg:hidden transition-opacity duration-300 ${
-          mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-[200] transition-opacity duration-300 lg:hidden ${
+          mobileMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
         aria-hidden={!mobileMenuOpen}
       >
-        {/* Backdrop */}
         <div
           className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           onClick={() => setMobileMenuOpen(false)}
         />
 
-        {/* Panel */}
         <div
-          className={`absolute top-0 left-0 h-full w-[min(320px,85vw)] bg-[var(--color-deepSpace)] shadow-2xl flex flex-col transition-transform duration-300 ease-out ${
+          className={`absolute left-0 top-0 flex h-full w-[min(320px,85vw)] flex-col bg-[#070b14] shadow-2xl transition-transform duration-300 ease-out ${
             mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          <div className="flex items-center justify-between p-4 border-b border-white/10">
+          <div className="flex items-center justify-between border-b border-white/10 p-4">
             <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
               <Image
                 src="/assets/images/stellixsoft-logo.png"
@@ -262,10 +288,10 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="p-2 text-white/90 hover:text-white rounded-lg hover:bg-white/10"
+              className="rounded-lg p-2 text-white/90 hover:bg-white/10 hover:text-white"
               aria-label="Close menu"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -275,13 +301,18 @@ export default function Header() {
               {navLinks.map((item) => {
                 if ("dropdown" in item && item.dropdown) {
                   const isExpanded = mobileDropdown === item.label;
+                  const activeBranch =
+                    pathname === item.href ||
+                    item.dropdown.some((d) => pathname.startsWith(d.href));
                   return (
                     <div key={item.label} className="border-b border-white/10">
-                      <div className="flex items-center w-full">
+                      <div className="flex w-full items-center">
                         <Link
                           href={item.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className="flex-1 px-6 py-4 text-white/90 hover:bg-white/5 hover:text-white"
+                          className={`flex-1 px-6 py-4 text-[13px] font-medium hover:bg-white/5 ${
+                            activeBranch ? "text-[#6cebff]" : "text-white/90 hover:text-white"
+                          }`}
                         >
                           {item.label}
                         </Link>
@@ -292,7 +323,7 @@ export default function Header() {
                           aria-expanded={isExpanded}
                         >
                           <svg
-                            className={`w-5 h-5 transition-transform ${isExpanded ? "rotate-180" : ""}`}
+                            className={`h-5 w-5 transition-transform ${isExpanded ? "rotate-180" : ""}`}
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -302,17 +333,20 @@ export default function Header() {
                         </button>
                       </div>
                       {isExpanded && (
-                        <div className="bg-black/20 pb-2">
+                        <div className="bg-black/25 pb-2">
                           {item.dropdown.map((d) => (
                             <Link
                               key={d.href}
                               href={d.href}
                               onClick={() => setMobileMenuOpen(false)}
-                              className={`block px-8 py-2 text-sm ${
+                              className={`mx-4 block rounded-md px-4 py-2 text-[13px] ${
                                 pathname === d.href
-                                  ? "text-[var(--color-electricBlue)]"
+                                  ? "font-medium text-[#6cebff]"
                                   : "text-white/80 hover:text-white"
                               }`}
+                              style={
+                                pathname === d.href ? { background: styles.activeNavTab } : undefined
+                              }
                             >
                               {d.label}
                             </Link>
@@ -322,14 +356,16 @@ export default function Header() {
                     </div>
                   );
                 }
+                const active = isActive(item.href);
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`px-6 py-4 border-b border-white/10 text-white/90 hover:bg-white/5 hover:text-white ${
-                      isActive(item.href) ? "text-[var(--color-electricBlue)]" : ""
+                    className={`border-b border-white/10 px-6 py-4 text-[13px] font-medium hover:bg-white/5 ${
+                      active ? "text-[#6cebff]" : "text-white/90 hover:text-white"
                     }`}
+                    style={active ? { background: styles.activeNavTab } : undefined}
                   >
                     {item.label}
                   </Link>
@@ -337,11 +373,14 @@ export default function Header() {
               })}
             </div>
           </nav>
-          <div className="p-4 border-t border-white/10">
+          <div className="border-t border-white/10 p-4">
             <CalendlyScheduleButton
               onClick={() => setMobileMenuOpen(false)}
-              className="block w-full text-center rounded-full px-6 py-3 text-sm font-medium text-white cursor-pointer"
-              style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+              className="block w-full cursor-pointer rounded-full px-6 py-3 text-center text-[13px] font-semibold text-white"
+              style={{
+                background: styles.ctaGradient,
+                boxShadow: styles.ctaShadow,
+              }}
             >
               Schedule a Call
             </CalendlyScheduleButton>

@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
 import DedicatedDevelopmentTeamsHero from "@/src/components/sections/services/dedicated-development-teams/hero";
+import DedicatedDevelopmentTeamModel from "@/src/components/sections/services/dedicated-development-teams/dedicated-development-team-model";
 import WhyHiringIsBroken from "@/src/components/sections/services/dedicated-development-teams/why-hiring-broken";
+import WhyHireDedicatedDevelopment from "@/src/components/sections/services/dedicated-development-teams/why-hire-dedicated-development";
 import ReadyInTwoWeeks from "@/src/components/sections/services/dedicated-development-teams/ready-in-two-weeks";
 import WhatsIncludedWithDedicatedTeam from "@/src/components/sections/services/dedicated-development-teams/whats-included";
+import WhatYouGetDedicatedTeam from "@/src/components/sections/services/dedicated-development-teams/what-you-get-dedicated-team";
 import CompareYourOptions from "@/src/components/sections/services/dedicated-development-teams/compare-options";
+import ScalableDedicatedDevelopmentTeam from "@/src/components/sections/services/dedicated-development-teams/scalable-dedicated-development-team";
+import HireDedicatedWithConfidence from "@/src/components/sections/services/dedicated-development-teams/hire-dedicated-with-confidence";
 import DedicatedTeamInAction from "@/src/components/sections/services/dedicated-development-teams/team-in-action";
 import TransparentPricing from "@/src/components/sections/services/dedicated-development-teams/transparent-pricing";
 import CalculateYourSavings from "@/src/components/sections/services/dedicated-development-teams/calculate-savings";
 import BuildYourPerfectTeam from "@/src/components/sections/services/dedicated-development-teams/build-perfect-team";
+import DedicatedTeamVsOtherModels from "@/src/components/sections/services/dedicated-development-teams/dedicated-team-vs-other-models";
 import DedicatedDevelopmentTeamsFAQs from "@/src/components/sections/services/dedicated-development-teams/faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
 import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
@@ -107,14 +113,20 @@ export default function DedicatedDevelopmentTeamsPage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
+        <DedicatedDevelopmentTeamModel />
         <WhyHiringIsBroken />
+        <WhyHireDedicatedDevelopment />
         <ReadyInTwoWeeks />
         <WhatsIncludedWithDedicatedTeam />
+        <WhatYouGetDedicatedTeam />
         <CompareYourOptions />
+        <ScalableDedicatedDevelopmentTeam />
+        <HireDedicatedWithConfidence />
         <DedicatedTeamInAction />
         <TransparentPricing />
         <CalculateYourSavings />
         <BuildYourPerfectTeam />
+        <DedicatedTeamVsOtherModels />
         <DedicatedDevelopmentTeamsFAQs />
         <ServiceInternalLinks slug="dedicated-development-teams" />
         <CTAPilot />

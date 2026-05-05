@@ -1,24 +1,31 @@
+import { BACKGROUND_URL } from "@/src/lib/background-url";
+
+/** Enterprise Blockchain and Cryptography Solutions (after hero) */
 export default function BlockchainSolution() {
-    return (
-        <section
-            className="py-16 md:py-24 px-4 sm:px-6"
-            style={{
-                background:
-                    "linear-gradient(135deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 50%)",
-            }}
-        >
-            <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-2xl md:text-3xl font-medium text-[var(--color-deepSpace)] mb-6">Enterprise Blockchain and{" "}
-                  <span
-                        className="font-medium"
-                        style={{ color: "var(--color-electricBlue)" }}
-                    >
-                      Cryptography Solutions
-                    </span>
-                </h2>
-                <p className="text-base text-[var(--color-deepSpace)] leading-relaxed mb-4">Our custom enterprise software development services are built for organizations that operate in complex, high-demand environments where performance and reliability are critical. We design and develop robust enterprise solutions such as multi-tenant platforms, data-driven systems, and large-scale applications that support business growth and operational excellence. With deep expertise in industries like healthcare, logistics, and IoT, we create software that handles complexity, ensures compliance, and scales with your evolving business needs.
-                </p>
-            </div>
-        </section>
-    );
+  return (
+    <section
+      className="relative py-20 md:py-28 px-4 sm:px-6"
+      style={{
+        backgroundImage: `url(${BACKGROUND_URL})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="max-w-[1300px] mx-auto flex flex-col items-center justify-center text-center">
+        <h2 className="max-w-[56rem] text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-semibold leading-tight text-[var(--color-deepSpace)]">
+          Enterprise Blockchain and{" "}
+          <span style={{ color: "var(--color-electricBlue)" }}>Cryptography Solutions</span>
+        </h2>
+        <p className="mt-6 md:mt-8 max-w-[42rem] md:max-w-[48rem] text-[15px] md:text-base text-slate-600 leading-[1.62]">
+          Our custom blockchain and cryptography services help enterprises adopt ledger technology
+          where it genuinely strengthens trust, auditability, and compliance.
+        </p>
+        <p className="mt-4 max-w-[42rem] md:max-w-[48rem] text-[15px] md:text-base text-slate-600 leading-[1.62]">
+          We design permissioned networks, secure smart contracts, and integration layers that fit
+          your regulatory context and operational reality—without forcing a one-size-fits-all stack.
+        </p>
+      </div>
+    </section>
+  );
 }

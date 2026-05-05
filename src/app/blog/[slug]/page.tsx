@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import { blogPosts, getBlogCoverImageSrc } from "@/src/data/blog-posts";
@@ -70,6 +71,20 @@ export default async function BlogPostPage({ params }: PageProps) {
         excerpt={post.excerpt}
         date={post.date}
       />
+
+      <div className="sticky top-0 z-40 border-b border-slate-200/90 bg-white/95 shadow-sm backdrop-blur-md supports-[backdrop-filter]:bg-white/85">
+        <div className="mx-auto flex max-w-[1100px] items-center px-4 py-3 sm:px-6">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-[var(--color-deepSpace)] shadow-sm transition-colors hover:border-[var(--color-electricBlue)] hover:bg-sky-50 hover:text-[var(--color-electricBlue-solid)]"
+          >
+            <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Blog
+          </Link>
+        </div>
+      </div>
 
       <article className="px-4 py-12 sm:px-6 md:py-16">
         <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-10 lg:grid-cols-[7fr_3fr] lg:gap-12 lg:items-start">

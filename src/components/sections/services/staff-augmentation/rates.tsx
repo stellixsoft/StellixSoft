@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const plans = [
   {
     level: "Mid-Level Developer",
@@ -104,16 +106,16 @@ export default function StaffAugmentationRates() {
                 ))}
               </ul>
 
-              <button
-                type="button"
-                className={`mt-auto inline-flex items-center justify-center rounded-full px-6 py-3 text-sm md:text-[15px] font-medium border transition-colors ${
+              <Link
+                href="/contact"
+                className={`mt-auto inline-flex items-center justify-center rounded-full px-6 py-3 text-sm md:text-[15px] font-medium border transition-colors text-center ${
                   plan.highlighted
                     ? "bg-[var(--color-electricBlue-solid)] border-[var(--color-electricBlue)] text-white hover:bg-sky-500"
                     : "bg-white border-slate-200 text-[var(--color-deepSpace)] hover:bg-slate-50"
                 }`}
               >
                 Discuss Hiring
-              </button>
+              </Link>
             </article>
           ))}
         </div>

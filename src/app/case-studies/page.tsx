@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import CaseStudiesHero from "../../components/sections/case-studies/hero";
-import EnterprisePortalModernizationOverview from "../../components/sections/case-studies/enterprise-portal-modernization";
 import CaseStudiesGrid from "../../components/sections/case-studies/case-grid";
 import CaseStudiesIndustriesServed from "../../components/sections/case-studies/industries-we-served";
 import CTAPilot from "../../components/sections/home/cta-pilot";
@@ -32,8 +31,7 @@ export default function CaseStudiesPage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
-        <EnterprisePortalModernizationOverview />
-        <CaseStudiesGrid excludeSlugs={["enterprise-portal-modernization"]} />
+        <CaseStudiesGrid />
         <CaseStudiesIndustriesServed />
         <CTAPilot />
       </div>

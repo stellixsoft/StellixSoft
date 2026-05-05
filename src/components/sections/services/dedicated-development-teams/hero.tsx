@@ -44,10 +44,10 @@ export default function DedicatedDevelopmentTeamsHero() {
             Schedule a Call
           </CalendlyScheduleButton>
           <Link
-            href="/case-studies/enterprise-portal-modernization"
+            href="/case-studies"
             className="inline-flex rounded-lg border border-white/70 px-8 py-3.5 text-base font-medium text-white bg-transparent transition-colors hover:bg-white/10 hover:border-white"
           >
-            View Case Study
+            View Case Studies
           </Link>
         </div>
       </div>

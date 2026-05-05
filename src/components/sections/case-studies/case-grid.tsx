@@ -27,7 +27,7 @@ const caseStudies = [
     category: "Enterprise",
     title: "Enterprise Portal Modernization",
     summary:
-      "Modernized a 15-year-old VB.NET portal to .NET Core 6 with real-time monitoring and strict data isolation.",
+      "Modernized a 15-year-old VB.NET portal to .NET Core 6 with real-time monitoring and strict data isolation. Stack: .NET Core 6, SignalR, React, SQL Server, AWS.",
     bullets: ["Zero downtime migration", "10,000+ devices monitored"],
     tech: [".NET Core 6", "SignalR", "React", "SQL Server", "AWS"],
     image: "/assets/images/enterprise.webp",
@@ -37,9 +37,9 @@ const caseStudies = [
     category: "Enterprise",
     title: "Stock Options & Equity Management Platform",
     summary:
-      "Custom stock options management platform replacing spreadsheet-based processes for finance and HR teams.",
+      "Custom stock options management platform replacing spreadsheet-based processes for finance and HR teams. Stack: .NET Core 6, React, PostgreSQL, AWS.",
     bullets: ["95% HR time saved", "Zero reconciliation errors"],
-    tech: ["Next.js", "Node.js", "PostgreSQL"],
+    tech: [".NET Core 6", "React", "PostgreSQL", "AWS"],
     image: "/assets/images/equity-management.webp",
   },
   {
@@ -54,23 +54,14 @@ const caseStudies = [
   },
 ];
 
-type CaseStudiesGridProps = {
-  /** Omit featured studies already highlighted elsewhere on the page */
-  excludeSlugs?: string[];
-};
-
-export default function CaseStudiesGrid({ excludeSlugs }: CaseStudiesGridProps) {
-  const visible = excludeSlugs?.length
-    ? caseStudies.filter((cs) => !excludeSlugs.includes(cs.slug))
-    : caseStudies;
-
+export default function CaseStudiesGrid() {
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 bg-white" style={{
       background: "linear-gradient(135deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 50%)",
     }}>
       <div className="max-w-[1100px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {visible.map((cs) => (
+          {caseStudies.map((cs) => (
             <article
               key={cs.slug}
               className="rounded-3xl bg-white shadow-[0_18px_60px_rgba(15,23,42,0.16)] border border-gray-200 overflow-hidden flex flex-col"

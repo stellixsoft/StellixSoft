@@ -13,33 +13,34 @@ export interface FormState {
       | "project"
       | "description"
       | "phone"
-      | "budget",
+      | "budgetAmount"
+      | "guestEmails"
+      | "budgetRange",
       string
     >
   >;
 }
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PHONE_CHARS_REGEX = /^[\d\s+\-().]*$/;
+const BUDGET_AMOUNT_REGEX = /^\d+(\.\d{1,2})?$/;
 
-/** Optional phone: digits only, optional leading + for country code */
-const OPTIONAL_PHONE_REGEX = /^\+?[0-9]{8,20}$/;
+function validOptionalPhone(phone: string): boolean {
+  if (!phone) return true;
+  if (!PHONE_CHARS_REGEX.test(phone)) return false;
+  const digits = phone.replace(/\D/g, "");
+  return digits.length >= 7 && digits.length <= 15;
+}
 
-const BUDGET_CURRENCIES = new Set(["USD", "EUR", "GBP", "AED", "PKR", "OTHER"]);
+function validOptionalBudgetAmount(raw: string): boolean {
+  if (!raw) return true;
+  return BUDGET_AMOUNT_REGEX.test(raw);
+}
 
 function readText(formData: FormData, key: string): string {
   const v = formData.get(key);
   if (typeof v !== "string") return "";
   return v.trim();
-}
-
-/** Strip formatting; keep optional leading + then digits only */
-function normalizeContactPhone(raw: string): string {
-  const t = raw.trim();
-  if (!t) return "";
-  const plus = t.startsWith("+");
-  const digits = t.replace(/\D/g, "");
-  if (!digits) return "";
-  return plus ? `+${digits}` : digits;
 }
 
 export async function submitContactForm(
@@ -49,12 +50,13 @@ export async function submitContactForm(
   const name = readText(formData, "name");
   const emailRaw = readText(formData, "email");
   const company = readText(formData, "company");
-  const phone = normalizeContactPhone(readText(formData, "phone"));
+  const phone = readText(formData, "phone");
   const help = readText(formData, "help");
   const project = readText(formData, "project");
   const hear = readText(formData, "hear");
-  const budgetAmountRaw = readText(formData, "budgetAmount");
-  const budgetCurrencyRaw = readText(formData, "budgetCurrency");
+  const budgetCurrency = readText(formData, "budgetCurrency");
+  const budgetAmount = readText(formData, "budgetAmount");
+  const guestEmails = readText(formData, "guestEmails");
 
   const fieldErrors: FormState["fieldErrors"] = {};
 
@@ -82,28 +84,21 @@ export async function submitContactForm(
     fieldErrors.project = "Please share a little more about your project (at least 20 characters).";
   }
 
-  if (phone) {
-    if (!OPTIONAL_PHONE_REGEX.test(phone)) {
-      fieldErrors.phone = "Use digits only (optional + at the start for country code).";
-    }
+  if (!validOptionalPhone(phone)) {
+    fieldErrors.phone = "Use digits only plus spaces, +, -, or parentheses (7–15 digits).";
   }
 
-  let budgetLine = "";
-  if (budgetAmountRaw || budgetCurrencyRaw) {
-    const currency =
-      budgetCurrencyRaw && BUDGET_CURRENCIES.has(budgetCurrencyRaw.toUpperCase())
-        ? budgetCurrencyRaw.toUpperCase()
-        : "";
-    if (!currency) {
-      fieldErrors.budget = "Choose a currency for your budget range.";
-    } else if (!budgetAmountRaw) {
-      fieldErrors.budget = "Enter an amount or leave budget blank.";
-    } else if (!/^\d[\d,]*(\.\d{1,2})?$/.test(budgetAmountRaw.replace(/,/g, ""))) {
-      fieldErrors.budget = "Budget amount should use numbers only (optional commas or decimals).";
-    } else {
-      budgetLine = `${currency} ${budgetAmountRaw}`.trim();
-    }
+  if (!validOptionalBudgetAmount(budgetAmount)) {
+    fieldErrors.budgetAmount = "Budget amount should be numbers only (optional decimals, e.g. 25000 or 15000.50).";
   }
+
+  if (guestEmails.length > 500) {
+    fieldErrors.guestEmails = "Additional emails field is too long (max 500 characters).";
+  }
+
+  const budgetLine = budgetAmount
+    ? `${budgetAmount} ${budgetCurrency}`.trim()
+    : "";
 
   if (Object.keys(fieldErrors).length > 0) {
     return {
@@ -127,7 +122,8 @@ export async function submitContactForm(
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Help With</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(help)}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Project Details</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(project)}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">How They Heard</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(hear) || " - "}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600">Budget</td><td style="padding:8px 12px">${esc(budgetLine) || " - "}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Budget</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(budgetLine) || " - "}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600">Guest / CC emails</td><td style="padding:8px 12px">${esc(guestEmails) || " - "}</td></tr>
         </table>
         <p style="margin-top:16px;font-size:12px;color:#999">Submitted at ${new Date().toISOString()}</p>
       `,
@@ -163,7 +159,8 @@ export async function submitQuoteForm(
   const emailRaw = readText(formData, "email");
   const company = readText(formData, "company");
   const projectType = readText(formData, "projectType");
-  const budgetRange = readText(formData, "budgetRange");
+  const budgetRangeCurrency = readText(formData, "budgetRangeCurrency");
+  const budgetRangeAmount = readText(formData, "budgetRangeAmount");
   const description = readText(formData, "description");
 
   const fieldErrors: FormState["fieldErrors"] = {};
@@ -187,6 +184,15 @@ export async function submitQuoteForm(
       "Please add a bit more detail (at least 20 characters) so we can scope your quote.";
   }
 
+  if (!validOptionalBudgetAmount(budgetRangeAmount)) {
+    fieldErrors.budgetRange =
+      "Budget amount should be numbers only (optional decimals).";
+  }
+
+  const budgetRangeDisplay = budgetRangeAmount
+    ? `${budgetRangeAmount} ${budgetRangeCurrency}`.trim()
+    : "";
+
   if (Object.keys(fieldErrors).length > 0) {
     return {
       success: false,
@@ -206,7 +212,7 @@ export async function submitQuoteForm(
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Email</td><td style="padding:8px 12px;border-bottom:1px solid #eee"><a href="mailto:${esc(emailRaw)}">${esc(emailRaw)}</a></td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Company</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(company) || " - "}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Project Type</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(projectType) || " - "}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Budget Range</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(budgetRange) || " - "}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Budget Range</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(budgetRangeDisplay) || " - "}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600">Description</td><td style="padding:8px 12px">${esc(description) || " - "}</td></tr>
         </table>
         <p style="margin-top:16px;font-size:12px;color:#999">Submitted at ${new Date().toISOString()}</p>

@@ -57,7 +57,7 @@ export default function RequestAQuote() {
                   </p>
                 )}
               </div>
-              <div>
+              <div className="sm:col-span-2">
                 <label
                   htmlFor="project-type"
                   className="block text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)] mb-2"
@@ -73,21 +73,54 @@ export default function RequestAQuote() {
                   className="w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent"
                 />
               </div>
-              <div>
-                <label
-                  htmlFor="budget-range"
-                  className="block text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)] mb-2"
-                >
-                  Budget Range
-                </label>
-                <input
-                  id="budget-range"
-                  name="budgetRange"
-                  type="text"
-                  maxLength={200}
-                  placeholder="e.g. $15k - $40k"
-                  className="w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent"
-                />
+              <div className="sm:col-span-2 grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-4">
+                <div>
+                  <label
+                    htmlFor="budget-range-currency"
+                    className="block text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)] mb-2"
+                  >
+                    Currency
+                  </label>
+                  <select
+                    id="budget-range-currency"
+                    name="budgetRangeCurrency"
+                    className="w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-[var(--color-deepSpace)] focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent"
+                    defaultValue=""
+                  >
+                    <option value="">—</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="AED">AED</option>
+                    <option value="PKR">PKR</option>
+                  </select>
+                </div>
+                <div>
+                  <label
+                    htmlFor="budget-range-amount"
+                    className="block text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)] mb-2"
+                  >
+                    Budget amount (numbers only)
+                  </label>
+                  <input
+                    id="budget-range-amount"
+                    name="budgetRangeAmount"
+                    type="text"
+                    inputMode="decimal"
+                    maxLength={14}
+                    placeholder="e.g. 25000"
+                    aria-invalid={errs.budgetRange ? true : undefined}
+                    aria-describedby={errs.budgetRange ? "quote-budget-error" : undefined}
+                    className={`w-full rounded-xl bg-gray-50 border px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent ${
+                      errs.budgetRange ? "border-red-300 ring-1 ring-red-200" : "border-gray-200"
+                    }`}
+                  />
+                  {errs.budgetRange && (
+                    <p id="quote-budget-error" className="mt-1.5 text-xs text-red-600" role="alert">
+                      {errs.budgetRange}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
 

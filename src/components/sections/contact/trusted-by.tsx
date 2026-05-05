@@ -1,9 +1,4 @@
-const categories = [
-  "Fortune 500 Vendors",
-  "SaaS Innovators",
-  "Global Logistics",
-  "3PL Partners",
-];
+import ClientLogos from "@/src/components/sections/home/client-logos";
 
 const reviewLinks = [
   {
@@ -31,17 +26,8 @@ export default function TrustedBy() {
           Trusted by
         </h2>
 
-        <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-          {categories.map((title) => (
-            <div
-              key={title}
-              className="flex flex-col items-center text-center"
-            >
-              <h3 className="text-base md:text-lg font-bold uppercase tracking-wider text-[var(--color-deepSpace)]">
-                {title}
-              </h3>
-            </div>
-          ))}
+        <div className="mt-8 md:mt-10 rounded-xl border border-gray-200/90 bg-white shadow-sm overflow-hidden">
+          <ClientLogos embedded />
         </div>
 
         <p className="mt-12 text-center text-xs font-normal uppercase tracking-widest text-[var(--color-neutralGray)]">
@@ -54,13 +40,9 @@ export default function TrustedBy() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`inline-flex min-w-[200px] flex-col items-center rounded-lg border px-6 py-3 text-center transition-colors cursor-pointer ${
-                label === "Clutch"
-                  ? "border-[var(--color-electricBlue-solid)] bg-white shadow-[0_8px_30px_rgba(16,172,219,0.15)] hover:bg-[var(--color-lightGray)] ring-1 ring-[var(--color-electricBlue)]/25"
-                  : "border-gray-200 bg-gray-50 hover:bg-gray-100 hover:border-gray-300"
-              }`}
+              className="inline-flex min-w-[200px] flex-col items-center rounded-xl border-2 border-gray-200 bg-white px-6 py-4 text-center shadow-sm transition-all hover:border-[var(--color-electricBlue)] hover:bg-sky-50/60 hover:shadow-md cursor-pointer text-[var(--color-deepSpace)]"
             >
-              <span className="text-sm font-semibold uppercase tracking-wider text-[var(--color-deepSpace)]">
+              <span className="text-sm font-semibold uppercase tracking-wider">
                 {label}
               </span>
               <span className="mt-1 text-xs font-normal text-[var(--color-neutralGray)]">

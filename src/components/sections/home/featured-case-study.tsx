@@ -25,7 +25,7 @@ const caseStudies: CaseStudyItem[] = [
     challenge:
       "A 15 year old VB.NET portal serving Fortune 500 clients couldn't scale or add new features efficiently. Finding developers for legacy tech was becoming impossible while market demands grew.",
     solutionIntro:
-      "Delivered a unified logistics platform through our custom enterprise software development services, including dispatch, mobile driver app, client portal, and integrations.",
+      "Modernized the portal on .NET Core 6 with a React front end and SignalR for live updates—incremental migration with zero downtime, strict tenant isolation, and AWS-hosted infrastructure for 10,000+ monitored devices.",
     solutionBullets: [
       'Incremental "No Downtime" Migration',
       "SignalR Real-time Integration",
@@ -201,12 +201,7 @@ export default function FeaturedCaseStudy() {
     >
       <div className="max-w-[1300px] mx-auto">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
-          <Link
-            href="/case-studies"
-            className="outline-none transition-opacity hover:opacity-80 hover:underline decoration-[var(--color-electricBlue-solid)] underline-offset-[12px] focus-visible:ring-2 focus-visible:ring-[var(--color-electricBlue-solid)] rounded-sm"
-          >
-            Case Studies
-          </Link>
+          Case Studies
         </h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
@@ -329,7 +324,7 @@ export default function FeaturedCaseStudy() {
                 <Image
                   key={study.architectureImage}
                   src={study.architectureImage}
-                  alt=""
+                  alt={`${study.title} — architecture illustration (see Technology Stack beside this panel for the exact tooling)`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 520px"
                   quality={88}

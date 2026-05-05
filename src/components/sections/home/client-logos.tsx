@@ -1,51 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useCallback, useEffect, useLayoutEffect, useRef } from "react";
-
-type ClientLogo = {
-  src: string;
-  alt: string;
-  href?: string;
-};
-
-const clientLogos: ClientLogo[] = [
-  {
-    src: "/assets/images/docappliance.webp",
-    alt: "Doctor Appliance",
-    href: "https://doctorappliance.com/",
-  },
-  {
-    src: "/assets/images/epicmasjid.png",
-    alt: "Epic Masjid",
-    href: "https://www.epicmasjid.org/",
-  },
-  {
-    src: "/assets/images/rentanycar.png",
-    alt: "RENT ANY CAR",
-    href: "https://rentanycar.ae/",
-  },
-  {
-    src: "/assets/images/primecode.png",
-    alt: "Code Prime",
-  },
-  {
-    src: "/assets/images/pazmental.png",
-    alt: "PazMental",
-    href: "https://pazmentalrd.com/",
-  },
-  {
-    src: "/assets/images/stripe.png",
-    alt: "Stripe",
-    href: "https://stripe.com/",
-  },
-  {
-    src: "/assets/images/google.png",
-    alt: "Google Inc.",
-    href: "https://www.google.com/",
-  },
-];
+import { CLIENT_BRAND_LOGOS, type ClientBrandLogo } from "@/src/data/client-logos";
 
 function wrapOffset(o: number, loopWidth: number): number {
   if (loopWidth <= 0) return o;
@@ -58,9 +15,12 @@ function wrapOffset(o: number, loopWidth: number): number {
 const noSelectClass =
   "select-none [user-select:none] [-webkit-user-select:none] [-webkit-touch-callout:none]";
 
-const MARQUEE_LINK_CLASS = "js-marquee-brand-link";
+type ClientLogosProps = {
+  /** Omit outer section + top accent bar (e.g. embed inside Contact “Trusted by”) */
+  embedded?: boolean;
+};
 
-export default function ClientLogos() {
+export default function ClientLogos({ embedded = false }: ClientLogosProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const firstSetRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
@@ -124,9 +84,6 @@ export default function ClientLogos() {
 
   const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (e.button !== 0) return;
-    const t = e.target as HTMLElement | null;
-    if (t?.closest(`.${MARQUEE_LINK_CLASS}`)) return;
-
     draggingRef.current = true;
     dragStartRef.current = { pointerX: e.clientX, offset: offsetRef.current };
     e.currentTarget.setPointerCapture(e.pointerId);
@@ -154,45 +111,78 @@ export default function ClientLogos() {
     if (W > 0) offsetRef.current = wrapOffset(offsetRef.current, W);
   };
 
-  const renderLogoSet = (suffix: string) =>
-    clientLogos.map((logo, index) => (
-      <div
-        key={`${suffix}-${logo.alt}-${index}`}
-        className={`flex min-w-[184px] shrink-0 items-center justify-center px-8 opacity-80 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 md:min-w-[216px] md:px-12 ${noSelectClass}`}
-      >
-        {logo.href ? (
-          <Link
-            href={logo.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${MARQUEE_LINK_CLASS} pointer-events-auto flex items-center justify-center outline-none ring-[var(--color-electricBlue)] focus-visible:ring-2 focus-visible:ring-offset-2 ${noSelectClass}`}
-            aria-label={`${logo.alt} website (opens in new tab)`}
-          >
-            <Image
-              src={logo.src}
-              alt=""
-              width={240}
-              height={96}
-              sizes="120px"
-              loading="eager"
-              className={`pointer-events-none h-12 max-h-12 w-[120px] object-contain ${noSelectClass}`}
-              draggable={false}
-            />
-          </Link>
-        ) : (
-          <Image
-            src={logo.src}
-            alt={logo.alt}
-            width={240}
-            height={96}
-            sizes="120px"
-            loading="eager"
-            className={`pointer-events-none h-12 max-h-12 w-[120px] object-contain ${noSelectClass}`}
-            draggable={false}
-          />
-        )}
+  const logoCell = (logo: ClientBrandLogo, suffix: string, index: number) => {
+    const inner = (
+      <Image
+        src={logo.src}
+        alt={logo.alt}
+        width={240}
+        height={96}
+        sizes="120px"
+        loading="eager"
+        className={`pointer-events-none h-12 max-h-12 w-[120px] object-contain ${noSelectClass}`}
+        draggable={false}
+      />
+    );
+
+    const shellClass = `flex min-w-[184px] shrink-0 items-center justify-center px-8 opacity-80 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100 md:min-w-[216px] md:px-12 ${noSelectClass}`;
+
+    const wrap =
+      logo.href != null && logo.href !== "" ? (
+        <a
+          href={logo.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${shellClass} cursor-pointer`}
+          data-logo-link=""
+          onPointerDown={(ev) => ev.stopPropagation()}
+        >
+          {inner}
+        </a>
+      ) : (
+        <div className={shellClass}>{inner}</div>
+      );
+
+    return (
+      <div key={`${suffix}-${logo.alt}-${index}`}>
+        {wrap}
       </div>
-    ));
+    );
+  };
+
+  const renderLogoSet = (suffix: string) =>
+    CLIENT_BRAND_LOGOS.map((logo, index) => logoCell(logo, suffix, index));
+
+  const marquee = (
+    <div className={`relative py-10 md:py-10 ${noSelectClass}`}>
+      <div
+        role="region"
+        aria-label="Client logos — drag horizontally or open linked sites where available"
+        className={`cursor-grab overflow-x-hidden active:cursor-grabbing ${noSelectClass}`}
+        style={{ touchAction: "none" }}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+      >
+        <div
+          ref={trackRef}
+          className={`flex w-max flex-row will-change-transform ${noSelectClass}`}
+          style={{ transform: "translate3d(0,0,0)" }}
+        >
+          <div ref={firstSetRef} className={`flex shrink-0 flex-row ${noSelectClass}`}>
+            {renderLogoSet("a")}
+          </div>
+          <div className={`flex shrink-0 flex-row ${noSelectClass}`}>{renderLogoSet("b")}</div>
+          <div className={`flex shrink-0 flex-row ${noSelectClass}`}>{renderLogoSet("c")}</div>
+        </div>
+      </div>
+    </div>
+  );
+
+  if (embedded) {
+    return <div className={`bg-white ${noSelectClass}`}>{marquee}</div>;
+  }
 
   return (
     <section className={`bg-white ${noSelectClass}`}>
@@ -200,34 +190,7 @@ export default function ClientLogos() {
         className="h-1 w-full shrink-0"
         style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
       />
-      <div className={`relative py-10 md:py-10 ${noSelectClass}`}>
-        <div
-          role="region"
-          aria-label="Trusted by brands — drag horizontally or open each logo link in a new tab"
-          className={`cursor-grab overflow-x-hidden active:cursor-grabbing ${noSelectClass}`}
-          style={{ touchAction: "none" }}
-          onPointerDown={onPointerDown}
-          onPointerMove={onPointerMove}
-          onPointerUp={onPointerUp}
-          onPointerCancel={onPointerUp}
-        >
-          <div
-            ref={trackRef}
-            className={`flex w-max flex-row will-change-transform ${noSelectClass}`}
-            style={{ transform: "translate3d(0,0,0)" }}
-          >
-            <div ref={firstSetRef} className={`flex shrink-0 flex-row ${noSelectClass}`}>
-              {renderLogoSet("a")}
-            </div>
-            <div className={`flex shrink-0 flex-row ${noSelectClass}`}>
-              {renderLogoSet("b")}
-            </div>
-            <div className={`flex shrink-0 flex-row ${noSelectClass}`}>
-              {renderLogoSet("c")}
-            </div>
-          </div>
-        </div>
-      </div>
+      {marquee}
     </section>
   );
 }

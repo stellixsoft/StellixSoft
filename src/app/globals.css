@@ -50,6 +50,16 @@
   animation: fade-in 0.3s ease-in-out;
 }
 
+/* Primary section titles site-wide (Tailwind utilities like font-light would otherwise win) */
+#main-content h2 {
+  font-weight: 600 !important;
+}
+
+/* Long-form blog body: keep lighter heading weight inside typography prose */
+#main-content .prose h2 {
+  font-weight: 300 !important;
+}
+
 /* Tablet */
 @media (min-width: 768px) {
   @theme inline {

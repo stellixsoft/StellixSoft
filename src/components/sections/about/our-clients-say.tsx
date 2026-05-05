@@ -85,7 +85,7 @@ function StarIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="w-10 h-10 text-[var(--color-electricBlue)]"
+      className="w-10 h-10 text-[var(--color-electricBlue)] transition-colors duration-300"
       aria-hidden
     >
       <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
@@ -113,9 +113,9 @@ export default function OurClientsSay() {
           {clientsSay.map((clientSay) => (
             <article
               key={`${clientSay.company}-${clientSay.name}`}
-              className="group bg-white rounded-xl p-6 md:p-8 shadow-lg relative animate-fade-in border border-[var(--color-deepSpace)]/[0.06] transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-[var(--color-electricBlue)]/35 flex flex-col h-full min-h-[260px]"
+              className="group bg-white rounded-xl p-6 md:p-8 shadow-lg relative animate-fade-in border border-[var(--color-deepSpace)]/[0.06] transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:border-[var(--color-electricBlue)]/35 hover:bg-sky-50/40 flex flex-col h-full min-h-[260px]"
             >
-              <div className="flex gap-1 mb-4 mt-2 text-[#FFD700] shrink-0">
+              <div className="flex gap-1 mb-4 mt-2 text-[#FFD700] transition-colors duration-300 shrink-0">
                 <StarIcon />
               </div>
 
@@ -123,23 +123,23 @@ export default function OurClientsSay() {
                 <ExpandableTestimonialQuote quote={clientSay.quote} variant="about" />
               </blockquote>
 
-              <footer className="flex items-start gap-3 pt-4 mt-auto border-t border-[var(--color-deepSpace)]/10 transition-colors duration-300 shrink-0">
+              <footer className="flex items-start gap-3 pt-4 mt-auto border-t border-[var(--color-deepSpace)]/10 group-hover:border-[var(--color-electricBlue)]/25 transition-colors duration-300 shrink-0">
                 <TestimonialAvatar
                   name={clientSay.name}
                   photoSrc={clientSay.photo}
                   photoFit={clientSay.photoFit}
                 />
                 <div className="flex-1 min-w-0 pt-0.5">
-                  <p className="font-bold text-[var(--color-deepSpace)] text-sm md:text-base leading-snug">
+                  <p className="font-bold text-[var(--color-deepSpace)] text-sm md:text-base leading-snug transition-colors duration-300">
                     {clientSay.name}
                   </p>
-                  <p className="text-xs md:text-sm uppercase tracking-wider text-[var(--color-accentOnLight)] line-clamp-2 break-words">
+                  <p className="text-xs md:text-sm uppercase tracking-wider text-[var(--color-accentOnLight)] transition-colors duration-300 line-clamp-2 break-words">
                     {clientSay.companyUrl ? (
                       <a
                         href={clientSay.companyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline-offset-2 hover:underline outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-electricBlue-solid)] rounded-sm text-[var(--color-accentOnLight)]"
+                        className="underline-offset-2 hover:underline outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-electricBlue)] rounded-sm text-[var(--color-accentOnLight)]"
                       >
                         {clientSay.company}
                       </a>

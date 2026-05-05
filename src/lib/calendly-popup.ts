@@ -34,6 +34,17 @@ export type CalendlyPopupOptions = {
   guests?: string[];
 };
 
+declare global {
+  interface Window {
+    Calendly?: {
+      initPopupWidget: (opts: {
+        url: string;
+        prefill?: Record<string, unknown>;
+      }) => void;
+    };
+  }
+}
+
 /**
  * Opens Calendly’s in-page popup. Waits until `window.Calendly` exists (Next.js loads
  * the script asynchronously). Avoids relying on `load` on an already-loaded script.
@@ -42,8 +53,8 @@ export function openCalendlyPopup(options?: CalendlyPopupOptions): void {
   if (typeof window === "undefined") return;
 
   const guests = options?.guests?.filter(Boolean).slice(0, 10);
-  const prefill: Record<string, unknown> | undefined =
-    guests && guests.length > 0 ? { guests } : undefined;
+  const prefill =
+    guests && guests.length > 0 ? { guests } satisfies Record<string, unknown> : undefined;
 
   const tryOpen = (): boolean => {
     if (!window.Calendly?.initPopupWidget) return false;

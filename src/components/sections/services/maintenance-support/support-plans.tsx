@@ -1,5 +1,4 @@
 import Link from "next/link";
-import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
 
 const plans = [
   {
@@ -122,33 +121,26 @@ export default function SupportPlans() {
                 ))}
               </ul>
 
-              <div className="mt-auto pt-2 border-t border-slate-100">
-                <p className="mt-4 text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-neutralGray)]">
+              <div className="mt-auto">
+                <p className="mb-4 text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-neutralGray)]">
                   Best For:
                 </p>
-                <p className="mt-2 text-sm md:text-[15px] text-[var(--color-neutralGray)]">
+                <p className="mb-6 text-sm md:text-[15px] text-[var(--color-neutralGray)]">
                   {plan.bestFor}
                 </p>
+                <Link
+                  href={`/contact?plan=${plan.id}`}
+                  className={`inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm md:text-[15px] font-medium border transition-colors ${
+                    plan.highlighted
+                      ? "bg-[var(--color-electricBlue-solid)] border-[var(--color-electricBlue)] text-white hover:bg-sky-500"
+                      : "bg-white border-slate-200 text-[var(--color-deepSpace)] hover:bg-slate-50"
+                  }`}
+                >
+                  Choose Plan
+                </Link>
               </div>
             </article>
           ))}
-        </div>
-
-        <p className="mt-10 text-center text-sm text-[var(--color-neutralGray)] max-w-2xl mx-auto leading-relaxed">
-          Maintenance retainers are scoped together on a call — there is no online checkout. Tell us which tier fits
-          your workload and we&apos;ll confirm hours, channels, and onboarding.
-        </p>
-        <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-          >
-            Discuss maintenance
-          </Link>
-          <CalendlyScheduleButton className="inline-flex items-center justify-center rounded-full border-2 border-slate-200 bg-white px-8 py-3.5 text-sm font-semibold text-[var(--color-deepSpace)] transition-colors hover:border-[var(--color-electricBlue-solid)] cursor-pointer">
-            Schedule a call
-          </CalendlyScheduleButton>
         </div>
 
         <div className="mt-8 text-[10px] md:text-xs text-center text-[var(--color-neutralGray)] space-y-1">

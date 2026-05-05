@@ -3,11 +3,13 @@ import BlockchainAndCryptographyHero from "@/src/components/sections/services/bl
 import BlockchainForBusiness from "@/src/components/sections/services/blockchain-and-cryptography/blockchain-for-business";
 import OurBlockchainPhilosophy from "@/src/components/sections/services/blockchain-and-cryptography/our-blockchain-philosophy";
 import BlockchainTechnologyExpertise from "@/src/components/sections/services/blockchain-and-cryptography/technology-expertise";
+import WhyBusinessesChooseBlockchain from "@/src/components/sections/services/blockchain-and-cryptography/why-businesses-choose";
+import AdvancedBlockchainIntegration from "@/src/components/sections/services/blockchain-and-cryptography/advanced-blockchain-integration";
 import WhenBlockchainMakesSense from "@/src/components/sections/services/blockchain-and-cryptography/when-blockchain-makes-sense";
 import BlockchainDevelopmentProcess from "@/src/components/sections/services/blockchain-and-cryptography/development-process";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
-import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
+// import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
@@ -17,6 +19,7 @@ import {
 } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 import BlockchainSolution from "@/src/components/sections/services/blockchain-and-cryptography/blockchain-solution";
+import ScalableBlockchainDevelopment from "@/src/components/sections/services/blockchain-and-cryptography/scalable-blockchain-development";
 
 const PATH = "/services/blockchain-and-cryptography" as const;
 
@@ -115,14 +118,19 @@ export default function BlockchainAndCryptographyPage() {
         <BlockchainSolution />
         <BlockchainForBusiness />
         <OurBlockchainPhilosophy />
+        <WhyBusinessesChooseBlockchain />
         <BlockchainTechnologyExpertise />
+        <AdvancedBlockchainIntegration />
         <WhenBlockchainMakesSense />
         <BlockchainDevelopmentProcess />
         <ServiceFaqs
           title="Blockchain & Cryptography FAQs"
           items={faqItems}
         />
+        {/* Related pages — temporarily disabled
         <ServiceInternalLinks slug="blockchain-and-cryptography" />
+        */}
+        <ScalableBlockchainDevelopment />
         <CTAPilot />
       </div>
     </>

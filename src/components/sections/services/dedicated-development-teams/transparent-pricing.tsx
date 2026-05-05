@@ -1,5 +1,4 @@
 import Link from "next/link";
-import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
 
 const plans = [
   {
@@ -104,7 +103,7 @@ export default function TransparentPricing() {
                 {plan.subtext}
               </p>
 
-              <ul className="space-y-2.5 mb-2 text-sm md:text-[15px]">
+              <ul className="space-y-2.5 mb-4 text-sm md:text-[15px]">
                 {plan.features.map((feature) => (
                   <li
                     key={feature}
@@ -134,31 +133,28 @@ export default function TransparentPricing() {
           ))}
         </div>
 
-        <p className="mt-10 text-center text-sm md:text-base text-[var(--color-neutralGray)] max-w-2xl mx-auto leading-relaxed">
-          We don&apos;t sell fixed SKUs through checkout — scope and team composition are aligned after a short call.
-          Use these figures as a guide; we&apos;ll tailor delivery and pricing to your roadmap.
-        </p>
-
-        <div className="mt-8 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm md:text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-          >
-            Contact us
-          </Link>
-          <CalendlyScheduleButton className="inline-flex items-center justify-center rounded-full border-2 border-[var(--color-deepSpace)]/15 bg-white px-8 py-3.5 text-sm md:text-[15px] font-semibold text-[var(--color-deepSpace)] transition-colors hover:border-[var(--color-electricBlue-solid)] hover:text-[var(--color-electricBlue-solid)] cursor-pointer">
-            Schedule a discovery call
-          </CalendlyScheduleButton>
-          <Link
-            href="/pricing"
-            className="inline-flex items-center justify-center text-sm md:text-[15px] font-semibold text-[var(--color-electricBlue-solid)] underline-offset-4 hover:underline"
-          >
-            Compare pricing models
-          </Link>
+        <div className="mt-10 rounded-2xl border border-slate-200 bg-slate-50/80 px-6 py-8 text-center">
+          <p className="text-sm md:text-[15px] text-[var(--color-deepSpace)] leading-relaxed max-w-2xl mx-auto">
+            We don&apos;t sell plans through checkout — every engagement is scoped after a discovery call.
+            Share your goals on{" "}
+            <Link
+              href="/contact"
+              className="font-medium text-[var(--color-electricBlue)] underline-offset-2 hover:underline"
+            >
+              Contact
+            </Link>{" "}
+            (you can mention a plan for reference) or{" "}
+            <Link
+              href="/pricing"
+              className="font-medium text-[var(--color-electricBlue)] underline-offset-2 hover:underline"
+            >
+              Pricing
+            </Link>{" "}
+            for maintenance retainers and other models.
+          </p>
         </div>
 
-        <p className="mt-8 text-[11px] md:text-xs text-center text-[var(--color-neutralGray)]">
+        <p className="mt-6 text-[11px] md:text-xs text-center text-[var(--color-neutralGray)]">
           *Rates vary by technology stack and seniority. Custom compositions available.
         </p>
       </div>
