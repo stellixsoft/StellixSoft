@@ -54,7 +54,11 @@ export default function TrustedBy() {
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-w-[200px] flex-col items-center rounded-lg border border-gray-200 bg-gray-50 px-6 py-3 text-center transition-colors hover:bg-gray-100 hover:border-gray-300"
+              className={`inline-flex min-w-[200px] flex-col items-center rounded-lg border px-6 py-3 text-center transition-colors cursor-pointer ${
+                label === "Clutch"
+                  ? "border-[var(--color-electricBlue-solid)] bg-white shadow-[0_8px_30px_rgba(16,172,219,0.15)] hover:bg-[var(--color-lightGray)] ring-1 ring-[var(--color-electricBlue)]/25"
+                  : "border-gray-200 bg-gray-50 hover:bg-gray-100 hover:border-gray-300"
+              }`}
             >
               <span className="text-sm font-semibold uppercase tracking-wider text-[var(--color-deepSpace)]">
                 {label}

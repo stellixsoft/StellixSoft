@@ -34,7 +34,7 @@ export default function BlogPostHero({
       <div className="relative z-10 mx-auto w-full max-w-[1300px] px-6 py-24 text-center text-white">
         <Link
           href="/blog"
-          className="mb-8 inline-flex items-center justify-center gap-2 text-sm font-medium text-white/70 transition-colors hover:text-white"
+          className="mb-10 inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/85 bg-white/10 px-6 py-3 text-sm font-semibold text-white shadow-lg backdrop-blur-sm transition-colors hover:bg-white hover:text-[var(--color-deepSpace)] hover:border-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
         >
           <svg
             className="h-4 w-4 shrink-0"
@@ -50,7 +50,7 @@ export default function BlogPostHero({
               d="M15 19l-7-7 7-7"
             />
           </svg>
-          Back to Blog
+          Back to all posts
         </Link>
 
         <div className="mb-6 flex flex-wrap items-center justify-center gap-3">

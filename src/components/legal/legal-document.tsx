@@ -42,7 +42,7 @@ export function LegalDocument({
 
       <div className="px-6 py-12 md:py-16 bg-gradient-to-b from-slate-50/80 to-white">
         <article className="max-w-3xl mx-auto rounded-2xl border border-slate-200/90 bg-white p-8 md:p-12 shadow-sm">
-          <div className="prose prose-sm max-w-none text-slate-700 prose-p:text-sm prose-p:leading-relaxed prose-headings:font-medium prose-headings:text-[var(--color-deepSpace)] prose-h2:text-base prose-h2:md:text-lg prose-h2:mt-10 prose-h2:mb-4 prose-h2:first:mt-0 prose-h3:text-sm prose-h3:md:text-base prose-h3:mt-8 prose-h3:mb-3 prose-li:text-sm prose-strong:font-semibold prose-a:text-[var(--color-electricBlue)] prose-a:no-underline hover:prose-a:underline prose-ul:my-4 prose-ol:my-4">
+          <div className="prose prose-sm max-w-none normal-case text-slate-700 prose-p:text-sm prose-p:leading-relaxed prose-headings:font-medium prose-headings:text-[var(--color-deepSpace)] prose-headings:normal-case prose-h2:text-base prose-h2:md:text-lg prose-h2:mt-10 prose-h2:mb-4 prose-h2:first:mt-0 prose-h3:text-sm prose-h3:md:text-base prose-h3:mt-8 prose-h3:mb-3 prose-li:text-sm prose-strong:font-semibold prose-a:text-[var(--color-electricBlue)] prose-a:no-underline hover:prose-a:underline prose-ul:my-4 prose-ol:my-4">
             {children}
           </div>
         </article>

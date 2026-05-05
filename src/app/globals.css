@@ -35,22 +35,6 @@
   --leading-heading: 1.2em;
 }
 
-/* Client logos slider */
-@keyframes client-logos-slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-.animate-client-logos-slide {
-  animation: client-logos-slide 30s linear infinite;
-}
-.animate-client-logos-slide:hover {
-  animation-play-state: paused;
-}
-
 /* Testimonials fade-in animation */
 @keyframes fade-in {
   from {

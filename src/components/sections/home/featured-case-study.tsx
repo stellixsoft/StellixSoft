@@ -201,7 +201,12 @@ export default function FeaturedCaseStudy() {
     >
       <div className="max-w-[1300px] mx-auto">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
-          Case Studies
+          <Link
+            href="/case-studies"
+            className="outline-none transition-opacity hover:opacity-80 hover:underline decoration-[var(--color-electricBlue-solid)] underline-offset-[12px] focus-visible:ring-2 focus-visible:ring-[var(--color-electricBlue-solid)] rounded-sm"
+          >
+            Case Studies
+          </Link>
         </h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
@@ -324,7 +329,7 @@ export default function FeaturedCaseStudy() {
                 <Image
                   key={study.architectureImage}
                   src={study.architectureImage}
-                  alt={study.title}
+                  alt=""
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 520px"
                   quality={88}

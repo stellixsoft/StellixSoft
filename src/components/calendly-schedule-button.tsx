@@ -2,6 +2,7 @@
 
 import type { CSSProperties, ReactNode } from "react";
 import { openCalendlyPopup } from "@/src/lib/calendly-popup";
+import { CALENDLY_DEFAULT_GUEST_EMAILS } from "@/src/lib/constants";
 
 type Props = {
   className?: string;
@@ -22,7 +23,11 @@ export default function CalendlyScheduleButton({
       type="button"
       onClick={() => {
         onClick?.();
-        openCalendlyPopup();
+        openCalendlyPopup(
+          CALENDLY_DEFAULT_GUEST_EMAILS.length > 0
+            ? { guests: CALENDLY_DEFAULT_GUEST_EMAILS }
+            : undefined,
+        );
       }}
       className={`border-0 font-inherit ${className ?? ""}`.trim()}
       style={style}

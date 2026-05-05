@@ -35,7 +35,7 @@ const caseStudies = [
   {
     slug: "stock-options-and-equity-management-platform",
     category: "Enterprise",
-    title: "Equity Management Platform",
+    title: "Stock Options & Equity Management Platform",
     summary:
       "Custom stock options management platform replacing spreadsheet-based processes for finance and HR teams.",
     bullets: ["95% HR time saved", "Zero reconciliation errors"],
@@ -54,14 +54,23 @@ const caseStudies = [
   },
 ];
 
-export default function CaseStudiesGrid() {
+type CaseStudiesGridProps = {
+  /** Omit featured studies already highlighted elsewhere on the page */
+  excludeSlugs?: string[];
+};
+
+export default function CaseStudiesGrid({ excludeSlugs }: CaseStudiesGridProps) {
+  const visible = excludeSlugs?.length
+    ? caseStudies.filter((cs) => !excludeSlugs.includes(cs.slug))
+    : caseStudies;
+
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 bg-white" style={{
       background: "linear-gradient(135deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 50%)",
     }}>
       <div className="max-w-[1100px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {caseStudies.map((cs) => (
+          {visible.map((cs) => (
             <article
               key={cs.slug}
               className="rounded-3xl bg-white shadow-[0_18px_60px_rgba(15,23,42,0.16)] border border-gray-200 overflow-hidden flex flex-col"

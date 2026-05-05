@@ -16,7 +16,7 @@ export default function BlockchainDevelopmentProcess() {
     },
     {
       phase: "Phase 02",
-      title: "Architecture Design",
+      title: "Architecture & Design",
       description:
         "Chain selection, smart contract design, integration architecture. Plan for scale, security, and maintenance.",
       icon: <Image

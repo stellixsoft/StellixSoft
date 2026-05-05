@@ -17,7 +17,7 @@ export default function TypicalCiCdPipeline() {
               { label: "Build", detail: "Docker image build" },
               { label: "Test", detail: "Unit + integ tests" },
               { label: "Staging", detail: "Auto deploy review" },
-              { label: "Prod", detail: "Blue/green deploy" },
+              { label: "Production", detail: "Blue/green deploy" },
             ].map((stage) => (
               <div key={stage.label} className="flex flex-col items-center text-center">
                 <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-3xl bg-white/5 text-white/80 border border-white/10">

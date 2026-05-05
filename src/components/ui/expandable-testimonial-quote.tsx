@@ -33,12 +33,12 @@ export function ExpandableTestimonialQuote({
 
   const quoteClasses =
     variant === "about"
-      ? "text-[var(--color-neutralGray)] group-hover:text-white italic text-sm md:text-base leading-relaxed transition-colors duration-300"
+      ? "text-[var(--color-neutralGray)] italic text-sm md:text-base leading-relaxed"
       : "text-[var(--color-neutralGray)] italic text-sm md:text-base leading-relaxed";
 
   const buttonClasses =
     variant === "about"
-      ? "text-sm font-semibold text-[var(--color-electricBlue-solid)] group-hover:text-white transition-colors self-start rounded-sm hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
+      ? "text-sm font-semibold text-[var(--color-electricBlue-solid)] self-start rounded-sm hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-electricBlue-solid)]"
       : "text-sm font-semibold text-[var(--color-electricBlue-solid)] self-start rounded-sm hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-electricBlue-solid)]";
 
   if (!isLong) {

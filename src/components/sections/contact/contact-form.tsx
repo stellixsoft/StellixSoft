@@ -177,11 +177,18 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                     id="phone"
                     name="phone"
                     type="tel"
-                    placeholder="+1 (555) 000-0000"
-                    maxLength={40}
+                    inputMode="numeric"
+                    placeholder="+15550001234"
+                    maxLength={22}
                     autoComplete="tel"
-                    className={inputClass}
+                    aria-invalid={errs.phone ? true : undefined}
+                    aria-describedby={errs.phone ? "contact-phone-error" : undefined}
+                    className={`${inputClass} ${errs.phone ? "border-red-300 ring-1 ring-red-200" : ""}`}
                   />
+                  <FieldError id="contact-phone-error" message={errs.phone} />
+                  <p className="mt-1 text-[11px] text-[var(--color-neutralGray)]">
+                    Digits only; optional + for country code (spaces/formatting are stripped).
+                  </p>
                 </div>
               </div>
 
@@ -237,10 +244,49 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
               </div>
 
               <div>
-                <label htmlFor="budget" className={labelClass}>
-                  Budget range (optional)
-                </label>
-                <input id="budget" name="budget" type="text" maxLength={200} className={inputClass} />
+                <label className={labelClass}>Budget range (optional)</label>
+                <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_140px] gap-4">
+                  <div>
+                    <label htmlFor="budgetAmount" className="sr-only">
+                      Budget amount
+                    </label>
+                    <input
+                      id="budgetAmount"
+                      name="budgetAmount"
+                      type="text"
+                      inputMode="decimal"
+                      placeholder="e.g. 25000"
+                      maxLength={14}
+                      aria-invalid={errs.budget ? true : undefined}
+                      aria-describedby={errs.budget ? "contact-budget-error" : undefined}
+                      className={`${inputClass} ${errs.budget ? "border-red-300 ring-1 ring-red-200" : ""}`}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="budgetCurrency" className="sr-only">
+                      Currency
+                    </label>
+                    <select
+                      id="budgetCurrency"
+                      name="budgetCurrency"
+                      defaultValue=""
+                      className={`${inputClass} appearance-none bg-[length:1rem] bg-[right_0.75rem_center] bg-no-repeat pr-10`}
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23717181'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
+                      }}
+                      aria-invalid={errs.budget ? true : undefined}
+                    >
+                      <option value="">Currency</option>
+                      <option value="USD">USD</option>
+                      <option value="EUR">EUR</option>
+                      <option value="GBP">GBP</option>
+                      <option value="AED">AED</option>
+                      <option value="PKR">PKR</option>
+                      <option value="OTHER">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <FieldError id="contact-budget-error" message={errs.budget} />
               </div>
 
               {state.message && (

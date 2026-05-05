@@ -29,17 +29,29 @@ function ensureWidgetScript(): void {
   document.body.appendChild(s);
 }
 
+export type CalendlyPopupOptions = {
+  /** Up to 10 additional invite emails where Calendly / plan supports guests */
+  guests?: string[];
+};
+
 /**
  * Opens Calendly’s in-page popup. Waits until `window.Calendly` exists (Next.js loads
  * the script asynchronously). Avoids relying on `load` on an already-loaded script.
  */
-export function openCalendlyPopup(): void {
+export function openCalendlyPopup(options?: CalendlyPopupOptions): void {
   if (typeof window === "undefined") return;
+
+  const guests = options?.guests?.filter(Boolean).slice(0, 10);
+  const prefill: Record<string, unknown> | undefined =
+    guests && guests.length > 0 ? { guests } : undefined;
 
   const tryOpen = (): boolean => {
     if (!window.Calendly?.initPopupWidget) return false;
     try {
-      window.Calendly.initPopupWidget({ url: CALENDLY_URL });
+      window.Calendly.initPopupWidget({
+        url: CALENDLY_URL,
+        ...(prefill ? { prefill } : {}),
+      });
       return true;
     } catch {
       return false;

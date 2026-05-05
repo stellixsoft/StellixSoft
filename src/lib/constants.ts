@@ -1,6 +1,15 @@
 export const CALENDLY_URL =
   "https://calendly.com/stellixsoft/15-minute-meeting";
 
+/** Comma-separated invitee emails (max 10) passed into Calendly prefill when supported */
+export const CALENDLY_DEFAULT_GUEST_EMAILS: string[] = (
+  process.env.NEXT_PUBLIC_CALENDLY_GUEST_EMAILS ?? ""
+)
+  .split(",")
+  .map((s) => s.trim())
+  .filter(Boolean)
+  .slice(0, 10);
+
 /** Shown when Calendly API is not configured or no slot is returned. */
 export const CALENDLY_NEXT_SLOT_FALLBACK_LABEL = "See Calendly for next opening";
 

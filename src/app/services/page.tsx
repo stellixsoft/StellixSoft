@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "../../components/sections/services/hero";
 import ServicesGrid from "../../components/sections/services/services-grid";
-import CompareOptions from "../../components/sections/home/compare-options";
-import Testimonials from "../../components/sections/home/testimonials";
 import CTAPilot from "../../components/sections/home/cta-pilot";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import { collectionPageJsonLd } from "@/src/lib/schema";
@@ -33,8 +31,6 @@ export default function ServicesPage() {
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
         <ServicesGrid />
-        <CompareOptions />
-        <Testimonials />
         <CTAPilot />
       </div>
     </>

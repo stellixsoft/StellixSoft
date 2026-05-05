@@ -33,7 +33,7 @@ export default function CaseStudiesPage() {
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
         <EnterprisePortalModernizationOverview />
-        <CaseStudiesGrid />
+        <CaseStudiesGrid excludeSlugs={["enterprise-portal-modernization"]} />
         <CaseStudiesIndustriesServed />
         <CTAPilot />
       </div>
