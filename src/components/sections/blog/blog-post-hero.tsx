@@ -1,5 +1,6 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
 import Link from "next/link";
+import { HERO_SECTION_LAYOUT } from "@/src/lib/hero-section-layout";
 
 interface BlogPostHeroProps {
   category: string;
@@ -23,7 +24,7 @@ export default function BlogPostHero({
   });
 
   return (
-    <section className="relative flex min-h-[calc(70vh+120px)] items-center justify-center overflow-hidden -mt-[100px] py-32 md:py-40">
+    <section className={HERO_SECTION_LAYOUT}>
       <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
 
       <div

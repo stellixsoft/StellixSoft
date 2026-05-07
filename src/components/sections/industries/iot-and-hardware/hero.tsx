@@ -1,10 +1,11 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
 import Link from "next/link";
 import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
+import { HERO_SECTION_LAYOUT } from "@/src/lib/hero-section-layout";
 
 export default function IoTAndHardwareHero() {
   return (
-    <section className="relative py-40 flex items-center justify-center overflow-hidden -mt-[100px] min-h-[calc(70vh+120px)]">
+    <section className={HERO_SECTION_LAYOUT}>
       <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
       <div
         className="absolute inset-0 bg-[var(--color-deepSpace)]/60"

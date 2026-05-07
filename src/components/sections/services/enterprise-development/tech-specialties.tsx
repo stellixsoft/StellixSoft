@@ -1,11 +1,11 @@
 const categories = [
   {
     title: "Backend",
-    techs: [".NET Core 6/7/8", "Node.js", "PHP/Laravel", "Python"],
+    techs: [".NET Core", "NodeJS", "Python"],
   },
   {
     title: "Frontend",
-    techs: ["React", "Next.js", "Vue.js", "TypeScript"],
+    techs: ["React", "Next.js", "Vue"],
   },
   {
     title: "Database",
@@ -16,38 +16,39 @@ const categories = [
     techs: ["AWS", "Google Cloud", "Azure", "Docker", "CI/CD"],
   },
   {
-    title: "Real-Time",
-    techs: ["SignalR", "WebSockets", "Event-Driven Architecture"],
+    title: "Real-time",
+    techs: ["SignalR", "WebSockets", "Event-driven architecture"],
   },
 ];
 
 export default function TechSpecialties() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
-      <div className="max-w-[1400px] mx-auto">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
+    <section className="bg-white px-4 py-16 sm:px-6 md:py-24">
+      <div className="mx-auto max-w-[1400px]">
+        <h2 className="text-center text-2xl font-light text-[var(--color-deepSpace)] md:text-3xl lg:text-4xl">
           Enterprise Technology Expertise
         </h2>
         <div
-          className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
+          className="mx-auto mt-4 mb-10 h-0.5 w-16 md:mb-12"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+          aria-hidden
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
           {categories.map((cat) => (
             <article
               key={cat.title}
-              className="rounded-2xl p-6 md:p-8 text-center"
+              className="rounded-2xl px-6 py-7 text-center md:px-8 md:py-8"
               style={{ backgroundColor: "var(--color-deepSpace)" }}
             >
               <h3
-                className="text-xs font-medium uppercase tracking-widest mb-4"
+                className="text-[11px] font-semibold uppercase tracking-[0.2em] md:text-xs"
                 style={{ color: "var(--color-electricBlue)" }}
               >
                 {cat.title}
               </h3>
-              <p className="text-sm text-white leading-relaxed">
-                {cat.techs.join(" | ")}
+              <p className="mt-4 text-sm leading-relaxed text-white md:text-[15px]">
+                {cat.techs.join(", ")}
               </p>
             </article>
           ))}

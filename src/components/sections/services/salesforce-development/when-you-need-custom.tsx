@@ -1,3 +1,16 @@
+import { BACKGROUND_URL } from "@/src/lib/background-url";
+
+function PlusBadge() {
+  return (
+    <span
+      className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-lg font-light text-sky-500 leading-none"
+      aria-hidden
+    >
+      +
+    </span>
+  );
+}
+
 export default function WhenYouNeedCustomSalesforce() {
   const reasons = [
     {
@@ -6,7 +19,7 @@ export default function WhenYouNeedCustomSalesforce() {
     },
     {
       title: "Complex Integrations Needed",
-      description: "Real-time sync with ERP, custom APIs, or legacy systems.",
+      description: "Real-time sync with ERP, custom APIs or legacy systems.",
     },
     {
       title: "Unique Business Processes",
@@ -27,24 +40,38 @@ export default function WhenYouNeedCustomSalesforce() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-sky-50/70">
-      <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
-        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-10 md:mb-12">
+    <section
+      className="px-4 py-16 sm:px-6 md:py-24"
+      style={{
+        backgroundImage: `url(${BACKGROUND_URL})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="mx-auto max-w-[1300px]">
+        <h2 className="mb-4 text-center text-2xl font-light leading-tight text-[var(--color-deepSpace)] md:text-3xl lg:text-4xl">
           When You Need Custom Salesforce Development
         </h2>
+        <div
+          className="mx-auto mb-10 h-0.5 w-16 md:mb-12"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+          aria-hidden
+        />
 
-        <div className="grid gap-4 md:gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
           {reasons.map((item) => (
             <div
               key={item.title}
-              className="rounded-[24px] bg-white border border-slate-200/80 shadow-[0_18px_55px_rgba(15,23,42,0.05)] px-6 py-5"
+              className="rounded-[24px] border border-slate-200/80 bg-white px-6 py-5 shadow-[0_18px_55px_rgba(15,23,42,0.05)]"
             >
-              <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-sky-500 mb-1.5">
-                ➜ {item.title}
-              </p>
-              <p className="text-sm md:text-[15px] text-slate-600 leading-relaxed">
-                {item.description}
-              </p>
+              <div className="mb-3 flex items-start gap-3">
+                <PlusBadge />
+                <h3 className="text-[12px] font-semibold uppercase leading-snug tracking-[0.08em] text-slate-900 md:text-[13px]">
+                  {item.title}
+                </h3>
+              </div>
+              <p className="text-sm leading-relaxed text-slate-500 md:text-[15px]">{item.description}</p>
             </div>
           ))}
         </div>
@@ -52,4 +79,3 @@ export default function WhenYouNeedCustomSalesforce() {
     </section>
   );
 }
-

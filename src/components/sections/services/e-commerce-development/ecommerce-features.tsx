@@ -1,4 +1,9 @@
 import Image from "next/image";
+import {
+  BlueTickIcon,
+  BLUE_TICK_BODY_CLASS,
+} from "@/src/components/sections/services/dedicated-development-teams/dedicated-section-blue-tick";
+import { BACKGROUND_URL } from "@/src/lib/background-url";
 export default function ECommerceFeaturesWeImplement() {
   const cards = [
     {
@@ -106,9 +111,14 @@ export default function ECommerceFeaturesWeImplement() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-sky-50/70">
+    <section className="bg-[var(--color-lightGray)] py-16 md:py-20" style={{
+      backgroundImage: `url(${BACKGROUND_URL})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}>
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
-        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-10 md:mb-12">
+        <h2 className="mb-10 text-center text-3xl font-semibold text-slate-900 md:mb-12 md:text-[44px]">
           E-commerce Features We Implement
         </h2>
 
@@ -116,21 +126,21 @@ export default function ECommerceFeaturesWeImplement() {
           {cards.map((card) => (
             <div
               key={card.title}
-              className="rounded-[32px] bg-white border border-slate-200/80 shadow-[0_24px_70px_rgba(15,23,42,0.06)] px-6 py-7 md:px-8 md:py-9"
+              className="rounded-[16px] border border-slate-200/80 bg-white px-6 py-7 shadow-[0_16px_45px_rgba(15,23,42,0.05)] md:px-8 md:py-8"
             >
               <div className="mb-4 flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 text-lg">
                   {card.icon}
                 </div>
-                <h3 className="text-sm md:text-[15px] font-medium uppercase text-slate-900">
+                <h3 className="text-sm font-semibold uppercase text-slate-900 md:text-[13px]">
                   {card.title}
                 </h3>
               </div>
-              <ul className="space-y-1.5 text-sm md:text-[15px] text-slate-700">
+              <ul className="space-y-2 text-sm md:text-[13px]">
                 {card.items.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span className="mt-[7px] h-[6px] w-[6px] rounded-full bg-sky-400" />
-                    <span>{item}</span>
+                  <li key={item} className="flex items-start gap-2">
+                    <BlueTickIcon className="mt-[2px] h-[13px] w-[13px] shrink-0" />
+                    <span className={`leading-snug ${BLUE_TICK_BODY_CLASS}`}>{item}</span>
                   </li>
                 ))}
               </ul>

@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
 import EnterpriseMobileAppDevelopmentHero from "@/src/components/sections/services/enterprise-mobile-app-development/hero";
+import EnterpriseApplicationMobileEcosystems from "@/src/components/sections/services/enterprise-mobile-app-development/enterprise-application-mobile-ecosystems";
 import MobileAppsWeSpecializeIn from "@/src/components/sections/services/enterprise-mobile-app-development/mobile-apps-specialize";
+import MobileAppDevelopmentEnterprisesAcrossIndustries from "@/src/components/sections/services/enterprise-mobile-app-development/mobile-app-development-enterprises-across-industries";
 import MobileTechnologyApproach from "@/src/components/sections/services/enterprise-mobile-app-development/mobile-technology-approach";
-import FieldServiceAppCaseStudy from "@/src/components/sections/services/enterprise-mobile-app-development/field-service-case-study";
+import AdvancedEnterpriseApplicationIntegration from "@/src/components/sections/services/enterprise-mobile-app-development/advanced-enterprise-application-integration";
+// import FieldServiceAppCaseStudy from "@/src/components/sections/services/enterprise-mobile-app-development/field-service-case-study";
 import HowWeBuildMobileApps from "@/src/components/sections/services/enterprise-mobile-app-development/how-we-build";
-import MobileDevelopmentCapabilities from "@/src/components/sections/services/enterprise-mobile-app-development/mobile-capabilities";
+import ScalableEnterpriseMobileAppDevelopment from "@/src/components/sections/services/enterprise-mobile-app-development/scalable-enterprise-mobile-app-development";
+// import MobileDevelopmentCapabilities from "@/src/components/sections/services/enterprise-mobile-app-development/mobile-capabilities";
 import WhyChooseStellixsoftForMobile from "@/src/components/sections/services/enterprise-mobile-app-development/why-choose";
-import WeStandBehindOurMobileApps from "@/src/components/sections/services/enterprise-mobile-app-development/stand-behind";
+import WhyChooseOurEnterpriseApplicationDevelopment from "@/src/components/sections/services/enterprise-mobile-app-development/why-choose-our-enterprise-application-development";
+// import WeStandBehindOurMobileApps from "@/src/components/sections/services/enterprise-mobile-app-development/stand-behind";
+import EnterpriseApplicationServicesFutureGrowth from "@/src/components/sections/services/enterprise-mobile-app-development/enterprise-application-services-future-growth";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
-import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
+// import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
@@ -81,40 +87,11 @@ const faqMainEntity: FaqQuestionBlock[] = [
   },
 ];
 
-const faqItems = [
-  {
-    id: "mobile-native-vs-crossplatform",
-    question:
-      "Should we build native iOS/Android apps or use cross-platform?",
-    answer:
-      "For most enterprise use cases, cross-platform frameworks like React Native or Flutter deliver native performance at 40–60% lower development cost. We recommend native only when you need deep hardware integration or platform-specific features that cross-platform can't handle.",
-  },
-  {
-    id: "mobile-offline",
-    question: "How do you handle offline functionality for field workers?",
-    answer:
-      "We implement local databases with conflict resolution and background sync. Your field teams can collect data, complete inspections, and update records without connectivity. Everything syncs automatically when they're back online.",
-  },
-  {
-    id: "mobile-backend-integration",
-    question: "Can the mobile app integrate with our enterprise backend?",
-    answer:
-      "Yes. We build mobile apps that connect to your existing APIs, ERPs, CRMs, and databases. We handle authentication (SSO, biometrics), real-time data sync, and push notifications to keep field teams connected to your core systems.",
-  },
-  {
-    id: "mobile-security",
-    question:
-      "How do you ensure mobile app security for enterprise use?",
-    answer:
-      "We implement certificate pinning, encrypted local storage, biometric authentication, remote wipe capability, and MDM (Mobile Device Management) compatibility. All data in transit uses TLS, and sensitive data at rest is encrypted with platform-level keychain/keystore.",
-  },
-  {
-    id: "mobile-deployment",
-    question: "What about app store deployment and ongoing updates?",
-    answer:
-      "We handle the complete deployment lifecycle - App Store and Google Play submission, beta testing through TestFlight/Firebase, over-the-air updates for non-native code, and automated CI/CD pipelines for consistent, rapid releases.",
-  },
-];
+const faqItems = faqMainEntity.map((q, i) => ({
+  id: `enterprise-mobile-faq-${i + 1}`,
+  question: q.name,
+  answer: q.acceptedAnswer.text,
+}));
 
 const serviceLd = serviceJsonLd({
   name: "Enterprise Mobile App Development",
@@ -143,18 +120,24 @@ export default function EnterpriseMobileAppDevelopmentPage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
+        <EnterpriseApplicationMobileEcosystems />
         <MobileAppsWeSpecializeIn />
+        <MobileAppDevelopmentEnterprisesAcrossIndustries />
         <MobileTechnologyApproach />
-        <FieldServiceAppCaseStudy />
+        <AdvancedEnterpriseApplicationIntegration />
+        {/* <FieldServiceAppCaseStudy /> */}
         <HowWeBuildMobileApps />
-        <MobileDevelopmentCapabilities />
+        <ScalableEnterpriseMobileAppDevelopment />
+        {/* <MobileDevelopmentCapabilities /> */}
         <WhyChooseStellixsoftForMobile />
-        <WeStandBehindOurMobileApps />
+        <WhyChooseOurEnterpriseApplicationDevelopment />
+        {/* <WeStandBehindOurMobileApps /> */}
+        <EnterpriseApplicationServicesFutureGrowth />
         <ServiceFaqs
           title="Enterprise Mobile App Development FAQs"
           items={faqItems}
         />
-        <ServiceInternalLinks slug="enterprise-mobile-app-development" />
+        {/* <ServiceInternalLinks slug="enterprise-mobile-app-development" /> */}
         <CTAPilot />
       </div>
     </>

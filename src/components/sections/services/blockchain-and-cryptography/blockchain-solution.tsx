@@ -1,10 +1,10 @@
 import { BACKGROUND_URL } from "@/src/lib/background-url";
 
-/** Enterprise Blockchain and Cryptography Solutions (after hero) */
+/** Enterprise Blockchain and Cryptography Solutions — gradient band after hero intro */
 export default function BlockchainSolution() {
   return (
     <section
-      className="relative py-20 md:py-28 px-4 sm:px-6"
+      className="relative px-4 py-16 text-center sm:px-6 md:py-24"
       style={{
         backgroundImage: `url(${BACKGROUND_URL})`,
         backgroundSize: "cover",
@@ -12,18 +12,24 @@ export default function BlockchainSolution() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="max-w-[1300px] mx-auto flex flex-col items-center justify-center text-center">
-        <h2 className="max-w-[56rem] text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] font-semibold leading-tight text-[var(--color-deepSpace)]">
-          Enterprise Blockchain and{" "}
-          <span style={{ color: "var(--color-electricBlue)" }}>Cryptography Solutions</span>
+      <div className="mx-auto max-w-[940px]">
+        <h2 className="text-2xl font-light leading-tight text-[var(--color-deepSpace)] md:text-3xl lg:text-4xl">
+          Enterprise Blockchain and Cryptography Solutions
         </h2>
-        <p className="mt-6 md:mt-8 max-w-[42rem] md:max-w-[48rem] text-[15px] md:text-base text-slate-600 leading-[1.62]">
-          Our custom blockchain and cryptography services help enterprises adopt ledger technology
-          where it genuinely strengthens trust, auditability, and compliance.
+        <div
+          className="mx-auto mt-4 h-0.5 w-16 md:mt-5"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+          aria-hidden
+        />
+        <p className="mx-auto mt-8 max-w-[840px] text-[15px] leading-relaxed text-[var(--color-neutralGray)] md:text-base">
+          Our approach to Blockchain and Cryptography ensures that every system we build is secure by
+          design. We apply advanced cryptographic techniques such as hashing, digital signatures, and
+          encryption to protect data integrity and ensure trust across distributed systems.
         </p>
-        <p className="mt-4 max-w-[42rem] md:max-w-[48rem] text-[15px] md:text-base text-slate-600 leading-[1.62]">
-          We design permissioned networks, secure smart contracts, and integration layers that fit
-          your regulatory context and operational reality—without forcing a one-size-fits-all stack.
+        <p className="mx-auto mt-6 max-w-[840px] text-[15px] leading-relaxed text-[var(--color-neutralGray)] md:text-base">
+          With our Blockchain integration services, businesses can seamlessly connect blockchain networks
+          with existing enterprise systems like ERPs, CRMs, and cloud platforms—without disrupting
+          operations.
         </p>
       </div>
     </section>

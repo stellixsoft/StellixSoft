@@ -38,9 +38,9 @@ export default function SkillsAvailableForAugmentation() {
     >
       <div className="absolute inset-0 bg-black/75" aria-hidden />
       <div className="relative z-10 max-w-[1300px] mx-auto text-center text-white">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light">Skills Available for Augmentation</h2>
+        <h2 className="text-3xl font-semibold md:text-[44px]">Skills Available for Augmentation</h2>
         <div
-          className="w-16 h-0.5 mx-auto mt-4 mb-12"
+          className="mx-auto mb-12 mt-4 h-0.5 w-16 md:w-24"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />

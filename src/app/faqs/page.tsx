@@ -11,6 +11,7 @@ import {
   siteFaqSectionsToJsonLd,
 } from "@/src/data/site-faqs";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
+import { HERO_SECTION_LAYOUT } from "@/src/lib/hero-section-layout";
 
 const PATH = "/faqs" as const;
 
@@ -41,7 +42,7 @@ export default function FaqsPage() {
       <JsonLd data={faqLd} />
       <JsonLd data={breadcrumbLd} />
       <div>
-        <section className="relative py-40 flex items-center justify-center overflow-hidden -mt-[100px] min-h-[calc(80vh+120px)]">
+        <section className={HERO_SECTION_LAYOUT}>
           <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
           <div
             className="absolute inset-0 bg-[var(--color-deepSpace)]/75"

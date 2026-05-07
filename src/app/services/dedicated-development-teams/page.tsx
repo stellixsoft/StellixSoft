@@ -7,16 +7,16 @@ import ReadyInTwoWeeks from "@/src/components/sections/services/dedicated-develo
 import WhatsIncludedWithDedicatedTeam from "@/src/components/sections/services/dedicated-development-teams/whats-included";
 import WhatYouGetDedicatedTeam from "@/src/components/sections/services/dedicated-development-teams/what-you-get-dedicated-team";
 import CompareYourOptions from "@/src/components/sections/services/dedicated-development-teams/compare-options";
+import DedicatedTeamVsOtherModels from "@/src/components/sections/services/dedicated-development-teams/dedicated-team-vs-other-models";
 import ScalableDedicatedDevelopmentTeam from "@/src/components/sections/services/dedicated-development-teams/scalable-dedicated-development-team";
-import HireDedicatedWithConfidence from "@/src/components/sections/services/dedicated-development-teams/hire-dedicated-with-confidence";
 import DedicatedTeamInAction from "@/src/components/sections/services/dedicated-development-teams/team-in-action";
 import TransparentPricing from "@/src/components/sections/services/dedicated-development-teams/transparent-pricing";
 import CalculateYourSavings from "@/src/components/sections/services/dedicated-development-teams/calculate-savings";
-import BuildYourPerfectTeam from "@/src/components/sections/services/dedicated-development-teams/build-perfect-team";
-import DedicatedTeamVsOtherModels from "@/src/components/sections/services/dedicated-development-teams/dedicated-team-vs-other-models";
+// import BuildYourPerfectTeam from "@/src/components/sections/services/dedicated-development-teams/build-perfect-team";
+import HireDedicatedWithConfidence from "@/src/components/sections/services/dedicated-development-teams/hire-dedicated-with-confidence";
 import DedicatedDevelopmentTeamsFAQs from "@/src/components/sections/services/dedicated-development-teams/faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
-import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
+// import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
@@ -29,7 +29,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/dedicated-development-teams" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Dedicated Development Teams - Hire Full-Time Remote Engineers",
+  title: "Your Team, Our Talent — Dedicated Development Teams",
   description:
     "Hire a dedicated development team of full-time remote engineers that integrate with your workflow and culture. US-timezone aligned dedicated development teams for long-term partnerships.",
   path: PATH,
@@ -109,10 +109,6 @@ export default function DedicatedDevelopmentTeamsPage() {
       <JsonLd data={breadcrumbLd} />
       <div>
         <DedicatedDevelopmentTeamsHero />
-        <div
-          className="h-1 w-full shrink-0"
-          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-        />
         <DedicatedDevelopmentTeamModel />
         <WhyHiringIsBroken />
         <WhyHireDedicatedDevelopment />
@@ -120,15 +116,15 @@ export default function DedicatedDevelopmentTeamsPage() {
         <WhatsIncludedWithDedicatedTeam />
         <WhatYouGetDedicatedTeam />
         <CompareYourOptions />
+        <DedicatedTeamVsOtherModels />
         <ScalableDedicatedDevelopmentTeam />
-        <HireDedicatedWithConfidence />
         <DedicatedTeamInAction />
         <TransparentPricing />
         <CalculateYourSavings />
-        <BuildYourPerfectTeam />
-        <DedicatedTeamVsOtherModels />
+        {/* <BuildYourPerfectTeam /> */}
+        <HireDedicatedWithConfidence />
         <DedicatedDevelopmentTeamsFAQs />
-        <ServiceInternalLinks slug="dedicated-development-teams" />
+        {/* <ServiceInternalLinks slug="dedicated-development-teams" /> */}
         <CTAPilot />
       </div>
     </>

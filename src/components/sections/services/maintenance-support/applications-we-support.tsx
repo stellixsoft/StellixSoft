@@ -1,4 +1,10 @@
 import Image from "next/image";
+import { BACKGROUND_URL } from "@/src/lib/background-url";
+import {
+  BlueTickIcon,
+  BLUE_TICK_BODY_CLASS,
+} from "@/src/components/sections/services/dedicated-development-teams/dedicated-section-blue-tick";
+
 const categories = [
   {
     title: "Enterprise Applications",
@@ -34,22 +40,30 @@ const categories = [
 
 export default function ApplicationsWeSupport() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]">
-      <div className="max-w-[1300px] mx-auto">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
+    <section
+      className="px-4 py-16 sm:px-6 md:py-24"
+      style={{
+        backgroundImage: `url(${BACKGROUND_URL})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="mx-auto max-w-[1300px]">
+        <h2 className="text-center text-2xl font-light text-[var(--color-deepSpace)] md:text-3xl lg:text-4xl">
           Applications We Support
         </h2>
         <div
-          className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
+          className="mx-auto mt-4 mb-10 h-0.5 w-16 md:mb-12"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
           {categories.map((category) => (
             <article
               key={category.title}
-              className="rounded-[28px] bg-white border border-gray-100 shadow-[0_18px_60px_rgba(15,23,42,0.08)] px-6 py-8 md:px-8 md:py-10"
+              className="rounded-[28px] border border-gray-100 bg-white px-6 py-8 shadow-[0_18px_60px_rgba(15,23,42,0.08)] md:px-8 md:py-10"
             >
               <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--color-electricBlue)]/8 text-[var(--color-electricBlue)]">
                 <Image
@@ -60,14 +74,14 @@ export default function ApplicationsWeSupport() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-sm md:text-[15px] font-medium uppercase text-[var(--color-deepSpace)] mb-3">
+              <h3 className="mb-3 text-sm font-medium uppercase text-[var(--color-deepSpace)] md:text-[15px]">
                 {category.title}
               </h3>
-              <ul className="space-y-1.5 text-sm md:text-[15px] text-[var(--color-neutralGray)]">
+              <ul className="space-y-1.5 text-sm md:text-[15px]">
                 {category.items.map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" />
-                    <span>{item}</span>
+                    <BlueTickIcon className="mt-1 h-4 w-4 shrink-0" />
+                    <span className={`leading-snug ${BLUE_TICK_BODY_CLASS}`}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -78,4 +92,3 @@ export default function ApplicationsWeSupport() {
     </section>
   );
 }
-

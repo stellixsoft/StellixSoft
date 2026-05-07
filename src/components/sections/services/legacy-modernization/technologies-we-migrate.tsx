@@ -13,12 +13,17 @@ const migrationPairs = [
 export default function TechnologiesWeMigrate() {
   return (
     <section
-      className="py-16 md:py-24 px-4 sm:px-6 relative overflow-hidden"
-      style={{ backgroundColor: "var(--color-deepSpace)" }}
+      className="relative overflow-hidden px-4 py-16 sm:px-6 md:py-24"
+      style={{
+        backgroundImage:
+          "linear-gradient(180deg, rgba(3,2,19,0.92) 0%, rgba(3,2,19,0.88) 100%), url('/assets/images/background-img.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
-      {/* Optional subtle pattern overlay */}
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `radial-gradient(circle at 20% 50%, var(--color-electricBlue) 1px, transparent 1px),
             radial-gradient(circle at 80% 50%, var(--color-electricBlue) 1px, transparent 1px)`,
@@ -27,27 +32,27 @@ export default function TechnologiesWeMigrate() {
         aria-hidden
       />
 
-      <div className="max-w-[900px] mx-auto relative z-10">
-        <h2 className="text-2xl md:text-3xl font-light text-white text-center">
+      <div className="relative z-10 mx-auto max-w-[900px]">
+        <h2 className="text-center text-3xl font-semibold text-white md:text-[44px]">
           Technologies We Migrate From & To
         </h2>
         <div
-          className="w-24 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
+          className="mx-auto mb-10 mt-4 h-0.5 w-16 md:mb-12 md:w-24"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+          aria-hidden
         />
 
-        <div className="rounded-2xl bg-black/40 border border-white/10 shadow-xl overflow-hidden">
-          {/* Card header */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 border-b border-white/20">
+        <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/45 shadow-xl backdrop-blur-[2px]">
+          <div className="grid grid-cols-1 gap-4 border-b border-white/20 md:grid-cols-2 md:gap-0">
             <div className="flex items-center gap-2 px-6 py-4 md:py-5">
-              <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" aria-hidden />
+              <span className="h-2 w-2 shrink-0 rounded-full bg-red-500" aria-hidden />
               <span className="text-sm font-medium uppercase tracking-wider text-white">
                 From (Legacy)
               </span>
             </div>
-            <div className="flex items-center gap-2 px-6 py-4 md:py-5 md:border-l border-white/20">
+            <div className="flex items-center gap-2 border-white/20 px-6 py-4 md:border-l md:py-5">
               <span
-                className="w-2 h-2 rounded-full shrink-0"
+                className="h-2 w-2 shrink-0 rounded-full"
                 style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
                 aria-hidden
               />
@@ -57,13 +62,12 @@ export default function TechnologiesWeMigrate() {
             </div>
           </div>
 
-          {/* Two-column list */}
-          <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/20">
+          <div className="grid grid-cols-1 divide-y divide-white/20 md:grid-cols-2 md:divide-x md:divide-y-0">
             <ul className="py-4 md:py-6">
               {migrationPairs.map((pair) => (
                 <li
                   key={pair.from}
-                  className="px-6 py-3 text-sm text-white border-b border-white/10 last:border-b-0 md:last:border-b md:border-b-0"
+                  className="border-b border-white/10 px-6 py-3 text-sm text-white last:border-b-0 md:border-b-0 md:last:border-b"
                 >
                   {pair.from}
                 </li>
@@ -73,13 +77,9 @@ export default function TechnologiesWeMigrate() {
               {migrationPairs.map((pair) => (
                 <li
                   key={`${pair.from}-to`}
-                  className="flex items-center gap-2 px-6 py-3 text-sm text-white border-b border-white/10 last:border-b-0 md:last:border-b md:border-b-0"
+                  className="flex items-center gap-2 border-b border-white/10 px-6 py-3 text-sm text-white last:border-b-0 md:border-b-0 md:last:border-b"
                 >
-                  <span
-                    className="shrink-0 text-sm"
-                    style={{ color: "var(--color-electricBlue)" }}
-                    aria-hidden
-                  >
+                  <span className="shrink-0 text-sm" style={{ color: "var(--color-electricBlue)" }} aria-hidden>
                     &rarr;
                   </span>
                   {pair.to}

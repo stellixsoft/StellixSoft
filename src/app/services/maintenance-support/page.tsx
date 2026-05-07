@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
 import MaintenanceSupportHero from "@/src/components/sections/services/maintenance-support/hero";
 import WhatHappensWithoutProperMaintenance from "@/src/components/sections/services/maintenance-support/without-maintenance";
+import MaintenanceGrowthStrategy from "@/src/components/sections/services/maintenance-support/maintenance-growth-strategy";
 import ApplicationsWeSupport from "@/src/components/sections/services/maintenance-support/applications-we-support";
+import MaintenanceAcrossSystems from "@/src/components/sections/services/maintenance-support/maintenance-across-systems";
 import WhatsIncludedInMaintenance from "@/src/components/sections/services/maintenance-support/whats-included";
+import PracticalApproachMaintenance from "@/src/components/sections/services/maintenance-support/practical-approach-maintenance";
 import SupportPlans from "@/src/components/sections/services/maintenance-support/support-plans";
+import ChoosingMaintenanceModel from "@/src/components/sections/services/maintenance-support/choosing-maintenance-model";
+import HowWeMaintainApplication from "@/src/components/sections/services/maintenance-support/how-we-maintain-application";
+import HowMaintenanceReducesRisk from "@/src/components/sections/services/maintenance-support/how-maintenance-reduces-risk";
 import ResponseTimeCommitments from "@/src/components/sections/services/maintenance-support/response-time-commitments";
 import ExamplesOfMaintenance from "@/src/components/sections/services/maintenance-support/examples";
 import ProactiveVsReactiveCost from "@/src/components/sections/services/maintenance-support/proactive-vs-reactive";
+import ProactiveMaintenanceInAction from "@/src/components/sections/services/maintenance-support/proactive-maintenance-in-action";
 import GettingStartedWithMaintenance from "@/src/components/sections/services/maintenance-support/getting-started";
+import WhyChooseMaintenanceServices from "@/src/components/sections/services/maintenance-support/why-choose-maintenance-services";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
-import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
-import HowWeMaintainApplication from "@/src/components/sections/services/maintenance-support/how-we-maintain-application";
+// import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
@@ -146,19 +153,26 @@ export default function MaintenanceSupportPage() {
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
         <WhatHappensWithoutProperMaintenance />
+        <MaintenanceGrowthStrategy />
         <ApplicationsWeSupport />
+        <MaintenanceAcrossSystems />
         <WhatsIncludedInMaintenance />
+        <PracticalApproachMaintenance />
         <SupportPlans />
+        <ChoosingMaintenanceModel />
         <HowWeMaintainApplication />
+        <HowMaintenanceReducesRisk />
         <ResponseTimeCommitments />
         <ExamplesOfMaintenance />
         <ProactiveVsReactiveCost />
+        <ProactiveMaintenanceInAction />
         <GettingStartedWithMaintenance />
+        <WhyChooseMaintenanceServices />
         <ServiceFaqs
           title="Maintenance & Support FAQs"
           items={faqItems}
         />
-        <ServiceInternalLinks slug="maintenance-support" />
+        {/* <ServiceInternalLinks slug="maintenance-support" /> */}
         <CTAPilot />
       </div>
     </>

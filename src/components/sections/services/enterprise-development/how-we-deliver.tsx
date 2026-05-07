@@ -1,101 +1,109 @@
-const expertiseCards = [
+const phases = [
   {
-    title: "Enterprise Backend",
-    smallTitle: "Week 1-2",
-    technologies: [
-      ".NET Core 6/7/8",
-      "Node.js",
-      "SignalR (Real-time)",
-      "Multi-tenant Architecture",
+    num: "01",
+    title: "Discovery & architecture",
+    timeline: "Week 1–2",
+    bullets: [
+      "Stakeholder workshops and requirements",
+      "System and integration assessment",
+      "Technical architecture and roadmap",
     ],
   },
   {
-    title: "Frontend & Mobile",
-    smallTitle: "Week 3-6",
-    technologies: [
-      "React / Next.js",
-      "TypeScript",
-      "Flutter (Cross-platform)",
-      "React Native",
+    num: "02",
+    title: "Build & integration",
+    timeline: "Week 3–8",
+    bullets: [
+      "Iterative delivery with working increments",
+      "API and enterprise system integration",
+      "Feature development aligned to priorities",
     ],
   },
   {
-    title: "Data & Cloud",
-    smallTitle: "Ongoing",
-    technologies: [
-      "AWS / GCP / Azure",
-      "SQL Server / PostgreSQL",
-      "MongoDB / Redis",
-      "Docker / Kubernetes",
+    num: "03",
+    title: "Quality & security",
+    timeline: "Ongoing",
+    bullets: [
+      "Automated testing and CI/CD",
+      "Performance and reliability checks",
+      "Security review and hardening",
     ],
   },
   {
-    title: "Enterprise Quality",    
-    smallTitle: "Continuous",
-    technologies: [
-      "70%+ Test Coverage",
-      "CI/CD Pipelines",
-      "Code Reviews",
-      "Security Best Practices",
+    num: "04",
+    title: "Launch & scale",
+    timeline: "Week 9+",
+    bullets: [
+      "Production rollout and monitoring",
+      "Operational handover and documentation",
+      "Continuous optimization and support",
     ],
   },
 ];
 
-const techLogos = [".NET", "React", "Node.js", "AWS", "Azure", "Docker"];
-
 export default function HowWeDeliver() {
   return (
     <section
-      className="py-16 md:py-24 px-6 relative bg-cover bg-center"
-      style={{ backgroundImage: "url('/assets/images/background-img.webp')", backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat" }}
+      className="relative overflow-hidden px-4 py-16 sm:px-6 md:py-24"
+      style={{
+        backgroundImage: "url('/assets/images/background-img.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
-      {/* Black Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-0" />
-      <div className="max-w-[1300px] mx-auto relative z-10">
-        {/* Header */}
-        <header className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-4">
+      <div className="absolute inset-0 z-0 bg-black/65" aria-hidden />
+      <div className="relative z-10 mx-auto max-w-[1300px]">
+        <header className="mb-12 text-center md:mb-16">
+          <h2 className="text-2xl font-light text-white md:text-3xl lg:text-4xl">
             How We Deliver Enterprise Projects
           </h2>
           <div
-            className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
+            className="mx-auto mt-4 h-0.5 w-16"
             style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+            aria-hidden
           />
         </header>
 
-        {/* Four Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8">
-          {expertiseCards.map((card) => (
-            <div
-              key={card.title}
-              className="rounded-xl p-6 md:p-8 border-1 transition-all hover:border-[var(--color-electricBlue)]/50"
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          {phases.map((phase) => (
+            <article
+              key={phase.num}
+              className="relative overflow-hidden rounded-2xl border p-6 md:p-8"
               style={{
-                backgroundColor: "#0F172B80",
-                borderColor: "rgba(16, 172, 219, 0.2)",
+                backgroundColor: "rgba(15, 23, 43, 0.55)",
+                borderColor: "rgba(16, 172, 219, 0.25)",
               }}
             >
-              {/* Title */}
-              
-              <h3 className="text-xl md:text-xl font-light text-white mb-1">
-                {card.title}
+              <span
+                className="pointer-events-none absolute -right-1 -top-2 select-none text-6xl font-light leading-none text-white/[0.07] md:text-7xl"
+                aria-hidden
+              >
+                {phase.num}
+              </span>
+              <h3 className="relative text-sm font-bold uppercase tracking-[0.16em] text-white">
+                {phase.title}
               </h3>
-              <p className="text-sm font-medium tracking-widest mb-8" style={{ color: "var(--color-electricBlue)" }}>{card.smallTitle}</p>
-
-              {/* Technologies List */}
-              <ul className="space-y-2">
-                {card.technologies.map((tech) => (
-                  <li key={tech} className="flex items-start gap-2 text-sm md:text-md text-white/70 mt-2">
-                    <span
-                      className="shrink-0"
-                      style={{ color: "var(--color-electricBlue)" }}
-                    >
+              <p
+                className="relative mt-2 text-xs font-medium uppercase tracking-widest"
+                style={{ color: "var(--color-electricBlue)" }}
+              >
+                {phase.timeline}
+              </p>
+              <ul className="relative mt-6 space-y-2.5">
+                {phase.bullets.map((line) => (
+                  <li
+                    key={line}
+                    className="flex gap-2 text-sm leading-relaxed text-white/85 md:text-[15px]"
+                  >
+                    <span className="shrink-0" style={{ color: "var(--color-electricBlue)" }}>
                       •
                     </span>
-                    <span>{tech}</span>
+                    <span>{line}</span>
                   </li>
                 ))}
               </ul>
-            </div>
+            </article>
           ))}
         </div>
       </div>

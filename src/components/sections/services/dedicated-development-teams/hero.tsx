@@ -1,53 +1,73 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
 import Link from "next/link";
 import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
+import { BlueTickIcon } from "@/src/components/sections/services/dedicated-development-teams/dedicated-section-blue-tick";
+import { HERO_SECTION_LAYOUT } from "@/src/lib/hero-section-layout";
+
+const HERO_FEATURES = [
+  "Interview before commit",
+  "Replace anytime",
+  "2-week scale notice",
+] as const;
 
 export default function DedicatedDevelopmentTeamsHero() {
   return (
-    <section className="relative py-40 flex items-center justify-center overflow-hidden -mt-[100px] min-h-[calc(80vh+120px)]">
-      <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
-      <div
-        className="absolute inset-0 bg-[var(--color-deepSpace)]/75"
-        aria-hidden
-      />
+    <section className={HERO_SECTION_LAYOUT}>
+      <HeroBackgroundVideo className="absolute inset-0 h-full w-full object-cover" />
+      <div className="absolute inset-0 bg-[var(--color-deepSpace)]/75" aria-hidden />
 
-      <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center text-white">
-        <p className="text-xs md:text-sm font-semibold uppercase tracking-[0.3em] text-white/70 mb-4">
+      <div className="relative z-10 mx-auto w-full max-w-[1300px] px-6 py-24 text-center text-white">
+        <h1 className="text-2xl font-semibold leading-snug md:text-4xl lg:text-[2.75rem] lg:leading-tight">
+          Hire Dedicated Development Team for Faster Product Delivery
+        </h1>
+
+        <p className="mt-6 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--color-electricBlue)] md:text-sm">
           Dedicated Development Teams
         </p>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight">
+
+        <p className="mt-4 text-4xl font-extralight leading-tight md:text-5xl lg:text-6xl">
           Your Team,
           <br />
           <span className="font-semibold">Our Talent</span>
-        </h1>
-
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.24em] text-white/80">
-          <span>Interview Before Commit</span>
-          <span>Replace Anytime</span>
-          <span>2-Week Scale Notice</span>
-        </div>
-
-        <p className="mt-8 text-sm md:text-base text-white/85 max-w-2xl mx-auto leading-relaxed">
-          Scale your development capacity without the hiring headache. Get a complete, dedicated
-          team working exclusively on your projects - fully integrated, your time zone, operational in
-          2 weeks.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mx-auto mt-8 flex max-w-[920px] flex-wrap items-center justify-center gap-x-8 gap-y-4 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/90 md:text-[11px]">
+          {HERO_FEATURES.map((label) => (
+            <span key={label} className="inline-flex items-center gap-2">
+              <BlueTickIcon className="h-[18px] w-[18px] md:h-[22px] md:w-[22px]" />
+              {label}
+            </span>
+          ))}
+        </div>
+
+        <p className="mx-auto mt-8 max-w-[920px] text-sm leading-relaxed text-white/85 md:text-base">
+          Looking to scale your engineering capacity without delays? Hire dedicated development team
+          solutions that give you immediate access to experienced developers working exclusively on your
+          projects.
+        </p>
+        <p className="mx-auto mt-4 max-w-[920px] text-sm leading-relaxed text-white/85 md:text-base">
+          Our dedicated development team model helps businesses accelerate development, reduce hiring
+          costs, and maintain full control over workflows—without the overhead of in-house recruitment.
+        </p>
+
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <CalendlyScheduleButton
-            className="inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-90 cursor-pointer"
+            className="inline-flex cursor-pointer items-center gap-2 rounded-lg px-8 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-90"
             style={{
               background:
                 "linear-gradient(180deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
             }}
           >
             Schedule a Call
+            <span aria-hidden className="text-lg leading-none">
+              &gt;
+            </span>
           </CalendlyScheduleButton>
           <Link
             href="/case-studies"
-            className="inline-flex rounded-lg border border-white/70 px-8 py-3.5 text-base font-medium text-white bg-transparent transition-colors hover:bg-white/10 hover:border-white"
+            className="inline-flex rounded-lg border border-white/70 bg-transparent px-8 py-3.5 text-base font-medium text-white transition-colors hover:border-white hover:bg-white/10"
           >
-            View Case Studies
+            View Case Study
           </Link>
         </div>
       </div>

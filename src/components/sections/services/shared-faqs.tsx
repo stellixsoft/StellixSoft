@@ -11,29 +11,43 @@ export type FaqItem = {
 type ServiceFaqsProps = {
   title: string;
   items: FaqItem[];
+  /** When set, replaces the default light-gradient section background (e.g. solid white). */
+  sectionClassName?: string;
+  /** Hide the short electric-blue rule under the heading. */
+  hideHeadingAccent?: boolean;
 };
 
-export default function ServiceFaqs({ title, items }: ServiceFaqsProps) {
+export default function ServiceFaqs({ title, items, sectionClassName, hideHeadingAccent }: ServiceFaqsProps) {
   const [openId, setOpenId] = useState<string | null>(null);
 
   return (
     <section
-      className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]"
-      style={{
-        background:
-          "linear-gradient(135deg, rgba(16, 172, 219, 0.06) 0%, rgba(255, 255, 255, 1) 65%)",
-      }}
+      className={
+        sectionClassName ??
+        "py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]"
+      }
+      style={
+        sectionClassName
+          ? undefined
+          : {
+              background:
+                "linear-gradient(135deg, rgba(16, 172, 219, 0.06) 0%, rgba(255, 255, 255, 1) 65%)",
+            }
+      }
     >
       <div className="max-w-[1300px] mx-auto">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[var(--color-deepSpace)] text-center">
           {title}
         </h2>
-        <div
-          className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
-          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-        />
+        {!hideHeadingAccent && (
+          <div
+            className="mx-auto mb-10 mt-4 h-0.5 w-16 md:mb-12"
+            style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+            aria-hidden
+          />
+        )}
 
-        <ul className="space-y-4">
+        <ul className={`space-y-4 ${hideHeadingAccent ? "mt-10 md:mt-12" : ""}`}>
           {items.map((item) => {
             const isOpen = openId === item.id;
             return (

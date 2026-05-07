@@ -55,6 +55,14 @@ const services = [
     icon: "/assets/images/industry-three.png",
   },
   {
+    img: "/assets/images/health-image.webp",
+    title: "Medical Billing Services",
+    description:
+      "End-to-end revenue cycle management: hospital and physician billing, credentialing, claims, denial management, and HIPAA-aware workflows.",
+    href: "/services/medical-billing-services",
+    icon: "/assets/images/IOT-icon.png",
+  },
+  {
     img: "/assets/images/industry-one-img.webp",
     title: "Enterprise Mobile App Development",
     description:

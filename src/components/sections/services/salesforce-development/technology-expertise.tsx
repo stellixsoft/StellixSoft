@@ -1,20 +1,26 @@
+import { BACKGROUND_URL } from "@/src/lib/background-url";
+
 export default function SalesforceTechnologyExpertise() {
   const columns = [
     {
       title: "Development",
       items: ["Apex (triggers, classes)", "Lightning Web Components", "Visualforce", "SOQL/SOSL"],
+      gradientLead: true,
     },
     {
       title: "Automation",
-      items: ["Flows & Process Builder", "Approval processes", "Scheduled jobs", "Platform events"],
+      items: ["Flows & Process Builder", "Approval processes", "Scheduled Apex", "Platform Events"],
+      gradientLead: false,
     },
     {
       title: "Integration",
-      items: ["REST/SOAP APIs", "Platform events", "Heroku Connect", "MuleSoft basics"],
+      items: ["REST/SOAP APIs", "Platform Events", "Heroku Connect", "MuleSoft basics"],
+      gradientLead: false,
     },
     {
       title: "Clouds",
       items: ["Sales Cloud", "Service Cloud", "Experience Cloud", "Marketing Cloud"],
+      gradientLead: false,
     },
   ];
 
@@ -26,50 +32,69 @@ export default function SalesforceTechnologyExpertise() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
-        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-10 md:mb-12">
+    <section
+      className="px-4 py-16 sm:px-6 md:py-24"
+      style={{
+        backgroundImage: `url(${BACKGROUND_URL})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="mx-auto max-w-[1300px]">
+        <h2 className="mb-4 text-center text-2xl font-light text-[var(--color-deepSpace)] md:text-3xl lg:text-4xl">
           Salesforce Technology Expertise
         </h2>
+        <div
+          className="mx-auto mb-10 h-0.5 w-16 md:mb-12"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+          aria-hidden
+        />
 
-        <div className="grid gap-6 md:gap-7 lg:gap-8 md:grid-cols-2 lg:grid-cols-4 mb-8 md:mb-10">
+        <div className="mb-8 grid gap-6 md:grid-cols-2 md:gap-7 lg:mb-10 lg:grid-cols-4 lg:gap-8">
           {columns.map((col) => (
             <div
               key={col.title}
-              className="rounded-[28px] bg-white border border-slate-200/80 shadow-[0_20px_60px_rgba(15,23,42,0.06)] px-6 py-7 md:px-7 md:py-8"
+              className={`rounded-[28px] border border-slate-200/80 px-6 py-7 shadow-[0_20px_60px_rgba(15,23,42,0.06)] md:px-7 md:py-8 ${
+                col.gradientLead ? "bg-gradient-to-b from-sky-50/85 via-white to-white" : "bg-white"
+              }`}
             >
-              <h3 className="text-[11px] md:text-xs font-semibold tracking-[0.22em] uppercase text-slate-900 mb-4">
+              <h3 className="mb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-900 md:text-xs">
                 {col.title}
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <ul className="space-y-2">
                 {col.items.map((item) => (
-                  <span
+                  <li
                     key={item}
-                    className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs md:text-[13px] font-medium text-slate-700"
+                    className="text-[13px] leading-relaxed text-slate-500 md:text-[14px]"
                   >
                     {item}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>
 
-        <div className="rounded-[32px] bg-[#050819] text-white px-6 md:px-10 lg:px-14 py-5 md:py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.26em] text-white/70">
+        <div className="flex flex-col gap-5 rounded-[32px] bg-[#050819] px-6 py-6 text-white md:flex-row md:items-center md:justify-between md:px-10 lg:px-14">
+          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-white md:text-left md:text-xs">
             Admin &amp; Config Capabilities
           </p>
-          <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs md:text-sm text-white/80">
+          <p className="text-center text-sm leading-relaxed text-white/90 md:text-left md:text-[15px]">
             {adminCapabilities.map((cap, idx) => (
-              <span key={cap} className="flex items-center gap-2">
-                {idx > 0 && <span className="h-[2px] w-[18px] bg-white/20" />}
-                <span>{cap}</span>
+              <span key={cap}>
+                {idx > 0 && (
+                  <>
+                    {" "}
+                    <span className="text-white/40">•</span>{" "}
+                  </>
+                )}
+                {cap}
               </span>
             ))}
-          </div>
+          </p>
         </div>
       </div>
     </section>
   );
 }
-

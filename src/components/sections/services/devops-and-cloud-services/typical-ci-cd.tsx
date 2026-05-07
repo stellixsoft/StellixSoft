@@ -1,4 +1,6 @@
 import Image from "next/image";
+
+/** Image 6 */
 export default function TypicalCiCdPipeline() {
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 bg-[#050819]">

@@ -1,7 +1,16 @@
+import { BACKGROUND_URL } from "@/src/lib/background-url";
+
 export default function ProactiveVsReactiveCost() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
-      <div className="max-w-[1300px] mx-auto">
+    <section
+      className="px-4 py-16 sm:px-6 md:py-24"
+      style={{
+        backgroundImage: `url(${BACKGROUND_URL})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >      <div className="max-w-[1300px] mx-auto">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
           Proactive vs. Reactive: The Real Cost
         </h2>
@@ -44,10 +53,10 @@ export default function ProactiveVsReactiveCost() {
           </article>
 
           {/* Proactive card */}
-          <article className="rounded-[32px] bg-[#050819] text-white shadow-[0_28px_90px_rgba(15,23,42,0.6)] px-7 py-8 md:px-10 md:py-10 border border-slate-800">
-            <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.22em] text-emerald-300 mb-2 flex items-center gap-2">
-              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-emerald-300">
-                <span className="h-2 w-2 rounded-full bg-emerald-300" />
+          <article className="rounded-[32px] border border-slate-800 bg-[#050819] px-7 py-8 text-white shadow-[0_28px_90px_rgba(15,23,42,0.6)] md:px-10 md:py-10">
+            <p className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-sky-300 md:text-xs">
+              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-sky-300">
+                <span className="h-2 w-2 rounded-full bg-sky-300" />
               </span>
               Proactive Maintenance
             </p>

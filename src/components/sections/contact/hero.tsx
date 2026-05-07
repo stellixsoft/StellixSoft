@@ -1,4 +1,5 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
+import { HERO_SECTION_LAYOUT } from "@/src/lib/hero-section-layout";
 
 function ClockIcon() {
   return (
@@ -73,7 +74,7 @@ const benefits = [
 
 export default function Hero() {
   return (
-    <section className="relative py-40 flex items-center justify-center overflow-hidden -mt-[100px] min-h-[calc(70vh+120px)]">
+    <section className={HERO_SECTION_LAYOUT}>
       <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
 
       <div

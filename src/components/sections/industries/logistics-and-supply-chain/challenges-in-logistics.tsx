@@ -1,24 +1,24 @@
 const complianceItems = [
   {
-    id: "hipaa",
+    id: "spreadsheet-chaos",
     icon: "padlock",
     title: "SPREADSHEET CHAOS",
     description: "Scheduling in Excel. Status updates via phone. Information scattered across WhatsApp groups. Nothing connected.",
   },
   {
-    id: "soc2",
+    id: "constant-phone-calls",
     icon: "shield",
     title: "CONSTANT PHONE CALLS",
     description: "Where's my shipment? calls all day. Drivers calling for updates. Your team stuck on the phone instead of working.",
   },
   {
-    id: "pci",
+    id: "cant-scale-efficiently",
     icon: "card",
     title: "CAN'T SCALE EFFICIENTLY",
     description: "Adding more shipments means adding more admin staff. Manual processes don't scale - they just get messier.",
   },
   {
-    id: "pci",
+    id: "enterprise-clients-expectations",
     icon: "card",
     title: "ENTERPRISE CLIENTS NEED MORE",
     description: "Big clients want real-time tracking, self-service portals, and API integrations. Your current setup can't deliver.",

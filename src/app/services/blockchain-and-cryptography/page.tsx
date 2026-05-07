@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import BlockchainAndCryptographyHero from "@/src/components/sections/services/blockchain-and-cryptography/hero";
+import BlockchainSolution from "@/src/components/sections/services/blockchain-and-cryptography/blockchain-solution";
 import BlockchainForBusiness from "@/src/components/sections/services/blockchain-and-cryptography/blockchain-for-business";
+import CustomBlockchainAcrossIndustries from "@/src/components/sections/services/blockchain-and-cryptography/custom-blockchain-across-industries";
 import OurBlockchainPhilosophy from "@/src/components/sections/services/blockchain-and-cryptography/our-blockchain-philosophy";
-import BlockchainTechnologyExpertise from "@/src/components/sections/services/blockchain-and-cryptography/technology-expertise";
 import WhyBusinessesChooseBlockchain from "@/src/components/sections/services/blockchain-and-cryptography/why-businesses-choose";
+import BlockchainTechnologyExpertise from "@/src/components/sections/services/blockchain-and-cryptography/technology-expertise";
 import AdvancedBlockchainIntegration from "@/src/components/sections/services/blockchain-and-cryptography/advanced-blockchain-integration";
 import WhenBlockchainMakesSense from "@/src/components/sections/services/blockchain-and-cryptography/when-blockchain-makes-sense";
+import SecureBlockchainArchitecture from "@/src/components/sections/services/blockchain-and-cryptography/secure-blockchain-architecture";
 import BlockchainDevelopmentProcess from "@/src/components/sections/services/blockchain-and-cryptography/development-process";
+import ScalableBlockchainDevelopment from "@/src/components/sections/services/blockchain-and-cryptography/scalable-blockchain-development";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
 // import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
@@ -18,8 +22,6 @@ import {
   serviceJsonLd,
 } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
-import BlockchainSolution from "@/src/components/sections/services/blockchain-and-cryptography/blockchain-solution";
-import ScalableBlockchainDevelopment from "@/src/components/sections/services/blockchain-and-cryptography/scalable-blockchain-development";
 
 const PATH = "/services/blockchain-and-cryptography" as const;
 
@@ -117,20 +119,20 @@ export default function BlockchainAndCryptographyPage() {
         />
         <BlockchainSolution />
         <BlockchainForBusiness />
+        <CustomBlockchainAcrossIndustries />
         <OurBlockchainPhilosophy />
         <WhyBusinessesChooseBlockchain />
         <BlockchainTechnologyExpertise />
         <AdvancedBlockchainIntegration />
         <WhenBlockchainMakesSense />
+        <SecureBlockchainArchitecture />
         <BlockchainDevelopmentProcess />
+        <ScalableBlockchainDevelopment />
         <ServiceFaqs
           title="Blockchain & Cryptography FAQs"
           items={faqItems}
         />
-        {/* Related pages — temporarily disabled
-        <ServiceInternalLinks slug="blockchain-and-cryptography" />
-        */}
-        <ScalableBlockchainDevelopment />
+        {/* <ServiceInternalLinks slug="blockchain-and-cryptography" /> */}
         <CTAPilot />
       </div>
     </>

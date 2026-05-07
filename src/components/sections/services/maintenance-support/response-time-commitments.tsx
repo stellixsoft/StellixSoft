@@ -1,7 +1,7 @@
 const rows = [
   {
     priority: "P1 – Critical",
-    description: "System down, data at risk",
+    description: "System down, critical failure",
     response: "2 hours (Enterprise) / 4 hours (Pro)",
   },
   {
@@ -12,11 +12,11 @@ const rows = [
   {
     priority: "P3 – Medium",
     description: "Feature impaired",
-    response: "24 hours",
+    response: "12 hours",
   },
   {
     priority: "P4 – Low",
-    description: "Minor issues, requests",
+    description: "Minor bug or request",
     response: "48 hours",
   },
 ];

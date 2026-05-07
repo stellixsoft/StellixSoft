@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
 import LegacyModernizationHero from "@/src/components/sections/services/legacy-modernization/hero";
 import YourLegacy from "@/src/components/sections/services/legacy-modernization/your-legacy";
+import RealCostNotModernizing from "@/src/components/sections/services/legacy-modernization/real-cost-not-modernizing";
 import Modernization from "@/src/components/sections/services/legacy-modernization/modernization";
+import HowLegacyModernizationWorks from "@/src/components/sections/services/legacy-modernization/how-legacy-modernization-works";
 import TechnologiesWeMigrate from "@/src/components/sections/services/legacy-modernization/technologies-we-migrate";
+import BeyondMigrationUnlocks from "@/src/components/sections/services/legacy-modernization/beyond-migration-unlocks";
 import HowWeModernized from "@/src/components/sections/services/legacy-modernization/how-we-modernized";
+import WhenStartModernization from "@/src/components/sections/services/legacy-modernization/when-start-modernization";
 import HowWeAvoid from "@/src/components/sections/services/legacy-modernization/how-we-avoid";
-import StandBehind from "@/src/components/sections/services/legacy-modernization/stand-behind";
+import SmarterApproachModernization from "@/src/components/sections/services/legacy-modernization/smarter-approach-modernization";
 import AfterModernization from "@/src/components/sections/services/legacy-modernization/after-modernization";
-import Testimonial from "@/src/components/sections/industries/logistics-and-supply-chain/testimonial";
+import LegacyModernizationTestimonial from "@/src/components/sections/services/legacy-modernization/testimonial";
 import FAQs from "@/src/components/sections/services/legacy-modernization/faqs";
+import WhyCompaniesTrustModernization from "@/src/components/sections/services/legacy-modernization/why-companies-trust-modernization";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
-import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
@@ -23,10 +27,9 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/legacy-modernization" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "Application Modernization Services - Legacy Software & Cloud Migration",
+  title: "Application Legacy Modernization Services",
   description:
-    "Legacy modernization services and application modernization. Migrate from VB.NET, legacy .NET Framework, and outdated architectures to modern cloud-native microservices with zero downtime.",
+    "Legacy modernization services and application modernization for migrating legacy systems to secure cloud native microservices architectures.",
   path: PATH,
   keywords: [
     "legacy modernization services",
@@ -110,15 +113,20 @@ export default function LegacyModernizationPage() {
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
         <YourLegacy />
+        <RealCostNotModernizing />
         <Modernization />
+        <HowLegacyModernizationWorks />
         <TechnologiesWeMigrate />
+        <BeyondMigrationUnlocks />
         <HowWeModernized />
+        <WhenStartModernization />
         <HowWeAvoid />
+        <SmarterApproachModernization />
         <AfterModernization />
-        <Testimonial />
+        <LegacyModernizationTestimonial />
+        <WhyCompaniesTrustModernization />
         <FAQs />
-        <StandBehind />
-        <ServiceInternalLinks slug="legacy-modernization" />
+        {/* <ServiceInternalLinks slug="legacy-modernization" /> — omitted from reference layout */}
         <CTAPilot />
       </div>
     </>

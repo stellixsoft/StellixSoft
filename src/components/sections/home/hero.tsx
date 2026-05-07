@@ -1,11 +1,12 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
 import Link from "next/link";
+import { HERO_SECTION_LAYOUT } from "@/src/lib/hero-section-layout";
 import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
 import { ScheduleArrowIcon } from "@/src/components/ui/schedule-arrow-icon";
 
 export default function Hero() {
   return (
-    <section className="relative py-28 sm:py-36 md:py-40 flex items-center justify-center overflow-hidden -mt-[100px] min-h-[calc(100svh+80px)] md:h-[calc(100vh+120px)] md:min-h-0">
+    <section className={HERO_SECTION_LAYOUT}>
       {/* Video background */}
       <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
 

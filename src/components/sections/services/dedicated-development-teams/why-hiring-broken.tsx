@@ -22,11 +22,11 @@ export default function WhyHiringIsBroken() {
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
       <div className="max-w-[1300px] mx-auto">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
+        <h2 className="text-center text-3xl font-semibold text-[var(--color-deepSpace)] md:text-[44px]">
           Why Hiring Is Broken
         </h2>
         <div
-          className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
+          className="mx-auto mb-10 mt-4 h-0.5 w-16 md:mb-12 md:w-24"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
 
@@ -45,7 +45,7 @@ export default function WhyHiringIsBroken() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="text-sm md:text-[15px] font-medium text-[var(--color-deepSpace)] mb-3">
+              <h3 className="mb-3 text-xs font-bold uppercase tracking-[0.12em] text-[var(--color-deepSpace)] md:text-[13px] md:tracking-[0.14em]">
                 {reason.title}
               </h3>
               <p className="text-sm md:text-[15px] text-[var(--color-neutralGray)] leading-relaxed">

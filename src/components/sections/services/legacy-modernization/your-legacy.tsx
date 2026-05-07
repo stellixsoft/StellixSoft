@@ -34,7 +34,7 @@ function MedalIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="w-10 h-10"
+      className="h-8 w-8"
       style={{ color: "var(--color-electricBlue)" }}
       aria-hidden
     >
@@ -54,7 +54,7 @@ function PartnershipIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="w-10 h-10"
+      className="h-8 w-8"
       style={{ color: "var(--color-electricBlue)" }}
       aria-hidden
     >
@@ -75,7 +75,7 @@ function GlobeIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="w-10 h-10"
+      className="h-8 w-8"
       style={{ color: "var(--color-electricBlue)" }}
       aria-hidden
     >
@@ -94,7 +94,7 @@ function CheckCircleIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="w-10 h-10"
+      className="h-8 w-8"
       style={{ color: "var(--color-electricBlue)" }}
       aria-hidden
     >
@@ -113,30 +113,30 @@ const iconMap = {
 
 export default function YourLegacy() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
-      <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
+    <section className="bg-white px-4 py-16 md:py-24 sm:px-6">
+      <div className="mx-auto max-w-[1200px]">
+        <h2 className="text-center text-3xl font-semibold text-[var(--color-deepSpace)] md:text-[44px]">
           Is Your Legacy System Holding You Back?
         </h2>
-        <div className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12" style={{ backgroundColor: "var(--color-electricBlue-solid)" }}></div>
+        <div
+          className="mx-auto mb-10 mt-4 h-0.5 w-16 md:mb-12 md:w-24"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+          aria-hidden
+        />
 
-        <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {trustPoints.map((point) => {
             const Icon = iconMap[point.icon as keyof typeof iconMap];
             return (
               <article
                 key={point.title}
-                className="flex flex-col items-center text-center"
+                className="flex h-full flex-col rounded-2xl border border-gray-200/90 bg-white p-6 shadow-[0_8px_30px_rgba(3,2,19,0.06)] md:p-7"
               >
-                {Icon && (
-                  <div className="flex justify-center mb-4">
-                    <Icon />
-                  </div>
-                )}
-                <h3 className="text-sm font-medium uppercase tracking-wider text-[var(--color-deepSpace)]">
+                <div className="mb-4">{Icon && <Icon />}</div>
+                <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-deepSpace)] md:text-[13px]">
                   {point.title}
                 </h3>
-                <p className="mt-3 text-sm text-[var(--color-neutralGray)] leading-relaxed max-w-[260px]">
+                <p className="mt-3 text-sm leading-relaxed text-[var(--color-neutralGray)]">
                   {point.description}
                 </p>
               </article>

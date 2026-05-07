@@ -1,5 +1,8 @@
 import { BACKGROUND_URL } from "@/src/lib/background-url";
-import { BlueTickIcon } from "@/src/components/sections/services/dedicated-development-teams/dedicated-section-blue-tick";
+import {
+  BlueTickIcon,
+  BLUE_TICK_LABEL_CLASS,
+} from "@/src/components/sections/services/dedicated-development-teams/dedicated-section-blue-tick";
 
 /** Image 1 — Dedicated Development Team Model (after hero) */
 const FEATURES = [
@@ -26,21 +29,27 @@ export default function DedicatedDevelopmentTeamModel() {
         aria-hidden
       />
       <div className="mx-auto max-w-[1300px] pt-2 text-center">
-        <h2 className="mx-auto max-w-[52rem] text-2xl font-semibold leading-tight text-[var(--color-deepSpace)] sm:text-3xl md:text-4xl lg:text-[2.45rem] lg:leading-snug">
+        <h2 className="mx-auto max-w-[52rem] text-3xl font-semibold leading-tight text-[var(--color-deepSpace)] md:text-[44px] md:leading-snug">
           Dedicated Development Team Model Built for Modern Businesses
         </h2>
-        <p className="mx-auto mt-6 max-w-[46rem] text-[15px] leading-[1.62] text-slate-600 md:mt-8 md:text-base">
-          A dedicated development team works as an extension of your in-house team, aligned with
-          your goals, processes, and timelines. When you hire a dedicated development team, you
-          eliminate hiring delays and gain a team that is fully focused on your product.
+        <div
+          className="mx-auto mb-8 mt-4 h-0.5 w-16 md:mb-10 md:w-24"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+          aria-hidden
+        />
+        <p className="mx-auto max-w-[46rem] text-[15px] leading-[1.62] text-slate-600 md:text-base">
+          A dedicated development team works as an extension of your in-house team, aligned with your
+          goals, processes, and timelines. When you hire a dedicated development team, you eliminate hiring
+          delays and gain a team that is fully focused on your product.
         </p>
-        <ul className="mx-auto mt-12 grid max-w-[52rem] grid-cols-1 gap-x-10 gap-y-5 text-left sm:mt-14 sm:grid-cols-2 md:gap-y-6">
+        <p className="mx-auto mt-6 max-w-[36rem] text-[15px] font-semibold text-[var(--color-deepSpace)] md:text-base">
+          This model is ideal for:
+        </p>
+        <ul className="mx-auto mt-8 grid max-w-[52rem] grid-cols-1 gap-x-10 gap-y-4 text-left sm:mt-10 sm:grid-cols-2 md:gap-y-5">
           {FEATURES.map((label) => (
-            <li key={label} className="flex items-start gap-3 md:gap-3.5">
-              <BlueTickIcon className="mt-1 h-[22px] w-[22px]" />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500 md:text-xs md:tracking-[0.16em]">
-                {label}
-              </span>
+            <li key={label} className={`flex items-center gap-2.5 ${BLUE_TICK_LABEL_CLASS}`}>
+              <BlueTickIcon className="h-[14px] w-[14px] shrink-0" />
+              <span>{label}</span>
             </li>
           ))}
         </ul>

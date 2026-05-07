@@ -1,17 +1,30 @@
+import { BACKGROUND_URL } from "@/src/lib/background-url";
+
 export default function Testimonial() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]">
-      <div className="max-w-[900px] mx-auto">
-        <blockquote className="rounded-2xl bg-white border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)] p-8 md:p-12 text-center" style={{
-          background: "linear-gradient(135deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 60%)",
-        }}>
-          <p className="text-lg md:text-xl text-[var(--color-deepSpace)] leading-relaxed italic">
-            "Stellixsoft's team works on our timezone, delivers fast, and handles complex enterprise requirements without hand-holding. They've become an extension of our team. What started as a migration project has evolved into a strategic partnership."
+    <section
+      className="px-4 py-16 sm:px-6 md:py-24"
+      style={{
+        backgroundImage: `url(${BACKGROUND_URL})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="mx-auto max-w-[880px] text-center">
+        <blockquote className="mx-auto">
+          <p className="text-lg italic leading-relaxed text-[var(--color-deepSpace)] md:text-xl md:leading-relaxed">
+            &ldquo;Stellixsoft&apos;s team works on our timezone, delivers fast, and handles complex
+            enterprise requirements without hand-holding. They&apos;ve become an extension of our team.
+            What started as a migration project has evolved into a strategic partnership.&rdquo;
           </p>
-          <p className="text-sm font-medium tracking-widest mb-1 mt-6 " style={{ color: "var(--color-electricBlue)" }}>Director of Technology</p>
-          <footer className="text-sm text-[var(--color-neutralGray)]">
-            Global Hardware Manufacturer
-          </footer>
+          <p
+            className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] md:text-sm"
+            style={{ color: "var(--color-electricBlue-solid)" }}
+          >
+            Director of Technology
+          </p>
+          <footer className="mt-2 text-sm text-[var(--color-neutralGray)]">Global Hardware Manufacturer</footer>
         </blockquote>
       </div>
     </section>

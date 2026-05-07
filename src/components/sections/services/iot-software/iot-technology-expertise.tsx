@@ -33,7 +33,14 @@ const categories = [
 
 function DatabaseIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className} aria-hidden>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className={className}
+      aria-hidden
+    >
       <ellipse cx="12" cy="6" rx="8" ry="3" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M4 6v12c0 1.66 3.58 3 8 3s8-1.34 8-3V6" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3" strokeLinecap="round" strokeLinejoin="round" />
@@ -43,7 +50,14 @@ function DatabaseIcon({ className }: { className?: string }) {
 
 function WifiIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className} aria-hidden>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className={className}
+      aria-hidden
+    >
       <path d="M5 13a10 10 0 0114 0M8.5 16.5a5 5 0 017 0M12 20h.01" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -51,7 +65,14 @@ function WifiIcon({ className }: { className?: string }) {
 
 function CloudIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className} aria-hidden>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className={className}
+      aria-hidden
+    >
       <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -59,7 +80,14 @@ function CloudIcon({ className }: { className?: string }) {
 
 function MonitorIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className} aria-hidden>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className={className}
+      aria-hidden
+    >
       <rect x="2" y="3" width="20" height="14" rx="2" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M8 21h8M12 17v4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
@@ -68,7 +96,14 @@ function MonitorIcon({ className }: { className?: string }) {
 
 function PulseIcon({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={className} aria-hidden>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className={className}
+      aria-hidden
+    >
       <path d="M22 12h-4l-3 9L9 3l-3 9H2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
@@ -84,50 +119,41 @@ const iconMap = {
 
 export default function IoTTechnologyExpertise() {
   return (
-    <section
-      className="py-16 md:py-24 px-4 sm:px-6"
-      style={{
-        background:
-          "linear-gradient(180deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 50%)",
-      }}
-    >
-      <div className="max-w-[1100px] mx-auto">
-        <h2 className="text-2xl md:text-3xl font-medium text-[var(--color-deepSpace)] text-center">
+    <section className="bg-white px-4 py-16 sm:px-6 md:py-24">
+      <div className="mx-auto max-w-[1200px]">
+        <h2 className="text-center text-3xl font-semibold text-[var(--color-deepSpace)] md:text-[44px]">
           IoT Technology Expertise
         </h2>
         <div
-          className="w-24 h-0.5 mx-auto mt-4 mb-12 md:mb-14"
+          className="mx-auto mb-12 mt-4 h-0.5 w-16 md:mb-14 md:w-24"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {categories.map((cat) => {
             const Icon = iconMap[cat.icon as keyof typeof iconMap];
             return (
               <div
                 key={cat.title}
-                className="rounded-2xl bg-white border border-gray-100 shadow-sm p-6 flex flex-col"
+                className="flex flex-col rounded-xl bg-[var(--color-deepSpace)] px-4 py-6 text-center shadow-[0_12px_40px_rgba(3,2,19,0.12)] md:px-5 md:py-7"
               >
                 <span
-                  className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
-                  style={{
-                    backgroundColor: "rgba(16, 172, 219, 0.12)",
-                    color: "var(--color-electricBlue)",
-                  }}
+                  className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-lg text-[var(--color-electricBlue)]"
+                  style={{ backgroundColor: "rgba(16, 172, 219, 0.15)" }}
                   aria-hidden
                 >
-                  {Icon && <Icon className="w-5 h-5" />}
+                  {Icon && <Icon className="h-5 w-5" />}
                 </span>
-                <h3 className="text-sm font-medium uppercase tracking-wider text-[var(--color-deepSpace)] mb-3">
+                <h3 className="mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-electricBlue)]">
                   {cat.title}
                 </h3>
-                <p className="text-sm text-[var(--color-deepSpace)] leading-relaxed">
+                <p className="text-center text-sm leading-relaxed text-white/95 md:text-[13px]">
                   {cat.tech.split(" | ").map((t, i, arr) => (
                     <span key={t}>
                       {t}
                       {i < arr.length - 1 && (
-                        <span className="text-[var(--color-neutralGray)] mx-1">|</span>
+                        <span className="mx-1 text-[var(--color-electricBlue)]">|</span>
                       )}
                     </span>
                   ))}

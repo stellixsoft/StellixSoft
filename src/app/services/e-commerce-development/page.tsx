@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
 import ECommerceDevelopmentHero from "@/src/components/sections/services/e-commerce-development/hero";
+import CustomEcommerceIntro from "@/src/components/sections/services/e-commerce-development/custom-ecommerce-intro";
 import ECommerceSolutionsWeBuild from "@/src/components/sections/services/e-commerce-development/ecommerce-solutions";
+import CustomEcommerceIndustries from "@/src/components/sections/services/e-commerce-development/custom-ecommerce-industries";
 import WhenYouNeedCustomEcommerce from "@/src/components/sections/services/e-commerce-development/when-you-need-custom";
+import ShopifyPlatformFlexibility from "@/src/components/sections/services/e-commerce-development/shopify-platform-flexibility";
 import ECommerceTechnology from "@/src/components/sections/services/e-commerce-development/ecommerce-technology";
+import AdvancedEcommerceIntegrations from "@/src/components/sections/services/e-commerce-development/advanced-integrations";
 import ECommerceFeaturesWeImplement from "@/src/components/sections/services/e-commerce-development/ecommerce-features";
+import ScalableCustomEcommerceGrowth from "@/src/components/sections/services/e-commerce-development/scalable-growth";
+import WhyChooseEcommerceServices from "@/src/components/sections/services/e-commerce-development/why-choose-ecommerce";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
-import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
@@ -110,15 +115,22 @@ export default function ECommerceDevelopmentPage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
+        <CustomEcommerceIntro />
         <ECommerceSolutionsWeBuild />
+        <CustomEcommerceIndustries />
         <WhenYouNeedCustomEcommerce />
         <ECommerceTechnology />
+        <ShopifyPlatformFlexibility />
+
+        <AdvancedEcommerceIntegrations />
         <ECommerceFeaturesWeImplement />
+        <ScalableCustomEcommerceGrowth />
+        <WhyChooseEcommerceServices />
         <ServiceFaqs
           title="E-Commerce Development FAQs"
           items={faqItems}
         />
-        <ServiceInternalLinks slug="e-commerce-development" />
+        {/* <ServiceInternalLinks slug="e-commerce-development" /> */}
         <CTAPilot />
       </div>
     </>

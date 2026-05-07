@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import IoTSoftwareHero from "../../../components/sections/services/iot-software/hero";
-import SoftwareSolution from "../../../components/sections/services/iot-software/software-solution";
-import YourHardware from "../../../components/sections/services/iot-software/your-hardware";
-import IoTCaseStudy from "../../../components/sections/services/iot-software/iot-case-study";
-import IoTTechnologyExpertise from "../../../components/sections/services/iot-software/iot-technology-expertise";
-import SolutionByDeviceType from "../../../components/sections/services/iot-software/solution-by-device-type";
-import IoTSoftwarePartner from "../../../components/sections/services/iot-software/companies-partner";
-import FlexibleEngagement from "../../../components/sections/services/iot-software/flexible-engagement";
-import Testimonial from "../../../components/sections/services/iot-software/testimonial";
-import CTAPilot from "../../../components/sections/home/cta-pilot";
-import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
+import IoTSoftwareHero from "@/src/components/sections/services/iot-software/hero";
+import WhatWeActuallyBuild from "@/src/components/sections/services/iot-software/what-we-actually-build";
+import SoftwareSolution from "@/src/components/sections/services/iot-software/software-solution";
+import IoTApplicationRealWorld from "@/src/components/sections/services/iot-software/iot-application-real-world";
+import YourHardware from "@/src/components/sections/services/iot-software/your-hardware";
+import IoTServicesForHardwareTeams from "@/src/components/sections/services/iot-software/iot-services-for-hardware-teams";
+import IoTTechnologyExpertise from "@/src/components/sections/services/iot-software/iot-technology-expertise";
+import IoTBehindTheScenes from "@/src/components/sections/services/iot-software/iot-behind-the-scenes";
+import SolutionByDeviceType from "@/src/components/sections/services/iot-software/solution-by-device-type";
+import WhenIoTMakesSense from "@/src/components/sections/services/iot-software/when-iot-makes-sense";
+import WhyChooseIoTServices from "@/src/components/sections/services/iot-software/why-choose-iot-services";
+import CTAPilot from "@/src/components/sections/home/cta-pilot";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
@@ -23,10 +24,9 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/iot-software" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "IoT Software Development Services - Device Management & IoT Applications",
+  title: "IoT Software Development Services",
   description:
-    "IoT software development services and IoT application development. Device management platforms, real-time telemetry, edge computing, OTA updates, and fleet management dashboards.",
+    "IoT software development services and IoT application development with telemetry, edge computing, OTA updates, and fleet management tools.",
   path: PATH,
   keywords: [
     "IoT software development services",
@@ -92,8 +92,7 @@ const faqItems = [
   },
   {
     id: "iot-realtime-data",
-    question:
-      "How do you handle real-time data from thousands of devices?",
+    question: "How do you handle real-time data from thousands of devices?",
     answer:
       "We architect IoT platforms using message brokers (MQTT, Kafka), time-series databases, and event-driven processing pipelines. Our systems handle millions of data points per minute with sub-second latency for alerting and dashboards.",
   },
@@ -111,8 +110,7 @@ const faqItems = [
   },
   {
     id: "iot-enterprise-integration",
-    question:
-      "Can you integrate IoT data with our existing enterprise systems?",
+    question: "Can you integrate IoT data with our existing enterprise systems?",
     answer:
       "Yes. We build data pipelines that feed IoT telemetry into your ERP, CRM, BI tools, or custom dashboards. Whether it's predictive maintenance alerts going to your service team or inventory data flowing to your supply chain system, we handle the integration.",
   },
@@ -145,19 +143,23 @@ export default function IoTSoftwarePage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
+        <WhatWeActuallyBuild />
         <SoftwareSolution />
+        <IoTApplicationRealWorld />
         <YourHardware />
-        <IoTCaseStudy />
+        <IoTServicesForHardwareTeams />
         <IoTTechnologyExpertise />
+        <IoTBehindTheScenes />
         <SolutionByDeviceType />
-        <IoTSoftwarePartner />
-        <Testimonial />
-        <FlexibleEngagement />
-        <ServiceFaqs
-          title="IoT Software Development FAQs"
-          items={faqItems}
-        />
-        <ServiceInternalLinks slug="iot-software" />
+        <WhenIoTMakesSense />
+        <WhyChooseIoTServices />
+        <ServiceFaqs title="IoT Software Development FAQs" items={faqItems} />
+        {/* Sections below omitted from current reference layout */}
+        {/* <IoTCaseStudy /> */}
+        {/* <IoTSoftwarePartner /> */}
+        {/* <Testimonial /> */}
+        {/* <FlexibleEngagement /> */}
+        {/* <ServiceInternalLinks slug="iot-software" /> */}
         <CTAPilot />
       </div>
     </>

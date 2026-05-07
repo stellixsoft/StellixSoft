@@ -1,4 +1,5 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
+import { HERO_SECTION_LAYOUT } from "@/src/lib/hero-section-layout";
 
 const atAGlanceLeft = [
   "15-person specialized team, not a generalist agency",
@@ -13,7 +14,7 @@ const atAGlanceRight = [
 
 export default function Hero() {
   return (
-    <section className="relative py-10 flex items-center justify-center overflow-hidden -mt-[100px] min-h-[calc(80vh+120px)]">
+    <section className={HERO_SECTION_LAYOUT}>
       <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
 
       <div

@@ -1,3 +1,5 @@
+import { BACKGROUND_URL } from "@/src/lib/background-url";
+
 const cards = [
   {
     id: "big-bang",
@@ -79,72 +81,74 @@ function CheckIcon({ className }: { className?: string }) {
 
 export default function HowWeAvoid() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
-      <div className="max-w-[1100px] mx-auto">
-        <h2 className="text-2xl md:text-3xl font-light text-[var(--color-deepSpace)] text-center">
-          Why 70% of Modernization Projects Fail - And How We Avoid It
+    <section
+      className="px-4 py-16 sm:px-6 md:py-24"
+      style={{
+        backgroundImage: `url(${BACKGROUND_URL})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="mx-auto max-w-[1100px]">
+        <h2 className="text-center text-3xl font-semibold text-[var(--color-deepSpace)] md:text-[40px]">
+          Why 70% of Modernization Projects Fail—And How We Avoid It
         </h2>
         <div
-          className="w-24 h-0.5 mx-auto mt-4 mb-12 md:mb-16"
+          className="mx-auto mb-12 mt-4 h-0.5 w-16 md:mb-16 md:w-24"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8">
           {cards.map((card) => (
             <article
               key={card.id}
-              className={`rounded-2xl p-6 md:p-8 flex flex-col ${
+              className={`flex flex-col rounded-2xl p-6 md:p-8 ${
                 card.isRecommended
                   ? "bg-[var(--color-deepSpace)] text-white shadow-xl"
-                  : "bg-white border border-[var(--color-electricBlue)]/20"
+                  : "border border-[var(--color-electricBlue)]/25 bg-white shadow-[0_8px_24px_rgba(3,2,19,0.06)]"
               }`}
             >
               <div className="mb-4">
                 {card.isRecommended ? (
-                  <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/10 text-white">
-                    <CheckIcon className="w-6 h-6" />
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white">
+                    <CheckIcon className="h-6 w-6" />
                   </span>
                 ) : (
-                  <span className="inline-flex items-center justify-center w-12 h-12 rounded-full text-red-500">
-                    <XIcon className="w-8 h-8" />
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-red-50 text-red-500">
+                    <XIcon className="h-8 w-8" />
                   </span>
                 )}
               </div>
               <h3
-                className={`text-sm font-medium uppercase tracking-wider mb-3 ${
+                className={`mb-3 text-sm font-semibold uppercase tracking-wider ${
                   card.isRecommended ? "text-white" : "text-[var(--color-deepSpace)]"
                 }`}
               >
                 {card.title}
               </h3>
-              <p
-                className={`text-sm leading-relaxed mb-5 ${
-                  card.isRecommended ? "text-gray-300" : "text-[var(--color-deepSpace)]"
-                }`}
-              >
+              <p className={`mb-5 text-sm leading-relaxed ${card.isRecommended ? "text-gray-300" : "text-[var(--color-deepSpace)]"}`}>
                 {card.description}
               </p>
               <p
-                className={`text-xs font-medium uppercase tracking-wider mb-3 ${
-                  card.isRecommended ? "text-gray-400" : ""
+                className={`mb-3 text-xs font-semibold uppercase tracking-wider ${
+                  card.isRecommended ? "text-[var(--color-electricBlue)]" : ""
                 }`}
                 style={card.isRecommended ? undefined : { color: "var(--color-electricBlue)" }}
               >
                 {card.subtitle}
               </p>
-              <ul className="space-y-2 mt-auto">
+              <ul className="mt-auto space-y-2">
                 {card.items.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm">
                     <span
-                      className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full"
-                      style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+                      className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full"
+                      style={{
+                        backgroundColor: card.isRecommended ? "white" : "var(--color-electricBlue-solid)",
+                      }}
                     />
-                    <span
-                      className={card.isRecommended ? "text-white" : "text-[var(--color-deepSpace)]"}
-                    >
-                      {item}
-                    </span>
+                    <span className={card.isRecommended ? "text-white" : "text-[var(--color-deepSpace)]"}>{item}</span>
                   </li>
                 ))}
               </ul>

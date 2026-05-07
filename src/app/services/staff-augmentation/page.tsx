@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
 import StaffAugmentationHero from "@/src/components/sections/services/staff-augmentation/hero";
+import HiringVsStaffAugmentation from "@/src/components/sections/services/staff-augmentation/hiring-vs-staff-augmentation";
 import HowStaffAugmentationWorks from "@/src/components/sections/services/staff-augmentation/how-it-works";
+import WhatMakesStaffEffective from "@/src/components/sections/services/staff-augmentation/what-makes-staff-effective";
 import WhenStaffAugmentationMakesSense from "@/src/components/sections/services/staff-augmentation/when-it-makes-sense";
+import WhenToChooseStaffVsDedicated from "@/src/components/sections/services/staff-augmentation/when-to-choose-staff-vs-dedicated";
 import StaffAugmentationVsDedicatedTeams from "@/src/components/sections/services/staff-augmentation/vs-dedicated-teams";
 import SkillsAvailableForAugmentation from "@/src/components/sections/services/staff-augmentation/skills-available";
+import FlexibleStaffAcrossTech from "@/src/components/sections/services/staff-augmentation/flexible-staff-across-tech";
 import WhatYouGetWithOurDevelopers from "@/src/components/sections/services/staff-augmentation/what-you-get";
+import BeyondTalentMindset from "@/src/components/sections/services/staff-augmentation/beyond-talent-mindset";
 import StaffAugmentationRates from "@/src/components/sections/services/staff-augmentation/rates";
+import CostEfficiencyStaffAugmentation from "@/src/components/sections/services/staff-augmentation/cost-efficiency-staff-augmentation";
 import FromRequestToProductiveDeveloper from "@/src/components/sections/services/staff-augmentation/from-request-to-productive";
+import WhyChooseStaffAugmentation from "@/src/components/sections/services/staff-augmentation/why-choose-staff-augmentation";
 import StaffAugmentationFAQs from "@/src/components/sections/services/staff-augmentation/faqs";
 import RiskFreeTrial from "@/src/components/sections/services/staff-augmentation/risk-free-trial";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
-import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
+// import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   breadcrumbJsonLd,
@@ -23,9 +30,9 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/staff-augmentation" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "IT Staff Augmentation Services - Hire Senior Software Engineers",
+  title: "Add Top Developers To Your Team",
   description:
-    "IT staff augmentation services to scale your team with pre-vetted senior software engineers. Dedicated development team members who integrate seamlessly into your processes. US-timezone aligned.",
+    "IT staff augmentation services to scale your team with pre-vetted senior engineers. Dedicated developers who integrate with your processes for US-timezone aligned delivery.",
   path: PATH,
   keywords: [
     "staff augmentation services",
@@ -103,20 +110,23 @@ export default function StaffAugmentationPage() {
       <JsonLd data={breadcrumbLd} />
       <div>
         <StaffAugmentationHero />
-        <div
-          className="h-1 w-full shrink-0"
-          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-        />
+        <HiringVsStaffAugmentation />
         <HowStaffAugmentationWorks />
+        <WhatMakesStaffEffective />
         <WhenStaffAugmentationMakesSense />
+        <WhenToChooseStaffVsDedicated />
         <StaffAugmentationVsDedicatedTeams />
         <SkillsAvailableForAugmentation />
+        <FlexibleStaffAcrossTech />
         <WhatYouGetWithOurDevelopers />
+        <BeyondTalentMindset />
         <StaffAugmentationRates />
+        <CostEfficiencyStaffAugmentation />
         <FromRequestToProductiveDeveloper />
+        <WhyChooseStaffAugmentation />
         <StaffAugmentationFAQs />
         <RiskFreeTrial />
-        <ServiceInternalLinks slug="staff-augmentation" />
+        {/* <ServiceInternalLinks slug="staff-augmentation" /> */}
         <CTAPilot />
       </div>
     </>

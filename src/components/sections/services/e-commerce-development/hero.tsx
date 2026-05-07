@@ -1,36 +1,41 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
-import Link from "next/link";
 import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
+import { HERO_SECTION_LAYOUT } from "@/src/lib/hero-section-layout";
 
 export default function ECommerceDevelopmentHero() {
   return (
-    <section className="relative py-40 flex items-center justify-center overflow-hidden -mt-[100px] min-h-[calc(80vh+120px)]">
+    <section className={HERO_SECTION_LAYOUT}>
       <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
       <div
         className="absolute inset-0 bg-[var(--color-deepSpace)]/75"
         aria-hidden
       />
 
-      <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center text-white">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight">
-          Custom E‑Commerce
+      <div className="relative z-10 mx-auto w-full max-w-[1300px] px-6 py-24 text-center text-white">
+        <h1 className="text-[42px] font-light leading-[1.15] md:text-[56px] lg:text-[64px]">
+          E-commerce Development
           <br />
-          <span className="font-semibold">Beyond Template Stores</span>
+          <span className="font-semibold">Services For Scalable Online Businesses</span>
         </h1>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.24em] text-white/80">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-[10px] font-medium uppercase tracking-[0.2em] text-white/70 md:text-[11px]">
           <span>Custom Development</span>
-          <span>WooCommerce</span>
-          <span>Shopify</span>
-          <span>Headless</span>
+          <span>Scalable Architecture</span>
+          <span>Platform Flexibility</span>
+          <span>UX Performance</span>
         </div>
 
-        <p className="mt-8 text-sm md:text-base text-white/85 max-w-3xl mx-auto leading-relaxed">
-          Custom e‑commerce platforms for complex business requirements. B2B portals, multi‑vendor
-          marketplaces, headless commerce, and deep integrations with your existing systems.
+        <p className="mx-auto mt-8 max-w-[920px] text-sm leading-relaxed text-white/85 md:text-base">
+          Our E-commerce development services are designed for businesses that need more than basic
+          online stores. From custom ecommerce development to advanced Shopify ecommerce
+          development, we build platforms that scale with your business.
+        </p>
+        <p className="mx-auto mt-3 max-w-[920px] text-sm leading-relaxed text-white/85 md:text-base">
+          Whether you&apos;re launching a new store or upgrading an existing one, our custom ecommerce
+          website development ensures performance, flexibility, and seamless user experience.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-10 flex items-center justify-center">
           <CalendlyScheduleButton
             className="inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-90 cursor-pointer"
             style={{
@@ -40,12 +45,6 @@ export default function ECommerceDevelopmentHero() {
           >
             Schedule a Call
           </CalendlyScheduleButton>
-          <Link
-            href="/case-studies"
-            className="inline-flex rounded-lg border border-white/70 px-8 py-3.5 text-base font-medium text-white bg-transparent transition-colors hover:bg-white/10 hover:border-white"
-          >
-            View Case Studies
-          </Link>
         </div>
       </div>
     </section>

@@ -23,6 +23,7 @@ const navLinks = [
       { href: "/services/iot-software", label: "IoT Software" },
       { href: "/services/legacy-modernization", label: "Legacy Modernization" },
       { href: "/services/maintenance-support", label: "Maintenance & Support" },
+      { href: "/services/medical-billing-services", label: "Medical Billing Services" },
       { href: "/services/salesforce-development", label: "Salesforce Development" },
       { href: "/services/staff-augmentation", label: "Staff Augmentation" },
     ],
@@ -271,18 +272,18 @@ export default function Header() {
         />
 
         <div
-          className={`absolute left-0 top-0 flex h-full w-[min(320px,85vw)] flex-col bg-[#070b14] shadow-2xl transition-transform duration-300 ease-out ${
+          className={`absolute left-0 top-0 flex h-dvh w-[min(88vw,380px)] flex-col bg-[#070b14] shadow-2xl transition-transform duration-300 ease-out sm:w-[min(78vw,420px)] md:w-[min(64vw,460px)] ${
             mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          <div className="flex items-center justify-between border-b border-white/10 p-4">
+          <div className="flex items-center justify-between border-b border-white/10 px-4 py-4 sm:px-5">
             <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
               <Image
                 src="/assets/images/stellixsoft-logo.png"
                 alt="StellixSoft"
                 width={140}
                 height={28}
-                className="object-contain"
+                className="h-7 w-auto object-contain sm:h-8"
               />
             </Link>
             <button
@@ -296,7 +297,7 @@ export default function Header() {
               </svg>
             </button>
           </div>
-          <nav className="flex-1 overflow-y-auto py-4">
+          <nav className="flex-1 overflow-y-auto py-3 sm:py-4">
             <div className="flex flex-col">
               {navLinks.map((item) => {
                 if ("dropdown" in item && item.dropdown) {
@@ -310,7 +311,7 @@ export default function Header() {
                         <Link
                           href={item.href}
                           onClick={() => setMobileMenuOpen(false)}
-                          className={`flex-1 px-6 py-4 text-[13px] font-medium hover:bg-white/5 ${
+                          className={`flex-1 px-5 py-3.5 text-sm font-medium sm:px-6 sm:py-4 md:text-[15px] hover:bg-white/5 ${
                             activeBranch ? "text-[#6cebff]" : "text-white/90 hover:text-white"
                           }`}
                         >
@@ -319,7 +320,7 @@ export default function Header() {
                         <button
                           type="button"
                           onClick={() => setMobileDropdown(isExpanded ? null : item.label)}
-                          className="p-4 text-white/90 hover:text-white"
+                          className="p-3.5 text-white/90 hover:text-white sm:p-4"
                           aria-expanded={isExpanded}
                         >
                           <svg
@@ -339,7 +340,7 @@ export default function Header() {
                               key={d.href}
                               href={d.href}
                               onClick={() => setMobileMenuOpen(false)}
-                              className={`mx-4 block rounded-md px-4 py-2 text-[13px] ${
+                              className={`mx-3 block rounded-md px-4 py-2.5 text-sm sm:mx-4 md:text-[15px] ${
                                 pathname === d.href
                                   ? "font-medium text-[#6cebff]"
                                   : "text-white/80 hover:text-white"
@@ -362,7 +363,7 @@ export default function Header() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`border-b border-white/10 px-6 py-4 text-[13px] font-medium hover:bg-white/5 ${
+                    className={`border-b border-white/10 px-5 py-3.5 text-sm font-medium sm:px-6 sm:py-4 md:text-[15px] hover:bg-white/5 ${
                       active ? "text-[#6cebff]" : "text-white/90 hover:text-white"
                     }`}
                     style={active ? { background: styles.activeNavTab } : undefined}
@@ -373,10 +374,10 @@ export default function Header() {
               })}
             </div>
           </nav>
-          <div className="border-t border-white/10 p-4">
+          <div className="border-t border-white/10 px-4 py-4 sm:px-5">
             <CalendlyScheduleButton
               onClick={() => setMobileMenuOpen(false)}
-              className="block w-full cursor-pointer rounded-full px-6 py-3 text-center text-[13px] font-semibold text-white"
+              className="block w-full cursor-pointer rounded-full px-6 py-3 text-center text-sm font-semibold text-white md:text-[15px]"
               style={{
                 background: styles.ctaGradient,
                 boxShadow: styles.ctaShadow,

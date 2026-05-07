@@ -1,3 +1,10 @@
+import { BACKGROUND_URL } from "@/src/lib/background-url";
+import {
+  BlueTickIcon,
+  BLUE_TICK_CARD_DESC_CLASS,
+  BLUE_TICK_CARD_TITLE_CLASS,
+} from "@/src/components/sections/services/dedicated-development-teams/dedicated-section-blue-tick";
+
 export default function WhenYouNeedCustomEcommerce() {
   const buildCustom = [
     {
@@ -53,29 +60,30 @@ export default function WhenYouNeedCustomEcommerce() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-sky-50/70">
+    <section className="bg-[var(--color-lightGray)] py-16 md:py-20" style={{
+      backgroundImage: `url(${BACKGROUND_URL})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}>
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
-        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-10 md:mb-12">
+        <h2 className="mb-10 text-center text-3xl font-semibold text-slate-900 md:mb-12 md:text-[44px]">
           When You Need Custom E-commerce
         </h2>
 
         <div className="grid gap-6 md:grid-cols-2">
           {/* Build custom when */}
-          <div className="rounded-[32px] bg-gradient-to-b from-white to-sky-50/70 border border-sky-100 shadow-[0_24px_70px_rgba(15,23,42,0.06)] px-6 py-7 md:px-8 md:py-9">
-            <p className="text-xs md:text-lg font-medium uppercase text-[var(--color-electricBlue)] mb-4 flex items-center gap-2">
+          <div className="rounded-[22px] border border-slate-200 bg-gradient-to-b from-white to-sky-50/70 px-6 py-7 shadow-[0_20px_60px_rgba(15,23,42,0.05)] md:px-8 md:py-9">
+            <p className="mb-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.13em] text-[var(--color-electricBlue)] md:text-sm">
               Build Custom When:
             </p>
-            <ul className="space-y-3 text-sm md:text-[15px] text-slate-700">
+            <ul className="space-y-3 md:text-[13px]">
               {buildCustom.map((item) => (
                 <li key={item.title} className="flex gap-3">
-                  <span className="mt-[7px] text-sky-500">➜</span>
+                  <BlueTickIcon className="mt-[3px] h-[13px] w-[13px] shrink-0" />
                   <div>
-                    <p className="text-[14px] md:text-[14px] font-medium uppercase text-slate-900 mb-0.5">
-                      {item.title}
-                    </p>
-                    <p className="text-sm md:text-[13px] text-slate-600 leading-relaxed">
-                      {item.description}
-                    </p>
+                    <p className={BLUE_TICK_CARD_TITLE_CLASS}>{item.title}</p>
+                    <p className={BLUE_TICK_CARD_DESC_CLASS}>{item.description}</p>
                   </div>
                 </li>
               ))}
@@ -83,21 +91,17 @@ export default function WhenYouNeedCustomEcommerce() {
           </div>
 
           {/* Use Shopify / WooCommerce when */}
-          <div className="rounded-[32px] bg-white border border-slate-200 shadow-[0_24px_70px_rgba(15,23,42,0.04)] px-6 py-7 md:px-8 md:py-9">
-            <p className="text-xs md:text-lg font-medium uppercase text-[var(--color-electricBlue)] mb-4">
+          <div className="rounded-[22px] border border-slate-200 bg-white px-6 py-7 shadow-[0_20px_60px_rgba(15,23,42,0.04)] md:px-8 md:py-9">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.13em] text-[var(--color-electricBlue)] md:text-sm">
               Use Shopify / WooCommerce When:
             </p>
-            <ul className="space-y-3 text-sm md:text-[13px] text-slate-700">
+            <ul className="space-y-3 md:text-[13px]">
               {useShopify.map((item) => (
                 <li key={item.title} className="flex gap-3">
-                  <span className="mt-[7px] text-[var(--color-electricBlue)]">•</span>
+                  <BlueTickIcon className="mt-[3px] h-[13px] w-[13px] shrink-0" />
                   <div>
-                    <p className="text-[14px] md:text-[14px] font-medium uppercase text-slate-900 mb-0.5">
-                      {item.title}
-                    </p>
-                    <p className="text-sm md:text-[13px] text-slate-600 leading-relaxed">
-                      {item.description}
-                    </p>
+                    <p className={BLUE_TICK_CARD_TITLE_CLASS}>{item.title}</p>
+                    <p className={BLUE_TICK_CARD_DESC_CLASS}>{item.description}</p>
                   </div>
                 </li>
               ))}

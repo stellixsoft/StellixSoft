@@ -1,8 +1,9 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
+import { HERO_SECTION_LAYOUT } from "@/src/lib/hero-section-layout";
 
 export default function Hero() {
     return (
-        <section className="relative py-40 flex items-center justify-center overflow-hidden -mt-[100px] h-[calc(70vh+120px)]">
+        <section className={HERO_SECTION_LAYOUT}>
             {/* Video background */}
             <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
 

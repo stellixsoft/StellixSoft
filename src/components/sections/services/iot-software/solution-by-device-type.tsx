@@ -1,3 +1,5 @@
+import { BACKGROUND_URL } from "@/src/lib/background-url";
+
 const deviceTypes = [
   {
     id: "industrial",
@@ -86,65 +88,66 @@ const iconMap = {
 
 export default function SolutionByDeviceType() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]">
-      <div className="max-w-[1100px] mx-auto">
-        <h2 className="text-2xl md:text-3xl font-medium text-[var(--color-deepSpace)] text-center">
+    <section
+      className="px-4 py-16 sm:px-6 md:py-24"
+      style={{
+        backgroundImage: `url(${BACKGROUND_URL})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="mx-auto max-w-[1100px]">
+        <h2 className="text-center text-3xl font-semibold text-[var(--color-deepSpace)] md:text-[44px]">
           Solutions by Device Type
         </h2>
         <div
-          className="w-24 h-0.5 mx-auto mt-4 mb-12 md:mb-14"
+          className="mx-auto mb-12 mt-4 h-0.5 w-16 md:mb-14 md:w-24"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
           {deviceTypes.map((card) => {
             const Icon = iconMap[card.icon as keyof typeof iconMap];
             return (
               <article
                 key={card.id}
-                className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8 flex flex-col"
+                className="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-[0_4px_24px_rgba(3,2,19,0.06)] md:p-8"
               >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 text-left"
-                  style={{ color: "var(--color-electricBlue)" }}
-                  aria-hidden
-                >
-                  {Icon && <Icon className="w-7 h-7" />}
+                <div className="mb-5 flex text-[var(--color-electricBlue)]" aria-hidden>
+                  {Icon && <Icon className="h-7 w-7" />}
                 </div>
-                <h3 className="text-sm font-medium uppercase tracking-wider text-[var(--color-deepSpace)] text-left mb-5">
+                <h3 className="mb-5 text-left text-sm font-semibold uppercase tracking-wider text-[var(--color-deepSpace)]">
                   {card.title}
                 </h3>
 
-                <p className="text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)] mb-2">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-[var(--color-neutralGray)]">
                   Common Devices:
                 </p>
-                <ul className="space-y-1.5 mb-6">
+                <ul className="mb-6 space-y-1.5">
                   {card.commonDevices.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2 text-sm text-[var(--color-neutralGray)]"
-                    >
-                      <span className="shrink-0 mt-1.5 w-1 h-1 rounded-full bg-gray-400" />
+                    <li key={item} className="flex items-start gap-2 text-sm text-[var(--color-neutralGray)]">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-gray-400" />
                       {item}
                     </li>
                   ))}
                 </ul>
 
                 <p
-                  className="text-xs font-medium uppercase tracking-wider mb-2"
+                  className="mb-2 text-xs font-semibold uppercase tracking-wider"
                   style={{ color: "var(--color-electricBlue)" }}
                 >
                   Software Needs:
                 </p>
-                <ul className="space-y-1.5 mt-4">
+                <ul className="mt-4 space-y-1.5">
                   {card.softwareNeeds.map((item) => (
                     <li
                       key={item}
                       className="flex items-start gap-2 text-sm font-normal text-[var(--color-deepSpace)]"
                     >
                       <span
-                        className="shrink-0 mt-1.5 w-2 h-2 rounded-full border-2 flex items-center justify-center"
+                        className="mt-1.5 flex h-2 w-2 shrink-0 items-center justify-center rounded-full border-2"
                         style={{ borderColor: "var(--color-electricBlue)" }}
                         aria-hidden
                       />

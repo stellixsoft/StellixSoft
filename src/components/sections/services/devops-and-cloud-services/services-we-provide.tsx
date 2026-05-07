@@ -1,4 +1,52 @@
-import Image from "next/image";
+import {
+  BlueTickIcon,
+  BLUE_TICK_BODY_CLASS,
+} from "@/src/components/sections/services/dedicated-development-teams/dedicated-section-blue-tick";
+
+function IconCloud() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path
+        d="M18 10h-1.26A8 8 0 109 22h9a5 5 0 000-12z"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function IconPipeline() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <circle cx="6" cy="6" r="2" />
+      <circle cx="18" cy="12" r="2" />
+      <circle cx="6" cy="18" r="2" />
+      <path d="M8 6h6a4 4 0 014 4v4M16 14v4M16 14H8v4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function IconInfraCode() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <polyline points="16 18 22 12 16 6" strokeLinecap="round" strokeLinejoin="round" />
+      <polyline points="8 6 2 12 8 18" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function IconManage() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <circle cx="12" cy="12" r="3" />
+      <path
+        d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 const services = [
   {
     title: "Cloud Migration",
@@ -12,11 +60,11 @@ const services = [
       "Data migration",
       "Hybrid cloud setups",
     ],
+    icon: <IconCloud />,
   },
   {
     title: "CI/CD Pipelines",
-    description:
-      "Automate your build, test, and deployment processes.",
+    description: "Automate your build, test, and deployment processes.",
     bullets: [
       "GitHub Actions / GitLab CI",
       "Environment management",
@@ -25,11 +73,11 @@ const services = [
       "Blue-green deployments",
       "Release management",
     ],
+    icon: <IconPipeline />,
   },
   {
     title: "Infrastructure as Code",
-    description:
-      "Define and manage infrastructure through code, not manual setup.",
+    description: "Define and manage infrastructure through code, not manual setup.",
     bullets: [
       "Terraform",
       "Pulumi",
@@ -38,11 +86,11 @@ const services = [
       "Repeatable environments",
       "Environment parity",
     ],
+    icon: <IconInfraCode />,
   },
   {
     title: "Ongoing Cloud Management",
-    description:
-      "Keep your cloud running optimally and cost-effectively.",
+    description: "Keep your cloud running optimally and cost-effectively.",
     bullets: [
       "Monitoring & alerting",
       "Security management",
@@ -51,48 +99,49 @@ const services = [
       "Scaling configuration",
       "Incident response",
     ],
+    icon: <IconManage />,
   },
 ];
 
 export default function DevOpsCloudServicesWeProvide() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
-      <div className="max-w-[1300px] mx-auto">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
+    <section className="bg-white px-4 py-16 sm:px-6 md:py-24">
+      <div className="mx-auto max-w-[1300px]">
+        <h2 className="text-center text-2xl font-light text-[var(--color-deepSpace)] md:text-3xl lg:text-4xl">
           DevOps &amp; Cloud Services We Provide
         </h2>
         <div
-          className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
+          className="mx-auto mt-4 mb-10 h-0.5 w-16 md:mb-12"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           {services.map((service) => (
             <article
               key={service.title}
-              className="rounded-[28px] bg-white border border-gray-100 shadow-[0_18px_60px_rgba(15,23,42,0.08)] px-6 py-8 md:px-8 md:py-10"
+              className="flex flex-col items-center rounded-[28px] border border-[rgba(3,2,19,0.08)] bg-white px-6 py-8 shadow-[0_18px_60px_rgba(15,23,42,0.06)] md:items-start md:px-8 md:py-10"
             >
-              <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--color-electricBlue)]/8 text-[var(--color-electricBlue)]">
-                <Image
-                  src="/assets/images/IOT-icon.png"
-                  alt={`${service.title} - DevOps and cloud service icon`}
-                  width={20}
-                  height={20}
-                  className="object-contain"
-                />
+              <div
+                className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-2xl"
+                style={{
+                  backgroundColor: "rgba(16, 172, 219, 0.12)",
+                  color: "var(--color-electricBlue)",
+                }}
+              >
+                {service.icon}
               </div>
-              <h3 className="text-sm md:text-[15px] font-medium uppercase text-[var(--color-deepSpace)] mb-2">
+              <h3 className="mb-2 text-center text-[13px] font-semibold uppercase tracking-[0.1em] text-[var(--color-deepSpace)] md:text-left md:text-[15px]">
                 {service.title}
               </h3>
-              <p className="text-sm md:text-[15px] text-[var(--color-neutralGray)] mb-4 leading-relaxed">
+              <p className="mb-4 max-w-xl text-center text-sm leading-relaxed text-[var(--color-neutralGray)] md:text-left md:text-[15px]">
                 {service.description}
               </p>
-              <ul className="space-y-1.5 text-sm md:text-[15px] text-[var(--color-neutralGray)]">
+              <ul className="w-full max-w-xl space-y-2 text-sm md:text-[15px]">
                 {service.bullets.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" />
-                    <span>{item}</span>
+                  <li key={item} className="flex items-start justify-center gap-2 md:justify-start">
+                    <BlueTickIcon className="mt-[7px] h-[13px] w-[13px] shrink-0" />
+                    <span className={`text-left leading-snug ${BLUE_TICK_BODY_CLASS}`}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -103,4 +152,3 @@ export default function DevOpsCloudServicesWeProvide() {
     </section>
   );
 }
-

@@ -1,3 +1,9 @@
+import { BACKGROUND_URL } from "@/src/lib/background-url";
+import {
+  BlueTickIcon,
+  BLUE_TICK_BODY_CLASS,
+} from "@/src/components/sections/services/dedicated-development-teams/dedicated-section-blue-tick";
+
 const examples = [
   "Upgraded .NET Framework application to .NET Core 6",
   "Fixed critical security vulnerability in authentication",
@@ -13,30 +19,33 @@ const examples = [
 
 export default function ExamplesOfMaintenance() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]">
-      <div className="max-w-[1300px] mx-auto">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
+    <section
+      className="px-4 py-16 sm:px-6 md:py-24"
+      style={{
+        backgroundImage: `url(${BACKGROUND_URL})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="mx-auto max-w-[1300px]">
+        <h2 className="text-center text-2xl font-light text-[var(--color-deepSpace)] md:text-3xl lg:text-4xl">
           Examples of Maintenance We Provide
         </h2>
         <div
-          className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
+          className="mx-auto mt-4 mb-10 h-0.5 w-16 md:mb-12"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
           {examples.map((example) => (
             <div
               key={example}
-              className="flex items-center gap-3 rounded-[999px] bg-white border border-slate-100 px-5 py-3 md:px-6 md:py-3.5 shadow-[0_10px_30px_rgba(15,23,42,0.06)]"
+              className="flex items-start gap-3 rounded-2xl border border-white/70 bg-white/95 px-5 py-4 shadow-[0_10px_30px_rgba(15,23,42,0.06)] md:items-center md:px-6 md:py-4"
             >
-              <span
-                className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-[var(--color-electricBlue)] text-[var(--color-electricBlue)]"
-                aria-hidden
-              >
-                <span className="h-3 w-3 rounded-full bg-[var(--color-electricBlue-solid)]" />
-              </span>
-              <p className="text-sm md:text-[15px] text-[var(--color-deepSpace)]">{example}</p>
+              <BlueTickIcon className="mt-0.5 h-5 w-5 shrink-0 md:mt-0" />
+              <p className={`text-left text-sm leading-snug md:text-[15px] ${BLUE_TICK_BODY_CLASS}`}>{example}</p>
             </div>
           ))}
         </div>
@@ -44,4 +53,3 @@ export default function ExamplesOfMaintenance() {
     </section>
   );
 }
-

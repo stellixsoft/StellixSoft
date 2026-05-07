@@ -1,3 +1,10 @@
+import Image from "next/image";
+import { BACKGROUND_URL } from "@/src/lib/background-url";
+import {
+  BlueTickIcon,
+  BLUE_TICK_LABEL_CLASS,
+} from "@/src/components/sections/services/dedicated-development-teams/dedicated-section-blue-tick";
+
 const specializations = [
   {
     icon: "/assets/images/iot.png",
@@ -73,66 +80,49 @@ const specializations = [
   },
 ];
 
-function Icon() {
-  return (
-    <span
-      className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-      style={{ backgroundColor: "var(--color-electricBlue-solid)", opacity: 0.15 }}
-      aria-hidden
-    >
-      <span
-        className="w-5 h-5 rounded"
-        style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-      />
-    </span>
-  );
-}
-
 export default function SoftwareSolution() {
   return (
     <section
       id="specializations"
-      className="py-16 md:py-24 px-4 sm:px-6 bg-white"
+      className="px-4 py-16 sm:px-6 md:py-20"
       style={{
-        backgroundImage: "linear-gradient(180deg, rgba(16, 172, 219, 0.04) 0%, transparent 20%)",
+        backgroundImage: `url(${BACKGROUND_URL})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center mb-8">
+      <div className="mx-auto max-w-[1200px]">
+        <h2 className="mb-4 text-center text-3xl font-semibold text-[var(--color-deepSpace)] md:text-[44px]">
           Software Solutions for Hardware Companies
         </h2>
-        <div className="w-16 h-0.5 mx-auto mt-4 mb-12" style={{ backgroundColor: "var(--color-electricBlue-solid)" }} />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div
+          className="mx-auto mb-12 h-0.5 w-16 md:w-24"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+          aria-hidden
+        />
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
           {specializations.map((spec) => (
             <article
               key={spec.title}
-              className="rounded-2xl bg-white border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)] p-6 md:p-8"
+              className="rounded-2xl border border-gray-200/90 bg-white p-6 shadow-[0_4px_24px_rgba(3,2,19,0.06)] md:p-8"
             >
-              <div className="flex items-start gap-4">
-
-                <div>
-                  <img src={spec.icon} alt={spec.title} className="w-10 h-10 mb-6 object-contain" />
-                  <h3 className="text-lg font-medium text-[var(--color-deepSpace)] mb-4">
-                    {spec.title}
-                  </h3>
-                  <p className="text-sm text-[var(--color-neutralGray)] leading-relaxed mb-4">
-                    {spec.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {spec.items.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2 text-sm text-[var(--color-neutralGray)] leading-relaxed"
-                      >
-                        <span
-                          className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full"
-                          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-                        />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="flex flex-col items-start">
+                <Image src={spec.icon} alt={spec.title} width={40} height={40} className="mb-5 object-contain" />
+                <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--color-deepSpace)] md:text-[13px]">
+                  {spec.title}
+                </h3>
+                <p className="mb-4 text-sm leading-relaxed text-[var(--color-neutralGray)]">
+                  {spec.description}
+                </p>
+                <ul className="space-y-2">
+                  {spec.items.map((item) => (
+                    <li key={item} className={`flex items-center gap-2 ${BLUE_TICK_LABEL_CLASS}`}>
+                      <BlueTickIcon className="h-[13px] w-[13px] shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </article>
           ))}

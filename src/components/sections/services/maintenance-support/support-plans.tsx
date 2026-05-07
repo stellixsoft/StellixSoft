@@ -1,4 +1,9 @@
 import Link from "next/link";
+import { BACKGROUND_URL } from "@/src/lib/background-url";
+import {
+  BlueTickIcon,
+  BLUE_TICK_BODY_CLASS,
+} from "@/src/components/sections/services/dedicated-development-teams/dedicated-section-blue-tick";
 
 const plans = [
   {
@@ -9,6 +14,8 @@ const plans = [
     hours: "10 hours included monthly",
     response: "Response within 24 hours",
     features: [
+      "10 hours included monthly",
+      "Response within 24 hours",
       "Security updates",
       "Bug fixes",
       "Monthly health check",
@@ -22,14 +29,16 @@ const plans = [
     name: "Professional",
     subtitle: "Most popular option",
     price: "$3,500",
-    hours: "25 hours included monthly",
-    response: "Response within 8 hours",
+    hours: "30 hours included monthly",
+    response: "Priority support queue",
     features: [
+      "30 hours included monthly",
+      "Priority support queue",
       "All Essential features",
       "Performance optimization",
       "Minor feature additions",
-      "Priority support queue",
       "Weekly check-ins",
+      "Response within 8 hours",
     ],
     bestFor: "Active applications needing regular attention",
     highlighted: true,
@@ -40,14 +49,16 @@ const plans = [
     name: "Enterprise",
     subtitle: "For mission-critical systems",
     price: "$7,000+",
-    hours: "60+ hours included monthly",
-    response: "Response within 2 hours",
+    hours: "50+ hours included monthly",
+    response: "24/7 critical support",
     features: [
-      "All Professional features",
+      "50+ hours included monthly",
       "24/7 critical support",
+      "All Professional features",
       "Dedicated team members",
       "Proactive monitoring",
       "Monthly strategy reviews",
+      "Response within 2 hours",
     ],
     bestFor: "Business-critical applications requiring rapid response",
     highlighted: false,
@@ -56,84 +67,83 @@ const plans = [
 
 export default function SupportPlans() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]">
-      <div className="max-w-[1300px] mx-auto">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
+    <section
+      className="px-4 py-16 sm:px-6 md:py-24"
+      style={{
+        backgroundImage: `url(${BACKGROUND_URL})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="mx-auto max-w-[1300px]">
+        <h2 className="text-center text-2xl font-light text-[var(--color-deepSpace)] md:text-3xl lg:text-4xl">
           Support Plans
         </h2>
-        <p className="mt-3 text-sm md:text-base text-[var(--color-neutralGray)] text-center max-w-2xl mx-auto">
+        <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-[var(--color-neutralGray)] md:text-base">
           Flexible maintenance agreements designed to fit applications of any scale.
         </p>
         <div
-          className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12"
+          className="mx-auto mt-4 mb-10 h-0.5 w-16 md:mb-12"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
           aria-hidden
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
+        <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 md:gap-8">
           {plans.map((plan) => (
             <article
               key={plan.name}
-              className={`relative rounded-[36px] border px-7 py-8 md:px-9 md:py-10 flex flex-col ${
+              className={`relative flex flex-col rounded-[36px] border px-7 py-8 md:px-9 md:py-10 ${
                 plan.highlighted
-                  ? "bg-white shadow-[0_32px_90px_rgba(15,23,42,0.22)] border-sky-200"
-                  : "bg-white shadow-[0_24px_80px_rgba(15,23,42,0.12)] border-slate-100"
+                  ? "border-sky-200 bg-white shadow-[0_32px_90px_rgba(15,23,42,0.22)]"
+                  : "border-slate-100 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.12)]"
               }`}
             >
               {plan.badge && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 inline-flex items-center rounded-full bg-[var(--color-electricBlue-solid)] px-5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white shadow-[0_12px_30px_rgba(56,189,248,0.6)]">
+                <div className="absolute -top-4 left-1/2 inline-flex -translate-x-1/2 items-center rounded-full bg-[var(--color-electricBlue-solid)] px-5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white shadow-[0_12px_30px_rgba(56,189,248,0.6)]">
                   {plan.badge}
                 </div>
               )}
 
-              <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-neutralGray)] mb-1">
+              <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--color-neutralGray)] md:text-xs">
                 {plan.name}
               </p>
-              <p className="text-xs md:text-sm text-[var(--color-neutralGray)] mb-4">
-                {plan.subtitle}
-              </p>
+              <p className="mb-4 text-xs text-[var(--color-neutralGray)] md:text-sm">{plan.subtitle}</p>
 
               <div className="mb-2">
-                <p className="text-2xl md:text-3xl font-light text-[var(--color-deepSpace)]">
+                <p className="text-2xl font-light text-[var(--color-deepSpace)] md:text-3xl">
                   {plan.price}
                 </p>
-                <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-neutralGray)] mt-1">
+                <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-neutralGray)] md:text-xs">
                   Per Month
                 </p>
               </div>
 
-              <p className="text-xs md:text-sm text-sky-500 mb-1">{plan.hours}</p>
-              <p className="text-xs md:text-sm text-[var(--color-neutralGray)] mb-6">
-                {plan.response}
-              </p>
+              <p className="mb-1 text-xs text-sky-600 md:text-sm">{plan.hours}</p>
+              <p className="mb-6 text-xs text-[var(--color-neutralGray)] md:text-sm">{plan.response}</p>
 
-              <ul className="space-y-2.5 mb-8 text-sm md:text-[15px]">
+              <ul className="mb-8 space-y-2.5 text-left text-sm md:text-[15px]">
                 {plan.features.map((feature) => (
-                  <li
-                    key={feature}
-                    className="flex items-start gap-2 text-left text-[var(--color-neutralGray)]"
-                  >
-                    <span className="mt-[4px] h-3 w-3 rounded-full border border-[var(--color-electricBlue)] flex items-center justify-center text-[var(--color-electricBlue)]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" />
-                    </span>
-                    <span>{feature}</span>
+                  <li key={feature} className="flex items-center gap-2 text-sm md:text-[15px]">
+                    <BlueTickIcon className="h-4 w-4 shrink-0" />
+                    <span className={`leading-snug ${BLUE_TICK_BODY_CLASS}`}>{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <div className="mt-auto">
-                <p className="mb-4 text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-neutralGray)]">
+                <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-neutralGray)] md:text-xs">
                   Best For:
                 </p>
-                <p className="mb-6 text-sm md:text-[15px] text-[var(--color-neutralGray)]">
-                  {plan.bestFor}
+                <p className="mb-6 text-sm text-[var(--color-neutralGray)] md:text-[15px]">
+                  &ldquo;{plan.bestFor}&rdquo;
                 </p>
                 <Link
                   href={`/contact?plan=${plan.id}`}
-                  className={`inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm md:text-[15px] font-medium border transition-colors ${
+                  className={`inline-flex w-full items-center justify-center rounded-full border px-6 py-3 text-sm font-medium transition-colors md:text-[15px] ${
                     plan.highlighted
-                      ? "bg-[var(--color-electricBlue-solid)] border-[var(--color-electricBlue)] text-white hover:bg-sky-500"
-                      : "bg-white border-slate-200 text-[var(--color-deepSpace)] hover:bg-slate-50"
+                      ? "border-[var(--color-electricBlue)] bg-[var(--color-electricBlue-solid)] text-white hover:bg-sky-500"
+                      : "border-slate-200 bg-white text-[var(--color-deepSpace)] hover:bg-slate-50"
                   }`}
                 >
                   Choose Plan
@@ -143,7 +153,7 @@ export default function SupportPlans() {
           ))}
         </div>
 
-        <div className="mt-8 text-[10px] md:text-xs text-center text-[var(--color-neutralGray)] space-y-1">
+        <div className="mx-auto mt-8 max-w-[640px] space-y-1 text-center text-[10px] uppercase tracking-[0.12em] text-[var(--color-neutralGray)] md:text-xs md:tracking-normal md:normal-case">
           <p>* Unused hours roll over (up to 2 months).</p>
           <p>* Additional hours available at hourly rates.</p>
           <p>* Custom plans available for unique needs.</p>
@@ -152,4 +162,3 @@ export default function SupportPlans() {
     </section>
   );
 }
-

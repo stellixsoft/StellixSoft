@@ -31,7 +31,6 @@ function CheckIcon() {
 export default function ServiceStack() {
     return (
         <section className="service-stack">
-            <div className="h-1 w-full shrink-0" style={{ backgroundColor: "var(--color-electricBlue-solid)" }}></div>
             <div className="py-16 px-4 sm:px-6 bg-white mx-auto">
                 <div className="mx-auto text-center">
                     {/* Process steps */}

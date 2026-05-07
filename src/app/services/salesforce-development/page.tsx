@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 import SalesforceDevelopmentHero from "@/src/components/sections/services/salesforce-development/hero";
+import SalesforceStandardStops from "@/src/components/sections/services/salesforce-development/salesforce-standard-stops";
 import SalesforceDevelopmentServices from "@/src/components/sections/services/salesforce-development/services";
+import SalesforceCustomRealUseCases from "@/src/components/sections/services/salesforce-development/salesforce-custom-real-use-cases";
 import WhenYouNeedCustomSalesforce from "@/src/components/sections/services/salesforce-development/when-you-need-custom";
+import SalesforcePracticalView from "@/src/components/sections/services/salesforce-development/salesforce-practical-view";
 import SalesforceTechnologyExpertise from "@/src/components/sections/services/salesforce-development/technology-expertise";
+import SalesforceIntegrateSystems from "@/src/components/sections/services/salesforce-development/salesforce-integrate-systems";
 import HowWeApproachSalesforceProjects from "@/src/components/sections/services/salesforce-development/how-we-approach";
+import SalesforceCustomDifferent from "@/src/components/sections/services/salesforce-development/salesforce-custom-different";
+import SalesforceLongTermGrowth from "@/src/components/sections/services/salesforce-development/salesforce-long-term-growth";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
-import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
+// import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
@@ -22,7 +28,7 @@ export const metadata: Metadata = buildPageMetadata({
   title:
     "Salesforce Development Services - Custom Apex, Lightning & Integrations",
   description:
-    "Salesforce development services and salesforce application development. Custom Apex development, Lightning Web Components, Salesforce integrations, and platform optimization for enterprise CRM.",
+    "Salesforce development services including Apex, Lightning Web Components, integrations, and platform optimization for enterprise CRM solutions.",
   path: PATH,
   keywords: [
     "Salesforce development services",
@@ -140,15 +146,21 @@ export default function SalesforceDevelopmentPage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
+        <SalesforceStandardStops />
         <SalesforceDevelopmentServices />
+        <SalesforceCustomRealUseCases />
         <WhenYouNeedCustomSalesforce />
+        <SalesforcePracticalView />
         <SalesforceTechnologyExpertise />
+        <SalesforceIntegrateSystems />
         <HowWeApproachSalesforceProjects />
+        <SalesforceCustomDifferent />
+        <SalesforceLongTermGrowth />
         <ServiceFaqs
           title="Salesforce Development FAQs"
           items={faqItems}
         />
-        <ServiceInternalLinks slug="salesforce-development" />
+        {/* <ServiceInternalLinks slug="salesforce-development" /> */}
         <CTAPilot />
       </div>
     </>

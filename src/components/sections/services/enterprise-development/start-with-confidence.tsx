@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
+import { BACKGROUND_URL } from "@/src/lib/background-url";
 
 const cards = [
   {
@@ -37,7 +38,7 @@ function ChatIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="w-10 h-10"
+      className="h-10 w-10"
       style={{ color: "var(--color-electricBlue)" }}
       aria-hidden
     >
@@ -55,13 +56,12 @@ function ClockIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="w-10 h-10"
+      className="h-10 w-10"
       style={{ color: "var(--color-electricBlue)" }}
       aria-hidden
     >
       <circle cx="12" cy="12" r="10" />
       <path d="M12 6v6l4 2" />
-      <path d="M12 12l4-4" />
     </svg>
   );
 }
@@ -75,7 +75,7 @@ function DocumentIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="w-10 h-10"
+      className="h-10 w-10"
       style={{ color: "var(--color-electricBlue)" }}
       aria-hidden
     >
@@ -94,56 +94,69 @@ const iconMap = {
 export default function StartWithConfidence() {
   return (
     <section
-      className="py-16 md:py-24 px-4 sm:px-6"
+      className="px-4 py-16 sm:px-6 md:py-24"
       style={{
-        background: "linear-gradient(180deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 60%)",
+        backgroundImage: `url(${BACKGROUND_URL})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="max-w-[1200px] mx-auto">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
+      <div className="mx-auto max-w-[1200px]">
+        <h2 className="text-center text-2xl font-light text-[var(--color-deepSpace)] md:text-3xl lg:text-4xl">
           Start With Confidence
         </h2>
-        <div className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-12" style={{ backgroundColor: "var(--color-electricBlue-solid)" }}></div>
+        <div
+          className="mx-auto mt-4 mb-10 h-0.5 w-16 md:mb-12"
+          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+          aria-hidden
+        />
 
-        <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3">
           {cards.map((card) => {
             const Icon = iconMap[card.icon as keyof typeof iconMap];
             return (
               <article
                 key={card.title}
-                className="rounded-2xl bg-white border border-gray-100 shadow-[0_4px_24px_rgba(3,2,19,0.08)] p-6 md:p-8 flex flex-col items-center text-center"
+                className="flex flex-col items-center rounded-2xl border border-[rgba(3,2,19,0.06)] bg-white p-6 text-center shadow-[0_4px_24px_rgba(3,2,19,0.08)] md:p-8"
               >
                 {Icon && (
-                  <div className="flex justify-center mb-5">
+                  <div className="mb-5 flex justify-center">
                     <Icon />
                   </div>
                 )}
-                <h3 className="text-sm font-medium uppercase tracking-wider text-[var(--color-deepSpace)]">
+                <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-deepSpace)] md:text-sm">
                   {card.title}
                 </h3>
-                <p className="mt-4 text-sm text-[var(--color-neutralGray)] leading-relaxed flex-1">
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-[var(--color-neutralGray)]">
                   {card.description}
                 </p>
                 {"useCalendlyPopup" in card && card.useCalendlyPopup ? (
                   <CalendlyScheduleButton
-                    className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-1 rounded-lg px-6 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90 cursor-pointer"
+                    className="mt-6 inline-flex w-full cursor-pointer items-center justify-center gap-1 rounded-lg px-6 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90 sm:w-auto"
                     style={{
                       background:
                         "linear-gradient(90deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
                     }}
                   >
-                    {card.buttonLabel} &gt;
+                    {card.buttonLabel}{" "}
+                    <span className="text-base leading-none" aria-hidden>
+                      ›
+                    </span>
                   </CalendlyScheduleButton>
                 ) : (
                   <Link
                     href={"href" in card && card.href ? card.href : "/contact"}
-                    className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-1 rounded-lg px-6 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90"
+                    className="mt-6 inline-flex w-full items-center justify-center gap-1 rounded-lg px-6 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90 sm:w-auto"
                     style={{
                       background:
                         "linear-gradient(90deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
                     }}
                   >
-                    {card.buttonLabel} &gt;
+                    {card.buttonLabel}{" "}
+                    <span className="text-base leading-none" aria-hidden>
+                      ›
+                    </span>
                   </Link>
                 )}
               </article>
