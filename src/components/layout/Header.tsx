@@ -25,6 +25,7 @@ const navLinks = [
       { href: "/services/maintenance-support", label: "Maintenance & Support" },
       { href: "/services/salesforce-development", label: "Salesforce Development" },
       { href: "/services/staff-augmentation", label: "Staff Augmentation" },
+      { href: "/services/medical-billing-services", label: "Medical Billing Services" },
     ],
   },
   {
