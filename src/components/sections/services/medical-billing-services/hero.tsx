@@ -73,7 +73,7 @@ const benefits = [
 
 export default function Hero() {
   return (
-    <section className="relative py-40 flex items-center justify-center overflow-hidden -mt-[100px] max-h-[calc(80vh+120px)]">
+    <section className="relative py-40 flex items-center justify-center overflow-hidden -mt-[100px] max-h-[calc(75vh+120px)]">
       <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
 
       <div
