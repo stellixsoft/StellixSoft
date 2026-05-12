@@ -48,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "iot-software",
     "legacy-modernization",
     "maintenance-support",
+    "medical-billing-services",
     "practical-for-ai",
     "salesforce-development",
     "staff-augmentation",

@@ -7,6 +7,16 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/services/bWVkaWNhbC",
+        destination: "/services/medical-billing-services",
+        permanent: true,
+      },
+      {
+        source: "/services/bWVkaWNhbA",
+        destination: "/services/medical-billing-services",
+        permanent: true,
+      },
+      {
         source: "/services/ux-ui-design-services",
         destination: "/services/dedicated-development-teams",
         permanent: true,
