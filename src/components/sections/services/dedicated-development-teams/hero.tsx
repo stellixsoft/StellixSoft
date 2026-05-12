@@ -12,25 +12,16 @@ export default function DedicatedDevelopmentTeamsHero() {
       />
 
       <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center text-white">
-        <p className="text-xs md:text-sm font-semibold uppercase tracking-[0.3em] text-white/70 mb-4">
-          Dedicated Development Teams
-        </p>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight">
-          Your Team,
-          <br />
-          <span className="font-semibold">Our Talent</span>
+          Hire Dedicated Development Team for Faster Product Delivery
         </h1>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.24em] text-white/80">
-          <span>Interview Before Commit</span>
-          <span>Replace Anytime</span>
-          <span>2-Week Scale Notice</span>
-        </div>
+        <p className="mt-8 text-sm md:text-base text-white/85 max-w-2xl mx-auto leading-relaxed">
+          Looking to scale your engineering capacity without delays? Hire dedicated development team solutions that give you immediate access to experienced developers working exclusively on your projects.
+        </p>
 
         <p className="mt-8 text-sm md:text-base text-white/85 max-w-2xl mx-auto leading-relaxed">
-          Scale your development capacity without the hiring headache. Get a complete, dedicated
-          team working exclusively on your projects - fully integrated, your time zone, operational in
-          2 weeks.
+          Our dedicated development team model helps businesses accelerate development, reduce hiring costs, and maintain full control over workflows—without the overhead of in-house recruitment.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

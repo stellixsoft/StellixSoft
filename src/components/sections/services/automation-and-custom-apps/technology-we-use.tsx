@@ -15,7 +15,7 @@ export default function TechnologyWeUse() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-sky-50/70">
+    <section className="py-16 md:py-24">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
         <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] mb-8 md:mb-10">
           Custom Mobile App Development Services & Technologies

@@ -40,7 +40,7 @@ export default function FAQs() {
 
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]" style={{
-      background: "linear-gradient(135deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 60%)",
+      background: "#ffffff",
     }}>
       <div className="max-w-[1100px] mx-auto">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[var(--color-deepSpace)] text-center mb-10 md:mb-12">

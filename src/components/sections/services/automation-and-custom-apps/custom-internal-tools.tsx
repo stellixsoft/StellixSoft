@@ -35,7 +35,7 @@ export default function CustomInternalTools() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-sky-50/70">
+    <section className="py-16 md:py-24">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start">
           <div className="pt-1">

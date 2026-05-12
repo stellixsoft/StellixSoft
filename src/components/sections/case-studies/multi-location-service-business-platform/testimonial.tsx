@@ -3,7 +3,7 @@ export default function MultiLocationServiceBusinessPlatformTestimonial() {
     <section className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]">
       <div className="max-w-[900px] mx-auto">
         <blockquote className="rounded-2xl bg-white border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)] p-8 md:p-12 text-center" style={{
-          background: "linear-gradient(135deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 60%)",
+          background: "#ffffff",
         }}>
           <p className="text-lg md:text-xl text-[var(--color-deepSpace)] leading-relaxed italic">
             "Stellixsoft's team works on our timezone, delivers fast, and handles complex enterprise requirements without hand-holding. They've become an extension of our team. What started as a migration project has evolved into a strategic partnership."

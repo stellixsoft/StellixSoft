@@ -61,6 +61,7 @@ const noSelectClass =
 const MARQUEE_LINK_CLASS = "js-marquee-brand-link";
 
 export default function ClientLogos() {
+  const regionRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const firstSetRef = useRef<HTMLDivElement>(null);
   const offsetRef = useRef(0);
@@ -94,6 +95,31 @@ export default function ClientLogos() {
     ro.observe(track);
     return () => ro.disconnect();
   }, [measure]);
+
+  useEffect(() => {
+    const region = regionRef.current;
+    if (!region) return;
+
+    const onWheel = (e: WheelEvent) => {
+      const W = loopWidthRef.current;
+      if (W <= 0) return;
+
+      const dominant =
+        Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+      if (dominant === 0) return;
+
+      offsetRef.current -= dominant;
+      offsetRef.current = wrapOffset(offsetRef.current, W);
+      const track = trackRef.current;
+      if (track) {
+        track.style.transform = `translate3d(${offsetRef.current}px,0,0)`;
+      }
+      e.preventDefault();
+    };
+
+    region.addEventListener("wheel", onWheel, { passive: false, capture: true });
+    return () => region.removeEventListener("wheel", onWheel, true);
+  }, []);
 
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -200,17 +226,18 @@ export default function ClientLogos() {
         className="h-1 w-full shrink-0"
         style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
       />
-      <div className={`relative py-10 md:py-10 ${noSelectClass}`}>
-        <div
-          role="region"
-          aria-label="Trusted by brands — drag horizontally or open each logo link in a new tab"
-          className={`cursor-grab overflow-x-hidden active:cursor-grabbing ${noSelectClass}`}
-          style={{ touchAction: "none" }}
-          onPointerDown={onPointerDown}
-          onPointerMove={onPointerMove}
-          onPointerUp={onPointerUp}
-          onPointerCancel={onPointerUp}
-        >
+      <div
+        ref={regionRef}
+        role="region"
+        aria-label="Trusted by brands — drag, scroll with mouse wheel, or open each logo link in a new tab"
+        className={`relative cursor-grab py-10 active:cursor-grabbing md:py-10 ${noSelectClass}`}
+        style={{ touchAction: "none" }}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
+      >
+        <div className={`overflow-x-hidden ${noSelectClass}`}>
           <div
             ref={trackRef}
             className={`flex w-max flex-row will-change-transform ${noSelectClass}`}

@@ -56,13 +56,12 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-const SCROLL_THRESHOLD = 50;
+const SCROLL_THRESHOLD = 75;
 
 /**
- * Header always uses a solid background so nav + logo stay visible on every
- * route. A transparent “over the hero” bar only worked on pages that pull a
- * dark hero under the bar (-mt-[100px]); new pages with a light body looked
- * like an empty white strip (white text on white).
+ * Transparent at the top of the page; after scrolling past SCROLL_THRESHOLD px the bar
+ * uses a solid brand background so nav + logo stay readable. Mobile menu open also uses
+ * the solid bar so controls stay visible over arbitrary page content.
  */
 export default function Header() {
   const pathname = usePathname();
@@ -71,12 +70,14 @@ export default function Header() {
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
-  // Background on scroll (desktop)
+  const headerSolid = scrolled || mobileMenuOpen;
+
+  // Background on scroll
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(typeof window !== "undefined" && window.scrollY > SCROLL_THRESHOLD);
     };
-    handleScroll(); // run once for initial position
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -106,8 +107,10 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-[100] w-full bg-[var(--color-deepSpace)] text-white transition-shadow duration-300 ${
-        scrolled ? "shadow-md shadow-black/30" : ""
+      className={`sticky top-0 z-[100] w-full text-white transition-[background-color,box-shadow] duration-300 ${
+        headerSolid
+          ? "bg-[var(--color-deepSpace)] shadow-md shadow-black/30"
+          : "bg-transparent shadow-none"
       }`}
     >
       {/* Top electric blue accent line */}

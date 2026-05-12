@@ -31,9 +31,7 @@ const steps = [
 
 export default function ReadyInTwoWeeks() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-white" style={{
-      background: "linear-gradient(135deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 50%)",
-    }}>
+    <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
       <div className="max-w-[1300px] mx-auto">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center">
           Your Team, Ready in 2 Weeks

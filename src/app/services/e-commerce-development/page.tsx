@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import ECommerceDevelopmentHero from "@/src/components/sections/services/e-commerce-development/hero";
+import EcommerceComplexBusinessIntro from "@/src/components/sections/services/e-commerce-development/ecommerce-complex-business-intro";
 import ECommerceSolutionsWeBuild from "@/src/components/sections/services/e-commerce-development/ecommerce-solutions";
+import EcommerceAcrossIndustries from "@/src/components/sections/services/e-commerce-development/ecommerce-across-industries";
 import WhenYouNeedCustomEcommerce from "@/src/components/sections/services/e-commerce-development/when-you-need-custom";
+import ShopifyEcommerceFlexibility from "@/src/components/sections/services/e-commerce-development/shopify-ecommerce-flexibility";
 import ECommerceTechnology from "@/src/components/sections/services/e-commerce-development/ecommerce-technology";
+import EcommerceAdvancedIntegrations from "@/src/components/sections/services/e-commerce-development/ecommerce-advanced-integrations";
 import ECommerceFeaturesWeImplement from "@/src/components/sections/services/e-commerce-development/ecommerce-features";
+import EcommerceScalableGrowth from "@/src/components/sections/services/e-commerce-development/ecommerce-scalable-growth";
+import WhyChooseEcommerceDevelopment from "@/src/components/sections/services/e-commerce-development/why-choose-ecommerce-development";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
 import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
@@ -110,10 +116,16 @@ export default function ECommerceDevelopmentPage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
+        <EcommerceComplexBusinessIntro />
         <ECommerceSolutionsWeBuild />
+        <EcommerceAcrossIndustries />
         <WhenYouNeedCustomEcommerce />
+        <ShopifyEcommerceFlexibility />
         <ECommerceTechnology />
+        <EcommerceAdvancedIntegrations />
         <ECommerceFeaturesWeImplement />
+        <EcommerceScalableGrowth />
+        <WhyChooseEcommerceDevelopment />
         <ServiceFaqs
           title="E-Commerce Development FAQs"
           items={faqItems}

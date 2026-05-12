@@ -40,7 +40,7 @@ export default function OurBlockchainPhilosophy() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-sky-50/70">
+    <section className="py-16 md:py-24">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 text-center">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] mb-4">
           Our Blockchain Philosophy

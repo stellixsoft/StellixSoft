@@ -7,7 +7,7 @@ export default function LogisticsManagementPlatformProjectOverview() {
         className="max-w-[1100px] mx-auto rounded-[32px] md:rounded-[40px] px-6 py-8 md:px-10 md:py-10 lg:px-14 lg:py-12 shadow-[0_18px_60px_rgba(15,23,42,0.12)] border border-slate-100 grid grid-cols-1 md:grid-cols-[1.1fr_1fr_1.2fr] gap-8 lg:gap-12"
         style={{
           background:
-            "linear-gradient(135deg, rgba(16,172,219,0.12) 0%, rgba(255,255,255,1) 60%)",
+            "#ffffff",
         }}
       >
         {/* Left: Project overview */}

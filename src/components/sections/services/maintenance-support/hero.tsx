@@ -12,18 +12,17 @@ export default function MaintenanceSupportHero() {
       />
 
       <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center text-white">
-        <p className="text-xs md:text-sm font-semibold uppercase text-white/70 mb-4">
-          Currently maintaining enterprise applications for Fortune 500 supply chains
-        </p>
+       
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight">
-          Application Maintenance
-          <br />
-          <span className="font-semibold">&amp; Support</span>
+        Software Maintenance and Support Services for Business Continuity
+
         </h1>
 
         <p className="mt-8 text-sm md:text-base text-white/85 max-w-2xl mx-auto leading-relaxed">
-          Ongoing maintenance, bug fixes, security updates, and feature enhancements. We keep your
-          applications healthy so you can focus on your business.
+          Our Software maintenance and support services are designed to keep mission-critical applications stable, secure, and continuously improving. From daily monitoring to long-term optimization, we provide application maintenance and support services that ensure your software performs reliably under real-world conditions.
+        </p>
+        <p className="mt-8 text-sm md:text-base text-white/85 max-w-2xl mx-auto leading-relaxed">
+          Unlike reactive fixes, our application maintenance services focus on preventing issues before they impact your users.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

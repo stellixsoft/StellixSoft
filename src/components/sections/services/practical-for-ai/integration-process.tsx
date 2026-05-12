@@ -31,7 +31,15 @@ export default function AiIntegrationProcess() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-sky-50/70">
+    <section
+      className="py-16 md:py-24"
+      style={{
+        backgroundImage: "url('/assets/images/background-url.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
         <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-8 md:mb-10">
           Our AI integration services Process

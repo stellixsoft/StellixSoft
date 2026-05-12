@@ -13,14 +13,14 @@ export default function EnterpriseHero() {
 
       <div className="relative z-10 w-full max-w-[900px] mx-auto px-6 py-24 text-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-white leading-tight">
-          Enterprise Software <span className="font-bold">Development</span>
+        Enterprise Software Development Services for Scalable Businesses
         </h1>
-        <p className="mt-6 italic text-lg md:text-xl text-white/90 mx-auto">
-          for Complex Business Challenges
+       
+        <p className="mt-4 text-base text-white/80 mx-auto leading-relaxed">
+          Our Enterprise software development services are designed to help organizations build reliable, scalable, and high-performance systems. From custom enterprise software development services to advanced enterprise application development, we deliver solutions tailored to complex business environments.
         </p>
         <p className="mt-4 text-base text-white/80 mx-auto leading-relaxed">
-          We build mission-critical systems, multi-tenant platforms, and custom enterprise applications that scale with your business. Currently supporting Fortune 500 supply chain operations with zero downtime.
-        </p>
+          We focus on building systems that integrate seamlessly, handle large-scale operations, and evolve with your business growth. </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <CalendlyScheduleButton
             className="inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-90 cursor-pointer"

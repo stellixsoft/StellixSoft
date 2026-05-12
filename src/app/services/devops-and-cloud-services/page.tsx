@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
 import DevOpsAndCloudServicesHero from "@/src/components/sections/services/devops-and-cloud-services/hero";
+import DevOpsConsultingServicesIntro from "@/src/components/sections/services/devops-and-cloud-services/devops-consulting-services-intro";
 import DevOpsCloudServicesWeProvide from "@/src/components/sections/services/devops-and-cloud-services/services-we-provide";
+import DevOpsAutomationServices from "@/src/components/sections/services/devops-and-cloud-services/devops-automation-services";
 import CloudPlatformsWeWorkWith from "@/src/components/sections/services/devops-and-cloud-services/cloud-platforms";
+import CloudMigrationZeroDowntime from "@/src/components/sections/services/devops-and-cloud-services/cloud-migration-zero-downtime";
 import OurCloudMigrationApproach from "@/src/components/sections/services/devops-and-cloud-services/cloud-migration-approach";
+import IntegratedDevOpsCloudStrategy from "@/src/components/sections/services/devops-and-cloud-services/integrated-devops-cloud-strategy";
 import TypicalCiCdPipeline from "@/src/components/sections/services/devops-and-cloud-services/typical-ci-cd";
 import WhatGoodDevOpsGetsYou from "@/src/components/sections/services/devops-and-cloud-services/what-good-devops-gets-you";
+import WhyBusinessesChooseDevOpsConsulting from "@/src/components/sections/services/devops-and-cloud-services/why-businesses-choose-devops-consulting";
 import CommonCloudAndDevOpsScenarios from "@/src/components/sections/services/devops-and-cloud-services/common-scenarios";
 import EnterprisePlatformOnAwsCaseStudy from "@/src/components/sections/services/devops-and-cloud-services/aws-case-study";
 import HowWePriceDevOpsAndCloudWork from "@/src/components/sections/services/devops-and-cloud-services/pricing";
+import ScalableDevOpsAutomationGrowingTeams from "@/src/components/sections/services/devops-and-cloud-services/scalable-devops-automation-growing-teams";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
 import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
@@ -115,14 +121,20 @@ export default function DevOpsAndCloudServicesPage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
+        <DevOpsConsultingServicesIntro />
         <DevOpsCloudServicesWeProvide />
+        <DevOpsAutomationServices />
         <CloudPlatformsWeWorkWith />
+        <CloudMigrationZeroDowntime />
         <OurCloudMigrationApproach />
+        <IntegratedDevOpsCloudStrategy />
         <TypicalCiCdPipeline />
         <WhatGoodDevOpsGetsYou />
+        <WhyBusinessesChooseDevOpsConsulting />
         <CommonCloudAndDevOpsScenarios />
         <EnterprisePlatformOnAwsCaseStudy />
         <HowWePriceDevOpsAndCloudWork />
+        <ScalableDevOpsAutomationGrowingTeams />
         <ServiceFaqs
           title="DevOps & Cloud Services FAQs"
           items={faqItems}

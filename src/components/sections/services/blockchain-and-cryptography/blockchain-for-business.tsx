@@ -55,41 +55,59 @@ export default function BlockchainForBusiness() {
         </h2>
 
         <div className="grid gap-6 md:gap-7 lg:gap-8 md:grid-cols-2">
-          {cards.map((card) => (
-            <div
-              key={card.title}
-              className="rounded-[32px] bg-gradient-to-b from-white to-sky-50/40 border border-slate-200/70 shadow-[0_24px_70px_rgba(15,23,42,0.06)] px-6 py-7 md:px-8 md:py-9"
-            >
-              <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 text-lg">
-                  <span>◎</span>
-                </div>
-                <h3 className="text-sm md:text-[15px] font-medium uppercase text-[var(--color-deepSpace)]">
-                  {card.title}
-                </h3>
-              </div>
-
-              <p className="text-sm md:text-[15px] text-slate-600 leading-relaxed mb-5">
-                {card.description}
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1.5 text-sm md:text-[15px] text-slate-700 mb-5">
-                {card.bullets.map((b) => (
-                  <div key={b} className="flex items-center gap-2">
-                    <span className="h-[6px] w-[6px] rounded-full bg-sky-400" />
-                    <span>{b}</span>
+          {cards.map((card) => {
+            const isSupplyChain = card.title === "Supply Chain Traceability";
+            return (
+              <div
+                key={card.title}
+                className={`rounded-[32px] border border-slate-200/70 shadow-[0_24px_70px_rgba(15,23,42,0.06)] px-6 py-7 md:px-8 md:py-9 ${
+                  isSupplyChain
+                    ? ""
+                    : "bg-gradient-to-b from-white to-sky-50/40"
+                }`}
+                style={
+                  isSupplyChain
+                    ? {
+                        backgroundImage:
+                          "linear-gradient(to bottom, rgba(255,255,255,0.88), rgba(255,255,255,0.82)), url('/assets/images/background-url.webp')",
+                        backgroundSize: "cover, cover",
+                        backgroundPosition: "center, center",
+                        backgroundRepeat: "no-repeat, no-repeat",
+                      }
+                    : undefined
+                }
+              >
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 text-lg">
+                    <span>◎</span>
                   </div>
-                ))}
-              </div>
+                  <h3 className="text-sm md:text-[15px] font-medium uppercase text-[var(--color-deepSpace)]">
+                    {card.title}
+                  </h3>
+                </div>
 
-              <div className="mt-3 pt-3 border-t border-slate-100 text-[11px] md:text-xs uppercase tracking-[0.18em] text-slate-500">
-                <span className="block mb-1">Industries</span>
-                <span className="text-[11px] md:text-xs font-medium normal-case tracking-normal text-slate-700">
-                  {card.industries}
-                </span>
+                <p className="text-sm md:text-[15px] text-slate-600 leading-relaxed mb-5">
+                  {card.description}
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1.5 text-sm md:text-[15px] text-slate-700 mb-5">
+                  {card.bullets.map((b) => (
+                    <div key={b} className="flex items-center gap-2">
+                      <span className="h-[6px] w-[6px] rounded-full bg-sky-400" />
+                      <span>{b}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-3 pt-3 border-t border-slate-100 text-[11px] md:text-xs uppercase tracking-[0.18em] text-slate-500">
+                  <span className="block mb-1">Industries</span>
+                  <span className="text-[11px] md:text-xs font-medium normal-case tracking-normal text-slate-700">
+                    {card.industries}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

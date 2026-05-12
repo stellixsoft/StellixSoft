@@ -196,7 +196,7 @@ export default function FeaturedCaseStudy() {
     <section
       className="py-16 md:py-24 px-6"
       style={{
-        background: "linear-gradient(135deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 50%)",
+        background: "#ffffff",
       }}
     >
       <div className="max-w-[1300px] mx-auto">

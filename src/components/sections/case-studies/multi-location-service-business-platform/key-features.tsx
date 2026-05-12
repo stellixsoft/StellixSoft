@@ -45,7 +45,7 @@ const features = [
 export default function MultiLocationServiceBusinessPlatformKeyFeatures() {
   return (
     <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-white" style={{
-      background: "linear-gradient(135deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 50%)",
+      background: "#ffffff",
     }}>
       <div className="max-w-[1100px] mx-auto">
         <div className="text-center mb-10 sm:mb-12 md:mb-16">

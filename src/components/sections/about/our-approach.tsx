@@ -30,9 +30,6 @@ export default function OurApproach() {
   return (
     <section
       className="py-16 md:py-24 px-6"
-      style={{
-        background: "linear-gradient(135deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 60%)",
-      }}
     >
       <div className="max-w-[1300px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">

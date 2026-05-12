@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import BlockchainAndCryptographyHero from "@/src/components/sections/services/blockchain-and-cryptography/hero";
 import BlockchainForBusiness from "@/src/components/sections/services/blockchain-and-cryptography/blockchain-for-business";
+import CustomBlockchainDevelopmentIndustries from "@/src/components/sections/services/blockchain-and-cryptography/custom-blockchain-development-industries";
 import OurBlockchainPhilosophy from "@/src/components/sections/services/blockchain-and-cryptography/our-blockchain-philosophy";
+import WhyBusinessesChooseBlockchain from "@/src/components/sections/services/blockchain-and-cryptography/why-businesses-choose-blockchain";
 import BlockchainTechnologyExpertise from "@/src/components/sections/services/blockchain-and-cryptography/technology-expertise";
+import AdvancedBlockchainIntegration from "@/src/components/sections/services/blockchain-and-cryptography/advanced-blockchain-integration";
 import WhenBlockchainMakesSense from "@/src/components/sections/services/blockchain-and-cryptography/when-blockchain-makes-sense";
 import BlockchainDevelopmentProcess from "@/src/components/sections/services/blockchain-and-cryptography/development-process";
+import SecureBlockchainCryptographyArchitecture from "@/src/components/sections/services/blockchain-and-cryptography/secure-blockchain-cryptography-architecture";
+import ScalableBlockchainDevelopmentServices from "@/src/components/sections/services/blockchain-and-cryptography/scalable-blockchain-development-services";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
 import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
@@ -114,10 +119,15 @@ export default function BlockchainAndCryptographyPage() {
         />
         <BlockchainSolution />
         <BlockchainForBusiness />
+        <CustomBlockchainDevelopmentIndustries />
         <OurBlockchainPhilosophy />
+        <WhyBusinessesChooseBlockchain />
         <BlockchainTechnologyExpertise />
+        <AdvancedBlockchainIntegration />
         <WhenBlockchainMakesSense />
         <BlockchainDevelopmentProcess />
+        <SecureBlockchainCryptographyArchitecture />
+        <ScalableBlockchainDevelopmentServices />
         <ServiceFaqs
           title="Blockchain & Cryptography FAQs"
           items={faqItems}
