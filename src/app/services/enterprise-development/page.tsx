@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import EnterpriseHero from "../../../components/sections/services/enterprise-development/hero";
 import EnterpriseComplexServicesIntro from "../../../components/sections/services/enterprise-development/enterprise-complex-services-intro";
-import ServiceStack from "../../../components/sections/services/enterprise-development/service-stack";
 import KeySpecializations from "../../../components/sections/services/enterprise-development/key-specializations";
 import EnterpriseAcrossIndustries from "../../../components/sections/services/enterprise-development/enterprise-across-industries";
 import ReadyToLaunch from "../../../components/sections/services/enterprise-development/ready-to-launch";
@@ -150,7 +149,6 @@ export default function EnterpriseDevelopmentPage() {
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
         <EnterpriseComplexServicesIntro />
-        <ServiceStack />
         <KeySpecializations />
         <EnterpriseAcrossIndustries />
         <ReadyToLaunch />

@@ -135,7 +135,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav links */}
-        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+        <div className="hidden min-[1151px]:flex items-center gap-6 xl:gap-8">
           {navLinks.map((item) => {
             if ("dropdown" in item && item.dropdown) {
               const isOpen = openDropdown === item.label;
@@ -225,7 +225,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(true)}
-          className="lg:hidden p-2 text-white/90 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
+          className="min-[1151px]:hidden p-2 text-white/90 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
           aria-label="Open menu"
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
@@ -236,7 +236,7 @@ export default function Header() {
 
       {/* Mobile menu - slide in from left */}
       <div
-        className={`fixed inset-0 z-[200] lg:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-[200] min-[1151px]:hidden transition-opacity duration-300 ${
           mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         aria-hidden={!mobileMenuOpen}
