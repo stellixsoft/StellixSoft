@@ -73,6 +73,9 @@ export const metadata: Metadata = {
     },
   },
   alternates: { canonical: siteUrl },
+  verification: {
+    google: "N1s5Wj9M8Te3AVQGjtkqN5tBWV3lr1Ejpg1qBDU2Vzk",
+  },
 };
 
 const jsonLd = buildRootJsonLdGraph();
