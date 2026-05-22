@@ -25,10 +25,9 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/e-commerce-development" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "Custom E-Commerce Development Services - Shopify & Headless Commerce",
+  title: "Custom E-Commerce Development Services",
   description:
-    "Custom ecommerce development and ecommerce website development services. Shopify Plus, headless commerce, custom storefronts, payment integrations, and high-performance e-commerce platforms.",
+    "Custom E-Commerce Development Services with Shopify Plus, headless commerce, custom storefronts, payment integrations, and ecommerce platforms.",
   path: PATH,
   keywords: [
     "e-commerce development services",

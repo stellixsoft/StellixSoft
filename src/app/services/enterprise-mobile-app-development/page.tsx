@@ -28,10 +28,9 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/enterprise-mobile-app-development" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "Enterprise Mobile App Development Services - iOS, Android & Cross-Platform",
+  title: "Enterprise Mobile App Development Services",
   description:
-    "Enterprise mobile app development services for iOS, Android, and cross-platform. Enterprise application services with offline-first, secure, and scalable mobile architectures.",
+    "Enterprise mobile app development services for iOS, Android, and cross-platform apps with secure, scalable, offline first architectures.",
   path: PATH,
   keywords: [
     "enterprise mobile app development services",

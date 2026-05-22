@@ -32,7 +32,7 @@ const PATH = "/services/staff-augmentation" as const;
 export const metadata: Metadata = buildPageMetadata({
   title: "IT Staff Augmentation Services - Hire Senior Software Engineers",
   description:
-    "IT staff augmentation services to scale your team with pre-vetted senior software engineers. Dedicated development team members who integrate seamlessly into your processes. US-timezone aligned.",
+    "IT staff augmentation services with senior software engineers and dedicated development teams aligned to your workflow and US time zones.",
   path: PATH,
   keywords: [
     "staff augmentation services",

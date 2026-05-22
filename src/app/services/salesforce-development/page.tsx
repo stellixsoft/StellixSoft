@@ -25,10 +25,9 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/salesforce-development" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "Salesforce Development Services - Custom Apex, Lightning & Integrations",
+  title: "Salesforce Development Services",
   description:
-    "Salesforce development services and salesforce application development. Custom Apex development, Lightning Web Components, Salesforce integrations, and platform optimization for enterprise CRM.",
+    "Salesforce development services and salesforce application development with Apex, Lightning components, integrations, and CRM optimization.",
   path: PATH,
   keywords: [
     "Salesforce development services",

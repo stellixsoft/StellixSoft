@@ -8,6 +8,7 @@ import WhatsIncludedWithDedicatedTeam from "@/src/components/sections/services/d
 import WhatYouGetDedicatedTeam from "@/src/components/sections/services/dedicated-development-teams/what-you-get-dedicated-team";
 import CompareYourOptions from "@/src/components/sections/services/dedicated-development-teams/compare-options";
 import DedicatedTeamVsOtherHiringModels from "@/src/components/sections/services/dedicated-development-teams/dedicated-team-vs-other-hiring-models";
+import ScalableDedicatedTeam from "@/src/components/sections/services/dedicated-development-teams/scalable-dedicated-team";
 import DedicatedTeamInAction from "@/src/components/sections/services/dedicated-development-teams/team-in-action";
 import TransparentPricing from "@/src/components/sections/services/dedicated-development-teams/transparent-pricing";
 import CalculateYourSavings from "@/src/components/sections/services/dedicated-development-teams/calculate-savings";
@@ -30,7 +31,7 @@ const PATH = "/services/dedicated-development-teams" as const;
 export const metadata: Metadata = buildPageMetadata({
   title: "Dedicated Development Teams - Hire Full-Time Remote Engineers",
   description:
-    "Hire a dedicated development team of full-time remote engineers that integrate with your workflow and culture. US-timezone aligned dedicated development teams for long-term partnerships.",
+    "Hire a dedicated development team of remote engineers aligned with your workflow and culture for scalable long term software development partnerships.",
   path: PATH,
   keywords: [
     "dedicated development team",
@@ -120,6 +121,7 @@ export default function DedicatedDevelopmentTeamsPage() {
         <WhatYouGetDedicatedTeam />
         <CompareYourOptions />
         <DedicatedTeamVsOtherHiringModels />
+        <ScalableDedicatedTeam />
         <DedicatedTeamInAction />
         <TransparentPricing />
         <CalculateYourSavings />

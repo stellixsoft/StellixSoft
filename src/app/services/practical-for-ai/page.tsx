@@ -25,7 +25,7 @@ const PATH = "/services/practical-for-ai" as const;
 export const metadata: Metadata = buildPageMetadata({
   title: "AI Integration & Development Services - Enterprise AI Solutions",
   description:
-    "Enterprise AI integration services and AI development services. Predictive analytics, NLP, computer vision, AI chatbot development, and AI for business automation with measurable ROI.",
+    "Enterprise AI integration services and AI development services with predictive analytics, NLP, computer vision, chatbots, and business automation ROI.",
   path: PATH,
   keywords: [
     "AI integration services",

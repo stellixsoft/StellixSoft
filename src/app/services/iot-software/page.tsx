@@ -29,10 +29,9 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/iot-software" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "IoT Software Development Services - Device Management & IoT Applications",
+  title: "IoT Software Development Services",
   description:
-    "IoT software development services and IoT application development. Device management platforms, real-time telemetry, edge computing, OTA updates, and fleet management dashboards.",
+    "IoT software development services and IoT application development with telemetry, edge computing, OTA updates, and fleet management tools.",
   path: PATH,
   keywords: [
     "IoT software development services",

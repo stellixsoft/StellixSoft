@@ -28,10 +28,9 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/enterprise-development" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "Enterprise Software Development Services - ERP, CRM & SaaS Solutions",
+  title: "Enterprise Software Development Services",
   description:
-    "Enterprise software development services and enterprise application development. Custom ERPs, CRMs, multi-tenant SaaS, real-time dashboards, and complex business platforms.",
+    "Enterprise software development services and enterprise application development for ERPs, CRMs, SaaS platforms, dashboards, and business systems.",
   path: PATH,
   keywords: [
     "enterprise software development services",

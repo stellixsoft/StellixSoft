@@ -29,9 +29,9 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/devops-and-cloud-services" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "DevOps Consulting & Cloud Migration Services - AWS, Azure, GCP",
+  title: "DevOps and Cloud Services for Scalable Modern Infrastructure",
   description:
-    "DevOps consulting services and cloud migration services. CI/CD pipelines, infrastructure as code, DevOps automation, AWS/Azure/GCP management, and zero-downtime deployments.",
+    "DevOps and Cloud Services with cloud migration, CI/CD pipelines, DevOps automation, AWS, Azure, GCP management, and zero downtime deployments.",
   path: PATH,
   keywords: [
     "DevOps consulting services",

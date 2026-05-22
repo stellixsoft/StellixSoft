@@ -11,10 +11,10 @@ export default function IoTSoftwareHero() {
         aria-hidden
       />
 
-      <div className="relative z-10 w-full max-w-[900px] mx-auto px-6 py-24 text-center">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 py-24 text-center">
         
         <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-white leading-tight">
-          Software Development for Hardware & IoT Companies
+        IoT Software Development Services That Turn Devices Into Products
        
         </h1>
         <p className="mt-6 text-lg md:text-xl text-white/90 mx-auto">

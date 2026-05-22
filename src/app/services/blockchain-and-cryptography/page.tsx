@@ -26,10 +26,9 @@ import BlockchainSolution from "@/src/components/sections/services/blockchain-an
 const PATH = "/services/blockchain-and-cryptography" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title:
-    "Blockchain Development Services - Enterprise Blockchain & Cryptography",
+  title: "Blockchain Development Services",
   description:
-    "Blockchain development services and blockchain integration for enterprise applications. Secure cryptographic systems, smart contracts, and distributed ledger solutions for compliance-heavy industries.",
+    "Blockchain development services and blockchain integration for enterprise applications with smart contracts and ledger solutions for regulated industries.",
   path: PATH,
   keywords: [
     "blockchain development services",

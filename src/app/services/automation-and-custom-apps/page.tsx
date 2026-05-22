@@ -24,7 +24,7 @@ const PATH = "/services/automation-and-custom-apps" as const;
 export const metadata: Metadata = buildPageMetadata({
   title: "Custom App Development & Business Process Automation Services",
   description:
-    "Custom app development and business process automation services. Build custom mobile apps, internal tools, and workflow automation that reduce errors and free your team for high-value work.",
+    "Custom app development and business process automation services. Build mobile apps, internal tools, and workflow automation for better efficiency.",
   path: PATH,
   keywords: [
     "business automation services",
