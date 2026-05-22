@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalDocument } from "@/src/components/legal/legal-document";
+import TermsOfServiceHero from "@/src/components/sections/legal/terms-of-service-hero";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   LEGAL_CONTACT_EMAIL,
   LEGAL_LAST_UPDATED,
   LEGAL_SITE_URL,
+  SMS_MESSAGE_TYPES,
 } from "@/src/lib/legal";
 import { breadcrumbJsonLd, webPageJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
@@ -37,7 +39,12 @@ export default function TermsOfServicePage() {
     <>
       <JsonLd data={webPageLd} />
       <JsonLd data={breadcrumbLd} />
-      <LegalDocument title="Terms of Service" lastUpdated={LEGAL_LAST_UPDATED}>
+      <TermsOfServiceHero />
+      <LegalDocument
+        title="Terms of Service"
+        lastUpdated={LEGAL_LAST_UPDATED}
+        hideHeader
+      >
       <div className="not-prose rounded-xl border border-amber-200/90 bg-amber-50/90 p-4 text-xs text-amber-950 mb-8 leading-relaxed">
         <p className="font-semibold text-amber-950 mb-2">Notice</p>
         <p>
@@ -292,7 +299,28 @@ export default function TermsOfServicePage() {
         assign them in connection with a merger, acquisition, or sale of assets.
       </p>
 
-      <h2>15. Contact</h2>
+      <h2>15. SMS and text messaging</h2>
+      <p>
+        If you provide a mobile phone number and opt in on our contact form, you
+        consent to receive automated SMS/text messages from StellixSoft related
+        to {SMS_MESSAGE_TYPES} regarding your inquiry or engagement with us.
+        These messages are transactional in nature and are not promotional or
+        marketing offers. We do not send promotional or marketing text messages
+        through this opt-in unless you separately agree to optional marketing
+        communications where we offer them.
+      </p>
+      <p>
+        Message frequency varies. Message and data rates may apply. Carriers are
+        not liable for delayed or undelivered messages. You may reply{" "}
+        <strong>STOP</strong> at any time to cancel SMS messages. Reply{" "}
+        <strong>HELP</strong> for help or contact us at{" "}
+        <a href={`mailto:${LEGAL_CONTACT_EMAIL}`}>{LEGAL_CONTACT_EMAIL}</a>.
+        Consent to receive SMS is not a condition of purchase. For how we handle
+        personal information, including mobile numbers and SMS data, see our{" "}
+        <Link href="/privacy-policy">Privacy Policy</Link>.
+      </p>
+
+      <h2>16. Contact</h2>
       <p>
         Questions about these Terms:{" "}
         <a href={`mailto:${LEGAL_CONTACT_EMAIL}`}>{LEGAL_CONTACT_EMAIL}</a>.

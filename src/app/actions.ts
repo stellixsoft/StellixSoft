@@ -13,7 +13,9 @@ export interface FormState {
       | "project"
       | "description"
       | "phone"
-      | "budget",
+      | "budget"
+      | "legalTermsConsent"
+      | "smsConsent",
       string
     >
   >;
@@ -53,6 +55,8 @@ export async function submitContactForm(
   const help = readText(formData, "help");
   const project = readText(formData, "project");
   const hear = readText(formData, "hear");
+  const legalTermsConsent = formData.get("legalTermsConsent") === "yes";
+  const smsConsent = formData.get("smsConsent") === "yes";
   const budgetAmountRaw = readText(formData, "budgetAmount");
   const budgetCurrencyRaw = readText(formData, "budgetCurrency");
 
@@ -86,6 +90,15 @@ export async function submitContactForm(
     if (!OPTIONAL_PHONE_REGEX.test(phone)) {
       fieldErrors.phone = "Use digits only (optional + at the start for country code).";
     }
+  }
+
+  if (!legalTermsConsent) {
+    fieldErrors.legalTermsConsent =
+      "You must agree to the Privacy Policy and Terms of Service to submit this form.";
+  }
+
+  if (smsConsent && !phone) {
+    fieldErrors.phone = "Please enter a mobile number to receive SMS messages.";
   }
 
   let budgetLine = "";
@@ -124,6 +137,7 @@ export async function submitContactForm(
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Email</td><td style="padding:8px 12px;border-bottom:1px solid #eee"><a href="mailto:${esc(emailRaw)}">${esc(emailRaw)}</a></td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Company</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(company) || " - "}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Phone</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(phone) || " - "}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">SMS opt-in</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${smsConsent ? "Yes" : "No"}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Help With</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(help)}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Project Details</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(project)}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">How They Heard</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(hear) || " - "}</td></tr>

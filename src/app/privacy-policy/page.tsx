@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalDocument } from "@/src/components/legal/legal-document";
+import PrivacyPolicyHero from "@/src/components/sections/legal/privacy-policy-hero";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
   LEGAL_CONTACT_EMAIL,
   LEGAL_LAST_UPDATED,
   LEGAL_SITE_URL,
+  SMS_MESSAGE_TYPES,
 } from "@/src/lib/legal";
 import { breadcrumbJsonLd, webPageJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
@@ -37,7 +39,12 @@ export default function PrivacyPolicyPage() {
     <>
       <JsonLd data={webPageLd} />
       <JsonLd data={breadcrumbLd} />
-      <LegalDocument title="Privacy Policy" lastUpdated={LEGAL_LAST_UPDATED}>
+      <PrivacyPolicyHero />
+      <LegalDocument
+        title="Privacy Policy"
+        lastUpdated={LEGAL_LAST_UPDATED}
+        hideHeader
+      >
       <div className="not-prose rounded-xl border border-amber-200/90 bg-amber-50/90 p-4 text-xs text-amber-950 mb-8 leading-relaxed">
         <p className="font-semibold text-amber-950 mb-2">Notice</p>
         <p>
@@ -63,15 +70,45 @@ export default function PrivacyPolicyPage() {
         entity may act as the primary contact for privacy inquiries.
       </p>
 
-      <h2>2. Scope</h2>
+      <h2>2. How Do We Process Your Information?</h2>
       <p>
         This policy applies to information we collect through the Site, email,
-        phone, video meetings, scheduling tools, forms, newsletters, and
-        similar channels. If you enter into a separate agreement with us for
-        professional services (for example, a master services agreement,
-        statement of work, or order form), additional or different terms may
-        apply to data processed under that engagement. In case of conflict,
-        the written contract for that engagement controls for that engagement.
+        phone, SMS/text messaging (where you opt in), video meetings, scheduling
+        tools, forms, newsletters, and similar channels. We process personal
+        information to respond to inquiries, deliver and manage professional
+        services, send service-related communications, operate and secure the
+        Site, comply with law, and for other purposes described at collection or
+        with your consent.
+      </p>
+      <p>
+        If you enter into a separate agreement with us for professional services
+        (for example, a master services agreement, statement of work, or order
+        form), additional or different terms may apply to data processed under
+        that engagement. In case of conflict, the written contract for that
+        engagement controls for that engagement.
+      </p>
+      <p>
+        <strong>SMS and mobile communications.</strong> If you provide a mobile
+        phone number and opt in on our contact form, we process your number and
+        related contact details to send you automated text messages related to{" "}
+        {SMS_MESSAGE_TYPES} concerning your inquiry or engagement with us. We do
+        not use SMS opt-in data to send promotional or marketing text messages
+        unless you separately agree to marketing communications where offered.
+        Message frequency varies. Message and data rates may apply.
+      </p>
+      <p>
+        <strong>Non-sharing of SMS data (processing).</strong> We will not sell,
+        rent, loan, or share your mobile phone number, SMS opt-in data, or text
+        messaging consent with third parties or affiliates for their marketing or
+        promotional purposes. SMS opt-in data and consent are used only to
+        provide the transactional messages you agreed to receive and to operate
+        our text messaging program.
+      </p>
+      <p>
+        Where the GDPR or similar laws apply, we rely on appropriate legal bases
+        such as contract, legitimate interests (for example, securing and
+        improving the Site, and business development), compliance with legal
+        obligations, and consent where required (including SMS opt-in).
       </p>
 
       <h2>3. Information we collect</h2>
@@ -79,9 +116,10 @@ export default function PrivacyPolicyPage() {
       <ul>
         <li>
           <strong>Identifiers and contact data</strong> - such as name, email
-          address, phone number, company name, job title, and similar details
-          you provide when you contact us, request a quote, subscribe to
-          updates, schedule a meeting, or communicate with our team.
+          address, phone number (including mobile numbers you provide for SMS),
+          company name, job title, SMS opt-in status, and similar details you
+          provide when you contact us, request a quote, subscribe to updates,
+          schedule a meeting, or communicate with our team.
         </li>
         <li>
           <strong>Project and inquiry details</strong> - descriptions of your
@@ -115,60 +153,20 @@ export default function PrivacyPolicyPage() {
         it and we have an appropriate basis to process it.
       </p>
 
-      <h2>4. How we use information</h2>
-      <p>We use personal information to:</p>
-      <ul>
-        <li>Respond to inquiries, provide demos, and operate our business;</li>
-        <li>
-          Deliver, manage, and improve our professional services and
-          deliverables;
-        </li>
-        <li>
-          Send transactional messages, service-related notices, and (where
-          permitted) marketing or newsletter content;
-        </li>
-        <li>
-          Analyze how the Site is used, improve performance and security, and
-          understand our audience;
-        </li>
-        <li>
-          Comply with law, enforce our terms, and protect rights, safety, and
-          property; and
-        </li>
-        <li>
-          Carry out other purposes described at collection or with your
-          consent.
-        </li>
-      </ul>
-      <p>
-        Where the GDPR or similar laws apply, we rely on appropriate legal
-        bases such as contract, legitimate interests (for example, securing
-        and improving the Site, and business development), compliance with legal
-        obligations, and consent where required.
-      </p>
-
-      <h2>5. Cookies and analytics</h2>
-      <p>
-        We may use cookies and similar technologies on the Site. We may use
-        Google Analytics or similar services to understand aggregate usage.
-        Those providers may set their own cookies subject to their policies.
-        You can control cookies through your browser settings. If analytics are
-        disabled, some features may still work without them.
-      </p>
-
-      <h2>6. How we share information</h2>
+      <h2>4. When and With Whom Do We Share Your Personal Information?</h2>
       <p>
         We do not sell your personal information in the conventional sense. We
         may share information with:
       </p>
       <ul>
         <li>
-          <strong>Service providers</strong> - such as email delivery (for
-          example, transactional email providers), hosting and infrastructure
-          providers, analytics providers, scheduling platforms (for example,
-          Calendly), and other vendors who assist us in operating the Site and
-          our business, under confidentiality and processing terms where
-          appropriate.
+          <strong>Service providers</strong> - such as email delivery,
+          SMS/text messaging platforms (for example, carriers and messaging
+          aggregators that transmit messages on our behalf), hosting and
+          infrastructure providers, analytics providers, scheduling platforms
+          (for example, Calendly), and other vendors who assist us in operating
+          the Site and our business, under confidentiality and processing terms
+          where appropriate.
         </li>
         <li>
           <strong>Professional advisors</strong> - such as lawyers or
@@ -186,8 +184,29 @@ export default function PrivacyPolicyPage() {
           clients, or others.
         </li>
       </ul>
+      <p>
+        <strong>Non-sharing of SMS data (disclosure).</strong> No mobile
+        information will be shared with third parties or affiliates for
+        marketing or promotional purposes. Information sharing to
+        subcontractors in support services (such as customer service or message
+        delivery) is permitted only as needed to operate our SMS program. All
+        other use case categories exclude text messaging originator opt-in data
+        and consent; this information will not be shared with any third parties
+        for their own marketing. We will not sell, rent, or share your mobile
+        phone number or SMS opt-in data with third parties or affiliates for
+        their marketing or promotional purposes.
+      </p>
 
-      <h2>7. International transfers</h2>
+      <h2>5. Cookies and analytics</h2>
+      <p>
+        We may use cookies and similar technologies on the Site. We may use
+        Google Analytics or similar services to understand aggregate usage.
+        Those providers may set their own cookies subject to their policies.
+        You can control cookies through your browser settings. If analytics are
+        disabled, some features may still work without them.
+      </p>
+
+      <h2>6. International transfers</h2>
       <p>
         We operate in the United States and other countries. If you are located
         outside the United States, your information may be transferred to,
@@ -197,7 +216,7 @@ export default function PrivacyPolicyPage() {
         contractual clauses) to support such transfers.
       </p>
 
-      <h2>8. Retention</h2>
+      <h2>7. Retention</h2>
       <p>
         We retain personal information for as long as necessary to fulfill the
         purposes described in this policy, unless a longer period is required or
@@ -206,7 +225,7 @@ export default function PrivacyPolicyPage() {
         contractual obligations (including dispute resolution).
       </p>
 
-      <h2>9. Security</h2>
+      <h2>8. Security</h2>
       <p>
         We implement reasonable technical and organizational measures designed
         to protect personal information against unauthorized access, loss, or
@@ -214,7 +233,7 @@ export default function PrivacyPolicyPage() {
         storage is completely secure; we cannot guarantee absolute security.
       </p>
 
-      <h2>10. Your rights and choices</h2>
+      <h2>9. Your rights and choices</h2>
       <p>
         Depending on where you live, you may have rights to access, correct,
         delete, or restrict processing of your personal information, to object
@@ -236,8 +255,16 @@ export default function PrivacyPolicyPage() {
         <strong>Marketing opt-out.</strong> You can unsubscribe from marketing
         emails using the link in those emails or by contacting us.
       </p>
+      <p>
+        <strong>SMS opt-out.</strong> You can cancel SMS messages at any time by
+        replying <strong>STOP</strong> to any message. For help, reply{" "}
+        <strong>HELP</strong> or contact us at{" "}
+        <a href={`mailto:${LEGAL_CONTACT_EMAIL}`}>{LEGAL_CONTACT_EMAIL}</a>.
+        After you opt out, we may send a one-time confirmation message. SMS
+        consent is not a condition of purchase.
+      </p>
 
-      <h2>11. Children</h2>
+      <h2>10. Children</h2>
       <p>
         The Site and our services are directed to businesses and adults. We do
         not knowingly collect personal information from children under 13 (or
@@ -246,7 +273,7 @@ export default function PrivacyPolicyPage() {
         appropriate steps to delete it.
       </p>
 
-      <h2>12. Third-party sites and services</h2>
+      <h2>11. Third-party sites and services</h2>
       <p>
         The Site may link to third-party websites, embed third-party tools, or
         integrate with scheduling or communication platforms. This policy does
@@ -254,7 +281,7 @@ export default function PrivacyPolicyPage() {
         privacy policies.
       </p>
 
-      <h2>13. Changes to this policy</h2>
+      <h2>12. Changes to this policy</h2>
       <p>
         We may update this Privacy Policy from time to time. We will post the
         revised version on this page and update the &ldquo;Last updated&rdquo;
@@ -262,7 +289,7 @@ export default function PrivacyPolicyPage() {
         appropriate.
       </p>
 
-      <h2>14. Contact us</h2>
+      <h2>13. Contact us</h2>
       <p>
         For privacy-related questions or requests, contact us at{" "}
         <a href={`mailto:${LEGAL_CONTACT_EMAIL}`}>{LEGAL_CONTACT_EMAIL}</a>.
