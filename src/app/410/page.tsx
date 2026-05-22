@@ -20,7 +20,7 @@ export default function GonePage() {
             410
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-white leading-tight">
-            Page Removed
+            Page Not Found
           </h1>
           <p className="mt-6 text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
             This page has been permanently removed and is no longer available.
