@@ -20,7 +20,7 @@ export default function HowWeModernized() {
     <section
       className="py-16 md:py-24 px-4 sm:px-6"
       style={{
-        background: "linear-gradient(135deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 60%)",
+        background: "#ffffff",
       }}
     >
       <div className="max-w-[1100px] mx-auto">

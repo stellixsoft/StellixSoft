@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import MaintenanceSupportHero from "@/src/components/sections/services/maintenance-support/hero";
+import MaintenanceAcrossSystemsSection from "@/src/components/sections/services/maintenance-support/maintenance-across-systems";
+import MaintenanceChoosingSupportModelSection from "@/src/components/sections/services/maintenance-support/maintenance-choosing-support-model";
+import MaintenanceGrowthStrategySection from "@/src/components/sections/services/maintenance-support/maintenance-growth-strategy";
+import MaintenancePracticalApproachSection from "@/src/components/sections/services/maintenance-support/maintenance-practical-approach";
+import MaintenanceProactiveInActionSection from "@/src/components/sections/services/maintenance-support/maintenance-proactive-in-action";
+import MaintenanceReduceRiskSection from "@/src/components/sections/services/maintenance-support/maintenance-reduce-risk";
+import MaintenanceWhyChooseSection from "@/src/components/sections/services/maintenance-support/maintenance-why-choose";
 import WhatHappensWithoutProperMaintenance from "@/src/components/sections/services/maintenance-support/without-maintenance";
 import ApplicationsWeSupport from "@/src/components/sections/services/maintenance-support/applications-we-support";
 import WhatsIncludedInMaintenance from "@/src/components/sections/services/maintenance-support/whats-included";
@@ -146,14 +153,21 @@ export default function MaintenanceSupportPage() {
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
         <WhatHappensWithoutProperMaintenance />
+        <MaintenanceGrowthStrategySection />
         <ApplicationsWeSupport />
+        <MaintenanceAcrossSystemsSection />
         <WhatsIncludedInMaintenance />
+        <MaintenancePracticalApproachSection />
         <SupportPlans />
+        <MaintenanceChoosingSupportModelSection />
         <HowWeMaintainApplication />
+        <MaintenanceReduceRiskSection />
         <ResponseTimeCommitments />
         <ExamplesOfMaintenance />
         <ProactiveVsReactiveCost />
+        <MaintenanceProactiveInActionSection />
         <GettingStartedWithMaintenance />
+        <MaintenanceWhyChooseSection />
         <ServiceFaqs
           title="Maintenance & Support FAQs"
           items={faqItems}

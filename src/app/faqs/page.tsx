@@ -87,7 +87,7 @@ export default function FaqsPage() {
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
 
-        <div className="bg-white">
+        <div className="bg-[#f5f7fb]">
           <FaqsPageContent sections={siteFaqSections} />
         </div>
 

@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import StaffAugmentationHero from "@/src/components/sections/services/staff-augmentation/hero";
+import StaffAugmentationChooseModelSection from "@/src/components/sections/services/staff-augmentation/staff-augmentation-choose-model";
+import StaffAugmentationCostEfficiencySection from "@/src/components/sections/services/staff-augmentation/staff-augmentation-cost-efficiency";
+import StaffAugmentationDedicatedMindsetSection from "@/src/components/sections/services/staff-augmentation/staff-augmentation-dedicated-mindset";
+import StaffAugmentationFlexibleTechnologiesSection from "@/src/components/sections/services/staff-augmentation/staff-augmentation-flexible-technologies";
+import StaffAugmentationHiringVsAugmentationSection from "@/src/components/sections/services/staff-augmentation/staff-augmentation-hiring-vs-augmentation";
+import StaffAugmentationWhatMakesEffectiveSection from "@/src/components/sections/services/staff-augmentation/staff-augmentation-what-makes-effective";
+import StaffAugmentationWhyChooseSection from "@/src/components/sections/services/staff-augmentation/staff-augmentation-why-choose";
 import HowStaffAugmentationWorks from "@/src/components/sections/services/staff-augmentation/how-it-works";
 import WhenStaffAugmentationMakesSense from "@/src/components/sections/services/staff-augmentation/when-it-makes-sense";
 import StaffAugmentationVsDedicatedTeams from "@/src/components/sections/services/staff-augmentation/vs-dedicated-teams";
@@ -107,13 +114,20 @@ export default function StaffAugmentationPage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
+        <StaffAugmentationHiringVsAugmentationSection />
         <HowStaffAugmentationWorks />
+        <StaffAugmentationWhatMakesEffectiveSection />
         <WhenStaffAugmentationMakesSense />
+        <StaffAugmentationChooseModelSection />
         <StaffAugmentationVsDedicatedTeams />
         <SkillsAvailableForAugmentation />
+        <StaffAugmentationFlexibleTechnologiesSection />
         <WhatYouGetWithOurDevelopers />
+        <StaffAugmentationDedicatedMindsetSection />
         <StaffAugmentationRates />
+        <StaffAugmentationCostEfficiencySection />
         <FromRequestToProductiveDeveloper />
+        <StaffAugmentationWhyChooseSection />
         <StaffAugmentationFAQs />
         <RiskFreeTrial />
         <ServiceInternalLinks slug="staff-augmentation" />

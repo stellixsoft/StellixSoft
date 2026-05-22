@@ -12,27 +12,16 @@ export default function DevOpsAndCloudServicesHero() {
       />
 
       <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center text-white">
-        <p className="text-xs md:text-sm font-semibold uppercase tracking-[0.3em] text-white/70 mb-4">
-          DevOps &amp; Cloud Services
-        </p>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight">
-          Modern Infrastructure
-          <br />
-          <span className="font-semibold">For Modern Applications</span>
+          DevOps and Cloud Services for Scalable Modern Infrastructure
         </h1>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.24em] text-white/80">
-          <span>AWS</span>
-          <span>Google Cloud</span>
-          <span>Azure</span>
-          <span>Docker</span>
-          <span>Kubernetes</span>
-        </div>
-
         <p className="mt-8 text-sm md:text-base text-white/85 max-w-2xl mx-auto leading-relaxed">
-          Cloud migration, CI/CD pipelines, infrastructure as code, and ongoing cloud management. We
-          help you build, deploy, and operate applications on AWS, Google Cloud, and Azure.
+        Our DevOps and Cloud Services help businesses build, deploy, and scale applications faster with automation, reliability, and security at the core. From DevOps consulting services to full-scale cloud migration services, we deliver solutions designed for real-world performance.
         </p>
+        <p className="mt-8 text-sm md:text-base text-white/85 max-w-2xl mx-auto leading-relaxed">
+        We combine DevOps automation services with cloud expertise to eliminate manual processes, reduce deployment risks, and accelerate time-to-market.
+         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <CalendlyScheduleButton

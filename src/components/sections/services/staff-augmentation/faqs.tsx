@@ -39,13 +39,7 @@ export default function StaffAugmentationFAQs() {
   const [openId, setOpenId] = useState<string | null>(null);
 
   return (
-    <section
-      className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]"
-      style={{
-        background:
-          "linear-gradient(135deg, rgba(16, 172, 219, 0.06) 0%, rgba(255, 255, 255, 1) 65%)",
-      }}
-    >
+    <section className="py-16 md:py-24 px-4 sm:px-6 bg-[#f5f7fb]">
       <div className="max-w-[1300px] mx-auto">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-[var(--color-deepSpace)] text-center">
           Common Questions

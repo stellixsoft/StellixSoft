@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import EnterpriseMobileAppDevelopmentHero from "@/src/components/sections/services/enterprise-mobile-app-development/hero";
+import EnterpriseMobileEcosystems from "@/src/components/sections/services/enterprise-mobile-app-development/enterprise-mobile-ecosystems";
 import MobileAppsWeSpecializeIn from "@/src/components/sections/services/enterprise-mobile-app-development/mobile-apps-specialize";
+import MobileEnterprisesAcrossIndustries from "@/src/components/sections/services/enterprise-mobile-app-development/mobile-enterprises-across-industries";
 import MobileTechnologyApproach from "@/src/components/sections/services/enterprise-mobile-app-development/mobile-technology-approach";
+import EnterpriseMobileAdvancedIntegration from "@/src/components/sections/services/enterprise-mobile-app-development/enterprise-mobile-advanced-integration";
 import FieldServiceAppCaseStudy from "@/src/components/sections/services/enterprise-mobile-app-development/field-service-case-study";
 import HowWeBuildMobileApps from "@/src/components/sections/services/enterprise-mobile-app-development/how-we-build";
+import EnterpriseMobileScalableServices from "@/src/components/sections/services/enterprise-mobile-app-development/enterprise-mobile-scalable-services";
 import MobileDevelopmentCapabilities from "@/src/components/sections/services/enterprise-mobile-app-development/mobile-capabilities";
 import WhyChooseStellixsoftForMobile from "@/src/components/sections/services/enterprise-mobile-app-development/why-choose";
+import WhyChooseEnterpriseApplicationServices from "@/src/components/sections/services/enterprise-mobile-app-development/why-choose-enterprise-application-services";
 import WeStandBehindOurMobileApps from "@/src/components/sections/services/enterprise-mobile-app-development/stand-behind";
+import EnterpriseMobileFutureGrowth from "@/src/components/sections/services/enterprise-mobile-app-development/enterprise-mobile-future-growth";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
 import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
@@ -143,13 +149,20 @@ export default function EnterpriseMobileAppDevelopmentPage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
+        <EnterpriseMobileEcosystems />
+        
         <MobileAppsWeSpecializeIn />
+        <MobileEnterprisesAcrossIndustries />
         <MobileTechnologyApproach />
+        <EnterpriseMobileAdvancedIntegration />
         <FieldServiceAppCaseStudy />
         <HowWeBuildMobileApps />
+        <EnterpriseMobileScalableServices />
         <MobileDevelopmentCapabilities />
         <WhyChooseStellixsoftForMobile />
+        <WhyChooseEnterpriseApplicationServices />
         <WeStandBehindOurMobileApps />
+        <EnterpriseMobileFutureGrowth />
         <ServiceFaqs
           title="Enterprise Mobile App Development FAQs"
           items={faqItems}

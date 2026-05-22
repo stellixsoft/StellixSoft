@@ -13,21 +13,15 @@ export default function ECommerceDevelopmentHero() {
 
       <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center text-white">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight">
-          Custom E‑Commerce
-          <br />
-          <span className="font-semibold">Beyond Template Stores</span>
+        E-commerce Development Services for Scalable Online Businesses
+
         </h1>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.24em] text-white/80">
-          <span>Custom Development</span>
-          <span>WooCommerce</span>
-          <span>Shopify</span>
-          <span>Headless</span>
-        </div>
-
         <p className="mt-8 text-sm md:text-base text-white/85 max-w-3xl mx-auto leading-relaxed">
-          Custom e‑commerce platforms for complex business requirements. B2B portals, multi‑vendor
-          marketplaces, headless commerce, and deep integrations with your existing systems.
+        Our E-commerce development services are designed for businesses that need more than basic online stores. From custom ecommerce development to advanced Shopify ecommerce development, we build platforms that scale with your business.
+        </p>
+        <p className="mt-8 text-sm md:text-base text-white/85 max-w-3xl mx-auto leading-relaxed">
+        Whether you're launching a new store or upgrading an existing one, our custom ecommerce website development ensures performance, flexibility, and seamless user experience. 
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

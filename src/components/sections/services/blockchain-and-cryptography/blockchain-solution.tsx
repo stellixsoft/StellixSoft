@@ -3,8 +3,11 @@ export default function BlockchainSolution() {
         <section
             className="py-16 md:py-24 px-4 sm:px-6"
             style={{
-                background:
-                    "linear-gradient(135deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 50%)",
+                backgroundImage:
+                    "url('/assets/images/background-url.webp')",
+                backgroundSize: "cover, cover",
+                backgroundPosition: "center, center",
+                backgroundRepeat: "no-repeat, no-repeat",
             }}
         >
             <div className="max-w-4xl mx-auto text-center">
@@ -16,7 +19,9 @@ export default function BlockchainSolution() {
                       Cryptography Solutions
                     </span>
                 </h2>
-                <p className="text-base text-[var(--color-deepSpace)] leading-relaxed mb-4">Our custom enterprise software development services are built for organizations that operate in complex, high-demand environments where performance and reliability are critical. We design and develop robust enterprise solutions such as multi-tenant platforms, data-driven systems, and large-scale applications that support business growth and operational excellence. With deep expertise in industries like healthcare, logistics, and IoT, we create software that handles complexity, ensures compliance, and scales with your evolving business needs.
+                <p className="text-base text-[var(--color-deepSpace)] leading-relaxed mb-4">Our approach to Blockchain and Cryptography ensures that every system we build is secure by design. We apply advanced cryptographic techniques such as hashing, digital signatures, and encryption to protect data integrity and ensure trust across distributed systems.
+                </p>
+                <p className="text-base text-[var(--color-deepSpace)] leading-relaxed mb-4">With our Blockchain integration services, businesses can seamlessly connect blockchain networks with existing enterprise systems like ERPs, CRMs, and cloud platforms—without disrupting operations.
                 </p>
             </div>
         </section>

@@ -106,7 +106,7 @@ export default function ECommerceFeaturesWeImplement() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-sky-50/70">
+    <section className="py-16 md:py-24">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
         <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-10 md:mb-12">
           E-commerce Features We Implement

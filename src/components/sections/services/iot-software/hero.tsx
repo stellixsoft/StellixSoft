@@ -12,16 +12,17 @@ export default function IoTSoftwareHero() {
       />
 
       <div className="relative z-10 w-full max-w-[900px] mx-auto px-6 py-24 text-center">
-        <p className="text-sm font-medium uppercase tracking-widest mb-3 italic" style={{ color: "var(--color-electricBlue)" }}>Hardware + Software Partnership</p>
+        
         <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-white leading-tight">
-          Software Development for <span className="font-bold">Hardware & IoT Companies
-          </span>
+          Software Development for Hardware & IoT Companies
+       
         </h1>
-        <p className="mt-6 italic text-lg md:text-xl text-white/90 mx-auto">
-          Currently powering 10,000+ devices worldwide for Fortune 500 supply chains
+        <p className="mt-6 text-lg md:text-xl text-white/90 mx-auto">
+        Hardware alone isn’t enough—modern products require intelligent software. Our IoT software development services focus on building scalable platforms that transform connected devices into fully functional digital ecosystems.
+
         </p>
         <p className="mt-4 text-base text-white/80 mx-auto leading-relaxed">
-          Your team builds the hardware. We build the software that makes it valuable. Device management portals, customer dashboards, and real-time monitoring systems for global manufacturers.
+        From IoT application development to cloud-based device management systems, we help businesses unlock real value from their connected hardware.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <CalendlyScheduleButton

@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
 import SalesforceDevelopmentHero from "@/src/components/sections/services/salesforce-development/hero";
+import SalesforceCustomBusinessUseCasesSection from "@/src/components/sections/services/salesforce-development/salesforce-custom-business-use-cases";
+import SalesforceIntegrateWithYourSystemsSection from "@/src/components/sections/services/salesforce-development/salesforce-integrate-with-your-systems";
+import SalesforceLongTermGrowthSection from "@/src/components/sections/services/salesforce-development/salesforce-long-term-growth";
+import SalesforcePracticalApplicationDevelopmentSection from "@/src/components/sections/services/salesforce-development/salesforce-practical-application-development";
+import SalesforceWhatMakesUsDifferentSection from "@/src/components/sections/services/salesforce-development/salesforce-what-makes-us-different";
+import SalesforceWhenStandardIsNotEnoughSection from "@/src/components/sections/services/salesforce-development/salesforce-when-standard-is-not-enough";
 import SalesforceDevelopmentServices from "@/src/components/sections/services/salesforce-development/services";
 import WhenYouNeedCustomSalesforce from "@/src/components/sections/services/salesforce-development/when-you-need-custom";
 import SalesforceTechnologyExpertise from "@/src/components/sections/services/salesforce-development/technology-expertise";
@@ -140,10 +146,16 @@ export default function SalesforceDevelopmentPage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
+        <SalesforceWhenStandardIsNotEnoughSection />
         <SalesforceDevelopmentServices />
+        <SalesforceCustomBusinessUseCasesSection />
         <WhenYouNeedCustomSalesforce />
+        <SalesforcePracticalApplicationDevelopmentSection />
         <SalesforceTechnologyExpertise />
+        <SalesforceIntegrateWithYourSystemsSection />
         <HowWeApproachSalesforceProjects />
+        <SalesforceWhatMakesUsDifferentSection />
+        <SalesforceLongTermGrowthSection />
         <ServiceFaqs
           title="Salesforce Development FAQs"
           items={faqItems}

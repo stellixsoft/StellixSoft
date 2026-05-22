@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import IoTSoftwareHero from "../../../components/sections/services/iot-software/hero";
+import IoTHardwareSoftwareDevelopmentIntro from "../../../components/sections/services/iot-software/iot-hardware-software-development-intro";
 import SoftwareSolution from "../../../components/sections/services/iot-software/software-solution";
+import IoTRealWorldUseCases from "../../../components/sections/services/iot-software/iot-real-world-use-cases";
 import YourHardware from "../../../components/sections/services/iot-software/your-hardware";
+import IoTSoftwareForHardwareTeams from "../../../components/sections/services/iot-software/iot-software-for-hardware-teams";
 import IoTCaseStudy from "../../../components/sections/services/iot-software/iot-case-study";
 import IoTTechnologyExpertise from "../../../components/sections/services/iot-software/iot-technology-expertise";
+import IoTBehindTheScenes from "../../../components/sections/services/iot-software/iot-behind-the-scenes";
 import SolutionByDeviceType from "../../../components/sections/services/iot-software/solution-by-device-type";
+import IoTWhenMakesSense from "../../../components/sections/services/iot-software/iot-when-makes-sense";
 import IoTSoftwarePartner from "../../../components/sections/services/iot-software/companies-partner";
 import FlexibleEngagement from "../../../components/sections/services/iot-software/flexible-engagement";
+import IoTWhyCompaniesChoose from "../../../components/sections/services/iot-software/iot-why-companies-choose";
 import Testimonial from "../../../components/sections/services/iot-software/testimonial";
 import CTAPilot from "../../../components/sections/home/cta-pilot";
 import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
@@ -145,14 +151,20 @@ export default function IoTSoftwarePage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
+        <IoTHardwareSoftwareDevelopmentIntro />
         <SoftwareSolution />
+        <IoTRealWorldUseCases />
         <YourHardware />
+        <IoTSoftwareForHardwareTeams />
         <IoTCaseStudy />
         <IoTTechnologyExpertise />
+        <IoTBehindTheScenes />
         <SolutionByDeviceType />
+        <IoTWhenMakesSense />
         <IoTSoftwarePartner />
         <Testimonial />
         <FlexibleEngagement />
+        <IoTWhyCompaniesChoose />
         <ServiceFaqs
           title="IoT Software Development FAQs"
           items={faqItems}

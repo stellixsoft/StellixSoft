@@ -12,23 +12,21 @@ export default function StaffAugmentationHero() {
       />
 
       <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center text-white">
-        <p className="text-xs md:text-sm font-semibold uppercase tracking-[0.3em] text-white/70 mb-4">
-          Staff Augmentation
-        </p>
+        
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight mb-8">
-          Add Top Developers
+        Staff Augmentation Services for Fast, Flexible Team Scaling
+
           <br />
           <span className="font-semibold">To Your Team</span>
         </h1>
 
-        <p className="text-sm md:text-base text-white/85 leading-relaxed uppercase">
-          <span className="font-medium">Developers currently embedded with Fortune 500 teams and growing startups</span>
-        </p>
+       
 
         <p className="mt-8 text-sm md:text-base text-white/85 leading-relaxed">
-          Fill skill gaps, scale for big projects, or add capacity fast. Our developers integrate
-          seamlessly with your existing team, working your hours, using your tools, following your
-          processes.
+        Our Staff augmentation services help companies quickly expand their development capacity without the delays of traditional hiring. Whether you need a single expert or want to scale your engineering team, we provide IT staff augmentation services that integrate directly into your workflows.
+        </p>
+        <p className="mt-8 text-sm md:text-base text-white/85 leading-relaxed">
+        From individual contributors to a full dedicated development team, we give you the flexibility to scale based on real project needs. 
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

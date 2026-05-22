@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
 import EnterpriseHero from "../../../components/sections/services/enterprise-development/hero";
-import ServiceStack from "../../../components/sections/services/enterprise-development/service-stack";
+import EnterpriseComplexServicesIntro from "../../../components/sections/services/enterprise-development/enterprise-complex-services-intro";
 import KeySpecializations from "../../../components/sections/services/enterprise-development/key-specializations";
+import EnterpriseAcrossIndustries from "../../../components/sections/services/enterprise-development/enterprise-across-industries";
 import ReadyToLaunch from "../../../components/sections/services/enterprise-development/ready-to-launch";
 import TechSpecialties from "../../../components/sections/services/enterprise-development/tech-specialties";
+import EnterpriseAdvancedIntegrations from "../../../components/sections/services/enterprise-development/enterprise-advanced-integrations";
 import HowWeDeliver from "../../../components/sections/services/enterprise-development/how-we-deliver";
+import EnterpriseScalableServices from "../../../components/sections/services/enterprise-development/enterprise-scalable-services";
 import WhyTrustUs from "../../../components/sections/services/enterprise-development/why-trust-us";
+import WhyChooseEnterpriseDevelopment from "../../../components/sections/services/enterprise-development/why-choose-enterprise-development";
 import Testimonial from "../../../components/sections/services/enterprise-development/testimonial";
 import StartWithConfidence from "../../../components/sections/services/enterprise-development/start-with-confidence";
+import EnterpriseApplicationFutureGrowth from "../../../components/sections/services/enterprise-development/enterprise-application-future-growth";
 import CTAPilot from "../../../components/sections/home/cta-pilot";
 import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
@@ -143,14 +148,19 @@ export default function EnterpriseDevelopmentPage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
-        <ServiceStack />
+        <EnterpriseComplexServicesIntro />
         <KeySpecializations />
+        <EnterpriseAcrossIndustries />
         <ReadyToLaunch />
         <TechSpecialties />
+        <EnterpriseAdvancedIntegrations />
         <HowWeDeliver />
+        <EnterpriseScalableServices />
         <WhyTrustUs />
+        <WhyChooseEnterpriseDevelopment />
         <Testimonial />
         <StartWithConfidence />
+        <EnterpriseApplicationFutureGrowth />
         <ServiceFaqs
           title="Enterprise Development FAQs"
           items={faqItems}

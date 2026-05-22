@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import LegacyModernizationHero from "@/src/components/sections/services/legacy-modernization/hero";
 import YourLegacy from "@/src/components/sections/services/legacy-modernization/your-legacy";
+import LegacyApplicationBeyondMigrationSection from "@/src/components/sections/services/legacy-modernization/legacy-application-beyond-migration";
+import LegacyApplicationHowServicesWorkSection from "@/src/components/sections/services/legacy-modernization/legacy-application-how-services-work";
+import LegacyApplicationRealCostSection from "@/src/components/sections/services/legacy-modernization/legacy-application-real-cost";
+import LegacyApplicationSmarterApproachSection from "@/src/components/sections/services/legacy-modernization/legacy-application-smarter-approach";
+import LegacyApplicationWhenToStartSection from "@/src/components/sections/services/legacy-modernization/legacy-application-when-to-start";
+import LegacyApplicationWhyTrustSection from "@/src/components/sections/services/legacy-modernization/legacy-application-why-trust";
 import Modernization from "@/src/components/sections/services/legacy-modernization/modernization";
 import TechnologiesWeMigrate from "@/src/components/sections/services/legacy-modernization/technologies-we-migrate";
 import HowWeModernized from "@/src/components/sections/services/legacy-modernization/how-we-modernized";
@@ -110,12 +116,18 @@ export default function LegacyModernizationPage() {
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
         <YourLegacy />
+        <LegacyApplicationRealCostSection />
         <Modernization />
+        <LegacyApplicationHowServicesWorkSection />
         <TechnologiesWeMigrate />
+        <LegacyApplicationBeyondMigrationSection />
         <HowWeModernized />
+        <LegacyApplicationWhenToStartSection />
         <HowWeAvoid />
+        <LegacyApplicationSmarterApproachSection />
         <AfterModernization />
         <Testimonial />
+        <LegacyApplicationWhyTrustSection />
         <FAQs />
         <StandBehind />
         <ServiceInternalLinks slug="legacy-modernization" />

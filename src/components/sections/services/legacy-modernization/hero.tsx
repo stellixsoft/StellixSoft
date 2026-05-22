@@ -12,16 +12,15 @@ export default function LegacyModernizationHero() {
       />
 
       <div className="relative z-10 w-full max-w-[900px] mx-auto px-6 py-24 text-center">
-        <p className="text-sm font-medium uppercase tracking-widest mb-3 italic" style={{ color: "var(--color-electricBlue)" }}>Zero Disruption Migration</p>
         <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-white leading-tight">
-          Legacy Application <span className="font-bold">Modernization</span>
+          Legacy Modernization Services Without Business Risk
         </h1>
-        <p className="mt-6 italic text-lg md:text-xl text-white/90 mx-auto">
-          Successfully migrated 15-year-old VB.NET to .NET Core 6
+        
+        <p className="mt-4 text-base text-white/80 mx-auto leading-relaxed">
+        Our Legacy modernization services help enterprises upgrade outdated systems without disrupting operations. Whether you're dealing with VB.NET, .NET Framework, or aging monolithic systems, we specialize in legacy software modernization that keeps your business running while transforming your technology.
         </p>
         <p className="mt-4 text-base text-white/80 mx-auto leading-relaxed">
-          Upgrade your VB.NET, .NET Framework, or legacy enterprise applications to modern architectures - while your team keeps working and your business keeps running. Zero downtime. Proven approach.
-        </p>
+        Unlike traditional application modernization services, our approach prioritizes continuity, stability, and measurable progress at every stage. </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <CalendlyScheduleButton
             className="inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-90 cursor-pointer"

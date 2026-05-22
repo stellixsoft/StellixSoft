@@ -13,21 +13,16 @@ export default function SalesforceDevelopmentHero() {
 
       <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center text-white">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight">
-          Salesforce Development
-          <br />
-          <span className="font-semibold">&amp; Customization</span>
+          Salesforce Development Services for Complex Business Workflows
+
         </h1>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.24em] text-white/80">
-          <span>Apex</span>
-          <span>Lightning</span>
-          <span>Integration</span>
-          <span>Automation</span>
-        </div>
 
         <p className="mt-8 text-sm md:text-base text-white/85 max-w-3xl mx-auto leading-relaxed">
-          Custom Salesforce development, integrations, and automation. When out-of-the-box features
-          aren&apos;t enough, we extend Salesforce to fit your business processes perfectly.
+        Our Salesforce development services help organizations extend Salesforce beyond standard capabilities. From advanced automation to deep integrations, we deliver salesforce application development services that align with real business processes.
+        </p>
+        <p className="mt-8 text-sm md:text-base text-white/85 max-w-3xl mx-auto leading-relaxed">
+        With our Custom Salesforce Development services, you’re not limited by out-of-the-box features—you get a system that works exactly the way your business operates. 
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

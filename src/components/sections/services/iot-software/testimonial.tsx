@@ -17,7 +17,7 @@ export default function Testimonial() {
           className="rounded-2xl bg-white border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)] p-8 md:p-12 text-center"
           style={{
             background:
-              "linear-gradient(135deg, rgba(16, 172, 219, 0.08) 0%, rgba(255, 255, 255, 1) 60%)",
+              "#ffffff",
           }}
           cite="https://stellixsoft.com/case-studies/enterprise-portal-modernization"
         >
