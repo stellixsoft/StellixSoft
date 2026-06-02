@@ -7,7 +7,8 @@ import {
   LEGAL_CONTACT_EMAIL,
   LEGAL_LAST_UPDATED,
   LEGAL_SITE_URL,
-  SMS_MESSAGE_TYPES,
+  SMS_MARKETING_MESSAGE_TYPES,
+  SMS_TRANSACTIONAL_MESSAGE_TYPES,
 } from "@/src/lib/legal";
 import { breadcrumbJsonLd, webPageJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
@@ -301,14 +302,24 @@ export default function TermsOfServicePage() {
 
       <h2>15. SMS and text messaging</h2>
       <p>
-        If you provide a mobile phone number and opt in on our contact form, you
-        consent to receive automated SMS/text messages from StellixSoft related
-        to {SMS_MESSAGE_TYPES} regarding your inquiry or engagement with us.
-        These messages are transactional in nature and are not promotional or
-        marketing offers. We do not send promotional or marketing text messages
-        through this opt-in unless you separately agree to optional marketing
-        communications where we offer them.
+        Our contact form includes separate optional checkboxes for SMS consent.
+        If you provide a mobile phone number, you may choose one, both, or
+        neither:
       </p>
+      <ul>
+        <li>
+          <strong>Transactional SMS (optional):</strong> If you select this
+          checkbox, you consent to receive automated SMS/text messages from
+          StellixSoft related to {SMS_TRANSACTIONAL_MESSAGE_TYPES} regarding your
+          inquiry or engagement. These messages are transactional in nature.
+        </li>
+        <li>
+          <strong>Marketing SMS (optional):</strong> If you select this separate
+          checkbox, you consent to receive promotional or marketing SMS messages,
+          including {SMS_MARKETING_MESSAGE_TYPES}. We do not send marketing text
+          messages unless you select this separate marketing opt-in.
+        </li>
+      </ul>
       <p>
         Message frequency varies. Message and data rates may apply. Carriers are
         not liable for delayed or undelivered messages. You may reply{" "}

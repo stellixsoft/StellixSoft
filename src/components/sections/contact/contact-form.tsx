@@ -5,7 +5,10 @@ import Link from "next/link";
 import { useActionState, useEffect, useRef } from "react";
 import { submitContactForm } from "@/src/app/actions";
 import type { FormState } from "@/src/app/actions";
-import { SMS_MESSAGE_TYPES } from "@/src/lib/legal";
+import {
+  SMS_MARKETING_MESSAGE_TYPES,
+  SMS_TRANSACTIONAL_MESSAGE_TYPES,
+} from "@/src/lib/legal";
 
 const inputClass =
   "w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent";
@@ -232,76 +235,6 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                 <FieldError id="contact-project-error" message={errs.project} />
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-gray-50/80 p-4 space-y-4">
-                <label className="flex items-start gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    name="legalTermsConsent"
-                    value="yes"
-                    required
-                    className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-[var(--color-electricBlue)] focus:ring-[var(--color-electricBlue)]"
-                    aria-invalid={errs.legalTermsConsent ? true : undefined}
-                    aria-describedby={
-                      errs.legalTermsConsent
-                        ? "contact-legal-terms-error"
-                        : undefined
-                    }
-                  />
-                  <span className="text-xs text-[var(--color-neutralGray)] leading-relaxed">
-                    I agree to the{" "}
-                    <Link
-                      href="/privacy-policy"
-                      className="underline hover:text-[var(--color-deepSpace)]"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Privacy Policy
-                    </Link>{" "}
-                    and{" "}
-                    <Link
-                      href="/terms-of-service"
-                      className="underline hover:text-[var(--color-deepSpace)]"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Terms of Service
-                    </Link>
-                    . <span className="text-[var(--color-deepSpace)]">*</span>
-                  </span>
-                </label>
-                <FieldError
-                  id="contact-legal-terms-error"
-                  message={errs.legalTermsConsent}
-                />
-
-                <label className="flex items-start gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    name="smsConsent"
-                    value="yes"
-                    className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-[var(--color-electricBlue)] focus:ring-[var(--color-electricBlue)]"
-                    aria-invalid={errs.smsConsent ? true : undefined}
-                    aria-describedby={
-                      errs.smsConsent ? "contact-sms-consent-error" : undefined
-                    }
-                  />
-                  <span className="text-xs text-[var(--color-neutralGray)] leading-relaxed">
-                    <span className="text-[var(--color-neutralGray)]">
-                      (Optional)
-                    </span>{" "}
-                    I agree to receive SMS/text messages from StellixSoft related
-                    to {SMS_MESSAGE_TYPES} regarding my inquiry. Message
-                    frequency varies. Message and data rates may apply. Reply{" "}
-                    <strong>STOP</strong> to opt out, <strong>HELP</strong> for
-                    help. Consent is not a condition of purchase.
-                  </span>
-                </label>
-                <FieldError
-                  id="contact-sms-consent-error"
-                  message={errs.smsConsent}
-                />
-              </div>
-
               <div>
                 <label htmlFor="hear" className={labelClass}>
                   How did you hear about us?
@@ -370,6 +303,107 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                 </p>
               )}
 
+              <div className="rounded-xl border border-gray-200 bg-gray-50/80 p-4 space-y-4">
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="legalTermsConsent"
+                    value="yes"
+                    required
+                    className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-[var(--color-electricBlue)] focus:ring-[var(--color-electricBlue)]"
+                    aria-invalid={errs.legalTermsConsent ? true : undefined}
+                    aria-describedby={
+                      errs.legalTermsConsent
+                        ? "contact-legal-terms-error"
+                        : undefined
+                    }
+                  />
+                  <span className="text-xs text-[var(--color-neutralGray)] leading-relaxed">
+                    I agree to the{" "}
+                    <Link
+                      href="/privacy-policy"
+                      className="underline hover:text-[var(--color-deepSpace)]"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Privacy Policy
+                    </Link>{" "}
+                    and{" "}
+                    <Link
+                      href="/terms-of-service"
+                      className="underline hover:text-[var(--color-deepSpace)]"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Terms of Service
+                    </Link>
+                    . <span className="text-[var(--color-deepSpace)]">*</span>
+                  </span>
+                </label>
+                <FieldError
+                  id="contact-legal-terms-error"
+                  message={errs.legalTermsConsent}
+                />
+
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="smsTransactionalConsent"
+                    value="yes"
+                    className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-[var(--color-electricBlue)] focus:ring-[var(--color-electricBlue)]"
+                    aria-invalid={errs.smsTransactionalConsent ? true : undefined}
+                    aria-describedby={
+                      errs.smsTransactionalConsent
+                        ? "contact-sms-transactional-error"
+                        : undefined
+                    }
+                  />
+                  <span className="text-xs text-[var(--color-neutralGray)] leading-relaxed">
+                    <span className="font-medium text-[var(--color-deepSpace)]">
+                      (Optional) Transactional SMS:
+                    </span>{" "}
+                    I agree to receive SMS/text messages from StellixSoft related
+                    to {SMS_TRANSACTIONAL_MESSAGE_TYPES} regarding my inquiry.
+                    Message frequency varies. Message and data rates may apply.
+                    Reply <strong>STOP</strong> to opt out, <strong>HELP</strong>{" "}
+                    for help. Consent is not a condition of purchase.
+                  </span>
+                </label>
+                <FieldError
+                  id="contact-sms-transactional-error"
+                  message={errs.smsTransactionalConsent}
+                />
+
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="smsMarketingConsent"
+                    value="yes"
+                    className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-[var(--color-electricBlue)] focus:ring-[var(--color-electricBlue)]"
+                    aria-invalid={errs.smsMarketingConsent ? true : undefined}
+                    aria-describedby={
+                      errs.smsMarketingConsent
+                        ? "contact-sms-marketing-error"
+                        : undefined
+                    }
+                  />
+                  <span className="text-xs text-[var(--color-neutralGray)] leading-relaxed">
+                    <span className="font-medium text-[var(--color-deepSpace)]">
+                      (Optional) Marketing SMS:
+                    </span>{" "}
+                    I agree to receive promotional/marketing SMS messages from
+                    StellixSoft, including {SMS_MARKETING_MESSAGE_TYPES}. Message
+                    frequency varies. Message and data rates may apply. Reply{" "}
+                    <strong>STOP</strong> to opt out, <strong>HELP</strong> for
+                    help. Consent is not a condition of purchase.
+                  </span>
+                </label>
+                <FieldError
+                  id="contact-sms-marketing-error"
+                  message={errs.smsMarketingConsent}
+                />
+              </div>
+
               <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pt-2">
                 <button
                   type="submit"
@@ -381,9 +415,9 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                   <PaperPlaneIcon />
                 </button>
                 <p className="text-xs text-[var(--color-neutralGray)] max-w-xs sm:text-right">
-                  * Required fields, including agreement to our Privacy Policy
-                  and Terms of Service. SMS consent is optional. We&apos;ll
-                  respond within 1 business day.
+                  * Privacy Policy and Terms agreement required. Transactional
+                  and marketing SMS opt-ins are optional. We&apos;ll respond
+                  within 1 business day.
                 </p>
               </div>
             </form>

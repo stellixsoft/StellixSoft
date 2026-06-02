@@ -7,7 +7,8 @@ import {
   LEGAL_CONTACT_EMAIL,
   LEGAL_LAST_UPDATED,
   LEGAL_SITE_URL,
-  SMS_MESSAGE_TYPES,
+  SMS_MARKETING_MESSAGE_TYPES,
+  SMS_TRANSACTIONAL_MESSAGE_TYPES,
 } from "@/src/lib/legal";
 import { breadcrumbJsonLd, webPageJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
@@ -88,21 +89,34 @@ export default function PrivacyPolicyPage() {
         engagement controls for that engagement.
       </p>
       <p>
-        <strong>SMS and mobile communications.</strong> If you provide a mobile
-        phone number and opt in on our contact form, we process your number and
-        related contact details to send you automated text messages related to{" "}
-        {SMS_MESSAGE_TYPES} concerning your inquiry or engagement with us. We do
-        not use SMS opt-in data to send promotional or marketing text messages
-        unless you separately agree to marketing communications where offered.
-        Message frequency varies. Message and data rates may apply.
+        <strong>SMS and mobile communications.</strong> If you provide a
+        mobile phone number on our contact form, you may opt in using separate,
+        optional checkboxes:
+      </p>
+      <ul>
+        <li>
+          <strong>Transactional SMS (optional):</strong> If selected, we may
+          send automated messages related to {SMS_TRANSACTIONAL_MESSAGE_TYPES}{" "}
+          concerning your inquiry or engagement with us.
+        </li>
+        <li>
+          <strong>Marketing SMS (optional):</strong> If selected separately, we
+          may send promotional or marketing messages, including{" "}
+          {SMS_MARKETING_MESSAGE_TYPES}. We do not send marketing text messages
+          unless you check this separate marketing opt-in.
+        </li>
+      </ul>
+      <p>
+        Message frequency varies. Message and data rates may apply. You may opt
+        in to one, both, or neither SMS program.
       </p>
       <p>
         <strong>Non-sharing of SMS data (processing).</strong> We will not sell,
         rent, loan, or share your mobile phone number, SMS opt-in data, or text
         messaging consent with third parties or affiliates for their marketing or
         promotional purposes. SMS opt-in data and consent are used only to
-        provide the transactional messages you agreed to receive and to operate
-        our text messaging program.
+        provide the message types you agreed to receive under each separate
+        opt-in and to operate our text messaging program.
       </p>
       <p>
         Where the GDPR or similar laws apply, we rely on appropriate legal bases

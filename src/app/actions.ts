@@ -15,7 +15,8 @@ export interface FormState {
       | "phone"
       | "budget"
       | "legalTermsConsent"
-      | "smsConsent",
+      | "smsTransactionalConsent"
+      | "smsMarketingConsent",
       string
     >
   >;
@@ -56,7 +57,9 @@ export async function submitContactForm(
   const project = readText(formData, "project");
   const hear = readText(formData, "hear");
   const legalTermsConsent = formData.get("legalTermsConsent") === "yes";
-  const smsConsent = formData.get("smsConsent") === "yes";
+  const smsTransactionalConsent =
+    formData.get("smsTransactionalConsent") === "yes";
+  const smsMarketingConsent = formData.get("smsMarketingConsent") === "yes";
   const budgetAmountRaw = readText(formData, "budgetAmount");
   const budgetCurrencyRaw = readText(formData, "budgetCurrency");
 
@@ -97,7 +100,7 @@ export async function submitContactForm(
       "You must agree to the Privacy Policy and Terms of Service to submit this form.";
   }
 
-  if (smsConsent && !phone) {
+  if ((smsTransactionalConsent || smsMarketingConsent) && !phone) {
     fieldErrors.phone = "Please enter a mobile number to receive SMS messages.";
   }
 
@@ -137,7 +140,8 @@ export async function submitContactForm(
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Email</td><td style="padding:8px 12px;border-bottom:1px solid #eee"><a href="mailto:${esc(emailRaw)}">${esc(emailRaw)}</a></td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Company</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(company) || " - "}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Phone</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(phone) || " - "}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">SMS opt-in</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${smsConsent ? "Yes" : "No"}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">SMS transactional opt-in</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${smsTransactionalConsent ? "Yes" : "No"}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">SMS marketing opt-in</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${smsMarketingConsent ? "Yes" : "No"}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Help With</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(help)}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Project Details</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(project)}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">How They Heard</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(hear) || " - "}</td></tr>
