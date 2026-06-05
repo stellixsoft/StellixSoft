@@ -35,12 +35,12 @@ export default function Hero() {
 
         <div className="mt-4">
           <div className="pt-6">
-            <h2 className="text-xs font-normal uppercase tracking-widest text-white/80">
+            <h2 className="text-xs font-bold uppercase tracking-widest text-white/80">
               At a glance (for busy executives)
             </h2>
           </div>
 
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-left max-w-3xl mx-auto">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-left max-w-4xl mx-auto">
             <ul className="space-y-4">
               {atAGlanceLeft.map((item) => (
                 <li
