@@ -5,7 +5,6 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import GoogleAnalytics from "../components/analytics/GoogleAnalytics";
 import MicrosoftClarity from "../components/analytics/MicrosoftClarity";
-import Warmly from "../components/analytics/Warmly";
 import { buildRootJsonLdGraph } from "@/src/lib/schema";
 import { getSiteUrl } from "@/src/lib/site-url";
 
@@ -93,11 +92,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script
+          id="warmly-script-loader"
+          src="https://opps-widget.getwarmly.com/warmly.js?clientId=6bc41de9c2e19bc89899cbcc6891d0a2"
+          defer
+        />
       </head>
       <body className={`${poppins.variable} font-sans antialiased`}>
         <GoogleAnalytics />
         <MicrosoftClarity />
-        <Warmly />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-[var(--color-electricBlue-solid)] focus:text-white focus:rounded-lg focus:text-sm focus:font-medium"
