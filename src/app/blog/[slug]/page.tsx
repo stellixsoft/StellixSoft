@@ -117,6 +117,10 @@ export default async function BlogPostPage({ params }: PageProps) {
                           `<ul class="my-4 list-disc space-y-1.5 pl-5">${block.trim()}</ul>`,
                       )
                       .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+                      .replace(
+                        /\[([^\]]+)\]\(([^)]+)\)/g,
+                        '<a href="$2" class="text-[var(--color-electricBlue)] no-underline hover:underline">$1</a>',
+                      )
                       .replace(/\n\n/g, "</p><p>")
                       .replace(
                         /```([^`]+)```/g,
