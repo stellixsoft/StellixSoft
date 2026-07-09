@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model EventType {
+  id                 String    @id @default(cuid())
+  title              String
+  slug               String    @unique
+  description        String?
+  durationMinutes    Int
+  locationType       String    @default("google_meet")
+  contactEmail       String?
+  contactPhone       String?
+  timezone           String    @default("America/Chicago")
+  availabilityJson   String
+  bufferBeforeMinutes Int      @default(0)
+  bufferAfterMinutes  Int      @default(0)
+  isActive           Boolean   @default(true)
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  bookings           Booking[]
+}
+
+model Booking {
+  id                    String   @id @default(cuid())
+  eventTypeId           String
+  eventType             EventType @relation(fields: [eventTypeId], references: [id], onDelete: Cascade)
+  name                  String
+  email                 String
+  notes                 String?
+  startTime             DateTime
+  endTime               DateTime
+  timezone              String
+  status                String   @default("confirmed")
+  googleCalendarEventId String?
+  googleMeetLink        String?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@index([eventTypeId, startTime, endTime])
+  @@index([status])
+}

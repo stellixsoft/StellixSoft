@@ -92,21 +92,24 @@ async function sendViaResend(
   }
 }
 
-export async function sendEmail(options: SendEmailOptions) {
-  const hasSmtp =
-    Boolean(process.env.SMTP_HOST?.trim()) &&
-    Boolean(process.env.SMTP_USER?.trim()) &&
-    Boolean(process.env.SMTP_PASS?.trim());
+function emailTransportAvailable(): {
+  hasSmtp: boolean;
+  hasResend: boolean;
+} {
+  return {
+    hasSmtp:
+      Boolean(process.env.SMTP_HOST?.trim()) &&
+      Boolean(process.env.SMTP_USER?.trim()) &&
+      Boolean(process.env.SMTP_PASS?.trim()),
+    hasResend: Boolean(process.env.RESEND_API_KEY?.trim()),
+  };
+}
 
-  const hasResend = Boolean(process.env.RESEND_API_KEY?.trim());
-
-  const to = resolveInbox(hasSmtp);
-  if (!to) {
-    console.error(
-      "Set EMAIL_TO (recommended), SMTP_TO, or CONTACT_INBOX_EMAIL. With SMTP only, SMTP_USER is used if none are set.",
-    );
-    throw new Error("EMAIL_NOT_CONFIGURED");
-  }
+async function dispatchEmail(
+  to: string,
+  options: SendEmailOptions,
+): Promise<void> {
+  const { hasSmtp, hasResend } = emailTransportAvailable();
 
   if (hasSmtp) {
     await sendViaSmtp(to, options);
@@ -120,4 +123,33 @@ export async function sendEmail(options: SendEmailOptions) {
 
   console.error("Set SMTP_HOST + SMTP_USER + SMTP_PASS, or RESEND_API_KEY");
   throw new Error("EMAIL_NOT_CONFIGURED");
+}
+
+/** Sends to the site inbox (contact form notifications). */
+export async function sendEmail(options: SendEmailOptions) {
+  const { hasSmtp } = emailTransportAvailable();
+  const to = resolveInbox(hasSmtp);
+  if (!to) {
+    console.error(
+      "Set EMAIL_TO (recommended), SMTP_TO, or CONTACT_INBOX_EMAIL. With SMTP only, SMTP_USER is used if none are set.",
+    );
+    throw new Error("EMAIL_NOT_CONFIGURED");
+  }
+
+  await dispatchEmail(to, options);
+}
+
+/** Sends directly to a recipient (e.g. booking confirmation to the guest). */
+export async function sendEmailTo(to: string, options: SendEmailOptions) {
+  const recipient = to.trim();
+  if (!recipient) {
+    throw new Error("EMAIL_RECIPIENT_REQUIRED");
+  }
+
+  await dispatchEmail(recipient, options);
+}
+
+export function isEmailConfigured(): boolean {
+  const { hasSmtp, hasResend } = emailTransportAvailable();
+  return hasSmtp || hasResend;
 }

@@ -1,4 +1,4 @@
-import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
+import ScheduleMeetingButton from "@/src/components/scheduling/ScheduleMeetingButton";
 
 const complianceItems = [
   {
@@ -122,12 +122,13 @@ export default function WaysToReach() {
             );
             if (item.smallText === "SCHEDULE A CALL") {
               return (
-                <CalendlyScheduleButton
+                <ScheduleMeetingButton
                   key={item.smallText}
-                  className={`block w-full ${cardClass} hover:shadow-lg transition-shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-electricBlue)] cursor-pointer`}
+                  eventSlug="15-minute-meeting"
+                  className={`block w-full ${cardClass} hover:shadow-lg transition-shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-electricBlue)] cursor-pointer text-left`}
                 >
                   {content}
-                </CalendlyScheduleButton>
+                </ScheduleMeetingButton>
               );
             }
             return (
