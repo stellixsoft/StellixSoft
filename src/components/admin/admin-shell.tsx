@@ -1,0 +1,321 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
+
+const nav = [
+  {
+    href: "/admin",
+    label: "Dashboard",
+    exact: true,
+    icon: DashboardIcon,
+  },
+  {
+    href: "/admin/blogs",
+    label: "Blogs",
+    icon: BlogIcon,
+  },
+  {
+    href: "/admin/media",
+    label: "Media",
+    icon: MediaIcon,
+  },
+] as const;
+
+const comingSoon = [
+  { label: "Pages", icon: PagesIcon },
+  { label: "Services", icon: ServicesIcon },
+] as const;
+
+function DashboardIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+      <rect x="3" y="3" width="8" height="8" rx="1.5" />
+      <rect x="13" y="3" width="8" height="5" rx="1.5" />
+      <rect x="13" y="10" width="8" height="11" rx="1.5" />
+      <rect x="3" y="13" width="8" height="8" rx="1.5" />
+    </svg>
+  );
+}
+
+function BlogIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+      <path d="M4 5h16v14H4z" />
+      <path d="M8 9h8M8 13h6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function MediaIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <circle cx="8.5" cy="10" r="1.5" fill="currentColor" stroke="none" />
+      <path d="M21 16l-5.5-5.5L7 19" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function PagesIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+      <path d="M7 3h8l4 4v14H7z" />
+      <path d="M15 3v4h4" />
+    </svg>
+  );
+}
+
+function ServicesIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function MenuIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+      <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function CloseIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+      <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function ExternalIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+      <path d="M14 4h6v6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10 14L20 4" strokeLinecap="round" />
+      <path d="M20 14v5a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1h5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function getPageTitle(pathname: string) {
+  if (pathname === "/admin") return "Dashboard";
+  if (pathname.startsWith("/admin/blogs/new")) return "New post";
+  if (pathname.includes("/edit")) return "Edit post";
+  if (pathname.startsWith("/admin/blogs")) return "Blogs";
+  if (pathname.startsWith("/admin/media")) return "Media";
+  return "Admin";
+}
+
+export default function AdminShell({
+  children,
+  username,
+}: {
+  children: React.ReactNode;
+  username?: string;
+}) {
+  const pathname = usePathname();
+  const router = useRouter();
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const logout = async () => {
+    await fetch("/api/admin/logout", { method: "POST" });
+    router.push("/admin/login");
+    router.refresh();
+  };
+
+  const isActive = (href: string, exact?: boolean) =>
+    exact
+      ? pathname === href
+      : pathname === href || pathname.startsWith(`${href}/`);
+
+  const sidebar = (
+    <div className="flex h-full flex-col">
+      <div className="flex h-16 items-center gap-3 border-b border-white/10 px-5">
+        <Link href="/admin" className="flex items-center gap-2.5" onClick={() => setMobileOpen(false)}>
+          <Image
+            src="/assets/images/stellixsoft-logo.png"
+            alt="StellixSoft"
+            width={140}
+            height={36}
+            className="h-8 w-auto brightness-0 invert"
+            priority
+          />
+        </Link>
+      </div>
+
+      <div className="px-4 pt-5">
+        <p className="mb-2 px-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+          Main menu
+        </p>
+        <nav className="space-y-1">
+          {nav.map((item) => {
+            const active = isActive(item.href, "exact" in item ? item.exact : false);
+            const Icon = item.icon;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition ${
+                  active
+                    ? "bg-[var(--color-electricBlue-solid)] text-white shadow-lg shadow-cyan-900/30"
+                    : "text-slate-300 hover:bg-white/5 hover:text-white"
+                }`}
+              >
+                <Icon className="h-4.5 w-4.5 h-[18px] w-[18px] shrink-0 opacity-90" />
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
+      </div>
+
+      <div className="mt-6 px-4">
+        <p className="mb-2 px-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+          Coming soon
+        </p>
+        <div className="space-y-1">
+          {comingSoon.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.label}
+                className="flex cursor-not-allowed items-center justify-between rounded-xl px-3 py-2.5 text-sm text-slate-500"
+                title="Coming soon"
+              >
+                <span className="flex items-center gap-3">
+                  <Icon className="h-[18px] w-[18px] shrink-0" />
+                  {item.label}
+                </span>
+                <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] uppercase tracking-wide text-slate-500">
+                  Soon
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="mt-auto border-t border-white/10 p-4">
+        <Link
+          href="/"
+          target="_blank"
+          className="mb-3 flex items-center gap-2 rounded-xl px-3 py-2.5 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
+        >
+          <ExternalIcon className="h-4 w-4" />
+          View live site
+        </Link>
+        <div className="rounded-xl bg-white/5 px-3 py-3">
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-electricBlue-solid)] text-xs font-semibold text-white">
+              {(username || "A").slice(0, 1).toUpperCase()}
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="truncate text-sm font-medium text-white">
+                {username || "admin"}
+              </p>
+              <p className="text-[11px] text-slate-400">Administrator</p>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={logout}
+            className="mt-3 w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs font-medium text-slate-200 transition hover:bg-white/10"
+          >
+            Log out
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="min-h-screen bg-[#f4f6f9] text-slate-800">
+      {/* Desktop sidebar */}
+      <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 bg-[var(--color-deepSpace)] lg:block">
+        {sidebar}
+      </aside>
+
+      {/* Mobile drawer */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-50 lg:hidden">
+          <button
+            type="button"
+            className="absolute inset-0 bg-black/50"
+            aria-label="Close menu"
+            onClick={() => setMobileOpen(false)}
+          />
+          <aside className="absolute inset-y-0 left-0 w-72 max-w-[85vw] bg-[var(--color-deepSpace)] shadow-2xl">
+            <button
+              type="button"
+              className="absolute right-3 top-4 rounded-lg p-2 text-slate-300 hover:bg-white/10"
+              onClick={() => setMobileOpen(false)}
+              aria-label="Close"
+            >
+              <CloseIcon className="h-5 w-5" />
+            </button>
+            {sidebar}
+          </aside>
+        </div>
+      )}
+
+      {/* Main column */}
+      <div className="lg:pl-64">
+        <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/90 backdrop-blur">
+          <div className="flex h-16 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                className="rounded-lg border border-slate-200 p-2 text-slate-600 hover:bg-slate-50 lg:hidden"
+                onClick={() => setMobileOpen(true)}
+                aria-label="Open menu"
+              >
+                <MenuIcon className="h-5 w-5" />
+              </button>
+              <div>
+                <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400">
+                  StellixSoft Admin
+                </p>
+                <h1 className="text-base font-semibold text-slate-900 sm:text-lg">
+                  {getPageTitle(pathname)}
+                </h1>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 sm:gap-3">
+              <Link
+                href="/admin/blogs/new"
+                className="hidden rounded-lg bg-[var(--color-electricBlue-solid)] px-3.5 py-2 text-xs font-semibold text-white shadow-sm transition hover:brightness-110 sm:inline-flex"
+              >
+                + New post
+              </Link>
+              <Link
+                href="/blog"
+                target="_blank"
+                className="rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-600 transition hover:bg-slate-50"
+              >
+                Blog
+              </Link>
+              <div className="hidden items-center gap-2 rounded-full border border-slate-200 bg-slate-50 py-1 pl-1 pr-3 sm:flex">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-deepSpace)] text-[11px] font-semibold text-white">
+                  {(username || "A").slice(0, 1).toUpperCase()}
+                </span>
+                <span className="text-xs font-medium text-slate-700">
+                  {username || "admin"}
+                </span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main className="px-4 py-6 sm:px-6 lg:px-8 lg:py-8">{children}</main>
+      </div>
+    </div>
+  );
+}

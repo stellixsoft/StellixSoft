@@ -5,6 +5,9 @@ import CTAPilot from "../../components/sections/home/cta-pilot";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import { collectionPageJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
+import { getPublishedBlogPosts } from "@/src/lib/blog-service";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Blog - Software Development Insights & Best Practices",
@@ -20,13 +23,15 @@ const collectionLd = collectionPageJsonLd({
   path: "/blog",
 });
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await getPublishedBlogPosts();
+
   return (
     <>
       <JsonLd data={collectionLd} />
       <div>
         <BlogHero />
-        <BlogGrid />
+        <BlogGrid posts={posts} />
         <CTAPilot />
       </div>
     </>

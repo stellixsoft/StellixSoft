@@ -14,6 +14,8 @@ export interface BlogPost {
   featured?: boolean;
   /** Optional hero/cover path under `/public` (e.g. `/assets/images/foo.webp`) */
   coverImage?: string;
+  /** Alt text for the featured/cover image */
+  coverImageAlt?: string;
 }
 
 /** Pool used when `coverImage` is not set (stable per slug). */

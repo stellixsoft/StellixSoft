@@ -3,8 +3,9 @@
 import { useState, useMemo, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams, usePathname } from "next/navigation";
-import { blogPosts, blogCategories } from "@/src/data/blog-posts";
+import { blogCategories } from "@/src/data/blog-posts";
 import type { BlogCategory } from "@/src/data/blog-posts";
+import type { BlogPostView } from "@/src/lib/blog-service";
 import {
   getBlogCategoryFromSlug,
   getBlogCategoryPath,
@@ -45,7 +46,7 @@ function SearchIcon({ className }: { className?: string }) {
   );
 }
 
-function BlogGridInner() {
+function BlogGridInner({ posts }: { posts: BlogPostView[] }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const categoryParam = searchParams.get("category");
@@ -61,7 +62,6 @@ function BlogGridInner() {
   const [archiveMonth, setArchiveMonth] = useState<string | null>(null);
   const [page, setPage] = useState(1);
 
-  /** Same-route query updates without App Router navigation (avoids scroll-to-top / layout refocus). */
   const replaceBlogUrl = (qs: URLSearchParams) => {
     const query = qs.toString();
     const href = query ? `${pathname}?${query}` : pathname;
@@ -83,7 +83,7 @@ function BlogGridInner() {
     const onPopState = () => {
       if (window.location.pathname !== pathname) return;
       const { category: c, archiveMonth: a } = parseBlogFilters(
-        new URLSearchParams(window.location.search)
+        new URLSearchParams(window.location.search),
       );
       setCategory(c);
       setArchiveMonth(a);
@@ -94,7 +94,7 @@ function BlogGridInner() {
   }, [pathname]);
 
   const filtered = useMemo(() => {
-    return blogPosts.filter((post) => {
+    return posts.filter((post) => {
       const matchesCategory =
         category === "All" || post.category === category;
       const matchesSearch =
@@ -102,13 +102,13 @@ function BlogGridInner() {
         post.title.toLowerCase().includes(search.toLowerCase()) ||
         post.excerpt.toLowerCase().includes(search.toLowerCase()) ||
         post.tags.some((t) =>
-          t.toLowerCase().includes(search.toLowerCase())
+          t.toLowerCase().includes(search.toLowerCase()),
         );
       const matchesArchive =
         !archiveMonth || post.date.slice(0, 7) === archiveMonth;
       return matchesCategory && matchesSearch && matchesArchive;
     });
-  }, [search, category, archiveMonth]);
+  }, [posts, search, category, archiveMonth]);
 
   const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
   const paginated = filtered.slice(0, page * POSTS_PER_PAGE);
@@ -135,7 +135,6 @@ function BlogGridInner() {
   return (
     <section className="py-12 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-slate-50/80 to-white">
       <div className="max-w-[1300px] mx-auto">
-        {/* Toolbar: categories first, then search + article count on one row */}
         <div className="mb-8">
           <div className="flex flex-col gap-4">
             <div
@@ -202,7 +201,7 @@ function BlogGridInner() {
                     ·{" "}
                     {new Date(`${archiveMonth}-01T12:00:00`).toLocaleDateString(
                       "en-US",
-                      { month: "long", year: "numeric" }
+                      { month: "long", year: "numeric" },
                     )}
                   </span>
                 ) : null}
@@ -211,7 +210,6 @@ function BlogGridInner() {
           </div>
         </div>
 
-        {/* Article grid */}
         {paginated.length > 0 ? (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {paginated.map((post) => (
@@ -230,7 +228,9 @@ function BlogGridInner() {
                       {post.category}
                     </span>
                     <span className="text-slate-300">&middot;</span>
-                    <span className="text-xs font-medium text-slate-500">{post.readTime}</span>
+                    <span className="text-xs font-medium text-slate-500">
+                      {post.readTime}
+                    </span>
                   </div>
                   <h3 className="text-lg font-medium leading-snug text-[var(--color-deepSpace)] transition-colors group-hover:text-[var(--color-electricBlue)] md:text-xl">
                     {post.title}
@@ -288,14 +288,14 @@ function BlogGridInner() {
   );
 }
 
-export default function BlogGrid() {
+export default function BlogGrid({ posts }: { posts: BlogPostView[] }) {
   return (
     <Suspense
       fallback={
         <section className="min-h-[24rem] bg-gradient-to-b from-slate-50/80 to-white py-12 md:py-20 px-4 sm:px-6" />
       }
     >
-      <BlogGridInner />
+      <BlogGridInner posts={posts} />
     </Suspense>
   );
 }

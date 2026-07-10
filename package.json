@@ -4,10 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && node scripts/copy-tinymce.mjs && next build",
     "start": "next start",
     "lint": "eslint",
-    "optimize:media": "node scripts/optimize-media.mjs"
+    "optimize:media": "node scripts/optimize-media.mjs",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:studio": "prisma studio",
+    "copy:tinymce": "node scripts/copy-tinymce.mjs",
+    "postinstall": "prisma generate && node scripts/copy-tinymce.mjs"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   },
   "browserslist": [
     "chrome >= 111",
@@ -17,12 +25,16 @@
   ],
   "dependencies": {
     "@microsoft/clarity": "^1.0.2",
+    "@prisma/client": "^6.19.3",
     "@tailwindcss/typography": "^0.5.19",
+    "@tinymce/tinymce-react": "^6.3.0",
+    "iron-session": "^8.0.4",
     "next": "16.1.6",
     "nodemailer": "^8.0.4",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "resend": "^6.9.4"
+    "resend": "^6.9.4",
+    "tinymce": "^8.7.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -32,8 +44,10 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "prisma": "^6.19.3",
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
+    "tsx": "^4.23.0",
     "typescript": "^5"
   }
 }

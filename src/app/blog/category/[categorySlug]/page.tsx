@@ -11,6 +11,9 @@ import {
   getBlogCategoryFromSlug,
   getBlogCategorySlug,
 } from "@/src/lib/blog-category-url";
+import { getPublishedBlogPosts } from "@/src/lib/blog-service";
+
+export const dynamic = "force-dynamic";
 
 interface CategoryPageProps {
   params: Promise<{ categorySlug: string }>;
@@ -41,6 +44,8 @@ export default async function BlogCategoryPage({ params }: CategoryPageProps) {
   const category = getBlogCategoryFromSlug(categorySlug);
   if (!category) notFound();
 
+  const posts = await getPublishedBlogPosts();
+
   const collectionLd = collectionPageJsonLd({
     name: `StellixSoft Blog - ${category}`,
     description: `Insights and practical guides about ${category}.`,
@@ -52,7 +57,7 @@ export default async function BlogCategoryPage({ params }: CategoryPageProps) {
       <JsonLd data={collectionLd} />
       <div>
         <BlogHero />
-        <BlogGrid />
+        <BlogGrid posts={posts} />
         <CTAPilot />
       </div>
     </>

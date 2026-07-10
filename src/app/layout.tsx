@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "../components/layout/Header";
-import Footer from "../components/layout/Footer";
+import SiteChrome from "../components/layout/site-chrome";
 import GoogleAnalytics from "../components/analytics/GoogleAnalytics";
 import MicrosoftClarity from "../components/analytics/MicrosoftClarity";
 import { buildRootJsonLdGraph } from "@/src/lib/schema";
@@ -107,9 +106,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

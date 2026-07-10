@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { blogPosts } from "@/src/data/blog-posts";
+import { getPublishedBlogPosts } from "@/src/lib/blog-service";
 import {
   STATIC_CASE_STUDY_LAST_MOD,
   STATIC_HUB_LAST_MOD,
@@ -10,8 +10,9 @@ import {
 } from "@/src/lib/site-content-dates";
 import { getSiteUrl } from "@/src/lib/site-url";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const SITE_URL = getSiteUrl();
+  const blogPosts = await getPublishedBlogPosts();
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: SITE_URL, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "weekly", priority: 1.0 },

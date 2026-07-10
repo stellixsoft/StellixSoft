@@ -1,18 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
+import { blogCategories } from "@/src/data/blog-posts";
 import {
-  blogPosts,
-  blogCategories,
   getBlogCoverImageSrc,
-} from "@/src/data/blog-posts";
+  type BlogPostView,
+} from "@/src/lib/blog-service";
 import { getBlogCategoryPath } from "@/src/lib/blog-category-url";
 
-function buildArchives() {
-  const byMonth = new Map<
-    string,
-    { label: string; count: number }
-  >();
-  for (const p of blogPosts) {
+function buildArchives(posts: BlogPostView[]) {
+  const byMonth = new Map<string, { label: string; count: number }>();
+  for (const p of posts) {
     const key = p.date.slice(0, 7);
     const d = new Date(p.date);
     const label = d.toLocaleDateString("en-US", {
@@ -30,19 +27,20 @@ function buildArchives() {
 
 interface BlogPostSidebarProps {
   currentSlug: string;
+  posts: BlogPostView[];
 }
 
-export default function BlogPostSidebar({ currentSlug }: BlogPostSidebarProps) {
-  const sorted = [...blogPosts].sort(
-    (a, b) =>
-      new Date(b.date).getTime() - new Date(a.date).getTime()
+export default function BlogPostSidebar({
+  currentSlug,
+  posts,
+}: BlogPostSidebarProps) {
+  const sorted = [...posts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
-  const latest = sorted
-    .filter((p) => p.slug !== currentSlug)
-    .slice(0, 3);
+  const latest = sorted.filter((p) => p.slug !== currentSlug).slice(0, 3);
 
   const categories = blogCategories.filter((c) => c !== "All");
-  const archives = buildArchives();
+  const archives = buildArchives(posts);
 
   return (
     <aside className="lg:sticky lg:top-28 lg:self-start">
