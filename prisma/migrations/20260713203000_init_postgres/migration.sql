@@ -1,6 +1,9 @@
+-- CreateSchema
+CREATE SCHEMA IF NOT EXISTS "public";
+
 -- CreateTable
 CREATE TABLE "BlogPost" (
-    "id" TEXT NOT NULL PRIMARY KEY,
+    "id" TEXT NOT NULL,
     "slug" TEXT NOT NULL,
     "title" TEXT NOT NULL,
     "excerpt" TEXT NOT NULL DEFAULT '',
@@ -15,10 +18,13 @@ CREATE TABLE "BlogPost" (
     "metaDescription" TEXT NOT NULL DEFAULT '',
     "focusKeyword" TEXT NOT NULL DEFAULT '',
     "coverImage" TEXT,
+    "coverImageAlt" TEXT NOT NULL DEFAULT '',
     "featured" BOOLEAN NOT NULL DEFAULT false,
     "status" TEXT NOT NULL DEFAULT 'draft',
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "modifiedAt" DATETIME NOT NULL
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "modifiedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "BlogPost_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
