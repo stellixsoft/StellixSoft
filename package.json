@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && prisma migrate deploy && node scripts/copy-tinymce.mjs && next build",
+    "build": "prisma generate && prisma migrate deploy && node scripts/copy-tinymce.mjs && node scripts/generate-media-manifest.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "optimize:media": "node scripts/optimize-media.mjs",
@@ -13,7 +13,8 @@
     "db:seed": "tsx prisma/seed.ts",
     "db:studio": "prisma studio",
     "copy:tinymce": "node scripts/copy-tinymce.mjs",
-    "postinstall": "prisma generate && node scripts/copy-tinymce.mjs"
+    "generate:media-manifest": "node scripts/generate-media-manifest.mjs",
+    "postinstall": "prisma generate && node scripts/copy-tinymce.mjs && node scripts/generate-media-manifest.mjs"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

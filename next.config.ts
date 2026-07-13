@@ -4,6 +4,15 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  // Keep site images + TinyMCE out of serverless bundles (CDN serves them).
+  outputFileTracingExcludes: {
+    "*": [
+      "./public/assets/**/*",
+      "./public/tinymce/**/*",
+      "./public/uploads/**/*",
+    ],
+  },
+  serverExternalPackages: ["@prisma/client", "prisma"],
   async redirects() {
     return [
       {

@@ -1,6 +1,7 @@
 import { readdir, stat } from "fs/promises";
 import path from "path";
 import { prisma } from "@/src/lib/prisma";
+import siteMediaManifest from "@/src/data/site-media-manifest.json";
 
 export type MediaSource = "site" | "upload" | "cover" | "content";
 
@@ -18,13 +19,6 @@ export interface MediaItem {
 
 const IMAGE_EXT = /\.(jpe?g|png|webp|gif|avif|svg|ico)$/i;
 const IMG_SRC_RE = /<img[^>]+src=["']([^"']+)["']/gi;
-
-/** Skip editor/vendor bundles — not website media. */
-const SKIP_DIR_NAMES = new Set([
-  "tinymce",
-  "node_modules",
-  ".git",
-]);
 
 function fileNameFromUrl(url: string) {
   try {
@@ -98,87 +92,59 @@ function extractContentImages(html: string): string[] {
   return urls;
 }
 
-async function walkPublicImages(
-  absDir: string,
-  publicRoot: string,
-  map: Map<string, MediaItem>,
-  source: MediaSource,
-) {
+/** Local uploads only — never walks public/assets (that inflates Vercel functions). */
+async function walkUploads(map: Map<string, MediaItem>) {
+  const uploadDir = path.join(process.cwd(), "public", "uploads");
   let entries;
   try {
-    entries = await readdir(absDir, { withFileTypes: true });
+    entries = await readdir(uploadDir, { withFileTypes: true });
   } catch {
     return;
   }
 
   for (const entry of entries) {
-    if (entry.name.startsWith(".")) continue;
-    const abs = path.join(absDir, entry.name);
-    if (entry.isDirectory()) {
-      if (SKIP_DIR_NAMES.has(entry.name.toLowerCase())) continue;
-      await walkPublicImages(abs, publicRoot, map, source);
+    if (entry.name.startsWith(".") || !entry.isDirectory()) continue;
+    const dir = path.join(uploadDir, entry.name);
+    let files;
+    try {
+      files = await readdir(dir);
+    } catch {
       continue;
     }
-    if (!entry.isFile() || !IMAGE_EXT.test(entry.name)) continue;
-
-    const rel = path.relative(publicRoot, abs).split(path.sep).join("/");
-    const url = `/${rel}`;
-    try {
-      const info = await stat(abs);
-      addImage(map, url, source, {
-        size: info.size,
-        modifiedAt: info.mtime.toISOString(),
-        ext: path.extname(entry.name).slice(1).toLowerCase(),
-      });
-    } catch {
-      addImage(map, url, source, {
-        ext: path.extname(entry.name).slice(1).toLowerCase(),
-      });
+    for (const file of files) {
+      if (!IMAGE_EXT.test(file)) continue;
+      const abs = path.join(dir, file);
+      const url = `/uploads/${entry.name}/${file}`;
+      try {
+        const info = await stat(abs);
+        addImage(map, url, "upload", {
+          size: info.size,
+          modifiedAt: info.mtime.toISOString(),
+          ext: path.extname(file).slice(1).toLowerCase(),
+        });
+      } catch {
+        addImage(map, url, "upload", {
+          ext: path.extname(file).slice(1).toLowerCase(),
+        });
+      }
     }
   }
 }
 
 export async function listMediaLibrary(): Promise<MediaItem[]> {
   const map = new Map<string, MediaItem>();
-  const publicRoot = path.join(process.cwd(), "public");
 
-  // All website assets under /public (icons, png, jpg, webp, svg, …)
-  // except vendor folders like tinymce.
-  await walkPublicImages(
-    path.join(publicRoot, "assets"),
-    publicRoot,
-    map,
-    "site",
-  );
-
-  // Uploaded media
-  await walkPublicImages(
-    path.join(publicRoot, "uploads"),
-    publicRoot,
-    map,
-    "upload",
-  );
-
-  // Any loose images at public root
-  try {
-    const rootEntries = await readdir(publicRoot, { withFileTypes: true });
-    for (const entry of rootEntries) {
-      if (!entry.isFile() || !IMAGE_EXT.test(entry.name)) continue;
-      const abs = path.join(publicRoot, entry.name);
-      try {
-        const info = await stat(abs);
-        addImage(map, `/${entry.name}`, "site", {
-          size: info.size,
-          modifiedAt: info.mtime.toISOString(),
-          ext: path.extname(entry.name).slice(1).toLowerCase(),
-        });
-      } catch {
-        addImage(map, `/${entry.name}`, "site");
-      }
-    }
-  } catch {
-    /* ignore */
+  // Build-time path list only (images stay on CDN / public, not in the lambda).
+  for (const item of siteMediaManifest) {
+    addImage(map, item.url, "site", {
+      size: item.size,
+      modifiedAt: item.modifiedAt,
+      ext: item.ext,
+    });
   }
+
+  // Local uploads (empty on most serverless hosts; safe when present locally).
+  await walkUploads(map);
 
   const posts = await prisma.blogPost.findMany({
     select: { coverImage: true, content: true },
