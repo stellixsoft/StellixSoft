@@ -1,10 +1,14 @@
-import type { BlogPost as PrismaBlogPost } from "@prisma/client";
 import {
   blogPosts as staticBlogPosts,
   getBlogCoverImageSrc as staticCover,
   type BlogPost,
 } from "@/src/data/blog-posts";
-import { prisma } from "@/src/lib/prisma";
+import {
+  getBlogPostById,
+  getBlogPostBySlug as getRepoPostBySlug,
+  listBlogPosts,
+  type BlogPostRecord,
+} from "@/src/lib/blog-repo";
 
 export type BlogPostView = BlogPost & {
   id?: string;
@@ -14,71 +18,59 @@ export type BlogPostView = BlogPost & {
   coverImageAlt?: string;
 };
 
-function parseTags(tags: string): string[] {
-  try {
-    const parsed = JSON.parse(tags);
-    return Array.isArray(parsed) ? parsed.map(String) : [];
-  } catch {
-    return [];
-  }
-}
-
-export function dbPostToView(post: PrismaBlogPost): BlogPostView {
+export function dbPostToView(post: BlogPostRecord): BlogPostView {
   return {
     id: post.id,
     slug: post.slug,
     title: post.title,
     excerpt: post.excerpt,
     content: post.content,
-    contentFormat: (post.contentFormat as "html" | "markdown") || "html",
+    contentFormat: post.contentFormat || "html",
     date: post.date,
     updatedAt: post.updatedAt ?? undefined,
     readTime: post.readTime,
     category: post.category,
-    tags: parseTags(post.tags),
+    tags: post.tags,
     metaTitle: post.metaTitle || post.title,
     metaDescription: post.metaDescription || post.excerpt,
     focusKeyword: post.focusKeyword || undefined,
     featured: post.featured,
     coverImage: post.coverImage ?? undefined,
-    coverImageAlt:
-      "coverImageAlt" in post && typeof post.coverImageAlt === "string"
-        ? post.coverImageAlt
-        : undefined,
+    coverImageAlt: post.coverImageAlt || undefined,
     status: post.status,
+  };
+}
+
+function staticToView(post: BlogPost): BlogPostView {
+  return {
+    ...post,
+    contentFormat: "markdown",
+    status: "published",
   };
 }
 
 export async function getPublishedBlogPosts(): Promise<BlogPostView[]> {
   try {
-    const posts = await prisma.blogPost.findMany({
-      where: { status: "published" },
-      orderBy: { date: "desc" },
+    const posts = await listBlogPosts({
+      status: "published",
+      orderBy: "date",
     });
     if (posts.length > 0) {
       return posts.map(dbPostToView);
     }
   } catch {
-    // DB unavailable — fall back to static posts
+    // Firestore unavailable — fall back to static posts
   }
-  return staticBlogPosts.map((p) => ({
-    ...p,
-    contentFormat: "markdown" as const,
-    status: "published",
-  }));
+  return staticBlogPosts.map(staticToView);
 }
 
 export async function getBlogPostBySlug(
   slug: string,
 ): Promise<BlogPostView | null> {
   try {
-    const post = await prisma.blogPost.findUnique({ where: { slug } });
-    if (post && post.status === "published") {
+    const post = await getRepoPostBySlug(slug);
+    if (post?.status === "published") {
       return dbPostToView(post);
-    }
-    // Allow draft preview only via admin — public gets published only
-    if (post && post.status !== "published") {
-      // still check static fallback for same slug if DB has draft
     }
   } catch {
     // fall through
@@ -86,34 +78,21 @@ export async function getBlogPostBySlug(
 
   const staticPost = staticBlogPosts.find((p) => p.slug === slug);
   if (staticPost) {
-    return {
-      ...staticPost,
-      contentFormat: "markdown",
-      status: "published",
-    };
-  }
-
-  try {
-    const post = await prisma.blogPost.findUnique({ where: { slug } });
-    if (post?.status === "published") return dbPostToView(post);
-  } catch {
-    /* ignore */
+    return staticToView(staticPost);
   }
 
   return null;
 }
 
 export async function getAllAdminBlogPosts(): Promise<BlogPostView[]> {
-  const posts = await prisma.blogPost.findMany({
-    orderBy: { modifiedAt: "desc" },
-  });
+  const posts = await listBlogPosts({ orderBy: "modifiedAt" });
   return posts.map(dbPostToView);
 }
 
 export async function getAdminBlogPostById(
   id: string,
 ): Promise<BlogPostView | null> {
-  const post = await prisma.blogPost.findUnique({ where: { id } });
+  const post = await getBlogPostById(id);
   return post ? dbPostToView(post) : null;
 }
 

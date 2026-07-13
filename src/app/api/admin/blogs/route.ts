@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAdminSession } from "@/src/lib/auth";
-import { prisma } from "@/src/lib/prisma";
 import { dbPostToView } from "@/src/lib/blog-service";
+import {
+  createBlogPost,
+  getBlogPostBySlug,
+  listBlogPosts,
+} from "@/src/lib/blog-repo";
 import { estimateReadTime, slugify } from "@/src/lib/slug";
 
 async function assertAdmin() {
@@ -17,9 +21,7 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const posts = await prisma.blogPost.findMany({
-    orderBy: { modifiedAt: "desc" },
-  });
+  const posts = await listBlogPosts({ orderBy: "modifiedAt" });
   return NextResponse.json(posts.map(dbPostToView));
 }
 
@@ -41,7 +43,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid slug" }, { status: 400 });
     }
 
-    const existing = await prisma.blogPost.findUnique({ where: { slug } });
+    const existing = await getBlogPostBySlug(slug);
     if (existing) {
       return NextResponse.json(
         { error: "A post with this slug already exists" },
@@ -59,27 +61,24 @@ export async function POST(req: NextRequest) {
           .map((t: string) => t.trim())
           .filter(Boolean);
 
-    const post = await prisma.blogPost.create({
-      // coverImageAlt requires regenerated Prisma client after migrate
-      data: {
-        title,
-        slug,
-        excerpt: String(body.excerpt || "").trim(),
-        content,
-        contentFormat: "html",
-        date: String(body.date || today),
-        updatedAt: status === "published" ? today : null,
-        readTime: String(body.readTime || estimateReadTime(content)),
-        category: String(body.category || "Enterprise Development"),
-        tags: JSON.stringify(tags),
-        metaTitle: String(body.metaTitle || title).trim(),
-        metaDescription: String(body.metaDescription || body.excerpt || "").trim(),
-        focusKeyword: String(body.focusKeyword || "").trim(),
-        coverImage: body.coverImage ? String(body.coverImage) : null,
-        coverImageAlt: String(body.coverImageAlt || "").trim(),
-        featured: Boolean(body.featured),
-        status,
-      } as never,
+    const post = await createBlogPost({
+      title,
+      slug,
+      excerpt: String(body.excerpt || "").trim(),
+      content,
+      contentFormat: "html",
+      date: String(body.date || today),
+      updatedAt: status === "published" ? today : null,
+      readTime: String(body.readTime || estimateReadTime(content)),
+      category: String(body.category || "Enterprise Development"),
+      tags,
+      metaTitle: String(body.metaTitle || title).trim(),
+      metaDescription: String(body.metaDescription || body.excerpt || "").trim(),
+      focusKeyword: String(body.focusKeyword || "").trim(),
+      coverImage: body.coverImage ? String(body.coverImage) : null,
+      coverImageAlt: String(body.coverImageAlt || "").trim(),
+      featured: Boolean(body.featured),
+      status,
     });
 
     return NextResponse.json(dbPostToView(post), { status: 201 });

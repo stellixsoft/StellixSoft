@@ -1,6 +1,6 @@
 import { readdir, stat } from "fs/promises";
 import path from "path";
-import { prisma } from "@/src/lib/prisma";
+import { listBlogPosts } from "@/src/lib/blog-repo";
 import siteMediaManifest from "@/src/data/site-media-manifest.json";
 
 export type MediaSource = "site" | "upload" | "cover" | "content";
@@ -146,15 +146,16 @@ export async function listMediaLibrary(): Promise<MediaItem[]> {
   // Local uploads (empty on most serverless hosts; safe when present locally).
   await walkUploads(map);
 
-  const posts = await prisma.blogPost.findMany({
-    select: { coverImage: true, content: true },
-  });
-
-  for (const post of posts) {
-    if (post.coverImage) addImage(map, post.coverImage, "cover");
-    for (const src of extractContentImages(post.content || "")) {
-      addImage(map, src, "content");
+  try {
+    const posts = await listBlogPosts();
+    for (const post of posts) {
+      if (post.coverImage) addImage(map, post.coverImage, "cover");
+      for (const src of extractContentImages(post.content || "")) {
+        addImage(map, src, "content");
+      }
     }
+  } catch {
+    // Firestore optional for media listing
   }
 
   return Array.from(map.values()).sort((a, b) => {

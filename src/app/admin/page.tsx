@@ -2,7 +2,10 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import AdminShell from "@/src/components/admin/admin-shell";
 import { getAdminSession } from "@/src/lib/auth";
-import { prisma } from "@/src/lib/prisma";
+import {
+  countBlogPosts,
+  listBlogPosts,
+} from "@/src/lib/blog-repo";
 
 export const dynamic = "force-dynamic";
 
@@ -10,23 +13,21 @@ export default async function AdminDashboardPage() {
   const session = await getAdminSession();
   if (!session.isLoggedIn) redirect("/admin/login");
 
-  const [total, published, drafts, recent] = await Promise.all([
-    prisma.blogPost.count(),
-    prisma.blogPost.count({ where: { status: "published" } }),
-    prisma.blogPost.count({ where: { status: "draft" } }),
-    prisma.blogPost.findMany({
-      orderBy: { modifiedAt: "desc" },
-      take: 5,
-      select: {
-        id: true,
-        title: true,
-        slug: true,
-        status: true,
-        date: true,
-        updatedAt: true,
-      },
-    }),
-  ]);
+  let total = 0;
+  let published = 0;
+  let drafts = 0;
+  let recent: Awaited<ReturnType<typeof listBlogPosts>> = [];
+
+  try {
+    [total, published, drafts, recent] = await Promise.all([
+      countBlogPosts(),
+      countBlogPosts("published"),
+      countBlogPosts("draft"),
+      listBlogPosts({ orderBy: "modifiedAt" }).then((posts) => posts.slice(0, 5)),
+    ]);
+  } catch {
+    // Firestore may be briefly unavailable
+  }
 
   const cards = [
     {

@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
       "./public/uploads/**/*",
     ],
   },
-  serverExternalPackages: ["@prisma/client", "prisma"],
+  serverExternalPackages: ["firebase-admin"],
   async redirects() {
     return [
       {

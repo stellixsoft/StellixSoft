@@ -46,3 +46,5 @@ next-env.d.ts
 /prisma/dev.db-journal
 /public/uploads
 /public/tinymce
+serviceAccountKey.json
+**/serviceAccountKey.json
