@@ -79,6 +79,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         title={post.title}
         excerpt={post.excerpt}
         date={post.date}
+        updatedAt={post.updatedAt}
       />
 
       <article className="px-4 py-12 sm:px-6 md:py-16">

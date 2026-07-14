@@ -7,6 +7,18 @@ interface BlogPostHeroProps {
   title: string;
   excerpt: string;
   date: string;
+  /** ISO date (YYYY-MM-DD) when the post was last updated */
+  updatedAt?: string;
+}
+
+function formatDisplayDate(value: string) {
+  const d = new Date(value);
+  if (Number.isNaN(d.getTime())) return value;
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 
 export default function BlogPostHero({
@@ -15,13 +27,16 @@ export default function BlogPostHero({
   title,
   excerpt,
   date,
+  updatedAt,
 }: BlogPostHeroProps) {
-  const formattedDate = new Date(date).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-
+  const formattedDate = formatDisplayDate(date);
+  const showUpdated =
+    Boolean(updatedAt) &&
+    updatedAt !== date &&
+    !Number.isNaN(new Date(updatedAt!).getTime());
+  const formattedUpdated = showUpdated
+    ? formatDisplayDate(updatedAt!)
+    : null;
   return (
     <section className="relative flex min-h-[calc(70vh+120px)] items-center justify-center overflow-hidden -mt-[100px] py-32 md:py-40">
       <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
@@ -71,9 +86,29 @@ export default function BlogPostHero({
           {excerpt}
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-white/60">
-          <time dateTime={date}>{formattedDate}</time>
-          <span aria-hidden>|</span>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-medium text-white/60">
+          <span>
+            Published{" "}
+            <time dateTime={date} className="text-white/80">
+              {formattedDate}
+            </time>
+          </span>
+          {showUpdated && formattedUpdated && (
+            <>
+              <span aria-hidden className="hidden sm:inline">
+                |
+              </span>
+              <span>
+                Last updated{" "}
+                <time dateTime={updatedAt} className="text-white/80">
+                  {formattedUpdated}
+                </time>
+              </span>
+            </>
+          )}
+          <span aria-hidden className="hidden sm:inline">
+            |
+          </span>
           <span>By StellixSoft Team</span>
         </div>
       </div>

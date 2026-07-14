@@ -70,6 +70,7 @@ export async function PUT(req: NextRequest, context: RouteContext) {
 
     const content = String(body.content || "");
     const status = body.status === "published" ? "published" : "draft";
+    // Always bump last-updated when any admin saves the post
     const today = new Date().toISOString().slice(0, 10);
     const tags = Array.isArray(body.tags)
       ? body.tags.map(String)
@@ -84,7 +85,8 @@ export async function PUT(req: NextRequest, context: RouteContext) {
       excerpt: String(body.excerpt || "").trim(),
       content,
       contentFormat: body.contentFormat === "markdown" ? "markdown" : "html",
-      date: String(body.date || existing.date),
+      // Keep original publish date; never take an outdated client value as "updated"
+      date: existing.date || String(body.date || today),
       updatedAt: today,
       readTime: String(body.readTime || estimateReadTime(content)),
       category: String(body.category || existing.category),
