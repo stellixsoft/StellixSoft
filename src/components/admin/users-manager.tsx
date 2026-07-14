@@ -17,9 +17,8 @@ export type AdminUserListItem = {
   invitedAt?: string;
 };
 
-const ASSIGNABLE = ADMIN_PERMISSIONS.filter((p) => p.id !== "users").concat(
-  ADMIN_PERMISSIONS.filter((p) => p.id === "users"),
-);
+/** Users tab last in the checkbox list (order matches ADMIN_PERMISSIONS). */
+const ASSIGNABLE: (typeof ADMIN_PERMISSIONS)[number][] = [...ADMIN_PERMISSIONS];
 
 export default function UsersManager({
   initialUsers,
