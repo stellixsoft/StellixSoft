@@ -3,31 +3,52 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import {
+  hasPermission,
+  type AdminPermissionId,
+} from "@/src/lib/admin-permissions";
 
-const nav = [
+type NavItem = {
+  href: string;
+  label: string;
+  permission: AdminPermissionId;
+  exact?: boolean;
+  icon: (props: { className?: string }) => React.ReactNode;
+};
+
+const nav: NavItem[] = [
   {
     href: "/admin",
     label: "Dashboard",
+    permission: "dashboard",
     exact: true,
     icon: DashboardIcon,
   },
   {
     href: "/admin/blogs",
     label: "Blogs",
+    permission: "blogs",
     icon: BlogIcon,
   },
   {
     href: "/admin/media",
     label: "Media",
+    permission: "media",
     icon: MediaIcon,
   },
-] as const;
+  {
+    href: "/admin/users",
+    label: "Users",
+    permission: "users",
+    icon: UsersIcon,
+  },
+];
 
 const comingSoon = [
-  { label: "Pages", icon: PagesIcon },
-  { label: "Services", icon: ServicesIcon },
-] as const;
+  { label: "Pages", icon: PagesIcon, permission: "pages" as const },
+  { label: "Services", icon: ServicesIcon, permission: "services" as const },
+];
 
 function DashboardIcon({ className }: { className?: string }) {
   return (
@@ -55,6 +76,17 @@ function MediaIcon({ className }: { className?: string }) {
       <rect x="3" y="5" width="18" height="14" rx="2" />
       <circle cx="8.5" cy="10" r="1.5" fill="currentColor" stroke="none" />
       <path d="M21 16l-5.5-5.5L7 19" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function UsersIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+      <circle cx="9" cy="8" r="3.5" />
+      <path d="M3.5 19c.8-3 2.9-4.5 5.5-4.5S13.7 16 14.5 19" strokeLinecap="round" />
+      <circle cx="17" cy="9" r="2.5" />
+      <path d="M15.5 19c.4-1.8 1.6-3 3.5-3 1.2 0 2.2.5 2.9 1.3" strokeLinecap="round" />
     </svg>
   );
 }
@@ -109,19 +141,33 @@ function getPageTitle(pathname: string) {
   if (pathname.includes("/edit")) return "Edit post";
   if (pathname.startsWith("/admin/blogs")) return "Blogs";
   if (pathname.startsWith("/admin/media")) return "Media";
+  if (pathname.startsWith("/admin/users")) return "Users";
   return "Admin";
 }
 
 export default function AdminShell({
   children,
   username,
+  permissions,
+  isSuperAdmin,
 }: {
   children: React.ReactNode;
   username?: string;
+  permissions?: AdminPermissionId[];
+  isSuperAdmin?: boolean;
 }) {
   const pathname = usePathname();
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const can = (id: AdminPermissionId) =>
+    hasPermission(permissions, id, Boolean(isSuperAdmin));
+
+  const visibleNav = useMemo(
+    () => nav.filter((item) => can(item.permission)),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [permissions, isSuperAdmin],
+  );
 
   const logout = async () => {
     await fetch("/api/admin/logout", { method: "POST" });
@@ -133,6 +179,8 @@ export default function AdminShell({
     exact
       ? pathname === href
       : pathname === href || pathname.startsWith(`${href}/`);
+
+  const roleLabel = isSuperAdmin ? "Super admin" : "Team member";
 
   const sidebar = (
     <div className="flex h-full flex-col">
@@ -154,8 +202,8 @@ export default function AdminShell({
           Main menu
         </p>
         <nav className="space-y-1">
-          {nav.map((item) => {
-            const active = isActive(item.href, "exact" in item ? item.exact : false);
+          {visibleNav.map((item) => {
+            const active = isActive(item.href, item.exact);
             const Icon = item.icon;
             return (
               <Link
@@ -168,7 +216,7 @@ export default function AdminShell({
                     : "text-slate-300 hover:bg-white/5 hover:text-white"
                 }`}
               >
-                <Icon className="h-4.5 w-4.5 h-[18px] w-[18px] shrink-0 opacity-90" />
+                <Icon className="h-[18px] w-[18px] shrink-0 opacity-90" />
                 {item.label}
               </Link>
             );
@@ -183,18 +231,19 @@ export default function AdminShell({
         <div className="space-y-1">
           {comingSoon.map((item) => {
             const Icon = item.icon;
+            const granted = can(item.permission);
             return (
               <div
                 key={item.label}
                 className="flex cursor-not-allowed items-center justify-between rounded-xl px-3 py-2.5 text-sm text-slate-500"
-                title="Coming soon"
+                title={granted ? "Coming soon (access granted)" : "Coming soon"}
               >
                 <span className="flex items-center gap-3">
                   <Icon className="h-[18px] w-[18px] shrink-0" />
                   {item.label}
                 </span>
                 <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] uppercase tracking-wide text-slate-500">
-                  Soon
+                  {granted ? "Soon" : "Soon"}
                 </span>
               </div>
             );
@@ -220,7 +269,7 @@ export default function AdminShell({
               <p className="truncate text-sm font-medium text-white">
                 {username || "admin"}
               </p>
-              <p className="text-[11px] text-slate-400">Administrator</p>
+              <p className="text-[11px] text-slate-400">{roleLabel}</p>
             </div>
           </div>
           <button
@@ -237,12 +286,10 @@ export default function AdminShell({
 
   return (
     <div className="min-h-screen bg-[#f4f6f9] text-slate-800">
-      {/* Desktop sidebar */}
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 bg-[var(--color-deepSpace)] lg:block">
         {sidebar}
       </aside>
 
-      {/* Mobile drawer */}
       {mobileOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <button
@@ -265,7 +312,6 @@ export default function AdminShell({
         </div>
       )}
 
-      {/* Main column */}
       <div className="lg:pl-64">
         <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/90 backdrop-blur">
           <div className="flex h-16 items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
@@ -289,12 +335,14 @@ export default function AdminShell({
             </div>
 
             <div className="flex items-center gap-2 sm:gap-3">
-              <Link
-                href="/admin/blogs/new"
-                className="hidden rounded-lg bg-[var(--color-electricBlue-solid)] px-3.5 py-2 text-xs font-semibold text-white shadow-sm transition hover:brightness-110 sm:inline-flex"
-              >
-                + New post
-              </Link>
+              {can("blogs") && (
+                <Link
+                  href="/admin/blogs/new"
+                  className="hidden rounded-lg bg-[var(--color-electricBlue-solid)] px-3.5 py-2 text-xs font-semibold text-white shadow-sm transition hover:brightness-110 sm:inline-flex"
+                >
+                  + New post
+                </Link>
+              )}
               <Link
                 href="/blog"
                 target="_blank"

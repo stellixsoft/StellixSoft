@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAdminSession } from "@/src/lib/auth";
+import { requirePermission } from "@/src/lib/auth";
 import { dbPostToView } from "@/src/lib/blog-service";
 import {
   createBlogPost,
@@ -8,17 +8,13 @@ import {
 } from "@/src/lib/blog-repo";
 import { estimateReadTime, slugify } from "@/src/lib/slug";
 
-async function assertAdmin() {
-  const session = await getAdminSession();
-  if (!session.isLoggedIn) {
-    return null;
-  }
-  return session;
-}
-
 export async function GET() {
-  if (!(await assertAdmin())) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const gate = await requirePermission("blogs");
+  if (!gate.ok) {
+    return NextResponse.json(
+      { error: gate.status === 401 ? "Unauthorized" : "Forbidden" },
+      { status: gate.status },
+    );
   }
 
   const posts = await listBlogPosts({ orderBy: "modifiedAt" });
@@ -26,8 +22,12 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
-  if (!(await assertAdmin())) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const gate = await requirePermission("blogs");
+  if (!gate.ok) {
+    return NextResponse.json(
+      { error: gate.status === 401 ? "Unauthorized" : "Forbidden" },
+      { status: gate.status },
+    );
   }
 
   try {

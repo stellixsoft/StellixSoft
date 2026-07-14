@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import AdminShell from "@/src/components/admin/admin-shell";
-import { getAdminSession } from "@/src/lib/auth";
+import { getAdminSession, sessionIsSuperAdmin } from "@/src/lib/auth";
 import { getAllAdminBlogPosts } from "@/src/lib/blog-service";
 import DeleteBlogButton from "@/src/components/admin/delete-blog-button";
 
@@ -14,8 +14,11 @@ export default async function AdminBlogsPage() {
   const posts = await getAllAdminBlogPosts();
 
   return (
-    <AdminShell username={session.username}>
-      <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <AdminShell
+      username={session.username}
+      permissions={session.permissions}
+      isSuperAdmin={sessionIsSuperAdmin(session)}
+    >      <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
         <p className="text-sm text-slate-500">
           Create, edit, and publish posts for the public blog.
         </p>

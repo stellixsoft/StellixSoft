@@ -78,12 +78,13 @@ function LoginForm() {
           <div className="mt-6 space-y-4">
             <div>
               <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-500">
-                Username
+                Email or username
               </label>
               <input
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 autoComplete="username"
+                placeholder="you@company.com"
                 className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-sm outline-none transition focus:border-[var(--color-electricBlue)] focus:bg-white focus:ring-2 focus:ring-[var(--color-electricBlue)]/20"
                 required
               />

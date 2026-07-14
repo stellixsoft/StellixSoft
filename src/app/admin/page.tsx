@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import AdminShell from "@/src/components/admin/admin-shell";
-import { getAdminSession } from "@/src/lib/auth";
+import { getAdminSession, sessionIsSuperAdmin } from "@/src/lib/auth";
 import {
   countBlogPosts,
   listBlogPosts,
@@ -9,10 +9,14 @@ import {
 
 export const dynamic = "force-dynamic";
 
-export default async function AdminDashboardPage() {
+export default async function AdminDashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ denied?: string }>;
+}) {
   const session = await getAdminSession();
   if (!session.isLoggedIn) redirect("/admin/login");
-
+  const sp = await searchParams;
   let total = 0;
   let published = 0;
   let drafts = 0;
@@ -51,7 +55,17 @@ export default async function AdminDashboardPage() {
   ];
 
   return (
-    <AdminShell username={session.username}>
+    <AdminShell
+      username={session.username}
+      permissions={session.permissions}
+      isSuperAdmin={sessionIsSuperAdmin(session)}
+    >
+      {sp.denied ? (
+        <p className="mb-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+          You don&apos;t have access to that section. Ask a super admin to update
+          your permissions.
+        </p>
+      ) : null}
       <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="text-sm text-slate-500">

@@ -1,7 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 import AdminShell from "@/src/components/admin/admin-shell";
 import BlogEditorForm from "@/src/components/admin/blog-editor-form";
-import { getAdminSession } from "@/src/lib/auth";
+import { getAdminSession, sessionIsSuperAdmin } from "@/src/lib/auth";
 import {
   getAdminBlogPostById,
   getBlogCoverImageSrc,
@@ -26,8 +26,11 @@ export default async function EditBlogPage({ params }: PageProps) {
   const resolvedCover = getBlogCoverImageSrc(post);
 
   return (
-    <AdminShell username={session.username}>
-      <div className="mb-6">
+    <AdminShell
+      username={session.username}
+      permissions={session.permissions}
+      isSuperAdmin={sessionIsSuperAdmin(session)}
+    >      <div className="mb-6">
         <p className="text-sm text-slate-500">{post.title}</p>
       </div>
       <BlogEditorForm

@@ -1,12 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import { writeFile, mkdir } from "fs/promises";
 import path from "path";
-import { getAdminSession } from "@/src/lib/auth";
+import { requirePermission } from "@/src/lib/auth";
 
 export async function POST(req: NextRequest) {
-  const session = await getAdminSession();
-  if (!session.isLoggedIn) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const media = await requirePermission("media");
+  if (!media.ok) {
+    const blogs = await requirePermission("blogs");
+    if (!blogs.ok) {
+      return NextResponse.json(
+        { error: media.status === 401 ? "Unauthorized" : "Forbidden" },
+        { status: media.status === 401 ? 401 : 403 },
+      );
+    }
   }
 
   try {

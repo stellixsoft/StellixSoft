@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getAdminSession } from "@/src/lib/auth";
+import { requirePermission } from "@/src/lib/auth";
 import { dbPostToView } from "@/src/lib/blog-service";
 import {
   deleteBlogPost,
@@ -9,19 +9,24 @@ import {
 } from "@/src/lib/blog-repo";
 import { estimateReadTime, slugify } from "@/src/lib/slug";
 
-async function assertAdmin() {
-  const session = await getAdminSession();
-  return session.isLoggedIn ? session : null;
-}
-
 interface RouteContext {
   params: Promise<{ id: string }>;
 }
 
-export async function GET(_req: NextRequest, context: RouteContext) {
-  if (!(await assertAdmin())) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+async function gateBlogs() {
+  const gate = await requirePermission("blogs");
+  if (!gate.ok) {
+    return NextResponse.json(
+      { error: gate.status === 401 ? "Unauthorized" : "Forbidden" },
+      { status: gate.status },
+    );
   }
+  return null;
+}
+
+export async function GET(_req: NextRequest, context: RouteContext) {
+  const denied = await gateBlogs();
+  if (denied) return denied;
 
   const { id } = await context.params;
   const post = await getBlogPostById(id);
@@ -32,9 +37,8 @@ export async function GET(_req: NextRequest, context: RouteContext) {
 }
 
 export async function PUT(req: NextRequest, context: RouteContext) {
-  if (!(await assertAdmin())) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const denied = await gateBlogs();
+  if (denied) return denied;
 
   const { id } = await context.params;
 
@@ -109,9 +113,8 @@ export async function PUT(req: NextRequest, context: RouteContext) {
 }
 
 export async function DELETE(_req: NextRequest, context: RouteContext) {
-  if (!(await assertAdmin())) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
+  const denied = await gateBlogs();
+  if (denied) return denied;
 
   const { id } = await context.params;
   try {
