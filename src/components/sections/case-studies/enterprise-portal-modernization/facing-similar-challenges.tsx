@@ -51,9 +51,7 @@ export default function EnterprisePortalFacingSimilarChallenges() {
             Facing Similar Challenges?
           </p>
           <h2 className="mt-3 text-3xl font-light leading-tight text-[var(--color-deepSpace)] md:text-4xl lg:text-5xl">
-            Two agencies failed this.
-            <br />
-            We succeeded.
+            Two agencies failed this. We succeeded.
           </h2>
           <p className="mt-4 max-w-lg text-sm leading-relaxed text-[var(--color-neutralGray)] md:text-base">
             Let&apos;s discuss your legacy system and see if we can help. Free

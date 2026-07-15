@@ -52,12 +52,7 @@ export default function CaseStudyFacing({ data }: Props) {
           </p>
           <h2 className="mt-3 text-3xl font-light leading-tight text-[var(--color-deepSpace)] md:text-4xl lg:text-5xl">
             {data.headingLine1}
-            {data.headingLine2 ? (
-              <>
-                <br />
-                {data.headingLine2}
-              </>
-            ) : null}
+            {data.headingLine2 ? ` ${data.headingLine2}` : null}
           </h2>
           <p className="mt-4 max-w-lg text-sm leading-relaxed text-[var(--color-neutralGray)] md:text-base">
             {data.description}
