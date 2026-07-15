@@ -37,7 +37,7 @@ export default function MultiLocationServiceBusinessPlatformResults() {
               className="rounded-2xl sm:rounded-[26px] bg-white/5 border border-white/10 px-4 py-4 sm:px-5 sm:py-5 md:px-6 md:py-6 text-center shadow-[0_20px_70px_rgba(3,4,21,0.8)]"
             >
               <p className="text-xl sm:text-2xl md:text-3xl font-semibold">{result.value}</p>
-              <p className="mt-1.5 sm:mt-2 text-[9px] sm:text-[10px] md:text-xs font-medium uppercase tracking-[0.22em] text-white/70">
+              <p className="mt-1.5 sm:mt-2 text-[9px] sm:text-[10px] md:text-xs font-medium uppercase tracking-[0.1em] text-white/70">
                 {result.label}
               </p>
             </div>
@@ -47,7 +47,7 @@ export default function MultiLocationServiceBusinessPlatformResults() {
         {/* Bottom two columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 text-sm md:text-[15px]">
           <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-electricBlue)] mb-4">
+            <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)] mb-4">
               Operational Efficiency
             </p>
             <ul className="space-y-2.5 text-white/90">
@@ -61,7 +61,7 @@ export default function MultiLocationServiceBusinessPlatformResults() {
           </div>
 
           <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-electricBlue)] mb-4">
+            <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)] mb-4">
               Customer Experience
             </p>
             <ul className="space-y-2.5 text-white/90">

@@ -85,7 +85,7 @@ export default function CaseStudiesGrid({ excludeSlugs }: CaseStudiesGridProps) 
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute top-4 right-4">
-                  <span className="inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-neutralGray)] shadow-sm">
+                  <span className="inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--color-neutralGray)] shadow-sm">
                     {cs.category}
                   </span>
                 </div>
@@ -115,7 +115,7 @@ export default function CaseStudiesGrid({ excludeSlugs }: CaseStudiesGridProps) 
                 </ul>
 
                 <div className="mt-auto pt-3">
-                  <div className="flex flex-wrap gap-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--color-neutralGray)] mb-4">
+                  <div className="flex flex-wrap gap-2 text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--color-neutralGray)] mb-4">
                     {cs.tech.map((t) => (
                       <span key={t} className="px-2 py-1 rounded-full bg-white border border-gray-200">
                         {t}

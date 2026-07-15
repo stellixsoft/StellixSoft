@@ -15,8 +15,8 @@ export const stockOptionsCaseStudy: CaseStudyContent = {
     techStack: ["React", "Node.js", "PostgreSQL", "AWS Lambda", "Serverless"],
   },
   client: {
-    headingLine1: "Growing Tech Company",
-    headingLine2: "50 → 200 + Employees",
+    headingLine1: "Growing Company",
+    headingLine2: "50 to 200 + Employees",
     paragraphs: [
       "A growing technology company needed to manage their employee stock option program as they scaled from 50 to 200+ employees. With a potential acquisition or IPO on the horizon, they needed a professional solution to replace their spreadsheet-based equity tracking.",
       "The stakes were high: equity errors could mean unhappy employees, tax complications, and deal-breaker issues during due diligence.",
@@ -31,7 +31,7 @@ export const stockOptionsCaseStudy: CaseStudyContent = {
     ],
   },
   problem: {
-    heading: "Equity management at scale — the hard way",
+    heading: "Equity management at scale the hard way",
     cards: [
       {
         title: "HR Overhead",
@@ -65,7 +65,7 @@ export const stockOptionsCaseStudy: CaseStudyContent = {
   approach: {
     heading: "Automated equity. No more spreadsheets.",
     description:
-      "We built a comprehensive equity management platform with separate portals for HR/admin and employees — automating calculations, providing self-service, and maintaining audit-ready records automatically.",
+      "We built a comprehensive equity management platform with separate portals for HR/admin and employees, automating calculations, providing self-service, and maintaining audit-ready records automatically.",
     phases: [
       {
         phase: "Phase 01",
@@ -143,24 +143,24 @@ export const stockOptionsCaseStudy: CaseStudyContent = {
     stackItems: [
       {
         label: "Employee Portal",
-        detail: "React Web — equity value, vesting & exercise",
+        detail: "React Web: equity value, vesting & exercise",
       },
       {
         label: "Admin Dashboard",
-        detail: "React Web — grants, letters & reporting",
+        detail: "React Web: grants, letters & reporting",
       },
       {
         label: "PostgreSQL",
-        detail: "AWS RDS — grants & vesting data",
+        detail: "AWS RDS: grants & vesting data",
       },
       {
         label: "Event Bus",
-        detail: "Audit Log — immutable event trail",
+        detail: "Audit Log: immutable event trail",
       },
     ],
     imageSrc: "/assets/images/stock-options.png",
     imageAlt:
-      "Stock options platform architecture — employee portal and admin dashboard on an AWS serverless API with grant, vesting, and exercise services",
+      "Stock options platform architecture: employee portal and admin dashboard on an AWS serverless API with grant, vesting, and exercise services",
   },
   features: {
     label: "What We Built",

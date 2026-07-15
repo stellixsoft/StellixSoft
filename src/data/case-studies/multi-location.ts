@@ -18,8 +18,8 @@ export const multiLocationCaseStudy: CaseStudyContent = {
     headingLine1: "Doctor Appliance",
     headingLine2: "Across 4 US States",
     paragraphs: [
-      "Doctor Appliance is a home appliance repair company operating across multiple US states — Tennessee, Arizona, Georgia, and Kansas. With field technicians and office staff across these locations, they needed to unify their operations, scheduling, and customer management.",
-      "We built a unified platform connecting headquarters, regional offices, field technicians, and customers — all on a single system with role-appropriate views.",
+      "Doctor Appliance is a home appliance repair company operating across multiple US states: Tennessee, Arizona, Georgia, and Kansas. With field technicians and office staff across these locations, they needed to unify their operations, scheduling, and customer management.",
+      "We built a unified platform connecting headquarters, regional offices, field technicians, and customers on a single system with role-appropriate views.",
     ],
     facts: [
       { label: "Client", value: "Doctor Appliance" },
@@ -65,7 +65,7 @@ export const multiLocationCaseStudy: CaseStudyContent = {
   approach: {
     heading: "One platform for every role, every state",
     description:
-      "Headquarters, regional dispatchers, field technicians, and customers — all connected through a single system with role-appropriate dashboards and real-time data sync.",
+      "Headquarters, regional dispatchers, field technicians, and customers are all connected through a single system with role-appropriate dashboards and real-time data sync.",
     phases: [
       {
         phase: "Phase 01",
@@ -143,24 +143,24 @@ export const multiLocationCaseStudy: CaseStudyContent = {
     stackItems: [
       {
         label: "HQ Admin",
-        detail: "React Web — system-wide management and reporting",
+        detail: "React Web: system-wide management and reporting",
       },
       {
         label: "Dispatch",
-        detail: "React Web — local scheduling, tech assignment",
+        detail: "React Web: local scheduling, tech assignment",
       },
       {
         label: "Technician",
-        detail: "Flutter Mobile — jobs, navigation, forms",
+        detail: "Flutter Mobile: jobs, navigation, forms",
       },
       {
         label: "Customer",
-        detail: "React Web — booking, tracking, history",
+        detail: "React Web: booking, tracking, history",
       },
     ],
     imageSrc: "/assets/images/multi-location.png",
     imageAlt:
-      "Multi-location platform architecture — customer portal, admin, field app, and regional manager connected to a Node.js API gateway",
+      "Multi-location platform architecture: customer portal, admin, field app, and regional manager connected to a Node.js API gateway",
   },
   features: {
     label: "What We Built",
@@ -190,7 +190,7 @@ export const multiLocationCaseStudy: CaseStudyContent = {
           "Turn-by-turn Google Maps navigation",
           "Digital job completion forms (no paper)",
           "Photo capture for before/after documentation",
-          "Real-time sync — works offline too",
+          "Real-time sync that works offline too",
         ],
       },
       {
@@ -227,7 +227,7 @@ export const multiLocationCaseStudy: CaseStudyContent = {
         title: "Business Impact",
         items: [
           "Expanded to 2 new states after platform launch",
-          "Customer satisfaction improved from 3.6—4.8 stars",
+          "Customer satisfaction improved from 3.6-4.8 stars",
           "80% reduction in inbound status-check calls",
           "All customer appointments now booked online",
         ],

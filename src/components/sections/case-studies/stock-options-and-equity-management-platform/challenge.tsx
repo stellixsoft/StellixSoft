@@ -66,7 +66,7 @@ export default function StockOptionsAndEquityManagementPlatformChallenge() {
             <article key={card.title} className="rounded-[28px] bg-white shadow-[0_18px_60px_rgba(15,23,42,0.08)] border border-gray-100 px-6 py-6 md:px-7 md:py-7">
               <div className="flex items-center gap-2 mb-4">
                 <span className={card.iconColor}><card.icon /></span>
-                <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-electricBlue)]">
+                <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
                   {card.title}
                 </p>
               </div>

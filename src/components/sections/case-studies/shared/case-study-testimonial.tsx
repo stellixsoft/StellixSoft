@@ -22,7 +22,7 @@ export default function CaseStudyTestimonial({ data }: Props) {
     <section className="bg-white px-4 py-20 sm:px-6 md:py-28">
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
         <div className="w-full max-w-xl justify-self-center lg:justify-self-start lg:max-w-none">
-          <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+          <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
             Client Testimonial
           </p>
           <blockquote className="mt-5 text-base font-light leading-relaxed text-[var(--color-deepSpace)] md:text-lg lg:text-xl">
@@ -41,7 +41,7 @@ export default function CaseStudyTestimonial({ data }: Props) {
               <p className="text-sm font-semibold text-[var(--color-deepSpace)] md:text-base">
                 {data.role}
               </p>
-              <p className="mt-0.5 text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--color-neutralGray)]">
+              <p className="mt-0.5 text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-neutralGray)]">
                 {data.companyLine1}
                 {data.companyLine2 ? (
                   <>
@@ -56,7 +56,7 @@ export default function CaseStudyTestimonial({ data }: Props) {
 
         <div className="w-full max-w-xl justify-self-center lg:justify-self-stretch lg:max-w-none">
           {rightLabel ? (
-            <p className="mb-5 text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+            <p className="mb-5 text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
               {rightLabel}
             </p>
           ) : null}
@@ -74,7 +74,7 @@ export default function CaseStudyTestimonial({ data }: Props) {
                 >
                   <div className="flex justify-end pt-0.5">
                     <span
-                      className="text-[10px] font-semibold uppercase tracking-[0.16em] sm:text-[11px]"
+                      className="text-[10px] font-semibold uppercase tracking-[0.1em] sm:text-[11px]"
                       style={{ color: step.roleColor }}
                     >
                       {step.role}

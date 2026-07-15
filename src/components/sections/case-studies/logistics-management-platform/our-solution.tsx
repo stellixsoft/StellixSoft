@@ -104,7 +104,7 @@ export default function LogisticsManagementPlatformOurSolution() {
 
                   <div className="mt-3 rounded-[999px] bg-[var(--color-electricBlue)]/6 border border-[var(--color-electricBlue)]/20 px-4 py-3 text-xs md:text-[12px] text-[var(--color-deepSpace)] text-left">
                     <span
-                      className="mr-2 text-[10px] font-medium uppercase tracking-[0.22em]"
+                      className="mr-2 text-[10px] font-medium uppercase tracking-[0.1em]"
                       style={{ color: "var(--color-electricBlue)" }}
                     >
                       Key Feature:

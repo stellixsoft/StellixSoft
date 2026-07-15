@@ -12,13 +12,13 @@ export default function LogisticsManagementPlatformProjectOverview() {
       >
         {/* Left: Project overview */}
         <div className="space-y-4 text-[var(--color-deepSpace)]">
-          <p className="text-[11px] font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+          <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
             Project Overview
           </p>
 
           <div className="space-y-4 mt-4">
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
+              <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-[var(--color-neutralGray)]">
                 Client
               </p>
               <p className="mt-1 text-sm md:text-[14px] font-medium">
@@ -27,7 +27,7 @@ export default function LogisticsManagementPlatformProjectOverview() {
             </div>
 
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
+              <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-[var(--color-neutralGray)]">
                 Industry
               </p>
               <p className="mt-1 text-sm md:text-[14px] font-medium">
@@ -36,7 +36,7 @@ export default function LogisticsManagementPlatformProjectOverview() {
             </div>
 
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
+              <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-[var(--color-neutralGray)]">
                 Services
               </p>
               <p className="mt-1 text-sm md:text-[14px] font-medium">
@@ -45,7 +45,7 @@ export default function LogisticsManagementPlatformProjectOverview() {
             </div>
 
             <div>
-              <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
+              <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-[var(--color-neutralGray)]">
                 Project Type
               </p>
               <p className="mt-1 text-sm md:text-[14px] font-medium">
@@ -59,7 +59,7 @@ export default function LogisticsManagementPlatformProjectOverview() {
         <div className="relative flex flex-col justify-center text-[var(--color-deepSpace)]">
           <div className="hidden md:block absolute top-4 bottom-4 left-0 w-px border-l border-dashed border-[var(--color-electricBlue)]/30" aria-hidden />
           <div className="md:pl-8">
-            <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-neutralGray)] mb-4">
+            <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-[var(--color-neutralGray)] mb-4">
               Team &amp; Duration
             </p>
               <ul className="space-y-4 text-sm md:text-[14px]">
@@ -90,7 +90,7 @@ export default function LogisticsManagementPlatformProjectOverview() {
         <div className="relative flex flex-col justify-center">
           <div className="hidden md:block absolute top-4 bottom-4 left-0 w-px border-l border-dashed border-[var(--color-electricBlue)]/30" aria-hidden />
           <div className="md:pl-8">
-            <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-neutralGray)] mb-4">
+            <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-[var(--color-neutralGray)] mb-4">
               Core Stack
             </p>
             <div className="flex flex-wrap gap-2">

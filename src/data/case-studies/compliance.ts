@@ -29,7 +29,7 @@ export const complianceCaseStudy: CaseStudyContent = {
       { label: "Frameworks", value: "SOC 2, GDPR, PCI DSS, ISO 27001" },
       { label: "Previous System", value: "Email, Excel, SharePoint" },
       { label: "Stack", value: "Next.js, Node.js, PostgreSQL, AWS" },
-      { label: "Deployment", value: "AWS — private VPC" },
+      { label: "Deployment", value: "AWS (private VPC)" },
     ],
   },
   problem: {
@@ -67,7 +67,7 @@ export const complianceCaseStudy: CaseStudyContent = {
   approach: {
     heading: "Jira like workflows built for compliance",
     description:
-      "We built a workflow management system specifically designed for compliance and audit processes — familiar patterns that users already know, but tailored for regulatory requirements, complete audit trails, and automated deadline management.",
+      "We built a workflow management system specifically designed for compliance and audit processes familiar patterns that users already know, but tailored for regulatory requirements, complete audit trails, and automated deadline management.",
     phases: [
       {
         phase: "Phase 01",
@@ -141,28 +141,28 @@ export const complianceCaseStudy: CaseStudyContent = {
     label: "Platform Design",
     heading: "Built for auditors. Loved by everyone.",
     description:
-      "The platform uses familiar Jira-style task patterns so adoption is instant – but with compliance-specific features like immutable audit trails, regulator-ready reports, and automated escalation built in from day 1.",
+      "The platform uses familiar Jira-style task patterns so adoption is instant but with compliance-specific features like immutable audit trails, regulator-ready reports, and automated escalation built in from day 1.",
     stackItems: [
       {
         label: "Frontend",
-        detail: "Next.js + React — fast, SEO-ready admin UI",
+        detail: "Next.js + React fast, SEO-ready admin UI",
       },
       {
         label: "Backend",
-        detail: "Node.js REST API — role-based permissions",
+        detail: "Node.js REST API role-based permissions",
       },
       {
         label: "Database",
-        detail: "PostgreSQL — immutable audit log tables",
+        detail: "PostgreSQL immutable audit log tables",
       },
       {
         label: "Infra",
-        detail: "AWS — private VPC, encrypted at rest",
+        detail: "AWS private VPC, encrypted at rest",
       },
     ],
     imageSrc: "/assets/images/compliance-system.png",
     imageAlt:
-      "Compliance platform design — Next.js frontend, Node.js API, PostgreSQL, Redis, and AWS S3",
+      "Compliance platform design Next.js frontend, Node.js API, PostgreSQL, Redis, and AWS S3",
   },
   features: {
     label: "What We Built",
@@ -201,7 +201,7 @@ export const complianceCaseStudy: CaseStudyContent = {
           "Organization-wide compliance status at a glance",
           "Department-level completion rate tracking",
           "One-click regulator-ready report export",
-          "100% audit trail coverage — every action logged",
+          "100% audit trail coverage every action logged",
         ],
       },
     ],

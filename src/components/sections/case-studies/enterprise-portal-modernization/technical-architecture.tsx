@@ -32,7 +32,7 @@ export default function EnterprisePortalTechnicalArchitecture() {
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.15fr)] lg:gap-12 xl:gap-16">
           {/* Left: copy + 2x2 stack cards */}
           <div className="w-full text-left">
-            <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+            <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
               New Architecture
             </p>
             <h2 className="mt-3 text-3xl font-light leading-tight text-[var(--color-deepSpace)] md:text-4xl lg:text-5xl">
@@ -40,7 +40,7 @@ export default function EnterprisePortalTechnicalArchitecture() {
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-[var(--color-neutralGray)] md:text-base">
               The new architecture decouples every domain into independently
-              deployable services — enabling teams to ship features in days, not
+              deployable services enabling teams to ship features in days, not
               months.
             </p>
 
@@ -54,7 +54,7 @@ export default function EnterprisePortalTechnicalArchitecture() {
                       "linear-gradient(180deg, #3bb8e0 0%, var(--color-electricBlue-solid) 100%)",
                   }}
                 >
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em]">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.1em]">
                     {item.label}
                   </p>
                   <p className="mt-0.5 text-xs text-white/95 md:text-[13px]">
@@ -69,7 +69,7 @@ export default function EnterprisePortalTechnicalArchitecture() {
           <div className="relative w-full">
             <Image
               src="/assets/images/enterprise-portal-case-study.png"
-              alt="Enterprise portal architecture overview — clients, AWS load balancer, .NET Core 6 API layer, and data services"
+              alt="Enterprise portal architecture overview: clients, AWS load balancer, .NET Core 6 API layer, and data services"
               width={1400}
               height={1100}
               className="h-auto w-full object-contain"

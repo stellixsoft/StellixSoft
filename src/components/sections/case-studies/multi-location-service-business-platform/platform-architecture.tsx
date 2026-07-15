@@ -70,7 +70,7 @@ export default function MultiLocationServiceBusinessPlatformArchitecture() {
           {/* Node.js API gateway */}
           <div className="mb-8 md:mb-10">
             <div className="mx-auto max-w-[1000px] rounded-[28px] bg-[var(--color-deepSpace)] text-white px-6 py-6 md:px-10 md:py-8 shadow-[0_22px_80px_rgba(15,23,42,0.9)]">
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-electricBlue)] text-center mb-4">
+              <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)] text-center mb-4">
                 Node.js API Gateway
               </p>
               <div className="flex flex-wrap items-center justify-center gap-2 text-[11px] text-white/80">
@@ -94,7 +94,7 @@ export default function MultiLocationServiceBusinessPlatformArchitecture() {
                 className="rounded-[26px] bg-white text-[var(--color-deepSpace)] px-5 py-5 md:px-6 md:py-5 flex flex-col items-center text-center gap-2 shadow-[0_20px_70px_rgba(15,23,42,0.12)] border border-slate-100"
               >
                 <span className="text-[var(--color-electricBlue)]">{layer.icon}</span>
-                <p className="text-[11px] font-medium uppercase tracking-[0.22em]">
+                <p className="text-[11px] font-medium uppercase tracking-[0.1em]">
                   {layer.label}
                 </p>
                 <p className="text-xs text-[var(--color-neutralGray)]">{layer.subtitle}</p>

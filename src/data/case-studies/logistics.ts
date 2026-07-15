@@ -64,7 +64,7 @@ export const logisticsCaseStudy: CaseStudyContent = {
   approach: {
     heading: "One platform three user types, zero calls",
     description:
-      "We built an Admin web app, a Driver mobile app, and a Client portal — all connected in real time. Every dispatch, route, and shipment update flows through a single system.",
+      "We built an Admin web app, a Driver mobile app, and a Client portal all connected in real time. Every dispatch, route, and shipment update flows through a single system.",
     phases: [
       {
         phase: "Phase 01",
@@ -79,7 +79,7 @@ export const logisticsCaseStudy: CaseStudyContent = {
       },
       {
         phase: "Phase 02",
-        months: "Month 1–2",
+        months: "Month 1-2",
         title: "Admin Dashboard (Web)",
         items: [
           "Shipment creation and management",
@@ -90,7 +90,7 @@ export const logisticsCaseStudy: CaseStudyContent = {
       },
       {
         phase: "Phase 03",
-        months: "Month 2–3",
+        months: "Month 2-3",
         title: "Driver App (Flutter)",
         items: [
           "Daily job list with turn-by-turn navigation",
@@ -112,7 +112,7 @@ export const logisticsCaseStudy: CaseStudyContent = {
       },
       {
         phase: "Phase 05",
-        months: "Month 3–4",
+        months: "Month 3-4",
         title: "Reporting & Analytics",
         items: [
           "Driver performance dashboards",
@@ -138,7 +138,7 @@ export const logisticsCaseStudy: CaseStudyContent = {
     label: "Platform Architecture",
     heading: "Three apps. One connected platform.",
     description:
-      "Admin web, Driver mobile (Flutter), and Client portal all talk to the same Node.js API — ensuring every user sees live, consistent data.",
+      "Admin web, Driver mobile (Flutter), and Client portal all talk to the same Node.js API ensuring every user sees live, consistent data.",
     stackItems: [
       { label: "React Web", detail: "Dispatch, fleet, reports" },
       { label: "Flutter Mobile", detail: "Jobs, navigation, delivery" },
@@ -147,7 +147,7 @@ export const logisticsCaseStudy: CaseStudyContent = {
     ],
     imageSrc: "/assets/images/logistic-management-case-study-image.png",
     imageAlt:
-      "Logistics platform architecture — Admin, Driver, and Client apps connected to a Node.js API with MongoDB, Redis, and AWS S3",
+      "Logistics platform architecture: Admin, Driver, and Client apps connected to a Node.js API with MongoDB, Redis, and AWS S3",
   },
   features: {
     label: "What We Built",
@@ -168,7 +168,7 @@ export const logisticsCaseStudy: CaseStudyContent = {
           "Live map view for clients and admins",
           "Accurate ETAs updated every minute",
           "Instant delivery notifications",
-          "No phone calls needed — ever",
+          "No phone calls needed ever",
         ],
       },
       {
@@ -177,7 +177,7 @@ export const logisticsCaseStudy: CaseStudyContent = {
           "Turn-by-turn Google Maps navigation",
           "One-tap delivery confirmation",
           "Digital proof of delivery (photo + signature)",
-          "Works offline — syncs on reconnect",
+          "Works offline syncs on reconnect",
         ],
       },
       {

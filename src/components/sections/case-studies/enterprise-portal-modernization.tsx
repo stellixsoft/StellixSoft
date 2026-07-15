@@ -16,13 +16,13 @@ export default function EnterprisePortalModernizationOverview() {
       <div className="max-w-[1000px] mx-auto rounded-2xl md:rounded-3xl overflow-hidden shadow-xl flex flex-col lg:flex-row bg-[var(--color-deepSpace)] text-white">
         {/* Left column - case summary */}
         <div className="lg:w-1/2 p-6 sm:p-8 lg:p-12 xl:p-16 flex flex-col">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-electricBlue)] mb-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--color-electricBlue)] mb-3">
             Featured
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light mb-4 lg:mb-6">
             Enterprise<br className="hidden lg:block" /> Portal<br className="hidden lg:block" /> Modernization
           </h2>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70 mb-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white/70 mb-4">
             Global Hardware Company | Fortune 500 Supply Chain
           </p>
 

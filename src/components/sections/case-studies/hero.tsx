@@ -24,32 +24,32 @@ export default function Hero() {
           and measurable results.
         </p>
 
-        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/70 mb-16 mt-16">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-white/70 mb-16 mt-16">
           Across All Projects
         </p>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-10 text-center mt-4">
           <div>
             <p className="text-xl md:text-2xl font-semibold">10,000+</p>
-            <p className="text-[11px] md:text-xs uppercase tracking-[0.18em] text-white/70 mt-1">
+            <p className="text-[11px] md:text-xs uppercase tracking-[0.1em] text-white/70 mt-1">
               Devices Managed
             </p>
           </div>
           <div>
             <p className="text-xl md:text-2xl font-semibold">3+</p>
-            <p className="text-[11px] md:text-xs uppercase tracking-[0.18em] text-white/70 mt-1">
+            <p className="text-[11px] md:text-xs uppercase tracking-[0.1em] text-white/70 mt-1">
               Years Avg Relationship
             </p>
           </div>
           <div>
             <p className="text-xl md:text-2xl font-semibold">$2M+</p>
-            <p className="text-[11px] md:text-xs uppercase tracking-[0.18em] text-white/70 mt-1">
+            <p className="text-[11px] md:text-xs uppercase tracking-[0.1em] text-white/70 mt-1">
               Client Savings Generated
             </p>
           </div>
           <div>
             <p className="text-xl md:text-2xl font-semibold">Zero</p>
-            <p className="text-[11px] md:text-xs uppercase tracking-[0.18em] text-white/70 mt-1">
+            <p className="text-[11px] md:text-xs uppercase tracking-[0.1em] text-white/70 mt-1">
               Failed Migrations
             </p>
           </div>

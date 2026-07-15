@@ -20,7 +20,7 @@ export default function LogisticsManagementPlatformHero() {
           <span className="font-semibold">Platform</span>
         </h1>
 
-        <p className="mt-6 text-sm md:text-base lg:text-md text-white/80 tracking-[0.18em] uppercase">
+        <p className="mt-6 text-sm md:text-base lg:text-md text-white/80 tracking-[0.1em] uppercase">
           ZB Lines &nbsp;|&nbsp; Third-Party Logistics Company
         </p>
 
@@ -53,7 +53,7 @@ export default function LogisticsManagementPlatformHero() {
         </div>
 
         {/* Industry + tech tags */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.24em] text-white/70">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.1em] text-white/70">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" aria-hidden />
             Industry: Logistics / 3PL

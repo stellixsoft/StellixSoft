@@ -46,7 +46,7 @@ export default function CaseStudiesIndustriesServed() {
               </h3>
               <Link
                 href={industry.href}
-                className="mt-2 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-electricBlue)]"
+                className="mt-2 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.1em] text-[var(--color-electricBlue)]"
               >
                 View
                 <span aria-hidden>→</span>

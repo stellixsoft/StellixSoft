@@ -1,4 +1,5 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
+import CaseStudyStatCounter from "./case-study-stat-counter";
 import type { CaseStudyContent } from "./types";
 
 type Props = {
@@ -37,9 +38,9 @@ export default function CaseStudyHero({ data }: Props) {
                 className="rounded-2xl border border-white/15 bg-white/[0.06] px-4 py-5 backdrop-blur-md md:px-5 md:py-6"
               >
                 <p className="text-2xl font-semibold tracking-tight md:text-3xl">
-                  {stat.value}
+                  <CaseStudyStatCounter value={stat.value} />
                 </p>
-                <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--color-electricBlue)] md:text-[11px]">
+                <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)] md:text-[11px]">
                   {stat.label}
                 </p>
               </div>
@@ -49,7 +50,7 @@ export default function CaseStudyHero({ data }: Props) {
 
         <div className="border-t border-white/10 bg-white/[0.06] backdrop-blur-md">
           <div className="mx-auto flex w-full max-w-[1250px] flex-col items-center justify-between gap-4 px-6 py-4 sm:flex-row sm:gap-6">
-            <p className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/80 md:text-[11px]">
+            <p className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.1em] text-white/80 md:text-[11px]">
               Industry: {data.industry}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-end">

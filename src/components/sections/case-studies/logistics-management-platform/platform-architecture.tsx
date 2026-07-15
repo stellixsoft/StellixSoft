@@ -83,7 +83,7 @@ export default function LogisticsManagementPlatformArchitecture() {
                 className="rounded-3xl bg-[var(--color-electricBlue-solid)] text-white shadow-[0_14px_50px_rgba(15,23,42,0.2)] border border-sky-300/60 px-5 py-5 flex flex-col items-center text-center gap-2"
               >
                 <span className="opacity-90">{node.icon}</span>
-                <p className="text-[11px] font-medium uppercase tracking-[0.22em]">
+                <p className="text-[11px] font-medium uppercase tracking-[0.1em]">
                   {node.label}
                 </p>
                 <p className="text-[11px] text-white/85">{node.subtitle}</p>
@@ -94,7 +94,7 @@ export default function LogisticsManagementPlatformArchitecture() {
           {/* Node.js API server */}
           <div className="mb-8 md:mb-10">
             <div className="mx-auto max-w-[1000px] rounded-[28px] bg-[var(--color-deepSpace)] text-white px-6 py-6 md:px-10 md:py-8 shadow-[0_22px_80px_rgba(15,23,42,0.9)]">
-              <p className="text-xs md:text-sm font-medium uppercase tracking-[0.22em] text-[var(--color-electricBlue)] text-center mb-4">
+              <p className="text-xs md:text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)] text-center mb-4">
                 Node.js API Server
               </p>
               <div className="flex flex-wrap items-center justify-center gap-2 text-[10px] md:text-[11px] text-white/80">
@@ -119,7 +119,7 @@ export default function LogisticsManagementPlatformArchitecture() {
                 className="rounded-[26px] bg-[var(--color-electricBlue-solid)] text-white px-5 py-5 md:px-6 md:py-5 flex flex-col items-center text-center gap-2 shadow-[0_20px_70px_rgba(15,23,42,0.45)]"
               >
                 <span className="opacity-90">{node.icon}</span>
-                <p className="text-[11px] font-medium uppercase tracking-[0.22em]">
+                <p className="text-[11px] font-medium uppercase tracking-[0.1em]">
                   {node.label}
                 </p>
                 <p className="text-xs text-white/85">{node.subtitle}</p>
@@ -129,7 +129,7 @@ export default function LogisticsManagementPlatformArchitecture() {
 
           {/* Google Maps integration */}
           <div className="mt-4 flex items-center justify-center">
-            <p className="text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
+            <p className="text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--color-neutralGray)]">
               ↳ Google Maps API Integration
             </p>
           </div>

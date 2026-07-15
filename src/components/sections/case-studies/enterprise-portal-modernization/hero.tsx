@@ -1,4 +1,5 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
+import CaseStudyStatCounter from "@/src/components/sections/case-studies/shared/case-study-stat-counter";
 
 const STATS = [
   { value: "ZERO", label: "Downtime Migration" },
@@ -20,7 +21,7 @@ export default function EnterprisePortalModernizationHero() {
     <section className="relative flex min-h-[calc(80vh+120px)] flex-col overflow-hidden -mt-[100px]">
       <HeroBackgroundVideo className="absolute inset-0 h-full w-full object-cover" />
 
-      {/* Dark overlay — keep left readable, let planet read on the right */}
+      {/* Dark overlay - keep left readable, let planet read on the right */}
       <div
         className="absolute inset-0 bg-[var(--color-deepSpace)]/70"
         aria-hidden
@@ -49,9 +50,9 @@ export default function EnterprisePortalModernizationHero() {
                 className="rounded-2xl border border-white/15 bg-white/[0.06] px-4 py-5 backdrop-blur-md md:px-5 md:py-6"
               >
                 <p className="text-2xl font-semibold tracking-tight md:text-3xl">
-                  {stat.value}
+                  <CaseStudyStatCounter value={stat.value} />
                 </p>
-                <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--color-electricBlue)] md:text-[11px]">
+                <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)] md:text-[11px]">
                   {stat.label}
                 </p>
               </div>
@@ -62,7 +63,7 @@ export default function EnterprisePortalModernizationHero() {
         {/* Bottom industry + tech bar */}
         <div className="border-t border-white/10 bg-white/[0.06] backdrop-blur-md">
           <div className="mx-auto flex w-full max-w-[1250px] flex-col items-center justify-between gap-4 px-6 py-4 sm:flex-row sm:gap-6">
-            <p className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/80 md:text-[11px]">
+            <p className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.1em] text-white/80 md:text-[11px]">
               Industry: IoT/Hardware
             </p>
             <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-end">

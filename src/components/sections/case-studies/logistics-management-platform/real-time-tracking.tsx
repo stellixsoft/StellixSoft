@@ -38,7 +38,7 @@ export default function LogisticsManagementPlatformRealTimeTracking() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 18h.01M8 21h8a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2z" />
                 </svg>
               </div>
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
+              <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-neutralGray)]">
                 Driver App
               </p>
               <p className="mt-1 text-[11px] text-[var(--color-electricBlue)] font-medium">
@@ -47,7 +47,7 @@ export default function LogisticsManagementPlatformRealTimeTracking() {
             </div>
 
             {/* Left websocket label + arrow */}
-            <div className="hidden md:flex flex-col items-center text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-electricBlue)]">
+            <div className="hidden md:flex flex-col items-center text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
               <span>Websocket</span>
               <span className="mt-2 text-lg" aria-hidden>
                 →
@@ -61,14 +61,14 @@ export default function LogisticsManagementPlatformRealTimeTracking() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 12h14M5 12a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2M5 12a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2m-7-4h.01M12 16h.01" />
                 </svg>
               </div>
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
+              <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-neutralGray)]">
                 Server
               </p>
               <p className="mt-1 text-[11px] text-[var(--color-neutralGray)]">Processes update</p>
             </div>
 
             {/* Right websocket label + arrow */}
-            <div className="hidden md:flex flex-col items-center text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-electricBlue)]">
+            <div className="hidden md:flex flex-col items-center text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
               <span>Websocket</span>
               <span className="mt-2 text-lg" aria-hidden>
                 →
@@ -82,7 +82,7 @@ export default function LogisticsManagementPlatformRealTimeTracking() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 0 1 9-9" />
                 </svg>
               </div>
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
+              <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-neutralGray)]">
                 Client Portal
               </p>
               <p className="mt-1 text-[11px] text-[#16a34a] font-medium">Updates instantly</p>
@@ -90,7 +90,7 @@ export default function LogisticsManagementPlatformRealTimeTracking() {
           </div>
 
           {/* Mobile websocket labels under the flow */}
-          <div className="mt-6 flex md:hidden items-center justify-center gap-8 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-electricBlue)]">
+          <div className="mt-6 flex md:hidden items-center justify-center gap-8 text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
             <span>Websocket</span>
             <span>Websocket</span>
           </div>

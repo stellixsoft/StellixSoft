@@ -8,7 +8,7 @@ const technicalDebtItems = [
 ];
 
 const businessImpactItems = [
-  "Features took 3–4× longer than competitors",
+  "Features took 3-4× longer than competitors",
   "Couldn't onboard large enterprise clients",
   "Support tickets rising due to performance issues",
   "Risk of losing Fortune 500 contracts",
@@ -91,8 +91,8 @@ export default function EnterprisePortalClientAndChallenge() {
       />
 
       <div className="relative z-10 mx-auto max-w-[1200px]">
-        <div className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+        <div className="max-w-1xl">
+          <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
             The Problem
           </p>
           <h2 className="mt-3 text-3xl font-light leading-tight text-white md:text-4xl lg:text-5xl">

@@ -1,3 +1,5 @@
+import CaseStudyStatCounter from "@/src/components/sections/case-studies/shared/case-study-stat-counter";
+
 const stats = [
   { value: "ZERO", label: "Downtime During Migration" },
   { value: "60%", label: "Faster Feature Delivery" },
@@ -90,7 +92,7 @@ export default function EnterprisePortalResults() {
       <div className="relative z-10 mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-10 text-white lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-12 xl:gap-16">
         {/* Left: copy + stats */}
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+          <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
             Outcomes
           </p>
           <h2 className="mt-3 text-3xl font-light leading-tight md:text-4xl lg:text-5xl">
@@ -99,7 +101,7 @@ export default function EnterprisePortalResults() {
             not just features.
           </h2>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-white/75 md:text-base">
-            From zero-downtime migration to measurable delivery speed — these
+            From zero-downtime migration to measurable delivery speed these
             are the results that matter to the business.
           </p>
 
@@ -110,9 +112,9 @@ export default function EnterprisePortalResults() {
                 className="rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-4 backdrop-blur-md sm:px-5 sm:py-5"
               >
                 <p className="text-xl font-semibold tracking-tight text-[var(--color-electricBlue)] md:text-2xl">
-                  {stat.value}
+                  <CaseStudyStatCounter value={stat.value} />
                 </p>
-                <p className="mt-1.5 text-[10px] font-medium uppercase tracking-[0.14em] text-white/75 md:text-[11px]">
+                <p className="mt-1.5 text-[10px] font-medium uppercase tracking-[0.1em] text-white/75 md:text-[11px]">
                   {stat.label}
                 </p>
               </div>
@@ -129,7 +131,7 @@ export default function EnterprisePortalResults() {
             >
               <div className="mb-3 flex items-center gap-2.5 text-[var(--color-electricBlue)]">
                 <CardIcon type={card.icon} />
-                <p className="text-sm font-medium uppercase tracking-[0.18em]">
+                <p className="text-sm font-medium uppercase tracking-[0.1em]">
                   {card.title}
                 </p>
               </div>

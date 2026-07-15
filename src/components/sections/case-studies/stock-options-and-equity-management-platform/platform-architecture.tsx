@@ -104,7 +104,7 @@ export default function StockOptionsAndEquityManagementPlatformArchitecture() {
                 className="rounded-3xl bg-white text-[var(--color-deepSpace)] shadow-[0_14px_50px_rgba(15,23,42,0.08)] border border-slate-100 px-6 py-5 flex flex-col items-center text-center gap-2"
               >
                 <span className="text-[var(--color-electricBlue)]">{surface.icon}</span>
-                <p className="text-[11px] font-medium uppercase tracking-[0.22em]">
+                <p className="text-[11px] font-medium uppercase tracking-[0.1em]">
                   {surface.label}
                 </p>
                 <p className="text-[10px] text-[var(--color-neutralGray)]">{surface.subtitle}</p>
@@ -115,7 +115,7 @@ export default function StockOptionsAndEquityManagementPlatformArchitecture() {
           {/* AWS serverless API layer */}
           <div className="mb-8 md:mb-10">
             <div className="mx-auto max-w-[800px] rounded-[28px] bg-[var(--color-deepSpace)] text-white px-6 py-6 md:px-10 md:py-8 shadow-[0_22px_80px_rgba(15,23,42,0.9)]">
-              <p className="text-xs md:text-sm font-medium uppercase tracking-[0.22em] text-[var(--color-electricBlue)] text-center mb-5">
+              <p className="text-xs md:text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)] text-center mb-5">
                 AWS Serverless API Layer
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -125,7 +125,7 @@ export default function StockOptionsAndEquityManagementPlatformArchitecture() {
                     className="rounded-2xl border border-white/15 bg-black/30 px-4 py-4 flex flex-col items-center text-center gap-2"
                   >
                     <span className="text-[var(--color-electricBlue)]">{service.icon}</span>
-                    <p className="text-[10px] md:text-[11px] font-medium uppercase tracking-[0.2em]">{service.label}</p>
+                    <p className="text-[10px] md:text-[11px] font-medium uppercase tracking-[0.1em]">{service.label}</p>
                     <p className="text-[10px] text-white/60">{service.subtitle}</p>
                   </div>
                 ))}
@@ -141,7 +141,7 @@ export default function StockOptionsAndEquityManagementPlatformArchitecture() {
                 className="rounded-[26px] bg-white text-[var(--color-deepSpace)] px-5 py-5 md:px-6 md:py-5 flex flex-col items-center text-center gap-2 shadow-[0_20px_70px_rgba(15,23,42,0.12)] border border-slate-100"
               >
                 <span className="text-[var(--color-electricBlue)]">{item.icon}</span>
-                <p className="text-[11px] font-medium uppercase tracking-[0.22em]">
+                <p className="text-[11px] font-medium uppercase tracking-[0.1em]">
                   {item.label}
                 </p>
                 <p className="text-xs text-[var(--color-neutralGray)]">{item.subtitle}</p>

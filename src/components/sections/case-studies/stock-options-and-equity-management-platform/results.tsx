@@ -10,7 +10,7 @@ const topResults = [
 const administrativeEfficiency = [
   "95% reduction in HR time spent on equity management",
   "80% faster audit preparation (days to hours)",
-  "Zero calculation errors (previously 2–3 per quarter)",
+  "Zero calculation errors (previously 2-3 per quarter)",
   "Real-time cap table availability (was weeks behind)",
 ];
 
@@ -37,7 +37,7 @@ export default function StockOptionsAndEquityManagementPlatformResults() {
               className="rounded-2xl sm:rounded-[26px] bg-white/5 border border-white/10 px-4 py-4 sm:px-5 sm:py-5 md:px-6 md:py-6 text-center shadow-[0_20px_70px_rgba(3,4,21,0.8)]"
             >
               <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold leading-tight">{result.value}</p>
-              <p className="mt-1.5 sm:mt-2 text-[8px] sm:text-[9px] md:text-[10px] font-medium uppercase tracking-[0.22em] text-white/70">
+              <p className="mt-1.5 sm:mt-2 text-[8px] sm:text-[9px] md:text-[10px] font-medium uppercase tracking-[0.1em] text-white/70">
                 {result.label}
               </p>
             </div>
@@ -47,7 +47,7 @@ export default function StockOptionsAndEquityManagementPlatformResults() {
         {/* Bottom two columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 text-sm md:text-[15px]">
           <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-electricBlue)] mb-4">
+            <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)] mb-4">
               Administrative Efficiency
             </p>
             <ul className="space-y-2.5 text-white/90">
@@ -61,7 +61,7 @@ export default function StockOptionsAndEquityManagementPlatformResults() {
           </div>
 
           <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-electricBlue)] mb-4">
+            <p className="text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)] mb-4">
               Employee Experience
             </p>
             <ul className="space-y-2.5 text-white/90">

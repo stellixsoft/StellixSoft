@@ -63,7 +63,7 @@ export default function EnterprisePortalKeyFeatures() {
     <section className="bg-[#F3F5F8] px-4 py-20 sm:px-6 md:py-28">
       <div className="mx-auto max-w-[1200px]">
         <div className="max-w-2xl">
-          <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+          <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
             What We Built
           </p>
           <h2 className="mt-3 text-3xl font-light leading-tight text-[var(--color-deepSpace)] md:text-4xl lg:text-5xl">
@@ -77,7 +77,7 @@ export default function EnterprisePortalKeyFeatures() {
               key={feature.title}
               className="rounded-2xl bg-white px-6 py-6 shadow-[0_8px_30px_rgba(15,23,42,0.04)] sm:px-7 sm:py-7"
             >
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-deepSpace)] md:text-[15px]">
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.1em] text-[var(--color-deepSpace)] md:text-[15px]">
                 {feature.title}
               </h3>
               <ul className="space-y-3 text-sm leading-relaxed text-[var(--color-neutralGray)] md:text-[15px]">

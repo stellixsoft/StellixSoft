@@ -71,7 +71,7 @@ export default function StockOptionsAndEquityManagementPlatformLifecycle() {
           ))}
         </div>
 
-        <p className="mt-4 text-[10px] md:text-[11px] text-center font-semibold uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
+        <p className="mt-4 text-[10px] md:text-[11px] text-center font-semibold uppercase tracking-[0.1em] text-[var(--color-neutralGray)]">
           Platform handles all lifecycle stages automatically
         </p>
       </div>

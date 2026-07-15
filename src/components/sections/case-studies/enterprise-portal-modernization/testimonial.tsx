@@ -29,7 +29,7 @@ export default function EnterprisePortalTestimonial() {
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
         {/* Left: testimonial */}
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+          <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
             Client Testimonial
           </p>
           <blockquote className="mt-5 text-base font-light leading-relaxed text-[var(--color-deepSpace)] md:text-lg lg:text-xl">
@@ -52,7 +52,7 @@ export default function EnterprisePortalTestimonial() {
               <p className="text-sm font-semibold text-[var(--color-deepSpace)] md:text-base">
                 Director of Technology
               </p>
-              <p className="mt-0.5 text-[11px] font-medium uppercase tracking-[0.16em] text-[var(--color-neutralGray)]">
+              <p className="mt-0.5 text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-neutralGray)]">
                 Global Hardware
                 <br />
                 Manufacturer
@@ -63,7 +63,7 @@ export default function EnterprisePortalTestimonial() {
 
         {/* Right: why succeeded */}
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+          <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
             Why This Project Succeeded
           </p>
 

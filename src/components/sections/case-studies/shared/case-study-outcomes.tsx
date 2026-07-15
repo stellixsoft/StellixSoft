@@ -1,3 +1,4 @@
+import CaseStudyStatCounter from "./case-study-stat-counter";
 import type { CaseStudyContent } from "./types";
 
 type Props = {
@@ -39,17 +40,27 @@ function CardIcon({ type }: { type?: "chip" | "chart" | "users" }) {
 }
 
 function StatsGrid({ stats }: { stats: CaseStudyContent["outcomes"]["stats"] }) {
+  const count = stats.length;
+  const mdCols =
+    count >= 6
+      ? "md:grid-cols-6"
+      : count === 5
+        ? "md:grid-cols-5"
+        : "md:grid-cols-4";
+
   return (
-    <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
+    <div
+      className={`grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 ${mdCols}`}
+    >
       {stats.map((stat) => (
         <div
           key={stat.label}
-          className="rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-5 text-center backdrop-blur-md sm:px-5 sm:py-6"
+          className="rounded-2xl border border-white/10 bg-white/[0.06] px-3 py-5 text-center backdrop-blur-md sm:px-4 sm:py-6 md:px-3 lg:px-4"
         >
-          <p className="text-2xl font-semibold tracking-tight text-white md:text-3xl">
-            {stat.value}
+          <p className="text-xl font-semibold tracking-tight text-white sm:text-2xl md:text-xl lg:text-2xl xl:text-3xl">
+            <CaseStudyStatCounter value={stat.value} />
           </p>
-          <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.14em] text-white/80 md:text-[11px]">
+          <p className="mt-2 text-[9px] font-medium uppercase tracking-[0.1em] text-white/80 sm:text-[10px] md:text-[9px] lg:text-[11px]">
             {stat.label}
           </p>
         </div>
@@ -78,7 +89,7 @@ function DetailCards({
         >
           <div className="mb-3 flex items-center gap-2.5 text-[var(--color-electricBlue)]">
             <CardIcon type={card.icon} />
-            <p className="text-sm font-medium uppercase tracking-[0.18em]">
+            <p className="text-sm font-medium uppercase tracking-[0.1em]">
               {card.title}
             </p>
           </div>
@@ -117,7 +128,7 @@ export default function CaseStudyOutcomes({ data }: Props) {
         {stacked ? (
           <>
             <div className="mx-auto max-w-2xl text-center">
-              <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+              <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
                 Outcomes
               </p>
               <h2 className="mt-3 text-3xl font-light leading-tight md:text-4xl lg:text-5xl">
@@ -147,7 +158,7 @@ export default function CaseStudyOutcomes({ data }: Props) {
         ) : (
           <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-12 xl:gap-16">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+              <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
                 Outcomes
               </p>
               <h2 className="mt-3 text-3xl font-light leading-tight md:text-4xl lg:text-5xl">
@@ -172,9 +183,9 @@ export default function CaseStudyOutcomes({ data }: Props) {
                     className="rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-4 backdrop-blur-md sm:px-5 sm:py-5"
                   >
                     <p className="text-xl font-semibold tracking-tight text-[var(--color-electricBlue)] md:text-2xl">
-                      {stat.value}
+                      <CaseStudyStatCounter value={stat.value} />
                     </p>
-                    <p className="mt-1.5 text-[10px] font-medium uppercase tracking-[0.14em] text-white/75 md:text-[11px]">
+                    <p className="mt-1.5 text-[10px] font-medium uppercase tracking-[0.1em] text-white/75 md:text-[11px]">
                       {stat.label}
                     </p>
                   </div>

@@ -66,8 +66,8 @@ export default function CaseStudyProblem({ data }: Props) {
       <div className="absolute inset-0 bg-[var(--color-deepSpace)]/55" aria-hidden />
 
       <div className="relative z-10 mx-auto max-w-[1200px]">
-        <div className="max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+        <div className="max-w-1xl">
+          <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
             The Problem
           </p>
           <h2 className="mt-3 text-3xl font-light leading-tight text-white md:text-4xl lg:text-5xl">

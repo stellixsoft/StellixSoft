@@ -89,7 +89,7 @@ export default function MultiLocationServiceBusinessPlatformServiceAppointmentFl
               >
                 <div className="flex justify-end pt-0.5">
                   <span
-                    className="text-[10px] md:text-[11px] font-medium uppercase tracking-[0.2em]"
+                    className="text-[10px] md:text-[11px] font-medium uppercase tracking-[0.1em]"
                     style={{ color: step.roleColor }}
                   >
                     {step.role}
@@ -126,7 +126,7 @@ export default function MultiLocationServiceBusinessPlatformServiceAppointmentFl
               >
                 <div className="absolute left-[-24px] top-0.5 h-2.5 w-2.5 rounded-full bg-[var(--color-electricBlue-solid)] z-10" />
                 <span
-                  className="text-[9px] font-medium uppercase tracking-[0.2em] block mb-0.5"
+                  className="text-[9px] font-medium uppercase tracking-[0.1em] block mb-0.5"
                   style={{ color: step.roleColor }}
                 >
                   {step.role}
@@ -148,7 +148,7 @@ export default function MultiLocationServiceBusinessPlatformServiceAppointmentFl
                 key={item.title}
                 className="rounded-2xl sm:rounded-[24px] bg-white shadow-[0_14px_40px_rgba(15,23,42,0.08)] border border-slate-100 px-4 py-3 sm:py-4"
               >
-                <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[var(--color-deepSpace)] mb-1.5">
+                <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-[var(--color-deepSpace)] mb-1.5">
                   {item.title}
                 </p>
                 <p className="text-[11px] text-[var(--color-neutralGray)] leading-relaxed">

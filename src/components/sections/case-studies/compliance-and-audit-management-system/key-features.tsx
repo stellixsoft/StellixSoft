@@ -42,7 +42,7 @@ export default function ComplianceAndAuditManagementSystemKeyFeatures() {
                 {feature.icon}
               </span>
 
-              <h3 className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-deepSpace)] mb-3">
+              <h3 className="text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-deepSpace)] mb-3">
                 {feature.title}
               </h3>
 

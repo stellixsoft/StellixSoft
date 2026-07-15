@@ -92,7 +92,7 @@ export default function ComplianceAndAuditManagementSystemPlatformArchitecture()
           {/* Top: Next.js frontend modules */}
           <div className="mb-8 md:mb-10">
             <div className="mx-auto max-w-[800px] rounded-[28px] bg-[var(--color-electricBlue-solid)] text-white px-6 py-6 md:px-10 md:py-7 shadow-[0_20px_70px_rgba(15,23,42,0.35)] border border-sky-300/60">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80 text-center mb-4">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.1em] text-white/80 text-center mb-4">
                 Next.js Frontend
               </p>
               <div className="flex flex-wrap items-center justify-center gap-3">
@@ -118,7 +118,7 @@ export default function ComplianceAndAuditManagementSystemPlatformArchitecture()
           {/* Node.js API server */}
           <div className="mb-8 md:mb-10">
             <div className="mx-auto max-w-[800px] rounded-[28px] bg-[var(--color-deepSpace)] text-white px-6 py-6 md:px-10 md:py-8 shadow-[0_22px_80px_rgba(15,23,42,0.9)]">
-              <p className="text-xs md:text-sm font-semibold uppercase tracking-[0.22em] text-[var(--color-electricBlue)] text-center mb-4">
+              <p className="text-xs md:text-sm font-semibold uppercase tracking-[0.1em] text-[var(--color-electricBlue)] text-center mb-4">
                 Node.js API Server
               </p>
               <div className="flex flex-wrap items-center justify-center gap-2 text-[10px] md:text-[11px] text-white/80">
@@ -142,7 +142,7 @@ export default function ComplianceAndAuditManagementSystemPlatformArchitecture()
                 className="rounded-[26px] bg-[var(--color-electricBlue-solid)] text-white px-5 py-5 md:px-6 md:py-5 flex flex-col items-center text-center gap-2 shadow-[0_20px_70px_rgba(15,23,42,0.45)]"
               >
                 <span className="opacity-90">{store.icon}</span>
-                <p className="text-[11px] font-medium uppercase tracking-[0.22em]">
+                <p className="text-[11px] font-medium uppercase tracking-[0.1em]">
                   {store.label}
                 </p>
                 <p className="text-xs text-white/85">{store.subtitle}</p>
@@ -151,7 +151,7 @@ export default function ComplianceAndAuditManagementSystemPlatformArchitecture()
           </div>
 
           {/* Compliance pillars */}
-          <div className="mt-4 flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 text-[10px] md:text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
+          <div className="mt-4 flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 text-[10px] md:text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-neutralGray)]">
             {compliancePillars.map((pill) => (
               <span
                 key={pill.label}

@@ -22,7 +22,7 @@ export default function CaseStudyArchitecture({ data }: Props) {
           <div className="w-full text-left">
             {data.heading ? (
               <>
-                <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+                <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
                   {label}
                 </p>
                 <h2 className="mt-3 text-3xl font-light leading-tight text-[var(--color-deepSpace)] md:text-4xl lg:text-5xl">
@@ -51,7 +51,7 @@ export default function CaseStudyArchitecture({ data }: Props) {
                       "linear-gradient(180deg, #3bb8e0 0%, var(--color-electricBlue-solid) 100%)",
                   }}
                 >
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em]">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.1em]">
                     {item.label}
                   </p>
                   <p className="mt-0.5 text-xs text-white/95 md:text-[13px]">

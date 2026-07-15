@@ -108,14 +108,14 @@ export type CaseStudyContent = {
     companyLine1: string;
     companyLine2?: string;
     avatarSrc: string;
-    /** Default right column — why succeeded */
+    /** Default right column - why succeeded */
     reasons?: CaseStudySuccessReason[];
-    /** Alternate right column — process / lifecycle cards */
+    /** Alternate right column - process / lifecycle cards */
     lifecycle?: {
       label: string;
       steps: CaseStudyLifecycleStep[];
     };
-    /** Alternate right column — role-labeled vertical timeline */
+    /** Alternate right column - role-labeled vertical timeline */
     processTimeline?: {
       label?: string;
       steps: {

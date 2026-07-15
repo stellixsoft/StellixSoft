@@ -88,7 +88,7 @@ export default function MultiLocationServiceBusinessPlatformOurSolution() {
             >
               <span className="text-[var(--color-electricBlue)] mb-4">{mod.icon}</span>
 
-              <h3 className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-deepSpace)] mb-4">
+              <h3 className="text-[11px] font-medium uppercase tracking-[0.1em] text-[var(--color-deepSpace)] mb-4">
                 {mod.title}
               </h3>
 

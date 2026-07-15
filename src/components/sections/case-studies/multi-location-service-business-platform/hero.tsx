@@ -28,32 +28,32 @@ export default function MultiLocationServiceBusinessPlatformHero() {
         <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto">
           <div className="rounded-2xl bg-white/5 border border-white/10 px-4 py-5 md:px-6 md:py-6 backdrop-blur-sm">
             <p className="text-2xl md:text-3xl font-medium">35%</p>
-            <p className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.22em] text-white/70">
+            <p className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.1em] text-white/70">
               More Jobs/Day
             </p>
           </div>
           <div className="rounded-2xl bg-white/5 border border-white/10 px-4 py-5 md:px-6 md:py-6 backdrop-blur-sm">
             <p className="text-2xl md:text-3xl font-medium">60%</p>
-            <p className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.22em] text-white/70">
+            <p className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.1em] text-white/70">
               Online Bookings
             </p>
           </div>
           <div className="rounded-2xl bg-white/5 border border-white/10 px-4 py-5 md:px-6 md:py-6 backdrop-blur-sm">
             <p className="text-2xl md:text-3xl font-medium">4</p>
-            <p className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.22em] text-white/70">
+            <p className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.1em] text-white/70">
               States Unified
             </p>
           </div>
           <div className="rounded-2xl bg-white/5 border border-white/10 px-4 py-5 md:px-6 md:py-6 backdrop-blur-sm">
               <p className="text-2xl md:text-3xl font-medium">50%</p>
-            <p className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.22em] text-white/70">
+            <p className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.1em] text-white/70">
               Faster Billing
             </p>
           </div>
         </div>
 
         {/* Industry + tech tags */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.24em] text-white/70">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.1em] text-white/70">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2">
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" aria-hidden />
             Industry: Home Services / Field Service

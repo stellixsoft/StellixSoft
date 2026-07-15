@@ -47,7 +47,7 @@ export default function EnterprisePortalFacingSimilarChallenges() {
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
         {/* Left */}
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+          <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
             Facing Similar Challenges?
           </p>
           <h2 className="mt-3 text-3xl font-light leading-tight text-[var(--color-deepSpace)] md:text-4xl lg:text-5xl">
@@ -83,7 +83,7 @@ export default function EnterprisePortalFacingSimilarChallenges() {
         {/* Right cards */}
         <div className="flex flex-col gap-4">
           <article className="rounded-2xl bg-white px-5 py-5 shadow-[0_12px_40px_rgba(15,23,42,0.06)] sm:px-6 sm:py-6">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-electricBlue)]">
+            <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
               What You Get
             </p>
             <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--color-neutralGray)]">
@@ -97,7 +97,7 @@ export default function EnterprisePortalFacingSimilarChallenges() {
           </article>
 
           <article className="rounded-2xl bg-white px-5 py-5 shadow-[0_12px_40px_rgba(15,23,42,0.06)] sm:px-6 sm:py-6">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-electricBlue)]">
+            <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
               Not Ready Yet?
             </p>
             <p className="mt-3 text-sm leading-relaxed text-[var(--color-neutralGray)]">
@@ -115,7 +115,7 @@ export default function EnterprisePortalFacingSimilarChallenges() {
 
           <article className="flex flex-col gap-4 rounded-2xl bg-white px-5 py-5 shadow-[0_12px_40px_rgba(15,23,42,0.06)] sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-5">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-electricBlue)]">
+              <p className="text-sm font-medium uppercase tracking-[0.1em] text-[var(--color-electricBlue)]">
                 Global Team
               </p>
               <p className="mt-1 text-base font-semibold text-[var(--color-deepSpace)]">
