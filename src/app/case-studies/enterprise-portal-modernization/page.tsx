@@ -7,7 +7,6 @@ import EnterprisePortalTechnicalArchitecture from "../../../components/sections/
 import EnterprisePortalKeyFeatures from "../../../components/sections/case-studies/enterprise-portal-modernization/key-features";
 import EnterprisePortalResults from "../../../components/sections/case-studies/enterprise-portal-modernization/results";
 import EnterprisePortalTestimonial from "../../../components/sections/case-studies/enterprise-portal-modernization/testimonial";
-import EnterprisePortalWhySucceededAndRelated from "../../../components/sections/case-studies/enterprise-portal-modernization/why-succeeded-and-related";
 import EnterprisePortalFacingSimilarChallenges from "../../../components/sections/case-studies/enterprise-portal-modernization/facing-similar-challenges";
 import CTAPilot from "../../../components/sections/home/cta-pilot";
 import { JsonLd } from "@/src/components/seo/json-ld";
@@ -49,7 +48,6 @@ export default function EnterprisePortalModernizationPage() {
         <EnterprisePortalKeyFeatures />
         <EnterprisePortalResults />
         <EnterprisePortalTestimonial />
-        <EnterprisePortalWhySucceededAndRelated />
         <EnterprisePortalFacingSimilarChallenges />
         <CTAPilot />
       </div>

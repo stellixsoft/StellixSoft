@@ -71,7 +71,7 @@ export default function MultiLocationServiceBusinessPlatformOurSolution() {
     }}>
       <div className="max-w-[1100px] mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)]">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light text-[var(--color-deepSpace)]">
             Our Solution
           </h2>
           <p className="mt-4 text-sm md:text-base text-[var(--color-neutralGray)] leading-relaxed">

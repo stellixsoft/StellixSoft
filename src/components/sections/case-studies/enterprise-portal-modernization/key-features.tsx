@@ -1,76 +1,89 @@
-import Image from "next/image";
 const features = [
   {
     title: "Multi-tenant Platform",
-    description: [
-      "Single codebase serving multiple Fortune 500 clients",
+    items: [
+      "Single codebase, multiple Fortune 500 clients",
       "Complete data isolation between tenants",
-      "Customizable branding and workflows per client",
-      "Role-based access control with granular permissions",
+      "Customizable branding and workflows",
+      "Role-based access control",
     ],
   },
   {
     title: "Real-time Device Monitoring",
-    description: [
-      "Live dashboard showing 10,000+ devices worldwide",
-      "Instant alerts when devices go offline or malfunction",
+    items: [
+      "Live dashboard: 10,000+ devices worldwide",
+      "Instant alerts for offline or malfunctioning devices",
       "Historical performance data and trend analysis",
-      "Geographic visualization of device deployments",
+      "Geographic deployment visualization",
     ],
   },
   {
-    title: "Automated Ticketing System",
-    description: [
+    title: "Automated Ticketing",
+    items: [
       "Tickets auto-created from device anomalies",
-      "Smart routing based on issue type and severity",
+      "Smart routing by issue type and severity",
       "SLA tracking with escalation workflows",
-      "Integration with email and SMS notifications",
+      "Email and SMS notification integration",
     ],
   },
   {
     title: "Advanced Reporting Suite",
-    description: [
+    items: [
       "Executive dashboards for C-level visibility",
       "Operational reports for field teams",
-      "Compliance reports for enterprise clients",
+      "Compliance reporting for enterprise clients",
       "Scheduled report delivery via email",
     ],
   },
-];
+] as const;
+
+function CheckIcon() {
+  return (
+    <span
+      className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--color-electricBlue)]"
+      aria-hidden
+    >
+      <svg
+        className="h-3 w-3 text-white"
+        viewBox="0 0 12 12"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M2.5 6.5 5 9l4.5-6" />
+      </svg>
+    </span>
+  );
+}
 
 export default function EnterprisePortalKeyFeatures() {
   return (
-    <section className="py-20 md:py-28 px-4 sm:px-6 bg-white" style={{
-      background: "#ffffff",
-    }}>
-      <div className="max-w-[1100px] mx-auto">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)]">
-            Key Features Delivered
+    <section className="bg-[#F3F5F8] px-4 py-20 sm:px-6 md:py-28">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="max-w-2xl">
+          <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+            What We Built
+          </p>
+          <h2 className="mt-3 text-3xl font-light leading-tight text-[var(--color-deepSpace)] md:text-4xl lg:text-5xl">
+            Key features delivered
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-12 md:gap-5 lg:gap-6">
           {features.map((feature) => (
             <article
               key={feature.title}
-              className="rounded-[28px] border border-gray-100 bg-white shadow-[0_18px_60px_rgba(15,23,42,0.08)] px-6 py-6 md:px-7 md:py-7 flex flex-col"
+              className="rounded-2xl bg-white px-6 py-6 shadow-[0_8px_30px_rgba(15,23,42,0.04)] sm:px-7 sm:py-7"
             >
-              {/* Icon placeholder */}
-              <Image src="/assets/images/iot.png" alt="Enterprise Portal Key Features" width={40} height={40} className="object-contain mb-4" />
-
-              <h3 className="text-sm md:text-[15px] font-medium tracking-[0.16em] uppercase text-[var(--color-deepSpace)] mb-4">
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.08em] text-[var(--color-deepSpace)] md:text-[15px]">
                 {feature.title}
               </h3>
-
-              <ul className="space-y-2.5 text-sm md:text-[15px] text-[var(--color-deepSpace)]">
-                {feature.description.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span
-                      className="mt-1 h-1.5 w-1.5 rounded-full"
-                      style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-                      aria-hidden
-                    />
+              <ul className="space-y-3 text-sm leading-relaxed text-[var(--color-neutralGray)] md:text-[15px]">
+                {feature.items.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckIcon />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -82,4 +95,3 @@ export default function EnterprisePortalKeyFeatures() {
     </section>
   );
 }
-

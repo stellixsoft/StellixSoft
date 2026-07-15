@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
-import LogisticsManagementPlatformHero from "../../../components/sections/case-studies/logistics-management-platform/hero";
-import LogisticsManagementPlatformProjectOverview from "../../../components/sections/case-studies/logistics-management-platform/project-overview";
-import LogisticsManagementPlatformClient from "../../../components/sections/case-studies/logistics-management-platform/client";
-import LogisticsManagementPlatformChallenge from "../../../components/sections/case-studies/logistics-management-platform/challenge";
-import LogisticsManagementPlatformOurSolution from "../../../components/sections/case-studies/logistics-management-platform/our-solution";
-import LogisticsManagementPlatformArchitecture from "../../../components/sections/case-studies/logistics-management-platform/platform-architecture";
-import LogisticsManagementPlatformRealTimeTracking from "../../../components/sections/case-studies/logistics-management-platform/real-time-tracking";
-import LogisticsManagementPlatformShipmentLifecycle from "../../../components/sections/case-studies/logistics-management-platform/shipment-lifecycle";
-import LogisticsManagementPlatformKeyFeatures from "../../../components/sections/case-studies/logistics-management-platform/key-features";
-import LogisticsManagementPlatformResults from "../../../components/sections/case-studies/logistics-management-platform/results";
-import LogisticsManagementPlatformTestimonial from "../../../components/sections/case-studies/logistics-management-platform/testimonial";
-import CTAPilot from "../../../components/sections/home/cta-pilot";
+import CaseStudyPageLayout from "@/src/components/sections/case-studies/shared/case-study-page-layout";
+import { logisticsCaseStudy } from "@/src/data/case-studies/logistics";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import { articleCaseStudyJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
@@ -37,24 +27,7 @@ export default function LogisticsManagementPlatformPage() {
   return (
     <>
       <JsonLd data={articleLd} />
-      <div>
-        <LogisticsManagementPlatformHero />
-        <div
-          className="h-1 w-full shrink-0"
-          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-        />
-        <LogisticsManagementPlatformProjectOverview />
-        <LogisticsManagementPlatformClient />
-        <LogisticsManagementPlatformChallenge />
-        <LogisticsManagementPlatformOurSolution />
-        <LogisticsManagementPlatformArchitecture />
-        <LogisticsManagementPlatformRealTimeTracking />
-        <LogisticsManagementPlatformShipmentLifecycle />
-        <LogisticsManagementPlatformKeyFeatures />
-        <LogisticsManagementPlatformResults />
-        <LogisticsManagementPlatformTestimonial />
-        <CTAPilot />
-      </div>
+      <CaseStudyPageLayout data={logisticsCaseStudy} />
     </>
   );
 }

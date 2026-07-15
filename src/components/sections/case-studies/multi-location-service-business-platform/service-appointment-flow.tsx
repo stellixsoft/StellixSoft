@@ -68,7 +68,7 @@ export default function MultiLocationServiceBusinessPlatformServiceAppointmentFl
       background: "#ffffff",
     }}>
       <div className="max-w-[1100px] mx-auto">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center mb-8 sm:mb-10 md:mb-12">
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-light text-[var(--color-deepSpace)] text-center mb-8 sm:mb-10 md:mb-12">
           Service Appointment Flow
         </h2>
 

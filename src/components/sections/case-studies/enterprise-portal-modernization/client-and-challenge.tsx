@@ -1,102 +1,149 @@
+import type { ReactNode } from "react";
+
 const technicalDebtItems = [
-  "Legacy VB.NET codebase with limited developer availability",
-  "Monolithic architecture that couldn’t scale",
-  "No real-time capabilities for device monitoring",
-  "Single-tenant design limiting enterprise client growth",
+  "Legacy VB.NET codebase, limited dev availability",
+  "Monolithic architecture that couldn't scale",
+  "No real-time device monitoring capabilities",
+  "Single-tenant design limiting enterprise growth",
 ];
 
 const businessImpactItems = [
-  "New feature development took 3–4x longer than competitors",
-  "Couldn’t onboard large enterprise clients due to scalability limits",
-  "Support tickets increasing due to system performance issues",
-  "Risk of losing Fortune 500 contracts without modernization",
+  "Features took 3–4× longer than competitors",
+  "Couldn't onboard large enterprise clients",
+  "Support tickets rising due to performance issues",
+  "Risk of losing Fortune 500 contracts",
 ];
+
+function ChipIcon() {
+  return (
+    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75} aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M15.75 3v1.5M8.25 19.5V21M15.75 19.5V21M4.5 8.25H3M4.5 15.75H3M21 8.25h-1.5M21 15.75h-1.5M6.75 6.75h10.5v10.5H6.75V6.75z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75h4.5v4.5h-4.5v-4.5z" />
+    </svg>
+  );
+}
+
+function ChartIcon() {
+  return (
+    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75} aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.5l5.25-5.25L12 12l6.75-6.75" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 19.5h18" />
+    </svg>
+  );
+}
+
+function InfoIcon() {
+  return (
+    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75} aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25v5.25m0-8.25h.008v.008H11.25V8.25z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  );
+}
+
+function SyncIcon() {
+  return (
+    <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />
+    </svg>
+  );
+}
+
+function IconBadge({ children }: { children: ReactNode }) {
+  return (
+    <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--color-electricBlue)]/15 text-[var(--color-electricBlue)]">
+      {children}
+    </div>
+  );
+}
+
+function ProblemList({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-3 text-sm leading-relaxed text-white/85 md:text-[15px]">
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-2.5">
+          <span
+            className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ff4b5c]"
+            aria-hidden
+          />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default function EnterprisePortalClientAndChallenge() {
   return (
-    <section className="py-20 md:py-28 px-4 sm:px-6 bg-white" style={{
-      background: "#ffffff",
-    }}>
-      <div className="max-w-[1100px] mx-auto">
-        {/* The Client */}
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)]">
-            The Client
-          </h2>
-          <p className="mt-4 text-sm md:text-base text-[var(--color-neutralGray)] leading-relaxed">
-            Our client is a global hardware manufacturer specializing in RFID systems, IP cameras,
-            and enterprise networking equipment. Their products are deployed across Fortune 500
-            supply chains, including operations for PepsiCo in the United States.
-          </p>
-          <p className="mt-3 text-sm md:text-base text-[var(--color-neutralGray)] leading-relaxed">
-            With 150+ employees and operations spanning North America and Europe, the client needed
-            enterprise-grade software to manage device deployments for their corporate customers.
-          </p>
-        </div>
+    <section className="relative overflow-hidden px-4 py-20 sm:px-6 md:py-28">
+      {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage:
+            "url(/assets/images/case-study-section-bg.jpg)",
+        }}
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-[var(--color-deepSpace)]/55"
+        aria-hidden
+      />
 
-        {/* Spacer between sections */}
-        <div className="h-20 md:h-24" />
-
-        {/* The Challenge */}
-        <div className="text-center mb-10 md:mb-14">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)]">
-            The Challenge
+      <div className="relative z-10 mx-auto max-w-[1200px]">
+        <div className="max-w-2xl">
+          <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+            The Problem
+          </p>
+          <h2 className="mt-3 text-3xl font-light leading-tight text-white md:text-4xl lg:text-5xl">
+            What was holding them back
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.95fr] gap-8 lg:gap-10 items-start">
-          {/* Left column: two white cards */}
-          <div className="space-y-6">
-            <div className="rounded-[28px] border border-gray-100 bg-white shadow-[0_18px_60px_rgba(15,23,42,0.08)] px-6 py-6 md:px-7 md:py-7">
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-electricBlue)] mb-4">
-                Technical Debt
-              </p>
-              <ul className="space-y-2.5 text-sm md:text-[15px] text-[var(--color-deepSpace)]">
-                {technicalDebtItems.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff4b5c]" aria-hidden />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        <div className="mt-10 grid grid-cols-1 gap-4 md:mt-12 md:grid-cols-3 md:gap-5 lg:gap-6">
+          {/* Technical Debt */}
+          <article className="flex flex-col rounded-2xl border border-white/15 bg-white/[0.08] p-6 backdrop-blur-md md:p-7">
+            <IconBadge>
+              <ChipIcon />
+            </IconBadge>
+            <h3 className="mb-4 text-lg font-semibold text-white">
+              Technical Debt
+            </h3>
+            <ProblemList items={technicalDebtItems} />
+          </article>
 
-            <div className="rounded-[28px] border border-gray-100 bg-white shadow-[0_18px_60px_rgba(15,23,42,0.08)] px-6 py-6 md:px-7 md:py-7">
-              <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[var(--color-electricBlue)] mb-4">
-                Business Impact
-              </p>
-              <ul className="space-y-2.5 text-sm md:text-[15px] text-[var(--color-deepSpace)]">
-                {businessImpactItems.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff4b5c]" aria-hidden />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          {/* Business Impact */}
+          <article className="flex flex-col rounded-2xl border border-white/15 bg-white/[0.08] p-6 backdrop-blur-md md:p-7">
+            <IconBadge>
+              <ChartIcon />
+            </IconBadge>
+            <h3 className="mb-4 text-lg font-semibold text-white">
+              Business Impact
+            </h3>
+            <ProblemList items={businessImpactItems} />
+          </article>
 
-          {/* Right column: dark previous attempts card */}
-          <div className="rounded-[32px] bg-[var(--color-deepSpace)] text-white px-6 py-7 md:px-8 md:py-9 shadow-[0_22px_70px_rgba(15,23,42,0.55)] relative overflow-hidden">
-            <div className="pointer-events-none absolute -top-10 right-0 h-32 w-32 rounded-full bg-white/5" aria-hidden />
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/60 mb-4">
+          {/* Previous Attempts */}
+          <article className="flex flex-col rounded-2xl border border-white/15 bg-white/[0.08] p-6 backdrop-blur-md md:p-7">
+            <IconBadge>
+              <InfoIcon />
+            </IconBadge>
+            <h3 className="mb-4 text-lg font-semibold text-white">
               Previous Attempts
+            </h3>
+            <p className="flex-1 text-sm leading-relaxed text-white/85 md:text-[15px]">
+              Two previous modernization attempts with other development
+              agencies had failed. The internal team lacked .NET Core expertise
+              and needed a partner who could modernize without disrupting live
+              Fortune 500 operations.
             </p>
-            <p className="text-sm md:text-[15px] leading-relaxed text-white/90 mb-5">
-              Two previous modernization attempts with other development agencies had failed. The
-              internal team lacked .NET Core migration expertise, and they needed a partner who
-              could modernize without disrupting live operations serving Fortune 500 clients.
-            </p>
-            <p className="mt-4 text-xs md:text-sm font-medium text-[var(--color-electricBlue)] flex items-center gap-2">
-              <span className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-[var(--color-electricBlue)] text-[9px]">
-                !
-              </span>
+            <p className="mt-6 flex items-center gap-2 text-sm font-medium text-[var(--color-electricBlue)]">
+              <SyncIcon />
               Strategic intervention required
             </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
   );
 }
-

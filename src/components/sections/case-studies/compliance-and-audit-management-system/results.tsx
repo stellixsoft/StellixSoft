@@ -24,7 +24,7 @@ export default function ComplianceAndAuditManagementSystemResults() {
     <section className="py-20 md:py-28 px-4 sm:px-6" style={{ backgroundColor: "var(--color-deepSpace)" }}>
       <div className="max-w-[1300px] mx-auto text-white">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light">The Results</h2>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light">The Results</h2>
         </div>
 
         {/* Top metric cards */}

@@ -4,7 +4,7 @@ export default function ComplianceAndAuditManagementSystemClient() {
       background: "#ffffff",
     }}>
       <div className="max-w-[1100px] mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)]">
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-light text-[var(--color-deepSpace)]">
           The Client
         </h2>
         <p className="mt-4 text-sm md:text-base text-[var(--color-neutralGray)] leading-relaxed max-w-3xl mx-auto">

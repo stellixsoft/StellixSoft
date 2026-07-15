@@ -35,7 +35,7 @@ export default function ComplianceAndAuditManagementSystemAuditWorkflowDesign() 
       background: "#ffffff",
     }}>
       <div className="max-w-[1100px] mx-auto">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] text-center mb-10 md:mb-12">
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-light text-[var(--color-deepSpace)] text-center mb-10 md:mb-12">
           Audit Workflow Design
         </h2>
 

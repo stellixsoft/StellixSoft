@@ -1,60 +1,140 @@
 import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
 
-const benefits = [
-  "Free technical assessment",
-  "Detailed roadmap",
-  "Zero-downtime guarantee",
-];
+const whatYouGet = [
+  "Free technical assessment of your legacy system",
+  "Detailed modernization roadmap",
+  "Zero-downtime migration guarantee",
+] as const;
+
+function CheckIcon() {
+  return (
+    <span
+      className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--color-electricBlue)]"
+      aria-hidden
+    >
+      <svg
+        className="h-3 w-3 text-white"
+        viewBox="0 0 12 12"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M2.5 6.5 5 9l4.5-6" />
+      </svg>
+    </span>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75} aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+  );
+}
 
 export default function EnterprisePortalFacingSimilarChallenges() {
   return (
-    <section className="py-20 md:py-28 px-4 sm:px-6 bg-white" style={{
-      background: "#ffffff",
-    }}>
-      <div className="max-w-[900px] mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)]">
-          Facing Similar Challenges?
-        </h2>
+    <section
+      className="px-4 py-20 sm:px-6 md:py-28"
+      style={{
+        background:
+          "radial-gradient(ellipse 80% 60% at 30% 20%, rgba(16,172,219,0.14) 0%, rgba(255,255,255,0) 55%), #f7fbfe",
+      }}
+    >
+      <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16">
+        {/* Left */}
+        <div>
+          <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+            Facing Similar Challenges?
+          </p>
+          <h2 className="mt-3 text-3xl font-light leading-tight text-[var(--color-deepSpace)] md:text-4xl lg:text-5xl">
+            Two agencies failed this.
+            <br />
+            We succeeded.
+          </h2>
+          <p className="mt-4 max-w-lg text-sm leading-relaxed text-[var(--color-neutralGray)] md:text-base">
+            Let&apos;s discuss your legacy system and see if we can help. Free
+            technical assessment, detailed roadmap, zero-downtime migration
+            guarantee.
+          </p>
 
-        <p className="mt-4 text-sm md:text-base text-[var(--color-neutralGray)] leading-relaxed max-w-2xl mx-auto">
-          Two other agencies failed this client&apos;s modernization. We succeeded. Let&apos;s
-          discuss your legacy system and see if we can help.
-        </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <CalendlyScheduleButton
+              className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium text-white"
+              style={{
+                backgroundColor: "var(--color-electricBlue-solid)",
+              }}
+            >
+              Schedule Your Free Assessment
+              <span aria-hidden>→</span>
+            </CalendlyScheduleButton>
 
-        <div className="mt-8 md:mt-10 mb-16">
-          <CalendlyScheduleButton
-            className="inline-flex items-center justify-center rounded-full px-10 md:px-14 py-3.5 md:py-4 text-sm md:text-base font-medium text-white shadow-[0_18px_60px_rgba(0,180,255,0.5)] cursor-pointer"
-            style={{
-              background:
-                "linear-gradient(180deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
-            }}
-          >
-            Schedule Your Free Assessment - No Obligation
-          </CalendlyScheduleButton>
+            <a
+              href="mailto:info@stellixsoft.com"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-medium text-[var(--color-deepSpace)] transition-colors hover:border-[var(--color-electricBlue)]"
+            >
+              <MailIcon />
+              info@stellixsoft.com
+            </a>
+          </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
-          {benefits.map((benefit) => (
-            <span key={benefit} className="inline-flex items-center gap-2">
+        {/* Right cards */}
+        <div className="flex flex-col gap-4">
+          <article className="rounded-2xl bg-white px-5 py-5 shadow-[0_12px_40px_rgba(15,23,42,0.06)] sm:px-6 sm:py-6">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-electricBlue)]">
+              What You Get
+            </p>
+            <ul className="mt-4 space-y-3 text-sm leading-relaxed text-[var(--color-neutralGray)]">
+              {whatYouGet.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckIcon />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="rounded-2xl bg-white px-5 py-5 shadow-[0_12px_40px_rgba(15,23,42,0.06)] sm:px-6 sm:py-6">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-electricBlue)]">
+              Not Ready Yet?
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-[var(--color-neutralGray)]">
+              Test us on a small project first. See our quality, communication,
+              and delivery before committing to more.
+            </p>
+            <p className="mt-4 flex items-center gap-2 text-sm text-[var(--color-deepSpace)]">
               <span
-                className="inline-flex h-4 w-4 items-center justify-center rounded-full border border-[var(--color-electricBlue)] text-[9px] text-[var(--color-electricBlue)]"
+                className="h-2 w-2 rounded-full bg-emerald-500"
                 aria-hidden
-              >
-                ✓
-              </span>
-              {benefit}
-            </span>
-          ))}
+              />
+              Next Available Slot: Feb 5th
+            </p>
+          </article>
+
+          <article className="flex flex-col gap-4 rounded-2xl bg-white px-5 py-5 shadow-[0_12px_40px_rgba(15,23,42,0.06)] sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:py-5">
+            <div>
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-[var(--color-electricBlue)]">
+                Global Team
+              </p>
+              <p className="mt-1 text-base font-semibold text-[var(--color-deepSpace)]">
+                55+ Enterprise Specialists
+              </p>
+            </div>
+            <CalendlyScheduleButton
+              className="inline-flex cursor-pointer items-center justify-center rounded-full px-5 py-2.5 text-sm font-medium text-white"
+              style={{
+                backgroundColor: "var(--color-electricBlue-solid)",
+              }}
+            >
+              Book a Call
+            </CalendlyScheduleButton>
+          </article>
         </div>
-
-        <hr className="mt-10 mb-6 border-t border-slate-200" />
-
-        <p className="text-[11px] md:text-xs text-[var(--color-neutralGray)] italic max-w-xl mx-auto">
-          &quot;This project started with a single discovery call. Three years later, we&apos;re
-          still building together. Your project could be next.&quot;
-        </p>
       </div>
     </section>
   );
 }
-

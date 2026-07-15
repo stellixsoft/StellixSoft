@@ -1,79 +1,81 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
 
+const STATS = [
+  { value: "ZERO", label: "Downtime Migration" },
+  { value: "3+", label: "Years Partner" },
+  { value: "6", label: "Devs Dedicated" },
+  { value: "10,000+", label: "Devices Monitored" },
+] as const;
+
+const TECH_STACK = [
+  ".NET Core 6",
+  "SignalR",
+  "React",
+  "SQL Server",
+  "AWS",
+] as const;
+
 export default function EnterprisePortalModernizationHero() {
   return (
-    <section className="relative py-32 md:py-40 flex items-center justify-center overflow-hidden -mt-[100px] min-h-[calc(80vh+120px)]">
-      {/* Video background */}
-      <HeroBackgroundVideo className="absolute inset-0 w-full h-full object-cover" />
+    <section className="relative flex min-h-[calc(80vh+120px)] flex-col overflow-hidden -mt-[100px]">
+      <HeroBackgroundVideo className="absolute inset-0 h-full w-full object-cover" />
 
-      {/* Dark overlay for text readability */}
+      {/* Dark overlay — keep left readable, let planet read on the right */}
       <div
-        className="absolute inset-0 bg-[var(--color-deepSpace)]/75"
+        className="absolute inset-0 bg-[var(--color-deepSpace)]/70"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[var(--color-deepSpace)]/55 via-[var(--color-deepSpace)]/25 to-transparent"
         aria-hidden
       />
 
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center text-white">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight">
-          Enterprise Portal
-          <br />
-          <span className="font-semibold">Modernization</span>
-        </h1>
+      <div className="relative z-10 flex flex-1 flex-col">
+        <div className="mx-auto flex w-full max-w-[1300px] flex-1 flex-col items-center justify-center px-6 pb-16 pt-36 text-center text-white md:pt-40">
+          <h1 className="text-4xl font-extralight leading-tight md:text-5xl lg:text-6xl">
+            Enterprise Portal
+            <br />
+            <span className="font-semibold">Modernization</span>
+          </h1>
 
-        <p className="mt-6 text-sm md:text-base lg:text-lg text-white/80 tracking-[0.18em] uppercase">
-          Global Hardware Company &nbsp;|&nbsp; Fortune 500 Supply Chain
-        </p>
+          <p className="mt-6 text-sm text-white/75 md:text-base lg:text-lg">
+            Global Hardware Company &nbsp;|&nbsp; Fortune 500 Supply Chain
+          </p>
 
-        {/* Stats row */}
-        <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto">
-          <div className="rounded-2xl bg-white/5 border border-white/10 px-4 py-5 md:px-6 md:py-6 backdrop-blur-sm">
-            <p className="text-2xl md:text-3xl font-semibold">ZERO</p>
-            <p className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.22em] text-white/70">
-              Downtime Migration
-            </p>
-          </div>
-          <div className="rounded-2xl bg-white/5 border border-white/10 px-4 py-5 md:px-6 md:py-6 backdrop-blur-sm">
-            <p className="text-2xl md:text-3xl font-semibold">3+</p>
-            <p className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.22em] text-white/70">
-              Years Partner
-            </p>
-          </div>
-          <div className="rounded-2xl bg-white/5 border border-white/10 px-4 py-5 md:px-6 md:py-6 backdrop-blur-sm">
-            <p className="text-2xl md:text-3xl font-semibold">6</p>
-            <p className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.22em] text-white/70">
-              Devs Dedicated
-            </p>
-          </div>
-          <div className="rounded-2xl bg-white/5 border border-white/10 px-4 py-5 md:px-6 md:py-6 backdrop-blur-sm">
-            <p className="text-2xl md:text-3xl font-semibold">10,000+</p>
-            <p className="mt-1 text-[10px] md:text-xs uppercase tracking-[0.22em] text-white/70">
-              Devices Monitored
-            </p>
+          <div className="mt-12 grid w-full max-w-4xl grid-cols-2 gap-3 sm:gap-4 md:mt-14 md:grid-cols-4 md:gap-5">
+            {STATS.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl border border-white/15 bg-white/[0.06] px-4 py-5 backdrop-blur-md md:px-5 md:py-6"
+              >
+                <p className="text-2xl font-semibold tracking-tight md:text-3xl">
+                  {stat.value}
+                </p>
+                <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.18em] text-[var(--color-electricBlue)] md:text-[11px]">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Industry + tech tags */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.24em] text-white/70">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" aria-hidden />
-            Industry: IoT / Hardware
-          </span>
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" aria-hidden />
-            .NET Core 6
-          </span>
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" aria-hidden />
-            React
-          </span>
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" aria-hidden />
-            SQL Server
-          </span>
-          <span className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-electricBlue-solid)]" aria-hidden />
-            AWS
-          </span>
+        {/* Bottom industry + tech bar */}
+        <div className="border-t border-white/10 bg-white/[0.06] backdrop-blur-md">
+          <div className="mx-auto flex w-full max-w-[1250px] flex-col items-center justify-between gap-4 px-6 py-4 sm:flex-row sm:gap-6">
+            <p className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/80 md:text-[11px]">
+              Industry: IoT/Hardware
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-end">
+              {TECH_STACK.map((tech) => (
+                <span
+                  key={tech}
+                  className="inline-flex items-center rounded-full border border-white/25 bg-transparent px-3.5 py-1.5 text-[10px] font-medium text-white/90 md:text-[11px]"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

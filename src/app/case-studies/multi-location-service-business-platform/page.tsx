@@ -1,15 +1,6 @@
 import type { Metadata } from "next";
-import MultiLocationServiceBusinessPlatformHero from "../../../components/sections/case-studies/multi-location-service-business-platform/hero";
-import MultiLocationServiceBusinessPlatformProjectOverview from "../../../components/sections/case-studies/multi-location-service-business-platform/project-overview";
-import MultiLocationServiceBusinessPlatformClient from "../../../components/sections/case-studies/multi-location-service-business-platform/client";
-import MultiLocationServiceBusinessPlatformChallenge from "../../../components/sections/case-studies/multi-location-service-business-platform/challenge";
-import MultiLocationServiceBusinessPlatformOurSolution from "../../../components/sections/case-studies/multi-location-service-business-platform/our-solution";
-import MultiLocationServiceBusinessPlatformArchitecture from "../../../components/sections/case-studies/multi-location-service-business-platform/platform-architecture";
-import MultiLocationServiceBusinessPlatformServiceAppointmentFlow from "../../../components/sections/case-studies/multi-location-service-business-platform/service-appointment-flow";
-import MultiLocationServiceBusinessPlatformKeyFeatures from "../../../components/sections/case-studies/multi-location-service-business-platform/key-features";
-import MultiLocationServiceBusinessPlatformResults from "../../../components/sections/case-studies/multi-location-service-business-platform/results";
-import MultiLocationServiceBusinessPlatformTestimonial from "../../../components/sections/case-studies/multi-location-service-business-platform/testimonial";
-import CTAPilot from "../../../components/sections/home/cta-pilot";
+import CaseStudyPageLayout from "@/src/components/sections/case-studies/shared/case-study-page-layout";
+import { multiLocationCaseStudy } from "@/src/data/case-studies/multi-location";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import { articleCaseStudyJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
@@ -36,23 +27,7 @@ export default function MultiLocationServiceBusinessPlatformPage() {
   return (
     <>
       <JsonLd data={articleLd} />
-      <div>
-        <MultiLocationServiceBusinessPlatformHero />
-        <div
-          className="h-1 w-full shrink-0"
-          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-        />
-        <MultiLocationServiceBusinessPlatformProjectOverview />
-        <MultiLocationServiceBusinessPlatformClient />
-        <MultiLocationServiceBusinessPlatformChallenge />
-        <MultiLocationServiceBusinessPlatformOurSolution />
-        <MultiLocationServiceBusinessPlatformArchitecture />
-        <MultiLocationServiceBusinessPlatformServiceAppointmentFlow />
-        <MultiLocationServiceBusinessPlatformKeyFeatures />
-        <MultiLocationServiceBusinessPlatformResults />
-        <MultiLocationServiceBusinessPlatformTestimonial />
-        <CTAPilot />
-      </div>
+      <CaseStudyPageLayout data={multiLocationCaseStudy} />
     </>
   );
 }

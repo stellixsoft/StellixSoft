@@ -1,109 +1,55 @@
-const techStack = [".NET Core 6", "SignalR", "React", "SQL Server", "AWS"];
+const CLIENT_FACTS = [
+  { label: "Client Type", value: "Global hardware manufacturer" },
+  { label: "Industry", value: "IoT / Hardware" },
+  { label: "End Clients", value: "Fortune 500 (e.g. PepsiCo)" },
+  { label: "Project Type", value: "Legacy modernization" },
+  { label: "Team Size", value: "6 dedicated developers" },
+  { label: "Duration", value: "3+ years ongoing" },
+] as const;
 
 export default function EnterprisePortalProjectOverview() {
   return (
-    <section className="py-16 md:py-24 px-4 sm:px-6 bg-white">
-      <div
-        className="max-w-[1100px] mx-auto rounded-[32px] md:rounded-[40px] px-6 py-8 md:px-10 md:py-10 lg:px-14 lg:py-12 shadow-[0_18px_60px_rgba(15,23,42,0.12)] border border-slate-100 grid grid-cols-1 md:grid-cols-[1.1fr_1fr_1.2fr] gap-8 lg:gap-12"
-        style={{
-          background:
-            "#ffffff",
-        }}
-      >
-        {/* Left: Project overview */}
-        <div className="space-y-4 text-[var(--color-deepSpace)] text-sm md:text-[15px]">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
-            Project Overview
+    <section className="bg-white px-4 py-20 sm:px-6 md:py-28">
+      <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
+        {/* Left: copy */}
+        <div className="max-w-xl">
+          <p className="text-sm font-medium uppercase tracking-[0.26em] text-[var(--color-electricBlue)]">
+            The Client
           </p>
-
-          <div className="space-y-3 mt-4">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
-                Client
-              </p>
-              <p className="mt-1 text-sm md:text-[15px] font-medium">
-                Global hardware manufacturer
-              </p>
-            </div>
-
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
-                Industry
-              </p>
-              <p className="mt-1 text-sm md:text-[15px] font-medium">
-                IoT / Hardware
-              </p>
-            </div>
-
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
-                End Clients
-              </p>
-              <p className="mt-1 text-sm md:text-[15px] font-medium">
-                Fortune 500 (e.g. PepsiCo)
-              </p>
-            </div>
-
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-neutralGray)]">
-                Project Type
-              </p>
-              <p className="mt-1 text-sm md:text-[15px] font-medium">
-                Legacy modernization
-              </p>
-            </div>
-          </div>
+          <h2 className="mt-4 text-3xl font-light leading-tight text-[var(--color-deepSpace)] md:text-4xl lg:text-5xl">
+            Global hardware
+            <br />
+            manufacturer
+          </h2>
+          <p className="mt-5 text-sm leading-relaxed text-[var(--color-neutralGray)] md:text-base">
+            Specializing in RFID systems, IP cameras, and enterprise networking
+            equipment. Products deployed across Fortune 500 supply chains,
+            including PepsiCo operations in the United States.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--color-neutralGray)] md:text-base">
+            With 150+ employees and operations spanning North America and
+            Europe, they needed enterprise-grade software to manage device
+            deployments for their corporate customers.
+          </p>
         </div>
 
-        {/* Center: Team & duration */}
-        <div className="relative flex flex-col justify-center text-[var(--color-deepSpace)]">
-          <div className="hidden md:block absolute top-4 bottom-4 left-0 w-px bg-sky-100" aria-hidden />
-          <div className="md:pl-8">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-neutralGray)] mb-3">
-              Team &amp; Duration
-            </p>
-            <ul className="space-y-3 text-sm md:text-[15px]">
-              <li className="flex items-start gap-2">
-                <span
-                  className="mt-1 inline-flex h-2.5 w-2.5 rounded-full"
-                  style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-                  aria-hidden
-                />
-                <span>3+ years (ongoing partnership)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span
-                  className="mt-1 inline-flex h-2.5 w-2.5 rounded-full"
-                  style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-                  aria-hidden
-                />
-                <span>6 dedicated developers</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Right: Core stack */}
-        <div className="relative flex flex-col justify-center">
-          <div className="hidden md:block absolute top-4 bottom-4 left-0 w-px bg-sky-100" aria-hidden />
-          <div className="md:pl-8">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--color-neutralGray)] mb-3">
-              Core Stack
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="inline-flex items-center rounded-full bg-white px-3 py-1.5 text-[11px] font-medium text-[var(--color-deepSpace)] shadow-[0_8px_24px_rgba(15,23,42,0.12)] border border-slate-100"
-                >
-                  {tech}
-                </span>
-              ))}
+        {/* Right: fact cards */}
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+          {CLIENT_FACTS.map((fact) => (
+            <div
+              key={fact.label}
+              className="rounded-2xl bg-[#F3F4F6] px-5 py-5 sm:px-6 sm:py-6"
+            >
+              <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-[var(--color-neutralGray)] md:text-[11px]">
+                {fact.label}
+              </p>
+              <p className="mt-2 text-sm font-semibold leading-snug text-[var(--color-deepSpace)] md:text-[15px]">
+                {fact.value}
+              </p>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
-

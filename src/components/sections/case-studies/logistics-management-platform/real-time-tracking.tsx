@@ -19,7 +19,7 @@ export default function LogisticsManagementPlatformRealTimeTracking() {
       background: "#ffffff",
     }}>
       <div className="max-w-[1100px] mx-auto text-center">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] mb-10 md:mb-12">
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-light text-[var(--color-deepSpace)] mb-10 md:mb-12">
           How Real-Time Tracking Works
         </h2>
 

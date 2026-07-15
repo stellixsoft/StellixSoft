@@ -64,7 +64,7 @@ export default function LogisticsManagementPlatformKeyFeatures() {
     }}>
       <div className="max-w-[1100px] mx-auto">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)]">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light text-[var(--color-deepSpace)]">
             Key Features Delivered
           </h2>
         </div>

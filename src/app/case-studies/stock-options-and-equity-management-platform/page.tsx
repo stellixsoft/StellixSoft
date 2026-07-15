@@ -1,15 +1,6 @@
 import type { Metadata } from "next";
-import StockOptionsAndEquityManagementPlatformHero from "../../../components/sections/case-studies/stock-options-and-equity-management-platform/hero";
-import StockOptionsAndEquityManagementPlatformProjectOverview from "../../../components/sections/case-studies/stock-options-and-equity-management-platform/project-overview";
-import StockOptionsAndEquityManagementPlatformClient from "../../../components/sections/case-studies/stock-options-and-equity-management-platform/client";
-import StockOptionsAndEquityManagementPlatformChallenge from "../../../components/sections/case-studies/stock-options-and-equity-management-platform/challenge";
-import StockOptionsAndEquityManagementPlatformOurSolution from "../../../components/sections/case-studies/stock-options-and-equity-management-platform/our-solution";
-import StockOptionsAndEquityManagementPlatformArchitecture from "../../../components/sections/case-studies/stock-options-and-equity-management-platform/platform-architecture";
-import StockOptionsAndEquityManagementPlatformLifecycle from "../../../components/sections/case-studies/stock-options-and-equity-management-platform/stock-option-lifecycle";
-import StockOptionsAndEquityManagementPlatformKeyFeatures from "../../../components/sections/case-studies/stock-options-and-equity-management-platform/key-features";
-import StockOptionsAndEquityManagementPlatformResults from "../../../components/sections/case-studies/stock-options-and-equity-management-platform/results";
-import StockOptionsAndEquityManagementPlatformTestimonial from "../../../components/sections/case-studies/stock-options-and-equity-management-platform/testimonial";
-import CTAPilot from "../../../components/sections/home/cta-pilot";
+import CaseStudyPageLayout from "@/src/components/sections/case-studies/shared/case-study-page-layout";
+import { stockOptionsCaseStudy } from "@/src/data/case-studies/stock-options";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import { articleCaseStudyJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
@@ -36,23 +27,7 @@ export default function StockOptionsAndEquityManagementPlatformPage() {
   return (
     <>
       <JsonLd data={articleLd} />
-      <div>
-        <StockOptionsAndEquityManagementPlatformHero />
-        <div
-          className="h-1 w-full shrink-0"
-          style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
-        />
-        <StockOptionsAndEquityManagementPlatformProjectOverview />
-        <StockOptionsAndEquityManagementPlatformClient />
-        <StockOptionsAndEquityManagementPlatformChallenge />
-        <StockOptionsAndEquityManagementPlatformOurSolution />
-        <StockOptionsAndEquityManagementPlatformArchitecture />
-        <StockOptionsAndEquityManagementPlatformLifecycle />
-        <StockOptionsAndEquityManagementPlatformKeyFeatures />
-        <StockOptionsAndEquityManagementPlatformResults />
-        <StockOptionsAndEquityManagementPlatformTestimonial />
-        <CTAPilot />
-      </div>
+      <CaseStudyPageLayout data={stockOptionsCaseStudy} />
     </>
   );
 }

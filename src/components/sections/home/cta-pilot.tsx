@@ -36,7 +36,7 @@ export default function CTAPilot() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mb-8 md:mb-10">
               <CalendlyScheduleButton
-                className="inline-flex items-center gap-2 rounded-[50px] px-6 md:px-8 py-3 md:py-4 text-base text-sm md:text-md font-normal text-white transition-opacity hover:opacity-90 cursor-pointer"
+                className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-[50px] px-4 py-2.5 text-xs font-normal text-white transition-opacity hover:opacity-90 cursor-pointer sm:gap-2 sm:px-6 sm:py-3 sm:text-sm md:px-8 md:py-4 md:text-base"
                 style={{
                   backgroundColor: "#10ACDB",
                   boxShadow: "0 10px 25px -5px rgba(255, 255, 255, 0.13)",
@@ -47,7 +47,7 @@ export default function CTAPilot() {
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
-                  className="w-5 h-5 md:w-5 md:h-5"
+                  className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4 md:h-5 md:w-5"
                   aria-hidden
                 >
                   <rect x="3" y="4" width="18" height="18" rx="2" />
