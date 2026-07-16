@@ -1,4 +1,5 @@
 import CaseStudyStatCounter from "./case-study-stat-counter";
+import CaseStudyOutcomesBgVideo from "./case-study-outcomes-bg-video";
 import type { CaseStudyContent } from "./types";
 
 type Props = {
@@ -115,13 +116,7 @@ export default function CaseStudyOutcomes({ data }: Props) {
 
   return (
     <section className="relative overflow-hidden px-4 py-20 sm:px-6 md:py-28">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url(/assets/images/case-study-outcomebg.jpg)",
-        }}
-        aria-hidden
-      />
+      <CaseStudyOutcomesBgVideo />
       <div className="absolute inset-0 bg-[var(--color-deepSpace)]/60" aria-hidden />
 
       <div className="relative z-10 mx-auto max-w-[1200px] text-white">

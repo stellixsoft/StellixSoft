@@ -1,4 +1,5 @@
 import CaseStudyStatCounter from "@/src/components/sections/case-studies/shared/case-study-stat-counter";
+import CaseStudyOutcomesBgVideo from "@/src/components/sections/case-studies/shared/case-study-outcomes-bg-video";
 
 const stats = [
   { value: "ZERO", label: "Downtime During Migration" },
@@ -77,13 +78,7 @@ function CardIcon({ type }: { type: "chip" | "chart" | "users" }) {
 export default function EnterprisePortalResults() {
   return (
     <section className="relative overflow-hidden px-4 py-20 sm:px-6 md:py-28">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url(/assets/images/case-study-outcomebg.jpg)",
-        }}
-        aria-hidden
-      />
+      <CaseStudyOutcomesBgVideo />
       <div
         className="absolute inset-0 bg-[var(--color-deepSpace)]/60"
         aria-hidden
