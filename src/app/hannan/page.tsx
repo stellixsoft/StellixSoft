@@ -7,7 +7,7 @@ import { personBusinessCardJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Hannan Ahmad Khan — Founder & CEO, Stellix Soft",
+  title: "Hannan Ahmad Khan — Co-Founder & CEO, Stellix Soft",
   description:
     "Save Hannan Ahmad Khan's digital business card, book a 15-minute meeting, and connect with Stellix Soft from your phone.",
   path: "/hannan",

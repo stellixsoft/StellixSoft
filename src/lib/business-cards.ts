@@ -91,13 +91,13 @@ export const BUSINESS_CARDS: Record<BusinessCardId, BusinessCard> = {
       givenName: "Hannan",
       additionalName: "Ahmad",
     },
-    title: "Founder & CEO",
+    title: "Co-Founder & CEO",
     company: COMPANY_NAME,
     positioningStatement:
       "Helping enterprise teams modernize complex software, ship faster, and reduce delivery risk.",
     photo: {
       publicPath: `/assets/images/${HANNAN_HEADSHOT_FILENAME}`,
-      alt: "Hannan Ahmad Khan, Founder & CEO of Stellix Soft",
+      alt: "Hannan Ahmad Khan, Co-Founder & CEO of Stellix Soft",
       fallbackInitials: "HA",
       hasRealHeadshot: true,
       todo: null,
