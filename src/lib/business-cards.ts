@@ -6,7 +6,7 @@ import {
 } from "@/src/lib/constants";
 import { absoluteUrl } from "@/src/lib/site-url";
 
-const COMPANY_NAME = "Stellix Soft" as const;
+const COMPANY_NAME = "Stellix Soft LLC" as const;
 const COMPANY_LINKEDIN_URL = "https://www.linkedin.com/company/stellixsoft" as const;
 const COMPANY_PROFILE_FILENAME = "hannan-company-profile.pdf" as const;
 const HANNAN_CARD_SLUG = "hannan" as const;
