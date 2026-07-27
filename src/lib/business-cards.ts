@@ -126,7 +126,7 @@ export const BUSINESS_CARDS: Record<BusinessCardId, BusinessCard> = {
       whatsappDigits: digitsOnly("+923365357989"),
       whatsappPrefill:
         "Hi Hannan, I just opened your Stellix Soft digital business card and would like to connect.",
-      email: "sales@stellixsoft.com",
+      email: "hannan@stellixsoft.com",
       personalLinkedInUrl: "https://www.linkedin.com/in/hannan-a-khan/",
       websiteUrl: absoluteUrl("/"),
       websiteDisplay: "stellixsoft.com",
@@ -178,8 +178,8 @@ export const BUSINESS_CARDS: Record<BusinessCardId, BusinessCard> = {
       whatsappDigits: digitsOnly("+923215104616"),
       whatsappPrefill:
         "Hi Imran, I just opened your Stellix Soft digital business card and would like to connect.",
-      email: "sales@stellixsoft.com",
-      personalLinkedInUrl: "https://www.linkedin.com/company/stellixsoft/",
+      email: "Imran@stellixsoft.com",
+      personalLinkedInUrl: "https://www.linkedin.com/in/imraninayat/",
       websiteUrl: absoluteUrl("/"),
       websiteDisplay: "stellixsoft.com",
     },
@@ -196,7 +196,7 @@ export const BUSINESS_CARDS: Record<BusinessCardId, BusinessCard> = {
     companyLinkedInUrl: COMPANY_LINKEDIN_URL,
     needs: {
       realHeadshot: false,
-      personalLinkedIn: true,
+      personalLinkedIn: false,
       directMobile: false,
       personalEmail: false,
       companyProfilePdf: false,
