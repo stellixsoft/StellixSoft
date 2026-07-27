@@ -115,6 +115,7 @@ function ContactRow({
   icon,
   label,
   value,
+  cardSlug,
   external = false,
   eventName,
 }: {
@@ -122,6 +123,7 @@ function ContactRow({
   icon: ReactNode;
   label: string;
   value: string;
+  cardSlug: string;
   external?: boolean;
   eventName?: string;
 }) {
@@ -132,7 +134,7 @@ function ContactRow({
         ? { target: "_blank", rel: "noopener noreferrer" }
         : {})}
       eventName={eventName}
-      eventParams={{ card_slug: "hannan", contact_method: label.toLowerCase() }}
+      eventParams={{ card_slug: cardSlug, contact_method: label.toLowerCase() }}
       className="flex min-h-14 items-center gap-4 rounded-2xl border border-black/8 bg-white px-4 py-3 shadow-[0_8px_30px_rgba(3,2,19,0.06)] transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-electricBlue-solid)] focus-visible:ring-offset-2"
       aria-label={`${label}: ${value}`}
     >
@@ -220,21 +222,24 @@ export default function BusinessCardPage({ card, qrSvg }: Props) {
               <AnalyticsLink
                 href={card.urls.vcardPath}
                 eventName="business_card_save_contact"
-                eventParams={{ card_slug: "hannan" }}
+                eventParams={{ card_slug: card.slug }}
                 className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[var(--color-electricBlue-solid)] px-5 py-3 text-center text-sm font-semibold text-white shadow-[0_14px_30px_rgba(9,128,168,0.28)] transition-colors hover:bg-[var(--color-accentOnLight)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-electricBlue-solid)] focus-visible:ring-offset-2"
               >
                 <DownloadIcon />
                 Save contact
               </AnalyticsLink>
 
-              <CalendlyCardButton className="inline-flex min-h-12 w-full items-center justify-center rounded-2xl bg-[var(--color-deepSpace)] px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[color-mix(in_srgb,var(--color-deepSpace)_88%,white)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-electricBlue-solid)] focus-visible:ring-offset-2" />
+              <CalendlyCardButton
+                cardSlug={card.slug}
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-2xl bg-[var(--color-deepSpace)] px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-[color-mix(in_srgb,var(--color-deepSpace)_88%,white)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-electricBlue-solid)] focus-visible:ring-offset-2"
+              />
 
               <AnalyticsLink
                 href={card.assets.companyProfilePublicPath}
                 target="_blank"
                 rel="noopener noreferrer"
                 eventName="business_card_download_profile"
-                eventParams={{ card_slug: "hannan" }}
+                eventParams={{ card_slug: card.slug }}
                 className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-2xl border border-[var(--color-electricBlue-solid)]/30 bg-white px-5 py-3 text-center text-sm font-semibold text-[var(--color-accentOnLight)] transition-colors hover:bg-[color-mix(in_srgb,var(--color-surfaceBlue)_8%,white)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-electricBlue-solid)] focus-visible:ring-offset-2"
               >
                 <DownloadIcon />
@@ -248,12 +253,14 @@ export default function BusinessCardPage({ card, qrSvg }: Props) {
                 icon={<PhoneIcon />}
                 label="Call"
                 value={card.contact.phoneDisplay}
+                cardSlug={card.slug}
               />
               <ContactRow
                 href={whatsappUrl}
                 icon={<MessageIcon />}
                 label="WhatsApp"
-                value={card.contact.whatsappTel}
+                value={card.contact.whatsappDisplay}
+                cardSlug={card.slug}
                 external
                 eventName="business_card_whatsapp"
               />
@@ -262,12 +269,14 @@ export default function BusinessCardPage({ card, qrSvg }: Props) {
                 icon={<MailIcon />}
                 label="Email"
                 value={card.contact.email}
+                cardSlug={card.slug}
               />
               <ContactRow
                 href={card.contact.personalLinkedInUrl}
                 icon={<LinkedInIcon />}
                 label="LinkedIn"
                 value={linkedInDisplay}
+                cardSlug={card.slug}
                 external
               />
               <ContactRow
@@ -275,6 +284,7 @@ export default function BusinessCardPage({ card, qrSvg }: Props) {
                 icon={<GlobeIcon />}
                 label="Website"
                 value={card.contact.websiteDisplay}
+                cardSlug={card.slug}
                 external
               />
             </div>
@@ -284,6 +294,7 @@ export default function BusinessCardPage({ card, qrSvg }: Props) {
                 title={`${card.name} | ${card.company}`}
                 text={`Connect with ${card.name} at ${card.company}.`}
                 url={card.urls.pageUrl}
+                cardSlug={card.slug}
               />
             </div>
 

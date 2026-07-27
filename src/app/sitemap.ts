@@ -22,6 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/contact`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/faqs`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.75 },
     { url: `${SITE_URL}/hannan`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/imran`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/industries`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/pricing`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
     {

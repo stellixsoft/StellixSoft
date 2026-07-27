@@ -5,15 +5,16 @@ import { trackEvent } from "@/src/lib/analytics";
 
 type Props = {
   className: string;
+  cardSlug: string;
 };
 
-export default function CalendlyCardButton({ className }: Props) {
+export default function CalendlyCardButton({ className, cardSlug }: Props) {
   return (
     <CalendlyScheduleButton
       className={className}
       onClick={() => {
         trackEvent("business_card_book_meeting", {
-          card_slug: "hannan",
+          card_slug: cardSlug,
         });
       }}
     >

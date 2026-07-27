@@ -7,9 +7,10 @@ type Props = {
   title: string;
   text: string;
   url: string;
+  cardSlug: string;
 };
 
-export default function ShareCardButton({ title, text, url }: Props) {
+export default function ShareCardButton({ title, text, url, cardSlug }: Props) {
   const [status, setStatus] = useState<"idle" | "shared" | "copied" | "error">(
     "idle",
   );
@@ -23,7 +24,7 @@ export default function ShareCardButton({ title, text, url }: Props) {
         await navigator.share({ title, text, url });
         setStatus("shared");
         trackEvent("business_card_share", {
-          card_slug: "hannan",
+          card_slug: cardSlug,
           method: "native",
         });
         return;
@@ -37,7 +38,7 @@ export default function ShareCardButton({ title, text, url }: Props) {
         await navigator.clipboard.writeText(url);
         setStatus("copied");
         trackEvent("business_card_share", {
-          card_slug: "hannan",
+          card_slug: cardSlug,
           method: "clipboard",
         });
         return;

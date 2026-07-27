@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { HANNAN_BUSINESS_CARD } from "@/src/lib/business-cards";
+import { IMRAN_BUSINESS_CARD } from "@/src/lib/business-cards";
 
 export const runtime = "nodejs";
 
@@ -25,12 +25,12 @@ function foldVCardLine(line: string): string {
 }
 
 async function getPhotoLine(): Promise<string | null> {
-  const sourcePath = HANNAN_BUSINESS_CARD.photo.vcardPhotoSourcePath;
+  const sourcePath = IMRAN_BUSINESS_CARD.photo.vcardPhotoSourcePath;
   if (!sourcePath) return null;
 
   try {
     const photo = await readFile(
-      join(process.cwd(), "src", "app", "api", "vcard", "hannan", sourcePath),
+      join(process.cwd(), "src", "app", "api", "vcard", "imran", sourcePath),
     );
     if (photo.byteLength > 50_000) return null;
     return foldVCardLine(
@@ -42,7 +42,7 @@ async function getPhotoLine(): Promise<string | null> {
 }
 
 export async function GET() {
-  const card = HANNAN_BUSINESS_CARD;
+  const card = IMRAN_BUSINESS_CARD;
   const photoLine = await getPhotoLine();
 
   const lines = [
@@ -67,7 +67,7 @@ export async function GET() {
     headers: {
       "Content-Type": "text/vcard; charset=utf-8",
       "Content-Disposition":
-        'attachment; filename="Hannan-Ahmad-Khan-StellixSoft.vcf"',
+        'attachment; filename="Imran-Inayat-StellixSoft.vcf"',
     },
   });
 }
