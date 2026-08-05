@@ -32,11 +32,7 @@ export const metadata: Metadata = buildPageMetadata({
   keywords: [
     "Salesforce development services",
     "salesforce application development services",
-    "custom Salesforce development services",
-    "Salesforce integration",
-    "Apex development",
-    "Lightning Web Components",
-    "Salesforce customization",
+    "Custom Salesforce Development services",
   ],
 });
 

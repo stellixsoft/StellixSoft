@@ -33,13 +33,9 @@ export const metadata: Metadata = buildPageMetadata({
     "Enterprise software development services and enterprise application development for ERPs, CRMs, SaaS platforms, dashboards, and business systems.",
   path: PATH,
   keywords: [
-    "enterprise software development services",
+    "Enterprise software development services",
     "custom enterprise software development services",
-    "enterprise application development",
-    "ERP development",
-    "CRM development",
-    "SaaS development",
-    "enterprise software solutions",
+    "Enterprise application development",
   ],
 });
 

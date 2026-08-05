@@ -27,12 +27,11 @@ export const metadata: Metadata = buildPageMetadata({
     "Custom app development and business process automation services. Build mobile apps, internal tools, and workflow automation for better efficiency.",
   path: PATH,
   keywords: [
-    "business automation services",
-    "custom app development",
+    "Automation and custom apps",
+    "Business automation services",
+    "Custom app development",
     "custom mobile app development services",
     "business process automation services",
-    "workflow automation",
-    "custom internal tools",
   ],
 });
 

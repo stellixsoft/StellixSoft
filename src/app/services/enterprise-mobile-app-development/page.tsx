@@ -33,13 +33,10 @@ export const metadata: Metadata = buildPageMetadata({
     "Enterprise mobile app development services for iOS, Android, and cross-platform apps with secure, scalable, offline first architectures.",
   path: PATH,
   keywords: [
-    "enterprise mobile app development services",
-    "enterprise application development",
+    "Enterprise mobile app development services",
+    "Enterprise application development",
     "enterprise application services",
-    "mobile app development for enterprises",
-    "iOS app development",
-    "Android app development",
-    "cross-platform mobile development",
+    "Mobile app development for enterprises",
   ],
 });
 

@@ -29,17 +29,16 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/dedicated-development-teams" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Dedicated Development Teams - Hire Full-Time Remote Engineers",
+  title: "Dedicated Development Teams | Hire Expert Software Developers",
   description:
-    "Hire a dedicated development team of remote engineers aligned with your workflow and culture for scalable long term software development partnerships.",
+    "Scale your business with dedicated development teams from StellixSoft. Hire experienced software developers for web, mobile, cloud, AI, and enterprise projects.",
   path: PATH,
   keywords: [
-    "dedicated development team",
-    "hire dedicated development team",
-    "dedicated software development team",
+    "Dedicated development team",
+    "Hire dedicated development team",
+    "Dedicated development team services",
     "remote development team",
     "full-time remote engineers",
-    "offshore development team",
   ],
 });
 

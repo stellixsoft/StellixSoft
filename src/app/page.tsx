@@ -22,17 +22,9 @@ export const metadata: Metadata = buildPageMetadata({
     "StellixSoft is a custom software development company specializing in enterprise software development services, IoT, AI integration, legacy modernization, and cloud solutions. US-timezone aligned teams.",
   path: "/",
   keywords: [
-    "custom software development services",
+    "Custom Software Development services",
     "custom software development company",
     "custom enterprise software development services",
-    "enterprise software development",
-    "IoT software development",
-    "AI integration services",
-    "legacy modernization",
-    "dedicated development teams",
-    "staff augmentation",
-    "DevOps services",
-    "cloud migration services",
   ],
 });
 

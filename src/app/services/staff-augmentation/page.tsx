@@ -35,12 +35,9 @@ export const metadata: Metadata = buildPageMetadata({
     "IT staff augmentation services with senior software engineers and dedicated development teams aligned to your workflow and US time zones.",
   path: PATH,
   keywords: [
-    "staff augmentation services",
+    "Staff augmentation services",
+    "Dedicated development team",
     "IT staff augmentation services",
-    "dedicated development team",
-    "hire software engineers",
-    "software developer augmentation",
-    "remote developer hiring",
   ],
 });
 

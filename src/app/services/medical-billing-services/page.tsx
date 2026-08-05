@@ -27,11 +27,9 @@ export const metadata: Metadata = buildPageMetadata({
   path: PATH,
   keywords: [
     "medical billing services",
+    "billing services",
     "healthcare billing outsourcing",
     "revenue cycle management",
-    "medical credentialing",
-    "HIPAA compliant billing",
-    "claims processing",
     "denial management",
   ],
 });

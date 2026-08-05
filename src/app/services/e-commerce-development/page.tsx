@@ -30,12 +30,10 @@ export const metadata: Metadata = buildPageMetadata({
     "Custom E-Commerce Development Services with Shopify Plus, headless commerce, custom storefronts, payment integrations, and ecommerce platforms.",
   path: PATH,
   keywords: [
-    "e-commerce development services",
-    "custom ecommerce development",
+    "E-commerce development services",
+    "Custom ecommerce development",
     "custom ecommerce website development",
     "Shopify ecommerce development",
-    "headless commerce development",
-    "custom storefront development",
   ],
 });
 

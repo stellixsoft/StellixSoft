@@ -34,14 +34,10 @@ export const metadata: Metadata = buildPageMetadata({
     "DevOps and Cloud Services with cloud migration, CI/CD pipelines, DevOps automation, AWS, Azure, GCP management, and zero downtime deployments.",
   path: PATH,
   keywords: [
+    "DevOps and Cloud Services",
     "DevOps consulting services",
-    "cloud migration services",
+    "Cloud migration services",
     "DevOps automation services",
-    "CI/CD pipelines",
-    "infrastructure as code",
-    "AWS cloud services",
-    "Azure cloud services",
-    "cloud infrastructure management",
   ],
 });
 

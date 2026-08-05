@@ -23,18 +23,16 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/practical-for-ai" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "AI Integration & Development Services - Enterprise AI Solutions",
+  title: "Practical AI Integration Services for Business",
   description:
-    "Enterprise AI integration services and AI development services with predictive analytics, NLP, computer vision, chatbots, and business automation ROI.",
+    "Practical AI integration services for real ROI: chatbots, document automation & workflows using OpenAI, Claude & LangChain.",
   path: PATH,
   keywords: [
+    "Practical AI services",
     "AI integration services",
     "AI development services",
     "AI for business automation",
     "ai chatbot development services",
-    "enterprise AI solutions",
-    "AI automation services",
-    "practical AI for business",
   ],
 });
 

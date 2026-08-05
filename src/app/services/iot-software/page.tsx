@@ -34,14 +34,9 @@ export const metadata: Metadata = buildPageMetadata({
     "IoT software development services and IoT application development with telemetry, edge computing, OTA updates, and fleet management tools.",
   path: PATH,
   keywords: [
+    "IoT software services",
     "IoT software development services",
     "IoT application development",
-    "device management platform",
-    "real-time telemetry",
-    "edge computing",
-    "OTA updates",
-    "fleet management software",
-    "IoT platform development",
   ],
 });
 
