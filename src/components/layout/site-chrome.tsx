@@ -11,8 +11,10 @@ export default function SiteChrome({
 }) {
   const pathname = usePathname();
   const isAdmin = pathname?.startsWith("/admin");
+  const isBusinessCard =
+    pathname?.startsWith("/hannan") || pathname?.startsWith("/imran");
 
-  if (isAdmin) {
+  if (isAdmin || isBusinessCard) {
     return <>{children}</>;
   }
 

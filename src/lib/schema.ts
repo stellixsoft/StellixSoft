@@ -1,4 +1,5 @@
 import { STELLIX_SOFT_LLC_PHONE_TEL } from "@/src/lib/constants";
+import type { BusinessCard } from "@/src/lib/business-cards";
 import { LEGAL_CONTACT_EMAIL } from "@/src/lib/legal";
 import { absoluteUrl, getSiteUrl } from "@/src/lib/site-url";
 
@@ -169,6 +170,34 @@ export function webPageJsonLd(opts: {
     url,
     isPartOf: { "@id": websiteId() },
     about: { "@id": organizationId() },
+  };
+}
+
+export function personBusinessCardJsonLd(card: BusinessCard) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${card.urls.pageUrl}#person`,
+    name: card.name,
+    jobTitle: card.title,
+    url: card.urls.pageUrl,
+    image: absoluteUrl(card.photo.publicPath),
+    sameAs: [card.contact.personalLinkedInUrl],
+    worksFor: {
+      "@type": "Organization",
+      "@id": organizationId(),
+      name: card.company,
+      url: getSiteUrl(),
+      sameAs: [card.companyLinkedInUrl],
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: card.contact.phoneTel,
+      email: card.contact.email,
+      contactType: "sales",
+      availableLanguage: "English",
+      areaServed: "US",
+    },
   };
 }
 
