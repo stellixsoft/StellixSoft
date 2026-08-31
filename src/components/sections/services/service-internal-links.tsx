@@ -6,7 +6,7 @@ const SLUGS = Object.keys(serviceInternalLinksBySlug) as Array<
 >;
 
 type Props = {
-  /** Service URL segment, e.g. `practical-for-ai` */
+  /** Service URL segment, e.g. `ai-integration-services` */
   slug: (typeof SLUGS)[number];
 };
 

@@ -26,7 +26,7 @@ import {
 } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-const PATH = "/services/dedicated-development-teams" as const;
+const PATH = "/services/hire-dedicated-development-team" as const;
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Dedicated Development Teams | Hire Expert Software Developers",
@@ -127,7 +127,7 @@ export default function DedicatedDevelopmentTeamsPage() {
         <BuildYourPerfectTeam />
         <HireDedicatedWithConfidence />
         <DedicatedDevelopmentTeamsFAQs />
-        <ServiceInternalLinks slug="dedicated-development-teams" />
+        <ServiceInternalLinks slug="hire-dedicated-development-team" />
         <CTAPilot />
       </div>
     </>

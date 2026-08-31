@@ -55,10 +55,10 @@ export const siteFaqSections: SiteFaqSection[] = [
     ],
   },
   {
-    id: "practical-for-ai",
-    title: "Practical AI for business",
-    href: "/services/practical-for-ai",
-    linkLabel: "AI services",
+    id: "ai-integration-services",
+    title: "AI integration services",
+    href: "/services/ai-integration-services",
+    linkLabel: "AI integration services",
     items: [
       {
         id: "ai-timeline",
@@ -133,9 +133,9 @@ export const siteFaqSections: SiteFaqSection[] = [
     ],
   },
   {
-    id: "dedicated-development-teams",
+    id: "hire-dedicated-development-team",
     title: "Dedicated development teams",
-    href: "/services/dedicated-development-teams",
+    href: "/services/hire-dedicated-development-team",
     linkLabel: "Dedicated teams",
     items: [
       {

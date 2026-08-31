@@ -13,7 +13,7 @@ export default function PracticalAiForBusinessHero() {
 
       <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center text-white">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight">
-          Practical AI Services for
+          AI Integration Services for
           <br />
           <span className="font-semibold">Business Growth</span>
         </h1>
@@ -26,7 +26,7 @@ export default function PracticalAiForBusinessHero() {
         </div>
 
         <p className="mt-8 text-sm md:text-base text-white/85 max-w-3xl mx-auto leading-relaxed">
-         We deliver practical AI services that help businesses unlock the true potential of artificial intelligence. From intelligent automation to advanced AI-powered features, our solutions are built to solve real-world challenges and drive measurable business outcomes.
+         We deliver AI integration services that help businesses unlock the true potential of artificial intelligence. From intelligent automation to advanced AI-powered features, our solutions are built to solve real-world challenges and drive measurable business outcomes.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

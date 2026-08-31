@@ -13,9 +13,9 @@
 
 ## Services
 
-### Practical AI for Business
+### AI Integration Services
 We help enterprises integrate AI into existing workflows: from predictive analytics and NLP to computer vision and intelligent automation, without the hype, focused on measurable ROI.
-URL: https://stellixsoft.com/services/practical-for-ai
+URL: https://stellixsoft.com/services/ai-integration-services
 
 ### Automation and Custom Apps
 Custom software built to automate repetitive processes, reduce errors, and free your team to focus on high-value work.
@@ -27,7 +27,7 @@ URL: https://stellixsoft.com/services/blockchain-and-cryptography
 
 ### Dedicated Development Teams
 Full-time dedicated engineering teams that integrate with your workflow, culture, and tools, not just outsourced bodies.
-URL: https://stellixsoft.com/services/dedicated-development-teams
+URL: https://stellixsoft.com/services/hire-dedicated-development-team
 
 ### DevOps and Cloud Services
 CI/CD pipelines, infrastructure as code, AWS/Azure/GCP management, monitoring, and zero-downtime deployments.

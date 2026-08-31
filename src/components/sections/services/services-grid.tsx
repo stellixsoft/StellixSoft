@@ -35,7 +35,7 @@ const services = [
     title: "Dedicated Development Teams",
     description:
       "Scale your team fast with senior developers aligned to your workflow and timezone.",
-    href: "/services/dedicated-development-teams",
+    href: "/services/hire-dedicated-development-team",
     icon: "/assets/images/industry-one.png",
   },
   {
@@ -104,10 +104,10 @@ const services = [
   },
   {
     img: "/assets/images/industry-one-img.webp",
-    title: "Practical AI for Business",
+    title: "AI Integration Services",
     description:
       "AI features integrated into real systems: automation, search, document intelligence, and insights.",
-    href: "/services/practical-for-ai",
+    href: "/services/ai-integration-services",
     icon: "/assets/images/industry-one.png",
   },
 ];

@@ -87,7 +87,7 @@ export default function StaffAugmentationVsDedicatedTeams() {
               Not sure which is right? Talk to us - we&apos;ll help you decide.
             </p>
             <a
-              href="/services/dedicated-development-teams"
+              href="/services/hire-dedicated-development-team"
               className="text-xs md:text-sm font-semibold text-[var(--color-electricBlue)] inline-flex items-center gap-1 hover:text-sky-500"
             >
               Learn About Dedicated Teams

@@ -9,9 +9,9 @@ const servicesLinks = [
   { href: "/services/enterprise-development", label: "Enterprise Development" },
   { href: "/services/legacy-modernization", label: "Legacy Modernization" },
   { href: "/services/iot-software", label: "IoT Software" },
-  { href: "/services/dedicated-development-teams", label: "Dedicated Teams" },
+  { href: "/services/hire-dedicated-development-team", label: "Dedicated Teams" },
   { href: "/services/devops-and-cloud-services", label: "Cloud & DevOps" },
-  { href: "/services/practical-for-ai", label: "AI for Business" },
+  { href: "/services/ai-integration-services", label: "AI Integration Services" },
 ];
 
 const industriesLinks = [

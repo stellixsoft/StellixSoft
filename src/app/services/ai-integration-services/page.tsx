@@ -20,15 +20,14 @@ import {
 } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
-const PATH = "/services/practical-for-ai" as const;
+const PATH = "/services/ai-integration-services" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Practical AI Integration Services for Business",
+  title: "AI Integration Services for Business",
   description:
-    "Practical AI integration services for real ROI: chatbots, document automation & workflows using OpenAI, Claude & LangChain.",
+    "AI integration services for real ROI: chatbots, document automation & workflows using OpenAI, Claude & LangChain.",
   path: PATH,
   keywords: [
-    "Practical AI services",
     "AI integration services",
     "AI development services",
     "AI for business automation",
@@ -86,7 +85,7 @@ const faqItems = faqMainEntity.map((q, i) => ({
 }));
 
 const serviceLd = serviceJsonLd({
-  name: "Practical AI for Business",
+  name: "AI Integration Services",
   description:
     "Enterprise AI integration services. Predictive analytics, NLP, computer vision, and intelligent automation focused on measurable ROI.",
   path: PATH,
@@ -97,10 +96,10 @@ const serviceLd = serviceJsonLd({
 const breadcrumbLd = breadcrumbJsonLd([
   { name: "Home", path: "/" },
   { name: "Services", path: "/services" },
-  { name: "Practical AI for Business", path: PATH },
+  { name: "AI Integration Services", path: PATH },
 ]);
 
-export default function PracticalAiForBusinessPage() {
+export default function AiIntegrationServicesPage() {
   return (
     <>
       <JsonLd data={faqPageJsonLd(faqMainEntity)} />
@@ -124,7 +123,7 @@ export default function PracticalAiForBusinessPage() {
           title="AI Integration FAQs"
           items={faqItems}
         />
-        <ServiceInternalLinks slug="practical-for-ai" />
+        <ServiceInternalLinks slug="ai-integration-services" />
         <CTAPilot />
       </div>
     </>

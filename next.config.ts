@@ -27,12 +27,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/services/ux-ui-design-services",
-        destination: "/services/dedicated-development-teams",
+        destination: "/services/hire-dedicated-development-team",
         permanent: true,
       },
       {
         source: "/services/hagyt-development-services",
-        destination: "/services/practical-for-ai",
+        destination: "/services/ai-integration-services",
+        permanent: true,
+      },
+      {
+        source: "/services/practical-for-ai",
+        destination: "/services/ai-integration-services",
+        permanent: true,
+      },
+      {
+        source: "/services/dedicated-development-teams",
+        destination: "/services/hire-dedicated-development-team",
         permanent: true,
       },
       {

@@ -9,7 +9,7 @@ export type InternalLinkItem = {
 };
 
 export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
-  "practical-for-ai": [
+  "ai-integration-services": [
     {
       href: "/services/automation-and-custom-apps",
       label: "Automation & custom applications",
@@ -28,8 +28,8 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
   ],
   "automation-and-custom-apps": [
     {
-      href: "/services/practical-for-ai",
-      label: "Practical AI for business",
+      href: "/services/ai-integration-services",
+      label: "AI integration services",
       description: "Add intelligent automation to custom workflows.",
     },
     {
@@ -60,7 +60,7 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
       description: "Discuss feasibility and architecture for your use case.",
     },
   ],
-  "dedicated-development-teams": [
+  "hire-dedicated-development-team": [
     {
       href: "/services/staff-augmentation",
       label: "Staff augmentation",
@@ -181,7 +181,7 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
   ],
   "maintenance-support": [
     {
-      href: "/services/dedicated-development-teams",
+      href: "/services/hire-dedicated-development-team",
       label: "Dedicated development teams",
       description: "Augment your team for roadmap work beyond break-fix.",
     },
@@ -215,7 +215,7 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
   ],
   "staff-augmentation": [
     {
-      href: "/services/dedicated-development-teams",
+      href: "/services/hire-dedicated-development-team",
       label: "Dedicated development teams",
       description: "When a full embedded team fits better than individuals.",
     },
