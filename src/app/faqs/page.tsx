@@ -15,9 +15,9 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/faqs" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "FAQs - Software Services, Pricing & Engagement",
+  title: "Software Development FAQs: Pricing, Teams & Architecture Answers",
   description:
-    "Answers about StellixSoft pricing, dedicated teams, staff augmentation, AI, cloud, IoT, legacy modernization, and more. Browse by topic or jump to a service.",
+    "Frequently asked questions about hiring dedicated development teams, software pricing, legacy modernization, AI integration, and project timelines at StellixSoft.",
   path: PATH,
   keywords: [
     "StellixSoft FAQ",

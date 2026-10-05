@@ -10,9 +10,9 @@ import { getPublishedBlogPosts } from "@/src/lib/blog-service";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Blog - Software Development Insights & Best Practices",
+  title: "Enterprise Software & Tech Architecture Insights | Engineering Blog",
   description:
-    "Expert insights on enterprise software development, IoT, legacy modernization, DevOps, AI integration, and more. Practical guides from the StellixSoft engineering team.",
+    "In-depth engineering guides on zero-downtime database migration, enterprise headless commerce, IoT edge computing, cloud cost optimization, and legacy modernization.",
   path: "/blog",
 });
 

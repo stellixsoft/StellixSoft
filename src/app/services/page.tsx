@@ -7,10 +7,17 @@ import { collectionPageJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Software Development Services - Enterprise, IoT, Cloud & AI",
+  title: "Custom Software Development Services | Enterprise, Cloud & AI",
   description:
-    "Comprehensive software development services including enterprise development, IoT, legacy modernization, DevOps, AI integration, mobile apps, and dedicated teams.",
+    "Enterprise software development services tailored for scale. Dedicated engineering teams, legacy modernization, IoT, cloud, and AI solutions with US-aligned delivery.",
   path: "/services",
+  keywords: [
+    "Software Development Services",
+    "custom software development services",
+    "enterprise software development services",
+    "dedicated development teams",
+    "legacy modernization services",
+  ],
 });
 
 const collectionLd = collectionPageJsonLd({

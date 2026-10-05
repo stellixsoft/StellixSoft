@@ -15,10 +15,17 @@ import {
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Pricing - Transparent Software Development Rates",
+  title: "Software Development Pricing & Rates | Dedicated Teams from $25/hr",
   description:
-    "Transparent pricing for enterprise software development services. Dedicated teams, staff augmentation, and project-based engagement models.",
+    "Transparent enterprise software development pricing. Dedicated senior developers from $25–$35/hr, full squads, and low-risk pilot projects with zero lock-in contracts.",
   path: "/pricing",
+  keywords: [
+    "software development pricing",
+    "dedicated developer cost",
+    "software development rates",
+    "hire software developers cost",
+    "custom software development pricing",
+  ],
 });
 
 const pricingFaqMainEntity: FaqQuestionBlock[] = [
