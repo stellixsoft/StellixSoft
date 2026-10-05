@@ -24,8 +24,31 @@ function firstAllowedPath(session: AdminSessionData): string {
   return "/admin/login";
 }
 
+const LEGACY_SPAM_PATTERNS = [
+  "/wp-",
+  "/xmlrpc.php",
+  "/portfolio-sitemap",
+  "/wp-sitemap",
+];
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  for (const pattern of LEGACY_SPAM_PATTERNS) {
+    if (pathname.startsWith(pattern) || pathname.includes(pattern)) {
+      return new NextResponse(
+        "410 Gone - This resource has been permanently removed.",
+        {
+          status: 410,
+          headers: {
+            "Content-Type": "text/plain; charset=utf-8",
+            "X-Robots-Tag": "noindex, nofollow",
+            "Cache-Control": "public, max-age=86400",
+          },
+        }
+      );
+    }
+  }
 
   if (!pathname.startsWith("/admin")) {
     return NextResponse.next();
@@ -72,5 +95,14 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin", "/admin/:path*"],
+  matcher: [
+    "/admin",
+    "/admin/:path*",
+    "/wp-:path*",
+    "/xmlrpc.php",
+    "/portfolio-sitemap.xml",
+    "/portfolio-sitemap:path*",
+    "/wp-sitemap.xml",
+    "/wp-sitemap:path*",
+  ],
 };

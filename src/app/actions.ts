@@ -53,8 +53,8 @@ export async function submitContactForm(
   const emailRaw = readText(formData, "email");
   const company = readText(formData, "company");
   const phone = normalizeContactPhone(readText(formData, "phone"));
-  const help = readText(formData, "help");
-  const project = readText(formData, "project");
+  let help = readText(formData, "help");
+  let project = readText(formData, "project");
   const hear = readText(formData, "hear");
   const legalTermsConsent = formData.get("legalTermsConsent") === "yes";
   const smsTransactionalConsent =
@@ -77,16 +77,17 @@ export async function submitContactForm(
     fieldErrors.email = "Please enter a valid email address.";
   }
 
-  if (!help) {
-    fieldErrors.help = "Please tell us what we can help with.";
-  } else if (help.length < 3) {
-    fieldErrors.help = "Please add a bit more detail (at least a few characters).";
-  }
-
-  if (!project) {
-    fieldErrors.project = "Please describe your project or goals.";
-  } else if (project.length < 20) {
-    fieldErrors.project = "Please share a little more about your project (at least 20 characters).";
+  if (!help && !project) {
+    fieldErrors.project = "Please share a few details about what you need.";
+  } else {
+    if (!project) {
+      project = help;
+    } else if (project.length < 5) {
+      fieldErrors.project = "Please share a little more about your project (at least 5 characters).";
+    }
+    if (!help) {
+      help = project.length > 100 ? `${project.slice(0, 97)}...` : project;
+    }
   }
 
   if (phone) {
@@ -109,15 +110,15 @@ export async function submitContactForm(
     const currency =
       budgetCurrencyRaw && BUDGET_CURRENCIES.has(budgetCurrencyRaw.toUpperCase())
         ? budgetCurrencyRaw.toUpperCase()
-        : "";
-    if (!currency) {
-      fieldErrors.budget = "Choose a currency for your budget range.";
-    } else if (!budgetAmountRaw) {
-      fieldErrors.budget = "Enter an amount or leave budget blank.";
-    } else if (!/^\d[\d,]*(\.\d{1,2})?$/.test(budgetAmountRaw.replace(/,/g, ""))) {
-      fieldErrors.budget = "Budget amount should use numbers only (optional commas or decimals).";
-    } else {
-      budgetLine = `${currency} ${budgetAmountRaw}`.trim();
+        : "USD";
+    if (budgetAmountRaw) {
+      if (!/^\d[\d,]*(\.\d{1,2})?$/.test(budgetAmountRaw.replace(/,/g, ""))) {
+        fieldErrors.budget = "Budget amount should use numbers only (optional commas or decimals).";
+      } else {
+        budgetLine = `${currency} ${budgetAmountRaw}`.trim();
+      }
+    } else if (budgetCurrencyRaw) {
+      budgetLine = currency;
     }
   }
 
@@ -200,9 +201,9 @@ export async function submitQuoteForm(
 
   if (!description) {
     fieldErrors.description = "Please describe what you need a quote for.";
-  } else if (description.length < 20) {
+  } else if (description.length < 5) {
     fieldErrors.description =
-      "Please add a bit more detail (at least 20 characters) so we can scope your quote.";
+      "Please add a bit more detail (at least 5 characters) so we can scope your quote.";
   }
 
   if (Object.keys(fieldErrors).length > 0) {

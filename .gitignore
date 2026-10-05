@@ -48,3 +48,9 @@ next-env.d.ts
 /public/tinymce
 serviceAccountKey.json
 **/serviceAccountKey.json
+
+# Google OAuth / GSC credentials (never commit)
+client_secret*.json
+**/client_secret*.json
+*-gsc-oauth-client.json
+**/stellixsoft-gsc-oauth-client.json

@@ -1,0 +1,20 @@
+---
+description: Use Microsoft Clarity MCP for UX analytics and conversion improvements
+alwaysApply: false
+---
+# Microsoft Clarity analytics
+
+When analyzing site UX, friction, or conversion issues for StellixSoft, use the project MCP server **clarity-stellixsoft**.
+
+## Available tools
+- `query-analytics-dashboard` — traffic, browsers, devices, countries, session metrics
+- `list-session-recordings` — filter recordings (dead clicks, rage clicks, errors, device, URL)
+- `query-documentation-resources` — Clarity product docs
+
+## Limits
+- ~10 API requests per day per project
+- Prefer focused, single-intent queries; avoid broad multi-day dumps
+- Token lives in `.env.local` as `CLARITY_API_TOKEN` (never commit the real value)
+
+## Project
+- Tracking project ID: `w84jf5u0ln` (site snippet in `src/components/analytics/MicrosoftClarity.tsx`)

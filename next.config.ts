@@ -16,6 +16,17 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.stellixsoft.com",
+          },
+        ],
+        destination: "https://stellixsoft.com/:path*",
+        permanent: true,
+      },
+      {
         source: "/services/bWVkaWNhbC",
         destination: "/services/medical-billing-services",
         permanent: true,

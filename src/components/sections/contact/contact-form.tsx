@@ -199,15 +199,14 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
 
               <div>
                 <label htmlFor="help" className={labelClass}>
-                  What can we help with? *
+                  What can we help with? (optional)
                 </label>
                 <input
                   id="help"
                   name="help"
                   type="text"
-                  minLength={3}
                   maxLength={500}
-                  required
+                  placeholder="e.g. Dedicated team, Legacy migration, AI integration..."
                   defaultValue={helpDefault}
                   aria-invalid={errs.help ? true : undefined}
                   aria-describedby={errs.help ? "contact-help-error" : undefined}
@@ -224,7 +223,7 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                   id="project"
                   name="project"
                   rows={4}
-                  minLength={20}
+                  minLength={5}
                   maxLength={8000}
                   required
                   placeholder="What are you trying to build or solve? Any specific technologies or requirements?"
@@ -274,19 +273,18 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                     <select
                       id="budgetCurrency"
                       name="budgetCurrency"
-                      defaultValue=""
+                      defaultValue="USD"
                       className={`${inputClass} appearance-none bg-[length:1rem] bg-[right_0.75rem_center] bg-no-repeat pr-10`}
                       style={{
                         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23717181'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
                       }}
                       aria-invalid={errs.budget ? true : undefined}
                     >
-                      <option value="">Currency</option>
-                      <option value="USD">USD</option>
-                      <option value="EUR">EUR</option>
-                      <option value="GBP">GBP</option>
-                      <option value="AED">AED</option>
-                      <option value="PKR">PKR</option>
+                      <option value="USD">USD ($)</option>
+                      <option value="EUR">EUR (€)</option>
+                      <option value="GBP">GBP (£)</option>
+                      <option value="AED">AED (AED)</option>
+                      <option value="PKR">PKR (Rs)</option>
                       <option value="OTHER">Other</option>
                     </select>
                   </div>

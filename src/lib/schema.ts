@@ -320,6 +320,7 @@ export function buildRootJsonLdGraph() {
         "@type": "Organization",
         "@id": `${site}/#organization`,
         name: "StellixSoft",
+        alternateName: ["Stellix Soft", "Stellix Soft LLC", "Stellix"],
         url: site,
         telephone: STELLIX_SOFT_LLC_PHONE_TEL,
         logo: {
