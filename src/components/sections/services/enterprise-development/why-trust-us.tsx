@@ -14,7 +14,7 @@ const trustPoints = [
   {
     title: "US Timezone Alignment",
     description:
-      "Your morning standup is our morning standup. Real-time collaboration, no delays.",
+      "Based in Houston, Texas. Your morning standup is our morning standup.",
     icon: "globe",
   },
   {

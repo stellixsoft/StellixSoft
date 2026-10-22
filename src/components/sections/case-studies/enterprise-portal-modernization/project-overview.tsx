@@ -1,7 +1,7 @@
 const CLIENT_FACTS = [
   { label: "Client Type", value: "Global hardware manufacturer" },
   { label: "Industry", value: "IoT / Hardware" },
-  { label: "End Clients", value: "Fortune 500 (e.g. PepsiCo)" },
+  { label: "End Clients", value: "US enterprise supply chains" },
   { label: "Project Type", value: "Legacy modernization" },
   { label: "Team Size", value: "6 dedicated developers" },
   { label: "Duration", value: "3+ years ongoing" },
@@ -23,13 +23,17 @@ export default function EnterprisePortalProjectOverview() {
           </h2>
           <p className="mt-5 text-sm leading-relaxed text-[var(--color-neutralGray)] md:text-base">
             Specializing in RFID systems, IP cameras, and enterprise networking
-            equipment. Products deployed across Fortune 500 supply chains,
-            including PepsiCo operations in the United States.
+            equipment. Products are deployed across enterprise supply chains in
+            the United States.
           </p>
           <p className="mt-4 text-sm leading-relaxed text-[var(--color-neutralGray)] md:text-base">
             With 150+ employees and operations spanning North America and
             Europe, they needed enterprise-grade software to manage device
             deployments for their corporate customers.
+          </p>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--color-neutralGray)] md:text-base">
+            End-customer names stay confidential. References are shared on a
+            qualified call.
           </p>
         </div>
 

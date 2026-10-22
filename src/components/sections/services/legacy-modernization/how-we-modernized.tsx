@@ -40,9 +40,10 @@ export default function HowWeModernized() {
             </h3>
             <p className="text-base text-[var(--color-deepSpace)] leading-relaxed mb-8">
               &quot;A global hardware manufacturer&apos;s business ran on a
-              15-year-old VB.NET portal serving Fortune 500 clients including
-              PepsiCo. The system couldn&apos;t scale, couldn&apos;t add modern
-              features, and finding developers was nearly impossible.&quot;
+              15-year-old VB.NET portal used by enterprise supply-chain
+              customers in the United States. The system couldn&apos;t scale,
+              couldn&apos;t add modern features, and finding developers was
+              nearly impossible.&quot;
             </p>
 
             <div className="flex items-start gap-3 mb-6">

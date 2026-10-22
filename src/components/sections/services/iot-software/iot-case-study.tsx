@@ -100,10 +100,10 @@ export default function IoTCaseStudy() {
               RFID Systems • IP Cameras • Enterprise Networking
             </h3>
             <p className="text-sm text-white/90 leading-relaxed mb-6 flex-1">
-              The client&apos;s devices are deployed across Fortune 500 supply
-              chains, including operations for PepsiCo in the United States. They
-              needed enterprise-grade software to manage their global device
-              deployments.
+              The client&apos;s devices run across enterprise supply chains in
+              the United States. They needed software that could manage those
+              deployments. End-customer names stay confidential and are shared
+              on a qualified call.
             </p>
             <ul className="space-y-3 mb-8">
               {features.map((item) => (

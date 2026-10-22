@@ -30,7 +30,7 @@ const PATH = "/services/enterprise-development" as const;
 export const metadata: Metadata = buildPageMetadata({
   title: "Enterprise Software Development Services",
   description:
-    "Enterprise software development services and enterprise application development for ERPs, CRMs, SaaS platforms, dashboards, and business systems.",
+    "Enterprise software development services from Houston, Texas. Custom systems for ERPs, CRMs, SaaS platforms, dashboards, and business operations.",
   path: PATH,
   keywords: [
     "Enterprise software development services",

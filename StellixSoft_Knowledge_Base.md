@@ -181,7 +181,7 @@ Pages live under https://stellixsoft.com/services/ when you need one. Do not sen
 
 Use one example, and only when it matches the conversation.
 
-- Hardware manufacturer: VB.NET portal modernization and the software around RFID, cameras, and networking gear. Long-running dedicated team.
+- Hardware manufacturer: VB.NET portal modernization and the software around RFID, cameras, and networking gear. Long-running dedicated team. Their end customers are under NDA. Never name those customers, including on the website, in chat, or on a call. If the buyer wants a reference, say the team shares it on a qualified call.
 - ZB Lines, a third-party logistics company: dispatch, a driver app, and a client portal, so the office could stop running the operation by phone. Published case study. Do not promise another client the same percentages.
 - Other published themes if they match: a compliance and audit workflow, an equity and stock-options system, and a multi-location service platform for scheduling and dispatch.
 

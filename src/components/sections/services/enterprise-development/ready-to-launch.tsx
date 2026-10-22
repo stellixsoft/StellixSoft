@@ -29,8 +29,10 @@ export default function ReadyToLaunch() {
             </h2>
             <p className="text-sm font-medium mt-4" style={{ color: "var(--color-black)" }}>Global Hardware Company | Fortune 500 Supply Chain</p>
             <p className="mt-4 text-base text-[var(--color-neutralGray)] leading-relaxed">
-              Tell us about your enterprise goals. We&apos;ll help you scope,
-              plan, and build solutions that scale with your organization.
+              We modernized a 15-year VB.NET portal for a global hardware
+              manufacturer whose products run in United States supply chains.
+              The migration had zero downtime, and a six-person team is still
+              on the system after three years.
             </p>
             <Link
               href="/case-studies/enterprise-portal-modernization"

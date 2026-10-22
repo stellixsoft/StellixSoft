@@ -27,7 +27,7 @@ const detailCards = [
     items: [
       "Successfully onboarded 3 new Fortune 500 clients",
       "85% of support tickets now auto-resolved",
-      "Client retained PepsiCo contract worth millions",
+      "Retained a flagship United States supply-chain contract",
       "Platform became competitive advantage in sales",
     ],
   },

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import {
@@ -101,6 +102,19 @@ export default async function BlogPostPage({ params }: PageProps) {
             >
               <div dangerouslySetInnerHTML={{ __html: html }} />
             </div>
+
+            {post.slug === "ai-integration-enterprise-software-practical-guide" ? (
+              <p className="mt-8 text-sm leading-relaxed text-slate-700">
+                When the use case is clear, the next step is our{" "}
+                <Link
+                  href="/services/ai-integration-services"
+                  className="font-medium text-[var(--color-electricBlue)] hover:underline"
+                >
+                  AI integration services
+                </Link>
+                .
+              </p>
+            ) : null}
 
             <div className="mt-10 border-t border-gray-200 pt-8">
               <p className="mb-3 text-xs font-medium uppercase tracking-[0.18em] text-slate-500">

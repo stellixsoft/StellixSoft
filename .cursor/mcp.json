@@ -13,7 +13,7 @@
         "GSC_OAUTH_SECRETS_FILE": "/Users/primecode/secrets/stellixsoft-gsc-oauth-client.json",
         "GSC_SITE_URL": "https://stellixsoft.com/",
         "GSC_SITE_URLS": "https://stellixsoft.com/",
-        "GSC_SCOPES": "readonly"
+        "GSC_SCOPES": "full"
       }
     }
   }
