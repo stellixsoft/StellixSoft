@@ -4,7 +4,7 @@ alwaysApply: false
 ---
 # Microsoft Clarity analytics
 
-When analyzing site UX, friction, or conversion issues for StellixSoft, use the project MCP server **clarity-stellixsoft**.
+When analyzing site UX, friction, or conversion issues for Stellix Soft, use the project MCP server **clarity-stellixsoft**.
 
 ## Available tools
 - `query-analytics-dashboard` — traffic, browsers, devices, countries, session metrics

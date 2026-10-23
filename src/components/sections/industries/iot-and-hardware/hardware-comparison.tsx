@@ -77,7 +77,7 @@ export default function HardwareComparison() {
         <h2 className="text-2xl md:text-3xl font-light text-[var(--color-deepSpace)] text-center mb-12 md:mb-14 leading-tight">
           Why Hardware Companies Partner With
           <br />
-          Stellixsoft
+          Stellix Soft
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">

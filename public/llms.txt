@@ -1,6 +1,6 @@
-# StellixSoft - Enterprise Software Development Company
+# Stellix Soft - Enterprise Software Development Company
 
-> StellixSoft is a trusted enterprise software development company founded in 2020, specializing in IoT, legacy modernization, AI integration, cloud infrastructure, and complex business platforms. We serve Fortune 500 companies and growing enterprises across North America and Europe with US-timezone aligned dedicated development teams.
+> Stellix Soft is a trusted enterprise software development company founded in 2020, specializing in IoT, legacy modernization, AI integration, cloud infrastructure, and complex business platforms. We serve Fortune 500 companies and growing enterprises across North America and Europe with US-timezone aligned dedicated development teams.
 
 ## Company Overview
 

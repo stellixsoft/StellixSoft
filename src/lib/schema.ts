@@ -15,7 +15,7 @@ export function orgRef() {
   return {
     "@type": "Organization" as const,
     "@id": organizationId(),
-    name: "StellixSoft",
+    name: "Stellix Soft",
   };
 }
 
@@ -94,14 +94,14 @@ export function contactPageJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    name: "Contact StellixSoft",
+    name: "Contact Stellix Soft",
     description:
-      "Get in touch with StellixSoft. Schedule a free 30-minute discovery call to discuss your enterprise software project.",
+      "Get in touch with Stellix Soft. Schedule a free 30-minute discovery call to discuss your enterprise software project.",
     url,
     mainEntity: {
       "@type": "Organization",
       "@id": organizationId(),
-      name: "StellixSoft",
+      name: "Stellix Soft",
       email: LEGAL_CONTACT_EMAIL,
       telephone: STELLIX_SOFT_LLC_PHONE_TEL,
       contactPoint: {
@@ -125,9 +125,9 @@ export function aboutPageJsonLd() {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "@id": `${url}#about`,
-    name: "About StellixSoft",
+    name: "About Stellix Soft",
     description:
-      "Founded in 2020, StellixSoft is a remote-first enterprise software development company serving Fortune 500 companies across North America and Europe.",
+      "Founded in 2020, Stellix Soft is a remote-first enterprise software development company serving Fortune 500 companies across North America and Europe.",
     url,
     mainEntity: { "@id": organizationId() },
     isPartOf: { "@id": websiteId() },
@@ -234,7 +234,7 @@ export function articleCaseStudyJsonLd(opts: {
     publisher: {
       "@type": "Organization",
       "@id": organizationId(),
-      name: "StellixSoft",
+      name: "Stellix Soft",
       logo: {
         "@type": "ImageObject",
         url: absoluteUrl("/assets/images/stellixsoft-logo.png"),
@@ -289,7 +289,7 @@ export function blogPostingJsonLd(opts: {
     publisher: {
       "@type": "Organization",
       "@id": organizationId(),
-      name: "StellixSoft",
+      name: "Stellix Soft",
       logo: {
         "@type": "ImageObject",
         url: absoluteUrl("/assets/images/stellixsoft-logo.png"),
@@ -319,7 +319,7 @@ export function buildRootJsonLdGraph() {
       {
         "@type": "Organization",
         "@id": `${site}/#organization`,
-        name: "StellixSoft",
+        name: "Stellix Soft",
         alternateName: ["Stellix Soft", "Stellix Soft LLC", "Stellix"],
         url: site,
         telephone: STELLIX_SOFT_LLC_PHONE_TEL,
@@ -329,7 +329,7 @@ export function buildRootJsonLdGraph() {
           url: `${site}/assets/images/stellixsoft-logo.png`,
           width: 160,
           height: 32,
-          caption: "StellixSoft",
+          caption: "Stellix Soft",
         },
         image: { "@id": `${site}/#logo` },
         description:
@@ -379,7 +379,7 @@ export function buildRootJsonLdGraph() {
         "@type": "WebSite",
         "@id": `${site}/#website`,
         url: site,
-        name: "StellixSoft",
+        name: "Stellix Soft",
         publisher: { "@id": `${site}/#organization` },
         inLanguage: "en-US",
         potentialAction: {

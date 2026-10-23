@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { formatEmailError, sendEmail } from "@/src/lib/email";
 
 /**
- * Public endpoint for StellixSoft trade demo pages (static Firebase hosts).
+ * Public endpoint for Stellix Soft trade demo pages (static Firebase hosts).
  * Reuses the same SMTP / EMAIL_TO inbox as the main contact form (sales@stellixsoft.com).
  */
 

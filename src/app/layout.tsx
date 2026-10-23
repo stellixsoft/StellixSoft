@@ -20,11 +20,11 @@ const siteUrl = getSiteUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "StellixSoft | Custom Software Development & IT Solutions",
-    template: "%s | StellixSoft",
+    default: "Stellix Soft | Custom Software Development & IT Solutions",
+    template: "%s | Stellix Soft",
   },
   description:
-    "StellixSoft is a trusted enterprise software development company specializing in IoT, legacy modernization, AI, cloud, and complex business platforms. US-timezone aligned teams.",
+    "Stellix Soft is a trusted enterprise software development company specializing in IoT, legacy modernization, AI, cloud, and complex business platforms. US-timezone aligned teams.",
   keywords: [
     "custom software development company",
     "custom software development services",
@@ -42,22 +42,22 @@ export const metadata: Metadata = {
     "e-commerce development services",
     "blockchain development services",
   ],
-  authors: [{ name: "StellixSoft", url: siteUrl }],
-  creator: "StellixSoft",
-  publisher: "StellixSoft",
+  authors: [{ name: "Stellix Soft", url: siteUrl }],
+  creator: "Stellix Soft",
+  publisher: "Stellix Soft",
   formatDetection: { telephone: false, email: false },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    siteName: "StellixSoft",
-    title: "StellixSoft | Custom Software Development & IT Solutions",
+    siteName: "Stellix Soft",
+    title: "Stellix Soft | Custom Software Development & IT Solutions",
     description:
       "Enterprise software development company specializing in IoT, legacy modernization, AI, cloud, and complex business platforms.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "StellixSoft | Custom Software Development & IT Solutions",
+    title: "Stellix Soft | Custom Software Development & IT Solutions",
     description:
       "Enterprise software development company specializing in IoT, legacy modernization, AI, cloud, and complex business platforms.",
   },

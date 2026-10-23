@@ -19,7 +19,7 @@ export default function CompareRates() {
                   Feature
                 </th>
                 <th className="text-center py-4 px-4 font-medium text-sm uppercase tracking-wider border-l border-white/20">
-                  Stellixsoft
+                  Stellix Soft
                 </th>
                 <th className="text-center py-4 px-4 font-medium text-sm uppercase tracking-wider border-l border-white/20">
                   US Agency
@@ -70,7 +70,7 @@ export default function CompareRates() {
                     Feature
                   </th>
                   <th className="text-center py-3 px-2 font-semibold text-xs uppercase tracking-wider border-l border-white/20">
-                    Stellixsoft
+                    Stellix Soft
                   </th>
                   <th className="text-center py-3 px-2 font-semibold text-xs uppercase tracking-wider border-l border-white/20">
                     US Agency

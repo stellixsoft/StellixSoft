@@ -8,7 +8,7 @@ export default function MedicalBillingKnowledgeBase() {
           Power Your Billing with a 3 Million Rule Knowledge Base
         </h2>
         <p className="mx-auto mt-8 text-[15px] leading-relaxed text-[var(--color-neutralGray)] md:text-[17px]">
-          StellixSoft&apos;s built-in knowledge base system has over 3 million rules and ensures correct ICD-10,
+          Stellix Soft&apos;s built-in knowledge base system has over 3 million rules and ensures correct ICD-10,
           CPT, and HCPCS medical coding at the point of entry. This system can automatically detect issues
           with claims before they are submitted. Because of this, we have achieved an{" "}
           <strong className="font-semibold text-[var(--color-deepSpace)]">98.5%</strong> first-pass clean claim rate.

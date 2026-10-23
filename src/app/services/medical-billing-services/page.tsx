@@ -21,7 +21,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/medical-billing-services" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Medical Billing Services | StellixSoft",
+  title: "Medical Billing Services | Stellix Soft",
   description:
     "End-to-end medical billing services: hospital and physician billing, credentialing, denial management, audits, and HIPAA-compliant revenue cycle workflows.",
   path: PATH,

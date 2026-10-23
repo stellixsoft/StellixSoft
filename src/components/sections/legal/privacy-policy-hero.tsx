@@ -96,7 +96,7 @@ export default function PrivacyPolicyHero() {
         </p>
 
         <p className="mt-8 text-base md:text-lg text-white/90 leading-relaxed max-w-3xl mx-auto">
-          This policy explains how StellixSoft collects, uses, and protects personal
+          This policy explains how Stellix Soft collects, uses, and protects personal
           information when you visit our website, contact us, or engage our services.
           We are committed to handling your data responsibly and in line with
           applicable privacy laws.

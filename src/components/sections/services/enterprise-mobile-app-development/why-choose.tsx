@@ -23,7 +23,7 @@ export default function WhyChooseStellixsoftForMobile() {
     }}>
       <div className="max-w-[1300px] mx-auto text-center">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)]">
-          Why Choose Stellixsoft for Mobile
+          Why Choose Stellix Soft for Mobile
         </h2>
         <div
           className="w-16 h-0.5 mx-auto mt-4 mb-10 md:mb-14"

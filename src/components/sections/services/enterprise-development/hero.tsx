@@ -20,7 +20,7 @@ export default function EnterpriseHero() {
           Our Enterprise software development services are designed to help organizations build reliable, scalable, and high-performance systems. From custom enterprise software development services to advanced enterprise application development, we deliver solutions tailored to complex business environments.
         </p>
         <p className="mt-4 text-base text-white/80 mx-auto leading-relaxed">
-          StellixSoft is an enterprise software development services company in Houston, Texas. We work on US hours with the people who own the system.
+          Stellix Soft is an enterprise software development services company in Houston, Texas. We work on US hours with the people who own the system.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <CalendlyScheduleButton

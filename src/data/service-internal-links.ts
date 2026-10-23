@@ -226,7 +226,7 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
     },
     {
       href: "/about",
-      label: "About StellixSoft",
+      label: "About Stellix Soft",
       description: "How we vet engineers and align with your culture.",
     },
   ],

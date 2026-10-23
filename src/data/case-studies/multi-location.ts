@@ -236,7 +236,7 @@ export const multiLocationCaseStudy: CaseStudyContent = {
   },
   testimonial: {
     quote:
-      "Stellixsoft's team works on our timezone, delivers fast, and handles complex enterprise requirements without hand-holding. They've become an extension of our team. What started as a migration project has evolved into a strategic partnership.",
+      "Stellix Soft's team works on our timezone, delivers fast, and handles complex enterprise requirements without hand-holding. They've become an extension of our team. What started as a migration project has evolved into a strategic partnership.",
     role: "Director of Technology",
     companyLine1: "Global Hardware Manufacturer",
     avatarSrc: "/assets/images/testimonials/contact-testimonial-avatar.webp",

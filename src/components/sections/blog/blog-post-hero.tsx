@@ -109,7 +109,7 @@ export default function BlogPostHero({
           <span aria-hidden className="hidden sm:inline">
             |
           </span>
-          <span>By StellixSoft Team</span>
+          <span>By Stellix Soft Team</span>
         </div>
       </div>
     </section>

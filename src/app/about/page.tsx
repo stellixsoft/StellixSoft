@@ -14,9 +14,9 @@ import { aboutPageJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "About StellixSoft - Enterprise Software Development Company",
+  title: "About Stellix Soft - Enterprise Software Development Company",
   description:
-    "Founded in 2020, StellixSoft is a remote-first enterprise software development company with 50+ developers serving Fortune 500 companies across North America and Europe.",
+    "Founded in 2020, Stellix Soft is a remote-first enterprise software development company with 50+ developers serving Fortune 500 companies across North America and Europe.",
   path: "/about",
 });
 

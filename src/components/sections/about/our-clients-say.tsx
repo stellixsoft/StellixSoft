@@ -6,7 +6,7 @@ import { TestimonialAvatar } from "@/src/components/ui/testimonial-initials-avat
 const clientsSay = [
   {
     quote:
-      "Hello. The StellixSoft team has been excellent. They are highly committed to the tasks assigned and consistently provide effective solutions.",
+      "Hello. The Stellix Soft team has been excellent. They are highly committed to the tasks assigned and consistently provide effective solutions.",
     name: "Kashif Saeed",
     company: "Venture Research Inc. · Plano, TX",
     photo: "/assets/images/testimonials/venture-research.png",
@@ -14,14 +14,14 @@ const clientsSay = [
   },
   {
     quote:
-      "The best engineering partners to get the job done. We've been working closely with Paz Mental RD for about two years. As a company, bringing in StellixSoft to build our ongoing medical registry platform has been one of the smartest decisions we've made. They proved to be the perfect partner for our sensitive project: a QR code medical alert website. Their technical skill in engineering a seamless user experience was matched only by their responsible and trustworthy approach. We needed a team we could rely on implicitly, and they delivered 100%. Don't hesitate to work with them!",
+      "The best engineering partners to get the job done. We've been working closely with Paz Mental RD for about two years. As a company, bringing in Stellix Soft to build our ongoing medical registry platform has been one of the smartest decisions we've made. They proved to be the perfect partner for our sensitive project: a QR code medical alert website. Their technical skill in engineering a seamless user experience was matched only by their responsible and trustworthy approach. We needed a team we could rely on implicitly, and they delivered 100%. Don't hesitate to work with them!",
     name: "Joseph",
     company: "Paz Mental RD · Medical alert & registry · Dominican Republic",
     companyUrl: "https://pazmentalrd.com/",
   },
   {
     quote:
-      "StellixSoft delivered on a very challenging project that I honestly doubted was even possible. They stuck with it through every obstacle, kept communicating throughout, and worked hard to get a genuinely useful result. I do not hand out reviews like this lightly. I would definitely hire them again, and I intend to rehire them straight away for the next extension to this project.",
+      "Stellix Soft delivered on a very challenging project that I honestly doubted was even possible. They stuck with it through every obstacle, kept communicating throughout, and worked hard to get a genuinely useful result. I do not hand out reviews like this lightly. I would definitely hire them again, and I intend to rehire them straight away for the next extension to this project.",
     name: "Jason Bennison",
     company: "Consultant · London, England",
     companyUrl: "https://jasonbennison.com/",
@@ -29,13 +29,13 @@ const clientsSay = [
   },
   {
     quote:
-      "We brought StellixSoft in when we needed extra dev capacity. The developers picked up our stack without months of onboarding, and check-ins stayed simple. We'd use them again.",
+      "We brought Stellix Soft in when we needed extra dev capacity. The developers picked up our stack without months of onboarding, and check-ins stayed simple. We'd use them again.",
     name: "Ronald Edwin",
     company: "Technologent Tech LLC · Atlanta, GA",
   },
   {
     quote:
-      "3PL business here. StellixSoft built the system we use for scheduling, tracking, and keeping clients updated. Less spreadsheet juggling. When we need changes, they pick up the thread.",
+      "3PL business here. Stellix Soft built the system we use for scheduling, tracking, and keeping clients updated. Less spreadsheet juggling. When we need changes, they pick up the thread.",
     name: "Dominic Jones",
     company: "ZB Lines · Texas, USA",
     photo: "/assets/images/testimonials/zb-lines.webp",

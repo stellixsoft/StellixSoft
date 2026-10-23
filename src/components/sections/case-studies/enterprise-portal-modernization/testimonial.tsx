@@ -33,7 +33,7 @@ export default function EnterprisePortalTestimonial() {
             Client Testimonial
           </p>
           <blockquote className="mt-5 text-base font-light leading-relaxed text-[var(--color-deepSpace)] md:text-lg lg:text-xl">
-            &ldquo;Stellixsoft&apos;s team works on our timezone, delivers fast,
+            &ldquo;Stellix Soft&apos;s team works on our timezone, delivers fast,
             and handles complex enterprise requirements without hand holding.
             They&apos;ve become an extension of our team. What started as a
             migration project has evolved into a strategic partnership they now

@@ -17,10 +17,10 @@ const PATH = "/faqs" as const;
 export const metadata: Metadata = buildPageMetadata({
   title: "Software Development FAQs: Pricing, Teams & Architecture Answers",
   description:
-    "Frequently asked questions about hiring dedicated development teams, software pricing, legacy modernization, AI integration, and project timelines at StellixSoft.",
+    "Frequently asked questions about hiring dedicated development teams, software pricing, legacy modernization, AI integration, and project timelines at Stellix Soft.",
   path: PATH,
   keywords: [
-    "StellixSoft FAQ",
+    "Stellix Soft FAQ",
     "software development FAQ",
     "dedicated team FAQ",
     "staff augmentation FAQ",

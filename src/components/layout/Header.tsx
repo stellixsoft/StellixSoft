@@ -127,7 +127,7 @@ export default function Header() {
         >
           <Image
             src="/assets/images/stellixsoft-logo.png"
-            alt="StellixSoft"
+            alt="Stellix Soft"
             width={160}
             height={32}
             className="object-contain w-[140px] sm:w-[160px]"
@@ -257,7 +257,7 @@ export default function Header() {
             <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
               <Image
                 src="/assets/images/stellixsoft-logo.png"
-                alt="StellixSoft"
+                alt="Stellix Soft"
                 width={140}
                 height={28}
                 className="object-contain"

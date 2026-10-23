@@ -79,7 +79,7 @@ export default function CaseStudiesGrid({ excludeSlugs }: CaseStudiesGridProps) 
               <div className="relative h-[230px] md:h-[260px]">
                 <Image
                   src={cs.image}
-                  alt={`${cs.title} - StellixSoft case study cover image`}
+                  alt={`${cs.title} - Stellix Soft case study cover image`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"

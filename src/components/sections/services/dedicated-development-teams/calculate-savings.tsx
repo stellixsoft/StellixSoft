@@ -76,10 +76,10 @@ export default function CalculateYourSavings() {
               </div>
             </div>
 
-            {/* Stellixsoft dedicated team */}
+            {/* Stellix Soft dedicated team */}
             <div className="px-6 md:px-10 py-8 md:py-10 bg-slate-50/70">
               <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.24em] text-slate-500 mb-6">
-                Stellixsoft Dedicated Team
+                Stellix Soft Dedicated Team
               </p>
               <div className="space-y-3 text-sm md:text-[15px] text-[var(--color-deepSpace)]">
                 {dedicatedRows.map((row) => (

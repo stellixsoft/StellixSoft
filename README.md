@@ -1,6 +1,6 @@
-# StellixSoft
+# Stellix Soft
 
-Marketing site for StellixSoft - services, industries, case studies, blog, pricing, and contact flows. Built with the Next.js App Router.
+Marketing site for Stellix Soft - services, industries, case studies, blog, pricing, and contact flows. Built with the Next.js App Router.
 
 ## Stack
 

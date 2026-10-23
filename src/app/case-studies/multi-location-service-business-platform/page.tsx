@@ -10,14 +10,14 @@ const PATH = "/case-studies/multi-location-service-business-platform" as const;
 export const metadata: Metadata = buildPageMetadata({
   title: "Multi-Location Service Business Platform Case Study",
   description:
-    "See how StellixSoft built a custom multi-location service business platform that streamlined operations, improved scheduling, and supported business growth.",
+    "See how Stellix Soft built a custom multi-location service business platform that streamlined operations, improved scheduling, and supported business growth.",
   path: PATH,
 });
 
 const articleLd = articleCaseStudyJsonLd({
   headline: "Multi-Location Service Business Platform Case Study",
   description:
-    "See how StellixSoft built a custom multi-location service business platform that streamlined operations, improved scheduling, and supported business growth.",
+    "See how Stellix Soft built a custom multi-location service business platform that streamlined operations, improved scheduling, and supported business growth.",
   path: PATH,
   breadcrumbName: "Multi-Location Platform",
   datePublished: "2024-02-01",

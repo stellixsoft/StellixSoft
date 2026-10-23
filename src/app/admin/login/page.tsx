@@ -49,7 +49,7 @@ function LoginForm() {
         <div className="mb-8 flex flex-col items-center text-center">
           <Image
             src="/assets/images/stellixsoft-logo.png"
-            alt="StellixSoft"
+            alt="Stellix Soft"
             width={180}
             height={48}
             className="h-10 w-auto brightness-0 invert"

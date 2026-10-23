@@ -46,11 +46,11 @@ function buildAdminInviteHtml(opts: {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light" />
-  <title>StellixSoft Admin Access</title>
+  <title>Stellix Soft Admin Access</title>
 </head>
 <body style="margin:0;padding:0;background:#e8eef5;-webkit-font-smoothing:antialiased;">
   <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">
-    Your StellixSoft admin account is ready — sign in with the credentials inside.
+    Your Stellix Soft admin account is ready — sign in with the credentials inside.
   </div>
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#e8eef5;margin:0;padding:0;width:100%;">
     <tr>
@@ -62,7 +62,7 @@ function buildAdminInviteHtml(opts: {
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                   <td align="left" valign="middle">
-                    <img src="${opts.logoUrl}" alt="StellixSoft" width="148" height="38" style="display:block;border:0;outline:none;height:38px;width:auto;max-width:148px;filter:brightness(0) invert(1);" />
+                    <img src="${opts.logoUrl}" alt="Stellix Soft" width="148" height="38" style="display:block;border:0;outline:none;height:38px;width:auto;max-width:148px;filter:brightness(0) invert(1);" />
                   </td>
                   <td align="right" valign="middle">
                     <span style="display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,0.12);color:#d7f4ff;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;">
@@ -75,7 +75,7 @@ function buildAdminInviteHtml(opts: {
                 You’re invited to the dashboard
               </h1>
               <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.55;color:rgba(255,255,255,0.82);max-width:420px;">
-                An administrator created your StellixSoft admin account. Use the secure credentials below to get started.
+                An administrator created your Stellix Soft admin account. Use the secure credentials below to get started.
               </p>
             </td>
           </tr>
@@ -152,13 +152,13 @@ function buildAdminInviteHtml(opts: {
           <tr>
             <td style="background:#030213;border-radius:0 0 20px 20px;padding:22px 32px;">
               <p style="margin:0 0 6px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;color:#ffffff;">
-                StellixSoft
+                Stellix Soft
               </p>
               <p style="margin:0 0 12px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.5;color:rgba(255,255,255,0.65);">
                 Enterprise software, IoT, and digital solutions.
               </p>
               <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:1.5;color:rgba(255,255,255,0.45);">
-                © ${opts.year} StellixSoft. If you weren’t expecting this invite, you can ignore this email.
+                © ${opts.year} Stellix Soft. If you weren’t expecting this invite, you can ignore this email.
               </p>
             </td>
           </tr>
@@ -181,7 +181,7 @@ export async function sendAdminInviteEmail(opts: {
 
   await sendEmail({
     to: opts.email,
-    subject: "Your StellixSoft admin access is ready",
+    subject: "Your Stellix Soft admin access is ready",
     html: buildAdminInviteHtml({
       email: opts.email,
       password: opts.password,

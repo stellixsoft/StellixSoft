@@ -67,7 +67,7 @@ export async function GET() {
     headers: {
       "Content-Type": "text/vcard; charset=utf-8",
       "Content-Disposition":
-        'attachment; filename="Hannan-Ahmad-Khan-StellixSoft.vcf"',
+        'attachment; filename="Hannan-Ahmad-Khan-Stellix Soft.vcf"',
     },
   });
 }

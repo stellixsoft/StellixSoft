@@ -95,7 +95,7 @@ export default function TermsOfServiceHero() {
         </p>
 
         <p className="mt-8 text-base md:text-lg text-white/90 leading-relaxed max-w-3xl mx-auto">
-          These terms govern your use of the StellixSoft website and outline the
+          These terms govern your use of the Stellix Soft website and outline the
           general conditions for our professional software services. Paid engagements
           may also be subject to separate written agreements that apply to that work.
         </p>

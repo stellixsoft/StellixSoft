@@ -67,7 +67,7 @@ export async function GET() {
     headers: {
       "Content-Type": "text/vcard; charset=utf-8",
       "Content-Disposition":
-        'attachment; filename="Imran-Inayat-StellixSoft.vcf"',
+        'attachment; filename="Imran-Inayat-Stellix Soft.vcf"',
     },
   });
 }

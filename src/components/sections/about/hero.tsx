@@ -25,7 +25,7 @@ export default function Hero() {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight text-white leading-tight">
           About
           <br />
-          <span className="font-bold">Stellixsoft</span>
+          <span className="font-bold">Stellix Soft</span>
         </h1>
 
         <p className="mt-6 md:mt-8 text-base md:text-lg font-light text-white/85 max-w-2xl mx-auto leading-relaxed">

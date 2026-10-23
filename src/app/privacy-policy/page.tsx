@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ...buildPageMetadata({
     title: "Privacy Policy",
     description:
-      "How StellixSoft collects, uses, and protects personal information when you use our website and services.",
+      "How Stellix Soft collects, uses, and protects personal information when you use our website and services.",
     path: "/privacy-policy",
   }),
   robots: { index: true, follow: true },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const webPageLd = webPageJsonLd({
   name: "Privacy Policy",
   description:
-    "How StellixSoft collects, uses, and protects personal information when you use our website and services.",
+    "How Stellix Soft collects, uses, and protects personal information when you use our website and services.",
   path: "/privacy-policy",
 });
 
@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
         This policy describes how{" "}
         <strong>Stellix Soft LLC</strong> (Houston, Texas, United States) and{" "}
         <strong>Stellix Soft (Pvt.) Ltd.</strong> (Islamabad, Pakistan)
-        (together, &ldquo;<strong>StellixSoft</strong>,&rdquo; &ldquo;
+        (together, &ldquo;<strong>Stellix Soft</strong>,&rdquo; &ldquo;
         <strong>we</strong>,&rdquo; &ldquo;<strong>us</strong>,&rdquo; or
         &ldquo;<strong>our</strong>&rdquo;) handle personal information in
         connection with the website at{" "}
@@ -194,7 +194,7 @@ export default function PrivacyPolicyPage() {
         <li>
           <strong>Legal and safety</strong> - when we believe disclosure is
           required by law, regulation, legal process, or governmental request,
-          or to protect the rights, property, or safety of StellixSoft, our
+          or to protect the rights, property, or safety of Stellix Soft, our
           clients, or others.
         </li>
       </ul>

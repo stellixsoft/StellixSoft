@@ -360,7 +360,7 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                     <span className="font-medium text-[var(--color-deepSpace)]">
                       (Optional) Transactional SMS:
                     </span>{" "}
-                    I agree to receive SMS/text messages from StellixSoft related
+                    I agree to receive SMS/text messages from Stellix Soft related
                     to {SMS_TRANSACTIONAL_MESSAGE_TYPES} regarding my inquiry.
                     Message frequency varies. Message and data rates may apply.
                     Reply <strong>STOP</strong> to opt out, <strong>HELP</strong>{" "}
@@ -390,7 +390,7 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
                       (Optional) Marketing SMS:
                     </span>{" "}
                     I agree to receive promotional/marketing SMS messages from
-                    StellixSoft, including {SMS_MARKETING_MESSAGE_TYPES}. Message
+                    Stellix Soft, including {SMS_MARKETING_MESSAGE_TYPES}. Message
                     frequency varies. Message and data rates may apply. Reply{" "}
                     <strong>STOP</strong> to opt out, <strong>HELP</strong> for
                     help. Consent is not a condition of purchase.

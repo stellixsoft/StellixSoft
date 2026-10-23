@@ -19,7 +19,7 @@ import InterpriseSoftware from "../components/sections/home/interprise-software"
 export const metadata: Metadata = buildPageMetadata({
   title: "Custom Software Development Company | Enterprise IT Solutions",
   description:
-    "StellixSoft is a custom software development company specializing in enterprise software development services, IoT, AI integration, legacy modernization, and cloud solutions. US-timezone aligned teams.",
+    "Stellix Soft is a custom software development company specializing in enterprise software development services, IoT, AI integration, legacy modernization, and cloud solutions. US-timezone aligned teams.",
   path: "/",
   keywords: [
     "Custom Software Development services",
@@ -29,9 +29,9 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 const homeWebPageLd = webPageJsonLd({
-  name: "StellixSoft | Custom Software Development Company",
+  name: "Stellix Soft | Custom Software Development Company",
   description:
-    "StellixSoft is a custom software development company specializing in enterprise software, IoT, AI integration, legacy modernization, and cloud solutions. US-timezone aligned teams.",
+    "Stellix Soft is a custom software development company specializing in enterprise software, IoT, AI integration, legacy modernization, and cloud solutions. US-timezone aligned teams.",
   path: "/",
 });
 

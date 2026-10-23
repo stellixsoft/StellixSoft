@@ -78,7 +78,7 @@ export default function CompareOptions() {
                     Feature
                   </th>
                   <th className="text-center py-3 px-3 md:py-4 md:px-4 text-sm md:text-base font-medium text-[var(--color-electricBlue)] whitespace-nowrap">
-                    StellixSoft
+                    Stellix Soft
                   </th>
                   <th className="text-center py-3 px-3 md:py-4 md:px-4 text-sm md:text-base font-medium text-[var(--color-deepSpace)] whitespace-nowrap">
                     Typical Agency

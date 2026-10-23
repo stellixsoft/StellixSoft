@@ -6,7 +6,7 @@ export default function Testimonial() {
           background: "#ffffff",
         }}>
           <p className="text-lg md:text-xl text-[var(--color-deepSpace)] leading-relaxed italic">
-            "Stellixsoft's team works on our timezone, delivers fast, and handles complex enterprise requirements without hand-holding. They've become an extension of our team. What started as a migration project has evolved into a strategic partnership."
+            "Stellix Soft's team works on our timezone, delivers fast, and handles complex enterprise requirements without hand-holding. They've become an extension of our team. What started as a migration project has evolved into a strategic partnership."
           </p>
           <p className="text-sm font-medium tracking-widest mb-1 mt-6 " style={{ color: "var(--color-electricBlue)" }}>Director of Technology</p>
           <footer className="text-sm text-[var(--color-neutralGray)]">

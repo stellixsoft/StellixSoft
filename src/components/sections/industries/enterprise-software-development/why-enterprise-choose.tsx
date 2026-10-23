@@ -32,7 +32,7 @@ export default function WhyEnterpriseTeamsChooseStellixsoft() {
     >
       <div className="max-w-[1100px] mx-auto">
         <h2 className="text-2xl md:text-3xl font-light text-[var(--color-deepSpace)] text-center mb-12 md:mb-14 leading-tight">
-          Why Enterprise Teams Choose Stellixsoft
+          Why Enterprise Teams Choose Stellix Soft
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">

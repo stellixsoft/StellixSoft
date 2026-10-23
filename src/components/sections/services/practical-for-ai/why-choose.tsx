@@ -7,7 +7,7 @@ export default function WhyChooseStellixsoftForAi() {
         "We build AI features for business applications, not experiments. Production-ready, integrated with your existing systems.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Enterprise experience - why choose StellixSoft for AI icon"
+        alt="Enterprise experience - why choose Stellix Soft for AI icon"
         width={20}
         height={20}
         className="object-contain"
@@ -19,7 +19,7 @@ export default function WhyChooseStellixsoftForAi() {
         "We don’t just do AI - we build the complete application. Frontend, backend, infrastructure, and AI features together.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Full-stack capability - why choose StellixSoft for AI icon"
+        alt="Full-stack capability - why choose Stellix Soft for AI icon"
         width={20}
         height={20}
         className="object-contain"
@@ -31,7 +31,7 @@ export default function WhyChooseStellixsoftForAi() {
         "We help you identify where AI actually adds value, not just where it sounds cool. ROI-focused implementation.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Practical focus - why choose StellixSoft for AI icon"
+        alt="Practical focus - why choose Stellix Soft for AI icon"
         width={20}
         height={20}
         className="object-contain"
@@ -43,7 +43,7 @@ export default function WhyChooseStellixsoftForAi() {
         "AI features need ongoing care. We provide maintenance, optimization, and enhancement as AI technology evolves.",
       icon: <Image
         src="/assets/images/IOT-icon.png"
-        alt="Long-term support - why choose StellixSoft for AI icon"
+        alt="Long-term support - why choose Stellix Soft for AI icon"
         width={20}
         height={20}
         className="object-contain"
@@ -55,7 +55,7 @@ export default function WhyChooseStellixsoftForAi() {
     <section className="py-16 md:py-24">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6 text-center">
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-8 md:mb-10">
-          Why Choose Stellixsoft for AI Integration
+          Why Choose Stellix Soft for AI Integration
         </h2>
         <p className="text-sm md:text-[15px] text-slate-600 leading-relaxed mb-8 md:mb-10 text-center max-w-2xl mx-auto">
           As a trusted provider of AI integration services, we focus on delivering practical, scalable, and business-focused solutions that create measurable value and long-term success.

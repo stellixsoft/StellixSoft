@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ...buildPageMetadata({
     title: "Terms of Service",
     description:
-      "Terms governing use of the StellixSoft website and general terms relating to our professional software services.",
+      "Terms governing use of the Stellix Soft website and general terms relating to our professional software services.",
     path: "/terms-of-service",
   }),
   robots: { index: true, follow: true },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const webPageLd = webPageJsonLd({
   name: "Terms of Service",
   description:
-    "Terms governing use of the StellixSoft website and general terms relating to our professional software services.",
+    "Terms governing use of the Stellix Soft website and general terms relating to our professional software services.",
   path: "/terms-of-service",
 });
 
@@ -63,7 +63,7 @@ export default function TermsOfServicePage() {
         By accessing or using the website at{" "}
         <a href={LEGAL_SITE_URL}>{LEGAL_SITE_URL}</a> (the &ldquo;
         <strong>Site</strong>&rdquo;) or by otherwise engaging with
-        StellixSoft in connection with our marketing, sales, or preliminary
+        Stellix Soft in connection with our marketing, sales, or preliminary
         discussions, you agree to these Terms of Service (&ldquo;
         <strong>Terms</strong>&rdquo;). If you are using the Site on behalf of
         an organization, you represent that you have authority to bind that
@@ -75,14 +75,14 @@ export default function TermsOfServicePage() {
         The Site is operated by <strong>Stellix Soft LLC</strong> (Houston,
         Texas, United States) and <strong>Stellix Soft (Pvt.) Ltd.</strong>{" "}
         (Islamabad, Pakistan), together referred to as &ldquo;
-        <strong>StellixSoft</strong>,&rdquo; &ldquo;<strong>we</strong>,&rdquo;
+        <strong>Stellix Soft</strong>,&rdquo; &ldquo;<strong>we</strong>,&rdquo;
         &ldquo;<strong>us</strong>,&rdquo; or &ldquo;<strong>our</strong>
         .&rdquo;
       </p>
 
       <h2>3. What we offer</h2>
       <p>
-        StellixSoft provides professional software engineering, consulting, and
+        Stellix Soft provides professional software engineering, consulting, and
         related technology services to businesses. For purposes of these Terms,
         our offerings may include (without limitation) work related to:
       </p>
@@ -184,7 +184,7 @@ export default function TermsOfServicePage() {
       <h3>6.1 Site content</h3>
       <p>
         The Site, including text, graphics, logos, layouts, trademarks, and
-        other materials (excluding your submissions), is owned by StellixSoft
+        other materials (excluding your submissions), is owned by Stellix Soft
         or our licensors and is protected by intellectual property laws. You
         may view and print reasonable portions for internal business use; you
         may not copy, modify, distribute, sell, or create derivative works
@@ -201,10 +201,10 @@ export default function TermsOfServicePage() {
       <h3>6.3 Client deliverables and pre-existing IP</h3>
       <p>
         Ownership and license rights in software, documentation, and other
-        deliverables created for a client, as well as rights in StellixSoft
+        deliverables created for a client, as well as rights in Stellix Soft
         pre-existing tools, libraries, templates, and know-how, are governed
         exclusively by the written agreement for that engagement. In the absence
-        of such an agreement, StellixSoft retains all rights to its
+        of such an agreement, Stellix Soft retains all rights to its
         pre-existing materials and to general methodologies, and no assignment
         of rights is implied from these Terms alone.
       </p>
@@ -241,7 +241,7 @@ export default function TermsOfServicePage() {
 
       <h2>10. Limitation of liability</h2>
       <p>
-        TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL STELLIXSOFT OR
+        TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL STELLIX SOFT OR
         ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, OR CONTRACTORS BE
         LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY,
         OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, DATA, GOODWILL, OR
@@ -261,7 +261,7 @@ export default function TermsOfServicePage() {
 
       <h2>11. Indemnity</h2>
       <p>
-        You will defend, indemnify, and hold harmless StellixSoft and its
+        You will defend, indemnify, and hold harmless Stellix Soft and its
         affiliates from and against any claims, damages, losses, and expenses
         (including reasonable attorneys&apos; fees) arising out of your use of
         the Site, your violation of these Terms, or your violation of
@@ -294,7 +294,7 @@ export default function TermsOfServicePage() {
       <p>
         If any provision is held unenforceable, the remaining provisions remain
         in effect. Failure to enforce a provision is not a waiver. These Terms
-        constitute the entire agreement between you and StellixSoft regarding
+        constitute the entire agreement between you and Stellix Soft regarding
         the Site and supersede prior oral or written understandings on that
         subject. You may not assign these Terms without our consent; we may
         assign them in connection with a merger, acquisition, or sale of assets.
@@ -310,7 +310,7 @@ export default function TermsOfServicePage() {
         <li>
           <strong>Transactional SMS (optional):</strong> If you select this
           checkbox, you consent to receive automated SMS/text messages from
-          StellixSoft related to {SMS_TRANSACTIONAL_MESSAGE_TYPES} regarding your
+          Stellix Soft related to {SMS_TRANSACTIONAL_MESSAGE_TYPES} regarding your
           inquiry or engagement. These messages are transactional in nature.
         </li>
         <li>

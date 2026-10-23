@@ -51,7 +51,7 @@ export default function WhyStellixsoft() {
                 className="text-sm font-normal uppercase tracking-widest mb-3"
                 style={{ color: "var(--color-electricBlue)" }}
               >
-                Why StellixSoft
+                Why Stellix Soft
               </p>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] mb-4 leading-tight">
                 Complex Software for Serious Companies

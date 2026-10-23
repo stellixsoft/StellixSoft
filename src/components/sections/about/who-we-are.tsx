@@ -46,7 +46,7 @@ export default function WhoWeAre() {
             </h2>
 
             <p className="mt-6 text-base md:text-lg font-normal text-[var(--color-neutralGray)] leading-relaxed">
-              Stellixsoft is a 50+ person enterprise software development company
+              Stellix Soft is a 50+ person enterprise software development company
               specializing in IoT platforms, legacy application modernization,
               and complex system development.
             </p>

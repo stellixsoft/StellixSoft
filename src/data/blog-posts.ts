@@ -84,7 +84,7 @@ Teams often start with smaller self-hosted models, including Llama 3.1 8B and He
 
 Air-gapped or offline-capable setups are the right tool for networks that are not allowed to call out. They cost more to operate, and they need an update path for the model and the application that does not depend on a developer pasting weights into a chat window.
 
-## What StellixSoft builds
+## What Stellix Soft builds
 
 The work is architecture, not a model download. We design the boundary, the retrieval store, the audit log, and the interface your staff will actually use, so the approved tool is easier than the shadow one.
 
@@ -135,7 +135,7 @@ A rebuild is useful when it is used to separate things that are currently tangle
 
 The pattern that holds up is dull on purpose: trusted instructions stay in code you control, user content stays in a labeled channel, tools are an allow-list, and anything that spends money, sends data, or changes records needs a person.
 
-## Where StellixSoft fits
+## Where Stellix Soft fits
 
 We migrate monolithic platforms into Next.js architectures when the current system cannot grow a real boundary. The security outcome comes from that boundary, not from the framework logo.
 
@@ -143,7 +143,7 @@ See [legacy modernization](/services/legacy-modernization), [how we structure a 
 
 One rebuild in that family is the [enterprise portal modernization](/case-studies/enterprise-portal-modernization).
 
-[Contact StellixSoft for a modernization audit](/contact).
+[Contact Stellix Soft for a modernization audit](/contact).
     `,
     date: "2026-10-24",
     updatedAt: "2026-10-24",
@@ -208,11 +208,11 @@ Next.js lets teams build interactive, app-like experiences without a page builde
 
 Emergency patching is the right response this week. It is not a strategy for the next ten years.
 
-At StellixSoft, we migrate businesses from fragile legacy systems to high-performance Next.js architectures. A recent example of that kind of rebuild is our [enterprise portal modernization](/case-studies/enterprise-portal-modernization). We rebuild the site for speed, search performance, and a platform your team can keep securing.
+At Stellix Soft, we migrate businesses from fragile legacy systems to high-performance Next.js architectures. A recent example of that kind of rebuild is our [enterprise portal modernization](/case-studies/enterprise-portal-modernization). We rebuild the site for speed, search performance, and a platform your team can keep securing.
 
 If WordPress is the system you are ready to leave, start with our [legacy modernization services](/services/legacy-modernization) or [enterprise software development](/services/enterprise-development).
 
-[Contact StellixSoft to discuss your Next.js migration strategy](/contact).
+[Contact Stellix Soft to discuss your Next.js migration strategy](/contact).
     `,
     date: "2026-10-24",
     updatedAt: "2026-10-24",
@@ -1089,11 +1089,11 @@ Migration provides the perfect opportunity to:
 
 Migration should not only upgrade the framework but also improve the architecture, where it adds value. Incremental modernization often delivers better long-term results than attempting to redesign everything at once.
 
-## Why Choose StellixSoft for .NET Migration?
+## Why Choose Stellix Soft for .NET Migration?
 
 Migrating from .NET Framework to .NET 8 requires more than updating project files. It demands a strategic approach that balances business continuity, technical modernization, and long-term maintainability.
 
-At StellixSoft, we help organizations modernize legacy .NET applications with minimal disruption. Our team follows Microsoft’s recommended migration practices while tailoring each project to the client’s business goals and technical environment.
+At Stellix Soft, we help organizations modernize legacy .NET applications with minimal disruption. Our team follows Microsoft’s recommended migration practices while tailoring each project to the client’s business goals and technical environment.
 
 Our .NET modernization services include:
 
@@ -1157,9 +1157,9 @@ Common challenges include:
 
 Proper planning helps address these issues early.
 
-### 10. How can StellixSoft help with .NET migration?
+### 10. How can Stellix Soft help with .NET migration?
 
-StellixSoft provides end-to-end migration services—from assessment and planning to implementation, testing, deployment, and post-migration optimization. We help organizations modernize legacy applications while minimizing business disruption.
+Stellix Soft provides end-to-end migration services—from assessment and planning to implementation, testing, deployment, and post-migration optimization. We help organizations modernize legacy applications while minimizing business disruption.
 
 ## Final Thoughts
 

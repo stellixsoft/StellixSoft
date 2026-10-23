@@ -17,7 +17,7 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 const collectionLd = collectionPageJsonLd({
-  name: "StellixSoft Blog",
+  name: "Stellix Soft Blog",
   description:
     "Expert insights on enterprise software development, IoT, legacy modernization, DevOps, AI integration, and more.",
   path: "/blog",

@@ -143,7 +143,7 @@ export default function WeAreBased() {
           <div className="relative rounded-2xl overflow-hidden shadow-[0_4px_24px_rgba(3,2,19,0.08)] aspect-[4/3] md:aspect-[16/10]">
             <Image
               src="/assets/images/core-image-one.webp"
-              alt="Where we work - Stellixsoft office"
+              alt="Where we work - Stellix Soft office"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 65vw"

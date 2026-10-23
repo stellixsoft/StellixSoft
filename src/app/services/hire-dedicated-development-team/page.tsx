@@ -31,7 +31,7 @@ const PATH = "/services/hire-dedicated-development-team" as const;
 export const metadata: Metadata = buildPageMetadata({
   title: "Dedicated Development Teams | Hire Expert Software Developers",
   description:
-    "Scale your business with dedicated development teams from StellixSoft. Hire experienced software developers for web, mobile, cloud, AI, and enterprise projects.",
+    "Scale your business with dedicated development teams from Stellix Soft. Hire experienced software developers for web, mobile, cloud, AI, and enterprise projects.",
   path: PATH,
   keywords: [
     "Dedicated development team",

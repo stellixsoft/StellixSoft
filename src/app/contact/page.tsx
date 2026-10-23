@@ -13,7 +13,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 export const metadata: Metadata = buildPageMetadata({
   title: "Contact Us - Schedule a Free Discovery Call",
   description:
-    "Get in touch with StellixSoft. Schedule a free 30-minute discovery call to discuss your enterprise software project. We respond within 1 business day.",
+    "Get in touch with Stellix Soft. Schedule a free 30-minute discovery call to discuss your enterprise software project. We respond within 1 business day.",
   path: "/contact",
 });
 

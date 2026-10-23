@@ -33,8 +33,8 @@ export async function generateMetadata({
   if (!category) return {};
 
   return buildPageMetadata({
-    title: `${category} Articles - StellixSoft Blog`,
-    description: `Explore ${category} insights, best practices, and practical guides from the StellixSoft engineering team.`,
+    title: `${category} Articles - Stellix Soft Blog`,
+    description: `Explore ${category} insights, best practices, and practical guides from the Stellix Soft engineering team.`,
     path: `/blog/category/${categorySlug}`,
   });
 }
@@ -47,7 +47,7 @@ export default async function BlogCategoryPage({ params }: CategoryPageProps) {
   const posts = await getPublishedBlogPosts();
 
   const collectionLd = collectionPageJsonLd({
-    name: `StellixSoft Blog - ${category}`,
+    name: `Stellix Soft Blog - ${category}`,
     description: `Insights and practical guides about ${category}.`,
     path: `/blog/category/${categorySlug}`,
   });

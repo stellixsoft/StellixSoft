@@ -188,7 +188,7 @@ export default function AdminShell({
         <Link href="/admin" className="flex items-center gap-2.5" onClick={() => setMobileOpen(false)}>
           <Image
             src="/assets/images/stellixsoft-logo.png"
-            alt="StellixSoft"
+            alt="Stellix Soft"
             width={140}
             height={36}
             className="h-8 w-auto brightness-0 invert"
@@ -326,7 +326,7 @@ export default function AdminShell({
               </button>
               <div>
                 <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-slate-400">
-                  StellixSoft Admin
+                  Stellix Soft Admin
                 </p>
                 <h1 className="text-base font-semibold text-slate-900 sm:text-lg">
                   {getPageTitle(pathname)}
