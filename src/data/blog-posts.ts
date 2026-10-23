@@ -56,6 +56,76 @@ export type BlogCategory = (typeof blogCategories)[number];
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "php2shell-wordpress-to-nextjs-migration",
+    title:
+      "The PHP2Shell Crisis Proves It’s Time to Abandon WordPress: Why Enterprises Are Moving to Next.js",
+    excerpt:
+      "PHP2Shell (CVE-2026-109618 and CVE-2026-109619) is a critical PHP flaw. Here is why WordPress sites feel the impact, and why enterprises are moving to Next.js.",
+    content: `
+The internet is currently scrambling to patch **"PHP2Shell" ([CVE-2026-109618](https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching) and CVE-2026-109619)**—two critical vulnerabilities in the PHP core that allow an unauthenticated attacker to execute code on servers that still run a vulnerable PHP version.
+
+While many WordPress site owners are caught in a cycle of emergency patches and downtime, teams that no longer run PHP are not exposed to this particular flaw. They left the PHP runtime behind.
+
+If your business relies on WordPress, this incident is a clear signal. PHP2Shell is not a WordPress plugin bug. It sits in PHP itself, and WordPress, Drupal, Laravel, Magento, and custom PHP apps all inherit it when the server is unpatched. Here is why the PHP2Shell crisis should be your catalyst to migrate to a modern Next.js architecture.
+
+If the site is still on PHP today, patch first. PHP fixed the issue in 8.5.12, 8.4.27, 8.3.36, and 8.2.35. Older branches need a vendor backport or an upgrade. Migration is how you stop treating the next PHP advisory as an all-hands emergency.
+
+## The Fundamental Flaw of WordPress
+
+WordPress relies on a monolithic architecture. Every time a user visits your site, the server runs PHP scripts and queries a database to build the page. That per-request PHP execution is a standing attack surface. A vulnerable plugin, an outdated theme, or a core PHP flaw like PHP2Shell only needs one crack to put the server, customer data, and the site's search visibility at risk.
+
+Patching closes this specific hole. It does not remove the pattern: a PHP process, a plugin directory, and a database sitting behind every public page. For a broader look at how enterprises protect data once the platform itself is modern, see [enterprise data security best practices](/blog/enterprise-data-security-best-practices).
+
+## Why Next.js Is the Secure, Modern Standard
+
+Next.js—a React framework used for production sites and deployed on infrastructure such as Vercel—changes how pages are delivered.
+
+### Inherent security: no PHP runtime
+
+Next.js can prebuild pages as static HTML, CSS, and JavaScript and serve them from a global CDN. On those responses there is no active PHP, no WordPress plugin code, and no PHP database query for PHP2Shell to reach. This vulnerability does not apply to a site that does not run PHP.
+
+That is a smaller attack surface, not a magic shield. A Next.js app can still include server code, authentication, and third-party packages. Those need the same discipline as any modern stack. The gain is that you are no longer exposed to PHP core bugs, WordPress plugin exploits, or theme vulnerabilities.
+
+### SEO and Core Web Vitals
+
+Google's ranking systems favor fast, stable pages. Next.js is built for that: static generation, server rendering, image optimization, and metadata you control in code. Teams use it when Core Web Vitals are part of the SEO plan. WordPress can be tuned, but plugin and page-builder stacks often work against that goal. The practical version of this work is in our [Next.js performance optimization guide](/blog/nextjs-performance-optimization-enterprise).
+
+### AI and structured content
+
+Search is also shifting toward AI Overviews and other answer engines. Next.js makes structured data, clean HTML, and modular content delivery straightforward, so crawlers and language models can read the page without fighting a theme runtime.
+
+### Developer velocity
+
+Next.js lets teams build interactive, app-like experiences without a page builder wrapped around PHP. For how large teams structure that frontend, read [React and Next.js enterprise frontend architecture](/blog/react-nextjs-enterprise-frontend-architecture). Commerce teams often take the same path with a [headless commerce architecture](/blog/headless-commerce-enterprise-ecommerce).
+
+## Stop Patching. Start Scaling.
+
+Emergency patching is the right response this week. It is not a strategy for the next ten years.
+
+At StellixSoft, we migrate businesses from fragile legacy systems to high-performance Next.js architectures. A recent example of that kind of rebuild is our [enterprise portal modernization](/case-studies/enterprise-portal-modernization). We rebuild the site for speed, search performance, and a platform your team can keep securing.
+
+If WordPress is the system you are ready to leave, start with our [legacy modernization services](/services/legacy-modernization) or [enterprise software development](/services/enterprise-development).
+
+[Contact StellixSoft to discuss your Next.js migration strategy](/contact).
+    `,
+    date: "2026-10-24",
+    updatedAt: "2026-10-24",
+    readTime: "5 min read",
+    category: "Legacy Modernization",
+    tags: [
+      "PHP2Shell",
+      "WordPress",
+      "Next.js",
+      "CVE-2026-109618",
+      "CVE-2026-109619",
+      "legacy modernization",
+      "web security",
+    ],
+    metaTitle: "PHP2Shell: Why Enterprises Are Moving from WordPress to Next.js",
+    metaDescription:
+      "PHP2Shell (CVE-2026-109618, CVE-2026-109619) is critical PHP RCE. See why WordPress sites are exposed and when a Next.js migration removes that runtime risk.",
+  },
+  {
     slug: "legacy-net-framework-to-dotnet-8-migration-guide",
     title: "The Complete Guide to Migrating from .NET Framework to .NET 8 in 2026",
     excerpt:
@@ -2047,6 +2117,8 @@ Benchmarking enterprise headless commerce implementations with modern frameworks
 ## Conclusion
 
 Enterprise headless commerce is a strategic investment for businesses that have outgrown the rigidity of off-the-shelf monolithic templates. By decoupling presentation from backend transactions, enterprise teams gain unmatched conversion speed, multi-region agility, and true omnichannel freedom.
+
+WordPress and WooCommerce teams weighing that move after PHP2Shell can read [why enterprises are leaving WordPress for Next.js](/blog/php2shell-wordpress-to-nextjs-migration).
     `,
     date: "2026-02-25",
     readTime: "11 min read",
@@ -2235,6 +2307,8 @@ Start monolithic → Extract modules → Convert high-value modules to services 
 ## Conclusion
 
 Choose the architecture that matches your team size, domain complexity, and operational maturity. For most enterprises, a modular monolith provides better velocity with lower operational cost.
+
+A WordPress site is one kind of monolith, and it sits on PHP. [PHP2Shell](/blog/php2shell-wordpress-to-nextjs-migration) shows how a single runtime bug can expose every application on that interpreter.
     `,
     date: "2026-02-15",
     readTime: "9 min read",
@@ -2708,6 +2782,8 @@ Avoid Redux for new projects unless you have specific middleware requirements.
 ## Conclusion
 
 A well-structured Next.js application can scale to hundreds of pages and dozens of developers. The key is establishing conventions early and enforcing them through automation (linting, testing, CI/CD).
+
+If PHP2Shell has you reassessing a WordPress stack, read [why enterprises are moving from WordPress to Next.js](/blog/php2shell-wordpress-to-nextjs-migration).
     `,
     date: "2026-01-25",
     readTime: "12 min read",
@@ -3459,6 +3535,8 @@ Map security controls to compliance frameworks (SOC 2, ISO 27001, GDPR, HIPAA) t
 ## Conclusion
 
 Data security is a continuous program, not a project. Regular assessments, employee training, and incident response testing ensure your security posture keeps pace with evolving threats.
+
+Runtime flaws are part of that program. [PHP2Shell](/blog/php2shell-wordpress-to-nextjs-migration) is a current example of a PHP core bug that reaches every WordPress site still running a vulnerable interpreter.
     `,
     date: "2025-12-20",
     readTime: "10 min read",
@@ -3522,6 +3600,8 @@ The \`next/image\` component provides:
 ## Conclusion
 
 Next.js provides excellent performance primitives out of the box. The key is understanding when to use server vs. client components, optimizing images and fonts, and monitoring Core Web Vitals continuously.
+
+Teams leaving WordPress after PHP2Shell can start with [why that PHP crisis is pushing enterprises to Next.js](/blog/php2shell-wordpress-to-nextjs-migration).
     `,
     date: "2025-12-18",
     readTime: "10 min read",

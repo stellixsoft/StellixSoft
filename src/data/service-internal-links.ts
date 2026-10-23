@@ -174,9 +174,9 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
       description: "Operate modernized systems with clear SLAs.",
     },
     {
-      href: "/blog",
-      label: "Blog",
-      description: "Migration guides and modernization topics.",
+      href: "/blog/php2shell-wordpress-to-nextjs-migration",
+      label: "PHP2Shell and Next.js",
+      description: "Why WordPress on PHP is exposed, and when a Next.js migration is the stronger fix.",
     },
   ],
   "maintenance-support": [

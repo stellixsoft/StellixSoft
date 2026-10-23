@@ -56,7 +56,12 @@ export async function getPublishedBlogPosts(): Promise<BlogPostView[]> {
       orderBy: "date",
     });
     if (posts.length > 0) {
-      return posts.map(dbPostToView);
+      const published = posts.map(dbPostToView);
+      const seen = new Set(published.map((post) => post.slug));
+      const fileOnly = staticBlogPosts
+        .filter((post) => !seen.has(post.slug))
+        .map(staticToView);
+      return [...published, ...fileOnly].sort((a, b) => b.date.localeCompare(a.date));
     }
   } catch {
     // Firestore unavailable — fall back to static posts
