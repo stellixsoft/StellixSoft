@@ -56,6 +56,112 @@ export type BlogCategory = (typeof blogCategories)[number];
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "shadow-ai-sovereign-offline-llms",
+    title:
+      "The Hidden Cost of Shadow AI: Why Enterprises Are Moving to Private, Offline LLMs in 2026",
+    excerpt:
+      "Shadow AI is what happens when employees paste company data into public AI tools. Here is when a self-hosted model keeps that data on your network, and what it still does not solve.",
+    content: `
+Employees are already using AI. Many of them are not using the AI their company approved.
+
+That gap is Shadow AI: staff pasting source code, customer records, contracts, or financials into a public chat tool because it is faster than the official process. Once that text leaves the company, you no longer control the copy. Some consumer products retain prompts or use them to improve models. Many enterprise APIs say they do not train on customer content. Either way, the data now sits in someone else's tenant, logs, and subprocessors.
+
+A second risk shows up when AI is allowed to act, not only answer. An agent that can read email, browse, or call internal tools can be steered by whatever text it reads. A malicious document does not need to "hack the model" in the classic sense. It only needs the application to trust the model's next action. The fix is scope: least-privilege tools, human approval before anything irreversible, and no secrets sitting in the prompt. A slogan about quarantine does not replace those controls.
+
+Banning AI usually fails. People route around the ban. The practical move is to give them a system the company actually owns.
+
+## What "sovereign" and "offline" should mean
+
+A private LLM is a model you run, on infrastructure you operate, reached only from your network. Prompts, retrieved documents, and outputs stay there if the deployment is actually closed: no quiet fallback to a public API, no analytics SDK shipping prompts off-box, no admin laptop syncing the vector database to a personal drive.
+
+That is a real reduction in exposure. It is not absolute privacy, and it is not immunity to outages.
+
+- **Data stays on your network** when inference, retrieval, and logs are hosted by you and the path is enforced. You still have to secure the host, the weights, the database, and the people who can log in.
+- **Vendor API downtime matters less** when the model is local and the hardware is up. Your own power, disk, and GPU failures still count.
+- **Agent risk drops only if the tools are narrow.** A local model with permission to run shell commands is not safer than a cloud model with the same permission.
+
+Teams often start with smaller self-hosted models, including Llama 3.1 8B and Hermes-class models, because they fit on modest GPUs and are good enough for summarization, extraction, and internal search. An 8B model will not match a frontier system on every task. Pick the model for the job, then isolate it. The model name is not the security control.
+
+Air-gapped or offline-capable setups are the right tool for networks that are not allowed to call out. They cost more to operate, and they need an update path for the model and the application that does not depend on a developer pasting weights into a chat window.
+
+## What StellixSoft builds
+
+The work is architecture, not a model download. We design the boundary, the retrieval store, the audit log, and the interface your staff will actually use, so the approved tool is easier than the shadow one.
+
+If that is the program you need, start with our [AI integration services](/services/ai-integration-services). For the production side of adding AI to systems you already run, see [practical AI integration for enterprise software](/blog/ai-integration-enterprise-software-practical-guide) and [enterprise data security best practices](/blog/enterprise-data-security-best-practices).
+
+[Book a discovery call to talk through a private AI deployment](/contact).
+    `,
+    date: "2026-10-24",
+    updatedAt: "2026-10-24",
+    readTime: "6 min read",
+    category: "AI & Automation",
+    tags: [
+      "Shadow AI",
+      "offline LLM",
+      "secure AI infrastructure",
+      "local LLM",
+      "enterprise AI",
+      "data privacy",
+    ],
+    metaTitle: "Shadow AI: Why Enterprises Are Moving to Offline LLMs",
+    metaDescription:
+      "Shadow AI is employees pasting company data into public AI tools. See when a self-hosted LLM keeps that data on your network, and what it still does not solve.",
+  },
+  {
+    slug: "prompt-injection-legacy-web-modernization",
+    title:
+      "Prompt Injection and Legacy Web Platforms: Why a Patch Is Not the Architecture",
+    excerpt:
+      "Prompt injection steers AI features through ordinary user input. Legacy web platforms feel it first when the model is trusted with tools, secrets, or the database.",
+    content: `
+Attackers are using AI to move faster: more phishing, more variations of the same scam, more help scanning for known bugs. That does not retire the rest of security. Firewalls, patching, and access control still stop the attacks they were built for. What they do not understand is instruction hierarchy inside a prompt.
+
+Prompt injection is the new piece. An application mixes untrusted text — a form field, a PDF, a support ticket, a web page — into the instructions it sends a model. The model then treats that text as something it should obey. If the product only drafts an answer for a human to edit, the damage is a bad draft. If the model can call tools, read secrets, send email, or write to a database, the same trick can move data or take an action the user never asked for. It is not automatically remote code execution, and a firewall is not "blind" to the HTTP request. The firewall simply cannot tell a malicious sentence from a legitimate one.
+
+Older PHP applications and CMS platforms are not uniquely cursed. Any stack can concatenate user input into a privileged prompt. They are a common place for the mistake, because the app, the plugins, the admin, and the database already share one runtime. Adding a chatbot to that pile does not create a boundary. [PHP2Shell](/blog/php2shell-wordpress-to-nextjs-migration) is a separate, current example of what a shared PHP runtime costs. Prompt injection is the risk you add when AI is bolted on top.
+
+You can patch a CVE. You cannot patch an architecture that hands a model too much authority.
+
+## What modernization changes, and what it does not
+
+A rebuild is useful when it is used to separate things that are currently tangled.
+
+**Less server, where you do not need one.** A Next.js site can serve prebuilt pages from a CDN. Those pages have no PHP process and no plugin layer. That reduces a class of runtime bugs. It does nothing, by itself, to stop prompt injection in an AI feature.
+
+**A place to check input before the model sees it.** Next.js route handlers can validate shape, length, and auth before a request gets near an LLM or a database. Validation removes junk. It does not make untrusted prose safe. Treat retrieved documents and model output as untrusted too, and do not let the model grant itself a new permission.
+
+**Smaller blast radius, if the services actually stay split.** A composable system limits damage when one service cannot reuse another's credentials. "We deployed on Vercel" is not that split. Shared API keys, a shared database password, and an agent that can call every route will still move sideways.
+
+The pattern that holds up is dull on purpose: trusted instructions stay in code you control, user content stays in a labeled channel, tools are an allow-list, and anything that spends money, sends data, or changes records needs a person.
+
+## Where StellixSoft fits
+
+We migrate monolithic platforms into Next.js architectures when the current system cannot grow a real boundary. The security outcome comes from that boundary, not from the framework logo.
+
+See [legacy modernization](/services/legacy-modernization), [how we structure a Next.js frontend](/blog/react-nextjs-enterprise-frontend-architecture), and [Next.js performance](/blog/nextjs-performance-optimization-enterprise). If the AI feature is the reason for the project, read [what a private, offline LLM does and does not guarantee](/blog/shadow-ai-sovereign-offline-llms) and our [AI integration services](/services/ai-integration-services).
+
+One rebuild in that family is the [enterprise portal modernization](/case-studies/enterprise-portal-modernization).
+
+[Contact StellixSoft for a modernization audit](/contact).
+    `,
+    date: "2026-10-24",
+    updatedAt: "2026-10-24",
+    readTime: "6 min read",
+    category: "Legacy Modernization",
+    tags: [
+      "prompt injection",
+      "Next.js security",
+      "legacy modernization",
+      "AI security",
+      "enterprise security",
+      "legacy system replacement",
+    ],
+    metaTitle: "Prompt Injection: Why Legacy Web Platforms Need More Than a Patch",
+    metaDescription:
+      "Prompt injection steers AI apps through ordinary user input. See what legacy web platforms should change, and where a Next.js rebuild actually reduces that risk.",
+  },
+  {
     slug: "php2shell-wordpress-to-nextjs-migration",
     title:
       "The PHP2Shell Crisis Proves It’s Time to Abandon WordPress: Why Enterprises Are Moving to Next.js",
@@ -66,7 +172,7 @@ The internet is currently scrambling to patch **"PHP2Shell" ([CVE-2026-109618](h
 
 While many WordPress site owners are caught in a cycle of emergency patches and downtime, teams that no longer run PHP are not exposed to this particular flaw. They left the PHP runtime behind.
 
-If your business relies on WordPress, this incident is a clear signal. PHP2Shell is not a WordPress plugin bug. It sits in PHP itself, and WordPress, Drupal, Laravel, Magento, and custom PHP apps all inherit it when the server is unpatched. Here is why the PHP2Shell crisis should be your catalyst to migrate to a modern Next.js architecture.
+If your business relies on WordPress, this incident is a clear signal. PHP2Shell is not a WordPress plugin bug. It sits in PHP itself, and WordPress, Drupal, Laravel, Magento, and custom PHP apps all inherit it when the server is unpatched. Here is why the PHP2Shell crisis should be your catalyst to migrate to a modern Next.js architecture. Prompt injection is a different problem that shows up when AI is added to that same platform. We cover it in [why a patch is not the architecture](/blog/prompt-injection-legacy-web-modernization).
 
 If the site is still on PHP today, patch first. PHP fixed the issue in 8.5.12, 8.4.27, 8.3.36, and 8.2.35. Older branches need a vendor backport or an upgrade. Migration is how you stop treating the next PHP advisory as an all-hands emergency.
 
@@ -1838,6 +1944,8 @@ Look for processes that are:
 ## Conclusion
 
 Practical AI integration is about solving specific business problems, not adopting AI for its own sake. Start with one high-impact use case, prove ROI, then expand methodically.
+
+If staff are already pasting company data into public AI tools, read [why enterprises are moving that work to a private, offline LLM](/blog/shadow-ai-sovereign-offline-llms).
     `,
     date: "2026-03-10",
     readTime: "11 min read",
@@ -3536,7 +3644,7 @@ Map security controls to compliance frameworks (SOC 2, ISO 27001, GDPR, HIPAA) t
 
 Data security is a continuous program, not a project. Regular assessments, employee training, and incident response testing ensure your security posture keeps pace with evolving threats.
 
-Runtime flaws are part of that program. [PHP2Shell](/blog/php2shell-wordpress-to-nextjs-migration) is a current example of a PHP core bug that reaches every WordPress site still running a vulnerable interpreter.
+Runtime flaws are part of that program. [PHP2Shell](/blog/php2shell-wordpress-to-nextjs-migration) is a current example of a PHP core bug that reaches every WordPress site still running a vulnerable interpreter. A different leak path is [Shadow AI](/blog/shadow-ai-sovereign-offline-llms): employees pasting the same data into a public AI tool.
     `,
     date: "2025-12-20",
     readTime: "10 min read",

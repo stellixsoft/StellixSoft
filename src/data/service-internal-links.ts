@@ -21,9 +21,9 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
       description: "Build platforms that host AI features at scale.",
     },
     {
-      href: "/blog",
-      label: "Software & AI insights",
-      description: "Read how we approach integration and delivery.",
+      href: "/blog/shadow-ai-sovereign-offline-llms",
+      label: "Shadow AI and offline LLMs",
+      description: "Why public AI tools leak company data, and when a private model is the better control.",
     },
   ],
   "automation-and-custom-apps": [
