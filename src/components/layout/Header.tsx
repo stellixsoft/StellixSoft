@@ -130,7 +130,7 @@ export default function Header() {
             alt="Stellix Soft"
             width={160}
             height={32}
-            className="object-contain w-[140px] sm:w-[160px]"
+            className="h-auto w-[140px] object-contain sm:w-[160px]"
           />
         </Link>
 
