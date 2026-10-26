@@ -1,10 +1,23 @@
 import Link from "next/link";
+import { JsonLd } from "@/src/components/seo/json-ld";
+import {
+  breadcrumbJsonLd,
+  collectionPageJsonLd,
+} from "@/src/lib/schema";
+import { absoluteUrl } from "@/src/lib/site-url";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 export const metadata = buildPageMetadata({
   title: "Engineering Lab — Free Enterprise Planning Tools",
   description:
     "Explore RFID ROI, assess legacy .NET modernization, and try a simulated IoT operations platform. Free tools from Stellix Soft, with no registration.",
   path: "/tools",
+  keywords: [
+    "RFID ROI calculator",
+    ".NET modernization assessment",
+    "IoT platform demo",
+    "enterprise planning tools",
+    "legacy modernization calculator",
+  ],
 });
 const tools = [
   {
@@ -51,8 +64,36 @@ const tools = [
   },
 ];
 export default function EngineeringLab() {
+  const itemListLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Stellix Soft Engineering Lab tools",
+    itemListElement: tools.map((tool, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: tool.title,
+      url: absoluteUrl(tool.href),
+      description: tool.description,
+    })),
+  };
+
   return (
     <>
+      <JsonLd
+        data={collectionPageJsonLd({
+          name: "Stellix Soft Engineering Lab",
+          description:
+            "Free enterprise planning tools for RFID ROI, .NET modernization, and IoT operations.",
+          path: "/tools",
+        })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Engineering Lab", path: "/tools" },
+        ])}
+      />
+      <JsonLd data={itemListLd} />
       <header className="lab-hero">
         <div className="lab-container">
           <span className="lab-eyebrow">Stellix Soft Engineering Lab</span>

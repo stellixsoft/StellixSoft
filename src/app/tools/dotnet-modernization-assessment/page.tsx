@@ -6,6 +6,12 @@ export const metadata = buildPageMetadata({
   description:
     "Assess .NET Framework, VB.NET, and ASP.NET Web Forms migration risks. Get a preliminary modernization approach, phased roadmap, and indicative staffing budget.",
   path: "/tools/dotnet-modernization-assessment",
+  keywords: [
+    ".NET modernization assessment",
+    "VB.NET migration",
+    "Web Forms to .NET",
+    "legacy .NET Framework upgrade",
+  ],
 });
 export default function Page() {
   return (

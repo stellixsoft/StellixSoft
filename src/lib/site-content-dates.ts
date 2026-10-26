@@ -8,3 +8,5 @@ export const STATIC_SERVICE_PAGE_LAST_MOD = new Date("2026-04-07T12:00:00.000Z")
 export const STATIC_INDUSTRY_PAGE_LAST_MOD = new Date("2026-02-01T12:00:00.000Z");
 export const STATIC_CASE_STUDY_LAST_MOD = new Date("2025-11-01T12:00:00.000Z");
 export const STATIC_LEGAL_LAST_MOD = new Date("2026-03-31T12:00:00.000Z");
+/** Engineering Lab /tools hub and interactive tool pages. */
+export const STATIC_TOOLS_LAST_MOD = new Date("2026-10-26T12:00:00.000Z");

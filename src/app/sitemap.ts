@@ -7,6 +7,7 @@ import {
   STATIC_LEGAL_LAST_MOD,
   STATIC_SERVICE_PAGE_LAST_MOD,
   STATIC_SERVICES_HUB_LAST_MOD,
+  STATIC_TOOLS_LAST_MOD,
 } from "@/src/lib/site-content-dates";
 import { getSiteUrl } from "@/src/lib/site-url";
 
@@ -22,8 +23,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       "/tools/iot-platform-demo",
     ].map((path) => ({
       url: `${SITE_URL}${path}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
+      lastModified: STATIC_TOOLS_LAST_MOD,
+      changeFrequency: "weekly" as const,
+      priority: 0.85,
     })),
     { url: SITE_URL, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "weekly", priority: 1.0 },
     { url: `${SITE_URL}/about`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },

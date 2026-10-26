@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { JsonLd } from "@/src/components/seo/json-ld";
+import { breadcrumbJsonLd, orgRef } from "@/src/lib/schema";
 import { absoluteUrl } from "@/src/lib/site-url";
 
 export function ToolShell({
@@ -20,6 +21,7 @@ export function ToolShell({
   serviceLabel: string;
   explanation: ReactNode;
 }) {
+  const url = absoluteUrl(path);
   return (
     <>
       <JsonLd
@@ -28,11 +30,25 @@ export function ToolShell({
           "@type": "WebApplication",
           name: title,
           description: intro,
-          url: absoluteUrl(path),
+          url,
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web browser",
           isAccessibleForFree: true,
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+          },
+          provider: orgRef(),
+          publisher: orgRef(),
         }}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Engineering Lab", path: "/tools" },
+          { name: title, path },
+        ])}
       />
       <header className="lab-hero">
         <div className="lab-container">

@@ -6,6 +6,12 @@ export const metadata = buildPageMetadata({
   description:
     "Estimate RFID asset-loss savings, inventory labor savings, implementation costs, payback, and three-year ROI with transparent assumptions.",
   path: "/tools/rfid-roi-calculator",
+  keywords: [
+    "RFID ROI calculator",
+    "RFID asset tracking cost",
+    "RFID payback period",
+    "RFID deployment planner",
+  ],
 });
 export default function Page() {
   return (

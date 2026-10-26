@@ -6,6 +6,12 @@ export const metadata = buildPageMetadata({
   description:
     "Explore an RFID warehouse demo with asset tracing, offline event replay, temperature alerts, WMS retries, and auditable incident workflows.",
   path: "/tools/iot-platform-demo",
+  keywords: [
+    "IoT platform demo",
+    "RFID warehouse simulator",
+    "device management platform",
+    "IoT operations demo",
+  ],
 });
 export default function Page() {
   return (

@@ -147,36 +147,36 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
   ],
   "iot-software": [
     {
-      href: "/services/devops-and-cloud-services",
-      label: "DevOps & cloud",
-      description: "Scale ingestion, pipelines, and cloud backends for IoT.",
+      href: "/tools/rfid-roi-calculator",
+      label: "RFID ROI calculator",
+      description: "Model asset-loss savings, payback, and three-year ROI before an IoT rollout.",
+    },
+    {
+      href: "/tools/iot-platform-demo",
+      label: "IoT operations simulator",
+      description: "Walk a warehouse control-room scenario with assets, gateways, and incidents.",
     },
     {
       href: "/industries/iot-and-hardware",
       label: "IoT & hardware industry",
       description: "How we partner with hardware-led companies.",
     },
-    {
-      href: "/case-studies/logistics-management-platform",
-      label: "Logistics platform case study",
-      description: "Device and fleet management at enterprise scale.",
-    },
   ],
   "legacy-modernization": [
+    {
+      href: "/tools/dotnet-modernization-assessment",
+      label: ".NET modernization assessment",
+      description: "Score readiness for .NET Framework, VB.NET, or Web Forms before migration.",
+    },
     {
       href: "/services/devops-and-cloud-services",
       label: "DevOps & cloud services",
       description: "Target architecture for migrated workloads.",
     },
     {
-      href: "/services/maintenance-support",
-      label: "Maintenance & support",
-      description: "Operate modernized systems with clear SLAs.",
-    },
-    {
-      href: "/blog/php2shell-wordpress-to-nextjs-migration",
-      label: "PHP2Shell and Next.js",
-      description: "Why WordPress on PHP is exposed, and when a Next.js migration is the stronger fix.",
+      href: "/blog/legacy-net-framework-to-dotnet-8-migration-guide",
+      label: ".NET Framework to .NET 8 guide",
+      description: "Practical migration patterns for legacy Framework apps.",
     },
   ],
   "maintenance-support": [
