@@ -49,6 +49,7 @@ const navLinks = [
       { href: "/case-studies/stock-options-and-equity-management-platform", label: "Stock Options & Equity Management Platform" },
     ],
   },
+  { href: "/tools", label: "Tools" },
   { href: "/blog", label: "Blog" },
   { href: "/faqs", label: "FAQs" },
   { href: "/pricing", label: "Pricing" },
@@ -70,7 +71,7 @@ export default function Header() {
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
-  const headerSolid = scrolled || mobileMenuOpen;
+  const headerSolid = scrolled || mobileMenuOpen || pathname.startsWith("/tools");
 
   // Background on scroll
   useEffect(() => {

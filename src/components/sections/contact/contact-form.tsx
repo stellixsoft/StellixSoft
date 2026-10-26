@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useActionState, useEffect, useRef } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
+import { useToolContext } from "@/src/components/tools/use-tool-report";
+import { trackEvent } from "@/src/lib/analytics";
 import { submitContactForm } from "@/src/app/actions";
 import type { FormState } from "@/src/app/actions";
 import {
@@ -95,13 +97,36 @@ const CONTACT_PLAN_PREFILL: Record<string, string> = {
 
 type ContactFormProps = {
   planSlug?: string;
+  toolSlug?: string;
 };
 
-export default function ContactForm({ planSlug }: ContactFormProps) {
+export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
   const initialState: FormState = { success: false, message: "" };
   const [state, formAction, isPending] = useActionState(submitContactForm, initialState);
   const formRef = useRef<HTMLFormElement>(null);
   const errs = state.fieldErrors ?? {};
+  const toolContext = useToolContext(toolSlug);
+  const toolReport = toolContext?.report ?? "";
+  const [includeToolContext, setIncludeToolContext] = useState(true);
+  const submissionIdRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    if (submissionIdRef.current && !submissionIdRef.current.value) {
+      const id = crypto.randomUUID();
+      submissionIdRef.current.value = id;
+      submissionIdRef.current.defaultValue = id;
+    }
+  }, []);
+
+  useEffect(() => {
+    const project = formRef.current?.elements.namedItem("project");
+    if (
+      toolReport &&
+      project instanceof HTMLTextAreaElement &&
+      !project.value
+    ) {
+      project.value = `Please review my Engineering Lab scenario.\n\n${toolReport}`;
+    }
+  }, [toolReport]);
 
   const helpDefault =
     planSlug && CONTACT_PLAN_PREFILL[planSlug] ? CONTACT_PLAN_PREFILL[planSlug] : "";
@@ -109,8 +134,16 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
   useEffect(() => {
     if (state.success) {
       formRef.current?.reset();
+      if (toolReport) {
+        trackEvent("tool_lead_submit", { tool: toolSlug });
+        try {
+          sessionStorage.removeItem("stellix-lab-report");
+        } catch {
+          /* Storage is optional. */
+        }
+      }
     }
-  }, [state.success]);
+  }, [state.success, toolReport, toolSlug]);
 
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]">
@@ -119,6 +152,29 @@ export default function ContactForm({ planSlug }: ContactFormProps) {
           {/* Left: Contact form card */}
           <div className="rounded-2xl bg-white border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)] p-6 sm:p-8 md:p-10">
             <form ref={formRef} action={formAction} className="space-y-6">
+              <input type="hidden" name="labTool" value={toolSlug ?? ""} />
+              <input type="hidden" name="labInputs" value={includeToolContext ? (toolContext?.inputs ?? "{}") : "{}"} />
+              <input type="hidden" name="labResults" value={includeToolContext ? (toolContext?.results ?? "{}") : "{}"} />
+              <input
+                type="hidden"
+                name="labSubmissionId"
+                ref={submissionIdRef}
+              />
+              {toolReport && !state.success && (
+                <div className="rounded-xl border border-cyan-200 bg-cyan-50 p-5">
+                  <h2 className="font-semibold">
+                    Your Engineering Lab report is included below
+                  </h2>
+                  <p className="mt-2 text-sm">
+                    Review or remove the report in Project Details before
+                    sending. Nothing is submitted until you send this form.
+                  </p>
+                  <label className="mt-3 flex items-start gap-2 text-sm">
+                    <input type="checkbox" checked={includeToolContext} onChange={event => setIncludeToolContext(event.target.checked)} className="mt-1" />
+                    Include original tool inputs and result summary with my request
+                  </label>
+                </div>
+              )}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className={labelClass}>

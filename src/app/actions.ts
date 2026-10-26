@@ -1,6 +1,11 @@
 "use server";
 
 import { sendEmail } from "@/src/lib/email";
+import {
+  isLabTool,
+  customerHubConfigured,
+  submitLabLead,
+} from "@/src/lib/tools/customer-hub";
 
 export interface FormState {
   success: boolean;
@@ -130,7 +135,33 @@ export async function submitContactForm(
     };
   }
 
+  const labTool = readText(formData, "labTool");
+  if (isLabTool(labTool) && project.length > 8000) {
+    return {
+      success: false,
+      message: "Please shorten Project Details to 8,000 characters.",
+      fieldErrors: { project: "Maximum 8,000 characters." },
+    };
+  }
   try {
+    if (isLabTool(labTool) && customerHubConfigured()) {
+      await submitLabLead({
+        name,
+        email: emailRaw,
+        phone,
+        company,
+        message: project,
+        tool: labTool,
+        inputs: readText(formData, "labInputs") || "{}",
+        results: readText(formData, "labResults") || "{}",
+        idempotencyKey: readText(formData, "labSubmissionId"),
+      });
+      return {
+        success: true,
+        message: "Thanks! Your scenario has been sent to our team for review.",
+        fieldErrors: {},
+      };
+    }
     await sendEmail({
       subject: `New Contact Form - ${name}`,
       replyTo: emailRaw,

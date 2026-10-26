@@ -28,7 +28,7 @@ function normalizePlanParam(
 export default async function Contact({
   searchParams,
 }: {
-  searchParams: Promise<{ plan?: string | string[] }>;
+  searchParams: Promise<{ plan?: string | string[]; tool?: string | string[] }>;
 }) {
   const sp = await searchParams;
   const planSlug = normalizePlanParam(sp.plan);
@@ -38,7 +38,10 @@ export default async function Contact({
       <JsonLd data={contactPageJsonLd()} />
       <div>
         <Hero />
-        <ContactForm planSlug={planSlug} />
+        <ContactForm
+          planSlug={planSlug}
+          toolSlug={normalizePlanParam(sp.tool)}
+        />
         <WaysToReach />
         <AfterYourReach />
         <QuickInfo />

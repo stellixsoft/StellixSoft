@@ -6,6 +6,7 @@ import {
 } from "@/src/lib/constants";
 
 const servicesLinks = [
+  { href: "/tools", label: "Engineering Lab" },
   { href: "/services/enterprise-development", label: "Enterprise Development" },
   { href: "/services/legacy-modernization", label: "Legacy Modernization" },
   { href: "/services/iot-software", label: "IoT Software" },

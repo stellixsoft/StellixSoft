@@ -15,6 +15,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogPosts = await getPublishedBlogPosts();
 
   const staticPages: MetadataRoute.Sitemap = [
+    ...[
+      "/tools",
+      "/tools/rfid-roi-calculator",
+      "/tools/dotnet-modernization-assessment",
+      "/tools/iot-platform-demo",
+    ].map((path) => ({
+      url: `${SITE_URL}${path}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     { url: SITE_URL, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "weekly", priority: 1.0 },
     { url: `${SITE_URL}/about`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/blog`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "daily", priority: 0.9 },
