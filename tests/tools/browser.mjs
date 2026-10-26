@@ -115,23 +115,148 @@ const { chromium } = await import(
   await page.pdf({ path: "/tmp/lab-modernization.pdf", format: "A4" });
   await page.emulateMedia({ media: "screen" });
   await page.goto("http://127.0.0.1:3000/tools/iot-platform-demo");
-  const card = page.locator("article").filter({ hasText: "RD-101" });
-  await card.getByRole("button", { name: "Simulate failure" }).click();
-  await page.getByRole("status").filter({ hasText: "alert raised" }).waitFor();
-  await page.getByLabel("Explore a role").selectOption("Customer");
-  assert.equal(await page.locator(".lab-device").count(), 3);
+  const workspace = page.getByRole("navigation", {
+    name: "Operations workspaces",
+  });
+  const openTab = async (name) =>
+    workspace.getByRole("button", { name: new RegExp("^" + name) }).click();
+  await page.getByRole("button", { name: "Start stream", exact: true }).click();
+  await page.waitForFunction(
+    () =>
+      !document
+        .querySelector(".ops-stream-controls")
+        .textContent.includes("09:00:00"),
+  );
+  await page.getByRole("button", { name: "Pause stream", exact: true }).click();
+  await page.getByRole("button", { name: /Trace a missing pallet/ }).click();
+  await page.getByLabel("Search asset or shipment").fill("PLT-102");
+  await page
+    .locator(".ops-asset-list")
+    .getByRole("button", { name: /PLT-102/ })
+    .click();
+  await page
+    .getByRole("region", { name: "Asset investigation" })
+    .getByText("Missing", { exact: true })
+    .waitFor();
+  await openTab("Service desk");
+  await page
+    .getByRole("button", { name: "Assign incident", exact: true })
+    .click();
+  await page.getByLabel("Explore a role").selectOption("Technician");
+  await page
+    .getByRole("button", { name: "Locate and reconcile pallet", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Verify and release shipment", exact: true })
+    .click();
+  await page
+    .getByText("Recovery verified. Incident closed", { exact: false })
+    .waitFor();
+  await openTab("Operations");
+  await page
+    .locator(".ops-shipment")
+    .getByText("Released", { exact: true })
+    .waitFor();
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.screenshot({ path: "/tmp/ops-desktop.png", fullPage: true });
+  await page.getByLabel("Explore a role").selectOption("Administrator");
+  await page
+    .getByRole("button", { name: /Recover an offline warehouse/ })
+    .click();
+  await page.getByRole("button", { name: "Advance 5 seconds" }).click();
+  await openTab("Fleet health");
+  await page
+    .getByRole("button", { name: "Assign incident", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Reconnect and replay reads", exact: true })
+    .click();
+  await page
+    .getByText("1 duplicate suppressed", { exact: false })
+    .first()
+    .waitFor();
+  await page
+    .getByRole("button", { name: "Verify recovery and close", exact: true })
+    .click();
+  await openTab("Service desk");
+  assert.ok((await page.locator(".ops-audit-list article").count()) >= 4);
+  await page
+    .getByRole("button", { name: /Contain a temperature excursion/ })
+    .click();
+  await openTab("Service desk");
+  await page
+    .getByRole("button", { name: "Assign incident", exact: true })
+    .click();
+  await page
+    .getByRole("button", { name: "Contain and restore cooling", exact: true })
+    .click();
   assert.equal(
-    await page.getByRole("button", { name: "Assign ticket" }).count(),
+    await page
+      .getByRole("button", { name: "Verify recovery and close", exact: true })
+      .isDisabled(),
+    true,
+  );
+  await openTab("Integrations");
+  await page
+    .getByRole("button", { name: "Retry delivery", exact: true })
+    .click();
+  await page.getByText("Delivered", { exact: true }).waitFor();
+  await openTab("Service desk");
+  await page
+    .getByRole("button", { name: "Verify recovery and close", exact: true })
+    .click();
+  await openTab("Operations");
+  await page
+    .locator(".ops-shipment")
+    .getByText("Held", { exact: true })
+    .waitFor();
+  await page.getByRole("button", { name: /PLT-103/ }).click();
+  await page
+    .getByRole("region", { name: "Asset investigation" })
+    .getByText("Quarantined", { exact: true })
+    .waitFor();
+  await page.getByLabel("Explore a role").selectOption("Customer");
+  assert.equal(
+    await page
+      .getByRole("button", { name: /Trace a missing pallet/ })
+      .isDisabled(),
+    true,
+  );
+  await openTab("Service desk");
+  assert.equal(
+    await page
+      .getByRole("button", { name: "Assign incident", exact: true })
+      .count(),
     0,
   );
-  assert.equal(await page.getByText("Meridian", { exact: true }).count(), 0);
-  await page.getByLabel("Explore a role").selectOption("Technician");
-  await card.getByRole("button", { name: "Assign ticket" }).click();
-  await card.getByRole("button", { name: "Resolve and restore" }).click();
-  await card.getByText("Resolved", { exact: true }).waitFor();
-  await page.getByLabel("Warehouse").selectOption("Austin");
-  assert.equal(await page.locator(".lab-device").count(), 1);
-  await page.getByRole("button", { name: "Reset simulation" }).click();
+  assert.equal(await page.getByRole("combobox", { name: "Warehouse", exact: true }).locator("option").count(), 2);
+  await page.getByLabel("Explore a role").selectOption("Administrator");
+  await page.getByRole("combobox", { name: "Warehouse", exact: true }).selectOption("Rotterdam");
+  assert.equal(await page.getByText("INC-1042", { exact: false }).count(), 0);
+  await openTab("Architecture");
+  await page
+    .getByRole("heading", { name: "Required for a production deployment" })
+    .waitFor();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.getByRole("combobox", { name: "Warehouse", exact: true }).selectOption("Chicago");
+  for (const name of [
+    "Operations",
+    "Fleet health",
+    "Service desk",
+    "Integrations",
+    "Architecture",
+  ]) {
+    await openTab(name);
+    assert.equal(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+      true,
+      `Mobile overflow in ${name}`,
+    );
+  }
+  await openTab("Operations");
+  await page.screenshot({ path: "/tmp/ops-mobile.png", fullPage: true });
   for (const width of [1151, 1280, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("http://127.0.0.1:3000/tools");

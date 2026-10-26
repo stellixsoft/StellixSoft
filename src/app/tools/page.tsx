@@ -40,13 +40,13 @@ const tools = [
     category: "Engineering in action",
     title: "Enterprise IoT operations simulator",
     description:
-      "Move between warehouses and roles. Trigger a fictional device failure, watch an alert open a ticket, and restore service.",
+      "Trace RFID assets, recover buffered events after an outage, and resolve cold-chain exceptions across a connected warehouse.",
     href: "/tools/iot-platform-demo",
     action: "Enter the control room",
     features: [
-      "Simulated telemetry",
+      "Guided warehouse scenarios",
       "Tenant-scoped views",
-      "Incident workflow",
+      "Recovery and audit trails",
     ],
   },
 ];

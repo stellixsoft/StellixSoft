@@ -10,11 +10,6 @@ import {
   defaultAssessment,
 } from "../../src/lib/tools/modernization";
 import {
-  initialDevices,
-  transitionDevice,
-  visibleDevices,
-} from "../../src/lib/tools/simulator";
-import {
   buildHubPayload,
   submitLabLead,
   type LabLead,
@@ -84,30 +79,6 @@ test("modernization differentiates retain, replatform, refactor and incremental 
     100,
   );
   assert.throws(() => assessModernization({ ...defaultAssessment, stack: 10 }));
-});
-test("simulator models tenant visibility and valid ticket transitions", () => {
-  assert.equal(
-    visibleDevices(initialDevices, "Administrator", "All").length,
-    5,
-  );
-  assert.equal(visibleDevices(initialDevices, "Customer", "All").length, 3);
-  assert.equal(
-    visibleDevices(initialDevices, "Technician", "Rotterdam").length,
-    0,
-  );
-  const failed = transitionDevice(initialDevices[0], "fail", "Administrator");
-  assert.equal(failed.ticket, "Open");
-  assert.equal(failed.status, "Offline");
-  assert.throws(() => transitionDevice(failed, "resolve", "Technician"));
-  const assigned = transitionDevice(failed, "assign", "Technician");
-  assert.equal(
-    transitionDevice(assigned, "resolve", "Technician").status,
-    "Online",
-  );
-  assert.throws(() => transitionDevice(failed, "assign", "Customer"));
-  assert.throws(() =>
-    transitionDevice(initialDevices[3], "fail", "Technician"),
-  );
 });
 const lead: LabLead = {
   name: "Test User",

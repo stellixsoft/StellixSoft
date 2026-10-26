@@ -4,14 +4,14 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 export const metadata = buildPageMetadata({
   title: "Enterprise IoT Device Management Platform Demo",
   description:
-    "Try a fictional multi-site IoT operations platform. Explore role-based views, simulate device failures, and follow automated alerts through ticket resolution.",
+    "Explore an RFID warehouse demo with asset tracing, offline event replay, temperature alerts, WMS retries, and auditable incident workflows.",
   path: "/tools/iot-platform-demo",
 });
 export default function Page() {
   return (
     <ToolShell
       title="Enterprise IoT operations simulator"
-      intro="See how connected hardware becomes an operational workflow: detect an incident, route the work, and verify recovery."
+      intro="Investigate a missing pallet, recover an offline gateway, and contain a cold-chain exception in a connected warehouse operations demo."
       path="/tools/iot-platform-demo"
       service="/services/iot-software"
       serviceLabel="Build an IoT software platform with Stellix Soft"
