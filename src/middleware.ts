@@ -7,6 +7,11 @@ import {
   hasPermission,
   permissionForPath,
 } from "@/src/lib/admin-permissions";
+import {
+  goneResponse,
+  isHomepageSearchJunk,
+  isLegacyGonePath,
+} from "@/src/lib/legacy-gone-paths";
 
 function isSuperAdmin(session: AdminSessionData) {
   if (session.isSuperAdmin) return true;
@@ -24,30 +29,11 @@ function firstAllowedPath(session: AdminSessionData): string {
   return "/admin/login";
 }
 
-const LEGACY_SPAM_PATTERNS = [
-  "/wp-",
-  "/xmlrpc.php",
-  "/portfolio-sitemap",
-  "/wp-sitemap",
-];
-
 export async function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const { pathname, searchParams } = request.nextUrl;
 
-  for (const pattern of LEGACY_SPAM_PATTERNS) {
-    if (pathname.startsWith(pattern) || pathname.includes(pattern)) {
-      return new NextResponse(
-        "410 Gone - This resource has been permanently removed.",
-        {
-          status: 410,
-          headers: {
-            "Content-Type": "text/plain; charset=utf-8",
-            "X-Robots-Tag": "noindex, nofollow",
-            "Cache-Control": "public, max-age=86400",
-          },
-        }
-      );
-    }
+  if (isLegacyGonePath(pathname) || isHomepageSearchJunk(pathname, searchParams)) {
+    return goneResponse();
   }
 
   if (!pathname.startsWith("/admin")) {
@@ -84,7 +70,6 @@ export async function middleware(request: NextRequest) {
     if (fallback === "/admin") {
       url.searchParams.set("denied", "1");
     }
-    // Avoid redirect loop if fallback is the same denied path
     if (url.pathname === pathname) {
       return NextResponse.redirect(new URL("/admin/login", request.url));
     }
@@ -96,13 +81,10 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/admin",
-    "/admin/:path*",
-    "/wp-:path*",
-    "/xmlrpc.php",
-    "/portfolio-sitemap.xml",
-    "/portfolio-sitemap:path*",
-    "/wp-sitemap.xml",
-    "/wp-sitemap:path*",
+    /*
+     * Run on all paths except Next internals and common static assets.
+     * Legacy 410 + admin auth both need broad coverage.
+     */
+    "/((?!_next/static|_next/image|favicon.ico|assets/|tinymce/|uploads/).*)",
   ],
 };
