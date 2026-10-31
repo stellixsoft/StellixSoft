@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import SiteChrome from "../components/layout/site-chrome";
 import GoogleAnalytics from "../components/analytics/GoogleAnalytics";
+import LeadTracker from "../components/analytics/LeadTracker";
 import MicrosoftClarity from "../components/analytics/MicrosoftClarity";
 import CustomerHub from "../components/analytics/CustomerHub";
 import { buildRootJsonLdGraph } from "@/src/lib/schema";
@@ -100,6 +101,7 @@ export default function RootLayout({
       </head>
       <body className={`${poppins.variable} font-sans antialiased`}>
         <GoogleAnalytics />
+        <LeadTracker />
         <MicrosoftClarity />
         <CustomerHub />
         <a

@@ -15,6 +15,7 @@ import CTAPilot from "@/src/components/sections/home/cta-pilot";
 import { blogPostingJsonLd } from "@/src/lib/schema";
 import { buildArticleMetadata } from "@/src/lib/seo-metadata";
 import { absoluteUrl } from "@/src/lib/site-url";
+import BlogServiceCta from "@/src/components/sections/blog/blog-service-cta";
 
 export const dynamic = "force-dynamic";
 
@@ -102,6 +103,8 @@ export default async function BlogPostPage({ params }: PageProps) {
             >
               <div dangerouslySetInnerHTML={{ __html: html }} />
             </div>
+
+            <BlogServiceCta category={post.category} />
 
             {post.slug === "ai-integration-enterprise-software-practical-guide" ? (
               <p className="mt-8 text-sm leading-relaxed text-slate-700">

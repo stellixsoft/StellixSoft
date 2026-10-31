@@ -134,6 +134,11 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
   useEffect(() => {
     if (state.success) {
       formRef.current?.reset();
+      trackEvent("generate_lead", {
+        method: "contact_form",
+        plan: planSlug,
+        tool: toolSlug,
+      });
       if (toolReport) {
         trackEvent("tool_lead_submit", { tool: toolSlug });
         try {
@@ -143,7 +148,7 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
         }
       }
     }
-  }, [state.success, toolReport, toolSlug]);
+  }, [state.success, toolReport, toolSlug, planSlug]);
 
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]">
