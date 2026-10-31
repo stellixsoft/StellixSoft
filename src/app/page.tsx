@@ -17,7 +17,7 @@ import CustomSoftwareServices from "../components/sections/home/custom-sofware-s
 import InterpriseSoftware from "../components/sections/home/interprise-software";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Custom Software Development Company | Enterprise IT Solutions",
+  title: "Stellix Soft | Custom Software Development Company for Enterprises",
   description:
     "Stellix Soft is a custom software development company specializing in enterprise software development services, IoT, AI integration, legacy modernization, and cloud solutions. US-timezone aligned teams.",
   path: "/",

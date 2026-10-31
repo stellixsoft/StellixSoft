@@ -373,6 +373,9 @@ export function buildRootJsonLdGraph() {
         sameAs: [
           "https://www.linkedin.com/company/stellixsoft",
           "https://twitter.com/stellixsoft",
+          "https://clutch.co/profile/stellix-soft",
+          "https://www.goodfirms.co/company/stellix-soft-llc",
+          "https://www.trustpilot.com/review/stellixsoft.com",
         ],
       },
       {

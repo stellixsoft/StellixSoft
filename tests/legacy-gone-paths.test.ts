@@ -52,3 +52,11 @@ test("isHomepageSearchJunk flags only homepage ?s=", () => {
     false,
   );
 });
+
+test("isLegacyGonePath blocks old WordPress portfolio and pricing archives", () => {
+  assert.equal(isLegacyGonePath("/portfolio/doctor-appliance-website-implementation-process"), true);
+  assert.equal(isLegacyGonePath("/project/prime-code-custom-web-software-development"), true);
+  assert.equal(isLegacyGonePath("/pricing-services/php-laravel"), true);
+  assert.equal(isLegacyGonePath("/pricing"), false);
+  assert.equal(isLegacyGonePath("/case-studies/enterprise-portal-modernization"), false);
+});

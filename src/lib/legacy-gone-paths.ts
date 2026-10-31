@@ -34,6 +34,12 @@ export function isLegacyGonePath(pathname: string): boolean {
   // Legacy app routes
   if (lower.startsWith("/detail/") || lower === "/detail") return true;
 
+  // Old WordPress portfolio / pricing archives still crawled by bots
+  // (specific /project/* redirects in next.config.ts run before middleware)
+  if (lower.startsWith("/portfolio/") || lower === "/portfolio") return true;
+  if (lower.startsWith("/project/") || lower === "/project") return true;
+  if (lower.startsWith("/pricing-services/") || lower === "/pricing-services") return true;
+
   // Archive / feed spam (do not use bare "/category" — live blog uses /blog/category/)
   if (lower.startsWith("/author/") || lower === "/author") return true;
   if (lower.startsWith("/tag/") || lower === "/tag") return true;

@@ -3,6 +3,7 @@
 import type { CSSProperties, ReactNode } from "react";
 import { openCalendlyPopup } from "@/src/lib/calendly-popup";
 import { CALENDLY_DEFAULT_GUEST_EMAILS } from "@/src/lib/constants";
+import { trackEvent } from "@/src/lib/analytics";
 
 type Props = {
   className?: string;
@@ -23,6 +24,10 @@ export default function CalendlyScheduleButton({
       type="button"
       onClick={() => {
         onClick?.();
+        trackEvent("calendly_open", {
+          page: window.location.pathname,
+          label: typeof children === "string" ? children : undefined,
+        });
         openCalendlyPopup(
           CALENDLY_DEFAULT_GUEST_EMAILS.length > 0
             ? { guests: CALENDLY_DEFAULT_GUEST_EMAILS }
