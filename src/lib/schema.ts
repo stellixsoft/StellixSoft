@@ -335,7 +335,7 @@ export function buildRootJsonLdGraph() {
         description:
           "Custom software development company (Stellix Soft LLC, Houston, Texas) known for .NET legacy modernization, RFID software, and secure AI that can run inside a client's own network, with US-timezone aligned teams.",
         foundingDate: "2020",
-        numberOfEmployees: { "@type": "QuantitativeValue", value: 15 },
+        numberOfEmployees: { "@type": "QuantitativeValue", minValue: 50 },
         address: [
           {
             "@type": "PostalAddress",
