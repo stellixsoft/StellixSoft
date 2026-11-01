@@ -124,7 +124,7 @@ Ranked by expected impact on qualified leads.
 | 2 | Blocked: the owner needs to pick the lead sheet or CRM. |
 | 3 | Open (owner). |
 | 4 | Blocked: needs the true facts from the owner. The homepage hero still says "Powering device management for a Fortune 500 supply chain". |
-| 5 | In review (PR, Nov 1): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 30-min call" opens Calendly (the knowledge base says the discovery call is about 30 minutes, so "20-min" was not used), and a click-to-call link shows on mobile. |
+| 5 | In review (PR, Nov 1): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly (the Calendly event is `15-minute-meeting`; note the contact page and knowledge base still say 30 minutes, so the owner should pick one length), and a click-to-call link shows on mobile. |
 | 6 | Not started. Next Claude task. |
 | 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. |
 | 8 | Open (owner). |
@@ -357,7 +357,7 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-10-31 | Site-wide | Added generate_lead and CTA click tracking |
 | 2026-11-01 | robots.txt, llms.txt, schema | AI crawler access, llms.txt rewrite, schema description and knowsAbout |
 | 2026-11-01 | Site-wide | Added the ai_referral event and ai_source on generate_lead |
-| 2026-11-01 | /, /pricing, /services/legacy-modernization, /services/iot-software, /services/ai-integration-services | Hero CTAs: "Get a free project estimate" (main), "Book a 30-min call" (secondary), click-to-call on mobile |
+| 2026-11-01 | /, /pricing, /services/legacy-modernization, /services/iot-software, /services/ai-integration-services | Hero CTAs: "Get a free project estimate" (main), "Book a 15-min call" (secondary), click-to-call on mobile |
 
 ## Weekly pass log
 

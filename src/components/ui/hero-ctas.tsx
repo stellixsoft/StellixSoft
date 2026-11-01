@@ -33,7 +33,7 @@ export default function HeroCtas({ proofHref, proofLabel, className }: Props) {
           Get a free project estimate
         </Link>
         <CalendlyScheduleButton className="inline-flex rounded-lg ring-1 ring-inset ring-white/70 px-8 py-3.5 text-base font-medium text-white bg-transparent transition-colors hover:bg-white/10 hover:ring-white cursor-pointer">
-          Book a 30-min call
+          Book a 15-min call
         </CalendlyScheduleButton>
       </div>
       <a
