@@ -13,7 +13,7 @@ const steps = [
   },
   {
     number: 3,
-    title: "Discovery call (30 min)",
+    title: "Discovery call (15 min)",
     description:
       "If there's potential fit, we'll schedule a call to discuss your project in detail.",
   },
