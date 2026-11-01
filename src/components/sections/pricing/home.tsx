@@ -1,4 +1,5 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
+import HeroCtas from "@/src/components/ui/hero-ctas";
 
 export default function Hero() {
     return (
@@ -23,6 +24,8 @@ export default function Hero() {
                 <p className="mt-6 text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
                     No hidden fees, no surprises. Choose the engagement model that fits your needs, from dedicated team members to complete projects.
                 </p>
+
+                <HeroCtas />
             </div>
         </section>
     );

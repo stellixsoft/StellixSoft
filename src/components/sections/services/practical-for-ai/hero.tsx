@@ -1,6 +1,5 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
-import Link from "next/link";
-import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
+import HeroCtas from "@/src/components/ui/hero-ctas";
 
 export default function PracticalAiForBusinessHero() {
   return (
@@ -29,23 +28,7 @@ export default function PracticalAiForBusinessHero() {
          We deliver AI integration services that help businesses unlock the true potential of artificial intelligence. From intelligent automation to advanced AI-powered features, our solutions are built to solve real-world challenges and drive measurable business outcomes.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <CalendlyScheduleButton
-            className="inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-90 cursor-pointer"
-            style={{
-              background:
-                "linear-gradient(180deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
-            }}
-          >
-            Schedule a Call
-          </CalendlyScheduleButton>
-          <Link
-            href="/case-studies"
-            className="inline-flex rounded-lg border border-white/70 px-8 py-3.5 text-base font-medium text-white bg-transparent transition-colors hover:bg-white/10 hover:border-white"
-          >
-            View Case Studies
-          </Link>
-        </div>
+        <HeroCtas proofHref="/case-studies" proofLabel="See our case studies" />
       </div>
     </section>
   );
