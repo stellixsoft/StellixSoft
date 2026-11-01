@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useActionState, useEffect, useRef, useState } from "react";
 import { useToolContext } from "@/src/components/tools/use-tool-report";
 import { trackEvent } from "@/src/lib/analytics";
+import { readAiSource } from "@/src/components/analytics/LeadTracker";
 import { submitContactForm } from "@/src/app/actions";
 import type { FormState } from "@/src/app/actions";
 import {
@@ -138,6 +139,7 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
         method: "contact_form",
         plan: planSlug,
         tool: toolSlug,
+        ai_source: readAiSource(),
       });
       if (toolReport) {
         trackEvent("tool_lead_submit", { tool: toolSlug });
