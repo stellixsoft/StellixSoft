@@ -8,7 +8,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/case-studies/compliance-and-audit-management-system" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Compliance & Audit Management System Case Study",
+  title: "Compliance & Audit Management Case Study",
   description:
     "How we developed a SOX-compliant audit management system for a financial services company with automated evidence collection.",
   path: PATH,

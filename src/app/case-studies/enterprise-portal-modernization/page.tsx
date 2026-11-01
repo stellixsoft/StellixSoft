@@ -16,7 +16,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/case-studies/enterprise-portal-modernization" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Enterprise Portal Modernization Case Study - .NET Migration",
+  title: ".NET Portal Modernization Case Study",
   description:
     "How we migrated a Fortune 500 company's legacy VB.NET portal to modern .NET with zero downtime, improving performance by 60%.",
   path: PATH,

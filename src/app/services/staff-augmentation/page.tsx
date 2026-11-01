@@ -30,7 +30,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/staff-augmentation" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "IT Staff Augmentation Services - Hire Senior Software Engineers",
+  title: "IT Staff Augmentation: Hire Senior Engineers",
   description:
     "IT staff augmentation services with senior software engineers and dedicated development teams aligned to your workflow and US time zones.",
   path: PATH,

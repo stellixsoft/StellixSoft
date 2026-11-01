@@ -22,7 +22,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/automation-and-custom-apps" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Custom App Development & Business Process Automation Services",
+  title: "Custom App Development & Process Automation",
   description:
     "Custom app development and business process automation services. Build mobile apps, internal tools, and workflow automation for better efficiency.",
   path: PATH,

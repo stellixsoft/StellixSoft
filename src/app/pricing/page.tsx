@@ -15,9 +15,9 @@ import {
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Software Development Pricing & Rates | Dedicated Teams from $25/hr",
+  title: "Software Development Pricing from $25/hr",
   description:
-    "Transparent enterprise software development pricing. Dedicated senior developers from $25–$35/hr, full squads, and low-risk pilot projects with zero lock-in contracts.",
+    "Transparent software development pricing. Dedicated senior developers from $25–$35/hr, full squads, and low-risk pilot projects with no lock-in.",
   path: "/pricing",
   keywords: [
     "software development pricing",

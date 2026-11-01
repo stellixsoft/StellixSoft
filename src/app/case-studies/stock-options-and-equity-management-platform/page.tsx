@@ -8,7 +8,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/case-studies/stock-options-and-equity-management-platform" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Stock Options & Equity Management Platform Case Study",
+  title: "Equity Management Platform Case Study",
   description:
     "How we built an equity management platform for startups managing cap tables, vesting schedules, and 409A valuations.",
   path: PATH,

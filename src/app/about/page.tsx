@@ -16,7 +16,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 export const metadata: Metadata = buildPageMetadata({
   title: "About Us - Enterprise Software Development Company",
   description:
-    "Founded in 2020, Stellix Soft is a remote-first enterprise software development company with 50+ developers serving Fortune 500 companies across North America and Europe.",
+    "Founded in 2020, Stellix Soft is a remote-first enterprise software company with 50+ developers serving Fortune 500 clients in North America and Europe.",
   path: "/about",
 });
 

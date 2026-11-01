@@ -29,9 +29,9 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/legacy-modernization" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Legacy Modernization Services | Zero Downtime Migration",
+  title: "Legacy Modernization Services: Zero Downtime",
   description:
-    "Modernize legacy applications without disrupting operations. Stellix Soft delivers legacy modernization services, .NET migrations, cloud upgrades, and application modernization.",
+    "Modernize legacy applications without disrupting operations: .NET migrations, cloud upgrades, and application modernization by Stellix Soft.",
   path: PATH,
   keywords: [
     "Legacy modernization services",

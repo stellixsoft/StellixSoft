@@ -9,7 +9,7 @@ import { collectionPageJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Industries We Serve - IoT, Healthcare, Logistics & Enterprise",
+  title: "Software for IoT, Healthcare & Logistics",
   description:
     "Specialized software development for IoT & hardware, logistics & supply chain, healthcare & MedTech, and enterprise software companies.",
   path: "/industries",
