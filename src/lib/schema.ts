@@ -333,7 +333,7 @@ export function buildRootJsonLdGraph() {
         },
         image: { "@id": `${site}/#logo` },
         description:
-          "Enterprise software development company specializing in IoT, legacy modernization, AI, cloud, and complex business platforms.",
+          "Custom software development company (Stellix Soft LLC, Houston, Texas) known for .NET legacy modernization, RFID software, and secure AI that can run inside a client's own network, with US-timezone aligned teams.",
         foundingDate: "2020",
         numberOfEmployees: { "@type": "QuantitativeValue", value: 15 },
         address: [
@@ -354,6 +354,10 @@ export function buildRootJsonLdGraph() {
           { "@type": "Place", name: "Europe" },
         ],
         knowsAbout: [
+          ".NET Legacy Modernization",
+          "VB.NET to .NET Migration",
+          "RFID Software Development",
+          "Private and Onsite AI Deployment",
           "Enterprise Software Development",
           "IoT Platform Development",
           "Legacy Software Modernization",

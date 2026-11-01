@@ -22,6 +22,34 @@ const JUNK_DISALLOW = [
   "/*.php$",
 ] as const;
 
+/**
+ * AI crawlers and AI search fetchers, listed explicitly so a future blanket rule
+ * can't shut out citations in ChatGPT, Claude, Perplexity, Gemini, Copilot, etc.
+ */
+const AI_USER_AGENTS = [
+  "GPTBot",
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "ClaudeBot",
+  "Claude-SearchBot",
+  "Claude-User",
+  "anthropic-ai",
+  "PerplexityBot",
+  "Perplexity-User",
+  "Google-Extended",
+  "Google-CloudVertexBot",
+  "Bingbot",
+  "Applebot",
+  "Applebot-Extended",
+  "Amazonbot",
+  "meta-externalagent",
+  "DuckAssistBot",
+  "MistralAI-User",
+  "cohere-ai",
+  "CCBot",
+  "Bytespider",
+] as const;
+
 export default function robots(): MetadataRoute.Robots {
   const siteUrl = getSiteUrl();
 
@@ -33,52 +61,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [...JUNK_DISALLOW],
       },
       {
-        userAgent: "GPTBot",
-        allow: "/",
-        disallow: [...JUNK_DISALLOW],
-      },
-      {
-        userAgent: "ChatGPT-User",
-        allow: "/",
-        disallow: [...JUNK_DISALLOW],
-      },
-      {
-        userAgent: "Google-Extended",
-        allow: "/",
-        disallow: [...JUNK_DISALLOW],
-      },
-      {
-        userAgent: "CCBot",
-        allow: "/",
-        disallow: [...JUNK_DISALLOW],
-      },
-      {
-        userAgent: "anthropic-ai",
-        allow: "/",
-        disallow: [...JUNK_DISALLOW],
-      },
-      {
-        userAgent: "ClaudeBot",
-        allow: "/",
-        disallow: [...JUNK_DISALLOW],
-      },
-      {
-        userAgent: "Bytespider",
-        allow: "/",
-        disallow: [...JUNK_DISALLOW],
-      },
-      {
-        userAgent: "PerplexityBot",
-        allow: "/",
-        disallow: [...JUNK_DISALLOW],
-      },
-      {
-        userAgent: "Applebot-Extended",
-        allow: "/",
-        disallow: [...JUNK_DISALLOW],
-      },
-      {
-        userAgent: "cohere-ai",
+        userAgent: [...AI_USER_AGENTS],
         allow: "/",
         disallow: [...JUNK_DISALLOW],
       },

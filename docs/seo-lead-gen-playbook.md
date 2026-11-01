@@ -254,7 +254,81 @@ Each item is answered on a service page (in an FAQ or answer box) or in a post w
 2. Pull the data for section 7: GA4 leads by channel and landing page, AI assistant sessions, GSC impressions vs clicks. Use the last 7 and 28 days compared with the prior period, with the bot filter applied.
 3. Find title and meta candidates (page-one positions, 30+ impressions, 0 clicks). Check the change log first, and skip any page changed in the last 30 days.
 4. Update the status column of the phase tables and the change log.
-5. Report in under 15 lines: qualified leads this week and month to date against the phase target, top lead sources and pages, what shipped, owner tasks that are overdue, and next week's single focus.
+5. On the first Sunday of each month, also run the AI visibility prompt panel in section 11 and log the results.
+6. Report in under 15 lines: qualified leads this week and month to date against the phase target, top lead sources and pages, what shipped, owner tasks that are overdue, and next week's single focus.
+
+## 11. AI search visibility: getting cited by ChatGPT, Claude, Perplexity, Gemini, Copilot and AI Overviews
+
+AI assistants recommend providers they can (a) crawl, (b) understand as one consistent entity, (c) quote in short direct answers, and (d) see confirmed on other sites. Each item below maps to one of those four.
+
+### Shipped Nov 1, 2026
+
+- **robots.txt:** all major AI crawlers and AI search fetchers are explicitly allowed: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User, Google-Extended, Bingbot, Applebot-Extended, Amazonbot, meta-externalagent, DuckAssistBot, MistralAI-User and others. The list is in `src/app/robots.ts`.
+- **llms.txt:** rewritten around the three lead offers, with direct answers, price ranges, both legal entities and tool links. Unverified claims (Fortune 500, team size, zero-downtime promises) are removed until the owner confirms them.
+- **Organization schema:** the description and `knowsAbout` now lead with .NET modernization, RFID software and private AI.
+- **GA4:** a new `ai_referral` event fires once per session when a visit comes from ChatGPT, Perplexity, Gemini, Claude, Copilot, DeepSeek, Meta AI, Grok, You.com or Mistral, based on the referrer or utm_source. `generate_lead` now carries an `ai_source` parameter, so leads can be tied back to the AI assistant that sent them.
+
+### Owner actions (one-time)
+
+| # | Task | Why |
+|---|---|---|
+| 1 | In GA4 Admin, go to Custom definitions and add the event-scoped custom dimensions `ai_source` and `landing_page`. | Lets reports show leads and visits by AI assistant |
+| 2 | Verify the site in **Bing Webmaster Tools** (you can import it from Search Console) and submit the sitemap. | ChatGPT search and Copilot draw heavily on Bing's index. Bing also reports AI citation data for Copilot |
+| 3 | Confirm the true company facts: team size, whether any Fortune 500 client can be claimed, and founding year. Claude then makes About, the homepage, schema, llms.txt and every directory profile match. | Inconsistent facts make AI models hedge or skip the brand |
+| 4 | Create a **Wikidata** item for Stellix Soft LLC (company, founded 2020, Houston, website, LinkedIn, Clutch). | A widely used entity source for Google's Knowledge Graph and LLMs |
+| 5 | Make the LinkedIn, Crunchbase, Clutch, GoodFirms, DesignRush, TechReviewer and Trustpilot descriptions match llms.txt word for word in the first sentence. | Consistent mentions everywhere strengthen the entity |
+
+### Claude tasks, slotted into the phases
+
+| Phase | Task |
+|---|---|
+| 1 | Add **IndexNow** (Bing, Yandex, Seznam; not the Google Indexing API) to ping on publish for blog posts and new pages. |
+| 1 | Make sure each service page and pricing page opens with a 40 to 60 word "answer box" that states what the service is, who it's for, the price range and the timeline, in plain sentences an AI can quote. |
+| 2 | Add `FAQPage` schema with buyer questions (section 9) to every lead-offer page, and `HowTo`-style numbered process sections. |
+| 2 | Add "Last updated" dates and author or reviewer bylines (with a `Person` schema and LinkedIn `sameAs`) to blog posts and service pages. AI search favours fresh content with named authors. |
+| 2 | Publish comparison and "best X" pages buyers ask AI about, written fairly: "Best .NET modernization companies for mid-market", "RFID software vendors compared", "Private LLM deployment partners". Include competitors honestly, along with Stellix Soft's fit. |
+| 3 | Original data that AI can cite: publish one small benchmark or survey (for example "What VB.NET migrations actually cost: 2026 data from 20 projects"). Statistics pages earn citations and links. |
+| 3 | Expand llms.txt with a `/llms-full.txt` that holds the full text of the lead-offer pages and the FAQs. |
+
+### Off-site mentions (owner, with Claude drafting)
+
+AI answers lean on third-party sources more than on the company's own site. Priorities:
+
+1. Clutch and GoodFirms reviews that name the service ("VB.NET migration", "RFID tracking portal").
+2. Inclusion in "top/best [service] companies" roundups and directory category pages (section 4, task 1).
+3. Reddit and community answers (r/dotnet, r/csharp, r/sysadmin, r/logistics, r/LocalLLaMA for private AI).
+4. LinkedIn articles from the founder on modernization and private AI, which get picked up by Bing and Copilot.
+5. YouTube walkthroughs with transcripts. YouTube is a common citation source in Gemini and AI Overviews.
+6. Podcast and guest-post bios that use the same one-line description as llms.txt.
+
+### Measuring AI visibility
+
+1. **AI referrals and leads (weekly):** in GA4, the "AI Assistant" default channel plus the `ai_referral` event and `generate_lead` broken down by `ai_source`. Also count answers of "ChatGPT / AI assistant" to the "How did you hear about us?" form field (phase 1).
+2. **Prompt panel (monthly, first Sunday):** ask the same 20 buyer prompts in ChatGPT (with search on), Perplexity, Gemini, Claude, Copilot and Google AI Mode / AI Overviews. For each prompt and engine, record: mentioned (yes/no), cited with a link (yes/no), position in the list, and which page was cited. Keep the log in `docs/ai-visibility-log.md`. Starter prompts:
+   - "best company to migrate VB.NET to .NET 8"
+   - "how much does a VB.NET to .NET migration cost"
+   - ".NET modernization partner for mid-sized company US"
+   - "RFID asset tracking software development company"
+   - "who builds custom RFID warehouse software"
+   - "private LLM deployment on-premise consultant"
+   - "secure AI integration company for healthcare data"
+   - "offshore software development company with US hours"
+   - "dedicated .NET developers cost per month"
+   - "custom software development company Houston"
+   - "Stellix Soft reviews"
+   - "is Stellix Soft legit"
+   - plus 8 more drawn from section 9's buyer questions.
+3. **Search Console:** watch long, question-style queries (10+ words). These are often AI Mode follow-ups and show which answers Google trusts the site for.
+4. **Bing Webmaster Tools:** the AI performance and citation reports for Copilot, once the site is verified.
+
+### Targets
+
+| Metric | Day 30 | Day 60 | Day 90 |
+|---|---|---|---|
+| Prompt panel: prompts where Stellix Soft is mentioned in at least one engine | baseline | 4 of 20 | 8 of 20 |
+| Prompt panel: brand prompts ("Stellix Soft reviews") answered correctly with consistent facts | baseline | all engines | all engines |
+| AI assistant sessions per month | 8 | 15 | 30 |
+| Leads with an `ai_source` set | track | 1+ | 2–3 per month |
 
 ## Change log
 
@@ -264,3 +338,5 @@ Each item is answered on a service page (in an FAQ or answer box) or in a post w
 | 2026-10-31 | /about | Removed the duplicate brand from the title |
 | 2026-10-31 | All blog posts | Added the end-of-post service CTA |
 | 2026-10-31 | Site-wide | Added generate_lead and CTA click tracking |
+| 2026-11-01 | robots.txt, llms.txt, schema | AI crawler access, llms.txt rewrite, schema description and knowsAbout |
+| 2026-11-01 | Site-wide | Added the ai_referral event and ai_source on generate_lead |
