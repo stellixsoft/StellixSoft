@@ -2,7 +2,7 @@ import { ToolShell } from "@/src/components/tools/tool-shell";
 import ModernizationAssessment from "@/src/components/tools/modernization-assessment";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 export const metadata = buildPageMetadata({
-  title: ".NET & VB.NET Modernization Readiness Assessment",
+  title: ".NET Modernization Readiness Assessment",
   description:
     "Assess .NET Framework, VB.NET, and ASP.NET Web Forms migration risks. Get a preliminary modernization approach, phased roadmap, and indicative staffing budget.",
   path: "/tools/dotnet-modernization-assessment",

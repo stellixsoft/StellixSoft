@@ -2,7 +2,7 @@ import { ToolShell } from "@/src/components/tools/tool-shell";
 import RfidCalculator from "@/src/components/tools/rfid-calculator";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 export const metadata = buildPageMetadata({
-  title: "RFID ROI Calculator & Asset Tracking Deployment Planner",
+  title: "RFID ROI Calculator & Deployment Planner",
   description:
     "Estimate RFID asset-loss savings, inventory labor savings, implementation costs, payback, and three-year ROI with transparent assumptions.",
   path: "/tools/rfid-roi-calculator",

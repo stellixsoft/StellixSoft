@@ -29,7 +29,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/devops-and-cloud-services" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "DevOps and Cloud Services for Scalable Modern Infrastructure",
+  title: "DevOps & Cloud Infrastructure Services",
   description:
     "DevOps and Cloud Services with cloud migration, CI/CD pipelines, DevOps automation, AWS, Azure, GCP management, and zero downtime deployments.",
   path: PATH,

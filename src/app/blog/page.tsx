@@ -10,9 +10,9 @@ import { getPublishedBlogPosts } from "@/src/lib/blog-service";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Enterprise Software & Tech Architecture Insights | Engineering Blog",
+  title: "Enterprise Software & Architecture Blog",
   description:
-    "In-depth engineering guides on zero-downtime database migration, enterprise headless commerce, IoT edge computing, cloud cost optimization, and legacy modernization.",
+    "Engineering guides on zero-downtime migrations, headless commerce, IoT edge computing, cloud cost optimization, and legacy modernization.",
   path: "/blog",
 });
 

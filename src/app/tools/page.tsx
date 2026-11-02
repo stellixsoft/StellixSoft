@@ -7,7 +7,7 @@ import {
 import { absoluteUrl } from "@/src/lib/site-url";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 export const metadata = buildPageMetadata({
-  title: "Engineering Lab — Free Enterprise Planning Tools",
+  title: "Engineering Lab: Free Planning Tools",
   description:
     "Explore RFID ROI, assess legacy .NET modernization, and try a simulated IoT operations platform. Free tools from Stellix Soft, with no registration.",
   path: "/tools",

@@ -15,7 +15,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/industries/iot-and-hardware" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "IoT & Hardware Software Development - Device Management Platforms",
+  title: "IoT & Hardware Software Development",
   description:
     "Software development for IoT and hardware companies. Device management platforms, firmware OTA updates, real-time telemetry, and fleet management.",
   path: PATH,

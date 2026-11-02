@@ -33,7 +33,7 @@ const PATH = "/services/maintenance-support" as const;
 export const metadata: Metadata = buildPageMetadata({
   title: "Software Maintenance and Support Services",
   description:
-    "Keep your applications secure, fast, and reliable with software maintenance and support services, including bug fixes, security updates, monitoring, and enhancements.",
+    "Software maintenance and support services that keep apps secure, fast, and reliable: bug fixes, security updates, monitoring, and enhancements.",
   path: PATH,
   keywords: [
     "Software maintenance and support services",

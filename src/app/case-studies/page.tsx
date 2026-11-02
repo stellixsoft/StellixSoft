@@ -9,7 +9,7 @@ import { collectionPageJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Case Studies - Enterprise Software Development Success Stories",
+  title: "Enterprise Software Case Studies",
   description:
     "Real enterprise software development case studies. Legacy modernization, logistics platforms, compliance systems, and multi-location business software.",
   path: "/case-studies",

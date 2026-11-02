@@ -29,9 +29,9 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/hire-dedicated-development-team" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Dedicated Development Teams | Hire Expert Software Developers",
+  title: "Hire a Dedicated Development Team",
   description:
-    "Scale your business with dedicated development teams from Stellix Soft. Hire experienced software developers for web, mobile, cloud, AI, and enterprise projects.",
+    "Hire a dedicated development team from Stellix Soft. Experienced software developers for web, mobile, cloud, AI, and enterprise projects.",
   path: PATH,
   keywords: [
     "Dedicated development team",

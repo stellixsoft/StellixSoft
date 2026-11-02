@@ -8,7 +8,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/case-studies/logistics-management-platform" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Logistics Management Platform Case Study - Real-Time Tracking",
+  title: "Real-Time Logistics Platform Case Study",
   description:
     "How we built a real-time logistics management platform handling 10,000+ daily shipments with route optimization and automated dispatch.",
   path: PATH,

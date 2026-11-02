@@ -26,9 +26,9 @@ import BlockchainSolution from "@/src/components/sections/services/blockchain-an
 const PATH = "/services/blockchain-and-cryptography" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Blockchain and Cryptography Services | Secure Web3 Development",
+  title: "Blockchain & Web3 Development Services",
   description:
-    "Protect your business with custom blockchain & cryptography services. We build secure smart contracts, Web3 apps, digital identity, and enterprise blockchain solutions.",
+    "Custom blockchain and cryptography services: secure smart contracts, Web3 apps, digital identity, and enterprise blockchain solutions.",
   path: PATH,
   keywords: [
     "Blockchain and Cryptography",

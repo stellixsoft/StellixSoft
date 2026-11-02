@@ -8,7 +8,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/case-studies/multi-location-service-business-platform" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Multi-Location Service Business Platform Case Study",
+  title: "Multi-Location Service Platform Case Study",
   description:
     "See how Stellix Soft built a custom multi-location service business platform that streamlined operations, improved scheduling, and supported business growth.",
   path: PATH,

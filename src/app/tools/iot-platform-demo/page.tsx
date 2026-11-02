@@ -2,7 +2,7 @@ import { ToolShell } from "@/src/components/tools/tool-shell";
 import IotSimulator from "@/src/components/tools/iot-simulator";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 export const metadata = buildPageMetadata({
-  title: "Enterprise IoT Device Management Platform Demo",
+  title: "IoT Device Management Platform Demo",
   description:
     "Explore an RFID warehouse demo with asset tracing, offline event replay, temperature alerts, WMS retries, and auditable incident workflows.",
   path: "/tools/iot-platform-demo",

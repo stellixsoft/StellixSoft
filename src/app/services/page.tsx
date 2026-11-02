@@ -7,9 +7,9 @@ import { collectionPageJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Custom Software Development Services | Enterprise, Cloud & AI",
+  title: "Custom Software Development Services",
   description:
-    "Enterprise software development services tailored for scale. Dedicated engineering teams, legacy modernization, IoT, cloud, and AI solutions with US-aligned delivery.",
+    "Enterprise software development services built for scale: dedicated teams, legacy modernization, IoT, cloud, and AI, with US-aligned delivery.",
   path: "/services",
   keywords: [
     "Software Development Services",

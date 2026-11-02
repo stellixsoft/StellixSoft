@@ -16,7 +16,7 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/industries/healthcare-and-medtech" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Healthcare & MedTech Software Development - HIPAA Compliant",
+  title: "Healthcare & MedTech Software Development",
   description:
     "HIPAA-compliant healthcare software development. EHR integrations, telemedicine platforms, medical device software, and clinical workflow automation.",
   path: PATH,
