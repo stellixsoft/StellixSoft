@@ -123,7 +123,7 @@ Ranked by expected impact on qualified leads.
 | 1 | Open (owner). Can't be checked from the weekly pass until GA4 for stellixsoft.com is connected (see the weekly log). |
 | 2 | Blocked: the owner needs to pick the lead sheet or CRM. |
 | 3 | Open (owner). |
-| 4 | Partly done: team size set to 50+ in schema and llms.txt (PR #5). Still open: The homepage hero still says "Powering device management for a Fortune 500 supply chain". |
+| 4 | Partly done: team size set to 50+ in schema and llms.txt (PR #5). Still open: the homepage hero still says "Powering device management for a Fortune 500 supply chain". |
 | 5 | In review (PR, Nov 1): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly (matches the `15-minute-meeting` Calendly event; the owner confirmed 15 minutes on Nov 1, and the contact page, enterprise development page, schema and knowledge base were updated to match), and a click-to-call link shows on mobile. |
 | 6 | Not started. Next Claude task. |
 | 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. |
