@@ -1,7 +1,5 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
-import Link from "next/link";
-import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
-import { ScheduleArrowIcon } from "@/src/components/ui/schedule-arrow-icon";
+import HeroCtas from "@/src/components/ui/hero-ctas";
 
 export default function Hero() {
   return (
@@ -29,24 +27,7 @@ export default function Hero() {
           We are a custom software development company that builds IoT platforms, modernizes legacy applications, and develops real-time systems for hardware companies and enterprises with mission-critical needs.
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <CalendlyScheduleButton
-            className="inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-90 cursor-pointer"
-            style={{
-              background:
-                "linear-gradient(180deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
-            }}
-          >
-            Schedule a Call
-            <ScheduleArrowIcon className="w-4 h-4 shrink-0 text-white" />
-          </CalendlyScheduleButton>
-          <Link
-            href="/case-studies"
-            className="inline-flex items-center rounded-lg border border-white/70 px-8 py-3.5 text-base font-medium text-white bg-transparent transition-colors hover:bg-white/10 hover:border-white"
-          >
-            Our Case Studies
-          </Link>
-        </div>
+        <HeroCtas proofHref="/case-studies" proofLabel="See our case studies" />
       </div>
     </section>
   );

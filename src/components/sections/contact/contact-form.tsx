@@ -30,7 +30,7 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 const steps = [
   "We review your message (same day)",
   "A technical team member responds within 24 hours",
-  "We schedule a free 30-min discovery call if there's fit",
+  "We schedule a free 15-min discovery call if there's fit",
   "You receive a detailed proposal within 5 business days",
 ];
 

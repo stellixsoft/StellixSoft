@@ -10,7 +10,7 @@ const complianceItems = [
   {
     smallText: "SCHEDULE A CALL",
     icon: "shield",
-    title: "Book a 30-minute discovery call",
+    title: "Book a 15-minute discovery call",
     description: "Choose a time that works for you",
   },
   {

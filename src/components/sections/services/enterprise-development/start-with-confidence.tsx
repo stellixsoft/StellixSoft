@@ -5,7 +5,7 @@ const cards = [
   {
     title: "Free Discovery Call",
     description:
-      "30-minute conversation to understand your project and see if we're a fit. No obligation. No sales pressure. Just honest technical discussion.",
+      "15-minute conversation to understand your project and see if we're a fit. No obligation. No sales pressure. Just honest technical discussion.",
     buttonLabel: "Book Your Free Call",
     useCalendlyPopup: true,
     icon: "chat",

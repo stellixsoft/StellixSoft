@@ -116,6 +116,23 @@ Ranked by expected impact on qualified leads.
 | 11 | Ask 5 past clients for reviews on Clutch and GoodFirms. Send them a direct link. | Owner | 3 new reviews |
 | 12 | Run PageSpeed Insights on mobile for the homepage, contact page and 3 lead-offer pages. Fix anything with LCP over 2.5 s or CLS over 0.1. Check the cost of the hero video and of third-party scripts (Warmly, Customer Hub, Clarity). | Claude | All 5 pages pass Core Web Vitals |
 
+### Phase 1 status (updated Nov 1, 2026)
+
+| # | Status |
+|---|---|
+| 1 | Open (owner). Can't be checked from the weekly pass until GA4 for stellixsoft.com is connected (see the weekly log). |
+| 2 | Blocked: the owner needs to pick the lead sheet or CRM. |
+| 3 | Open (owner). |
+| 4 | Partly done: team size set to 50+ in schema and llms.txt (PR #5). Still open: the homepage hero still says "Powering device management for a Fortune 500 supply chain". |
+| 5 | In review (PR, Nov 1): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly (matches the `15-minute-meeting` Calendly event; the owner confirmed 15 minutes on Nov 1, and the contact page, enterprise development page, schema and knowledge base were updated to match), and a click-to-call link shows on mobile. |
+| 6 | Not started. Next Claude task. |
+| 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. |
+| 8 | Open (owner). |
+| 9 | Not started. |
+| 10 | Done Nov 1 (robots.txt and llms.txt are live). |
+| 11 | Open (owner). |
+| 12 | Not started. PageSpeed Insights could not be reached from the weekly pass. |
+
 ---
 
 ## 3. Phase 2, days 31–60 (Dec 2 – Dec 31): pages that AI recommends, and lead magnets
@@ -341,3 +358,15 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-01 | robots.txt, llms.txt, schema | AI crawler access, llms.txt rewrite, schema description and knowsAbout |
 | 2026-11-01 | Site-wide | Added the ai_referral event and ai_source on generate_lead |
 | 2026-11-01 | schema, llms.txt | Team size set to 50+ to match the About page |
+| 2026-11-01 | /, /pricing, /services/legacy-modernization, /services/iot-software, /services/ai-integration-services | Hero CTAs: "Get a free project estimate" (main), "Book a 15-min call" (secondary), click-to-call on mobile |
+| 2026-11-01 | /contact, /services/enterprise-development, schema, knowledge base | Discovery call length changed from 30 to 15 minutes to match Calendly |
+
+## Weekly pass log
+
+### Nov 1, 2026 (day 1, phase 1)
+
+- **Health:** home, /contact, /pricing, the legacy modernization, IoT and AI integration pages, and the 3 newest posts all load. robots.txt (all AI crawlers allowed), sitemap.xml (89 URLs) and llms.txt (lead offers first) are served. Checked by fetching each page; exact status codes and PageSpeed could not be measured because the cloud runner can't reach stellixsoft.com directly.
+- **Data:** not pulled. The only analytics connector available reads primecode.ai (GSC) and the PrimeCode GA4 account; it has no access to stellixsoft.com or GA4 property 500359903. Leads, AI referrals and GSC query groups are unknown this week.
+- **Contact form:** 12 fields plus 3 checkboxes. Phase 1 task 6 (cut to 4 or 5) is the next Claude task.
+- **Shipped:** phase 1 task 5 (hero CTAs), in a PR.
+- **AI visibility panel:** not run, see `docs/ai-visibility-log.md`.

@@ -96,7 +96,7 @@ export function contactPageJsonLd() {
     "@type": "ContactPage",
     name: "Contact Stellix Soft",
     description:
-      "Get in touch with Stellix Soft. Schedule a free 30-minute discovery call to discuss your enterprise software project.",
+      "Get in touch with Stellix Soft. Schedule a free 15-minute discovery call to discuss your enterprise software project.",
     url,
     mainEntity: {
       "@type": "Organization",

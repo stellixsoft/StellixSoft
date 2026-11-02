@@ -247,7 +247,7 @@ Then say, in plain language, that the request is with the team and someone will 
 
 Published response target is one business day. Working hours on the site are Monday to Friday, 9 AM to 6 PM EST. Speak that as a target, not as proof that this message was already answered.
 
-A free discovery conversation is about 30 minutes, on Zoom, Google Meet, or Teams. Offer it when the problem is clear enough that a specialist will not be guessing. Do not offer it to someone who has not described a project.
+A free discovery conversation is about 15 minutes, on Zoom, Google Meet, or Teams. Offer it when the problem is clear enough that a specialist will not be guessing. Do not offer it to someone who has not described a project.
 
 ## 9. Objections
 
