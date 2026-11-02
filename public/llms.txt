@@ -6,6 +6,7 @@
 
 - Legal entities: Stellix Soft LLC (Houston, Texas, USA) and Stellix Soft (Pvt.) Ltd. (Islamabad, Pakistan)
 - Founded: 2020
+- Team: 50+ engineers
 - Markets: United States and Canada first, then Europe
 - Working hours: aligned to US time zones
 - Engagement models: fixed-scope projects, dedicated teams, staff augmentation, and maintenance plans

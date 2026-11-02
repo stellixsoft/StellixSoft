@@ -69,7 +69,7 @@ AI assistants already send visitors to case studies, pricing, the DevOps and mob
 1. Real leads per month over the last 3 to 6 months, from all sources including email, LinkedIn and referrals, plus how many became clients and the average first-contract value. Without this there is no baseline for lead-to-client rate or revenue per channel.
 2. A CRM or a shared lead sheet. Even a Google Sheet works. Claude can wire the contact form to also write to it.
 3. Google Business Profile status for Stellix Soft LLC (Houston): whether it exists, who owns it, and how many reviews it has.
-4. The true team size. llms.txt says "~15 developers", while the About page and meta description say "50+ developers serving Fortune 500 companies". AI answers distrust a company that contradicts itself, so pick the true number and Claude will make every page match.
+4. ~~The true team size.~~ Confirmed by the owner on 2026-11-01: 50+ engineers. The schema and llms.txt now match the About page. Still open: whether "Fortune 500" clients can be claimed. It appears in 28 places on the site and stays out of llms.txt until confirmed.
 5. Which clients can be named in case studies, and which reviews and testimonials can be quoted.
 6. An email tool for nurture sequences (Brevo, MailerLite, HubSpot free or similar).
 7. Whether any paid ads will run. If yes, the budget, so cost per lead can be tracked.
@@ -123,7 +123,7 @@ Ranked by expected impact on qualified leads.
 | 1 | Open (owner). Can't be checked from the weekly pass until GA4 for stellixsoft.com is connected (see the weekly log). |
 | 2 | Blocked: the owner needs to pick the lead sheet or CRM. |
 | 3 | Open (owner). |
-| 4 | Blocked: needs the true facts from the owner. The homepage hero still says "Powering device management for a Fortune 500 supply chain". |
+| 4 | Partly done: team size set to 50+ in schema and llms.txt (PR #5). Still open: The homepage hero still says "Powering device management for a Fortune 500 supply chain". |
 | 5 | In review (PR, Nov 1): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly (matches the `15-minute-meeting` Calendly event; the owner confirmed 15 minutes on Nov 1, and the contact page, enterprise development page, schema and knowledge base were updated to match), and a click-to-call link shows on mobile. |
 | 6 | Not started. Next Claude task. |
 | 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. |
@@ -357,6 +357,7 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-10-31 | Site-wide | Added generate_lead and CTA click tracking |
 | 2026-11-01 | robots.txt, llms.txt, schema | AI crawler access, llms.txt rewrite, schema description and knowsAbout |
 | 2026-11-01 | Site-wide | Added the ai_referral event and ai_source on generate_lead |
+| 2026-11-01 | schema, llms.txt | Team size set to 50+ to match the About page |
 | 2026-11-01 | /, /pricing, /services/legacy-modernization, /services/iot-software, /services/ai-integration-services | Hero CTAs: "Get a free project estimate" (main), "Book a 15-min call" (secondary), click-to-call on mobile |
 | 2026-11-01 | /contact, /services/enterprise-development, schema, knowledge base | Discovery call length changed from 30 to 15 minutes to match Calendly |
 
