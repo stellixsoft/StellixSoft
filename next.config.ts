@@ -93,7 +93,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/best-backend-tech-stacks-dotnet-php-nodejs",
-        destination: "/services/automation-and-custom-apps",
+        destination: "/services/business-process-automation",
+        permanent: true,
+      },
+      {
+        source: "/services/automation-and-custom-apps",
+        destination: "/services/business-process-automation",
         permanent: true,
       },
       {

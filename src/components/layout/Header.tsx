@@ -13,7 +13,7 @@ const navLinks = [
     href: "/services",
     dropdown: [
       { href: "/services/ai-integration-services", label: "AI Integration Services" },
-      { href: "/services/automation-and-custom-apps", label: "Automation and Custom Apps" },
+      { href: "/services/business-process-automation", label: "Business Process Automation" },
       { href: "/services/blockchain-and-cryptography", label: "Blockchain and Cryptography" },
       { href: "/services/hire-dedicated-development-team", label: "Dedicated Development Teams" },
       { href: "/services/devops-and-cloud-services", label: "DevOps and Cloud Services" },

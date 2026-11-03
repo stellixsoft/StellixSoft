@@ -13,21 +13,16 @@ export default function AutomationAndCustomAppsHero() {
 
       <div className="relative z-10 w-full max-w-[1300px] mx-auto px-6 py-24 text-center text-white">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extralight leading-tight">
-          Business Automation Services and Custom
+          Business Process Automation Services &amp;
           <br />
-          <span className="font-semibold">App Development</span>
+          <span className="font-semibold">Custom Internal Tools</span>
         </h1>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.24em] text-white/80">
-          <span>AWS</span>
-          <span>Google Cloud</span>
-          <span>Azure</span>
-          <span>Docker</span>
-          <span>Kubernetes</span>
-        </div>
-
         <p className="mt-8 text-sm md:text-base text-white/85 max-w-3xl mx-auto leading-relaxed">
-          We provide business automation services and custom app development solutions that help companies streamline operations, eliminate manual work, and improve efficiency. Our approach focuses on building scalable applications tailored to your business processes.
+          StellixSoft provides business process automation services that help
+          companies automate repetitive workflows, connect disconnected systems,
+          and replace manual processes with custom internal tools built around
+          the way they actually work.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

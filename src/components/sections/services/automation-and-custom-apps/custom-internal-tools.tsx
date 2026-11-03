@@ -5,45 +5,48 @@ export default function CustomInternalTools() {
     {
       title: "Operations Dashboards",
       description:
-        "Real-time visibility into your business metrics. Data from multiple systems in one view. No more spreadsheet wrangling.",
+        "Bring data from multiple systems into one view. Monitor KPIs, workflow status, tasks, and operational performance without relying on manual spreadsheets.",
     },
     {
       title: "Custom CRM Systems",
       description:
-        "When Salesforce is overkill or doesn’t fit your process. Track relationships, deals, and activities your way.",
+        "Manage leads, accounts, customer activity, deals, and internal workflows in a CRM designed around the way your team actually works.",
     },
     {
       title: "Inventory Management",
       description:
-        "Multi-location tracking, reorder alerts, supplier management. Built for your products and processes.",
+        "Track stock across locations, manage suppliers, monitor inventory levels, and automate reorder alerts through a system built for your operations.",
     },
     {
-      title: "Quote & Proposal Builders",
+      title: "Quote & Proposal Systems",
       description:
-        "Generate professional quotes in minutes. Pricing rules, approval workflows, template system.",
+        "Create accurate quotes and proposals faster using pricing rules, customer data, templates, and approval workflows in one streamlined process.",
     },
     {
       title: "Scheduling & Dispatch",
       description:
-        "Field teams, deliveries, appointments. Calendar views, resource allocation, route optimization.",
+        "Coordinate field teams, appointments, jobs, and resources with centralized scheduling, dispatch workflows, and real-time status visibility.",
     },
     {
       title: "Document Management",
       description:
-        "Version control, access permissions, search, approvals. Organize your files with custom workflows.",
+        "Store, organize, search, review, and approve business documents with structured permissions, version control, and custom workflows.",
     },
   ];
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24" style={{ backgroundColor: "#f1f1f1" }}>
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-start">
           <div className="pt-1">
             <h2 className="text-2xl md:text-3xl lg:text-4xl leading-[1.05] font-light text-[var(--color-deepSpace)] mb-4">
-              Custom App Development for Internal Business Tools
+              Custom Internal Tools Built Around Your Workflow
             </h2>
             <p className="text-base md:text-[15px] text-slate-600 leading-relaxed mb-8 max-w-2xl">
-              Our custom app development services focus on building internal tools that match your exact workflow. Unlike off-the-shelf solutions, these applications are designed specifically for your operations, giving your team greater flexibility and control.
+              We build custom internal tools around your actual business
+              processes, helping teams replace manual work, disconnected
+              systems, and generic software with more flexible operational
+              solutions.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 text-sm md:text-[15px] text-slate-700">
@@ -82,4 +85,3 @@ export default function CustomInternalTools() {
     </section>
   );
 }
-

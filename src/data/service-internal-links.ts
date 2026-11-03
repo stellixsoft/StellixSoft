@@ -11,8 +11,8 @@ export type InternalLinkItem = {
 export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
   "ai-integration-services": [
     {
-      href: "/services/automation-and-custom-apps",
-      label: "Automation & custom applications",
+      href: "/services/business-process-automation",
+      label: "Business process automation",
       description: "Pair AI with workflow automation and internal tools.",
     },
     {
@@ -26,21 +26,21 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
       description: "Why public AI tools leak company data, and when a private model is the better control.",
     },
   ],
-  "automation-and-custom-apps": [
+  "business-process-automation": [
+    {
+      href: "/services/legacy-modernization",
+      label: "Legacy modernization services",
+      description: "Unblock automation when older systems limit integrations.",
+    },
+    {
+      href: "/services/enterprise-development",
+      label: "Enterprise software development",
+      description: "Build platforms that connect departments and operational systems.",
+    },
     {
       href: "/services/ai-integration-services",
       label: "AI integration services",
       description: "Add intelligent automation to custom workflows.",
-    },
-    {
-      href: "/services/devops-and-cloud-services",
-      label: "DevOps & cloud services",
-      description: "Deploy and run automation reliably in production.",
-    },
-    {
-      href: "/case-studies",
-      label: "Case studies",
-      description: "See outcomes from similar automation engagements.",
     },
   ],
   "blockchain-and-cryptography": [

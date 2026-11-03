@@ -1,51 +1,92 @@
 import Image from "next/image";
+
 export default function WhatWeCanAutomate() {
   const items = [
     {
-      title: "Manual Data Entry",
+      title: "Data Entry & Data Synchronization",
       description:
-        "Stop copying data between systems. Automate data flow between your tools - CRM, ERP, spreadsheets, and databases.",
-      examplesTitle: "Examples:",
+        "Stop copying information manually between systems. We build automated data flows that can move, validate, and synchronize information across CRMs, ERPs, spreadsheets, databases, accounting platforms, and internal applications.",
+      examplesTitle: "Examples",
       examples: [
-        "Order data to accounting system",
-        "Lead data to CRM",
-        "Inventory updates across systems",
+        "Order data sent to accounting systems",
+        "Leads synchronized with CRM platforms",
+        "Inventory updates shared across systems",
+        "Customer records synchronized between applications",
+        "Form submissions routed into internal systems",
+        "Database records updated automatically",
       ],
     },
     {
-      title: "Reporting & Dashboards",
+      title: "Reporting & Operational Dashboards",
       description:
-        "Stop building reports manually. Automated dashboards that pull data from multiple sources.",
-      examplesTitle: "Examples:",
-      examples: ["Executive dashboards", "Sales performance reports", "Operational metrics"],
+        "Replace repetitive spreadsheet preparation and manual reporting with automated dashboards and scheduled reports. Custom reporting systems can combine data from multiple sources so teams can monitor KPIs, trends, workflow status, and exceptions from one interface.",
+      examplesTitle: "Examples",
+      examples: [
+        "Executive dashboards",
+        "Sales reports",
+        "Operational metrics",
+        "Inventory reports",
+        "Workflow status reports",
+        "Scheduled management reporting",
+      ],
     },
     {
       title: "Approval Workflows",
       description:
-        "Replace email chains with proper workflow systems. Requests, approvals, notifications.",
-      examplesTitle: "Examples:",
-      examples: ["Purchase approvals", "Time-off requests", "Document reviews"],
+        "Replace long email chains and informal approvals with structured workflow systems. We build approval processes that route requests to the right people, enforce business rules, capture decisions, send notifications, and maintain a clear audit trail.",
+      examplesTitle: "Examples",
+      examples: [
+        "Purchase approvals",
+        "Expense approvals",
+        "Time-off requests",
+        "Document reviews",
+        "Quote approvals",
+        "Compliance approvals",
+        "Internal requests",
+      ],
     },
     {
-      title: "Notifications & Alerts",
+      title: "Alerts & Notifications",
       description:
-        "The right information to the right people at the right time. Automatic, no manual sending.",
-      examplesTitle: "Examples:",
-      examples: ["Inventory low alerts", "Customer activity notifications", "System health alerts"],
+        "Automatically notify the right person when a business event requires attention. Notifications can be triggered by deadlines, workflow changes, system events, inventory thresholds, exceptions, or customer activity.",
+      examplesTitle: "Possible Channels",
+      examples: [
+        "Email",
+        "SMS",
+        "Microsoft Teams",
+        "Slack",
+        "In-app notifications",
+        "Internal dashboards",
+      ],
     },
     {
-      title: "Document Generation",
+      title: "Document Automation",
       description:
-        "Stop copying and pasting into templates. Automated document creation from your data.",
-      examplesTitle: "Examples:",
-      examples: ["Invoices and proposals", "Contracts and agreements", "Client deliverables"],
+        "Generate business documents from structured data instead of repeatedly copying information into templates. Automation can support both document creation and the workflow around those documents.",
+      examplesTitle: "Examples",
+      examples: [
+        "Invoices",
+        "Quotes",
+        "Proposals",
+        "Contracts",
+        "Agreements",
+        "Reports",
+        "Certificates",
+        "Client deliverables",
+      ],
     },
     {
-      title: "System Integrations",
+      title: "Business System Integrations",
       description:
-        "Connect tools that don’t talk to each other. Unified data flow across your tech stack.",
-      examplesTitle: "Examples:",
-      examples: ["CRM ⇄ Accounting", "E‑commerce ⇄ Inventory", "Any API ⇄ Any API"],
+        "Connect business platforms that do not currently communicate with each other. StellixSoft can build custom API integrations and data workflows that allow information to move between supported systems without repetitive manual work.",
+      examplesTitle: "Examples",
+      examples: [
+        "CRM ⇄ Accounting",
+        "ERP ⇄ Internal Application",
+        "E-commerce ⇄ Inventory",
+        "Database ⇄ Reporting Platform",
+        "Custom API-to-API integrations",
+      ],
     },
   ];
 
@@ -53,10 +94,14 @@ export default function WhatWeCanAutomate() {
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
         <h2 className="text-center text-2xl md:text-3xl lg:text-[32px] font-semibold text-slate-900 mb-10">
-          Business Process Automation Services for Smarter Workflows
+          Business Processes We Can Automate
         </h2>
-        <p className="text-base md:text-[15px] text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto text-center">
-          Our business process automation services are designed to optimize repetitive tasks, reduce human error, and improve operational efficiency across departments.
+        <p className="text-base md:text-[15px] text-slate-600 leading-relaxed mb-8 max-w-3xl mx-auto text-center">
+          The best automation opportunities are usually repetitive, rules-based
+          processes that consume staff time, create delays, or require employees
+          to move information manually between systems. StellixSoft can automate
+          individual tasks or build complete workflows that connect applications,
+          teams, databases, and business systems.
         </p>
         <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
@@ -66,7 +111,6 @@ export default function WhatWeCanAutomate() {
             >
               <div className="mb-4">
                 <div className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-sky-50 text-sky-500 text-lg">
-                  {/* simple icon placeholder */}
                   <Image
                     src="/assets/images/IOT-icon.png"
                     alt={`${item.title} - automation use case icon`}
@@ -100,4 +144,3 @@ export default function WhatWeCanAutomate() {
     </section>
   );
 }
-

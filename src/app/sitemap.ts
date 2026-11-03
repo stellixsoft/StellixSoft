@@ -53,7 +53,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   const serviceSlugs = [
-    "automation-and-custom-apps",
+    "business-process-automation",
     "blockchain-and-cryptography",
     "hire-dedicated-development-team",
     "devops-and-cloud-services",

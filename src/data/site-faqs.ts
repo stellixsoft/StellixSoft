@@ -81,28 +81,28 @@ export const siteFaqSections: SiteFaqSection[] = [
     ],
   },
   {
-    id: "automation-and-custom-apps",
-    title: "Automation & custom apps",
-    href: "/services/automation-and-custom-apps",
+    id: "business-process-automation",
+    title: "Business process automation",
+    href: "/services/business-process-automation",
     linkLabel: "Automation services",
     items: [
       {
         id: "auto-first",
-        question: "How do you decide what to automate first?",
+        question: "What business processes should we automate first?",
         answer:
-          "We map workflows, find bottlenecks and repetitive work, then prioritize automations with the highest ROI and lowest implementation risk.",
+          "Start with processes that are repetitive, time-consuming, rules-based, and frequently require people to move information manually between systems.",
       },
       {
         id: "auto-systems",
-        question: "Can you automate processes that span multiple systems?",
+        question: "Can you automate workflows across multiple systems?",
         answer:
-          "Yes. We connect CRMs, ERPs, email, databases, and APIs so data moves between systems without manual steps.",
+          "Yes, where systems provide the access needed for integration. Many projects connect CRMs, ERPs, databases, email, internal apps, cloud platforms, and third-party APIs.",
       },
       {
         id: "auto-build-buy",
-        question: "Should we build custom software or buy off-the-shelf?",
+        question: "Is custom automation better than Zapier, Make, or low-code tools?",
         answer:
-          "If your workflow is standard, off-the-shelf can work. If you have specific logic, compliance needs, or proprietary integrations, custom software often pays for itself.",
+          "Not always. Low-code tools work well for simpler workflows. Custom software is better for complex rules, proprietary systems, specialized interfaces, or significant scale.",
       },
     ],
   },

@@ -6,14 +6,14 @@ const cases = [
     title: "Logistics Dispatch Automation",
     caseStudyHref: "/case-studies/logistics-management-platform",
     problem:
-      "Scheduling managed via Excel. No real-time tracking. Drivers called office for every update.",
+      "Scheduling relied heavily on Excel, drivers needed to contact the office for updates, and operational information was spread across multiple tools.",
     solution:
-      "Custom dispatch system with driver app. Automated scheduling, real-time tracking, digital proof of delivery.",
+      "StellixSoft built a custom dispatch platform with automated scheduling, real-time tracking, driver workflows, and digital proof of delivery.",
     results: [
       "70% reduction in status calls",
-      "40% faster dispatch time",
-      "Doubled shipment capacity",
-      "Replaced 5+ separate tools",
+      "40% faster dispatch",
+      "Shipment capacity doubled",
+      "5+ separate tools replaced",
     ],
   },
   {
@@ -21,13 +21,13 @@ const cases = [
     title: "Compliance Workflow System",
     caseStudyHref: "/case-studies/compliance-and-audit-management-system",
     problem:
-      "Audits tracked in spreadsheets. No single centralized system. Documentation took hours to find.",
+      "Compliance audits were tracked across spreadsheets and documents, making deadlines, records, and audit preparation difficult to manage centrally.",
     solution:
-      "Jira-like workflow system for compliance. Automated tracking, document management, audit trails.",
+      "A centralized compliance workflow platform with task tracking, document management, audit trails, and automated status visibility.",
     results: [
-      "75% reduction in audit prep time",
-      "Zero missed deadlines (was 1–2/yr)",
-      "100% audit trail coverage",
+      "75% reduction in audit preparation time",
+      "Zero missed deadlines during the measured period",
+      "Complete audit trail coverage",
       "40% fewer status meetings",
     ],
   },
@@ -36,13 +36,13 @@ const cases = [
     title: "Service Business Platform",
     caseStudyHref: "/case-studies/multi-location-service-business-platform",
     problem:
-      "Multi‑location operations with different tools at each location. No unified scheduling or customer management.",
+      "Multiple locations relied on disconnected tools, with no unified system for scheduling, technician operations, customer information, and service management.",
     solution:
-      "Unified platform: admin dashboard, technician app, customer portal. Online booking, real-time tracking.",
+      "A unified platform combining an admin dashboard, technician application, customer portal, booking, and real-time operational tracking.",
     results: [
       "35% more jobs per technician",
-      "60% of bookings now online",
-      "4 states on one platform",
+      "60% of bookings moved online",
+      "Four states managed on one platform",
       "50% faster billing cycle",
     ],
   },
@@ -53,11 +53,12 @@ export default function AutomationInAction() {
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
         <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-slate-900 mb-8 md:mb-10">
-          Real Results from Business Automation Services
+          Business Automation in Action
         </h2>
 
-       <p className="text-base md:text-[15px] text-slate-600 leading-relaxed mb-8 max-w-3xl mx-auto text-center">
-          These case studies highlight how our business automation services and custom app development solutions deliver measurable improvements in efficiency, scalability, and cost savings.
+        <p className="text-base md:text-[15px] text-slate-600 leading-relaxed mb-8 max-w-3xl mx-auto text-center">
+          Real projects where custom automation and internal tools reduced
+          manual work, connected systems, and improved day-to-day operations.
         </p>
 
         <div className="grid gap-6 md:gap-8 md:grid-cols-3">
@@ -76,13 +77,13 @@ export default function AutomationInAction() {
               <div className="space-y-4 text-sm md:text-[15px] text-slate-600 leading-relaxed mb-5">
                 <div>
                   <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-slate-400 mb-1">
-                    The Problem
+                    Challenge
                   </p>
                   <p>{item.problem}</p>
                 </div>
                 <div>
                   <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-slate-400 mb-1">
-                    The Solution
+                    Solution
                   </p>
                   <p>{item.solution}</p>
                 </div>
@@ -90,7 +91,7 @@ export default function AutomationInAction() {
 
               <div className="mt-auto pt-4 border-t border-sky-50">
                 <p className="text-[11px] md:text-xs font-semibold uppercase tracking-[0.18em] text-sky-500 mb-2">
-                  The Result
+                  Reported Results
                 </p>
                 <ul className="space-y-1.5 text-sm md:text-[15px] text-slate-800">
                   {item.results.map((r) => (
@@ -116,4 +117,3 @@ export default function AutomationInAction() {
     </section>
   );
 }
-

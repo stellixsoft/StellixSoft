@@ -72,10 +72,10 @@ const services = [
   },
   {
     img: "/assets/images/industry-three-img.webp",
-    title: "Automation & Custom Apps",
+    title: "Business Process Automation",
     description:
       "Custom internal tools, workflow automation, and deep business integrations.",
-    href: "/services/automation-and-custom-apps",
+    href: "/services/business-process-automation",
     icon: "/assets/images/industry-three.png",
   },
   {

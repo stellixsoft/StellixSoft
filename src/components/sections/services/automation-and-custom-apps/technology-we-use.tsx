@@ -15,13 +15,16 @@ export default function TechnologyWeUse() {
   ];
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-16 md:py-24" style={{ backgroundColor: "#f1f1f1" }}>
       <div className="max-w-[1300px] mx-auto px-4 sm:px-6">
         <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-light text-[var(--color-deepSpace)] mb-8 md:mb-10">
-          Custom Mobile App Development Services & Technologies
+          Technology Stack for Business Automation Solutions
         </h2>
-       <p className="text-base md:text-[15px] text-slate-600 leading-relaxed mb-8 max-w-3xl mx-auto text-center">
-          Our custom mobile app development services leverage modern frameworks like Flutter and React Native to build high-performance mobile applications that integrate seamlessly with your business systems.
+        <p className="text-base md:text-[15px] text-slate-600 leading-relaxed mb-8 max-w-3xl mx-auto text-center">
+          We select technologies based on workflow requirements, existing
+          infrastructure, integration constraints, maintainability, security,
+          and long-term scalability rather than forcing every project into the
+          same stack.
         </p>
 
         <div className="grid gap-6 md:gap-8 md:grid-cols-3">
@@ -51,4 +54,3 @@ export default function TechnologyWeUse() {
     </section>
   );
 }
-
