@@ -1,11 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export type FaqItem = {
   id: string;
   question: string;
   answer: string;
+  link?: { href: string; label: string };
 };
 
 type ServiceFaqsProps = {
@@ -74,9 +76,17 @@ export default function ServiceFaqs({ title, items }: ServiceFaqsProps) {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="pb-4 px-5 md:pb-5 md:px-6 pt-4 text-sm sm:text-base text-[var(--color-neutralGray)] leading-relaxed border-t border-gray-100">
-                        {item.answer}
-                      </p>
+                      <div className="pb-4 px-5 md:pb-5 md:px-6 pt-4 text-sm sm:text-base text-[var(--color-neutralGray)] leading-relaxed border-t border-gray-100">
+                        <p>{item.answer}</p>
+                        {item.link && (
+                          <Link
+                            href={item.link.href}
+                            className="mt-3 inline-block font-medium text-[var(--color-electricBlue)] hover:underline underline-offset-4"
+                          >
+                            {item.link.label}
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>

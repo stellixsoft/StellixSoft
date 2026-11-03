@@ -9,6 +9,7 @@ import SecurityBuiltIn from "@/src/components/sections/services/automation-and-c
 import AutomationCost from "@/src/components/sections/services/automation-and-custom-apps/automation-roi";
 import TechnologyWeUse from "@/src/components/sections/services/automation-and-custom-apps/technology-we-use";
 import WhenToBuildVsBuy from "@/src/components/sections/services/automation-and-custom-apps/when-to-build-vs-buy";
+import AutomationByIndustry from "@/src/components/sections/services/automation-and-custom-apps/automation-by-industry";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
 import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
@@ -121,10 +122,22 @@ const faqMainEntity: FaqQuestionBlock[] = [
   },
 ];
 
+const faqLinks: Record<string, { href: string; label: string }> = {
+  "Can you automate an existing legacy system?": {
+    href: "/services/legacy-modernization",
+    label: "Legacy modernization services",
+  },
+  "Can AI be added to a business automation workflow?": {
+    href: "/services/ai-integration-services",
+    label: "AI integration services",
+  },
+};
+
 const faqItems = faqMainEntity.map((q, i) => ({
   id: `automation-faq-${i + 1}`,
   question: q.name,
   answer: q.acceptedAnswer.text,
+  link: faqLinks[q.name],
 }));
 
 const serviceLd = serviceJsonLd({
@@ -163,6 +176,7 @@ export default function AutomationAndCustomAppsPage() {
         <TechnologyWeUse />
         <WhenToBuildVsBuy />
         <AutomationCost />
+        <AutomationByIndustry />
         <ServiceFaqs
           title="Business Process Automation FAQs"
           items={faqItems}
