@@ -13,6 +13,8 @@ import {
   SMS_TRANSACTIONAL_MESSAGE_TYPES,
 } from "@/src/lib/legal";
 
+const SELECT_CHEVRON = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23717181'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`;
+
 const inputClass =
   "w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent";
 const labelClass =
@@ -70,7 +72,26 @@ function ChatBubbleIcon() {
   );
 }
 
-/** Prefill for "What can we help with?" when arriving from ?plan=... */
+/** Budget bands for the optional range dropdown. Values must match BUDGET_RANGES in actions.ts. */
+const BUDGET_RANGES = [
+  "Under $15k",
+  "$15k–$40k",
+  "$40k–$100k",
+  "$100k+",
+  "Not sure yet",
+];
+
+/** Options for "How did you hear about us?". AI referrals are under-counted in GA4, so ask. */
+const HEAR_OPTIONS = [
+  "Google search",
+  "ChatGPT / AI assistant",
+  "LinkedIn",
+  "Clutch / GoodFirms / other directory",
+  "Referral from someone",
+  "Other",
+];
+
+/** Prefill for the project field when arriving from ?plan=... */
 const CONTACT_PLAN_PREFILL: Record<string, string> = {
   essential:
     "I'm interested in the Essential maintenance & support plan ($1,500/mo, 10 hrs included).",
@@ -110,6 +131,8 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
   const toolReport = toolContext?.report ?? "";
   const [includeToolContext, setIncludeToolContext] = useState(true);
   const submissionIdRef = useRef<HTMLInputElement>(null);
+  const startedRef = useRef(false);
+  const budgetRangeRef = useRef("");
   useEffect(() => {
     if (submissionIdRef.current && !submissionIdRef.current.value) {
       const id = crypto.randomUUID();
@@ -138,6 +161,7 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
       trackEvent("generate_lead", {
         method: "contact_form",
         plan: planSlug,
+        budget_range: budgetRangeRef.current || undefined,
         tool: toolSlug,
         ai_source: readAiSource(),
       });
@@ -158,7 +182,18 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
         <div className="grid grid-cols-1 md:grid-cols-[7fr_3fr] gap-8 lg:gap-12 items-start">
           {/* Left: Contact form card */}
           <div className="rounded-2xl bg-white border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)] p-6 sm:p-8 md:p-10">
-            <form ref={formRef} action={formAction} className="space-y-6">
+            <form
+              ref={formRef}
+              action={formAction}
+              className="space-y-6"
+              onFocusCapture={() => {
+                // Pairs with generate_lead (method contact_form) to measure form completion rate.
+                if (startedRef.current) return;
+                startedRef.current = true;
+                trackEvent("contact_form_start", { plan: planSlug, tool: toolSlug });
+              }}
+            >
+              <input type="hidden" name="help" value={helpDefault} />
               <input type="hidden" name="labTool" value={toolSlug ?? ""} />
               <input type="hidden" name="labInputs" value={includeToolContext ? (toolContext?.inputs ?? "{}") : "{}"} />
               <input type="hidden" name="labResults" value={includeToolContext ? (toolContext?.results ?? "{}") : "{}"} />
@@ -204,7 +239,7 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                 </div>
                 <div>
                   <label htmlFor="email" className={labelClass}>
-                    Email *
+                    Work email *
                   </label>
                   <input
                     id="email"
@@ -238,49 +273,35 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className={labelClass}>
-                    Phone (optional)
+                  <label htmlFor="budgetRange" className={labelClass}>
+                    Budget range (optional)
                   </label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    inputMode="numeric"
-                    placeholder="+15550001234"
-                    maxLength={22}
-                    autoComplete="tel"
-                    aria-invalid={errs.phone ? true : undefined}
-                    aria-describedby={errs.phone ? "contact-phone-error" : undefined}
-                    className={`${inputClass} ${errs.phone ? "border-red-300 ring-1 ring-red-200" : ""}`}
-                  />
-                  <FieldError id="contact-phone-error" message={errs.phone} />
-                  <p className="mt-1 text-[11px] text-[var(--color-neutralGray)]">
-                    Digits only; optional + for country code (spaces/formatting are stripped).
-                  </p>
+                  <select
+                    id="budgetRange"
+                    name="budgetRange"
+                    defaultValue=""
+                    onChange={(event) => {
+                      budgetRangeRef.current = event.target.value;
+                    }}
+                    aria-invalid={errs.budget ? true : undefined}
+                    aria-describedby={errs.budget ? "contact-budget-error" : undefined}
+                    className={`${inputClass} appearance-none bg-[length:1rem] bg-[right_0.75rem_center] bg-no-repeat pr-10`}
+                    style={{ backgroundImage: SELECT_CHEVRON }}
+                  >
+                    <option value="">Select a range</option>
+                    {BUDGET_RANGES.map((range) => (
+                      <option key={range} value={range}>
+                        {range}
+                      </option>
+                    ))}
+                  </select>
+                  <FieldError id="contact-budget-error" message={errs.budget} />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="help" className={labelClass}>
-                  What can we help with? (optional)
-                </label>
-                <input
-                  id="help"
-                  name="help"
-                  type="text"
-                  maxLength={500}
-                  placeholder="e.g. Dedicated team, Legacy migration, AI integration..."
-                  defaultValue={helpDefault}
-                  aria-invalid={errs.help ? true : undefined}
-                  aria-describedby={errs.help ? "contact-help-error" : undefined}
-                  className={`${inputClass} ${errs.help ? "border-red-300 ring-1 ring-red-200" : ""}`}
-                />
-                <FieldError id="contact-help-error" message={errs.help} />
-              </div>
-
-              <div>
                 <label htmlFor="project" className={labelClass}>
-                  Tell us about your project *
+                  What do you need? *
                 </label>
                 <textarea
                   id="project"
@@ -289,7 +310,8 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                   minLength={5}
                   maxLength={8000}
                   required
-                  placeholder="What are you trying to build or solve? Any specific technologies or requirements?"
+                  defaultValue={helpDefault}
+                  placeholder="e.g. Migrate a VB.NET app to .NET 8, an RFID tracking portal, a private AI assistant..."
                   aria-invalid={errs.project ? true : undefined}
                   aria-describedby={errs.project ? "contact-project-error" : undefined}
                   className={`${inputClass} resize-y min-h-[120px] ${errs.project ? "border-red-300 ring-1 ring-red-200" : ""}`}
@@ -297,115 +319,60 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                 <FieldError id="contact-project-error" message={errs.project} />
               </div>
 
-              <div>
-                <label htmlFor="hear" className={labelClass}>
-                  How did you hear about us?
-                </label>
-                <input
-                  id="hear"
-                  name="hear"
-                  type="text"
-                  maxLength={200}
-                  className={inputClass}
-                />
-              </div>
-
-              <div>
-                <label className={labelClass}>Budget range (optional)</label>
-                <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_140px] gap-4">
+              <details
+                className="rounded-xl border border-gray-200 p-4"
+                open={
+                  errs.phone || errs.smsTransactionalConsent || errs.smsMarketingConsent
+                    ? true
+                    : undefined
+                }
+              >
+                <summary className="cursor-pointer text-sm font-medium text-[var(--color-deepSpace)]">
+                  Add a phone number or tell us how you found us (optional)
+                </summary>
+                <div className="mt-5 space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="budgetAmount" className="sr-only">
-                      Budget amount
+                    <label htmlFor="phone" className={labelClass}>
+                      Phone (optional)
                     </label>
                     <input
-                      id="budgetAmount"
-                      name="budgetAmount"
-                      type="text"
-                      inputMode="decimal"
-                      placeholder="e.g. 25000"
-                      maxLength={14}
-                      aria-invalid={errs.budget ? true : undefined}
-                      aria-describedby={errs.budget ? "contact-budget-error" : undefined}
-                      className={`${inputClass} ${errs.budget ? "border-red-300 ring-1 ring-red-200" : ""}`}
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      inputMode="numeric"
+                      placeholder="+15550001234"
+                      maxLength={22}
+                      autoComplete="tel"
+                      aria-invalid={errs.phone ? true : undefined}
+                      aria-describedby={errs.phone ? "contact-phone-error" : undefined}
+                      className={`${inputClass} ${errs.phone ? "border-red-300 ring-1 ring-red-200" : ""}`}
                     />
+                    <FieldError id="contact-phone-error" message={errs.phone} />
+                    <p className="mt-1 text-[11px] text-[var(--color-neutralGray)]">
+                      Digits only; optional + for country code (spaces/formatting are stripped).
+                    </p>
                   </div>
-                  <div>
-                    <label htmlFor="budgetCurrency" className="sr-only">
-                      Currency
-                    </label>
-                    <select
-                      id="budgetCurrency"
-                      name="budgetCurrency"
-                      defaultValue="USD"
-                      className={`${inputClass} appearance-none bg-[length:1rem] bg-[right_0.75rem_center] bg-no-repeat pr-10`}
-                      style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23717181'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
-                      }}
-                      aria-invalid={errs.budget ? true : undefined}
-                    >
-                      <option value="USD">USD ($)</option>
-                      <option value="EUR">EUR (€)</option>
-                      <option value="GBP">GBP (£)</option>
-                      <option value="AED">AED (AED)</option>
-                      <option value="PKR">PKR (Rs)</option>
-                      <option value="OTHER">Other</option>
-                    </select>
+                    <div>
+                      <label htmlFor="hear" className={labelClass}>
+                        How did you hear about us?
+                      </label>
+                      <select
+                        id="hear"
+                        name="hear"
+                        defaultValue=""
+                        className={`${inputClass} appearance-none bg-[length:1rem] bg-[right_0.75rem_center] bg-no-repeat pr-10`}
+                        style={{ backgroundImage: SELECT_CHEVRON }}
+                      >
+                        <option value="">Select one</option>
+                        {HEAR_OPTIONS.map((option) => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
-                </div>
-                <FieldError id="contact-budget-error" message={errs.budget} />
-              </div>
-
-              {state.message && (
-                <p
-                  role={state.success ? "status" : "alert"}
-                  className={`text-sm font-medium ${state.success ? "text-green-600" : "text-red-600"}`}
-                >
-                  {state.message}
-                </p>
-              )}
-
-              <div className="rounded-xl border border-gray-200 bg-gray-50/80 p-4 space-y-4">
-                <label className="flex items-start gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    name="legalTermsConsent"
-                    value="yes"
-                    required
-                    className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-[var(--color-electricBlue)] focus:ring-[var(--color-electricBlue)]"
-                    aria-invalid={errs.legalTermsConsent ? true : undefined}
-                    aria-describedby={
-                      errs.legalTermsConsent
-                        ? "contact-legal-terms-error"
-                        : undefined
-                    }
-                  />
-                  <span className="text-xs text-[var(--color-neutralGray)] leading-relaxed">
-                    I agree to the{" "}
-                    <Link
-                      href="/privacy-policy"
-                      className="underline hover:text-[var(--color-deepSpace)]"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Privacy Policy
-                    </Link>{" "}
-                    and{" "}
-                    <Link
-                      href="/terms-of-service"
-                      className="underline hover:text-[var(--color-deepSpace)]"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Terms of Service
-                    </Link>
-                    . <span className="text-[var(--color-deepSpace)]">*</span>
-                  </span>
-                </label>
-                <FieldError
-                  id="contact-legal-terms-error"
-                  message={errs.legalTermsConsent}
-                />
-
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input
                     type="checkbox"
@@ -463,6 +430,60 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                   id="contact-sms-marketing-error"
                   message={errs.smsMarketingConsent}
                 />
+                </div>
+              </details>
+
+              {state.message && (
+                <p
+                  role={state.success ? "status" : "alert"}
+                  className={`text-sm font-medium ${state.success ? "text-green-600" : "text-red-600"}`}
+                >
+                  {state.message}
+                </p>
+              )}
+
+              <div className="rounded-xl border border-gray-200 bg-gray-50/80 p-4 space-y-4">
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="legalTermsConsent"
+                    value="yes"
+                    required
+                    className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-[var(--color-electricBlue)] focus:ring-[var(--color-electricBlue)]"
+                    aria-invalid={errs.legalTermsConsent ? true : undefined}
+                    aria-describedby={
+                      errs.legalTermsConsent
+                        ? "contact-legal-terms-error"
+                        : undefined
+                    }
+                  />
+                  <span className="text-xs text-[var(--color-neutralGray)] leading-relaxed">
+                    I agree to the{" "}
+                    <Link
+                      href="/privacy-policy"
+                      className="underline hover:text-[var(--color-deepSpace)]"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Privacy Policy
+                    </Link>{" "}
+                    and{" "}
+                    <Link
+                      href="/terms-of-service"
+                      className="underline hover:text-[var(--color-deepSpace)]"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Terms of Service
+                    </Link>
+                    . <span className="text-[var(--color-deepSpace)]">*</span>
+                  </span>
+                </label>
+                <FieldError
+                  id="contact-legal-terms-error"
+                  message={errs.legalTermsConsent}
+                />
+
               </div>
 
               <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pt-2">
