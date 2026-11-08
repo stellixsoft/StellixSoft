@@ -34,6 +34,15 @@ const OPTIONAL_PHONE_REGEX = /^\+?[0-9]{8,20}$/;
 
 const BUDGET_CURRENCIES = new Set(["USD", "EUR", "GBP", "AED", "PKR", "OTHER"]);
 
+/** Budget bands offered by the contact form dropdown. */
+const BUDGET_RANGES = new Set([
+  "Under $15k",
+  "$15k–$40k",
+  "$40k–$100k",
+  "$100k+",
+  "Not sure yet",
+]);
+
 function readText(formData: FormData, key: string): string {
   const v = formData.get(key);
   if (typeof v !== "string") return "";
@@ -110,8 +119,15 @@ export async function submitContactForm(
     fieldErrors.phone = "Please enter a mobile number to receive SMS messages.";
   }
 
+  const budgetRangeRaw = readText(formData, "budgetRange");
   let budgetLine = "";
-  if (budgetAmountRaw || budgetCurrencyRaw) {
+  if (budgetRangeRaw) {
+    if (BUDGET_RANGES.has(budgetRangeRaw)) {
+      budgetLine = budgetRangeRaw;
+    } else {
+      fieldErrors.budget = "Please pick a budget range from the list.";
+    }
+  } else if (budgetAmountRaw || budgetCurrencyRaw) {
     const currency =
       budgetCurrencyRaw && BUDGET_CURRENCIES.has(budgetCurrencyRaw.toUpperCase())
         ? budgetCurrencyRaw.toUpperCase()
