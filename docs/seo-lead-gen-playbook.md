@@ -116,7 +116,7 @@ Ranked by expected impact on qualified leads.
 | 11 | Ask 5 past clients for reviews on Clutch and GoodFirms. Send them a direct link. | Owner | 3 new reviews |
 | 12 | Run PageSpeed Insights on mobile for the homepage, contact page and 3 lead-offer pages. Fix anything with LCP over 2.5 s or CLS over 0.1. Check the cost of the hero video and of third-party scripts (Warmly, Customer Hub, Clarity). | Claude | All 5 pages pass Core Web Vitals |
 
-### Phase 1 status (updated Nov 1, 2026)
+### Phase 1 status (updated Nov 8, 2026)
 
 | # | Status |
 |---|---|
@@ -124,9 +124,9 @@ Ranked by expected impact on qualified leads.
 | 2 | Blocked: the owner needs to pick the lead sheet or CRM. |
 | 3 | Open (owner). |
 | 4 | Partly done: team size set to 50+ in schema and llms.txt (PR #5). Still open: the homepage hero still says "Powering device management for a Fortune 500 supply chain". |
-| 5 | In review (PR, Nov 1): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly (matches the `15-minute-meeting` Calendly event; the owner confirmed 15 minutes on Nov 1, and the contact page, enterprise development page, schema and knowledge base were updated to match), and a click-to-call link shows on mobile. |
-| 6 | Not started. Next Claude task. |
-| 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. |
+| 5 | Done (merged Nov 1, PR #6): homepage, /pricing, legacy modernization, IoT and AI integration heroes share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly, and a click-to-call link shows on mobile. |
+| 6 | In review (PR, Nov 8): the visible form is now name, work email, company, budget range (dropdown, optional) and "What do you need?", plus the terms checkbox. Phone, the SMS opt-ins and a "How did you hear about us?" dropdown (with "ChatGPT / AI assistant") moved into an optional fold. A new `contact_form_start` event fires on first focus, so completion rate = `generate_lead` (contact_form) ÷ `contact_form_start`. |
+| 7 | /services title shipped, and static-page titles and metas were trimmed to SERP limits (PR #7). The blog titles in section 8 still need the owner to change them in the blog admin. Picking new pages needs GSC data for stellixsoft.com. |
 | 8 | Open (owner). |
 | 9 | Not started. |
 | 10 | Done Nov 1 (robots.txt and llms.txt are live). |
@@ -216,7 +216,7 @@ A score of 50 or more means a reply from the owner the same day. 25 to 49 goes t
 ## 7. Measurement
 
 - **GA4 key events:** `generate_lead` (method `contact_form` or `calendly`), `lead_magnet_signup` (to be added in phase 2), and `tool_lead_submit`.
-- **Supporting events:** `cta_contact_click`, `calendly_open`, `contact_email_click`, `contact_phone_click`, `tool_consultation_click`.
+- **Supporting events:** `cta_contact_click`, `calendly_open`, `contact_email_click`, `contact_phone_click`, `tool_consultation_click`, `contact_form_start` (first focus on the contact form, for completion rate).
 - **Reports, weekly:** leads by `sessionDefaultChannelGroup` and by landing page, the "AI Assistant" channel separately (chatgpt.com, perplexity.ai, gemini.google.com, copilot), and directory referrals separately.
 - **Bot filter:** exclude Singapore and China "Direct" sessions with under 5 seconds of engagement.
 - **Search Console:** impressions vs clicks by page and by query group (brand, lead offers, informational). Watch CTR on pages ranked 1 to 10.
@@ -244,7 +244,7 @@ Other quick fixes:
 - **Google Business Profile:** see phase 1, task 8.
 - **Page speed:** see phase 1, task 12.
 - **Forms:** the contact form works, and lead tracking was added on Oct 31.
-- **Tracking gaps:** no CRM, no `lead_magnet_signup` event, and no "how did you hear" field.
+- **Tracking gaps:** no CRM and no `lead_magnet_signup` event. The "How did you hear about us?" dropdown is in the Nov 8 PR.
 
 ## 9. Buyer-question content queue
 
@@ -360,6 +360,7 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-01 | schema, llms.txt | Team size set to 50+ to match the About page |
 | 2026-11-01 | /, /pricing, /services/legacy-modernization, /services/iot-software, /services/ai-integration-services | Hero CTAs: "Get a free project estimate" (main), "Book a 15-min call" (secondary), click-to-call on mobile |
 | 2026-11-01 | /contact, /services/enterprise-development, schema, knowledge base | Discovery call length changed from 30 to 15 minutes to match Calendly |
+| 2026-11-08 | /contact | Form cut to 5 visible fields plus terms; budget is now a range dropdown; phone, SMS opt-ins and a "How did you hear" dropdown moved into an optional fold; added `contact_form_start` |
 
 ## Weekly pass log
 
@@ -370,3 +371,9 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 - **Contact form:** 12 fields plus 3 checkboxes. Phase 1 task 6 (cut to 4 or 5) is the next Claude task.
 - **Shipped:** phase 1 task 5 (hero CTAs), in a PR.
 - **AI visibility panel:** not run, see `docs/ai-visibility-log.md`.
+
+### Nov 8, 2026 (day 8, phase 1)
+
+- **Data:** not pulled again. The analytics connector still only reads primecode.ai and finvex.app, with no access to stellixsoft.com in Search Console or GA4 property 500359903. Leads this week and last week are unknown.
+- **Shipped:** phase 1 task 5 merged (PR #6). Task 6 (shorter contact form with completion tracking) is in a PR.
+- **Next Claude task:** #9 (LocalBusiness schema for the Houston entity), then #12 (Core Web Vitals) once PageSpeed can be run.

@@ -12,9 +12,17 @@ import {
   SMS_MARKETING_MESSAGE_TYPES,
   SMS_TRANSACTIONAL_MESSAGE_TYPES,
 } from "@/src/lib/legal";
+import {
+  CONTACT_BUDGET_RANGES,
+  CONTACT_HEAR_OPTIONS,
+} from "@/src/lib/contact-options";
 
 const inputClass =
   "w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent";
+const selectClass = `${inputClass} appearance-none bg-[length:1rem] bg-[right_0.75rem_center] bg-no-repeat pr-10`;
+const selectStyle = {
+  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23717181'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
+};
 const labelClass =
   "block text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)] mb-2";
 
@@ -132,6 +140,23 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
   const helpDefault =
     planSlug && CONTACT_PLAN_PREFILL[planSlug] ? CONTACT_PLAN_PREFILL[planSlug] : "";
 
+  // Count form starts once per page view, so completion rate = generate_lead ÷ contact_form_start.
+  const startedRef = useRef(false);
+  function onFormFocus() {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    trackEvent("contact_form_start", {
+      plan: planSlug,
+      tool: toolSlug,
+      ai_source: readAiSource(),
+    });
+  }
+
+  // Optional extras stay folded unless they hold an error.
+  const extrasHaveError = Boolean(
+    errs.phone || errs.smsTransactionalConsent || errs.smsMarketingConsent,
+  );
+
   useEffect(() => {
     if (state.success) {
       formRef.current?.reset();
@@ -158,7 +183,8 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
         <div className="grid grid-cols-1 md:grid-cols-[7fr_3fr] gap-8 lg:gap-12 items-start">
           {/* Left: Contact form card */}
           <div className="rounded-2xl bg-white border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)] p-6 sm:p-8 md:p-10">
-            <form ref={formRef} action={formAction} className="space-y-6">
+            <form ref={formRef} action={formAction} onFocus={onFormFocus} className="space-y-6">
+              <input type="hidden" name="help" value={helpDefault} />
               <input type="hidden" name="labTool" value={toolSlug ?? ""} />
               <input type="hidden" name="labInputs" value={includeToolContext ? (toolContext?.inputs ?? "{}") : "{}"} />
               <input type="hidden" name="labResults" value={includeToolContext ? (toolContext?.results ?? "{}") : "{}"} />
@@ -204,7 +230,7 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                 </div>
                 <div>
                   <label htmlFor="email" className={labelClass}>
-                    Email *
+                    Work email *
                   </label>
                   <input
                     id="email"
@@ -238,49 +264,32 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className={labelClass}>
-                    Phone (optional)
+                  <label htmlFor="budgetRange" className={labelClass}>
+                    Budget range (optional)
                   </label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    inputMode="numeric"
-                    placeholder="+15550001234"
-                    maxLength={22}
-                    autoComplete="tel"
-                    aria-invalid={errs.phone ? true : undefined}
-                    aria-describedby={errs.phone ? "contact-phone-error" : undefined}
-                    className={`${inputClass} ${errs.phone ? "border-red-300 ring-1 ring-red-200" : ""}`}
-                  />
-                  <FieldError id="contact-phone-error" message={errs.phone} />
-                  <p className="mt-1 text-[11px] text-[var(--color-neutralGray)]">
-                    Digits only; optional + for country code (spaces/formatting are stripped).
-                  </p>
+                  <select
+                    id="budgetRange"
+                    name="budgetRange"
+                    defaultValue=""
+                    aria-invalid={errs.budget ? true : undefined}
+                    aria-describedby={errs.budget ? "contact-budget-error" : undefined}
+                    className={`${selectClass} ${errs.budget ? "border-red-300 ring-1 ring-red-200" : ""}`}
+                    style={selectStyle}
+                  >
+                    <option value="">Select a range</option>
+                    {CONTACT_BUDGET_RANGES.map((range) => (
+                      <option key={range} value={range}>
+                        {range}
+                      </option>
+                    ))}
+                  </select>
+                  <FieldError id="contact-budget-error" message={errs.budget} />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="help" className={labelClass}>
-                  What can we help with? (optional)
-                </label>
-                <input
-                  id="help"
-                  name="help"
-                  type="text"
-                  maxLength={500}
-                  placeholder="e.g. Dedicated team, Legacy migration, AI integration..."
-                  defaultValue={helpDefault}
-                  aria-invalid={errs.help ? true : undefined}
-                  aria-describedby={errs.help ? "contact-help-error" : undefined}
-                  className={`${inputClass} ${errs.help ? "border-red-300 ring-1 ring-red-200" : ""}`}
-                />
-                <FieldError id="contact-help-error" message={errs.help} />
-              </div>
-
-              <div>
                 <label htmlFor="project" className={labelClass}>
-                  Tell us about your project *
+                  What do you need? *
                 </label>
                 <textarea
                   id="project"
@@ -289,70 +298,13 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                   minLength={5}
                   maxLength={8000}
                   required
-                  placeholder="What are you trying to build or solve? Any specific technologies or requirements?"
+                  defaultValue={toolReport ? undefined : helpDefault}
+                  placeholder="e.g. Migrate our VB.NET app to .NET 8, RFID tracking for our warehouse, private AI for internal documents..."
                   aria-invalid={errs.project ? true : undefined}
                   aria-describedby={errs.project ? "contact-project-error" : undefined}
                   className={`${inputClass} resize-y min-h-[120px] ${errs.project ? "border-red-300 ring-1 ring-red-200" : ""}`}
                 />
                 <FieldError id="contact-project-error" message={errs.project} />
-              </div>
-
-              <div>
-                <label htmlFor="hear" className={labelClass}>
-                  How did you hear about us?
-                </label>
-                <input
-                  id="hear"
-                  name="hear"
-                  type="text"
-                  maxLength={200}
-                  className={inputClass}
-                />
-              </div>
-
-              <div>
-                <label className={labelClass}>Budget range (optional)</label>
-                <div className="grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_140px] gap-4">
-                  <div>
-                    <label htmlFor="budgetAmount" className="sr-only">
-                      Budget amount
-                    </label>
-                    <input
-                      id="budgetAmount"
-                      name="budgetAmount"
-                      type="text"
-                      inputMode="decimal"
-                      placeholder="e.g. 25000"
-                      maxLength={14}
-                      aria-invalid={errs.budget ? true : undefined}
-                      aria-describedby={errs.budget ? "contact-budget-error" : undefined}
-                      className={`${inputClass} ${errs.budget ? "border-red-300 ring-1 ring-red-200" : ""}`}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="budgetCurrency" className="sr-only">
-                      Currency
-                    </label>
-                    <select
-                      id="budgetCurrency"
-                      name="budgetCurrency"
-                      defaultValue="USD"
-                      className={`${inputClass} appearance-none bg-[length:1rem] bg-[right_0.75rem_center] bg-no-repeat pr-10`}
-                      style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23717181'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
-                      }}
-                      aria-invalid={errs.budget ? true : undefined}
-                    >
-                      <option value="USD">USD ($)</option>
-                      <option value="EUR">EUR (€)</option>
-                      <option value="GBP">GBP (£)</option>
-                      <option value="AED">AED (AED)</option>
-                      <option value="PKR">PKR (Rs)</option>
-                      <option value="OTHER">Other</option>
-                    </select>
-                  </div>
-                </div>
-                <FieldError id="contact-budget-error" message={errs.budget} />
               </div>
 
               {state.message && (
@@ -406,6 +358,58 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                   message={errs.legalTermsConsent}
                 />
 
+              </div>
+
+              <details
+                open={extrasHaveError || undefined}
+                className="group rounded-xl border border-gray-200 p-4"
+              >
+                <summary className="cursor-pointer text-sm font-medium text-[var(--color-deepSpace)]">
+                  Add a phone number, SMS updates or how you found us (optional)
+                </summary>
+                <div className="mt-5 space-y-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="phone" className={labelClass}>
+                        Phone (optional)
+                      </label>
+                      <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        inputMode="numeric"
+                        placeholder="+15550001234"
+                        maxLength={22}
+                        autoComplete="tel"
+                        aria-invalid={errs.phone ? true : undefined}
+                        aria-describedby={errs.phone ? "contact-phone-error" : undefined}
+                        className={`${inputClass} ${errs.phone ? "border-red-300 ring-1 ring-red-200" : ""}`}
+                      />
+                      <FieldError id="contact-phone-error" message={errs.phone} />
+                      <p className="mt-1 text-[11px] text-[var(--color-neutralGray)]">
+                        Digits only; optional + for country code (spaces/formatting are stripped).
+                      </p>
+                    </div>
+                    <div>
+                      <label htmlFor="hear" className={labelClass}>
+                        How did you hear about us?
+                      </label>
+                      <select
+                        id="hear"
+                        name="hear"
+                        defaultValue=""
+                        className={selectClass}
+                        style={selectStyle}
+                      >
+                        <option value="">Select one</option>
+                        {CONTACT_HEAR_OPTIONS.map((option) => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input
                     type="checkbox"
@@ -463,7 +467,8 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                   id="contact-sms-marketing-error"
                   message={errs.smsMarketingConsent}
                 />
-              </div>
+                </div>
+              </details>
 
               <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pt-2">
                 <button
