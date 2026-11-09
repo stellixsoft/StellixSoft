@@ -20,7 +20,7 @@ export default function LegacyModernizationHero() {
         </p>
         <p className="mt-4 text-base text-white/80 mx-auto leading-relaxed">
         Unlike traditional application modernization services, our approach prioritizes continuity, stability, and measurable progress at every stage. </p>
-        <HeroCtas proofHref="/case-studies/enterprise-portal-modernization" proofLabel="Read the modernization case study" />
+        <HeroCtas proofHref="/case-studies/enterprise-portal-modernization" proofLabel="Enterprise portal modernization case study" />
       </div>
     </section>
   );

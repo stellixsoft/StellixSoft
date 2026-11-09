@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import IoTSoftwareHero from "../../../components/sections/services/iot-software/hero";
+import ServiceAnswerBox from "@/src/components/sections/services/service-answer-box";
 import IoTHardwareSoftwareDevelopmentIntro from "../../../components/sections/services/iot-software/iot-hardware-software-development-intro";
 import SoftwareSolution from "../../../components/sections/services/iot-software/software-solution";
 import IoTRealWorldUseCases from "../../../components/sections/services/iot-software/iot-real-world-use-cases";
@@ -29,18 +30,29 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/iot-software" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "IoT Software Development Services",
+  title: "IoT Software Development Services & Solutions",
   description:
-    "IoT software development services and IoT application development with telemetry, edge computing, OTA updates, and fleet management tools.",
+    "IoT software development solutions for hardware teams: RFID reader and tag workflows, device management, telemetry, OTA updates and the portals around them. Platforms from about $40k.",
   path: PATH,
   keywords: [
-    "IoT software services",
+    "IoT software development solutions",
     "IoT software development services",
+    "IoT software services",
+    "IoT software solutions",
+    "RFID software development",
     "IoT application development",
   ],
 });
 
 const faqMainEntity: FaqQuestionBlock[] = [
+  {
+    "@type": "Question",
+    name: "What do your IoT software development solutions include?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "The software around your devices: RFID reader and tag workflows, asset and inventory tracking, device management, telemetry pipelines, alerts, dashboards, customer portals and the APIs that connect devices to your business systems. We work beside your hardware and firmware teams and do not manufacture devices or sell tags.",
+    },
+  },
   {
     "@type": "Question",
     name: "Can you build software for our existing hardware devices?",
@@ -84,6 +96,12 @@ const faqMainEntity: FaqQuestionBlock[] = [
 ];
 
 const faqItems = [
+  {
+    id: "iot-solutions-scope",
+    question: "What do your IoT software development solutions include?",
+    answer:
+      "The software around your devices: RFID reader and tag workflows, asset and inventory tracking, device management, telemetry pipelines, alerts, dashboards, customer portals and the APIs that connect devices to your business systems. We work beside your hardware and firmware teams and do not manufacture devices or sell tags.",
+  },
   {
     id: "iot-existing-hardware",
     question: "Can you build software for our existing hardware devices?",
@@ -144,6 +162,17 @@ export default function IoTSoftwarePage() {
         <div
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
+        />
+        <ServiceAnswerBox
+          heading="IoT software development solutions, built around RFID and connected devices"
+          answer="Stellix Soft builds the software layer for hardware companies and operations teams: RFID reader and tag workflows, asset and inventory tracking, device management, telemetry, alerts and the portals and APIs around them. A typical platform is about $40k to $100k over 3 to 6 months. We work beside your hardware and firmware teams."
+          facts={[
+            { label: "Who it's for", value: "Hardware makers, warehouses, logistics and manufacturing teams running RFID or connected devices" },
+            { label: "Typical cost", value: "About $40k to $100k for a platform; pilots often around $10k to $15k" },
+            { label: "Timeline", value: "3 to 6 months for a platform, released in phases" },
+            { label: "Proof", value: "Long-running work for a hardware maker of RFID systems, IP cameras and networking gear" },
+          ]}
+          proof={{ href: "/tools/rfid-roi-calculator", label: "Try the RFID ROI calculator" }}
         />
         <IoTHardwareSoftwareDevelopmentIntro />
         <SoftwareSolution />

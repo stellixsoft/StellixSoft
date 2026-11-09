@@ -17,7 +17,7 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
     },
     {
       href: "/services/enterprise-development",
-      label: "Enterprise software development",
+      label: "Enterprise software development services",
       description: "Build platforms that host AI features at scale.",
     },
     {
@@ -34,7 +34,7 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
     },
     {
       href: "/services/enterprise-development",
-      label: "Enterprise software development",
+      label: "Enterprise software development services",
       description: "Build platforms that connect departments and operational systems.",
     },
     {
@@ -46,7 +46,7 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
   "blockchain-and-cryptography": [
     {
       href: "/services/enterprise-development",
-      label: "Enterprise software development",
+      label: "Enterprise software development services",
       description: "Integrate ledger and crypto layers with core systems.",
     },
     {
@@ -97,7 +97,7 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
   "e-commerce-development": [
     {
       href: "/services/enterprise-development",
-      label: "Enterprise development",
+      label: "Enterprise software development services",
       description: "Connect commerce to ERP, CRM, and custom backends.",
     },
     {
@@ -131,7 +131,7 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
   "enterprise-mobile-app-development": [
     {
       href: "/services/iot-software",
-      label: "IoT software",
+      label: "IoT software development solutions",
       description: "Mobile apps for devices, fleets, and edge scenarios.",
     },
     {
@@ -199,7 +199,7 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
   "salesforce-development": [
     {
       href: "/services/enterprise-development",
-      label: "Enterprise development",
+      label: "Enterprise software development services",
       description: "Integrate Salesforce with custom and enterprise systems.",
     },
     {

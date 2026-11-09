@@ -361,6 +361,10 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-01 | /, /pricing, /services/legacy-modernization, /services/iot-software, /services/ai-integration-services | Hero CTAs: "Get a free project estimate" (main), "Book a 15-min call" (secondary), click-to-call on mobile |
 | 2026-11-01 | /contact, /services/enterprise-development, schema, knowledge base | Discovery call length changed from 30 to 15 minutes to match Calendly |
 | 2026-11-08 | /contact | Form shortened: optional phone, help and SMS opt-ins collapsed; budget is now a range dropdown; "How did you hear" is a dropdown with an AI assistant option |
+| 2026-11-09 | /services/enterprise-development | Title and H1 now "Enterprise Software Development Services & Solutions"; answer box, platform development section, 2 FAQs |
+| 2026-11-09 | /services/iot-software | Title now "IoT Software Development Services & Solutions"; answer box (RFID first), 1 FAQ |
+| 2026-11-09 | /case-studies/enterprise-portal-modernization | Title now "Enterprise Portal Modernization: VB.NET to .NET Case Study"; description without unconfirmed claims |
+| 2026-11-09 | Site-wide | Internal link and footer anchors for the enterprise and IoT pages |
 
 ## Weekly pass log
 
