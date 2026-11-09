@@ -16,16 +16,22 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/case-studies/enterprise-portal-modernization" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: ".NET Portal Modernization Case Study",
+  title: "Enterprise Portal Modernization: VB.NET to .NET Case Study",
   description:
-    "How we migrated a Fortune 500 company's legacy VB.NET portal to modern .NET with zero downtime, improving performance by 60%.",
+    "Enterprise portal modernization case study: how Stellix Soft moved a hardware manufacturer's legacy VB.NET portal onto .NET, React, SignalR, SQL Server and AWS, in phases, with a dedicated team.",
   path: PATH,
+  keywords: [
+    "enterprise portal modernization",
+    "VB.NET portal modernization",
+    "legacy portal migration to .NET",
+    "enterprise portal modernization case study",
+  ],
 });
 
 const articleLd = articleCaseStudyJsonLd({
-  headline: "Enterprise Portal Modernization Case Study - .NET Migration",
+  headline: "Enterprise Portal Modernization: VB.NET to .NET Case Study",
   description:
-    "How we migrated a Fortune 500 company's legacy VB.NET portal to modern .NET with zero downtime, improving performance by 60%.",
+    "Enterprise portal modernization case study: how Stellix Soft moved a hardware manufacturer's legacy VB.NET portal onto .NET, React, SignalR, SQL Server and AWS, in phases, with a dedicated team.",
   path: PATH,
   breadcrumbName: "Enterprise Portal Modernization",
   datePublished: "2023-08-01",
