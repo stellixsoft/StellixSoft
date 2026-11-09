@@ -116,7 +116,7 @@ Ranked by expected impact on qualified leads.
 | 11 | Ask 5 past clients for reviews on Clutch and GoodFirms. Send them a direct link. | Owner | 3 new reviews |
 | 12 | Run PageSpeed Insights on mobile for the homepage, contact page and 3 lead-offer pages. Fix anything with LCP over 2.5 s or CLS over 0.1. Check the cost of the hero video and of third-party scripts (Warmly, Customer Hub, Clarity). | Claude | All 5 pages pass Core Web Vitals |
 
-### Phase 1 status (updated Nov 1, 2026)
+### Phase 1 status (updated Nov 8, 2026)
 
 | # | Status |
 |---|---|
@@ -124,11 +124,11 @@ Ranked by expected impact on qualified leads.
 | 2 | Blocked: the owner needs to pick the lead sheet or CRM. |
 | 3 | Open (owner). |
 | 4 | Partly done: team size set to 50+ in schema and llms.txt (PR #5). Still open: the homepage hero still says "Powering device management for a Fortune 500 supply chain". |
-| 5 | In review (PR, Nov 1): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly (matches the `15-minute-meeting` Calendly event; the owner confirmed 15 minutes on Nov 1, and the contact page, enterprise development page, schema and knowledge base were updated to match), and a click-to-call link shows on mobile. |
-| 6 | Not started. Next Claude task. |
+| 5 | Done (PR #6, merged Nov 2): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly (matches the `15-minute-meeting` Calendly event; the owner confirmed 15 minutes on Nov 1, and the contact page, enterprise development page, schema and knowledge base were updated to match), and a click-to-call link shows on mobile. |
+| 6 | In review (PR, Nov 8): the visible form is now name, work email, company, "What do you need?", a budget range dropdown and a "How did you hear about us?" dropdown that includes "ChatGPT / AI assistant". Phone, "What can we help with?" and the two SMS opt-ins moved into a collapsed "Add a phone number or more details (optional)" section, which opens by itself if one of them has an error. The Privacy and Terms checkbox stays visible because it is required. Completion rate can't be tracked until GA4 for stellixsoft.com is connected. |
 | 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. |
 | 8 | Open (owner). |
-| 9 | Not started. |
+| 9 | Not started. Next Claude task. |
 | 10 | Done Nov 1 (robots.txt and llms.txt are live). |
 | 11 | Open (owner). |
 | 12 | Not started. PageSpeed Insights could not be reached from the weekly pass. |
@@ -360,6 +360,7 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-01 | schema, llms.txt | Team size set to 50+ to match the About page |
 | 2026-11-01 | /, /pricing, /services/legacy-modernization, /services/iot-software, /services/ai-integration-services | Hero CTAs: "Get a free project estimate" (main), "Book a 15-min call" (secondary), click-to-call on mobile |
 | 2026-11-01 | /contact, /services/enterprise-development, schema, knowledge base | Discovery call length changed from 30 to 15 minutes to match Calendly |
+| 2026-11-08 | /contact | Form shortened: optional phone, help and SMS opt-ins collapsed; budget is now a range dropdown; "How did you hear" is a dropdown with an AI assistant option |
 
 ## Weekly pass log
 
@@ -370,3 +371,11 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 - **Contact form:** 12 fields plus 3 checkboxes. Phase 1 task 6 (cut to 4 or 5) is the next Claude task.
 - **Shipped:** phase 1 task 5 (hero CTAs), in a PR.
 - **AI visibility panel:** not run, see `docs/ai-visibility-log.md`.
+
+### Nov 8, 2026 (day 8, phase 1)
+
+- **Health:** home, /contact, /pricing, the legacy modernization, IoT and AI integration pages, three blog posts, robots.txt, sitemap.xml (89 URLs) and llms.txt all return 200. The new hero CTAs from PR #6 are live. PageSpeed still can't be reached from the weekly pass.
+- **Data:** not pulled. There is still no Search Console or GA4 connector for stellixsoft.com (property 500359903), so leads, AI referrals and query groups are unknown.
+- **Facts to align:** llms.txt says "50+ engineers", while the homepage footer says "Global Team of 55+ Experts". Owner to confirm one number (phase 1, task 4).
+- **Shipped:** phase 1 task 6 (shorter contact form), in a PR.
+- **AI visibility panel:** not due (runs on the first Sunday of the month).
