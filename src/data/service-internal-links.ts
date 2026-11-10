@@ -95,8 +95,8 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
     },
     {
       href: "/blog/kubernetes-deployment-strategies-enterprise-apps",
-      label: "Docker and Kubernetes deployment strategies",
-      description: "Blue-green, canary and rolling releases with the groundwork that makes them safe.",
+      label: "Kubernetes deployment strategies",
+      description: "Blue-green, canary and rolling releases for enterprise workloads.",
     },
   ],
   "e-commerce-development": [

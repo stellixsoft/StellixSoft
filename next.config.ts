@@ -127,11 +127,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/blog/docker-kubernetes-enterprise-deployment",
-        destination: "/blog/kubernetes-deployment-strategies-enterprise-apps",
-        permanent: true,
-      },
-      {
         source: "/project/zerobyte-digital-services-canada",
         destination: "/blog",
         permanent: true,
