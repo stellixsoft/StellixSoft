@@ -136,6 +136,15 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        // Social preview images: keep them out of the web index (cards still work).
+        source: "/:path*/:image(opengraph-image|twitter-image)",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
+      {
+        source: "/:image(opengraph-image|twitter-image)",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
+      {
         source: "/(.*)",
         headers: [
           { key: "X-Content-Type-Options", value: "nosniff" },

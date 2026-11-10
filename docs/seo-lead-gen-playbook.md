@@ -365,6 +365,12 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-09 | /services/iot-software | Title now "IoT Software Development Services & Solutions"; answer box (RFID first), 1 FAQ |
 | 2026-11-09 | /case-studies/enterprise-portal-modernization | Title now "Enterprise Portal Modernization: VB.NET to .NET Case Study"; description without unconfirmed claims |
 | 2026-11-09 | Site-wide | Internal link and footer anchors for the enterprise and IoT pages |
+| 2026-11-10 | robots.txt | Stopped blocking legacy junk paths (/detail/, /wp-*, /feed, …) and /_next/, so Google can see their 410s and render assets; only /api/ and /admin stay disallowed |
+| 2026-11-10 | /opengraph-image, /twitter-image | X-Robots-Tag: noindex, so social preview images leave the "crawled - not indexed" report |
+| 2026-11-10 | DevOps, e-commerce, maintenance, Salesforce service pages | Internal link to their matching blog post (all 4 were "crawled - not indexed" with zero internal links) |
+| 2026-11-10 | /blog/software-maintenance-support-best-practices | Rewritten in the static file, which is what the live site serves (~340 → ~920 words): maintenance types, support agreement terms, takeover steps, plan prices from the knowledge base; new title and meta |
+| 2026-11-10 | Blog (note) | Salesforce, headless commerce, Kubernetes and Docker posts are served from the CMS database, already ~1,900–2,300 words; static-file edits do not reach them. Left as is; only indexing requests needed |
+| 2026-11-10 | Blog renderer | Markdown pipe tables now render as HTML tables (previously shown as raw text) |
 
 ## Weekly pass log
 

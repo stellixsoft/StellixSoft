@@ -1,26 +1,13 @@
 import type { MetadataRoute } from "next";
 import { getSiteUrl } from "@/src/lib/site-url";
 
-/** Junk prefixes mirrored in middleware 410 rules — reduce crawl discovery. */
-const JUNK_DISALLOW = [
-  "/api/",
-  "/_next/",
-  "/wp-admin",
-  "/wp-content/",
-  "/wp-includes/",
-  "/wp-json/",
-  "/wp-sitemap",
-  "/portfolio-sitemap",
-  "/xmlrpc.php",
-  "/sitemap_index.xml",
-  "/author/",
-  "/tag/",
-  "/feed",
-  "/comments/",
-  "/amp",
-  "/detail/",
-  "/*.php$",
-] as const;
+/**
+ * Only private paths are disallowed. Legacy junk (/detail/, /wp-*, /feed, …) is NOT
+ * blocked here on purpose: middleware answers it with 410 Gone, and Google has to be
+ * able to crawl a URL to see the 410 and drop it from the index. /_next/ stays crawlable
+ * so Google can fetch the JS, CSS and optimized images it needs to render pages.
+ */
+const JUNK_DISALLOW = ["/api/", "/admin"] as const;
 
 /**
  * AI crawlers and AI search fetchers, listed explicitly so a future blanket rule

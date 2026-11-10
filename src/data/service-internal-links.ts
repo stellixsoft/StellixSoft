@@ -93,6 +93,11 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
       label: "Blog",
       description: "Guides on cloud, CI/CD, and platform engineering.",
     },
+    {
+      href: "/blog/kubernetes-deployment-strategies-enterprise-apps",
+      label: "Kubernetes deployment strategies",
+      description: "Blue-green, canary and rolling releases for enterprise workloads.",
+    },
   ],
   "e-commerce-development": [
     {
@@ -109,6 +114,11 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
       href: "/contact",
       label: "Contact",
       description: "Scope headless, Shopify Plus, or custom storefront work.",
+    },
+    {
+      href: "/blog/headless-commerce-enterprise-ecommerce",
+      label: "Enterprise headless commerce guide",
+      description: "When decoupling your storefront is worth it, and when it is not.",
     },
   ],
   "enterprise-development": [
@@ -195,6 +205,11 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
       label: "Pricing",
       description: "Support retainers and response-time options.",
     },
+    {
+      href: "/blog/software-maintenance-support-best-practices",
+      label: "Software maintenance and support best practices",
+      description: "Maintenance types, support agreement terms and what plans cost.",
+    },
   ],
   "salesforce-development": [
     {
@@ -211,6 +226,11 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
       href: "/contact",
       label: "Contact",
       description: "Discuss Apex, Lightning, and integration scope.",
+    },
+    {
+      href: "/blog/salesforce-custom-development-best-practices",
+      label: "Salesforce custom development best practices",
+      description: "What to build in Salesforce, and how to keep it maintainable.",
     },
   ],
   "staff-augmentation": [

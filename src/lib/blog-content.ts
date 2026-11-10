@@ -8,6 +8,18 @@ export function markdownToEditorHtml(content: string): string {
   const html: string[] = [];
   let inList: "ul" | "ol" | null = null;
   let paragraph: string[] = [];
+  let tableRows: string[][] = [];
+
+  const flushTable = () => {
+    if (tableRows.length === 0) return;
+    const [head, ...body] = tableRows;
+    const th = head.map((c) => `<th><p>${inlineFormat(c)}</p></th>`).join("");
+    const trs = body
+      .map((r) => `<tr>${r.map((c) => `<td><p>${inlineFormat(c)}</p></td>`).join("")}</tr>`)
+      .join("");
+    html.push(`<table><tbody><tr>${th}</tr>${trs}</tbody></table>`);
+    tableRows = [];
+  };
 
   const flushParagraph = () => {
     if (paragraph.length === 0) return;
@@ -26,6 +38,16 @@ export function markdownToEditorHtml(content: string): string {
   for (const rawLine of lines) {
     const line = rawLine.trimEnd();
     const trimmedLine = line.trim();
+
+    // Pipe tables: "| a | b |" rows; the "| --- | --- |" separator row is skipped.
+    if (trimmedLine.startsWith("|") && trimmedLine.endsWith("|")) {
+      flushParagraph();
+      closeList();
+      const cells = trimmedLine.slice(1, -1).split("|").map((c) => c.trim());
+      if (!cells.every((c) => /^:?-{3,}:?$/.test(c))) tableRows.push(cells);
+      continue;
+    }
+    flushTable();
 
     if (!trimmedLine) {
       flushParagraph();
@@ -93,6 +115,7 @@ export function markdownToEditorHtml(content: string): string {
     paragraph.push(trimmedLine);
   }
 
+  flushTable();
   flushParagraph();
   closeList();
 
