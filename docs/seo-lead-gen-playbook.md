@@ -365,6 +365,10 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-09 | /services/iot-software | Title now "IoT Software Development Services & Solutions"; answer box (RFID first), 1 FAQ |
 | 2026-11-09 | /case-studies/enterprise-portal-modernization | Title now "Enterprise Portal Modernization: VB.NET to .NET Case Study"; description without unconfirmed claims |
 | 2026-11-09 | Site-wide | Internal link and footer anchors for the enterprise and IoT pages |
+| 2026-11-10 | robots.txt | Stopped blocking legacy junk paths (/detail/, /wp-*, /feed, …) and /_next/, so Google can see their 410s and render assets; only /api/ and /admin stay disallowed |
+| 2026-11-10 | /opengraph-image, /twitter-image | X-Robots-Tag: noindex, so social preview images leave the "crawled - not indexed" report |
+| 2026-11-10 | /blog/kubernetes-deployment-strategies-enterprise-apps | Merged the thin Docker + Kubernetes post into it; 301 from /blog/docker-kubernetes-enterprise-deployment |
+| 2026-11-10 | DevOps, e-commerce, maintenance, Salesforce service pages | Internal link to their matching blog post (all 4 were "crawled - not indexed" with zero internal links) |
 
 ## Weekly pass log
 

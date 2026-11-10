@@ -1841,9 +1841,9 @@ Building modern logistics software with robust truck API capabilities—encompas
   },
   {
     slug: "kubernetes-deployment-strategies-enterprise-apps",
-    title: "Kubernetes Deployment Strategies for Enterprise Applications",
+    title: "Docker and Kubernetes Deployment Strategies for Enterprise Applications",
     excerpt:
-      "Blue-green, canary, rolling updates, and A/B testing - which Kubernetes deployment strategy minimizes risk for enterprise production workloads?",
+      "Blue-green, canary and rolling updates, plus the Docker, Helm, security and monitoring groundwork that makes Kubernetes deployments safe for enterprise production workloads.",
     content: `
 ## Why Deployment Strategy Matters
 
@@ -1880,16 +1880,65 @@ Every deployment strategy needs automated rollback triggers. Monitor:
 
 Configure Argo Rollouts or Flagger to automatically rollback when thresholds are breached.
 
+## Before the Rollout: Containers Done Right
+
+Containers solve the "works on my machine" problem at enterprise scale. They ensure consistency from development to production, enable microservices architecture, and simplify multi-cloud deployment.
+
+### Docker Best Practices
+
+**Multi-stage builds** - Separate build and runtime stages to minimize image size.
+
+**Non-root execution** - Run containers as non-root users for security.
+
+**Layer optimization** - Order Dockerfile instructions to maximize cache utilization.
+
+**Image scanning** - Scan for vulnerabilities before pushing to registry (Trivy, Snyk Container).
+
+### Kubernetes Architecture
+
+**Namespace organization** - One namespace per team or application environment.
+
+**Resource limits** - Always set CPU/memory requests and limits. Prevents noisy neighbor issues.
+
+**Health checks** - Liveness probes detect crashes; readiness probes prevent routing to unready pods.
+
+**Horizontal Pod Autoscaling** - Scale based on CPU, memory, or custom metrics.
+
+### Helm Charts
+
+Package Kubernetes manifests as Helm charts for:
+- Version-controlled deployments
+- Environment-specific value overrides
+- Easy rollback to previous versions
+- Standardized deployment process across teams
+
+### Security
+
+- **Pod Security Standards** - Enforce restricted pod security levels
+- **Network Policies** - Control pod-to-pod communication
+- **Secrets Management** - Use external secrets operators (Vault, AWS Secrets Manager)
+- **Image policies** - Only allow images from trusted registries
+
+### Monitoring
+
+- **Prometheus + Grafana** for metrics and dashboards
+- **Loki** for centralized logging
+- **Jaeger** for distributed tracing
+- **AlertManager** for incident notification
+
 ## Conclusion
 
-For most enterprise applications, we recommend canary deployments with automated rollback. The additional complexity is justified by the risk reduction for production workloads serving real customers.
+For most enterprise applications, we recommend canary deployments with automated rollback, on top of lean images, Helm-managed releases, enforced security policies and real monitoring. The extra setup pays for itself the first time a bad release rolls itself back.
+
+Planning a Kubernetes rollout or a move off hand-built servers? See our [DevOps and cloud services](/services/devops-and-cloud-services) or [book a 15-minute call](/contact).
     `,
     date: "2026-03-12",
-    readTime: "9 min read",
+    updatedAt: "2026-11-10",
+    readTime: "12 min read",
     category: "DevOps & Cloud",
-    tags: ["Kubernetes", "deployment strategies", "DevOps", "canary deployments", "blue-green"],
-    metaTitle: "Kubernetes Deployment Strategies for Enterprise Apps [2026]",
-    metaDescription: "Compare Kubernetes deployment strategies for enterprise applications. Blue-green, canary, and rolling updates with automated rollback and service mesh implementation.",
+    tags: ["Kubernetes", "Docker", "deployment strategies", "DevOps", "canary deployments", "blue-green", "Helm"],
+    metaTitle: "Docker & Kubernetes Deployment Strategies for Enterprise [2026]",
+    metaDescription: "Blue-green, canary and rolling Kubernetes deployments for enterprise apps, plus Docker image, Helm, security and monitoring practices that make rollouts safe.",
   },
   {
     slug: "ai-integration-enterprise-software-practical-guide",
@@ -3469,69 +3518,6 @@ FHIR has made EHR integration accessible to mainstream developers. The learning 
     tags: ["FHIR", "EHR integration", "healthcare API", "SMART on FHIR", "interoperability"],
     metaTitle: "Healthcare EHR Integration with FHIR Guide [2026]",
     metaDescription: "Developer's guide to EHR integration using HL7 FHIR. SMART on FHIR implementation, resource types, authentication patterns, and testing strategies.",
-  },
-  {
-    slug: "docker-kubernetes-enterprise-deployment",
-    title: "Docker and Kubernetes for Enterprise: From Development to Production",
-    excerpt:
-      "Complete guide to containerizing enterprise applications with Docker and orchestrating with Kubernetes. Covers Dockerfiles, Helm charts, security, and monitoring.",
-    content: `
-## Why Containers for Enterprise
-
-Containers solve the "works on my machine" problem at enterprise scale. They ensure consistency from development to production, enable microservices architecture, and simplify multi-cloud deployment.
-
-### Docker Best Practices
-
-**Multi-stage builds** - Separate build and runtime stages to minimize image size.
-
-**Non-root execution** - Run containers as non-root users for security.
-
-**Layer optimization** - Order Dockerfile instructions to maximize cache utilization.
-
-**Image scanning** - Scan for vulnerabilities before pushing to registry (Trivy, Snyk Container).
-
-### Kubernetes Architecture
-
-**Namespace organization** - One namespace per team or application environment.
-
-**Resource limits** - Always set CPU/memory requests and limits. Prevents noisy neighbor issues.
-
-**Health checks** - Liveness probes detect crashes; readiness probes prevent routing to unready pods.
-
-**Horizontal Pod Autoscaling** - Scale based on CPU, memory, or custom metrics.
-
-### Helm Charts
-
-Package Kubernetes manifests as Helm charts for:
-- Version-controlled deployments
-- Environment-specific value overrides
-- Easy rollback to previous versions
-- Standardized deployment process across teams
-
-### Security
-
-- **Pod Security Standards** - Enforce restricted pod security levels
-- **Network Policies** - Control pod-to-pod communication
-- **Secrets Management** - Use external secrets operators (Vault, AWS Secrets Manager)
-- **Image policies** - Only allow images from trusted registries
-
-### Monitoring
-
-- **Prometheus + Grafana** for metrics and dashboards
-- **Loki** for centralized logging
-- **Jaeger** for distributed tracing
-- **AlertManager** for incident notification
-
-## Conclusion
-
-Docker and Kubernetes are the enterprise standard for application deployment. Invest in proper Helm charts, security policies, and monitoring from the start to avoid operational challenges at scale.
-    `,
-    date: "2025-12-25",
-    readTime: "11 min read",
-    category: "DevOps & Cloud",
-    tags: ["Docker", "Kubernetes", "containers", "DevOps", "cloud deployment"],
-    metaTitle: "Docker & Kubernetes Enterprise Deployment Guide [2026]",
-    metaDescription: "Complete guide to Docker and Kubernetes for enterprise. Dockerfiles, Helm charts, security best practices, monitoring, and production deployment strategies.",
   },
   {
     slug: "predictive-maintenance-iot-machine-learning",
