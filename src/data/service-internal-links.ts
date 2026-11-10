@@ -207,8 +207,8 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
     },
     {
       href: "/blog/software-maintenance-support-best-practices",
-      label: "Enterprise software maintenance best practices",
-      description: "How to keep production systems healthy after launch.",
+      label: "Software maintenance and support best practices",
+      description: "Maintenance types, support agreement terms and what plans cost.",
     },
   ],
   "salesforce-development": [
