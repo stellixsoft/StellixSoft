@@ -39,6 +39,17 @@ export function isLegacyGonePath(pathname: string): boolean {
   if (lower.startsWith("/portfolio/") || lower === "/portfolio") return true;
   if (lower.startsWith("/project/") || lower === "/project") return true;
   if (lower.startsWith("/pricing-services/") || lower === "/pricing-services") return true;
+  if (lower.startsWith("/project-category/") || lower === "/project-category") return true;
+  if (lower.startsWith("/testimonials/") || lower === "/testimonials") return true;
+  if (lower.startsWith("/skills/") || lower === "/skills") return true;
+  if (lower === "/software-team") return true;
+
+  // Old WordPress post categories (bare /category only; the live blog uses /blog/category/)
+  if (lower.startsWith("/category/") || lower === "/category") return true;
+
+  // Spam probes seen in Search Console (Nov 2026)
+  if (lower.startsWith("/ctg/") || lower === "/ctg") return true;
+  if (lower.startsWith("/e/") || lower === "/e") return true;
 
   // Archive / feed spam (do not use bare "/category" — live blog uses /blog/category/)
   if (lower.startsWith("/author/") || lower === "/author") return true;

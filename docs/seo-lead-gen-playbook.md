@@ -371,6 +371,8 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-10 | /blog/software-maintenance-support-best-practices | Rewritten in the static file, which is what the live site serves (~340 → ~920 words): maintenance types, support agreement terms, takeover steps, plan prices from the knowledge base; new title and meta |
 | 2026-11-10 | Blog (note) | Salesforce, headless commerce, Kubernetes and Docker posts are served from the CMS database, already ~1,900–2,300 words; static-file edits do not reach them. Left as is; only indexing requests needed |
 | 2026-11-10 | Blog renderer | Markdown pipe tables now render as HTML tables (previously shown as raw text) |
+| 2026-11-10 | Legacy 410 rules | Added /project-category/, /testimonials/, /skills/, /software-team, bare /category/, /ctg/ and /e/ (found in the Search Console 404 sample; 94% of that sample was /detail/, already 410) |
+| 2026-11-10 | Old WordPress posts | 301s from /custom-mobile-app-development-stellixsoft and /best-mobile-app-development-tools to the mobile service page, and /best-software-developers-eastern-europe to the dedicated team page |
 
 ## Weekly pass log
 
