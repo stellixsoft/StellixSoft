@@ -1,4 +1,7 @@
 import HeroBackgroundVideo from "@/src/components/media/HeroBackgroundVideo";
+import AnalyticsLink from "@/src/components/sections/hannan/analytics-link";
+import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
+import { stellixBillingHref } from "@/src/lib/constants";
 
 function ClockIcon() {
   return (
@@ -93,6 +96,28 @@ export default function Hero() {
         <p className="mt-8 text-lg md:text-xl text-white/90 italic max-w-2xl mx-auto">
           Optimize Revenue. Reduce Denials. Accelerate Growth.
         </p>
+
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <AnalyticsLink
+            href={stellixBillingHref("/free-revenue-audit", "hero")}
+            rel="noopener"
+            eventName="billing_site_click"
+            eventParams={{ placement: "hero", destination: "free_revenue_audit" }}
+            className="inline-flex items-center gap-2 rounded-lg px-8 py-3.5 text-base font-medium text-white transition-opacity hover:opacity-90"
+            style={{
+              background:
+                "linear-gradient(180deg, var(--color-surfaceBlue) 0%, var(--color-electricBlue-solid) 100%)",
+            }}
+          >
+            Get a Free Revenue Audit
+          </AnalyticsLink>
+          <CalendlyScheduleButton
+            className="inline-flex cursor-pointer rounded-lg px-8 py-3.5 text-base font-medium text-white bg-transparent transition-colors hover:bg-white/10"
+            style={{ border: "1px solid rgba(255, 255, 255, 0.7)" }}
+          >
+            Schedule a Discovery Call
+          </CalendlyScheduleButton>
+        </div>
 
         <p className="mt-8 text-base md:text-lg text-white/90 leading-relaxed">
           At Stellix Soft, we provide end-to-end medical billing solutions that help healthcare providers streamline operations, improve cash flow, and maximize reimbursements. Our experienced billing specialists and technology-driven workflows ensure accurate claim processing, reduced administrative burden, and faster payment cycles.
