@@ -158,6 +158,18 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
   const helpDefault =
     planSlug && CONTACT_PLAN_PREFILL[planSlug] ? CONTACT_PLAN_PREFILL[planSlug] : "";
 
+  // Count form starts once per page view, so completion rate = generate_lead ÷ contact_form_start.
+  const startedRef = useRef(false);
+  function onFormFocus() {
+    if (startedRef.current) return;
+    startedRef.current = true;
+    trackEvent("contact_form_start", {
+      plan: planSlug,
+      tool: toolSlug,
+      ai_source: readAiSource(),
+    });
+  }
+
   useEffect(() => {
     if (state.success) {
       formRef.current?.reset();
@@ -184,7 +196,7 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
         <div className="grid grid-cols-1 md:grid-cols-[7fr_3fr] gap-8 lg:gap-12 items-start">
           {/* Left: Contact form card */}
           <div className="rounded-2xl bg-white border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)] p-6 sm:p-8 md:p-10">
-            <form ref={formRef} action={formAction} className="space-y-6">
+            <form ref={formRef} action={formAction} onFocus={onFormFocus} className="space-y-6">
               <input type="hidden" name="labTool" value={toolSlug ?? ""} />
               <input type="hidden" name="labInputs" value={includeToolContext ? (toolContext?.inputs ?? "{}") : "{}"} />
               <input type="hidden" name="labResults" value={includeToolContext ? (toolContext?.results ?? "{}") : "{}"} />

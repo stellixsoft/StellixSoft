@@ -125,7 +125,7 @@ Ranked by expected impact on qualified leads.
 | 3 | Open (owner). |
 | 4 | Partly done: team size set to 50+ in schema and llms.txt (PR #5). Still open: the homepage hero still says "Powering device management for a Fortune 500 supply chain". |
 | 5 | Done (PR #6, merged Nov 2): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly (matches the `15-minute-meeting` Calendly event; the owner confirmed 15 minutes on Nov 1, and the contact page, enterprise development page, schema and knowledge base were updated to match), and a click-to-call link shows on mobile. |
-| 6 | In review (PR, Nov 8): the visible form is now name, work email, company, "What do you need?", a budget range dropdown and a "How did you hear about us?" dropdown that includes "ChatGPT / AI assistant". Phone, "What can we help with?" and the two SMS opt-ins moved into a collapsed "Add a phone number or more details (optional)" section, which opens by itself if one of them has an error. The Privacy and Terms checkbox stays visible because it is required. Completion rate can't be tracked until GA4 for stellixsoft.com is connected. |
+| 6 | Done (PR #10, Nov 8): the visible form is now name, work email, company, "What do you need?", a budget range dropdown and a "How did you hear about us?" dropdown that includes "ChatGPT / AI assistant". Phone, "What can we help with?" and the two SMS opt-ins moved into a collapsed "Add a phone number or more details (optional)" section, which opens by itself if one of them has an error. The Privacy and Terms checkbox stays visible because it is required. A `contact_form_start` event fires on first focus (PR #9), so completion rate = `generate_lead` (contact_form) ÷ `contact_form_start` once GA4 for stellixsoft.com is connected. |
 | 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. |
 | 8 | Open (owner). |
 | 9 | Not started. Next Claude task. |
@@ -216,7 +216,7 @@ A score of 50 or more means a reply from the owner the same day. 25 to 49 goes t
 ## 7. Measurement
 
 - **GA4 key events:** `generate_lead` (method `contact_form` or `calendly`), `lead_magnet_signup` (to be added in phase 2), and `tool_lead_submit`.
-- **Supporting events:** `cta_contact_click`, `calendly_open`, `contact_email_click`, `contact_phone_click`, `tool_consultation_click`.
+- **Supporting events:** `cta_contact_click`, `calendly_open`, `contact_email_click`, `contact_phone_click`, `tool_consultation_click`, `contact_form_start` (first focus on the contact form, for completion rate).
 - **Reports, weekly:** leads by `sessionDefaultChannelGroup` and by landing page, the "AI Assistant" channel separately (chatgpt.com, perplexity.ai, gemini.google.com, copilot), and directory referrals separately.
 - **Bot filter:** exclude Singapore and China "Direct" sessions with under 5 seconds of engagement.
 - **Search Console:** impressions vs clicks by page and by query group (brand, lead offers, informational). Watch CTR on pages ranked 1 to 10.
@@ -389,5 +389,5 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 - **Health:** home, /contact, /pricing, the legacy modernization, IoT and AI integration pages, three blog posts, robots.txt, sitemap.xml (89 URLs) and llms.txt all return 200. The new hero CTAs from PR #6 are live. PageSpeed still can't be reached from the weekly pass.
 - **Data:** not pulled. There is still no Search Console or GA4 connector for stellixsoft.com (property 500359903), so leads, AI referrals and query groups are unknown.
 - **Facts to align:** llms.txt says "50+ engineers", while the homepage footer says "Global Team of 55+ Experts". Owner to confirm one number (phase 1, task 4).
-- **Shipped:** phase 1 task 6 (shorter contact form), in a PR.
+- **Shipped:** phase 1 task 6 (shorter contact form, PR #10), plus `contact_form_start` tracking (PR #9).
 - **AI visibility panel:** not due (runs on the first Sunday of the month).
