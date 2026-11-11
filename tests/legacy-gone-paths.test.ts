@@ -60,3 +60,16 @@ test("isLegacyGonePath blocks old WordPress portfolio and pricing archives", () 
   assert.equal(isLegacyGonePath("/pricing"), false);
   assert.equal(isLegacyGonePath("/case-studies/enterprise-portal-modernization"), false);
 });
+
+test("isLegacyGonePath blocks old WordPress archives and spam probes seen in Search Console", () => {
+  assert.equal(isLegacyGonePath("/project-category/responsive-css/"), true);
+  assert.equal(isLegacyGonePath("/testimonials/mohsin/"), true);
+  assert.equal(isLegacyGonePath("/skills/ai-ml-integration-python-tensorflow-openai-apis/"), true);
+  assert.equal(isLegacyGonePath("/software-team/"), true);
+  assert.equal(isLegacyGonePath("/category/digital-marketing/"), true);
+  assert.equal(isLegacyGonePath("/ctg/search/similarImageSearchResultView/"), true);
+  assert.equal(isLegacyGonePath("/e/02/"), true);
+  assert.equal(isLegacyGonePath("/blog/category/enterprise-development"), false);
+  assert.equal(isLegacyGonePath("/enterprise-portal"), false);
+  assert.equal(isLegacyGonePath("/case-studies"), false);
+});

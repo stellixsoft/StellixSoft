@@ -23,7 +23,7 @@ export default function IoTSoftwareHero() {
         <p className="mt-4 text-base text-white/80 mx-auto leading-relaxed">
         From IoT application development to cloud-based device management systems, we help businesses unlock real value from their connected hardware.
         </p>
-        <HeroCtas proofHref="/case-studies/enterprise-portal-modernization" proofLabel="Read the case study" />
+        <HeroCtas proofHref="/case-studies/enterprise-portal-modernization" proofLabel="Enterprise portal modernization case study" />
       </div>
     </section>
   );

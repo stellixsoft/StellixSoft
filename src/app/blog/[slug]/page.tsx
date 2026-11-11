@@ -99,7 +99,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             </div>
 
             <div
-              className="prose prose-sm max-w-none text-slate-700 prose-p:text-sm prose-p:leading-relaxed prose-headings:font-light prose-headings:text-[var(--color-deepSpace)] prose-h2:text-lg prose-h2:md:text-xl prose-h3:text-base prose-h3:md:text-lg prose-li:text-sm prose-strong:font-medium prose-a:text-[var(--color-electricBlue)] prose-a:no-underline hover:prose-a:underline prose-code:text-[var(--color-surfaceBlue)] prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-[0.8125rem] prose-code:before:content-none prose-code:after:content-none prose-pre:bg-gray-50 prose-pre:text-sm"
+              className="prose prose-sm max-w-none text-slate-700 prose-p:text-sm prose-p:leading-relaxed prose-headings:font-light prose-headings:text-[var(--color-deepSpace)] prose-h2:text-lg prose-h2:md:text-xl prose-h3:text-base prose-h3:md:text-lg prose-li:text-sm prose-strong:font-medium prose-a:text-[var(--color-electricBlue)] prose-a:no-underline hover:prose-a:underline prose-code:text-[var(--color-surfaceBlue)] prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-[0.8125rem] prose-code:before:content-none prose-code:after:content-none prose-pre:bg-gray-50 prose-pre:text-sm prose-table:block prose-table:overflow-x-auto prose-table:text-sm prose-th:text-left prose-td:align-top"
             >
               <div dangerouslySetInnerHTML={{ __html: html }} />
             </div>

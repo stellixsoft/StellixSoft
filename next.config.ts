@@ -127,6 +127,21 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/custom-mobile-app-development-stellixsoft",
+        destination: "/services/enterprise-mobile-app-development",
+        permanent: true,
+      },
+      {
+        source: "/best-mobile-app-development-tools",
+        destination: "/services/enterprise-mobile-app-development",
+        permanent: true,
+      },
+      {
+        source: "/best-software-developers-eastern-europe",
+        destination: "/services/hire-dedicated-development-team",
+        permanent: true,
+      },
+      {
         source: "/project/zerobyte-digital-services-canada",
         destination: "/blog",
         permanent: true,
@@ -135,6 +150,15 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      {
+        // Social preview images: keep them out of the web index (cards still work).
+        source: "/:path*/:image(opengraph-image|twitter-image)",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
+      {
+        source: "/:image(opengraph-image|twitter-image)",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
       {
         source: "/(.*)",
         headers: [

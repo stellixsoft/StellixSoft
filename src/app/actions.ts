@@ -6,7 +6,6 @@ import {
   customerHubConfigured,
   submitLabLead,
 } from "@/src/lib/tools/customer-hub";
-import { CONTACT_BUDGET_RANGES } from "@/src/lib/contact-options";
 
 export interface FormState {
   success: boolean;
@@ -68,7 +67,7 @@ export async function submitContactForm(
   const smsMarketingConsent = formData.get("smsMarketingConsent") === "yes";
   const budgetAmountRaw = readText(formData, "budgetAmount");
   const budgetCurrencyRaw = readText(formData, "budgetCurrency");
-  const budgetRange = readText(formData, "budgetRange");
+  const budgetRange = readText(formData, "budgetRange").slice(0, 60);
 
   const fieldErrors: FormState["fieldErrors"] = {};
 
@@ -112,14 +111,8 @@ export async function submitContactForm(
     fieldErrors.phone = "Please enter a mobile number to receive SMS messages.";
   }
 
-  let budgetLine = "";
-  if (budgetRange) {
-    if ((CONTACT_BUDGET_RANGES as readonly string[]).includes(budgetRange)) {
-      budgetLine = budgetRange;
-    } else {
-      fieldErrors.budget = "Please pick a budget range from the list.";
-    }
-  } else if (budgetAmountRaw || budgetCurrencyRaw) {
+  let budgetLine = budgetRange;
+  if (!budgetLine && (budgetAmountRaw || budgetCurrencyRaw)) {
     const currency =
       budgetCurrencyRaw && BUDGET_CURRENCIES.has(budgetCurrencyRaw.toUpperCase())
         ? budgetCurrencyRaw.toUpperCase()

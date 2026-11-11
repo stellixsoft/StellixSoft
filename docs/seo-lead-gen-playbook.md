@@ -124,11 +124,11 @@ Ranked by expected impact on qualified leads.
 | 2 | Blocked: the owner needs to pick the lead sheet or CRM. |
 | 3 | Open (owner). |
 | 4 | Partly done: team size set to 50+ in schema and llms.txt (PR #5). Still open: the homepage hero still says "Powering device management for a Fortune 500 supply chain". |
-| 5 | Done (merged Nov 1, PR #6): homepage, /pricing, legacy modernization, IoT and AI integration heroes share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly, and a click-to-call link shows on mobile. |
-| 6 | In review (PR, Nov 8): the visible form is now name, work email, company, budget range (dropdown, optional) and "What do you need?", plus the terms checkbox. Phone, the SMS opt-ins and a "How did you hear about us?" dropdown (with "ChatGPT / AI assistant") moved into an optional fold. A new `contact_form_start` event fires on first focus, so completion rate = `generate_lead` (contact_form) ÷ `contact_form_start`. |
-| 7 | /services title shipped, and static-page titles and metas were trimmed to SERP limits (PR #7). The blog titles in section 8 still need the owner to change them in the blog admin. Picking new pages needs GSC data for stellixsoft.com. |
+| 5 | Done (PR #6, merged Nov 2): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly (matches the `15-minute-meeting` Calendly event; the owner confirmed 15 minutes on Nov 1, and the contact page, enterprise development page, schema and knowledge base were updated to match), and a click-to-call link shows on mobile. |
+| 6 | Done (PR #10, Nov 8): the visible form is now name, work email, company, "What do you need?", a budget range dropdown and a "How did you hear about us?" dropdown that includes "ChatGPT / AI assistant". Phone, "What can we help with?" and the two SMS opt-ins moved into a collapsed "Add a phone number or more details (optional)" section, which opens by itself if one of them has an error. The Privacy and Terms checkbox stays visible because it is required. A `contact_form_start` event fires on first focus (PR #9), so completion rate = `generate_lead` (contact_form) ÷ `contact_form_start` once GA4 for stellixsoft.com is connected. |
+| 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. |
 | 8 | Open (owner). |
-| 9 | Not started. |
+| 9 | Not started. Next Claude task. |
 | 10 | Done Nov 1 (robots.txt and llms.txt are live). |
 | 11 | Open (owner). |
 | 12 | Not started. PageSpeed Insights could not be reached from the weekly pass. |
@@ -244,7 +244,7 @@ Other quick fixes:
 - **Google Business Profile:** see phase 1, task 8.
 - **Page speed:** see phase 1, task 12.
 - **Forms:** the contact form works, and lead tracking was added on Oct 31.
-- **Tracking gaps:** no CRM and no `lead_magnet_signup` event. The "How did you hear about us?" dropdown is in the Nov 8 PR.
+- **Tracking gaps:** no CRM, no `lead_magnet_signup` event, and no "how did you hear" field.
 
 ## 9. Buyer-question content queue
 
@@ -360,7 +360,19 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-01 | schema, llms.txt | Team size set to 50+ to match the About page |
 | 2026-11-01 | /, /pricing, /services/legacy-modernization, /services/iot-software, /services/ai-integration-services | Hero CTAs: "Get a free project estimate" (main), "Book a 15-min call" (secondary), click-to-call on mobile |
 | 2026-11-01 | /contact, /services/enterprise-development, schema, knowledge base | Discovery call length changed from 30 to 15 minutes to match Calendly |
-| 2026-11-08 | /contact | Form cut to 5 visible fields plus terms; budget is now a range dropdown; phone, SMS opt-ins and a "How did you hear" dropdown moved into an optional fold; added `contact_form_start` |
+| 2026-11-08 | /contact | Form shortened: optional phone, help and SMS opt-ins collapsed; budget is now a range dropdown; "How did you hear" is a dropdown with an AI assistant option |
+| 2026-11-09 | /services/enterprise-development | Title and H1 now "Enterprise Software Development Services & Solutions"; answer box, platform development section, 2 FAQs |
+| 2026-11-09 | /services/iot-software | Title now "IoT Software Development Services & Solutions"; answer box (RFID first), 1 FAQ |
+| 2026-11-09 | /case-studies/enterprise-portal-modernization | Title now "Enterprise Portal Modernization: VB.NET to .NET Case Study"; description without unconfirmed claims |
+| 2026-11-09 | Site-wide | Internal link and footer anchors for the enterprise and IoT pages |
+| 2026-11-10 | robots.txt | Stopped blocking legacy junk paths (/detail/, /wp-*, /feed, …) and /_next/, so Google can see their 410s and render assets; only /api/ and /admin stay disallowed |
+| 2026-11-10 | /opengraph-image, /twitter-image | X-Robots-Tag: noindex, so social preview images leave the "crawled - not indexed" report |
+| 2026-11-10 | DevOps, e-commerce, maintenance, Salesforce service pages | Internal link to their matching blog post (all 4 were "crawled - not indexed" with zero internal links) |
+| 2026-11-10 | /blog/software-maintenance-support-best-practices | Rewritten in the static file, which is what the live site serves (~340 → ~920 words): maintenance types, support agreement terms, takeover steps, plan prices from the knowledge base; new title and meta |
+| 2026-11-10 | Blog (note) | Salesforce, headless commerce, Kubernetes and Docker posts are served from the CMS database, already ~1,900–2,300 words; static-file edits do not reach them. Left as is; only indexing requests needed |
+| 2026-11-10 | Blog renderer | Markdown pipe tables now render as HTML tables (previously shown as raw text) |
+| 2026-11-10 | Legacy 410 rules | Added /project-category/, /testimonials/, /skills/, /software-team, bare /category/, /ctg/ and /e/ (found in the Search Console 404 sample; 94% of that sample was /detail/, already 410) |
+| 2026-11-10 | Old WordPress posts | 301s from /custom-mobile-app-development-stellixsoft and /best-mobile-app-development-tools to the mobile service page, and /best-software-developers-eastern-europe to the dedicated team page |
 
 ## Weekly pass log
 
@@ -374,6 +386,8 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 
 ### Nov 8, 2026 (day 8, phase 1)
 
-- **Data:** not pulled again. The analytics connector still only reads primecode.ai and finvex.app, with no access to stellixsoft.com in Search Console or GA4 property 500359903. Leads this week and last week are unknown.
-- **Shipped:** phase 1 task 5 merged (PR #6). Task 6 (shorter contact form with completion tracking) is in a PR.
-- **Next Claude task:** #9 (LocalBusiness schema for the Houston entity), then #12 (Core Web Vitals) once PageSpeed can be run.
+- **Health:** home, /contact, /pricing, the legacy modernization, IoT and AI integration pages, three blog posts, robots.txt, sitemap.xml (89 URLs) and llms.txt all return 200. The new hero CTAs from PR #6 are live. PageSpeed still can't be reached from the weekly pass.
+- **Data:** not pulled. There is still no Search Console or GA4 connector for stellixsoft.com (property 500359903), so leads, AI referrals and query groups are unknown.
+- **Facts to align:** llms.txt says "50+ engineers", while the homepage footer says "Global Team of 55+ Experts". Owner to confirm one number (phase 1, task 4).
+- **Shipped:** phase 1 task 6 (shorter contact form, PR #10), plus `contact_form_start` tracking (PR #9).
+- **AI visibility panel:** not due (runs on the first Sunday of the month).

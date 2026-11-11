@@ -13,6 +13,8 @@ import WhyChooseEnterpriseDevelopment from "../../../components/sections/service
 import Testimonial from "../../../components/sections/services/enterprise-development/testimonial";
 import StartWithConfidence from "../../../components/sections/services/enterprise-development/start-with-confidence";
 import EnterpriseApplicationFutureGrowth from "../../../components/sections/services/enterprise-development/enterprise-application-future-growth";
+import EnterprisePlatformDevelopment from "../../../components/sections/services/enterprise-development/enterprise-platform-development";
+import ServiceAnswerBox from "@/src/components/sections/services/service-answer-box";
 import CTAPilot from "../../../components/sections/home/cta-pilot";
 import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
@@ -28,18 +30,37 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/enterprise-development" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Enterprise Software Development Services",
+  title: "Enterprise Software Development Services & Solutions",
   description:
-    "Enterprise software development services from Houston, Texas. Custom systems for ERPs, CRMs, SaaS platforms, dashboards, and business operations.",
+    "Enterprise software development services and platform development solutions from Houston, Texas: SaaS platforms, ERP and CRM systems, portals and integrations. Platforms from about $40k.",
   path: PATH,
   keywords: [
-    "Enterprise software development services",
+    "enterprise software development services",
+    "enterprise software development solutions",
+    "enterprise platform development services",
+    "enterprise platform development solutions",
     "custom enterprise software development services",
-    "Enterprise application development",
+    "enterprise application development",
   ],
 });
 
 const faqMainEntity: FaqQuestionBlock[] = [
+  {
+    "@type": "Question",
+    name: "How much do enterprise software development services cost?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Typical ranges: a medium platform is about $40,000 to $100,000 and often takes 3 to 6 months. A full enterprise system starts from about $100,000 and often takes 6 months or more. A pilot to test fit is often around $10,000 to $15,000. The team prices your actual scope after a discovery call.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "What is enterprise platform development?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Enterprise platform development is building the shared system that many teams, customers or partners use every day: a multi-tenant SaaS product, an ERP- or CRM-style system, a portal or an operations dashboard, with the integrations, permissions and audit trails around it.",
+    },
+  },
   {
     "@type": "Question",
     name: "How long does enterprise software development typically take?",
@@ -83,6 +104,18 @@ const faqMainEntity: FaqQuestionBlock[] = [
 ];
 
 const faqItems = [
+  {
+    id: "enterprise-cost",
+    question: "How much do enterprise software development services cost?",
+    answer:
+      "Typical ranges: a medium platform is about $40,000 to $100,000 and often takes 3 to 6 months. A full enterprise system starts from about $100,000 and often takes 6 months or more. A pilot to test fit is often around $10,000 to $15,000. The team prices your actual scope after a discovery call.",
+  },
+  {
+    id: "enterprise-platform",
+    question: "What is enterprise platform development?",
+    answer:
+      "Enterprise platform development is building the shared system that many teams, customers or partners use every day: a multi-tenant SaaS product, an ERP- or CRM-style system, a portal or an operations dashboard, with the integrations, permissions and audit trails around it.",
+  },
   {
     id: "enterprise-timeline",
     question:
@@ -143,7 +176,22 @@ export default function EnterpriseDevelopmentPage() {
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
         />
+        <ServiceAnswerBox
+          heading="Enterprise software development services and solutions"
+          answer="Stellix Soft builds custom enterprise software for companies in the US and Canada: multi-tenant SaaS platforms, ERP- and CRM-style systems, portals for staff, customers and partners, dashboards and the integrations between them. A medium platform is typically $40k to $100k over 3 to 6 months. We work from Houston, Texas, on US hours."
+          facts={[
+            { label: "Who it's for", value: "Operations-heavy mid-market and enterprise teams that outgrew spreadsheets or off-the-shelf tools" },
+            { label: "Typical cost", value: "About $40k to $100k for a platform; from about $100k for a full enterprise system" },
+            { label: "Timeline", value: "3 to 6 months for a platform, released in phases; 6+ months for larger systems" },
+            { label: "Stack", value: ".NET, SQL Server, Node.js, React, Next.js, PostgreSQL, chosen for the job" },
+          ]}
+          proof={{
+            href: "/case-studies/enterprise-portal-modernization",
+            label: "Read the enterprise portal modernization case study",
+          }}
+        />
         <EnterpriseComplexServicesIntro />
+        <EnterprisePlatformDevelopment />
         <KeySpecializations />
         <EnterpriseAcrossIndustries />
         <ReadyToLaunch />

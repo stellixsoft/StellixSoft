@@ -7,9 +7,9 @@ import {
 
 const servicesLinks = [
   { href: "/tools", label: "Engineering Lab" },
-  { href: "/services/enterprise-development", label: "Enterprise Development" },
+  { href: "/services/enterprise-development", label: "Enterprise Software Development" },
   { href: "/services/legacy-modernization", label: "Legacy Modernization" },
-  { href: "/services/iot-software", label: "IoT Software" },
+  { href: "/services/iot-software", label: "IoT Software Development" },
   { href: "/services/hire-dedicated-development-team", label: "Dedicated Teams" },
   { href: "/services/devops-and-cloud-services", label: "Cloud & DevOps" },
   { href: "/services/ai-integration-services", label: "AI Integration Services" },

@@ -12,17 +12,9 @@ import {
   SMS_MARKETING_MESSAGE_TYPES,
   SMS_TRANSACTIONAL_MESSAGE_TYPES,
 } from "@/src/lib/legal";
-import {
-  CONTACT_BUDGET_RANGES,
-  CONTACT_HEAR_OPTIONS,
-} from "@/src/lib/contact-options";
 
 const inputClass =
   "w-full rounded-xl bg-gray-50 border border-gray-200 px-4 py-3 text-sm text-[var(--color-deepSpace)] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-electricBlue)] focus:border-transparent";
-const selectClass = `${inputClass} appearance-none bg-[length:1rem] bg-[right_0.75rem_center] bg-no-repeat pr-10`;
-const selectStyle = {
-  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23717181'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
-};
 const labelClass =
   "block text-xs font-medium uppercase tracking-wider text-[var(--color-neutralGray)] mb-2";
 
@@ -34,6 +26,29 @@ function FieldError({ id, message }: { id: string; message?: string }) {
     </p>
   );
 }
+
+const BUDGET_RANGES = [
+  "Under $15k",
+  "$15k–$40k",
+  "$40k–$100k",
+  "$100k+",
+  "Not sure yet",
+];
+
+const HEAR_OPTIONS = [
+  "Google search",
+  "ChatGPT / AI assistant",
+  "LinkedIn",
+  "Clutch, GoodFirms or another directory",
+  "Referral",
+  "Other",
+];
+
+const selectClass =
+  "appearance-none bg-[length:1rem] bg-[right_0.75rem_center] bg-no-repeat pr-10";
+const selectStyle = {
+  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23717181'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
+};
 
 const steps = [
   "We review your message (same day)",
@@ -114,6 +129,9 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
   const [state, formAction, isPending] = useActionState(submitContactForm, initialState);
   const formRef = useRef<HTMLFormElement>(null);
   const errs = state.fieldErrors ?? {};
+  const optionalOpen = Boolean(
+    errs.phone || errs.help || errs.smsTransactionalConsent || errs.smsMarketingConsent,
+  );
   const toolContext = useToolContext(toolSlug);
   const toolReport = toolContext?.report ?? "";
   const [includeToolContext, setIncludeToolContext] = useState(true);
@@ -152,11 +170,6 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
     });
   }
 
-  // Optional extras stay folded unless they hold an error.
-  const extrasHaveError = Boolean(
-    errs.phone || errs.smsTransactionalConsent || errs.smsMarketingConsent,
-  );
-
   useEffect(() => {
     if (state.success) {
       formRef.current?.reset();
@@ -184,7 +197,6 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
           {/* Left: Contact form card */}
           <div className="rounded-2xl bg-white border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)] p-6 sm:p-8 md:p-10">
             <form ref={formRef} action={formAction} onFocus={onFormFocus} className="space-y-6">
-              <input type="hidden" name="help" value={helpDefault} />
               <input type="hidden" name="labTool" value={toolSlug ?? ""} />
               <input type="hidden" name="labInputs" value={includeToolContext ? (toolContext?.inputs ?? "{}") : "{}"} />
               <input type="hidden" name="labResults" value={includeToolContext ? (toolContext?.results ?? "{}") : "{}"} />
@@ -248,7 +260,7 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
                 <div>
                   <label htmlFor="company" className={labelClass}>
                     Company
@@ -263,28 +275,6 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                     className={inputClass}
                   />
                 </div>
-                <div>
-                  <label htmlFor="budgetRange" className={labelClass}>
-                    Budget range (optional)
-                  </label>
-                  <select
-                    id="budgetRange"
-                    name="budgetRange"
-                    defaultValue=""
-                    aria-invalid={errs.budget ? true : undefined}
-                    aria-describedby={errs.budget ? "contact-budget-error" : undefined}
-                    className={`${selectClass} ${errs.budget ? "border-red-300 ring-1 ring-red-200" : ""}`}
-                    style={selectStyle}
-                  >
-                    <option value="">Select a range</option>
-                    {CONTACT_BUDGET_RANGES.map((range) => (
-                      <option key={range} value={range}>
-                        {range}
-                      </option>
-                    ))}
-                  </select>
-                  <FieldError id="contact-budget-error" message={errs.budget} />
-                </div>
               </div>
 
               <div>
@@ -298,8 +288,7 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                   minLength={5}
                   maxLength={8000}
                   required
-                  defaultValue={toolReport ? undefined : helpDefault}
-                  placeholder="e.g. Migrate our VB.NET app to .NET 8, RFID tracking for our warehouse, private AI for internal documents..."
+                  placeholder="What are you trying to build or solve? Any specific technologies or requirements?"
                   aria-invalid={errs.project ? true : undefined}
                   aria-describedby={errs.project ? "contact-project-error" : undefined}
                   className={`${inputClass} resize-y min-h-[120px] ${errs.project ? "border-red-300 ring-1 ring-red-200" : ""}`}
@@ -307,109 +296,94 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                 <FieldError id="contact-project-error" message={errs.project} />
               </div>
 
-              {state.message && (
-                <p
-                  role={state.success ? "status" : "alert"}
-                  className={`text-sm font-medium ${state.success ? "text-green-600" : "text-red-600"}`}
-                >
-                  {state.message}
-                </p>
-              )}
-
-              <div className="rounded-xl border border-gray-200 bg-gray-50/80 p-4 space-y-4">
-                <label className="flex items-start gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    name="legalTermsConsent"
-                    value="yes"
-                    required
-                    className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-[var(--color-electricBlue)] focus:ring-[var(--color-electricBlue)]"
-                    aria-invalid={errs.legalTermsConsent ? true : undefined}
-                    aria-describedby={
-                      errs.legalTermsConsent
-                        ? "contact-legal-terms-error"
-                        : undefined
-                    }
-                  />
-                  <span className="text-xs text-[var(--color-neutralGray)] leading-relaxed">
-                    I agree to the{" "}
-                    <Link
-                      href="/privacy-policy"
-                      className="underline hover:text-[var(--color-deepSpace)]"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Privacy Policy
-                    </Link>{" "}
-                    and{" "}
-                    <Link
-                      href="/terms-of-service"
-                      className="underline hover:text-[var(--color-deepSpace)]"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Terms of Service
-                    </Link>
-                    . <span className="text-[var(--color-deepSpace)]">*</span>
-                  </span>
-                </label>
-                <FieldError
-                  id="contact-legal-terms-error"
-                  message={errs.legalTermsConsent}
-                />
-
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="budgetRange" className={labelClass}>
+                    Budget range (optional)
+                  </label>
+                  <select
+                    id="budgetRange"
+                    name="budgetRange"
+                    defaultValue=""
+                    className={`${inputClass} ${selectClass}`}
+                    style={selectStyle}
+                  >
+                    <option value="">Select a range</option>
+                    {BUDGET_RANGES.map((range) => (
+                      <option key={range} value={range}>
+                        {range}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="hear" className={labelClass}>
+                    How did you hear about us?
+                  </label>
+                  <select
+                    id="hear"
+                    name="hear"
+                    defaultValue=""
+                    className={`${inputClass} ${selectClass}`}
+                    style={selectStyle}
+                  >
+                    <option value="">Select one (optional)</option>
+                    {HEAR_OPTIONS.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
 
               <details
-                open={extrasHaveError || undefined}
-                className="group rounded-xl border border-gray-200 p-4"
+                className="rounded-xl border border-gray-200 p-4 group"
+                open={optionalOpen || undefined}
               >
                 <summary className="cursor-pointer text-sm font-medium text-[var(--color-deepSpace)]">
-                  Add a phone number, SMS updates or how you found us (optional)
+                  Add a phone number or more details (optional)
                 </summary>
-                <div className="mt-5 space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="phone" className={labelClass}>
-                        Phone (optional)
-                      </label>
-                      <input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        inputMode="numeric"
-                        placeholder="+15550001234"
-                        maxLength={22}
-                        autoComplete="tel"
-                        aria-invalid={errs.phone ? true : undefined}
-                        aria-describedby={errs.phone ? "contact-phone-error" : undefined}
-                        className={`${inputClass} ${errs.phone ? "border-red-300 ring-1 ring-red-200" : ""}`}
-                      />
-                      <FieldError id="contact-phone-error" message={errs.phone} />
-                      <p className="mt-1 text-[11px] text-[var(--color-neutralGray)]">
-                        Digits only; optional + for country code (spaces/formatting are stripped).
-                      </p>
-                    </div>
-                    <div>
-                      <label htmlFor="hear" className={labelClass}>
-                        How did you hear about us?
-                      </label>
-                      <select
-                        id="hear"
-                        name="hear"
-                        defaultValue=""
-                        className={selectClass}
-                        style={selectStyle}
-                      >
-                        <option value="">Select one</option>
-                        {CONTACT_HEAR_OPTIONS.map((option) => (
-                          <option key={option} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
+                <div className="mt-4 space-y-6">
+                  <div>
+                  <label htmlFor="phone" className={labelClass}>
+                    Phone (optional)
+                  </label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    inputMode="numeric"
+                    placeholder="+15550001234"
+                    maxLength={22}
+                    autoComplete="tel"
+                    aria-invalid={errs.phone ? true : undefined}
+                    aria-describedby={errs.phone ? "contact-phone-error" : undefined}
+                    className={`${inputClass} ${errs.phone ? "border-red-300 ring-1 ring-red-200" : ""}`}
+                  />
+                  <FieldError id="contact-phone-error" message={errs.phone} />
+                  <p className="mt-1 text-[11px] text-[var(--color-neutralGray)]">
+                    Digits only; optional + for country code (spaces/formatting are stripped).
+                  </p>
+                </div>
+              <div>
+                <label htmlFor="help" className={labelClass}>
+                  What can we help with? (optional)
+                </label>
+                <input
+                  id="help"
+                  name="help"
+                  type="text"
+                  maxLength={500}
+                  placeholder="e.g. Dedicated team, Legacy migration, AI integration..."
+                  defaultValue={helpDefault}
+                  aria-invalid={errs.help ? true : undefined}
+                  aria-describedby={errs.help ? "contact-help-error" : undefined}
+                  className={`${inputClass} ${errs.help ? "border-red-300 ring-1 ring-red-200" : ""}`}
+                />
+                <FieldError id="contact-help-error" message={errs.help} />
+              </div>
+                  <div className="space-y-4">
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input
                     type="checkbox"
@@ -467,8 +441,62 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                   id="contact-sms-marketing-error"
                   message={errs.smsMarketingConsent}
                 />
+                  </div>
                 </div>
               </details>
+
+              {state.message && (
+                <p
+                  role={state.success ? "status" : "alert"}
+                  className={`text-sm font-medium ${state.success ? "text-green-600" : "text-red-600"}`}
+                >
+                  {state.message}
+                </p>
+              )}
+
+              <div className="rounded-xl border border-gray-200 bg-gray-50/80 p-4">
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    name="legalTermsConsent"
+                    value="yes"
+                    required
+                    className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-[var(--color-electricBlue)] focus:ring-[var(--color-electricBlue)]"
+                    aria-invalid={errs.legalTermsConsent ? true : undefined}
+                    aria-describedby={
+                      errs.legalTermsConsent
+                        ? "contact-legal-terms-error"
+                        : undefined
+                    }
+                  />
+                  <span className="text-xs text-[var(--color-neutralGray)] leading-relaxed">
+                    I agree to the{" "}
+                    <Link
+                      href="/privacy-policy"
+                      className="underline hover:text-[var(--color-deepSpace)]"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Privacy Policy
+                    </Link>{" "}
+                    and{" "}
+                    <Link
+                      href="/terms-of-service"
+                      className="underline hover:text-[var(--color-deepSpace)]"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Terms of Service
+                    </Link>
+                    . <span className="text-[var(--color-deepSpace)]">*</span>
+                  </span>
+                </label>
+                <FieldError
+                  id="contact-legal-terms-error"
+                  message={errs.legalTermsConsent}
+                />
+
+              </div>
 
               <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pt-2">
                 <button
