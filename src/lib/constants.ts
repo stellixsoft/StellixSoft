@@ -19,3 +19,19 @@ export const CALENDLY_EVENT_SLUG = "15-minute-meeting";
 /** Stellix Soft LLC (US) business phone - use in tel: links as E.164. */
 export const STELLIX_SOFT_LLC_PHONE_TEL = "+18474969803";
 export const STELLIX_SOFT_LLC_PHONE_DISPLAY = "(847) 496-9803";
+
+/** Sister brand that sells and onboards medical billing clients. */
+export const STELLIX_BILLING_URL = "https://stellixbilling.com";
+
+/**
+ * Builds a stellixbilling.com link tagged so GA4 on that site can attribute
+ * referrals from this site. `content` identifies the CTA placement.
+ */
+export function stellixBillingHref(path: string, content: string): string {
+  const url = new URL(path, STELLIX_BILLING_URL);
+  url.searchParams.set("utm_source", "stellixsoft");
+  url.searchParams.set("utm_medium", "referral");
+  url.searchParams.set("utm_campaign", "medical_billing_services");
+  url.searchParams.set("utm_content", content);
+  return url.toString();
+}

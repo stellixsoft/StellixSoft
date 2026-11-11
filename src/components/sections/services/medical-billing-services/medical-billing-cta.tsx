@@ -1,5 +1,7 @@
 import CalendlyScheduleButton from "@/src/components/calendly-schedule-button";
 import { CalendlyNextAvailableSlot } from "@/src/components/calendly-next-available-slot";
+import AnalyticsLink from "@/src/components/sections/hannan/analytics-link";
+import { stellixBillingHref } from "@/src/lib/constants";
 const BACKGROUND_URL = "/assets/images/background-url.webp";
 
 export default function MedicalBillingCta() {
@@ -78,6 +80,40 @@ export default function MedicalBillingCta() {
                 </span>
               </div>
             </div>
+
+            <p className="mx-auto mt-8 max-w-2xl text-sm text-white/95 md:text-[15px]">
+              Our billing team works as{" "}
+              <AnalyticsLink
+                href={stellixBillingHref("/", "final_cta")}
+                rel="noopener"
+                eventName="billing_site_click"
+                eventParams={{ placement: "final_cta", destination: "home" }}
+                className="font-semibold underline decoration-white/50 underline-offset-2 hover:opacity-90"
+              >
+                Stellix Billing
+              </AnalyticsLink>
+              . See{" "}
+              <AnalyticsLink
+                href={stellixBillingHref("/pricing", "final_cta")}
+                rel="noopener"
+                eventName="billing_site_click"
+                eventParams={{ placement: "final_cta", destination: "pricing" }}
+                className="font-semibold underline decoration-white/50 underline-offset-2 hover:opacity-90"
+              >
+                billing pricing
+              </AnalyticsLink>{" "}
+              or{" "}
+              <AnalyticsLink
+                href={stellixBillingHref("/free-revenue-audit", "final_cta")}
+                rel="noopener"
+                eventName="billing_site_click"
+                eventParams={{ placement: "final_cta", destination: "free_revenue_audit" }}
+                className="font-semibold underline decoration-white/50 underline-offset-2 hover:opacity-90"
+              >
+                request a free revenue audit
+              </AnalyticsLink>
+              .
+            </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8">
               <div className="flex items-center gap-2">
