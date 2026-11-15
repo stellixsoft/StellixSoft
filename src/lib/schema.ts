@@ -383,6 +383,36 @@ export function buildRootJsonLdGraph() {
         ],
       },
       {
+        // The Houston entity as a local business. No street address is published,
+        // so only city/region are given. No AggregateRating: add one only for
+        // reviews that are shown on the page.
+        "@type": "ProfessionalService",
+        "@id": `${site}/#houston`,
+        name: "Stellix Soft LLC",
+        alternateName: "Stellix Soft",
+        description:
+          "Custom software development company in Houston, Texas: .NET legacy modernization, RFID software, secure and onsite AI, and enterprise systems, delivered with US-timezone aligned teams.",
+        url: `${site}/contact`,
+        telephone: STELLIX_SOFT_LLC_PHONE_TEL,
+        email: LEGAL_CONTACT_EMAIL,
+        image: `${site}/assets/images/stellixsoft-logo.png`,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Houston",
+          addressRegion: "TX",
+          addressCountry: "US",
+        },
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          // Site hours are 9 AM–6 PM Eastern; schema hours are read as local (Central) time.
+          opens: "08:00",
+          closes: "17:00",
+        },
+        areaServed: AREA_SERVED,
+        parentOrganization: { "@id": `${site}/#organization` },
+      },
+      {
         "@type": "WebSite",
         "@id": `${site}/#website`,
         url: site,
