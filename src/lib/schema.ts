@@ -383,6 +383,35 @@ export function buildRootJsonLdGraph() {
         ],
       },
       {
+        // LocalBusiness subtype for the US entity, so Google and AI search can tie
+        // "software company in Houston" queries to Stellix Soft LLC. Only facts from
+        // the knowledge base: no street address, hours, price range or ratings until
+        // the owner confirms them (add the street address once the Google Business
+        // Profile is claimed, and keep both identical).
+        "@type": "ProfessionalService",
+        "@id": `${site}/#localbusiness`,
+        name: "Stellix Soft LLC",
+        alternateName: "Stellix Soft",
+        url: site,
+        telephone: STELLIX_SOFT_LLC_PHONE_TEL,
+        email: LEGAL_CONTACT_EMAIL,
+        image: { "@id": `${site}/#logo` },
+        description:
+          "Custom software development company in Houston, Texas: .NET legacy modernization, RFID software, enterprise software and secure AI, with teams working US business hours.",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Houston",
+          addressRegion: "TX",
+          addressCountry: "US",
+        },
+        areaServed: [
+          { "@type": "Country", name: "United States" },
+          { "@type": "Country", name: "Canada" },
+          { "@type": "Place", name: "Europe" },
+        ],
+        parentOrganization: { "@id": `${site}/#organization` },
+      },
+      {
         "@type": "WebSite",
         "@id": `${site}/#website`,
         url: site,
