@@ -116,22 +116,22 @@ Ranked by expected impact on qualified leads.
 | 11 | Ask 5 past clients for reviews on Clutch and GoodFirms. Send them a direct link. | Owner | 3 new reviews |
 | 12 | Run PageSpeed Insights on mobile for the homepage, contact page and 3 lead-offer pages. Fix anything with LCP over 2.5 s or CLS over 0.1. Check the cost of the hero video and of third-party scripts (Warmly, Customer Hub, Clarity). | Claude | All 5 pages pass Core Web Vitals |
 
-### Phase 1 status (updated Nov 8, 2026)
+### Phase 1 status (updated Nov 15, 2026)
 
 | # | Status |
 |---|---|
-| 1 | Open (owner). Can't be checked from the weekly pass until GA4 for stellixsoft.com is connected (see the weekly log). |
+| 1 | Open (owner). Search Console for stellixsoft.com is connected (Nov 11), but GA4 property 500359903 still returns a permission error, so lead events can't be checked from the weekly pass. |
 | 2 | Blocked: the owner needs to pick the lead sheet or CRM. |
 | 3 | Open (owner). |
 | 4 | Partly done: team size set to 50+ in schema and llms.txt (PR #5). Still open: the homepage hero still says "Powering device management for a Fortune 500 supply chain". |
 | 5 | Done (PR #6, merged Nov 2): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly (matches the `15-minute-meeting` Calendly event; the owner confirmed 15 minutes on Nov 1, and the contact page, enterprise development page, schema and knowledge base were updated to match), and a click-to-call link shows on mobile. |
 | 6 | Done (PR #10, Nov 8): the visible form is now name, work email, company, "What do you need?", a budget range dropdown and a "How did you hear about us?" dropdown that includes "ChatGPT / AI assistant". Phone, "What can we help with?" and the two SMS opt-ins moved into a collapsed "Add a phone number or more details (optional)" section, which opens by itself if one of them has an error. The Privacy and Terms checkbox stays visible because it is required. A `contact_form_start` event fires on first focus (PR #9), so completion rate = `generate_lead` (contact_form) ÷ `contact_form_start` once GA4 for stellixsoft.com is connected. |
-| 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. |
+| 7 | Static pages: every static title and meta was rewritten on Nov 1 (PR #7), so the next allowed rewrite is Dec 1. Blog titles: the owner still needs to apply the section 8 queue in the blog admin. The top one is /blog/azure-devops-vs-github-actions-enterprise (730 impressions, position 12, 0 clicks in 28 days). |
 | 8 | Open (owner). |
-| 9 | Not started. Next Claude task. |
+| 9 | Blocked (owner). LocalBusiness schema needs the Houston street address and postal code, ideally the same as the Google Business Profile (task 8). The Organization schema already lists Houston, TX. |
 | 10 | Done Nov 1 (robots.txt and llms.txt are live). |
 | 11 | Open (owner). |
-| 12 | Not started. PageSpeed Insights could not be reached from the weekly pass. |
+| 12 | In review (PR, Nov 15). A local Lighthouse mobile run showed the 8 MB hero video loading on phones, plus a second copy for the loop crossfade. Phones now get a 37 KB still frame from the video, and desktop downloads the video once. Homepage weight went from 16.8 MB to 2.1 MB and TBT from 1,150 ms to 20 ms. LCP is still about 3 s in the local lab run (text render delay), so the next step is the web fonts. PageSpeed Insights still hits its daily quota from the weekly pass. |
 
 ---
 
@@ -373,6 +373,7 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-10 | Blog renderer | Markdown pipe tables now render as HTML tables (previously shown as raw text) |
 | 2026-11-10 | Legacy 410 rules | Added /project-category/, /testimonials/, /skills/, /software-team, bare /category/, /ctg/ and /e/ (found in the Search Console 404 sample; 94% of that sample was /detail/, already 410) |
 | 2026-11-10 | Old WordPress posts | 301s from /custom-mobile-app-development-stellixsoft and /best-mobile-app-development-tools to the mobile service page, and /best-software-developers-eastern-europe to the dedicated team page |
+| 2026-11-15 | All pages with a video hero | Phones show a still frame instead of the hero video, and desktop loads the video once instead of twice |
 
 ## Weekly pass log
 
@@ -391,3 +392,12 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 - **Facts to align:** llms.txt says "50+ engineers", while the homepage footer says "Global Team of 55+ Experts". Owner to confirm one number (phase 1, task 4).
 - **Shipped:** phase 1 task 6 (shorter contact form, PR #10), plus `contact_form_start` tracking (PR #9).
 - **AI visibility panel:** not due (runs on the first Sunday of the month).
+
+### Nov 15, 2026 (day 15, phase 1)
+
+- **Data:** Search Console is connected through the analytics connector. GA4 still returns a permission error for property 500359903, so leads are unknown.
+- **GSC, last 7 days (Nov 6–12 vs Oct 30–Nov 5):** 7 clicks vs 6, and 1,217 impressions vs 1,135.
+- **GSC, last 28 days (Oct 16–Nov 12 vs Sep 18–Oct 15):** 32 clicks vs 40, and 4,374 impressions vs 2,702 (+62%). Brand queries brought 13 of the 32 clicks, so non-brand was about 19 (target: 25 by Dec 1). Average position slipped from about 25 to about 35 as new, deeper pages started showing.
+- **Biggest no-click pages:** /services/enterprise-development (1,601 impressions, position 48; the Nov 8 keyword work is still settling), /blog/azure-devops-vs-github-actions-enterprise (730, position 12), /blog/iot-device-management-platform-architecture (193, position 48), /blog/headless-commerce-enterprise-ecommerce (154, position 45), /about (151, position 5.8), /blog/dedicated-development-team-vs-staff-augmentation (131, position 41).
+- **Shipped:** phase 1 task 12, the mobile hero video fix (in a PR).
+- **AI visibility panel:** not due.
