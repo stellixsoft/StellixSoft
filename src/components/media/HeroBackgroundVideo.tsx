@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { HERO_VIDEO_SRC } from "@/src/lib/media-urls";
+import { HERO_VIDEO_POSTER_SRC, HERO_VIDEO_SRC } from "@/src/lib/media-urls";
 
 type Props = {
   className?: string;
@@ -10,7 +10,15 @@ type Props = {
 /**
  * Seamless looping hero background: two muted videos crossfade at the loop
  * point so there is no visible stop / restart hitch.
+ * A still frame from the video shows first; the 8 MB video only loads on
+ * desktop-width screens without Save-Data, so phones keep the poster.
  */
+function shouldLoadVideo(): boolean {
+  if (!window.matchMedia("(min-width: 768px)").matches) return false;
+  const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+  return !connection?.saveData;
+}
+
 export default function HeroBackgroundVideo({ className }: Props) {
   const aRef = useRef<HTMLVideoElement>(null);
   const bRef = useRef<HTMLVideoElement>(null);
@@ -21,6 +29,7 @@ export default function HeroBackgroundVideo({ className }: Props) {
   const [active, setActive] = useState<"a" | "b">("a");
 
   useEffect(() => {
+    if (!shouldLoadVideo()) return;
     const start = () => setLoadVideo(true);
     if (typeof window !== "undefined") {
       const ric = window.requestIdleCallback;
@@ -41,9 +50,14 @@ export default function HeroBackgroundVideo({ className }: Props) {
     if (!a || !b) return;
 
     a.src = HERO_VIDEO_SRC;
-    b.src = HERO_VIDEO_SRC;
     a.load();
-    b.load();
+    // Point the crossfade copy at the video only once the first one has it buffered,
+    // so the file comes from cache instead of downloading twice.
+    const loadB = () => {
+      if (b.src) return;
+      b.src = HERO_VIDEO_SRC;
+      b.load();
+    };
 
     const playSafe = (el: HTMLVideoElement) => {
       void el.play().catch(() => {});
@@ -59,6 +73,12 @@ export default function HeroBackgroundVideo({ className }: Props) {
 
       if (!current.duration || !Number.isFinite(current.duration)) return;
       if (current.currentTime < current.duration - 0.45) return;
+      if (!next.src) {
+        // Copy not buffered yet (slow connection): loop in place rather than swap to an empty video.
+        current.loop = true;
+        loadB();
+        return;
+      }
 
       swappingRef.current = true;
       try {
@@ -95,6 +115,7 @@ export default function HeroBackgroundVideo({ className }: Props) {
     b.addEventListener("timeupdate", onBTime);
     a.addEventListener("playing", onAReady);
     a.addEventListener("loadeddata", onAReady);
+    a.addEventListener("canplaythrough", loadB);
     document.addEventListener("visibilitychange", keepPlaying);
     window.addEventListener("focus", keepPlaying);
 
@@ -103,6 +124,7 @@ export default function HeroBackgroundVideo({ className }: Props) {
       b.removeEventListener("timeupdate", onBTime);
       a.removeEventListener("playing", onAReady);
       a.removeEventListener("loadeddata", onAReady);
+      a.removeEventListener("canplaythrough", loadB);
       document.removeEventListener("visibilitychange", keepPlaying);
       window.removeEventListener("focus", keepPlaying);
     };
@@ -115,7 +137,8 @@ export default function HeroBackgroundVideo({ className }: Props) {
 
   return (
     <div
-      className={`${className ?? ""} bg-black overflow-hidden`.trim()}
+      className={`${className ?? ""} bg-black bg-cover bg-center overflow-hidden`.trim()}
+      style={{ backgroundImage: `url('${HERO_VIDEO_POSTER_SRC}')` }}
       aria-hidden
     >
       {loadVideo ? (
