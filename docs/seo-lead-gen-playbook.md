@@ -116,7 +116,7 @@ Ranked by expected impact on qualified leads.
 | 11 | Ask 5 past clients for reviews on Clutch and GoodFirms. Send them a direct link. | Owner | 3 new reviews |
 | 12 | Run PageSpeed Insights on mobile for the homepage, contact page and 3 lead-offer pages. Fix anything with LCP over 2.5 s or CLS over 0.1. Check the cost of the hero video and of third-party scripts (Warmly, Customer Hub, Clarity). | Claude | All 5 pages pass Core Web Vitals |
 
-### Phase 1 status (updated Nov 8, 2026)
+### Phase 1 status (updated Nov 15, 2026)
 
 | # | Status |
 |---|---|
@@ -126,9 +126,9 @@ Ranked by expected impact on qualified leads.
 | 4 | Partly done: team size set to 50+ in schema and llms.txt (PR #5). Still open: the homepage hero still says "Powering device management for a Fortune 500 supply chain". |
 | 5 | Done (PR #6, merged Nov 2): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly (matches the `15-minute-meeting` Calendly event; the owner confirmed 15 minutes on Nov 1, and the contact page, enterprise development page, schema and knowledge base were updated to match), and a click-to-call link shows on mobile. |
 | 6 | Done (PR #10, Nov 8): the visible form is now name, work email, company, "What do you need?", a budget range dropdown and a "How did you hear about us?" dropdown that includes "ChatGPT / AI assistant". Phone, "What can we help with?" and the two SMS opt-ins moved into a collapsed "Add a phone number or more details (optional)" section, which opens by itself if one of them has an error. The Privacy and Terms checkbox stays visible because it is required. A `contact_form_start` event fires on first focus (PR #9), so completion rate = `generate_lead` (contact_form) ÷ `contact_form_start` once GA4 for stellixsoft.com is connected. |
-| 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. |
+| 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. GSC can be read through the owner's Chrome when it is on; it was off during the Nov 15 pass. |
 | 8 | Open (owner). |
-| 9 | Not started. Next Claude task. |
+| 9 | Partly done (Nov 15): `ProfessionalService` (a LocalBusiness type) node for Stellix Soft LLC, Houston, TX, linked to the Organization as `parentOrganization`. No street address, hours, price range or ratings, because none are confirmed. Still open: street address (owner, once the Google Business Profile is claimed, task 8) and Review/AggregateRating (only if reviews are shown on the page). |
 | 10 | Done Nov 1 (robots.txt and llms.txt are live). |
 | 11 | Open (owner). |
 | 12 | Not started. PageSpeed Insights could not be reached from the weekly pass. |
@@ -373,6 +373,7 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-10 | Blog renderer | Markdown pipe tables now render as HTML tables (previously shown as raw text) |
 | 2026-11-10 | Legacy 410 rules | Added /project-category/, /testimonials/, /skills/, /software-team, bare /category/, /ctg/ and /e/ (found in the Search Console 404 sample; 94% of that sample was /detail/, already 410) |
 | 2026-11-10 | Old WordPress posts | 301s from /custom-mobile-app-development-stellixsoft and /best-mobile-app-development-tools to the mobile service page, and /best-software-developers-eastern-europe to the dedicated team page |
+| 2026-11-15 | Site-wide schema | Added a `ProfessionalService` (LocalBusiness) node for Stellix Soft LLC, Houston, TX, linked to the Organization |
 
 ## Weekly pass log
 
@@ -391,3 +392,12 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 - **Facts to align:** llms.txt says "50+ engineers", while the homepage footer says "Global Team of 55+ Experts". Owner to confirm one number (phase 1, task 4).
 - **Shipped:** phase 1 task 6 (shorter contact form, PR #10), plus `contact_form_start` tracking (PR #9).
 - **AI visibility panel:** not due (runs on the first Sunday of the month).
+
+### Nov 15, 2026 (day 15, phase 1)
+
+- **Health:** home, /contact, /pricing, the legacy modernization, IoT and AI integration pages, /blog, the 3 newest posts and the rewritten maintenance post all return 200. robots.txt (only /api/ and /admin disallowed; OAI-SearchBot and Perplexity-User named), sitemap.xml (89 URLs) and llms.txt are served. The /detail/ 410 could not be confirmed by the fetch tool (it reports any 4xx as an error); the unit tests cover the rule.
+- **Search Console (Nov 10–14, through the owner's Chrome):** indexing requested for 14 of the 21 sitemap pages Google had never crawled: the 6 service pages (AI integration, DevOps, mobile, dedicated team, legacy modernization, maintenance), the 4 industry pages and the /industries hub, the /tools hub and 2 of the 3 tool pages. Also requested: business process automation ("unknown to Google"), and the Salesforce, headless and maintenance posts and the equity case study. Still to request: /tools/iot-platform-demo, the compliance and multi-location case studies, /hannan, /imran, /privacy-policy and /terms-of-service. Chrome was off on Nov 15, so these and the check on earlier requests move to next week.
+- **Data:** not pulled. No Search Console or GA4 connector for stellixsoft.com, and the browser was unavailable. Leads, AI referrals and query groups are unknown this week.
+- **PageSpeed:** not run (needs the browser).
+- **Shipped:** phase 1 task 9, partly (LocalBusiness schema without a street address).
+- **AI visibility panel:** not due (first Sunday of the month).
