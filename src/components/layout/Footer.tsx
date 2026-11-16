@@ -31,6 +31,12 @@ const companyLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+/** Stellix Soft LLC's own in-house products (not client work). */
+const ourProductsLinks = [
+  { href: "/products/elementa", label: "Elementa Protocol", external: false },
+  { href: "https://elementaprotocol.com", label: "elementaprotocol.com", external: true },
+] as const;
+
 /** Third-party review / listing profiles (same URLs as Contact “Trusted by”). */
 const reviewDirectoryLinks = [
   { href: "https://clutch.co/profile/stellix-soft", label: "Clutch" },
@@ -190,6 +196,33 @@ export default function Footer() {
                   >
                     {link.label}
                   </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mt-8 mb-5">
+              Our products
+            </h3>
+            <ul className="space-y-3">
+              {ourProductsLinks.map((link) => (
+                <li key={link.label}>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener"
+                      className="text-white/75 text-sm hover:text-[var(--color-electricBlue)] transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-white/75 text-sm hover:text-[var(--color-electricBlue)] transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

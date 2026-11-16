@@ -5,6 +5,7 @@ import {
   STATIC_HUB_LAST_MOD,
   STATIC_INDUSTRY_PAGE_LAST_MOD,
   STATIC_LEGAL_LAST_MOD,
+  STATIC_PRODUCTS_LAST_MOD,
   STATIC_SERVICE_PAGE_LAST_MOD,
   STATIC_SERVICES_HUB_LAST_MOD,
   STATIC_TOOLS_LAST_MOD,
@@ -36,6 +37,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/hannan`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/imran`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/industries`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
+    {
+      url: `${SITE_URL}/products`,
+      lastModified: STATIC_PRODUCTS_LAST_MOD,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/products/elementa`,
+      lastModified: STATIC_PRODUCTS_LAST_MOD,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
     { url: `${SITE_URL}/pricing`, lastModified: STATIC_HUB_LAST_MOD, changeFrequency: "monthly", priority: 0.8 },
     {
       url: `${SITE_URL}/privacy-policy`,
