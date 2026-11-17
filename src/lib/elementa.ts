@@ -26,14 +26,42 @@ export const ELEMENTA_STATUS_LABEL: Record<ElementaProductStatus, string> = {
   "coming-soon": "Coming soon",
 };
 
+export type ElementaStoreLink = {
+  store: "google-play" | "microsoft";
+  href: string;
+  /** Small line above the store name, as on the official badges. */
+  eyebrow: string;
+  label: string;
+};
+
+export const ELEMENTA_WALLET_STORE_LINKS: ElementaStoreLink[] = [
+  {
+    store: "google-play",
+    href: "https://play.google.com/store/apps/details?id=com.elementa.wallet",
+    eyebrow: "Get it on",
+    label: "Google Play",
+  },
+  {
+    store: "microsoft",
+    href: "https://apps.microsoft.com/detail/9mtbgsr866qp?hl=en-US&gl=US",
+    eyebrow: "Get it from",
+    label: "Microsoft",
+  },
+];
+
 export const ELEMENTA_PRODUCTS: {
   name: string;
   status: ElementaProductStatus;
+  /** Shown next to the status badge, e.g. platform availability. */
+  statusNote?: string;
   description: string;
+  storeLinks?: ElementaStoreLink[];
 }[] = [
   {
     name: "Elementa Wallet",
     status: "live",
+    statusNote: "on Android and Windows · iOS coming soon",
+    storeLinks: ELEMENTA_WALLET_STORE_LINKS,
     description:
       "Self-custody for Bitcoin, Solana, Ethereum, Polygon, BNB Chain and Avalanche. Transfer Protection: freeze sending with a 24h/72h/7-day lock, a daily USD limit, a whitelist of allowed addresses and contracts, and lookalike-address warnings.",
   },
@@ -73,8 +101,9 @@ export function elementaJsonLd() {
         "@type": "SoftwareApplication",
         name: "Elementa Wallet",
         applicationCategory: "FinanceApplication",
-        operatingSystem: "iOS, Android",
+        operatingSystem: "Android, Windows",
         url: ELEMENTA_SITE_URL,
+        installUrl: ELEMENTA_WALLET_STORE_LINKS.map((l) => l.href),
         publisher: { "@id": orgId },
       },
     ],
