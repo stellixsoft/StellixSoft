@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ElementaLogo from "@/src/components/products/elementa-logo";
 import StatusBadge from "@/src/components/products/status-badge";
+import StoreBadge from "@/src/components/products/store-badge";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import { breadcrumbJsonLd } from "@/src/lib/schema";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
@@ -135,13 +136,27 @@ export default function ElementaPage() {
                 key={product.name}
                 className="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm md:p-8"
               >
-                <StatusBadge status={product.status} />
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <StatusBadge status={product.status} />
+                  {product.statusNote ? (
+                    <span className="text-xs font-medium text-[var(--color-deepSpace)]">
+                      {product.statusNote}
+                    </span>
+                  ) : null}
+                </div>
                 <h3 className="mt-5 text-xl font-semibold text-[var(--color-deepSpace)]">
                   {product.name}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-[var(--color-neutralGray)] md:text-base">
                   {product.description}
                 </p>
+                {product.storeLinks?.length ? (
+                  <div className="mt-auto flex flex-wrap gap-3 pt-6">
+                    {product.storeLinks.map((link) => (
+                      <StoreBadge key={link.store} link={link} />
+                    ))}
+                  </div>
+                ) : null}
               </li>
             ))}
           </ul>
