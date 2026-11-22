@@ -131,7 +131,7 @@ Ranked by expected impact on qualified leads.
 | 9 | Blocked (owner). LocalBusiness schema needs the Houston street address and postal code, ideally the same as the Google Business Profile (task 8). The Organization schema already lists Houston, TX. |
 | 10 | Done Nov 1 (robots.txt and llms.txt are live). |
 | 11 | Open (owner). |
-| 12 | In review (PR, Nov 15). A local Lighthouse mobile run showed the 8 MB hero video loading on phones, plus a second copy for the loop crossfade. Phones now get a 37 KB still frame from the video, and desktop downloads the video once. Homepage weight went from 16.8 MB to 2.1 MB and TBT from 1,150 ms to 20 ms. LCP is still about 3 s in the local lab run (text render delay), so the next step is the web fonts. PageSpeed Insights still hits its daily quota from the weekly pass. |
+| 12 | In review (PR, Nov 15). A local Lighthouse mobile run showed the 8 MB hero video loading on phones, plus a second copy for the loop crossfade. Phones now get a 37 KB still frame from the video, and desktop downloads the video once. Homepage weight went from 16.8 MB to 2.1 MB and TBT from 1,150 ms to 20 ms. LCP is still about 3 s in the local lab run (text render delay), so the next step is the web fonts. PageSpeed Insights still hits its daily quota from the weekly pass. Nov 22 check: the web fonts are not the cause. They are five preloaded 8 KB files, and the unthrottled run paints the hero text at 0.2 s (FCP = LCP). The 3 s figure is Lighthouse's simulated mobile estimate, driven by JavaScript and CPU throttling. Real-user numbers need PageSpeed Insights or CrUX, which were over quota both weeks. |
 
 ---
 
@@ -300,7 +300,7 @@ AI assistants recommend providers they can (a) crawl, (b) understand as one cons
 | Phase | Task |
 |---|---|
 | 1 | Add **IndexNow** (Bing, Yandex, Seznam; not the Google Indexing API) to ping on publish for blog posts and new pages. |
-| 1 | Make sure each service page and pricing page opens with a 40 to 60 word "answer box" that states what the service is, who it's for, the price range and the timeline, in plain sentences an AI can quote. |
+| 1 | Make sure each service page and pricing page opens with a 40 to 60 word "answer box" that states what the service is, who it's for, the price range and the timeline, in plain sentences an AI can quote. Status: done on enterprise development and IoT (Nov 9), and legacy modernization and AI integration (Nov 22, in PR #16). Still to do: /pricing, mobile, dedicated team, staff augmentation. |
 | 2 | Add `FAQPage` schema with buyer questions (section 9) to every lead-offer page, and `HowTo`-style numbered process sections. |
 | 2 | Add "Last updated" dates and author or reviewer bylines (with a `Person` schema and LinkedIn `sameAs`) to blog posts and service pages. AI search favours fresh content with named authors. |
 | 2 | Publish comparison and "best X" pages buyers ask AI about, written fairly: "Best .NET modernization companies for mid-market", "RFID software vendors compared", "Private LLM deployment partners". Include competitors honestly, along with Stellix Soft's fit. |
@@ -374,6 +374,7 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-10 | Legacy 410 rules | Added /project-category/, /testimonials/, /skills/, /software-team, bare /category/, /ctg/ and /e/ (found in the Search Console 404 sample; 94% of that sample was /detail/, already 410) |
 | 2026-11-10 | Old WordPress posts | 301s from /custom-mobile-app-development-stellixsoft and /best-mobile-app-development-tools to the mobile service page, and /best-software-developers-eastern-europe to the dedicated team page |
 | 2026-11-15 | All pages with a video hero | Phones show a still frame instead of the hero video, and desktop loads the video once instead of twice |
+| 2026-11-22 | /services/legacy-modernization, /services/ai-integration-services | Added an answer box under the hero: what it is, who it's for, cost range, timeline, proof |
 
 ## Weekly pass log
 
@@ -401,3 +402,13 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 - **Biggest no-click pages:** /services/enterprise-development (1,601 impressions, position 48; the Nov 8 keyword work is still settling), /blog/azure-devops-vs-github-actions-enterprise (730, position 12), /blog/iot-device-management-platform-architecture (193, position 48), /blog/headless-commerce-enterprise-ecommerce (154, position 45), /about (151, position 5.8), /blog/dedicated-development-team-vs-staff-augmentation (131, position 41).
 - **Shipped:** phase 1 task 12, the mobile hero video fix (in a PR).
 - **AI visibility panel:** not due.
+
+### Nov 22, 2026 (day 22, phase 1)
+
+- **Data:** GA4 property 500359903 still returns a permission error, so leads are unknown. Search Console works.
+- **GSC, last 7 days (Nov 13–19 vs Nov 6–12):** 7 clicks vs 7, and 2,544 impressions vs 1,217 (+109%).
+- **GSC, last 28 days (Oct 23–Nov 19 vs Sep 25–Oct 22):** 28 clicks vs 36, and 5,957 impressions vs 3,005 (+98%). Brand queries brought 10 of the 28 clicks, so non-brand was about 18.
+- **Biggest opportunity:** /blog/azure-devops-vs-github-actions-enterprise had 2,089 impressions at position 9.1 with 0 clicks. It is now on page one, so its title is the top owner action (section 8 queue). Other no-click pages: /about (126 impressions, position 6.2; static title locked until Dec 1), /blog/dedicated-development-team-vs-staff-augmentation (132, position 41).
+- **Claim conflict:** the legacy modernization title, FAQ and schema promise "zero downtime", while the knowledge base says not to promise it before the team has seen the system. Owner to decide; the title can change on Dec 1.
+- **Shipped:** answer boxes on legacy modernization and AI integration (added to PR #16, which also has the mobile hero fix). PR #16 is still waiting for the owner to merge.
+- **AI visibility panel:** not due (first Sunday is Dec 6).

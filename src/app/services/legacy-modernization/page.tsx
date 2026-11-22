@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LegacyModernizationHero from "@/src/components/sections/services/legacy-modernization/hero";
+import ServiceAnswerBox from "@/src/components/sections/services/service-answer-box";
 import YourLegacy from "@/src/components/sections/services/legacy-modernization/your-legacy";
 import LegacyApplicationBeyondMigrationSection from "@/src/components/sections/services/legacy-modernization/legacy-application-beyond-migration";
 import LegacyApplicationHowServicesWorkSection from "@/src/components/sections/services/legacy-modernization/legacy-application-how-services-work";
@@ -106,6 +107,17 @@ export default function LegacyModernizationPage() {
       <JsonLd data={breadcrumbLd} />
       <div>
         <LegacyModernizationHero />
+        <ServiceAnswerBox
+          heading="Legacy .NET modernization, one slice at a time"
+          answer="Stellix Soft moves VB.NET, .NET Framework, Classic ASP and aging SQL Server systems to modern .NET, usually with a React or Next.js front end. We assess the code first, then migrate in slices while the old system keeps running. A first slice is typically $15k to $40k; a single application usually takes 3 to 6 months."
+          facts={[
+            { label: "Who it's for", value: "US and Canadian companies running business-critical VB.NET, .NET Framework or Classic ASP apps" },
+            { label: "Typical cost", value: "About $15k to $40k for a first slice; $40k to $100k+ for a full program" },
+            { label: "Timeline", value: "3 to 6 months for one application; larger portfolios in phases" },
+            { label: "Proof", value: "A hardware maker's VB.NET enterprise portal moved to .NET, React, SignalR and AWS" },
+          ]}
+          proof={{ href: "/tools/dotnet-modernization-assessment", label: "Run the free .NET modernization assessment" }}
+        />
         <div
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
