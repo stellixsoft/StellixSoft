@@ -103,20 +103,20 @@ Ranked by expected impact on qualified leads.
 
 | # | Task | Owner | Done when |
 |---|---|---|---|
-| 1 | Check that `generate_lead` arrives in GA4 for form and Calendly. Submit one test of each and confirm it appears under Realtime. | Owner, with Claude checking | Both events seen |
+| 1 | Partly seen (Nov 22): GA4 recorded 2 `generate_lead` events from the contact form (Nov 16 and 17, both Direct, on /contact), so the form event works. If those were the owner's tests, there are still no real leads. Calendly was opened 5 times (2 visitors from Google organic) with no booking event, so the Calendly booking test is still open (owner). |
 | 2 | Send every contact form lead to a lead sheet or CRM as well as email, with source, landing page, UTM and `ai_referrer` fields. | Claude (code); Owner picks the tool | Every lead has a row |
 | 3 | Agree response rules: reply to every enquiry within 1 business hour, with a booking link in the first reply. Alerts go to email and phone. | Owner | Rule written and alerts on |
 | 4 | **Fix contradictory company facts** (team size, "Fortune 500", "remote-first" vs Houston) across About, the homepage, llms.txt and schema. | Owner gives the facts; Claude edits | One version everywhere |
 | 5 | Above-the-fold CTA audit on the homepage, the 3 lead-offer pages and /pricing: one main CTA ("Get a free project estimate"), one secondary ("Book a 20-min call"), and a click-to-call phone link on mobile. | Claude | Live |
 | 6 | Shorten the contact form to name, work email, company, "what do you need" and budget range (optional). Move the rest to after submit. | Claude | Live, with completion rate tracked |
-| 7 | Rewrite the titles and metas for the page-one, no-click pages in the title queue below. This is the one rewrite for the month. | Owner in the blog admin (Claude drafts); Claude for static pages | Logged in the change log |
+| 7 | Checked Nov 22 with Search Console data: no rewrite this month. The page-one, 30+ impression, 0-click pages are either brand sitelinks (/services, /contact, /pricing, /blog, /about: "stellix soft" queries), changed in the last 30 days, or ranked for junk comparison queries (/blog/azure-devops-vs-github-actions-enterprise: 2,089 impressions from "X vs github actions" queries) and anonymised queries (/blog/php2shell…). A title change would not bring qualified clicks. The bigger gap is ranking: /services/enterprise-development has 1,291 impressions at position 48 for "enterprise software development services". |
 | 8 | Claim and complete the Google Business Profile for Stellix Soft LLC, Houston: category "Software company", services, hours, photos, website with UTM, and the first 3 reviews. | Owner | Profile 100% complete |
 | 9 | Add **LocalBusiness** schema (Houston address) next to Organization, plus **Review/AggregateRating** only for reviews shown on the page. | Claude | Validated in Rich Results Test |
 | 10 | Allow the AI search crawlers `OAI-SearchBot` and `Perplexity-User` in robots.ts (GPTBot, ClaudeBot and PerplexityBot are already allowed). Update llms.txt so the lead offers are listed first, each with a one-line answer, a price range and a link. | Claude | Live |
 | 11 | Ask 5 past clients for reviews on Clutch and GoodFirms. Send them a direct link. | Owner | 3 new reviews |
-| 12 | Run PageSpeed Insights on mobile for the homepage, contact page and 3 lead-offer pages. Fix anything with LCP over 2.5 s or CLS over 0.1. Check the cost of the hero video and of third-party scripts (Warmly, Customer Hub, Clarity). | Claude | All 5 pages pass Core Web Vitals |
+| 12 | Done Nov 22 (lab, mobile): home 99, /contact 100, /services/enterprise-development 100, legacy modernization 95, AI integration 97, IoT 99 on a second run (71 with a 4.7 s LCP on the first, which did not repeat). LCP 1.1 s and CLS ≤ 0.011 everywhere; TBT 50–270 ms. No field data yet (too little traffic). Every page with the hero video loaded ~18.9 MB because two `<video>` players each downloaded the 8.3 MB MP4. Fixed in the weekly PR: one download on desktop, none on phones, data-saver, slow connections or reduced motion. |
 
-### Phase 1 status (updated Nov 8, 2026)
+### Phase 1 status (updated Nov 22, 2026)
 
 | # | Status |
 |---|---|
@@ -126,9 +126,9 @@ Ranked by expected impact on qualified leads.
 | 4 | Partly done: team size set to 50+ in schema and llms.txt (PR #5). Still open: the homepage hero still says "Powering device management for a Fortune 500 supply chain". |
 | 5 | Done (PR #6, merged Nov 2): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly (matches the `15-minute-meeting` Calendly event; the owner confirmed 15 minutes on Nov 1, and the contact page, enterprise development page, schema and knowledge base were updated to match), and a click-to-call link shows on mobile. |
 | 6 | Done (PR #10, Nov 8): the visible form is now name, work email, company, "What do you need?", a budget range dropdown and a "How did you hear about us?" dropdown that includes "ChatGPT / AI assistant". Phone, "What can we help with?" and the two SMS opt-ins moved into a collapsed "Add a phone number or more details (optional)" section, which opens by itself if one of them has an error. The Privacy and Terms checkbox stays visible because it is required. A `contact_form_start` event fires on first focus (PR #9), so completion rate = `generate_lead` (contact_form) ÷ `contact_form_start` once GA4 for stellixsoft.com is connected. |
-| 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. |
+| 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. GSC can be read through the owner's Chrome when it is on; it was off during the Nov 15 pass. |
 | 8 | Open (owner). |
-| 9 | Not started. Next Claude task. |
+| 9 | Partly done (Nov 15): `ProfessionalService` (a LocalBusiness type) node for Stellix Soft LLC, Houston, TX, linked to the Organization as `parentOrganization`. No street address, hours, price range or ratings, because none are confirmed. Still open: street address (owner, once the Google Business Profile is claimed, task 8) and Review/AggregateRating (only if reviews are shown on the page). |
 | 10 | Done Nov 1 (robots.txt and llms.txt are live). |
 | 11 | Open (owner). |
 | 12 | Not started. PageSpeed Insights could not be reached from the weekly pass. |
@@ -373,6 +373,8 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-10 | Blog renderer | Markdown pipe tables now render as HTML tables (previously shown as raw text) |
 | 2026-11-10 | Legacy 410 rules | Added /project-category/, /testimonials/, /skills/, /software-team, bare /category/, /ctg/ and /e/ (found in the Search Console 404 sample; 94% of that sample was /detail/, already 410) |
 | 2026-11-10 | Old WordPress posts | 301s from /custom-mobile-app-development-stellixsoft and /best-mobile-app-development-tools to the mobile service page, and /best-software-developers-eastern-europe to the dedicated team page |
+| 2026-11-15 | Site-wide schema | Added a `ProfessionalService` (LocalBusiness) node for Stellix Soft LLC, Houston, TX, linked to the Organization |
+| 2026-11-22 | Hero video (home, services, industries) | Second crossfade player no longer downloads the 8.3 MB MP4 in parallel (loads from cache halfway through); no video on screens under 768 px, data-saver, 2G/3G or reduced motion |
 
 ## Weekly pass log
 
@@ -391,3 +393,21 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 - **Facts to align:** llms.txt says "50+ engineers", while the homepage footer says "Global Team of 55+ Experts". Owner to confirm one number (phase 1, task 4).
 - **Shipped:** phase 1 task 6 (shorter contact form, PR #10), plus `contact_form_start` tracking (PR #9).
 - **AI visibility panel:** not due (runs on the first Sunday of the month).
+
+### Nov 15, 2026 (day 15, phase 1)
+
+- **Health:** home, /contact, /pricing, the legacy modernization, IoT and AI integration pages, /blog, the 3 newest posts and the rewritten maintenance post all return 200. robots.txt (only /api/ and /admin disallowed; OAI-SearchBot and Perplexity-User named), sitemap.xml (89 URLs) and llms.txt are served. The /detail/ 410 could not be confirmed by the fetch tool (it reports any 4xx as an error); the unit tests cover the rule.
+- **Search Console (Nov 10–14, through the owner's Chrome):** indexing requested for 14 of the 21 sitemap pages Google had never crawled: the 6 service pages (AI integration, DevOps, mobile, dedicated team, legacy modernization, maintenance), the 4 industry pages and the /industries hub, the /tools hub and 2 of the 3 tool pages. Also requested: business process automation ("unknown to Google"), and the Salesforce, headless and maintenance posts and the equity case study. Still to request: /tools/iot-platform-demo, the compliance and multi-location case studies, /hannan, /imran, /privacy-policy and /terms-of-service. Chrome was off on Nov 15, so these and the check on earlier requests move to next week.
+- **Data:** not pulled. No Search Console or GA4 connector for stellixsoft.com, and the browser was unavailable. Leads, AI referrals and query groups are unknown this week.
+- **PageSpeed:** not run (needs the browser).
+- **Shipped:** phase 1 task 9, partly (LocalBusiness schema without a street address).
+- **AI visibility panel:** not due (first Sunday of the month).
+
+### Nov 22, 2026 (day 22, phase 1)
+
+- **Health:** home, /contact, /pricing, the legacy modernization, IoT and AI integration pages, /blog and the 3 newest posts return 200. robots.txt (only /api/ and /admin disallowed), sitemap.xml (91 URLs, now including the Elementa product pages) and llms.txt are served. The LocalBusiness schema is not live yet (PR #15 not merged).
+- **Search Console (owner's Chrome):** indexed pages 78, up from 64. Not indexed 845, down from about 2.9K (404s 2,768 → 773; crawled not indexed 98 → 60; discovered not indexed 21 → 2). All 21 never-crawled sitemap pages had indexing requested by Nov 17. Last 28 days: 28 clicks (36 before), 5,960 impressions (3,000 before), CTR 0.5%, position 29.3. Clicks are almost all brand ("stellix soft", "stellixsoft"); non-brand impressions are mostly /services/enterprise-development at position ~48.
+- **GA4 (property 500359903, last 28 days):** 2 `generate_lead` (contact form, Nov 16 and 17, Direct, /contact), 2 `contact_form_start`, 5 `calendly_open` (Google organic), 3 `cta_contact_click` (home 2, /about 1), 0 `ai_referral`. Sessions: Direct 504 (8.5% engaged, average 6 s, mostly bots), Organic 117 (47% engaged), Organic Social 19, Referral 18, AI Assistant 4 (ChatGPT 3). Leads month to date: 2 against the day-30 target of 3–5, possibly both owner tests.
+- **PageSpeed (mobile, lab):** all measured pages pass LCP and CLS; see Phase 1 task 12.
+- **Shipped:** hero video payload fix (phase 1 task 12), in the weekly PR.
+- **AI visibility panel:** not due (first Sunday of the month: Dec 6).

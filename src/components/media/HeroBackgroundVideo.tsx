@@ -21,6 +21,11 @@ export default function HeroBackgroundVideo({ className }: Props) {
   const [active, setActive] = useState<"a" | "b">("a");
 
   useEffect(() => {
+    // The MP4 is ~8 MB. Skip it where it costs the visitor most and adds least:
+    // phones, data-saver, slow connections and reduced-motion. The hero keeps
+    // its dark background and overlay, which is also what shows before the
+    // video starts on desktop.
+    if (shouldSkipHeroVideo()) return;
     const start = () => setLoadVideo(true);
     if (typeof window !== "undefined") {
       const ric = window.requestIdleCallback;
@@ -40,10 +45,18 @@ export default function HeroBackgroundVideo({ className }: Props) {
     const b = bRef.current;
     if (!a || !b) return;
 
+    // Only the first player downloads up front. The second one (used for the
+    // crossfade at the loop point) gets its source halfway through playback,
+    // when the file is in the HTTP cache, instead of a second parallel download.
     a.src = HERO_VIDEO_SRC;
-    b.src = HERO_VIDEO_SRC;
     a.load();
-    b.load();
+    let bLoaded = false;
+    const loadB = () => {
+      if (bLoaded) return;
+      bLoaded = true;
+      b.src = HERO_VIDEO_SRC;
+      b.load();
+    };
 
     const playSafe = (el: HTMLVideoElement) => {
       void el.play().catch(() => {});
@@ -58,6 +71,7 @@ export default function HeroBackgroundVideo({ className }: Props) {
       const nextKey = from === "a" ? "b" : "a";
 
       if (!current.duration || !Number.isFinite(current.duration)) return;
+      if (!bLoaded && current.currentTime >= current.duration / 2) loadB();
       if (current.currentTime < current.duration - 0.45) return;
 
       swappingRef.current = true;
@@ -132,10 +146,22 @@ export default function HeroBackgroundVideo({ className }: Props) {
             className={videoClass("b")}
             muted
             playsInline
-            preload="auto"
+            preload="none"
           />
         </>
       ) : null}
     </div>
   );
+}
+
+type NetworkInformationLike = { saveData?: boolean; effectiveType?: string };
+
+function shouldSkipHeroVideo(): boolean {
+  if (typeof window === "undefined") return true;
+  if (window.matchMedia?.("(max-width: 767px)").matches) return true;
+  if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return true;
+  const conn = (navigator as Navigator & { connection?: NetworkInformationLike }).connection;
+  if (conn?.saveData) return true;
+  if (conn?.effectiveType && /(^|-)2g$|^3g$/.test(conn.effectiveType)) return true;
+  return false;
 }
