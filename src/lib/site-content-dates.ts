@@ -10,3 +10,5 @@ export const STATIC_CASE_STUDY_LAST_MOD = new Date("2025-11-01T12:00:00.000Z");
 export const STATIC_LEGAL_LAST_MOD = new Date("2026-03-31T12:00:00.000Z");
 /** Engineering Lab /tools hub and interactive tool pages. */
 export const STATIC_TOOLS_LAST_MOD = new Date("2026-10-26T12:00:00.000Z");
+/** /products hub and in-house product pages (Elementa Protocol). */
+export const STATIC_PRODUCTS_LAST_MOD = new Date("2026-11-16T12:00:00.000Z");
