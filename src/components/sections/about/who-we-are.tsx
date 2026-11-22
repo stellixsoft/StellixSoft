@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const focusItems = [
   "Hardware and IoT companies needing device management software",
   "Enterprises modernizing legacy .NET applications",
@@ -69,6 +71,17 @@ export default function WhoWeAre() {
             <p className="mt-8 text-base md:text-lg font-normal text-[var(--color-neutralGray)] leading-relaxed">
               Our team operates as an extension of yours - same timezone, daily
               communication, and long-term commitment.
+            </p>
+
+            <p className="mt-6 text-base md:text-lg font-normal text-[var(--color-neutralGray)] leading-relaxed">
+              Besides client projects, we build our own products.{" "}
+              <Link
+                href="/products/elementa"
+                className="text-[var(--color-accentOnLight)] underline hover:opacity-80"
+              >
+                Elementa Protocol
+              </Link>
+              , our in-house crypto ecosystem, launched with Elementa Wallet.
             </p>
           </div>
 
