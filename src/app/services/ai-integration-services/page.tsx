@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PracticalAiForBusinessHero from "@/src/components/sections/services/practical-for-ai/hero";
+import ServiceAnswerBox from "@/src/components/sections/services/service-answer-box";
 import OurApproachToAiIntegration from "@/src/components/sections/services/practical-for-ai/approach";
 import AiPoweredFeaturesWeImplement from "@/src/components/sections/services/practical-for-ai/features";
 import AiTechnologyWeWorkWith from "@/src/components/sections/services/practical-for-ai/technology";
@@ -107,6 +108,17 @@ export default function AiIntegrationServicesPage() {
       <JsonLd data={breadcrumbLd} />
       <div>
         <PracticalAiForBusinessHero />
+        <ServiceAnswerBox
+          heading="AI integration services, including private AI on your own network"
+          answer="Stellix Soft adds AI to the systems you already run: document and invoice extraction, support and internal knowledge assistants, ticket routing and search. When data can't leave your network, we deploy the model on your own servers or private cloud. A pilot is usually $10k to $15k, and a focused integration takes a few weeks to about 3 months."
+          facts={[
+            { label: "Who it's for", value: "Operations, support and finance teams, including healthcare, finance and industrial firms with strict data rules" },
+            { label: "Typical cost", value: "Pilots often $10k to $15k; larger rollouts priced after discovery" },
+            { label: "Timeline", value: "A few weeks to about 3 months for one workflow" },
+            { label: "Deployment", value: "Connected (OpenAI, Claude, Google) or private, on your network" },
+          ]}
+          proof={{ href: "/contact", label: "Get a free project estimate" }}
+        />
         <div
           className="h-1 w-full shrink-0"
           style={{ backgroundColor: "var(--color-electricBlue-solid)" }}
