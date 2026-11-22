@@ -116,7 +116,7 @@ Ranked by expected impact on qualified leads.
 | 11 | Ask 5 past clients for reviews on Clutch and GoodFirms. Send them a direct link. | Owner | 3 new reviews |
 | 12 | Run PageSpeed Insights on mobile for the homepage, contact page and 3 lead-offer pages. Fix anything with LCP over 2.5 s or CLS over 0.1. Check the cost of the hero video and of third-party scripts (Warmly, Customer Hub, Clarity). | Claude | All 5 pages pass Core Web Vitals |
 
-### Phase 1 status (updated Nov 8, 2026)
+### Phase 1 status (updated Nov 22, 2026)
 
 | # | Status |
 |---|---|
@@ -126,12 +126,12 @@ Ranked by expected impact on qualified leads.
 | 4 | Partly done: team size set to 50+ in schema and llms.txt (PR #5). Still open: the homepage hero still says "Powering device management for a Fortune 500 supply chain". |
 | 5 | Done (PR #6, merged Nov 2): homepage, /pricing, legacy modernization, IoT and AI integration heroes now share one CTA block. Main CTA "Get a free project estimate" goes to /contact, secondary "Book a 15-min call" opens Calendly (matches the `15-minute-meeting` Calendly event; the owner confirmed 15 minutes on Nov 1, and the contact page, enterprise development page, schema and knowledge base were updated to match), and a click-to-call link shows on mobile. |
 | 6 | Done (PR #10, Nov 8): the visible form is now name, work email, company, "What do you need?", a budget range dropdown and a "How did you hear about us?" dropdown that includes "ChatGPT / AI assistant". Phone, "What can we help with?" and the two SMS opt-ins moved into a collapsed "Add a phone number or more details (optional)" section, which opens by itself if one of them has an error. The Privacy and Terms checkbox stays visible because it is required. A `contact_form_start` event fires on first focus (PR #9), so completion rate = `generate_lead` (contact_form) ÷ `contact_form_start` once GA4 for stellixsoft.com is connected. |
-| 7 | Not started. Needs GSC data for stellixsoft.com to pick the pages. |
+| 7 | In progress. Search Console for stellixsoft.com is connected as of Nov 15. Static candidates (/about, /services, /blog, /contact, /pricing, the portal case study) were all changed Oct 31–Nov 9, so they stay frozen until Dec 1. Three blog titles are proposed for the owner in the Nov 15 weekly log. |
 | 8 | Open (owner). |
-| 9 | Not started. Next Claude task. |
+| 9 | In review (PR, Nov 15): a `ProfessionalService` (LocalBusiness) node for Stellix Soft LLC, Houston, in the site-wide schema graph, linked to the Organization by `parentOrganization`. City and region only, because no street address is published. Hours Mon–Fri 08:00–17:00 local time (the site's 9 AM–6 PM Eastern). No `AggregateRating`: the site shows no rated reviews, so adding one would break Google's rules. Owner: run https://stellixsoft.com/contact through the Rich Results Test after merge, and send the street address if it can be public. |
 | 10 | Done Nov 1 (robots.txt and llms.txt are live). |
 | 11 | Open (owner). |
-| 12 | Not started. PageSpeed Insights could not be reached from the weekly pass. |
+| 12 | In review (PR, Nov 22). PageSpeed Insights still can't be reached from the weekly pass (its shared API quota is used up), so I measured a local production build with Playwright on an emulated mid-range phone (4x CPU slowdown, slow 4G). Before the fix, every page with a hero video downloaded **16 MB of video on phones** (the 8 MB file, fetched twice for the crossfade). Now the video loads only at 768 px and wider, and not with reduced motion or data saver. Phones get a 23 KB still frame of the video instead, and desktop fetches the file once. The shared section background `background-url.webp` went from 1.1 MB to 157 KB (it is a soft gradient), and `cta-background.webp` from 277 KB to 230 KB. Lab LCP for home, /contact and the 3 lead-offer pages is 0.9–1.6 s (the H1 or hero text), and CLS is 0 on all 5 pages. Still open: field Core Web Vitals once the owner checks PageSpeed Insights or the Search Console CWV report, and the cost of Warmly, Customer Hub and Clarity, which don't load in a local build. |
 
 ---
 
@@ -376,6 +376,27 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 
 ## Weekly pass log
 
+### Nov 22, 2026 (day 22, phase 1)
+
+- **Leads (GA4):** not pulled. GA4 property 500359903 is still not shared with the analytics connector.
+- **Search Console, 28 days to Nov 19:** 28 clicks and 5,957 impressions (CTR 0.5%, average position 29.3), against 36 clicks and 3,005 impressions in the 28 days before. **Last 7 days:** 7 clicks and 2,544 impressions, against 7 and 1,217. Impressions doubled, but clicks are flat.
+- **Query groups:** brand searches gave 10 clicks. Lead-offer pages got no clicks: /services/enterprise-development had 1,291 impressions at position 48, /services/iot-software 367 at 57, and /services/legacy-modernization 16 at 60. Informational: the Azure DevOps vs GitHub Actions post now has 2,089 impressions at **position 9.1** with 0 clicks. It is the biggest opportunity on the site.
+- **Page one with 30+ impressions and 0 clicks:** azure-devops-vs-github-actions-enterprise (2,089), /about (126), php2shell-wordpress-to-nextjs-migration (113), /services (96), /contact (61), /pricing (56), the enterprise portal case study (56), zero-downtime-database-migration-strategies (47), /blog (45), real-time-logistics-tracking-system-architecture (39). The static pages stay frozen until Dec 1.
+- **Blog titles proposed (owner, blog admin):** the three from Nov 15, plus azure-devops-vs-github-actions-enterprise → "Azure DevOps vs GitHub Actions (2026): Which Should You Choose?" with the meta "Side-by-side comparison of pipelines, pricing, security and migration effort, with a decision table for enterprise teams."
+- **Shipped:** phase 1 task 12 (mobile page weight), in the same PR as task 9.
+
+### Nov 15, 2026 (day 15, phase 1)
+
+- **Leads (GA4):** not pulled. GA4 property 500359903 is still not shared with the analytics connector, so leads, AI referrals and the bot filter can't be checked.
+- **Search Console (now connected):** 28 days to Nov 12: 32 clicks, 4,374 impressions (CTR 0.7%, average position 34.7), against 40 clicks and 2,702 impressions in the prior 28 days. Last 7 days: 7 clicks, 1,217 impressions (prior 7: 6 clicks, 1,135 impressions).
+- **Query groups (28 days):** brand ("stellix soft", "stellix soft llc", "stellixsoft", "stellix") gave 13 of the 32 clicks. Lead-offer queries had 0 clicks: "enterprise software development services" 995 impressions at position 48, "enterprise platform development services/solutions" 265 at 55–57, IoT device management queries about 100 at 38–67. Informational: the Azure DevOps vs GitHub Actions post had 730 impressions and 0 clicks at position 12, mostly odd "github actions vs X" comparisons.
+- **Page one with 30+ impressions and 0 clicks:** /about (151), /services (123), /blog/php2shell-wordpress-to-nextjs-migration (111), /contact (67), /blog/zero-downtime-database-migration-strategies (64), /case-studies/enterprise-portal-modernization (62), /blog (60), /pricing (56), /blog/real-time-logistics-tracking-system-architecture (45). The static pages were all changed Oct 31–Nov 9, so they wait until Dec 1.
+- **Blog titles proposed (owner, in the blog admin):**
+  - zero-downtime-database-migration-strategies → "Database Cutover Without Downtime: A CDC Migration Plan" (matches "how to replicate a database with minimal downtime (cutover strategy)" and "how do I plan a cutover for a production database migration?")
+  - real-time-logistics-tracking-system-architecture → "Real-Time Logistics Tracking: Live Location, ETAs and Proof of Delivery" (matches "what truck API capabilities should logistics software include for live location, ETAs, and proof of delivery?" and "real-time cargo tracking system architecture")
+  - php2shell-wordpress-to-nextjs-migration → "Migrating a Legacy PHP or WordPress Site to Next.js Securely" (matches "who can migrate a legacy php site to next.js or django securely")
+- **Shipped:** phase 1 task 9 (LocalBusiness schema), in a PR.
+
 ### Nov 1, 2026 (day 1, phase 1)
 
 - **Health:** home, /contact, /pricing, the legacy modernization, IoT and AI integration pages, and the 3 newest posts all load. robots.txt (all AI crawlers allowed), sitemap.xml (89 URLs) and llms.txt (lead offers first) are served. Checked by fetching each page; exact status codes and PageSpeed could not be measured because the cloud runner can't reach stellixsoft.com directly.
@@ -391,3 +412,5 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 - **Facts to align:** llms.txt says "50+ engineers", while the homepage footer says "Global Team of 55+ Experts". Owner to confirm one number (phase 1, task 4).
 - **Shipped:** phase 1 task 6 (shorter contact form, PR #10), plus `contact_form_start` tracking (PR #9).
 - **AI visibility panel:** not due (runs on the first Sunday of the month).
+| 2026-11-15 | Site-wide schema | Added a ProfessionalService (LocalBusiness) node for Stellix Soft LLC, Houston, with hours and parentOrganization; no rating markup |
+| 2026-11-22 | All pages with a hero video | Video loads only on desktop widths (no reduced motion or data saver); phones get a 23 KB still frame; desktop downloads the video once instead of twice; section backgrounds recompressed (1.1 MB → 157 KB) |

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { HERO_VIDEO_SRC } from "@/src/lib/media-urls";
+import { HERO_POSTER_SRC, HERO_VIDEO_SRC } from "@/src/lib/media-urls";
 
 type Props = {
   className?: string;
@@ -10,7 +10,19 @@ type Props = {
 /**
  * Seamless looping hero background: two muted videos crossfade at the loop
  * point so there is no visible stop / restart hitch.
+ *
+ * The 8 MB video only loads on desktop-width screens without reduced motion or
+ * data saver. Everyone else (and desktop until the video plays) sees a ~23 KB
+ * still frame, which keeps mobile pages light for Core Web Vitals.
  */
+function shouldLoadVideo(): boolean {
+  if (typeof window === "undefined" || typeof window.matchMedia !== "function") return false;
+  if (!window.matchMedia("(min-width: 768px)").matches) return false;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+  const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+  return !connection?.saveData;
+}
+
 export default function HeroBackgroundVideo({ className }: Props) {
   const aRef = useRef<HTMLVideoElement>(null);
   const bRef = useRef<HTMLVideoElement>(null);
@@ -21,6 +33,7 @@ export default function HeroBackgroundVideo({ className }: Props) {
   const [active, setActive] = useState<"a" | "b">("a");
 
   useEffect(() => {
+    if (!shouldLoadVideo()) return;
     const start = () => setLoadVideo(true);
     if (typeof window !== "undefined") {
       const ric = window.requestIdleCallback;
@@ -40,10 +53,18 @@ export default function HeroBackgroundVideo({ className }: Props) {
     const b = bRef.current;
     if (!a || !b) return;
 
+    // Native loop is the fallback if the partner copy isn't ready at the seam.
+    a.loop = true;
+    b.loop = true;
     a.src = HERO_VIDEO_SRC;
-    b.src = HERO_VIDEO_SRC;
     a.load();
-    b.load();
+    // The crossfade partner only needs the file once the first copy can play
+    // through, so the two elements don't download it in parallel.
+    const loadPartner = () => {
+      if (b.src) return;
+      b.src = HERO_VIDEO_SRC;
+      b.load();
+    };
 
     const playSafe = (el: HTMLVideoElement) => {
       void el.play().catch(() => {});
@@ -59,6 +80,8 @@ export default function HeroBackgroundVideo({ className }: Props) {
 
       if (!current.duration || !Number.isFinite(current.duration)) return;
       if (current.currentTime < current.duration - 0.45) return;
+      // Partner not buffered yet: this copy keeps looping on its own.
+      if (next.readyState < HTMLMediaElement.HAVE_CURRENT_DATA) return;
 
       swappingRef.current = true;
       try {
@@ -95,6 +118,7 @@ export default function HeroBackgroundVideo({ className }: Props) {
     b.addEventListener("timeupdate", onBTime);
     a.addEventListener("playing", onAReady);
     a.addEventListener("loadeddata", onAReady);
+    a.addEventListener("canplaythrough", loadPartner);
     document.addEventListener("visibilitychange", keepPlaying);
     window.addEventListener("focus", keepPlaying);
 
@@ -103,6 +127,7 @@ export default function HeroBackgroundVideo({ className }: Props) {
       b.removeEventListener("timeupdate", onBTime);
       a.removeEventListener("playing", onAReady);
       a.removeEventListener("loadeddata", onAReady);
+      a.removeEventListener("canplaythrough", loadPartner);
       document.removeEventListener("visibilitychange", keepPlaying);
       window.removeEventListener("focus", keepPlaying);
     };
@@ -115,7 +140,8 @@ export default function HeroBackgroundVideo({ className }: Props) {
 
   return (
     <div
-      className={`${className ?? ""} bg-black overflow-hidden`.trim()}
+      className={`${className ?? ""} bg-black bg-cover bg-center overflow-hidden`.trim()}
+      style={{ backgroundImage: `url(${HERO_POSTER_SRC})` }}
       aria-hidden
     >
       {loadVideo ? (
