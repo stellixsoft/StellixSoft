@@ -49,6 +49,7 @@ const navLinks = [
       { href: "/case-studies/stock-options-and-equity-management-platform", label: "Stock Options & Equity Management Platform" },
     ],
   },
+  { href: "/products", label: "Products" },
   { href: "/tools", label: "Tools" },
   { href: "/blog", label: "Blog" },
   { href: "/faqs", label: "FAQs" },

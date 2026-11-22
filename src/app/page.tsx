@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "../components/sections/home/hero";
 import ClientLogos from "../components/sections/home/client-logos";
+import OwnProduct from "../components/sections/home/own-product";
 import OurSpecializations from "../components/sections/home/our-specializations";
 import FeaturedCaseStudy from "../components/sections/home/featured-case-study";
 import IndustriesWeServe from "../components/sections/home/industries-we-serve";
@@ -42,6 +43,7 @@ export default function Home() {
       <div>
         <Hero />
         <ClientLogos />
+        <OwnProduct />
         <OurSpecializations />
         <FeaturedCaseStudy />
         <CustomSoftwareServices />
