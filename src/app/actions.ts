@@ -1,6 +1,7 @@
 "use server";
 
 import { sendEmail } from "@/src/lib/email";
+import { ENQUIRY_TYPES, type EnquiryType, screenEnquiry } from "@/src/lib/lead-screening";
 import {
   isLabTool,
   customerHubConfigured,
@@ -10,8 +11,11 @@ import {
 export interface FormState {
   success: boolean;
   message: string;
+  /** True only for a genuine new-business enquiry; drives the GA4 generate_lead event. */
+  qualifiedLead?: boolean;
   fieldErrors?: Partial<
     Record<
+      | "enquiryType"
       | "name"
       | "email"
       | "help"
@@ -68,8 +72,14 @@ export async function submitContactForm(
   const budgetAmountRaw = readText(formData, "budgetAmount");
   const budgetCurrencyRaw = readText(formData, "budgetCurrency");
   const budgetRange = readText(formData, "budgetRange").slice(0, 60);
+  const enquiryTypeRaw = readText(formData, "enquiryType");
+  const enquiryType = (enquiryTypeRaw in ENQUIRY_TYPES ? enquiryTypeRaw : "") as EnquiryType | "";
 
   const fieldErrors: FormState["fieldErrors"] = {};
+
+  if (!enquiryType) {
+    fieldErrors.enquiryType = "Please tell us what your message is about.";
+  }
 
   if (!name) {
     fieldErrors.name = "Please enter your name.";
@@ -136,6 +146,27 @@ export async function submitContactForm(
     };
   }
 
+  const screening = screenEnquiry({
+    enquiryType,
+    honeypot: readText(formData, "website"),
+    renderedAt: readText(formData, "formRenderedAt"),
+    name,
+    company,
+    text: `${help}\n${project}`,
+  });
+  if (screening.verdict === "spam") {
+    // Look like a normal success so bots learn nothing; nothing is sent.
+    console.warn("Contact form spam dropped:", screening.reasons.join("; "));
+    return { success: true, qualifiedLead: false, message: "Thanks! We'll be in touch within 1 business day." };
+  }
+  const isNewBusiness = enquiryType === "project" && screening.verdict === "lead";
+  const subjectTag =
+    screening.verdict === "solicitation"
+      ? "[Not a lead] "
+      : enquiryType === "support"
+        ? "[Client support] "
+        : "";
+
   const labTool = readText(formData, "labTool");
   if (isLabTool(labTool) && project.length > 8000) {
     return {
@@ -159,16 +190,19 @@ export async function submitContactForm(
       });
       return {
         success: true,
+        qualifiedLead: isNewBusiness,
         message: "Thanks! Your scenario has been sent to our team for review.",
         fieldErrors: {},
       };
     }
     await sendEmail({
-      subject: `New Contact Form - ${name}`,
+      subject: `${subjectTag}New Contact Form - ${name}`,
       replyTo: emailRaw,
       html: `
         <h2>New Contact Form Submission</h2>
         <table style="border-collapse:collapse;width:100%;max-width:600px;font-family:sans-serif;font-size:14px;color:#333">
+          <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee;width:140px">Enquiry Type</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(enquiryType ? ENQUIRY_TYPES[enquiryType] : "")}</td></tr>
+          ${screening.verdict === "solicitation" ? `<tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Screening</td><td style="padding:8px 12px;border-bottom:1px solid #eee">Filtered as not a lead: ${esc(screening.reasons.join("; "))}</td></tr>` : ""}
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee;width:140px">Name</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(name)}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Email</td><td style="padding:8px 12px;border-bottom:1px solid #eee"><a href="mailto:${esc(emailRaw)}">${esc(emailRaw)}</a></td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Company</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(company) || " - "}</td></tr>
@@ -186,6 +220,7 @@ export async function submitContactForm(
 
     return {
       success: true,
+      qualifiedLead: isNewBusiness,
       message: "Thanks! We'll be in touch within 1 business day.",
       fieldErrors: {},
     };
@@ -246,12 +281,30 @@ export async function submitQuoteForm(
     };
   }
 
+  const screening = screenEnquiry({
+    honeypot: readText(formData, "website"),
+    renderedAt: readText(formData, "formRenderedAt"),
+    name,
+    company,
+    text: description,
+  });
+  if (screening.verdict === "spam") {
+    console.warn("Quote form spam dropped:", screening.reasons.join("; "));
+    return {
+      success: true,
+      qualifiedLead: false,
+      message: "Quote request received! We'll send a detailed proposal within 5 business days.",
+    };
+  }
+  const subjectTag = screening.verdict === "solicitation" ? "[Not a lead] " : "";
+
   try {
     await sendEmail({
-      subject: `Quote Request - ${name}`,
+      subject: `${subjectTag}Quote Request - ${name}`,
       replyTo: emailRaw,
       html: `
         <h2>New Quote Request</h2>
+        ${screening.verdict === "solicitation" ? `<p style="font-family:sans-serif;font-size:13px;color:#b45309">Filtered as not a lead: ${esc(screening.reasons.join("; "))}</p>` : ""}
         <table style="border-collapse:collapse;width:100%;max-width:600px;font-family:sans-serif;font-size:14px;color:#333">
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee;width:140px">Name</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${esc(name)}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:600;border-bottom:1px solid #eee">Email</td><td style="padding:8px 12px;border-bottom:1px solid #eee"><a href="mailto:${esc(emailRaw)}">${esc(emailRaw)}</a></td></tr>
@@ -266,6 +319,7 @@ export async function submitQuoteForm(
 
     return {
       success: true,
+      qualifiedLead: screening.verdict === "lead",
       message: "Quote request received! We'll send a detailed proposal within 5 business days.",
       fieldErrors: {},
     };

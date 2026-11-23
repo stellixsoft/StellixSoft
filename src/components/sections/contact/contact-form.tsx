@@ -6,6 +6,8 @@ import { useActionState, useEffect, useRef, useState } from "react";
 import { useToolContext } from "@/src/components/tools/use-tool-report";
 import { trackEvent } from "@/src/lib/analytics";
 import { readAiSource } from "@/src/components/analytics/LeadTracker";
+import FormGuardFields from "@/src/components/forms/form-guard-fields";
+import { ENQUIRY_TYPES } from "@/src/lib/lead-screening";
 import { submitContactForm } from "@/src/app/actions";
 import type { FormState } from "@/src/app/actions";
 import {
@@ -173,12 +175,15 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
   useEffect(() => {
     if (state.success) {
       formRef.current?.reset();
-      trackEvent("generate_lead", {
-        method: "contact_form",
-        plan: planSlug,
-        tool: toolSlug,
-        ai_source: readAiSource(),
-      });
+      // Vendor pitches, job seekers, client support and bots are not new business.
+      if (state.qualifiedLead) {
+        trackEvent("generate_lead", {
+          method: "contact_form",
+          plan: planSlug,
+          tool: toolSlug,
+          ai_source: readAiSource(),
+        });
+      }
       if (toolReport) {
         trackEvent("tool_lead_submit", { tool: toolSlug });
         try {
@@ -188,7 +193,7 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
         }
       }
     }
-  }, [state.success, toolReport, toolSlug, planSlug]);
+  }, [state.success, state.qualifiedLead, toolReport, toolSlug, planSlug]);
 
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6 bg-[var(--color-lightGray)]">
@@ -197,6 +202,7 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
           {/* Left: Contact form card */}
           <div className="rounded-2xl bg-white border border-gray-200 shadow-[0_4px_24px_rgba(3,2,19,0.06)] p-6 sm:p-8 md:p-10">
             <form ref={formRef} action={formAction} onFocus={onFormFocus} className="space-y-6">
+              <FormGuardFields />
               <input type="hidden" name="labTool" value={toolSlug ?? ""} />
               <input type="hidden" name="labInputs" value={includeToolContext ? (toolContext?.inputs ?? "{}") : "{}"} />
               <input type="hidden" name="labResults" value={includeToolContext ? (toolContext?.results ?? "{}") : "{}"} />
@@ -220,6 +226,35 @@ export default function ContactForm({ planSlug, toolSlug }: ContactFormProps) {
                   </label>
                 </div>
               )}
+              <div>
+                <label htmlFor="enquiryType" className={labelClass}>
+                  What is your message about? *
+                </label>
+                <select
+                  id="enquiryType"
+                  name="enquiryType"
+                  required
+                  defaultValue={planSlug || toolSlug ? "project" : ""}
+                  aria-invalid={errs.enquiryType ? true : undefined}
+                  aria-describedby="contact-enquiry-type-help"
+                  className={`${inputClass} ${selectClass} ${errs.enquiryType ? "border-red-300 ring-1 ring-red-200" : ""}`}
+                  style={selectStyle}
+                >
+                  <option value="" disabled>
+                    Select one
+                  </option>
+                  {Object.entries(ENQUIRY_TYPES).map(([value, label]) => (
+                    <option key={value} value={value}>
+                      {label}
+                    </option>
+                  ))}
+                </select>
+                <p id="contact-enquiry-type-help" className="mt-1.5 text-xs text-[var(--color-neutralGray)]">
+                  This form is for companies that want software built or modernized. We don&apos;t
+                  reply to SEO, marketing, outsourcing or staffing offers sent here.
+                </p>
+                <FieldError id="contact-enquiry-type-error" message={errs.enquiryType} />
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className={labelClass}>
