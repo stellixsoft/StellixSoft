@@ -56,6 +56,92 @@ export type BlogCategory = (typeof blogCategories)[number];
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "migrate-azure-devops-to-github",
+    title: "How to Migrate from Azure DevOps to GitHub: Repos, Pipelines, Boards and Artifacts",
+    excerpt:
+      "A step-by-step plan for moving an enterprise from Azure DevOps to GitHub: what to move first, how to convert Azure Pipelines to GitHub Actions, what to do with Boards and Artifacts, and how to avoid breaking releases.",
+    content: `
+Most enterprises that move from Azure DevOps to GitHub do not move everything at once. They move source code and CI/CD first, keep Azure Boards or Azure Artifacts where those still earn their place, and retire the rest once releases run cleanly on GitHub Actions.
+
+This guide is the order of work we use. For the platform decision itself, read [GitHub Actions vs Azure DevOps](/blog/azure-devops-vs-github-actions-enterprise).
+
+## What moves, and what can stay
+
+| Azure DevOps service | GitHub equivalent | Move it? |
+| --- | --- | --- |
+| Azure Repos (Git) | GitHub repositories | Yes, first |
+| Azure Repos (TFVC) | Convert to Git, then GitHub | Yes, after a Git conversion |
+| Azure Pipelines | GitHub Actions | Yes, pipeline by pipeline |
+| Azure Boards | GitHub Issues and Projects | Optional: Boards can link to GitHub commits and pull requests |
+| Azure Artifacts | GitHub Packages | Optional: keep Artifacts if you rely on upstream sources or feed views |
+| Azure Test Plans | No direct equivalent | Usually stays, or moves to a test management tool |
+
+## Step 1: inventory and plan
+
+List every project, repository, pipeline, service connection, variable group, secret, agent pool and package feed. Mark which pipelines deploy to production and who approves them. This list becomes the migration backlog.
+
+Decide the GitHub organization layout, team structure and single sign-on (Microsoft Entra ID with SAML or Enterprise Managed Users) before anything moves.
+
+## Step 2: move repositories with history
+
+Git repositories move with full history, branches and tags. Microsoft's GitHub Enterprise Importer can also bring pull request history from Azure Repos. TFVC repositories need a conversion to Git first, and very old TFVC history is often trimmed to keep the new repo fast.
+
+Freeze pushes to each Azure repo during its cutover, then make it read-only so nobody commits to the old remote by mistake.
+
+## Step 3: convert Azure Pipelines to GitHub Actions
+
+GitHub Actions Importer can convert many Azure Pipelines YAML and classic pipelines into workflow files and reports what it could not convert. Expect manual work on:
+
+- Service connections, which become OpenID Connect federation to Azure or repository and environment secrets.
+- Variable groups, which become organization, repository or environment variables and secrets.
+- Release approvals and gates, which become GitHub environments with required reviewers and protection rules.
+- Self-hosted agents, which become self-hosted runners, ideally in runner groups per team.
+- Templates, which become reusable workflows or composite actions.
+
+Run the old and new pipelines side by side for a few releases and compare the artifacts they produce before switching production deployments.
+
+## Step 4: decide on Boards and Artifacts
+
+If product and project managers live in Azure Boards, keep it and connect it to GitHub so work items link to commits and pull requests. Move to GitHub Projects only when the planning process is simple enough to fit.
+
+Azure Artifacts can stay as the package source for GitHub Actions. Move to GitHub Packages when feeds are simple and permissions should follow repositories.
+
+## Step 5: security and governance
+
+Turn on branch protection or rulesets, required reviews, CODEOWNERS, secret scanning, Dependabot and code scanning. Set audit log streaming to your SIEM if compliance needs it. Recreate the approval and separation-of-duties rules auditors rely on before the first production release runs on GitHub.
+
+## Step 6: cut over and retire
+
+Switch production deployments one application at a time. Keep Azure DevOps read-only for an agreed period, export what you must keep for audits, then reduce licenses.
+
+## Typical timeline
+
+| Size | Repos and pipelines | Typical duration |
+| --- | --- | --- |
+| Small | Up to 20 repos, simple builds | 2 to 4 weeks |
+| Medium | 20 to 100 repos, multi-stage releases | 1 to 3 months |
+| Large | 100+ repos, TFVC, many teams | 3 to 6 months, in waves |
+
+## Common mistakes
+
+- Moving repos before SSO and team permissions are designed.
+- Copying long-lived secrets into GitHub instead of switching to OIDC federation.
+- Losing release approvals because environments were not configured.
+- Forgetting scheduled pipelines, nightly jobs and pipeline triggers from other projects.
+
+## Need help with the move?
+
+Our [DevOps and cloud services](/services/devops-and-cloud-services) team plans and runs Azure DevOps to GitHub migrations for enterprise teams, including pipeline conversion, OIDC setup and governance.
+`,
+    date: "2026-11-23",
+    readTime: "7 min read",
+    category: "DevOps & Cloud",
+    tags: ["Azure DevOps", "GitHub Actions", "GitHub Enterprise", "CI/CD migration", "DevOps"],
+    metaTitle: "Migrate Azure DevOps to GitHub: Step-by-Step",
+    metaDescription:
+      "How to migrate from Azure DevOps to GitHub: move repos with history, convert Azure Pipelines to GitHub Actions, handle Boards, Artifacts and approvals, and cut over without breaking releases.",
+  },
+  {
     slug: "shadow-ai-sovereign-offline-llms",
     title:
       "The Hidden Cost of Shadow AI: Why Enterprises Are Moving to Private, Offline LLMs in 2026",

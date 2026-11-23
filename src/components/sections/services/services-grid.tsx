@@ -23,11 +23,27 @@ const services = [
     icon: "/assets/images/industry-two.png",
   },
   {
+    img: "/assets/images/industry-two-img.webp",
+    title: ".NET Migration",
+    description:
+      "Move VB6, VB.NET, WebForms and .NET Framework apps to .NET 8 in slices.",
+    href: "/services/dotnet-migration",
+    icon: "/assets/images/industry-two.png",
+  },
+  {
     img: "/assets/images/industry-three-img.webp",
     title: "IoT Software",
     description:
       "Your team builds the hardware. We build the software that makes it valuable.",
     href: "/services/iot-software",
+    icon: "/assets/images/industry-three.png",
+  },
+  {
+    img: "/assets/images/industry-three-img.webp",
+    title: "RFID Software Development",
+    description:
+      "Reader and tag workflows, asset tracking and the integrations into your ERP or WMS.",
+    href: "/services/rfid-software-development",
     icon: "/assets/images/industry-three.png",
   },
   {

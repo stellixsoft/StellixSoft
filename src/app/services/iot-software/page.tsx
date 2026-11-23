@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import IoTSoftwareHero from "../../../components/sections/services/iot-software/hero";
+import IoTDeliveryTimeline from "@/src/components/sections/services/iot-software/iot-delivery-timeline";
+import NdaClientProof from "@/src/components/sections/services/shared/nda-client-proof";
 import ServiceAnswerBox from "@/src/components/sections/services/service-answer-box";
 import IoTHardwareSoftwareDevelopmentIntro from "../../../components/sections/services/iot-software/iot-hardware-software-development-intro";
 import SoftwareSolution from "../../../components/sections/services/iot-software/software-solution";
@@ -181,10 +183,12 @@ export default function IoTSoftwarePage() {
         <IoTSoftwareForHardwareTeams />
         <IoTCaseStudy />
         <IoTTechnologyExpertise />
+        <IoTDeliveryTimeline />
         <IoTBehindTheScenes />
         <SolutionByDeviceType />
         <IoTWhenMakesSense />
         <IoTSoftwarePartner />
+        <NdaClientProof />
         <Testimonial />
         <FlexibleEngagement />
         <IoTWhyCompaniesChoose />

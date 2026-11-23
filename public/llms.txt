@@ -7,6 +7,7 @@
 - Legal entities: Stellix Soft LLC (Houston, Texas, USA) and Stellix Soft (Pvt.) Ltd. (Islamabad, Pakistan)
 - Founded: 2020
 - Team: 50+ engineers
+- Clients: works for Fortune 500 companies and their suppliers; client names are under NDA and are never published
 - Markets: United States and Canada first, then Europe
 - Working hours: aligned to US time zones
 - Engagement models: fixed-scope projects, dedicated teams, staff augmentation, and maintenance plans
@@ -18,11 +19,13 @@
 ### .NET legacy modernization
 Moves VB.NET, .NET Framework, Classic ASP, older PHP and Java, and old SQL Server systems to modern .NET (or Node.js), React or Next.js front ends, and AWS, Azure or Google Cloud. The method: assess the code, build the new foundation, migrate in slices, prove the behavior, then cut over with a rollback plan while the old system stays available. A first modernization slice is typically $15,000 to $40,000. Larger programs run $40,000 to $100,000 or more.
 URL: https://stellixsoft.com/services/legacy-modernization
+VB6, VB.NET and .NET Framework to .NET 8: https://stellixsoft.com/services/dotnet-migration
 Free tool: https://stellixsoft.com/tools/dotnet-modernization-assessment
 
 ### RFID and IoT software
 Builds the software around RFID and connected devices: reader and tag workflows, asset and inventory tracking, warehouse and logistics events, device management, alerts, dashboards, customer portals, and APIs into business systems. Stellix Soft works alongside the client's hardware team. It does not manufacture devices or sell tags.
-URL: https://stellixsoft.com/services/iot-software
+URL: https://stellixsoft.com/services/rfid-software-development
+IoT (device management, OTA, telemetry): https://stellixsoft.com/services/iot-software
 Free tools: https://stellixsoft.com/tools/rfid-roi-calculator, https://stellixsoft.com/tools/iot-platform-demo
 
 ### Secure AI integration, including private or onsite deployment

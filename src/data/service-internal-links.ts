@@ -155,7 +155,46 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
       description: "Mobile and field-service examples from our work.",
     },
   ],
+  "dotnet-migration": [
+    {
+      href: "/services/legacy-modernization",
+      label: "Legacy modernization services",
+      description: "Classic ASP, PHP, Java and monolith modernization beyond .NET.",
+    },
+    {
+      href: "/blog/vb-net-migration-strategies-modern-stack",
+      label: "VB to .NET migration guide",
+      description: "VB6 vs VB.NET paths, tools, timelines and cost.",
+    },
+    {
+      href: "/tools/dotnet-modernization-assessment",
+      label: ".NET modernization assessment",
+      description: "Score your app's readiness before you plan the migration.",
+    },
+  ],
+  "rfid-software-development": [
+    {
+      href: "/services/iot-software",
+      label: "IoT software development services",
+      description: "Device management, OTA updates and telemetry for other connected devices.",
+    },
+    {
+      href: "/industries/logistics-and-supply-chain",
+      label: "Logistics & supply chain software",
+      description: "Tracking, WMS and dispatch systems around your RFID data.",
+    },
+    {
+      href: "/tools/rfid-roi-calculator",
+      label: "RFID ROI calculator",
+      description: "Model payback before a rollout.",
+    },
+  ],
   "iot-software": [
+    {
+      href: "/services/rfid-software-development",
+      label: "RFID software development",
+      description: "Reader and tag workflows, asset tracking and ERP/WMS integration.",
+    },
     {
       href: "/tools/rfid-roi-calculator",
       label: "RFID ROI calculator",
@@ -173,6 +212,11 @@ export const serviceInternalLinksBySlug: Record<string, InternalLinkItem[]> = {
     },
   ],
   "legacy-modernization": [
+    {
+      href: "/services/dotnet-migration",
+      label: ".NET migration services",
+      description: "VB6, VB.NET, WebForms and .NET Framework to .NET 8, in slices.",
+    },
     {
       href: "/tools/dotnet-modernization-assessment",
       label: ".NET modernization assessment",

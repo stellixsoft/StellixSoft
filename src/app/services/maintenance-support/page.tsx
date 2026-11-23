@@ -31,11 +31,12 @@ import { buildPageMetadata } from "@/src/lib/seo-metadata";
 const PATH = "/services/maintenance-support" as const;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Software Maintenance and Support Services",
+  title: "Enterprise Software Maintenance & Support Services",
   description:
-    "Software maintenance and support services that keep apps secure, fast, and reliable: bug fixes, security updates, monitoring, and enhancements.",
+    "Enterprise software maintenance and support: bug fixes, security patches, monitoring and enhancements, including takeover of systems another team built. Plans from $1,500 a month.",
   path: PATH,
   keywords: [
+    "Enterprise software maintenance",
     "Software maintenance and support services",
     "Application maintenance services",
     "application maintenance and support services",

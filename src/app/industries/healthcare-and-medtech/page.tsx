@@ -11,6 +11,7 @@ import WhyHealthcareOrganizationsChooseUs from "../../../components/sections/ind
 import CTAPilot from "../../../components/sections/home/cta-pilot";
 import { JsonLd } from "@/src/components/seo/json-ld";
 import { breadcrumbJsonLd, serviceJsonLd } from "@/src/lib/schema";
+import HospitalClinicalSoftware from "@/src/components/sections/industries/healthcare-and-medtech/hospital-clinical-software";
 import { buildPageMetadata } from "@/src/lib/seo-metadata";
 
 const PATH = "/industries/healthcare-and-medtech" as const;
@@ -47,6 +48,7 @@ export default function HealthcareAndMedtechPage() {
         <HIPPA />
         <HealthcareSoftwareChallenges />
         <HealthcareSoftwareSolutions />
+        <HospitalClinicalSoftware />
         <HealthcareComplianceApproach />
         <TransferableEnterpriseExperience />
         <HealthcareTechnologyStack />

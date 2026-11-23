@@ -12,7 +12,8 @@ import { renderBlogContentHtml } from "@/src/lib/blog-content";
 import BlogPostHero from "@/src/components/sections/blog/blog-post-hero";
 import BlogPostSidebar from "@/src/components/sections/blog/blog-post-sidebar";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
-import { blogPostingJsonLd } from "@/src/lib/schema";
+import { blogPostingJsonLd, faqPageJsonLd } from "@/src/lib/schema";
+import { getBlogSeoEnhancement } from "@/src/data/blog-seo-enhancements";
 import { buildArticleMetadata } from "@/src/lib/seo-metadata";
 import { absoluteUrl } from "@/src/lib/site-url";
 import BlogServiceCta from "@/src/components/sections/blog/blog-service-cta";
@@ -58,6 +59,14 @@ export default async function BlogPostPage({ params }: PageProps) {
   const coverSrc = getBlogCoverImageSrc(post);
   const coverAbsolute = coverSrc.startsWith("http") ? coverSrc : absoluteUrl(coverSrc);
   const html = renderBlogContentHtml(post.content, post.contentFormat);
+  const seo = getBlogSeoEnhancement(post.slug);
+  const quickAnswerHtml = seo?.quickAnswer
+    ? renderBlogContentHtml(seo.quickAnswer, "markdown")
+    : null;
+  const extraHtml = seo?.extraSections
+    ? renderBlogContentHtml(seo.extraSections, "markdown")
+    : null;
+  const faqs = seo?.faqs ?? [];
 
   const jsonLd = blogPostingJsonLd({
     title: post.title,
@@ -74,6 +83,17 @@ export default async function BlogPostPage({ params }: PageProps) {
   return (
     <>
       <JsonLd data={jsonLd} />
+      {faqs.length > 0 ? (
+        <JsonLd
+          data={faqPageJsonLd(
+            faqs.map((f) => ({
+              "@type": "Question" as const,
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer" as const, text: f.answer },
+            })),
+          )}
+        />
+      ) : null}
 
       <BlogPostHero
         category={post.category}
@@ -101,7 +121,25 @@ export default async function BlogPostPage({ params }: PageProps) {
             <div
               className="prose prose-sm max-w-none text-slate-700 prose-p:text-sm prose-p:leading-relaxed prose-headings:font-light prose-headings:text-[var(--color-deepSpace)] prose-h2:text-lg prose-h2:md:text-xl prose-h3:text-base prose-h3:md:text-lg prose-li:text-sm prose-strong:font-medium prose-a:text-[var(--color-electricBlue)] prose-a:no-underline hover:prose-a:underline prose-code:text-[var(--color-surfaceBlue)] prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-[0.8125rem] prose-code:before:content-none prose-code:after:content-none prose-pre:bg-gray-50 prose-pre:text-sm prose-table:block prose-table:overflow-x-auto prose-table:text-sm prose-th:text-left prose-td:align-top"
             >
+              {quickAnswerHtml ? (
+                <div
+                  className="not-prose mb-8 rounded-xl border border-[var(--color-electricBlue)]/30 bg-[#f5f7fb] p-5 text-sm leading-relaxed text-slate-700 [&_a]:text-[var(--color-electricBlue)] [&_strong]:font-medium [&_strong]:text-[var(--color-deepSpace)]"
+                  dangerouslySetInnerHTML={{ __html: quickAnswerHtml }}
+                />
+              ) : null}
               <div dangerouslySetInnerHTML={{ __html: html }} />
+              {extraHtml ? <div dangerouslySetInnerHTML={{ __html: extraHtml }} /> : null}
+              {faqs.length > 0 ? (
+                <section>
+                  <h2>Frequently asked questions</h2>
+                  {faqs.map((f) => (
+                    <div key={f.question}>
+                      <h3>{f.question}</h3>
+                      <p>{f.answer}</p>
+                    </div>
+                  ))}
+                </section>
+              ) : null}
             </div>
 
             <BlogServiceCta category={post.category} />
