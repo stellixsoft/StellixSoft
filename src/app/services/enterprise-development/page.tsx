@@ -14,6 +14,8 @@ import Testimonial from "../../../components/sections/services/enterprise-develo
 import StartWithConfidence from "../../../components/sections/services/enterprise-development/start-with-confidence";
 import EnterpriseApplicationFutureGrowth from "../../../components/sections/services/enterprise-development/enterprise-application-future-growth";
 import EnterprisePlatformDevelopment from "../../../components/sections/services/enterprise-development/enterprise-platform-development";
+import EnterpriseCostAndFit from "../../../components/sections/services/enterprise-development/enterprise-cost-and-fit";
+import NdaClientProof from "@/src/components/sections/services/shared/nda-client-proof";
 import ServiceAnswerBox from "@/src/components/sections/services/service-answer-box";
 import CTAPilot from "../../../components/sections/home/cta-pilot";
 import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
@@ -156,6 +158,11 @@ const serviceLd = serviceJsonLd({
   path: PATH,
   serviceType: "Enterprise software platform and business application development",
   category: "Custom Software Development",
+  priceRange: {
+    min: 40000,
+    max: 100000,
+    description: "Typical medium enterprise platform; pilots from about $10,000, full enterprise systems from about $100,000.",
+  },
 });
 
 const breadcrumbLd = breadcrumbJsonLd([
@@ -192,12 +199,14 @@ export default function EnterpriseDevelopmentPage() {
         />
         <EnterpriseComplexServicesIntro />
         <EnterprisePlatformDevelopment />
+        <NdaClientProof />
         <KeySpecializations />
         <EnterpriseAcrossIndustries />
         <ReadyToLaunch />
         <TechSpecialties />
         <EnterpriseAdvancedIntegrations />
         <HowWeDeliver />
+        <EnterpriseCostAndFit />
         <EnterpriseScalableServices />
         <WhyTrustUs />
         <WhyChooseEnterpriseDevelopment />

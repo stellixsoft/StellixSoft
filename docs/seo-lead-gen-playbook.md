@@ -69,7 +69,7 @@ AI assistants already send visitors to case studies, pricing, the DevOps and mob
 1. Real leads per month over the last 3 to 6 months, from all sources including email, LinkedIn and referrals, plus how many became clients and the average first-contract value. Without this there is no baseline for lead-to-client rate or revenue per channel.
 2. A CRM or a shared lead sheet. Even a Google Sheet works. Claude can wire the contact form to also write to it.
 3. Google Business Profile status for Stellix Soft LLC (Houston): whether it exists, who owns it, and how many reviews it has.
-4. ~~The true team size.~~ Confirmed by the owner on 2026-11-01: 50+ engineers. The schema and llms.txt now match the About page. Still open: whether "Fortune 500" clients can be claimed. It appears in 28 places on the site and stays out of llms.txt until confirmed.
+4. ~~The true team size.~~ Confirmed by the owner on 2026-11-01: 50+ engineers. The schema and llms.txt now match the About page. Confirmed by the owner on 2026-11-23: Stellix Soft works for Fortune 500 clients, all under NDA. Say "Fortune 500, under NDA" and describe the work by industry and scope; never name or hint at a client. Now in llms.txt, the Organization schema and the knowledge base.
 5. Which clients can be named in case studies, and which reviews and testimonials can be quoted.
 6. An email tool for nurture sequences (Brevo, MailerLite, HubSpot free or similar).
 7. Whether any paid ads will run. If yes, the budget, so cost per lead can be tracked.
@@ -374,6 +374,24 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-10 | Legacy 410 rules | Added /project-category/, /testimonials/, /skills/, /software-team, bare /category/, /ctg/ and /e/ (found in the Search Console 404 sample; 94% of that sample was /detail/, already 410) |
 | 2026-11-10 | Old WordPress posts | 301s from /custom-mobile-app-development-stellixsoft and /best-mobile-app-development-tools to the mobile service page, and /best-software-developers-eastern-europe to the dedicated team page |
 | 2026-11-23 | /contact, /pricing quote form | Vendor-pitch filter: required "What is your message about?" field, honeypot, minimum fill time, link limit and pitch/job phrase detection (`src/lib/lead-screening.ts`). Pitches are still emailed with a "[Not a lead]" subject tag; bots are dropped. `generate_lead` now fires only for genuine new-business enquiries (contact and quote forms) |
+
+| 2026-11-23 | Blog (mechanism) | New `src/data/blog-seo-enhancements.ts`: per-slug search title, meta, quick-answer box, extra sections and FAQs (with FAQPage schema), applied to CMS and static posts alike. Use it instead of editing the static file for CMS-served posts |
+| 2026-11-23 | /blog/vb-net-migration-strategies-modern-stack | Title "VB to .NET Migration: VB6 & VB.NET to .NET 8"; quick answer; VB6 vs VB.NET table; migration tools table; cost and timeline; 4 FAQs |
+| 2026-11-23 | /blog/zero-downtime-database-migration-strategies | Title "Zero-Downtime Database Migration: CDC & Cutover"; quick answer; database live-migration table; cutover checklist; 3 FAQs; link to legacy and .NET migration pages |
+| 2026-11-23 | /blog/azure-devops-vs-github-actions-enterprise | Title "GitHub Actions vs Azure DevOps (2026 Guide)"; quick answer; feature table; pricing model; GitHub Enterprise vs Azure DevOps; "Is GitHub replacing Azure DevOps?"; Artifacts vs Packages; 3 FAQs |
+| 2026-11-23 | /blog/real-time-logistics-tracking-system-architecture | Title "Real-Time Logistics Tracking: Truck APIs & ETAs"; direct answer to the truck API question; capability table; 2 FAQs |
+| 2026-11-23 | /blog/dedicated-development-team-vs-staff-augmentation | Title "Staff Augmentation vs Dedicated Team: Cost & Fit"; quick answer with real rates; three-model comparison table |
+| 2026-11-23 | /blog/headless-commerce-enterprise-ecommerce | Title "Enterprise Headless Commerce: Architecture Guide"; headless vs monolithic, platform, B2B, OMS/ERP and migration sections; 3 FAQs |
+| 2026-11-23 | /blog/iot-device-management-platform-architecture | Title "IoT Device Management Architecture Guide"; five-layer table; platform comparison; OTA at scale; 2 FAQs |
+| 2026-11-23 | 14 related posts | Closing internal link to the enterprise, IoT, maintenance or .NET migration service page |
+| 2026-11-23 | /blog/migrate-azure-devops-to-github | New post |
+| 2026-11-23 | /services/enterprise-development | Fortune 500 under-NDA proof block; cost table; "why a mid-size partner"; single-tenant to multi-tenant re-architecture; case study links; Service schema Offer with price range. Title unchanged (next allowed Dec 9) |
+| 2026-11-23 | /services/iot-software | Delivery phases, stack, links to RFID page, tools and 5 IoT guides; Fortune 500 under-NDA block. Title unchanged (next allowed Dec 9) |
+| 2026-11-23 | /services/e-commerce-development | New "Headless commerce development services" section (#headless-commerce) |
+| 2026-11-23 | /services/maintenance-support | Title "Enterprise Software Maintenance & Support Services"; meta with plan price |
+| 2026-11-23 | /industries/healthcare-and-medtech | "Hospital and clinical software development" section with links to the HIPAA, FHIR and telemedicine posts |
+| 2026-11-23 | /services/dotnet-migration, /services/rfid-software-development | New service pages (lead offers 1 and 2) with FAQ, Service and breadcrumb schema; added to header, footer, services grid, sitemap, internal links and llms.txt |
+| 2026-11-23 | llms.txt, Organization schema, knowledge base | Fortune 500 clients under NDA |
 
 ## Weekly pass log
 

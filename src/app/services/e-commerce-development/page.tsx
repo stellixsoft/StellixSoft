@@ -10,6 +10,7 @@ import EcommerceAdvancedIntegrations from "@/src/components/sections/services/e-
 import ECommerceFeaturesWeImplement from "@/src/components/sections/services/e-commerce-development/ecommerce-features";
 import EcommerceScalableGrowth from "@/src/components/sections/services/e-commerce-development/ecommerce-scalable-growth";
 import WhyChooseEcommerceDevelopment from "@/src/components/sections/services/e-commerce-development/why-choose-ecommerce-development";
+import HeadlessCommerceServices from "@/src/components/sections/services/e-commerce-development/headless-commerce-services";
 import ServiceFaqs from "@/src/components/sections/services/shared-faqs";
 import CTAPilot from "@/src/components/sections/home/cta-pilot";
 import ServiceInternalLinks from "@/src/components/sections/services/service-internal-links";
@@ -117,6 +118,7 @@ export default function ECommerceDevelopmentPage() {
         <ECommerceSolutionsWeBuild />
         <EcommerceAcrossIndustries />
         <WhenYouNeedCustomEcommerce />
+        <HeadlessCommerceServices />
         <ShopifyEcommerceFlexibility />
         <ECommerceTechnology />
         <EcommerceAdvancedIntegrations />

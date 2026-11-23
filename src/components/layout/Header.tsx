@@ -22,6 +22,8 @@ const navLinks = [
       { href: "/services/enterprise-mobile-app-development", label: "Enterprise Mobile App Development" },
       { href: "/services/iot-software", label: "IoT Software" },
       { href: "/services/legacy-modernization", label: "Legacy Modernization" },
+      { href: "/services/dotnet-migration", label: ".NET Migration (VB6, VB.NET)" },
+      { href: "/services/rfid-software-development", label: "RFID Software Development" },
       { href: "/services/maintenance-support", label: "Maintenance & Support" },
       { href: "/services/salesforce-development", label: "Salesforce Development" },
       { href: "/services/staff-augmentation", label: "Staff Augmentation" },

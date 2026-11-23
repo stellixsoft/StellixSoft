@@ -9,6 +9,7 @@ import {
   listBlogPosts,
   type BlogPostRecord,
 } from "@/src/lib/blog-repo";
+import { withBlogSeoOverrides } from "@/src/data/blog-seo-enhancements";
 
 export type BlogPostView = BlogPost & {
   id?: string;
@@ -61,12 +62,14 @@ export async function getPublishedBlogPosts(): Promise<BlogPostView[]> {
       const fileOnly = staticBlogPosts
         .filter((post) => !seen.has(post.slug))
         .map(staticToView);
-      return [...published, ...fileOnly].sort((a, b) => b.date.localeCompare(a.date));
+      return [...published, ...fileOnly]
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .map(withBlogSeoOverrides);
     }
   } catch {
     // Firestore unavailable — fall back to static posts
   }
-  return staticBlogPosts.map(staticToView);
+  return staticBlogPosts.map(staticToView).map(withBlogSeoOverrides);
 }
 
 export async function getBlogPostBySlug(
@@ -75,7 +78,7 @@ export async function getBlogPostBySlug(
   try {
     const post = await getRepoPostBySlug(slug);
     if (post?.status === "published") {
-      return dbPostToView(post);
+      return withBlogSeoOverrides(dbPostToView(post));
     }
   } catch {
     // fall through
@@ -83,7 +86,7 @@ export async function getBlogPostBySlug(
 
   const staticPost = staticBlogPosts.find((p) => p.slug === slug);
   if (staticPost) {
-    return staticToView(staticPost);
+    return withBlogSeoOverrides(staticToView(staticPost));
   }
 
   return null;

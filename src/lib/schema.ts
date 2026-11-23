@@ -73,6 +73,8 @@ export function serviceJsonLd(opts: {
   path: string;
   serviceType: string;
   category?: string;
+  /** Typical published price range in USD, emitted as an Offer with a PriceSpecification. */
+  priceRange?: { min: number; max?: number; description?: string };
 }) {
   const url = absoluteUrl(opts.path);
   return {
@@ -86,6 +88,22 @@ export function serviceJsonLd(opts: {
     provider: orgRef(),
     areaServed: AREA_SERVED,
     url,
+    ...(opts.priceRange
+      ? {
+          offers: {
+            "@type": "Offer",
+            url,
+            priceCurrency: "USD",
+            ...(opts.priceRange.description ? { description: opts.priceRange.description } : {}),
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              priceCurrency: "USD",
+              minPrice: opts.priceRange.min,
+              ...(opts.priceRange.max ? { maxPrice: opts.priceRange.max } : {}),
+            },
+          },
+        }
+      : {}),
   };
 }
 
@@ -333,7 +351,7 @@ export function buildRootJsonLdGraph() {
         },
         image: { "@id": `${site}/#logo` },
         description:
-          "Custom software development company (Stellix Soft LLC, Houston, Texas) known for .NET legacy modernization, RFID software, and secure AI that can run inside a client's own network, with US-timezone aligned teams.",
+          "Custom software development company (Stellix Soft LLC, Houston, Texas) known for .NET legacy modernization, RFID software, and secure AI that can run inside a client's own network, with US-timezone aligned teams. Works for Fortune 500 companies under NDA.",
         foundingDate: "2020",
         numberOfEmployees: { "@type": "QuantitativeValue", minValue: 50 },
         address: [
