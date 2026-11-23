@@ -3,6 +3,9 @@
 import { useActionState, useEffect, useRef } from "react";
 import { submitQuoteForm } from "@/src/app/actions";
 import type { FormState } from "@/src/app/actions";
+import FormGuardFields from "@/src/components/forms/form-guard-fields";
+import { trackEvent } from "@/src/lib/analytics";
+import { readAiSource } from "@/src/components/analytics/LeadTracker";
 
 export default function RequestAQuote() {
   const initialState: FormState = { success: false, message: "" };
@@ -13,8 +16,11 @@ export default function RequestAQuote() {
   useEffect(() => {
     if (state.success) {
       formRef.current?.reset();
+      if (state.qualifiedLead) {
+        trackEvent("generate_lead", { method: "quote_form", ai_source: readAiSource() });
+      }
     }
-  }, [state.success]);
+  }, [state.success, state.qualifiedLead]);
 
   return (
     <section className="py-16 md:py-24 px-4 sm:px-6">
@@ -28,6 +34,7 @@ export default function RequestAQuote() {
           </p>
 
           <form ref={formRef} action={formAction} className="mt-8 space-y-6">
+            <FormGuardFields />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="sm:col-span-2">
                 <label

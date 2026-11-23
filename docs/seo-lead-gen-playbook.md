@@ -373,6 +373,7 @@ AI answers lean on third-party sources more than on the company's own site. Prio
 | 2026-11-10 | Blog renderer | Markdown pipe tables now render as HTML tables (previously shown as raw text) |
 | 2026-11-10 | Legacy 410 rules | Added /project-category/, /testimonials/, /skills/, /software-team, bare /category/, /ctg/ and /e/ (found in the Search Console 404 sample; 94% of that sample was /detail/, already 410) |
 | 2026-11-10 | Old WordPress posts | 301s from /custom-mobile-app-development-stellixsoft and /best-mobile-app-development-tools to the mobile service page, and /best-software-developers-eastern-europe to the dedicated team page |
+| 2026-11-23 | /contact, /pricing quote form | Vendor-pitch filter: required "What is your message about?" field, honeypot, minimum fill time, link limit and pitch/job phrase detection (`src/lib/lead-screening.ts`). Pitches are still emailed with a "[Not a lead]" subject tag; bots are dropped. `generate_lead` now fires only for genuine new-business enquiries (contact and quote forms) |
 
 ## Weekly pass log
 
